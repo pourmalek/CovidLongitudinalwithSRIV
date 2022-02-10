@@ -1,5 +1,8 @@
 ### Error measures for DELP model
 
+
+
+****
 ****
 
 ### Canada National
@@ -34,15 +37,53 @@
 
 ****
 
+*
 
 
 
 
 
-[]()
+****
+****
+
+### Alberta
 
 ****
 
-[]()
+[graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates]()
 
 ****
+
+[graph 111 1 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+[graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+[graph 111 3 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+[graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+[graph 111 5 C19 daily deaths, Canada, Alberta, DELP, Error]()
+
+****
+
+[graph 111 6 C19 daily deaths, Canada, Alberta, DELP, Absolute Error]()
+
+****
+
+[graph 111 7 C19 daily deaths, Canada, Alberta, DELP, Percent Error]()
+
+****
+
+[graph 111 8 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error]()
+
+****
+
+
