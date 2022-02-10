@@ -34,7 +34,7 @@ Longitudinal assessment of COVID-19 models
  
 ### Related repositories:
 
-THREE “CovidVisualized” repositories, use a common template and logic for visualization of the results of estimates of FIVE international and periodically updated COVID-19 pandemic models for the future of the epidemic:
+THREE “CovidVisualized” repositories, use a common template and logic for visualization of the results of estimates of the international and periodically updated COVID-19 pandemic models for the future of the epidemic:
 
 [`CovidVisualizedGlobal`](https://github.com/pourmalek/CovidVisualizedGlobal) for the [`GLOBAL`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20GLOBAL%202022) and WHO Regions: [`African Region (AFR O)`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20African%20region), [`Americas Region (AMR O) (PAH O)`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20Americas%20region), [`Eastern Mediterranean Region (EMR O)`](https://github.com/pourmalek/CovidVisualizedGlobal/blob/main/RESULTS%20Eastern%20Mediterranean%20region), [`European Region (EUR O)`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20European%20region), [`South-East Asian Region (SEAR O)`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20South-East%20Asian%20region), and [`Western Pacific Region (WPR O)`](https://github.com/pourmalek/CovidVisualizedGlobal/tree/main/RESULTS%20Western%20Pacific%20region)
 
@@ -44,7 +44,7 @@ THREE “CovidVisualized” repositories, use a common template and logic for vi
  
 <br/><br/>
  
-The [`CovidLongitudinal`](https://github.com/pourmalek/CovidLongitudinal) repository compares predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
+The [`CovidLongitudinal`](https://github.com/pourmalek/CovidLongitudinal) repository compares predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization, for the [`Global level and WHO Regions`], [`Canada and its provinces`], and [`Iran`].
 
  
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
