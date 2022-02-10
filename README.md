@@ -30,7 +30,7 @@ Longitudinal assessment of COVID-19 models
 <br/><br/>
 
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  
 ### Related repositories:
 
@@ -52,8 +52,7 @@ The codes in these repositories can be adapted for use for any country or region
 The [`CovidLongitudinal`](https://github.com/pourmalek/CovidLongitudinal) repository compares predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
 
  
- 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 
