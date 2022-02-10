@@ -3,6 +3,14 @@ Longitudinal assessment of COVID-19 models
 
 **Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.** 
 
+Deaths predicted by the models are compared with deaths officially reported.
+
+Cases predicted by the models are compared with cases officially reported. 
+
+Infections predicted by IHME and IMPE do not have "reported" counterparts. 
+
+<br/><br/>
+
 * Models: 
 
 DELP: DELPHI. Differential Equations Lead to Predictions of Hospitalizations and Infections. COVID-19 pandemic model named DELPHI developed by Massachusetts Institute of Technology, Cambridge. https://covidanalytics.io/projections
@@ -18,3 +26,4 @@ SRIV: Srivastava, Ajitesh. COVID-19 pandemic model developed by Ajitesh Srivasta
 
 JOHN: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, Baltimore. https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6
 
+<br/><br/>
