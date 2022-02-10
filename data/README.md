@@ -1,1 +1,1 @@
-Get models' predictions for all countries of the world
+Get the models' predictions (data files) for all countries of the world.
