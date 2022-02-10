@@ -1,10 +1,21 @@
 # CovidLongitudinal
+
 Longitudinal assessment of COVID-19 models
+
 
 <br/><br/>
 
+************************************************************************************************************************************************************
+************************************************************************************************************************************************************
 
-**Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.** 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+
+
+### Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
+
+************************************************************************************************************************************************************
+************************************************************************************************************************************************************
+
 
 Deaths predicted by the models are compared with deaths officially reported.
 
