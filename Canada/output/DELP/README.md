@@ -1012,7 +1012,7 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 (1) [graph 206 C19 daily cases, Canada, Nova Scotia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20106%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
