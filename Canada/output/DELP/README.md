@@ -786,7 +786,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 202 C19 daily cases, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 ****
 
