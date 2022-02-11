@@ -53,7 +53,7 @@ Reference = JOHN, Model = DELP
 
 ****
 
-(1) [C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
+(1) [graph 100 C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
@@ -249,7 +249,7 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Manitoba, DELP, All updates]()
+(1) [graph 103 C19 daily deaths, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
@@ -305,7 +305,7 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, New Brunswick, DELP, All updates]()
+(1) [graph 104 C19 daily deaths, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
@@ -361,7 +361,7 @@ Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates]()
+(1) [graph 105 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20105%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
@@ -417,9 +417,9 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Nova Scotia, DELP, All updates](https://youtu.be/k90mPGVgrtY)
+(1) [graph 106 C19 daily deaths, Canada, Nova Scotia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20106%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/k90mPGVgrtY).
 
 ****
 
@@ -473,9 +473,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Ontario, DELP, All updates](https://youtu.be/mn_X4QO98Bc)
+(1) [graph 107 C19 daily deaths, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20107%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/mn_X4QO98Bc).
 
 ****
 
@@ -531,7 +531,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Quebec, DELP, All updates]()
+(1) [graph 108 C19 daily deaths, Canada, Quebec, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20108%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 
@@ -590,7 +590,7 @@ Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Saskatchewan, DELP, All updates]()
+(1) [graph 109 C19 daily deaths, Canada, Saskatchewan, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20109%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here]().
 
