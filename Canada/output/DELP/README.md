@@ -956,7 +956,7 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 (1) [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20105%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
