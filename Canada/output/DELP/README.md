@@ -900,7 +900,7 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 (1) [graph 204 C19 daily cases, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 ****
 
