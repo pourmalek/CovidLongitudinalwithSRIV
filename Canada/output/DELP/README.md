@@ -363,7 +363,7 @@ Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
 (1) [graph 101 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates]()
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 ****
 
