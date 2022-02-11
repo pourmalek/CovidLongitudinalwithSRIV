@@ -658,7 +658,7 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 (1) [graph 200 C19 daily cases, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 ****
 
