@@ -1,5 +1,18 @@
 ### DELP model, Error measures for daily deaths and daily cases
 
+<br/><br/>
+
+**The error measures:**
+
+Reference = JOHN, Model = DELP
+
+(1) Error = Reference minus Model 
+
+(2) Absolute Error = | Reference minus Model |
+
+(3) Percent Error = 100 * (Reference minus Model) / Reference
+
+(4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
 
 <br/><br/>
 
@@ -25,24 +38,7 @@
 
 [Saskatchewan](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan)
 
-
 <br/><br/>
-
-**The error measures:**
-
-Reference = JOHN, Model = DELP
-
-(1) Error = Reference minus Model 
-
-(2) Absolute Error = | Reference minus Model |
-
-(3) Percent Error = 100 * (Reference minus Model) / Reference
-
-(4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
-
-
-
-
 
 
 ****
