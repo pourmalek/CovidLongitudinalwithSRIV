@@ -417,7 +417,7 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Nova Scotia, DELP, All updates]()
+(1) [graph 101 C19 daily deaths, Canada, Nova Scotia, DELP, All updates](https://youtu.be/k90mPGVgrtY)
 
 Long PDF file, see video [here]().
 
