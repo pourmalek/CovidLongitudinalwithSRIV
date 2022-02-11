@@ -531,9 +531,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Quebec, DELP, All updates](https://youtu.be/j2S7czLj7oo)
+(1) [graph 101 C19 daily deaths, Canada, Quebec, DELP, All updates]()
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 
 ****
 
