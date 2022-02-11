@@ -146,9 +146,9 @@ Reference = JOHN, Model = DELP
 
 ****
 
-(6) [graph 111 5 C19 daily deaths, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%206%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Absolute%20Error.pdf)
+(6) [graph 111 5 C19 daily deaths, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%205%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153521568-5e966005-b6b5-4a2d-addd-d0abcebcd150.png)
+![image](https://user-images.githubusercontent.com/30849720/153523518-23fbc029-17e2-4e69-9753-e8dd8b33a6b0.png)
 
 ****
 
