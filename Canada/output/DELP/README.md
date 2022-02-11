@@ -1,11 +1,42 @@
-### DELP model, Error measures for daily deaths
+### DELP model, Error measures for daily deaths and daily cases
 
 
+<br/><br/>
 
-
+Locations:
 
 [Canada National](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national)
 
+[Alberta](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta)
+
+[British Columbia](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia)
+
+[Manitoba](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba)
+
+[New Brunswick](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick)
+
+[Newfoundland and Labrador](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador)
+
+[Nova Scotia](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia)
+
+[Ontario](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario)
+
+[Quebec](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec)
+
+[Saskatchewan](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan)
+
+
+<br/><br/>
+
+
+
+
+
+
+
+****
+
+### DELP model, Error measures for daily deaths
 
 
 ****
