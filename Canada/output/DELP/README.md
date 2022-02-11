@@ -251,7 +251,7 @@ Long PDF file, see video [here](https://www.youtube.com/watch?v=ZxN79cmBuZQ).
 
 (1) [graph 101 C19 daily deaths, Canada, Manitoba, DELP, All updates]()
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 ****
 
