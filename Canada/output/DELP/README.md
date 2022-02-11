@@ -844,7 +844,7 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 (1) [graph 203 C19 daily cases, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
