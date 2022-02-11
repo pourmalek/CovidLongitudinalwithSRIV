@@ -55,7 +55,9 @@ Reference = JOHN, Model = DELP
 
 (1) [C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xV6P6ZYF0lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ****
 
