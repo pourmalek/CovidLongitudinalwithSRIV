@@ -117,6 +117,8 @@ Locations:
 
 (2) [graph 111 1 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%201%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153521290-6d39ab1e-2753-4e3e-8e50-b2b492b3d998.png)
+
 ****
 
 (3) [graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
