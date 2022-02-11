@@ -721,7 +721,7 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 (1) [graph 201 C19 daily cases, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/tyXjAZlfMNo).
 
 ****
 
