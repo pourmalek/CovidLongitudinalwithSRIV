@@ -3,7 +3,7 @@
 
 <br/><br/>
 
-Locations:
+**Locations:**
 
 [Canada National](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national)
 
@@ -28,6 +28,17 @@ Locations:
 
 <br/><br/>
 
+**The error measures:**
+
+Reference = JOHN, Model = DELP
+
+(1) Error = Reference minus Model 
+
+(2) Absolute Error = | Reference minus Model |
+
+(3) Percent Error = 100 * (Reference minus Model) / Reference
+
+(4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
 
 
 
