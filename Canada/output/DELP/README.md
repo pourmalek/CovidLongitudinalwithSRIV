@@ -70,7 +70,7 @@ Locations:
 
 ![image](https://user-images.githubusercontent.com/30849720/153515159-715b4ec6-ae23-45a0-975e-a055342783f8.png)
 
-****
+**** 
 
 (7) [C19 daily deaths, Canada, National, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%206%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20Error.pdf)
 
