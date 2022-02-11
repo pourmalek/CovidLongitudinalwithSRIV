@@ -55,6 +55,8 @@ Reference = JOHN, Model = DELP
 
 (1) [C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [C19 daily deaths, Canada, National, DELP, Updates together, Without Update circles, With extremes]()
@@ -119,6 +121,8 @@ Reference = JOHN, Model = DELP
 ****
 
 (1) [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
+
+Long PDF file, see video [here]().
 
 ****
 
@@ -189,6 +193,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20update%2000000000.pdf)
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [graph 111 1 C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%201%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
@@ -245,6 +251,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 101 C19 daily deaths, Canada, Manitoba, DELP, All updates]()
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [graph 111 1 C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without Update circles, With extremes]()
@@ -298,6 +306,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 
 (1) [graph 101 C19 daily deaths, Canada, New Brunswick, DELP, All updates]()
+
+Long PDF file, see video [here]().
 
 ****
 
@@ -353,6 +363,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 101 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates]()
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [graph 111 1 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, With extremes]()
@@ -407,6 +419,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 101 C19 daily deaths, Canada, Nova Scotia, DELP, All updates]()
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [graph 111 1 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, With extremes]()
@@ -460,6 +474,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 
 (1) [graph 101 C19 daily deaths, Canada, Ontario, DELP, All updates]()
+
+Long PDF file, see video [here]().
 
 ****
 
@@ -517,6 +533,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 101 C19 daily deaths, Canada, Quebec, DELP, All updates]()
 
+Long PDF file, see video [here]().
+
 ****
 
 (2) [graph 111 1 C19 daily deaths, Canada, Quebec, DELP, Updates together, Without Update circles, With extremes]()
@@ -573,6 +591,8 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 
 (1) [graph 101 C19 daily deaths, Canada, Saskatchewan, DELP, All updates]()
+
+Long PDF file, see video [here]().
 
 ****
 
