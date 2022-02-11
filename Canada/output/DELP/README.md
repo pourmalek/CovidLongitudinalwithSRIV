@@ -592,7 +592,7 @@ Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 
 (1) [graph 109 C19 daily deaths, Canada, Saskatchewan, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20109%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 ****
 
