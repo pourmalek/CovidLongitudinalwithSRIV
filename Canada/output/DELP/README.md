@@ -122,7 +122,7 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
 (1) [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here](https://www.youtube.com/watch?v=Eu906PRRlM8).
+Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 ****
 
@@ -193,7 +193,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (1) [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here](https://www.youtube.com/watch?v=ZxN79cmBuZQ).
+Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
