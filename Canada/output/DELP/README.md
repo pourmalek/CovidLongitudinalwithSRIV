@@ -130,7 +130,7 @@ Reference = JOHN, Model = DELP
 
 (3) [graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153521366-ba90b185-f83b-4750-a54c-9aad1e922270.png)
+Extremes (much higher than other updates) = none of the updates. Therefore, the graph for "Without extremes" is the same as the above graph for "With extremes".
 
 ****
 
@@ -142,7 +142,7 @@ Reference = JOHN, Model = DELP
 
 (5) [graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%205%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153522111-117dd662-0c61-4867-a77c-558f9de5b4ce.png)
+Extremes (much higher than other updates) = none of the updates. Therefore, the graph for "Without extremes" is the same as the above graph for "With extremes".
 
 ****
 
