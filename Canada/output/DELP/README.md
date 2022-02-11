@@ -1068,7 +1068,7 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 (1) [graph 207 C19 daily cases, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20107%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
