@@ -122,7 +122,7 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
 (1) [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://www.youtube.com/watch?v=Eu906PRRlM8).
 
 ****
 
