@@ -1,6 +1,6 @@
 # CovidLongitudinal
 
-Longitudinal assessment of COVID-19 epidemic models
+Longitudinal assessment of COVID-19 epidemic models using performance graphs and measures
 
 
 <br/><br/>
