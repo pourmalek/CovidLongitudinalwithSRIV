@@ -1,4 +1,4 @@
-### Error measures for DELP model
+### DELP model, Error measures for daily deaths
 
 
 
