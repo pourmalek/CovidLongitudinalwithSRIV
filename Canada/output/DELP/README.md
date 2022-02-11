@@ -50,40 +50,479 @@
 
 ****
 
-[graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates]()
+(1) [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates]()
 
 ****
 
-[graph 111 1 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, With extremes]()
+(2) [graph 111 1 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, With extremes]()
 
 ****
 
-[graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes]()
+(3) [graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes]()
 
 ****
 
-[graph 111 3 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, With extremes]()
+(4) [graph 111 3 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, With extremes]()
 
 ****
 
-[graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes]()
+(5) [graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes]()
 
 ****
 
-[graph 111 5 C19 daily deaths, Canada, Alberta, DELP, Error]()
+(6) [graph 111 5 C19 daily deaths, Canada, Alberta, DELP, Error]()
 
 ****
 
-[graph 111 6 C19 daily deaths, Canada, Alberta, DELP, Absolute Error]()
+(7) [graph 111 6 C19 daily deaths, Canada, Alberta, DELP, Absolute Error]()
 
 ****
 
-[graph 111 7 C19 daily deaths, Canada, Alberta, DELP, Percent Error]()
+(8) [graph 111 7 C19 daily deaths, Canada, Alberta, DELP, Percent Error]()
 
 ****
 
-[graph 111 8 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error]()
+(9) [graph 111 8 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error]()
 
 ****
 
+*
+
+
+
+
+
+
+
+
+
+****
+****
+
+### British Columbia
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, British Columbia, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, British Columbia, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, British Columbia, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, British Columbia, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Manitoba
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Manitoba, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Manitoba, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Manitoba, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Manitoba, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Manitoba, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Manitoba, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Manitoba, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### New Brunswick
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, New Brunswick, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, New Brunswick, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, New Brunswick, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, New Brunswick, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, New Brunswick, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, New Brunswick, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, New Brunswick, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, New Brunswick, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, New Brunswick, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Newfoundland and Labrador
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Nova Scotia
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Nova Scotia, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Nova Scotia, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Nova Scotia, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Ontario
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Ontario, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Ontario, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Ontario, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Ontario, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Ontario, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Ontario, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Ontario, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Ontario, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Ontario, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Quebec
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Quebec, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Quebec, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Quebec, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Quebec, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Quebec, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Quebec, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Quebec, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Quebec, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Quebec, DELP, Absolute Percent Error]()
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Saskatchewan
+
+****
+
+(1) [graph 101 C19 daily deaths, Canada, Saskatchewan, DELP, All updates]()
+
+****
+
+(2) [graph 111 1 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, Without Update circles, With extremes]()
+
+****
+
+(3) [graph 111 2 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, Without Update circles, Without extremes]()
+
+****
+
+(4) [graph 111 3 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, With Update circles, With extremes]()
+
+****
+
+(5) [graph 111 4 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, With Update circles, Without extremes]()
+
+****
+
+(6) [graph 111 5 C19 daily deaths, Canada, Saskatchewan, DELP, Error]()
+
+****
+
+(7) [graph 111 6 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Error]()
+
+****
+
+(8) [graph 111 7 C19 daily deaths, Canada, Saskatchewan, DELP, Percent Error]()
+
+****
+
+(9) [graph 111 8 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Percent Error]()
+
+****
+
+*
 
