@@ -57,8 +57,6 @@ Reference = JOHN, Model = DELP
 
 Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xV6P6ZYF0lk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ****
 
 (2) [C19 daily deaths, Canada, National, DELP, Updates together, Without Update circles, With extremes]()
