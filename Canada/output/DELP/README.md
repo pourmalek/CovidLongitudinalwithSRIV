@@ -1185,7 +1185,7 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 (1) [graph 209 C19 daily cases, Canada, Saskatchewan, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20109%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20update%2000000000.pdf)
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 
 ****
 
