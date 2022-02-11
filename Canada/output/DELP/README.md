@@ -145,15 +145,15 @@ Locations:
 
 ****
 
-(7) [graph 111 6 C19 daily deaths, Canada, Alberta, DELP, Absolute Error]()
+(7) [graph 111 6 C19 daily deaths, Canada, Alberta, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%206%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) [graph 111 7 C19 daily deaths, Canada, Alberta, DELP, Percent Error]()
+(8) [graph 111 7 C19 daily deaths, Canada, Alberta, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%207%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) [graph 111 8 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error]()
+(9) [graph 111 8 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%208%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
