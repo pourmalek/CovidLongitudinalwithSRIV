@@ -473,7 +473,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) [graph 101 C19 daily deaths, Canada, Ontario, DELP, All updates]()
+(1) [graph 101 C19 daily deaths, Canada, Ontario, DELP, All updates](https://youtu.be/mn_X4QO98Bc)
 
 Long PDF file, see video [here]().
 
