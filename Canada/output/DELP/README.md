@@ -307,7 +307,7 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 (1) [graph 101 C19 daily deaths, Canada, New Brunswick, DELP, All updates]()
 
-Long PDF file, see video [here]().
+Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
 ****
 
