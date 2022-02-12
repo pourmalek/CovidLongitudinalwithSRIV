@@ -513,17 +513,25 @@ Long PDF file, see video [here](https://youtu.be/k90mPGVgrtY).
 
 (6) Nova Scotia [graph 116 5 C19 daily deaths, Canada, Nova Scotia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%205%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725774-489bd1df-9992-497e-9b80-400b87db8456.png)
+
 ****
 
 (7) Nova Scotia [graph 116 6 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%206%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153725796-ae91100f-f61f-442c-909a-7eeacf6cf513.png)
 
 ****
 
 (8) Nova Scotia [graph 116 7 C19 daily deaths, Canada, Nova Scotia, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725820-eb28d245-ad91-4bc1-a347-528fe8da608f.png)
+
 ****
 
 (9) Nova Scotia [graph 116 8 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153725868-ce1dd320-9948-4ecf-8121-75e2b7ba745f.png)
 
 ****
 
