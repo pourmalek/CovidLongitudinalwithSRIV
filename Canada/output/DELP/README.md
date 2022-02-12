@@ -138,7 +138,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 ****
 
-(4) [graph 111 3 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%204%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(4) [graph 111 3 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%203%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153690949-e0d72361-44ba-4153-9fcc-59844e6c68eb.png)
 
