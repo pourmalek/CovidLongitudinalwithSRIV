@@ -447,13 +447,19 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 (7) Newfoundland and Labrador [graph 115 6 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%206%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725400-48bd12a8-d206-47dc-9c4f-88e48dbe8c64.png)
+
 ****
 
 (8) Newfoundland and Labrador [graph 115 7 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%207%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725431-ef81bdfa-1f26-4c89-b38b-29212d8e093b.png)
+
 ****
 
 (9) Newfoundland and Labrador [graph 115 8 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%208%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153725454-8f1dc396-d18b-46db-b635-f0b1e6b12a44.png)
 
 ****
 
