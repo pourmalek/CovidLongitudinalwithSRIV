@@ -134,7 +134,7 @@ Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 (3) Alberta [graph 111 2 C19 daily deaths, Canada, Alberta, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
 
-Extremes (much higher than other updates) = none of the updates. Therefore, the graph for "Without extremes" is the same as the above graph for "With extremes".
+![image](https://user-images.githubusercontent.com/30849720/153725499-1363f903-2ac7-4e69-b400-da3852c00051.png)
 
 ****
 
