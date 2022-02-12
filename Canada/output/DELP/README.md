@@ -433,35 +433,35 @@ Long PDF file, see video [here](https://youtu.be/k90mPGVgrtY).
 
 ****
 
-(2) [graph 116 1 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, With extremes]()
+(2) [graph 116 1 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%201%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
 
 ****
 
-(3) [graph 116 2 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, Without extremes]()
+(3) [graph 116 2 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%202%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
 
 ****
 
-(4) [graph 116 3 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, With extremes]()
+(4) [graph 116 3 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%203%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
 
 ****
 
-(5) [graph 116 4 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, Without extremes]()
+(5) [graph 116 4 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%204%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
 
 ****
 
-(6) [graph 116 5 C19 daily deaths, Canada, Nova Scotia, DELP, Error]()
+(6) [graph 116 5 C19 daily deaths, Canada, Nova Scotia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%205%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) [graph 116 6 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Error]()
+(7) [graph 116 6 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%206%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) [graph 116 7 C19 daily deaths, Canada, Nova Scotia, DELP, Percent Error]()
+(8) [graph 116 7 C19 daily deaths, Canada, Nova Scotia, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
-(9) [graph 116 8 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Percent Error]()
+(9) [graph 116 8 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
