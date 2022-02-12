@@ -363,6 +363,8 @@ Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
 (5) New Brunswick [graph 114 4 C19 daily deaths, Canada, New Brunswick, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%204%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153724593-7728cb72-b844-4694-ae63-1f7b6c1996eb.png)
+
 ****
 
 (6) New Brunswick [graph 114 5 C19 daily deaths, Canada, New Brunswick, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%205%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error.pdf)
