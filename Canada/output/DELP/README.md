@@ -630,11 +630,11 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 ****
 
-(8) [graph 119 7 C19 daily deaths, Canada, Saskatchewan, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%208%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+(8) [graph 119 7 C19 daily deaths, Canada, Saskatchewan, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%207%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) [graph 119 8 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Percent Error]()
+(9) [graph 119 8 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%208%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
