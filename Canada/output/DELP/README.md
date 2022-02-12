@@ -573,6 +573,8 @@ Long PDF file, see video [here](https://youtu.be/mn_X4QO98Bc).
 
 (4) Ontario [graph 117 3 C19 daily deaths, Canada, Ontario, DELP, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%203%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153726053-c3513859-41e5-4b34-8355-a4e271b28eeb.png)
+
 ****
 
 (5) Ontario [graph 117 4 C19 daily deaths, Canada, Ontario, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%204%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
