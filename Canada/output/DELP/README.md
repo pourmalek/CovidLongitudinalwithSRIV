@@ -16,7 +16,7 @@ Reference = JOHN, Model = DELP
 
 <br/><br/>
 
-**Locations and outcomes: **
+**Locations and outcomes:**
 
 Canada National [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national)
 
