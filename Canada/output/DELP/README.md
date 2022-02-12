@@ -144,7 +144,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 ****
 
-(5) [graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%205%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
+(5) [graph 111 4 C19 daily deaths, Canada, Alberta, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%204%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
 
 Extremes (much higher than other updates) = none of the updates. Therefore, the graph for "Without extremes" is the same as the above graph for "With extremes".
 
