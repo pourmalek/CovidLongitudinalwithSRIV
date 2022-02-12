@@ -215,11 +215,15 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
-(5) [graph 112 4 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With Update circles, Without extremes]()
+(5) [graph 112 4 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%204%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153720627-5f9fa9fe-e609-4b09-80c9-2da2aafa9f10.png)
 
 ****
 
-(6) [graph 112 5 C19 daily deaths, Canada, British Columbia, DELP, Error]()
+(6) [graph 112 5 C19 daily deaths, Canada, British Columbia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%205%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error.pdf)
+
+
 
 ****
 
