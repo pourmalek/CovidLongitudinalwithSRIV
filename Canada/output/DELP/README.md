@@ -441,6 +441,7 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 (6) Newfoundland and Labrador [graph 115 5 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%205%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725172-bf7020ad-88e2-494f-98e6-8131173edd6c.png)
 
 ****
 
