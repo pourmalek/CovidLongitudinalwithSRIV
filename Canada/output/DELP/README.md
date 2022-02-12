@@ -710,9 +710,13 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 (2) Saskatchewan [graph 119 1 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%201%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153727696-307a5f20-ee23-4be5-a933-39a1ecb88384.png)
+
 ****
 
 (3) Saskatchewan [graph 119 2 C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%202%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153727731-e5df5d64-20c9-4522-a133-828034a855f8.png)
 
 ****
 
@@ -726,17 +730,25 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 (6) Saskatchewan [graph 119 5 C19 daily deaths, Canada, Saskatchewan, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%205%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153727758-b89bfacc-6920-4087-a3f8-a2521e28448b.png)
+
 ****
 
 (7) Saskatchewan [graph 119 6 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%206%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153727779-7572c683-7f38-4f55-8545-fa65ce38e67d.png)
 
 ****
 
 (8) Saskatchewan [graph 119 7 C19 daily deaths, Canada, Saskatchewan, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%207%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153727792-690d8514-dd13-4cad-a100-ee4223ed9a86.png)
+
 ****
 
 (9) Saskatchewan [graph 119 8 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%208%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153727819-f85e42a8-8ddd-4fb0-a969-eafbcdddb756.png)
 
 ****
 
