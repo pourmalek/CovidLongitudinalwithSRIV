@@ -501,6 +501,8 @@ Long PDF file, see video [here](https://youtu.be/k90mPGVgrtY).
 
 (4) Nova Scotia [graph 116 3 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%203%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153725662-b5bf1410-b2ba-4ca5-bcb1-5b20a0944c4e.png)
+
 ****
 
 (5) Nova Scotia [graph 116 4 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%204%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
