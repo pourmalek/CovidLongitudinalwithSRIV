@@ -16,27 +16,27 @@ Reference = JOHN, Model = DELP
 
 <br/><br/>
 
-**Locations:**
+**Locations and outcomes: **
 
 Canada National [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national)
 
-[Alberta] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta)
+Alberta [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta)
 
-[British Columbia] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia)
+British Columbia [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia)
 
-[Manitoba] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba)
+Manitoba [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba)
 
-[New Brunswick] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick)
+New Brunswick [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick)
 
-[Newfoundland and Labrador] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador)
+Newfoundland and Labrador [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador)
 
-[Nova Scotia] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia)
+Nova Scotia [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia)
 
-[Ontario] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario)
+Ontario [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario)
 
-[Quebec] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec)
+Quebec [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec)
 
-[Saskatchewan] [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan)
+Saskatchewan [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan)
 
 <br/><br/>
 
