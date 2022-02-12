@@ -433,13 +433,11 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 
 (5) Newfoundland and Labrador [graph 115 4 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%204%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153724814-f6f15e96-a674-4702-9692-09121e32385f.png)
 
 ****
 
 (6) Newfoundland and Labrador [graph 115 5 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%205%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153724847-d011b4fa-e59a-4eb2-8940-590dae8d9f6b.png)
 
 ****
 
