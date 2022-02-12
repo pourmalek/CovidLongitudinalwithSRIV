@@ -297,17 +297,25 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 (6) Manitoba [graph 113 5 C19 daily deaths, Canada, Manitoba, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%205%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153724104-85332373-efb5-4446-aaf4-8be4965a5fd3.png)
+
 ****
 
 (7) Manitoba [graph 113 6 C19 daily deaths, Canada, Manitoba, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%206%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153724119-bc9bd39b-d2d0-4048-a478-8ce2a0d6eb38.png)
 
 ****
 
 (8) Manitoba [graph 113 7 C19 daily deaths, Canada, Manitoba, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%207%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153724129-95369ed2-08de-40ef-a155-c27c9531e408.png)
+
 ****
 
 (9) Manitoba [graph 113 8 C19 daily deaths, Canada, Manitoba, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%208%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153724148-90224745-85ea-4ba4-b09f-42e4973b3cf6.png)
 
 ****
 
