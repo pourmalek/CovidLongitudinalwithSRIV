@@ -880,21 +880,25 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 
 (6) Alberta [graph 211 5 C19 daily cases, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%205%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153735347-24147908-79c7-4d87-8159-4cfb5635527a.png)
 
 ****
 
 (7) Alberta [graph 211 6 C19 daily cases, Canada, Alberta, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%206%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153735358-048c5e6e-3b29-42a5-b45c-6cd788c0161e.png)
 
 ****
 
 (8) Alberta [graph 211 7 C19 daily cases, Canada, Alberta, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%207%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153735370-da497672-0b42-4426-9dfe-831465ed89c1.png)
 
 ****
 
 (9) Alberta [graph 211 8 C19 daily cases, Canada, Alberta, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%208%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153735378-f634a5c3-8881-44c0-859c-2926d7fa0073.png)
 
 ****
 
