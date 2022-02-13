@@ -1319,13 +1319,13 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(1) Quebec [graph 208 C19 daily cases, Canada, Quebec, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20108%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Quebec [graph 208 C19 daily cases, Canada, Quebec, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20208%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
-(2) Quebec [graph 218 1 C19 daily cases, Canada, Quebec, DELP, Updates together, Without Update circles, With extremes]()
+(2) Quebec [graph 218 1 C19 daily cases, Canada, Quebec, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%201%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
@@ -1341,19 +1341,19 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
-(6) Quebec [graph 218 5 C19 daily cases, Canada, Quebec, DELP, Error]()
+(6) Quebec [graph 218 5 C19 daily cases, Canada, Quebec, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%205%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) Quebec [graph 218 6 C19 daily cases, Canada, Quebec, DELP, Absolute Error]()
+(7) Quebec [graph 218 6 C19 daily cases, Canada, Quebec, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%206%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) Quebec [graph 218 7 C19 daily cases, Canada, Quebec, DELP, Percent Error]()
+(8) Quebec [graph 218 7 C19 daily cases, Canada, Quebec, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%207%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) Quebec [graph 218 8 C19 daily cases, Canada, Quebec, DELP, Absolute Percent Error]()
+(9) Quebec [graph 218 8 C19 daily cases, Canada, Quebec, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%207%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
