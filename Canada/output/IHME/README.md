@@ -49,7 +49,7 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tre
 ****
 ****
 
-### Canada National
+### Canada National, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -112,7 +112,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Alberta
+### Alberta, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -176,7 +176,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 ****
 
-### British Columbia
+### British Columbia, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -242,7 +242,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Manitoba
+### Manitoba, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -306,7 +306,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### New Brunswick
+### New Brunswick, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -370,7 +370,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Newfoundland and Labrador
+### Newfoundland and Labrador, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -434,7 +434,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Nova Scotia
+### Nova Scotia, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -498,7 +498,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Ontario
+### Ontario, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -564,7 +564,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Quebec
+### Quebec, Daily Deaths, Error Measures, IHME Model
 
 ****
 
@@ -631,7 +631,7 @@ Long PDF file, see video [here]().
 ****
 ****
 
-### Saskatchewan
+### Saskatchewan, Daily Deaths, Error Measures, IHME Model
 
 ****
 
