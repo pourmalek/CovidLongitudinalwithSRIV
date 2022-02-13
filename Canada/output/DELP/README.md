@@ -943,19 +943,19 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 ****
 
-(6) British Columbia [graph 212 5 C19 daily cases, Canada, British Columbia, DELP, Error]()
+(6) British Columbia [graph 212 5 C19 daily cases, Canada, British Columbia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20212%205%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) British Columbia [graph 212 6 C19 daily cases, Canada, British Columbia, DELP, Absolute Error]()
+(7) British Columbia [graph 212 6 C19 daily cases, Canada, British Columbia, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20212%206%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) British Columbia [graph 212 7 C19 daily cases, Canada, British Columbia, DELP, Percent Error]()
+(8) British Columbia [graph 212 7 C19 daily cases, Canada, British Columbia, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20212%207%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) British Columbia [graph 212 8 C19 daily cases, Canada, British Columbia, DELP, Absolute Percent Error]()
+(9) British Columbia [graph 212 8 C19 daily cases, Canada, British Columbia, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20212%208%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
