@@ -1119,13 +1119,13 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 ****
 
-(1) Newfoundland and Labrador [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20105%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Newfoundland and Labrador [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20205%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
-(2) Newfoundland and Labrador [graph 215 1 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, With extremes]()
+(2) Newfoundland and Labrador [graph 215 1 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%201%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
@@ -1141,19 +1141,19 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
-(6) Newfoundland and Labrador [graph 215 5 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Error]()
+(6) Newfoundland and Labrador [graph 215 5 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%205%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) Newfoundland and Labrador [graph 215 6 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Error]()
+(7) Newfoundland and Labrador [graph 215 6 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%206%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) Newfoundland and Labrador [graph 215 7 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Percent Error]()
+(8) Newfoundland and Labrador [graph 215 7 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%207%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) Newfoundland and Labrador [graph 215 8 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error]()
+(9) Newfoundland and Labrador [graph 215 8 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%208%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
