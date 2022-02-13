@@ -1251,13 +1251,13 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
-(1) Ontario [graph 207 C19 daily cases, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20107%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Ontario [graph 207 C19 daily cases, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20207%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(2) Ontario [graph 217 1 C19 daily cases, Canada, Ontario, DELP, Updates together, Without Update circles, With extremes]()
+(2) Ontario [graph 217 1 C19 daily cases, Canada, Ontario, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%201%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
@@ -1273,19 +1273,19 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(6) Ontario [graph 217 5 C19 daily cases, Canada, Ontario, DELP, Error]()
+(6) Ontario [graph 217 5 C19 daily cases, Canada, Ontario, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%205%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) Ontario [graph 217 6 C19 daily cases, Canada, Ontario, DELP, Absolute Error]()
+(7) Ontario [graph 217 6 C19 daily cases, Canada, Ontario, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%206%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) Ontario [graph 217 7 C19 daily cases, Canada, Ontario, DELP, Percent Error]()
+(8) Ontario [graph 217 7 C19 daily cases, Canada, Ontario, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%207%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) Ontario [graph 217 8 C19 daily cases, Canada, Ontario, DELP, Absolute Percent Error]()
+(9) Ontario [graph 217 8 C19 daily cases, Canada, Ontario, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%201%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
