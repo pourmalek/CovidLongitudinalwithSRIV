@@ -1127,6 +1127,8 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 (2) Newfoundland and Labrador [graph 215 1 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%201%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736647-4e764e31-7641-4962-9635-7ff30277db93.png)
+
 ****
 
 (3) Newfoundland and Labrador [graph 215 2 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, Without Update circles, Without extremes]()
@@ -1143,17 +1145,25 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 (6) Newfoundland and Labrador [graph 215 5 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%205%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736680-73617cbe-761e-4540-b848-729aea167d33.png)
+
 ****
 
 (7) Newfoundland and Labrador [graph 215 6 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%206%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736701-4ced301f-0520-4b0d-8eec-524ebcf53650.png)
 
 ****
 
 (8) Newfoundland and Labrador [graph 215 7 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%207%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736717-f2a4b1e6-fbcd-4074-8d9c-1f4fcfe9e647.png)
+
 ****
 
 (9) Newfoundland and Labrador [graph 215 8 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%208%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736733-6f1054e6-140c-4afa-8b9c-f4057f6bf9b4.png)
 
 ****
 
