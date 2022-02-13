@@ -116,30 +116,29 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 101 C19 daily deaths, Canada, Alberta, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Alberta%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20update%2000000000.pdf)
+(1) Alberta [graph 1 C19 daily deaths, Canada, Alberta, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Alberta%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 111 1 C19 daily deaths, Canada, Alberta, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%201%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
 
-(3) Alberta [graph 111 2 C19 daily deaths, Canada, Alberta, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Alberta [graph 111 2 C19 daily deaths, Canada, Alberta, IHME, Updates together, Without Update circles, Without extremes]()
 
 
 ****
 
-(4) Alberta [graph 111 3 C19 daily deaths, Canada, Alberta, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%203%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) Alberta [graph 111 3 C19 daily deaths, Canada, Alberta, IHME, Updates together, With Update circles, With extremes]()
 
 
 ****
 
-(5) Alberta [graph 111 4 C19 daily deaths, Canada, Alberta, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%204%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(5) Alberta [graph 111 4 C19 daily deaths, Canada, Alberta, IHME, Updates together, With Update circles, Without extremes]()
 
-Extremes (much higher than other updates) = none of the updates. Therefore, the graph for "Without extremes" is the same as the above graph for "With extremes".
 
 ****
 
@@ -186,7 +185,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) British Columbia [graph 111 1 C19 daily deaths, Canada, British Columbia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%201%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) British Columbia [graph 111 1 C19 daily deaths, Canada, British Columbia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20British%20Columbia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -252,7 +251,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Manitoba [graph 113 1 C19 daily deaths, Canada, Manitoba, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%201%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Manitoba [graph 113 1 C19 daily deaths, Canada, Manitoba, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -317,7 +316,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Nova Scotia [graph 116 1 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%201%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Nova Scotia [graph 116 1 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Nova%20Scotia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -381,7 +380,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Ontario [graph 117 1 C19 daily deaths, Canada, Ontario, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%201%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Ontario [graph 117 1 C19 daily deaths, Canada, Ontario, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Ontario%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -447,7 +446,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Quebec [graph 118 1 C19 daily deaths, Canada, Quebec, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%201%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Quebec [graph 118 1 C19 daily deaths, Canada, Quebec, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -514,7 +513,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Saskatchewan [graph 119 1 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%201%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) Saskatchewan [graph 119 1 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Saskatchewan%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
