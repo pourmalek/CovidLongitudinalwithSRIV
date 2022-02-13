@@ -1327,6 +1327,8 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 (2) Quebec [graph 218 1 C19 daily cases, Canada, Quebec, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%201%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737404-8bb9e670-2620-4054-a586-5cc3cafc0e9b.png)
+
 ****
 
 (3) Quebec [graph 218 2 C19 daily cases, Canada, Quebec, DELP, Updates together, Without Update circles, Without extremes]()
@@ -1343,17 +1345,25 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 (6) Quebec [graph 218 5 C19 daily cases, Canada, Quebec, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%205%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737685-470a8c67-92e6-4f64-911c-9a97fba3aefe.png)
+
 ****
 
 (7) Quebec [graph 218 6 C19 daily cases, Canada, Quebec, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%206%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153737697-f56392cc-3986-4edc-b6bb-b02bfaa30689.png)
 
 ****
 
 (8) Quebec [graph 218 7 C19 daily cases, Canada, Quebec, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%207%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737707-bc3e9baa-aa3a-4e6c-99d7-8d0fc7d6041b.png)
+
 ****
 
 (9) Quebec [graph 218 8 C19 daily cases, Canada, Quebec, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%207%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Percent%20Error.pdf)
+
+
 
 ****
 
