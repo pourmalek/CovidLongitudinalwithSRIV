@@ -1053,17 +1053,17 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(1) New Brunswick [graph 204 C19 daily cases, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
+(1) New Brunswick [graph 204 C19 daily cases, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20204%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 ****
 
-(2) New Brunswick [graph 214 1 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, With extremes]()
+(2) New Brunswick [graph 214 1 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%201%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
-(3) New Brunswick [graph 214 2 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, Without extremes]()
+(3) New Brunswick [graph 214 2 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%202%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
 ****
 
@@ -1075,19 +1075,19 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 ****
 
-(6) New Brunswick [graph 214 5 C19 daily cases, Canada, New Brunswick, DELP, Error]()
+(6) New Brunswick [graph 214 5 C19 daily cases, Canada, New Brunswick, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%205%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) New Brunswick [graph 214 6 C19 daily cases, Canada, New Brunswick, DELP, Absolute Error]()
+(7) New Brunswick [graph 214 6 C19 daily cases, Canada, New Brunswick, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%206%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) New Brunswick [graph 214 7 C19 daily cases, Canada, New Brunswick, DELP, Percent Error]()
+(8) New Brunswick [graph 214 7 C19 daily cases, Canada, New Brunswick, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%207%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) New Brunswick [graph 214 8 C19 daily cases, Canada, New Brunswick, DELP, Absolute Percent Error]()
+(9) New Brunswick [graph 214 8 C19 daily cases, Canada, New Brunswick, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%208%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
