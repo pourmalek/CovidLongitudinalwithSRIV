@@ -20,23 +20,23 @@ Reference = JOHN, Model = DELP
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national-1)
 
-Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta) | [Daily cases]()
+Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta-1)
 
-British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia) | [Daily cases]()
+British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia-1)
 
-Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba) | [Daily cases]()
+Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba-1)
 
-New Brunswick | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick) | [Daily cases]()
+New Brunswick | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick-1)
 
-Newfoundland and Labrador | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador) | [Daily cases]()
+Newfoundland and Labrador | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador-1)
 
-Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia) | [Daily cases]()
+Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia-1)
 
-Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario) | [Daily cases]()
+Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario-1)
 
-Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec) | [Daily cases]()
+Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec-1)
 
-Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan) | [Daily cases]()
+Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan-1)
 
 <br/><br/>
 
@@ -49,7 +49,7 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tre
 ****
 ****
 
-### Canada National
+### Canada National, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -116,7 +116,7 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 ****
 ****
 
-### Alberta
+### Alberta, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -187,7 +187,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 ****
 
-### British Columbia
+### British Columbia, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -261,7 +261,7 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 ****
 ****
 
-### Manitoba
+### Manitoba, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -333,7 +333,7 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 ****
 ****
 
-### New Brunswick
+### New Brunswick, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -405,7 +405,7 @@ Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 ****
 ****
 
-### Newfoundland and Labrador
+### Newfoundland and Labrador, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -477,7 +477,7 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 ****
 ****
 
-### Nova Scotia
+### Nova Scotia, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -549,7 +549,7 @@ Long PDF file, see video [here](https://youtu.be/k90mPGVgrtY).
 ****
 ****
 
-### Ontario
+### Ontario, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -623,7 +623,7 @@ Long PDF file, see video [here](https://youtu.be/mn_X4QO98Bc).
 ****
 ****
 
-### Quebec
+### Quebec, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -698,7 +698,7 @@ Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 ****
 ****
 
-### Saskatchewan
+### Saskatchewan, Daily Deaths, Error Measures, DLEP Model
 
 ****
 
@@ -776,7 +776,7 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 ****
 ****
 
-### Canada National
+### Canada National, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -845,7 +845,7 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 ****
 ****
 
-### Alberta
+### Alberta, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -915,7 +915,7 @@ Extremes (much higher than other updates) = none of the updates. Therefore, the 
 ****
 ****
 
-### British Columbia
+### British Columbia, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -983,7 +983,7 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 ****
 ****
 
-### Manitoba
+### Manitoba, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1049,7 +1049,7 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 ****
 ****
 
-### New Brunswick
+### New Brunswick, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1115,7 +1115,7 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 ****
 ****
 
-### Newfoundland and Labrador
+### Newfoundland and Labrador, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1181,7 +1181,7 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 ****
 ****
 
-### Nova Scotia
+### Nova Scotia, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1247,7 +1247,7 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 ****
 ****
 
-### Ontario
+### Ontario, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1315,7 +1315,7 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 ****
 ****
 
-### Quebec
+### Quebec, Daily Cases, Error Measures, DLEP Model
 
 ****
 
@@ -1384,7 +1384,7 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 ****
 ****
 
-### Saskatchewan
+### Saskatchewan, Daily Cases, Error Measures, DLEP Model
 
 ****
 
