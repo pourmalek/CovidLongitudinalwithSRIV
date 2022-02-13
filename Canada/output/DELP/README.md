@@ -1361,9 +1361,9 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
-(9) Quebec [graph 218 8 C19 daily cases, Canada, Quebec, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%207%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Percent%20Error.pdf)
+(9) Quebec [graph 218 8 C19 daily cases, Canada, Quebec, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%208%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
-
+![image](https://user-images.githubusercontent.com/30849720/153737763-bd0a8241-9467-403d-9f3a-c44d3aef9649.png)
 
 ****
 
