@@ -1259,6 +1259,8 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 (2) Ontario [graph 217 1 C19 daily cases, Canada, Ontario, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%201%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737057-d67f1c9c-7bef-40e7-b58e-035b159278cb.png)
+
 ****
 
 (3) Ontario [graph 217 2 C19 daily cases, Canada, Ontario, DELP, Updates together, Without Update circles, Without extremes]()
@@ -1275,9 +1277,13 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 (6) Ontario [graph 217 5 C19 daily cases, Canada, Ontario, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%205%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737097-192e17fd-3943-463f-a3d4-4f9e98fdc332.png)
+
 ****
 
 (7) Ontario [graph 217 6 C19 daily cases, Canada, Ontario, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%206%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153737119-9a5fd2e0-f149-4adb-a58f-e796b609fa91.png)
 
 ****
 
