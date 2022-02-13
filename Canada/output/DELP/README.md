@@ -1396,6 +1396,8 @@ Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 
 (2) Saskatchewan [graph 219 1 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%201%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737870-850e18dc-271f-46b9-a3e9-3a7101462a0e.png)
+
 ****
 
 (3) Saskatchewan [graph 219 2 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, Without Update circles, Without extremes]()
@@ -1412,17 +1414,25 @@ Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 
 (6) Saskatchewan [graph 219 5 C19 daily cases, Canada, Saskatchewan, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%205%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737889-11b9fc9c-2399-432c-b745-c7721ed3d597.png)
+
 ****
 
 (7) Saskatchewan [graph 219 6 C19 daily cases, Canada, Saskatchewan, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%206%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153737905-c8a69eb0-de9d-448a-9f09-f6955d807653.png)
 
 ****
 
 (8) Saskatchewan [graph 219 7 C19 daily cases, Canada, Saskatchewan, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%207%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153737918-6fcb98cc-0468-45f4-913f-e3a4860445bb.png)
+
 ****
 
 (9) Saskatchewan [graph 219 8 C19 daily cases, Canada, Saskatchewan, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%208%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153737931-71537211-c0b5-48b1-a5b7-65eb6a684248.png)
 
 ****
 
