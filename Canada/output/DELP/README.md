@@ -1003,6 +1003,8 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 (4) Manitoba [graph 213 3 C19 daily cases, Canada, Manitoba, DELP, Updates together, With Update circles, With extremes]()
 
+![image](https://user-images.githubusercontent.com/30849720/153736050-a659bec1-11df-4c60-a897-8e6c039afd29.png)
+
 ****
 
 (5) Manitoba [graph 213 4 C19 daily cases, Canada, Manitoba, DELP, Updates together, With Update circles, Without extremes]()
@@ -1011,17 +1013,25 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 (6) Manitoba [graph 213 5 C19 daily cases, Canada, Manitoba, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%205%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736067-b3aebd95-3571-4149-a1cb-4fce590b7bb1.png)
+
 ****
 
 (7) Manitoba [graph 213 6 C19 daily cases, Canada, Manitoba, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%206%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736087-3f0713bf-f9df-4778-a006-53b633d7d019.png)
 
 ****
 
 (8) Manitoba [graph 213 7 C19 daily cases, Canada, Manitoba, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%207%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736110-c753d13d-63b9-46f0-b5d3-4224506d3208.png)
+
 ****
 
 (9) Manitoba [graph 213 8 C19 daily cases, Canada, Manitoba, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%208%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736131-7c5e3386-78a3-412b-9aa3-93d6464b0400.png)
 
 ****
 
