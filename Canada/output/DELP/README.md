@@ -20,23 +20,23 @@ Reference = JOHN, Model = DELP
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national-1)
 
-Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta) | [Daily cases]()
+Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta-1)
 
-British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia) | [Daily cases]()
+British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#british-columbia-1)
 
-Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba) | [Daily cases]()
+Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#manitoba-1)
 
-New Brunswick | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick) | [Daily cases]()
+New Brunswick | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#new-brunswick-1)
 
-Newfoundland and Labrador | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador) | [Daily cases]()
+Newfoundland and Labrador | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#newfoundland-and-labrador-1)
 
-Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia) | [Daily cases]()
+Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#nova-scotia-1)
 
-Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario) | [Daily cases]()
+Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#ontario-1)
 
-Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec) | [Daily cases]()
+Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#quebec-1)
 
-Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan) | [Daily cases]()
+Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#saskatchewan-1)
 
 <br/><br/>
 
