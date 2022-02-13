@@ -1193,6 +1193,8 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 (2) Nova Scotia [graph 216 1 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%201%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736849-f08d8f12-2f00-402d-a9ff-9122277a9acd.png)
+
 ****
 
 (3) Nova Scotia [graph 216 2 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, Without Update circles, Without extremes]()
@@ -1209,17 +1211,25 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 (6) Nova Scotia [graph 216 5 C19 daily cases, Canada, Nova Scotia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%205%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736868-4e855cc7-40b0-417f-8e5c-c291ba3611cc.png)
+
 ****
 
 (7) Nova Scotia [graph 216 6 C19 daily cases, Canada, Nova Scotia, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%206%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736891-ff75ab40-054f-4514-90c3-bfda116ab1f2.png)
 
 ****
 
 (8) Nova Scotia [graph 216 7 C19 daily cases, Canada, Nova Scotia, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%207%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736914-b4c62a38-180b-4e5f-9fde-2a85ee076b8b.png)
+
 ****
 
 (9) Nova Scotia [graph 216 8 C19 daily cases, Canada, Nova Scotia, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%208%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736931-12a209c0-28db-4340-8a01-b5400b143818.png)
 
 ****
 
