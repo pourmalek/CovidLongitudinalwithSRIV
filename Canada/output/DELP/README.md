@@ -987,13 +987,13 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 ****
 
-(1) Manitoba [graph 203 C19 daily cases, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Manitoba [graph 203 C19 daily cases, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20203%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
 
 Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles, With extremes]()
+(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%202%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ****
 
@@ -1009,19 +1009,19 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(6) Manitoba [graph 213 5 C19 daily cases, Canada, Manitoba, DELP, Error]()
+(6) Manitoba [graph 213 5 C19 daily cases, Canada, Manitoba, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%205%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error.pdf)
 
 ****
 
-(7) Manitoba [graph 213 6 C19 daily cases, Canada, Manitoba, DELP, Absolute Error]()
+(7) Manitoba [graph 213 6 C19 daily cases, Canada, Manitoba, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%206%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Error.pdf)
 
 ****
 
-(8) Manitoba [graph 213 7 C19 daily cases, Canada, Manitoba, DELP, Percent Error]()
+(8) Manitoba [graph 213 7 C19 daily cases, Canada, Manitoba, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%207%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Percent%20Error.pdf)
 
 ****
 
-(9) Manitoba [graph 213 8 C19 daily cases, Canada, Manitoba, DELP, Absolute Percent Error]()
+(9) Manitoba [graph 213 8 C19 daily cases, Canada, Manitoba, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%208%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ****
 
