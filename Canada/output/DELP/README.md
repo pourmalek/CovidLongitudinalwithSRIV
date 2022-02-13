@@ -1061,6 +1061,8 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 (2) New Brunswick [graph 214 1 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%201%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736338-42da8392-8a09-4aa7-b122-0d807dec4b4d.png)
+
 ****
 
 (3) New Brunswick [graph 214 2 C19 daily cases, Canada, New Brunswick, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%202%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
@@ -1077,17 +1079,25 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 (6) New Brunswick [graph 214 5 C19 daily cases, Canada, New Brunswick, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%205%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736353-04a6aa67-c580-4b2f-bf58-ec1028223dfe.png)
+
 ****
 
 (7) New Brunswick [graph 214 6 C19 daily cases, Canada, New Brunswick, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%206%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736371-bd2bea1d-4ec7-4ee0-b95b-0c14f7255c01.png)
 
 ****
 
 (8) New Brunswick [graph 214 7 C19 daily cases, Canada, New Brunswick, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%207%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153736390-04793e47-7fb3-48e2-a43a-bfac91ff19ed.png)
+
 ****
 
 (9) New Brunswick [graph 214 8 C19 daily cases, Canada, New Brunswick, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%208%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153736410-40d0a8c9-8519-4f2e-9a4a-7c1278531b86.png)
 
 ****
 
