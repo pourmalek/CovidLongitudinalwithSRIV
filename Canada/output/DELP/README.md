@@ -788,6 +788,8 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 (2) Canada National [graph 210 1 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%201%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153734498-977352ed-75a0-494d-a13a-075c5d5625c2.png)
+
 ****
 
 (3) Canada National [graph 210 2 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
@@ -804,21 +806,25 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 (6) Canada National [graph 210 5 C19 daily cases, Canada, National, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%205%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153734525-64994fd9-0b61-4a32-a44b-9e0cc58b3b66.png)
 
 **** 
 
 (7) Canada National [graph 210 6 C19 daily cases, Canada, National, DELP, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%206%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153734539-12177e9b-931a-4ff0-98a5-2ba8fdcb1fd2.png)
 
 ****
 
 (8) Canada National [graph 210 7 C19 daily cases, Canada, National, DELP, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%207%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153734562-0a453b31-f3b2-47bf-bfc8-26d9691c9e13.png)
 
 ****
 
 (9) Canada National [graph 210 8 C19 daily cases, Canada, National, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%208%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153734574-1521ef8c-bafb-45ae-bfc6-61a24d6e44cd.png)
 
 ****
 
