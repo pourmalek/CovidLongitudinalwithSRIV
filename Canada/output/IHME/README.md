@@ -61,6 +61,8 @@ Long PDF file, see video [here]().
 
 (2) Canada National [graph 2 C19 daily deaths, Canada, National, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20National%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153739825-772d6009-79fd-48a7-80be-55628a814cf5.png)
+
 ****
 
 (3) Canada National [graph 3 C19 daily deaths, Canada, National, IHME, Updates together, Without Update circles, Without extremes]()
@@ -124,6 +126,7 @@ Long PDF file, see video [here]().
 
 (2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153739842-b31a900d-b8a1-43e5-9763-d37d85a2029b.png)
 
 ****
 
@@ -186,6 +189,7 @@ Long PDF file, see video [here]().
 
 (2) British Columbia [graph 2 C19 daily deaths, Canada, British Columbia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20British%20Columbia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153739917-ec730597-78f8-4bb6-9ccd-8754e062304b.png)
 
 ****
 
@@ -250,6 +254,7 @@ Long PDF file, see video [here]().
 
 (2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153739948-6d327562-83ee-4162-b1ec-4b8cb0938326.png)
 
 ****
 
@@ -321,6 +326,7 @@ Long PDF file, see video [here]().
 
 (2) Nova Scotia [graph 2 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Nova%20Scotia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153739985-c870d86b-43fb-4c2d-83dc-c3a5a8338dba.png)
 
 ****
 
@@ -384,6 +390,7 @@ Long PDF file, see video [here]().
 
 (2) Ontario [graph 2 C19 daily deaths, Canada, Ontario, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Ontario%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153740022-97b5fa39-e14b-4d81-af01-b88c7eb64861.png)
 
 ****
 
@@ -448,6 +455,7 @@ Long PDF file, see video [here]().
 
 (2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153740042-d67b2e39-e844-4544-8dc2-ed8a38acb518.png)
 
 ****
 
@@ -515,6 +523,7 @@ Long PDF file, see video [here]().
 
 (2) Saskatchewan [graph 2 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Saskatchewan%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153740060-40bae9ac-a2dc-4d4f-be4f-568442107ffc.png)
 
 ****
 
