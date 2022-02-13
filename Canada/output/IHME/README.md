@@ -75,22 +75,22 @@ Long PDF file, see video [here]().
 
 ****
 
-(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20110%205%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IHME%2C%20Error.pdf)
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Error]
 
 
 **** 
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20110%206%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IHME%2C%20absolute%20Error.pdf)
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, Absolute Error]
 
 
 ****
 
-(8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20110%207%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IHME%2C%20percent%20Error.pdf)
+(8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, Percent Error]
 
 
 ****
 
-(9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20110%208%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IHME%2C%20absolute%20percent%20Error.pdf)
+(9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, Absolute Percent Error]
 
 
 ****
@@ -142,23 +142,22 @@ Long PDF file, see video [here]().
 
 ****
 
-(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%205%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Error.pdf)
+(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Error]
 
 
 ****
 
-(7) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%206%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Absolute%20Error.pdf)
+(7) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, Absolute Error]
 
 
 ****
 
-(8) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%207%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Percent%20Error.pdf)
+(8) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, Percent Error]
 
 
 ****
 
-(9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%208%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
-
+(9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error]
 
 ****
 
@@ -190,37 +189,35 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) British Columbia [graph 3 C19 daily deaths, Canada, British Columbia, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20111%202%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) British Columbia [graph 3 C19 daily deaths, Canada, British Columbia, IHME, Updates together, Without Update circles, Without extremes]
 
 
 ****
 
-(4) British Columbia [graph 4 C19 daily deaths, Canada, British Columbia, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%203%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) British Columbia [graph 4 C19 daily deaths, Canada, British Columbia, IHME, Updates together, With Update circles, With extremes]
 
 
 ****
 
-(5) British Columbia [graph 5 C19 daily deaths, Canada, British Columbia, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%204%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(5) British Columbia [graph 5 C19 daily deaths, Canada, British Columbia, IHME, Updates together, With Update circles, Without extremes]
+
+****
+
+(6) British Columbia [graph 6 C19 daily deaths, Canada, British Columbia, IHME, Error]
 
 
 ****
 
-(6) British Columbia [graph 6 C19 daily deaths, Canada, British Columbia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%205%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Error.pdf)
+(7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, Absolute Error]
 
 
 ****
 
-(7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%206%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Absolute%20Error.pdf)
-
-
-****
-
-(8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%207%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Percent%20Error.pdf)
-
+(8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, Percent Error]
 
 ****
 
-(9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20112%208%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error]
 
 
 ****
@@ -256,37 +253,43 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Manitoba [graph 3 C19 daily deaths, Canada, Manitoba, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%202%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Manitoba [graph 3 C19 daily deaths, Canada, Manitoba, IHME, Updates together, Without Update circles, Without extremes]
 
-
-****
-
-(4) Manitoba [graph 4 C19 daily deaths, Canada, Manitoba, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%203%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
 
 
 ****
 
-(5) Manitoba [graph 5 C19 daily deaths, Canada, Manitoba, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%204%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(4) Manitoba [graph 4 C19 daily deaths, Canada, Manitoba, IHME, Updates together, With Update circles, With extremes]
 
-
-****
-
-(6) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%205%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Error.pdf)
 
 
 ****
 
-(7) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%206%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Absolute%20Error.pdf)
+(5) Manitoba [graph 5 C19 daily deaths, Canada, Manitoba, IHME, Updates together, With Update circles, Without extremes]
 
 
 ****
 
-(8) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%207%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Percent%20Error.pdf)
+(6) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error]
+
 
 
 ****
 
-(9) Manitoba [graph 9 C19 daily deaths, Canada, Manitoba, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20113%208%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(7) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error]
+
+
+
+****
+
+(8) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, Percent Error]
+
+
+
+****
+
+(9) Manitoba [graph 9 C19 daily deaths, Canada, Manitoba, IHME, Absolute Percent Error]
+
 
 
 ****
@@ -321,37 +324,36 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Nova Scotia [graph 3 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%202%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Nova Scotia [graph 3 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, Without Update circles, Without extremes]
 
 
 ****
 
-(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%203%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, With Update circles, With extremes]
+
+****
+
+(5) Nova Scotia [graph 5 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, With Update circles, Without extremes]
 
 
 ****
 
-(5) Nova Scotia [graph 5 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%204%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(6) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Error]
 
 
 ****
 
-(6) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%205%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Error.pdf)
+(7) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error]
 
 
 ****
 
-(7) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%206%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Absolute%20Error.pdf)
+(8) Nova Scotia [graph 8 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error]
 
 
 ****
 
-(8) Nova Scotia [graph 8 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
-
-
-****
-
-(9) Nova Scotia [graph 9 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20116%208%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(9) Nova Scotia [graph 9 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error]
 
 
 ****
@@ -385,37 +387,35 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Ontario [graph 3 C19 daily deaths, Canada, Ontario, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%202%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Ontario [graph 3 C19 daily deaths, Canada, Ontario, IHME, Updates together, Without Update circles, Without extremes]
 
 
 ****
 
-(4) Ontario [graph 4 C19 daily deaths, Canada, Ontario, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%203%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) Ontario [graph 4 C19 daily deaths, Canada, Ontario, IHME, Updates together, With Update circles, With extremes]
 
 
 ****
 
-(5) Ontario [graph 5 C19 daily deaths, Canada, Ontario, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%204%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(5) Ontario [graph 5 C19 daily deaths, Canada, Ontario, IHME, Updates together, With Update circles, Without extremes]
+
+****
+
+(6) Ontario [graph 117 5 C19 daily deaths, Canada, Ontario, IHME, Error]
+
+****
+
+(7) Ontario [graph 117 6 C19 daily deaths, Canada, Ontario, IHME, Absolute Error]
 
 
 ****
 
-(6) Ontario [graph 117 5 C19 daily deaths, Canada, Ontario, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%205%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Error.pdf)
+(8) Ontario [graph 117 7 C19 daily deaths, Canada, Ontario, IHME, Percent Error]
 
 
 ****
 
-(7) Ontario [graph 117 6 C19 daily deaths, Canada, Ontario, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%206%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Absolute%20Error.pdf)
-
-
-****
-
-(8) Ontario [graph 117 7 C19 daily deaths, Canada, Ontario, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%207%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Percent%20Error.pdf)
-
-
-****
-
-(9) Ontario [graph 117 8 C19 daily deaths, Canada, Ontario, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20117%208%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(9) Ontario [graph 117 8 C19 daily deaths, Canada, Ontario, IHME, Absolute Percent Error]
 
 
 ****
@@ -451,37 +451,37 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Quebec [graph 3 C19 daily deaths, Canada, Quebec, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%202%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Quebec [graph 3 C19 daily deaths, Canada, Quebec, IHME, Updates together, Without Update circles, Without extremes]
 
 
 ****
 
-(4) Quebec [graph 4 C19 daily deaths, Canada, Quebec, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%203%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) Quebec [graph 4 C19 daily deaths, Canada, Quebec, IHME, Updates together, With Update circles, With extremes]
 
 
 ****
 
-(5) Quebec [graph 5 C19 daily deaths, Canada, Quebec, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%204%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(5) Quebec [graph 5 C19 daily deaths, Canada, Quebec, IHME, Updates together, With Update circles, Without extremes]
 
 
 ****
 
-(6) Quebec [graph 6 C19 daily deaths, Canada, Quebec, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%205%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Error.pdf)
+(6) Quebec [graph 6 C19 daily deaths, Canada, Quebec, IHME, Error]
 
 
 ****
 
-(7) Quebec [graph 7 C19 daily deaths, Canada, Quebec, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%206%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Absolute%20Error.pdf)
+(7) Quebec [graph 7 C19 daily deaths, Canada, Quebec, IHME, Absolute Error]
 
 
 ****
 
-(8) Quebec [graph 8 C19 daily deaths, Canada, Quebec, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%207%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Percent%20Error.pdf)
+(8) Quebec [graph 8 C19 daily deaths, Canada, Quebec, IHME, Percent Error]
 
 
 ****
 
-(9) Quebec [graph 9 C19 daily deaths, Canada, Quebec, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20118%208%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(9) Quebec [graph 9 C19 daily deaths, Canada, Quebec, IHME, Absolute Percent Error](
 
 
 ****
@@ -518,35 +518,34 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Saskatchewan [graph 3 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%202%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Updates%20together%20Without%20Update%20circles%20Without%20extremes.pdf)
+(3) Saskatchewan [graph 3 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, Without Update circles, Without extremes]
 
 
 ****
 
-(4) Saskatchewan [graph 4 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%203%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20With%20extremes.pdf)
+(4) Saskatchewan [graph 4 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, With Update circles, With extremes]
 
 ****
 
-(5) Saskatchewan [graph 5 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%204%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Updates%20together%20With%20Update%20circles%20Without%20extremes.pdf)
+(5) Saskatchewan [graph 5 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together, With Update circles, Without extremes]
 
 ****
 
-(6) Saskatchewan [graph 6 C19 daily deaths, Canada, Saskatchewan, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%205%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Error.pdf)
-
-
-****
-
-(7) Saskatchewan [graph 7 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%206%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Absolute%20Error.pdf)
+(6) Saskatchewan [graph 6 C19 daily deaths, Canada, Saskatchewan, IHME, Error]
 
 
 ****
 
-(8) Saskatchewan [graph 8 C19 daily deaths, Canada, Saskatchewan, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%207%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Percent%20Error.pdf)
+(7) Saskatchewan [graph 7 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Error]
+
+****
+
+(8) Saskatchewan [graph 8 C19 daily deaths, Canada, Saskatchewan, IHME, Percent Error]
 
 
 ****
 
-(9) Saskatchewan [graph 9 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%20119%208%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20IHME%2C%20Absolute%20Percent%20Error.pdf)
+(9) Saskatchewan [graph 9 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Percent Error]
 
 
 ****
