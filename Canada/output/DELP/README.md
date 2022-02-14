@@ -979,11 +979,15 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%202%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%201%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153920783-d9c0d005-fe5f-410d-9312-fee03dd0bd8e.png)
 
 ****
 
-(3) Manitoba [graph 213 2 C19 daily cases, Canada, Manitoba, DELP, Updates together, With Update circles]()
+(3) Manitoba [graph 213 2 C19 daily cases, Canada, Manitoba, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%202%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153920237-b490caf2-4cfb-4765-929b-6625e98f299c.png)
 
 ****
 
@@ -1043,6 +1047,8 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 (3) New Brunswick [graph 214 2 C19 daily cases, Canada, New Brunswick, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%202%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153921417-172c8081-fe8c-477c-bcae-d8d6c2329216.png)
+
 ****
 
 (4) New Brunswick [graph 214 5 C19 daily cases, Canada, New Brunswick, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%205%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error.pdf)
@@ -1099,7 +1105,9 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
-(3) Newfoundland and Labrador [graph 215 2 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, With Update circles,]()
+(3) Newfoundland and Labrador [graph 215 2 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, With Update circles,](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%202%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153921902-b3ae456e-df72-456c-92b8-2099e5d374c7.png)
 
 ****
 
@@ -1157,7 +1165,9 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
-(3) Nova Scotia [graph 216 2 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, With Update circles]()
+(3) Nova Scotia [graph 216 2 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%202%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153922472-4a190e49-d83f-4799-820c-096f0d92e469.png)
 
 ****
 
@@ -1215,8 +1225,9 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(3) Ontario [graph 217 2 C19 daily cases, Canada, Ontario, DELP, Updates together, With Update circles]()
+(3) Ontario [graph 217 2 C19 daily cases, Canada, Ontario, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%202%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153923821-26531e91-535c-43ce-9506-b13c16903355.png)
 
 ****
 
@@ -1276,8 +1287,9 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
-(3) Quebec [graph 218 2 C19 daily cases, Canada, Quebec, DELP, Updates together, With Update circles]()
+(3) Quebec [graph 218 2 C19 daily cases, Canada, Quebec, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%202%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153924585-b9a514ad-b184-42ba-954e-b8230004d94d.png)
 
 ****
 
@@ -1338,8 +1350,9 @@ Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 
 ****
 
-(3) Saskatchewan [graph 219 2 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, With Update circles]()
+(3) Saskatchewan [graph 219 2 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%202%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153925011-7c7a81d1-cf9f-487f-9056-b070c0d888ae.png)
 
 ****
 
