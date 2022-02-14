@@ -83,8 +83,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error]
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20National%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153883425-cb18c036-d3c1-4e8c-ba77-3e2db020b581.png)
 
 ****
 
@@ -139,8 +140,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error]
+(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Alberta%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153883233-e31a3bc2-ee68-4957-91e7-4122664c0816.png)
 
 ****
 
@@ -191,8 +193,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(6) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error]
+(6) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20British%20Columbia%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153883607-321b664b-45fb-4497-8034-2f7308969376.png)
 
 ****
 
