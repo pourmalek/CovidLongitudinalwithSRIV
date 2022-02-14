@@ -802,7 +802,7 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 (3) Canada National [graph 210 2 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153910966-9f712bf4-854f-4369-be3f-03f227381c5e.png)
+![image](https://user-images.githubusercontent.com/30849720/153911499-1d702e70-93de-443c-8fa4-6bbe3698782f.png)
 
 ****
 
