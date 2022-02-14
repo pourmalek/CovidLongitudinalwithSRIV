@@ -288,7 +288,7 @@ Long PDF file, see video [here]().
 
 (4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Nova%20Scotia%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153800672-1b706b29-07ce-427f-a012-67f1ea7db7e8.png)
+![image](https://user-images.githubusercontent.com/30849720/153802517-f6d56692-ce98-48a8-8e4f-c727047b01cc.png)
 
 ****
 
