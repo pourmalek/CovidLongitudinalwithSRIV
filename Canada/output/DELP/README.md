@@ -1350,8 +1350,9 @@ Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 
 ****
 
-(3) Saskatchewan [graph 219 2 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, With Update circles]()
+(3) Saskatchewan [graph 219 2 C19 daily cases, Canada, Saskatchewan, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%202%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153925011-7c7a81d1-cf9f-487f-9056-b070c0d888ae.png)
 
 ****
 
