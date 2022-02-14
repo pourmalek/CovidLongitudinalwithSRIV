@@ -732,8 +732,9 @@ Long PDF file, see video [here](https://youtu.be/mn_X4QO98Bc).
 
 ****
 
-(10) Ontario [117 8 2 C19 daily deaths, Canada, Ontario, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(10) Ontario [117 8 2 C19 daily deaths, Canada, Ontario, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153958414-90b10d1b-6327-469c-ad51-8f0956c3e318.png)
 
 ****
 
@@ -812,8 +813,9 @@ Long PDF file, see video [here](https://youtu.be/j2S7czLj7oo).
 
 ****
 
-(10) Quebec [118 8 2 C19 daily deaths, Canada, Quebec, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(10) Quebec [118 8 2 C19 daily deaths, Canada, Quebec, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153958548-2f99c6f7-f8fb-4a5c-a5e6-d1c172c7d6e9.png)
 
 ****
 
@@ -889,8 +891,9 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 ****
 
-(10) Saskatchewan [119 8 2 C19 daily deaths, Canada, Saskatchewan, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(10) Saskatchewan [119 8 2 C19 daily deaths, Canada, Saskatchewan, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153958666-4c8a7304-cd69-4c0b-a61c-01214ca6f5b7.png)
 
 ****
 
