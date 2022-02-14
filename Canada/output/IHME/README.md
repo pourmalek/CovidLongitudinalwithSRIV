@@ -65,23 +65,23 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Canada National [graph 3 C19 daily deaths, Canada, National, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153790099-6c55dbbb-dc16-4d88-84a5-48f7aed1c734.png)
 
 **** 
 
-(4) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, Absolute Error]
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error]()
 
 
 ****
 
-(5) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, Percent Error]
+(5) Canada National [graph 5 C19 daily deaths, Canada, National, IHME, Percent Error]
 
 
 ****
 
-(6) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, Absolute Percent Error]
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error]
 
 
 ****
@@ -119,23 +119,23 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Alberta [graph 3 C19 daily deaths, Canada, Alberta, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153790176-31d7c21c-92a4-4da3-a4a9-fcc9be2ee1b8.png)
 
 ****
 
-(4) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, Absolute Error]
+(4) Alberta [graph 4 C19 daily deaths, Canada, Alberta, IHME, Absolute Error]()
 
 
 ****
 
-(5) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, Percent Error]
+(5) Alberta [graph 5 C19 daily deaths, Canada, Alberta, IHME, Percent Error]
 
 
 ****
 
-(6) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error]
+(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error]
 
 
 ****
