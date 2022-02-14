@@ -18,7 +18,7 @@ Reference = JOHN, Model = DELP
 
 **Locations and outcomes:**
 
-Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national-1)
+Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-national-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#canada-national-1)
 
 Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/DELP#alberta-1)
 
