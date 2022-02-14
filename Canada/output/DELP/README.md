@@ -126,7 +126,7 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
 ****
 
-(13) Canada National [110 8 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of Median Absolute Percent Absolute Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+(13) Canada National [110 8 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of Median Absolute Percent Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153941062-a0cf8f48-2df4-43bd-a400-16f6af72f7cf.png)
 
