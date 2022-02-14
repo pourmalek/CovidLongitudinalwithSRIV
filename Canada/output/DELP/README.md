@@ -3,7 +3,7 @@
 
 <br/><br/>
 
-**The error measures:**
+**Calculate the error measures:**
 
 Reference = JOHN, Model = DELP
 
