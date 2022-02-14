@@ -296,8 +296,9 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
-(10) British Columbia [112 8 2 C19 daily deaths, Canada, British Columbia, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(10) British Columbia [112 8 2 C19 daily deaths, Canada, British Columbia, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153951138-f9b4385f-78fc-4c62-9031-e3cd4323ef8a.png)
 
 ****
 
