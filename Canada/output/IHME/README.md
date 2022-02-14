@@ -71,8 +71,9 @@ Long PDF file, see video [here]().
 
 **** 
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error]()
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153800377-0a514d1f-5b7f-421f-b9ea-71557a1263d6.png)
 
 ****
 
@@ -284,7 +285,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error]
+(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Nova%20Scotia%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![Uploading image.png…]()
 
 ****
 
