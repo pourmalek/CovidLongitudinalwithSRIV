@@ -22,7 +22,7 @@ Reference = JOHN, Model = DELP
 
 (1) get the MEDIAN of error types by epi weeks and updates
 
-summarization level = calendar  time in days: transform calendar days to epidemiological weeks
+summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 to 89 = 7 to 1)
 
 graphs 5 1 (not shown here to save space)
 
@@ -30,7 +30,7 @@ graphs 5 1 (not shown here to save space)
 
 (2) get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-summarization level = updates: transform many updates to one update
+summarization level = updates: transform many updates to one update (142 to 1)
 
 graphs 5 2 (shown below)
 
@@ -38,7 +38,7 @@ graphs 5 2 (shown below)
 
 (3) get the AVERAGE over epi weeks of the above number (2)
 
-summarization level = calendar  time in epi weeks: transform many epi weeks to a single statistic
+summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 to 1)
 
 graphs 5 3 (not shown here to save space)
 
