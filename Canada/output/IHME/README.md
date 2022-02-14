@@ -231,9 +231,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(4) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error]
+(4) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Manitoba%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
+![image](https://user-images.githubusercontent.com/30849720/153801457-6b907ac9-c795-4a93-8799-0d28af59e9e0.png)
 
 ****
 
