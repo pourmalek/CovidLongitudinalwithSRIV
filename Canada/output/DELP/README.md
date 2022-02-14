@@ -794,13 +794,15 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 ****
 
-(2) Canada National [graph 210 1 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%201%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+(2) Canada National [graph 210 1 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%201%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153734498-977352ed-75a0-494d-a13a-075c5d5625c2.png)
 
 ****
 
-(3) Canada National [graph 210 2 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+(3) Canada National [graph 210 2 C19 daily cases, Canada, National, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153910966-9f712bf4-854f-4369-be3f-03f227381c5e.png)
 
 ****
 
