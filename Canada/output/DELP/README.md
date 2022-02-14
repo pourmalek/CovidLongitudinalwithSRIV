@@ -108,6 +108,10 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 
 ****
 
+(10) Canada National [C19 daily deaths, Canada, National, DELP, Absolute Percent Error]
+
+graph 110 5 2 C19 daily deaths, Canada, National, DELP, Error Mean1
+
 *
 
 
