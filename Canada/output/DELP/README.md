@@ -207,22 +207,22 @@ Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 ****
 
-(10) Alberta [111 5 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+(10) Alberta [111 5 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
 
 
 ****
 
-(11) Alberta [111 6 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+(11) Alberta [111 6 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
 
 
 ****
 
-(12) Alberta [111 7 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+(12) Alberta [111 7 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
 
 
 ****
 
-(13) Alberta [111 8 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(13) Alberta [111 8 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
 
 
 ****
@@ -299,6 +299,27 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
+(10) British Columbia [112 5 2 C19 daily deaths, Canada, British Columbia, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+
+
+****
+
+(11) British Columbia [112 6 2 British Columbia 6 2 C19 daily deaths, Canada, British Columbia, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+
+
+****
+
+(12) British Columbia [112 7 2 C19 daily deaths, Canada, British Columbia, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+
+
+****
+
+(13) British Columbia [112 8 2 C19 daily deaths, Canada, British Columbia, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+
 *
 
 
@@ -373,6 +394,27 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 ****
 
+(10) Manitoba [113 5 2 C19 daily deaths, Canada, Manitoba, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+
+
+****
+
+(11) Manitoba [113 6 2 Manitoba 6 2 C19 daily deaths, Canada, Manitoba, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+
+
+****
+
+(12) Manitoba [113 7 2 C19 daily deaths, Canada, Manitoba, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+
+
+****
+
+(13) Manitoba [113 8 2 C19 daily deaths, Canada, Manitoba, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+
 *
 
 
@@ -445,6 +487,27 @@ Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
 
 ****
 
+(10) New Brunswick [114 5 2 C19 daily deaths, Canada, New Brunswick, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+
+
+****
+
+(11) New Brunswick [114 6 2 New Brunswick 6 2 C19 daily deaths, Canada, New Brunswick, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+
+
+****
+
+(12) New Brunswick [114 7 2 C19 daily deaths, Canada, New Brunswick, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+
+
+****
+
+(13) New Brunswick [114 8 2 C19 daily deaths, Canada, New Brunswick, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+
 *
 
 
@@ -516,6 +579,27 @@ Long PDF file, see video [here](https://youtu.be/BnJYVr9bGQI).
 ![image](https://user-images.githubusercontent.com/30849720/153725454-8f1dc396-d18b-46db-b635-f0b1e6b12a44.png)
 
 ****
+
+(10) Newfoundland and Labrador [115 5 2 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+
+
+****
+
+(11) Newfoundland and Labrador [115 6 2 Newfoundland and Labrador 6 2 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+
+
+****
+
+(12) Newfoundland and Labrador [115 7 2 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+
+
+****
+
+(13) Newfoundland and Labrador [115 8 2 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
 
 *
 
