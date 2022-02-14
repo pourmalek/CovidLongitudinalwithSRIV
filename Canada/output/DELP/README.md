@@ -50,7 +50,7 @@ summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-national-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-national-daily-cases-error-measures-dlep-model)
 
-Canada provinces together | [Daily deaths]() | [Daily cases]
+Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-provinces-together-daily-deaths-error-measures-dlep-model) | [Daily cases]
 
 Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#alberta-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#alberta-daily-cases-error-measures-dlep-model)
 
@@ -180,6 +180,8 @@ Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
 ![image](https://user-images.githubusercontent.com/30849720/153956424-79ff1513-be91-4f69-81f5-2eaa724fca92.png)
 
 ****
+
+
 
 
 
@@ -960,6 +962,42 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 ****
 
 *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Canada provinces together, Daily Cases, Error Measures, DLEP Model
+
+****
+
+(1) Canada provinces together [120 8 2 C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+
+****
+
+(2) Canada provinces together [120 8 2 b C19 daily cases, Canada, provinces together wo extremes NL NS, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+
+****
+
+(3) Canada provinces together [120 8 2 c C19 daily cases, Canada, provinces together wo extremes NL NS BC SK, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+
+****
+
 
 
 
