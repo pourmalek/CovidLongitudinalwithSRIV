@@ -1,4 +1,5 @@
-### DELP model, Error measures for daily deaths and daily cases
+### DELP Model, Error Measures for Daily Deaths and Daily Cases
+
 
 <br/><br/>
 
@@ -43,7 +44,7 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blo
 
 ****
 
-### DELP model, Error measures for daily deaths
+### DELP Model, Error Measures for Daily Deaths
 
 
 ****
@@ -778,7 +779,7 @@ Long PDF file, see video [here](https://youtu.be/HjoQtc28T44).
 
 
 
-### DELP model, Error measures for daily cases
+### DELP Model, Error Measures for Daily Cases
 
 
 ****
