@@ -128,6 +128,7 @@ Long PDF file, see video [here]().
 
 (4) Alberta [graph 4 C19 daily deaths, Canada, Alberta, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Alberta%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153801111-fe2b3e88-1ea3-4ff9-b326-efb89cb8fa82.png)
 
 ****
 
