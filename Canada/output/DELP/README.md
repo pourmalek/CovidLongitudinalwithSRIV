@@ -979,7 +979,9 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%202%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+(2) Manitoba [graph 213 1 C19 daily cases, Canada, Manitoba, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20213%201%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+
+
 
 ****
 
