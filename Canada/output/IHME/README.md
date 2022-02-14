@@ -277,24 +277,22 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Nova Scotia [graph 3 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/153790520-28c70201-9d02-49f0-971c-1c828b5e57f9.png)
-
-****
-
-(4) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
-
-![image](https://user-images.githubusercontent.com/30849720/153790591-2e3e7cba-1d0e-4b89-95d5-54549dd0285c.png)
+![image](https://user-images.githubusercontent.com/30849720/153791157-2bd60f11-568d-41de-b631-84b5218a59c0.png)
 
 ****
 
-(5) Nova Scotia [graph 8 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error]
+(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error]
+
+****
+
+(5) Nova Scotia [graph 5 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error]
 
 
 ****
 
-(6) Nova Scotia [graph 9 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error]
+(6) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error]
 
 
 ****
