@@ -1165,7 +1165,9 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
-(3) Nova Scotia [graph 216 2 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, With Update circles]()
+(3) Nova Scotia [graph 216 2 C19 daily cases, Canada, Nova Scotia, DELP, Updates together, With Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%202%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153922472-4a190e49-d83f-4799-820c-096f0d92e469.png)
 
 ****
 
