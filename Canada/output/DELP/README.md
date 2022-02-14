@@ -236,23 +236,27 @@ Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 ****
 
-(10) Alberta [111 5 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+(10) Alberta [111 5 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of **Median Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%205%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20Mean1.pdf)
 
-
-****
-
-(11) Alberta [111 6 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/153947636-7968139f-8932-41d3-9eff-a1f687734acb.png)
 
 ****
 
-(12) Alberta [111 7 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+(11) Alberta [111 6 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%206%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153947810-d7b4a433-778a-4ebb-a172-bf165dfcde57.png)
 
 ****
 
-(13) Alberta [111 8 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(12) Alberta [111 7 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%207%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153947960-76e74159-5446-4cac-8669-d4ff930b1bfc.png)
+
+****
+
+(13) Alberta [111 8 2 C19 daily deaths, Canada, Alberta, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%208%202%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153948107-a7a50f19-4d9e-42bd-97a0-2d157bd503de.png)
 
 ****
 
