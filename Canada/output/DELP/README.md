@@ -207,6 +207,27 @@ Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 ****
 
+(10) Alberta [111 5 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of **Median Error** by epi weeks]()
+
+
+****
+
+(11) Alberta [111 6 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Absolute Error** by epi weeks]()
+
+
+****
+
+(12) Alberta [111 7 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Percent Error** by epi weeks]()
+
+
+****
+
+(13) Alberta [111 8 2 C19 daily deaths, Canada, National, DELP, Error, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+
 *
 
 
