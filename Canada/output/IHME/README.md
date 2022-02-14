@@ -67,6 +67,7 @@ Long PDF file, see video [here]().
 
 (3) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790099-6c55dbbb-dc16-4d88-84a5-48f7aed1c734.png)
 
 **** 
 
@@ -120,6 +121,7 @@ Long PDF file, see video [here]().
 
 (3) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790176-31d7c21c-92a4-4da3-a4a9-fcc9be2ee1b8.png)
 
 ****
 
@@ -169,6 +171,7 @@ Long PDF file, see video [here]().
 
 (3) British Columbia [graph 6 C19 daily deaths, Canada, British Columbia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790241-5701dfef-ba66-447c-8aec-429f4561a112.png)
 
 ****
 
@@ -219,9 +222,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error]
+(3) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
+![image](https://user-images.githubusercontent.com/30849720/153790362-eca8ab2b-4fec-4655-a0b3-c02f212048e2.png)
 
 ****
 
@@ -274,13 +277,15 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790520-28c70201-9d02-49f0-971c-1c828b5e57f9.png)
 
 ****
 
 (4) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790591-2e3e7cba-1d0e-4b89-95d5-54549dd0285c.png)
 
 ****
 
@@ -318,13 +323,13 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Ontario [graph 2 C19 daily deaths, Canada, Ontario, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Ontario%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Ontario [graph 2 C19 daily deaths, Canada, Ontario, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153771805-c781f036-0be3-4fc8-8dc5-129807128b7a.png)
 
 ****
 
-(3) Ontario [graph 117 5 C19 daily deaths, Canada, Ontario, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Ontario [graph 117 5 C19 daily deaths, Canada, Ontario, IHME, Error]
 
 ****
 
@@ -375,8 +380,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Quebec [graph 6 C19 daily deaths, Canada, Quebec, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+(3) Quebec [graph 6 C19 daily deaths, Canada, Quebec, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153790669-76f22300-d643-4d5b-9033-8fd3f297fedb.png)
 
 ****
 
