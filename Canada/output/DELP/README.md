@@ -917,7 +917,9 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 ****
 
-(2) British Columbia [graph 212 1 C19 daily cases, Canada, British Columbia, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%201%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles%20With%20extremes.pdf)
+(2) British Columbia [graph 212 1 C19 daily cases, Canada, British Columbia, DELP, Updates together, Without Update circles](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%201%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20Update%20circles.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153918057-0570d188-bbad-43e5-97fa-e29df2ef48ad.png)
 
 ****
 
