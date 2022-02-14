@@ -50,7 +50,7 @@ summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-national-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-national-daily-cases-error-measures-dlep-model)
 
-Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-provinces-together-daily-deaths-error-measures-dlep-model) | [Daily cases]
+Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-provinces-together-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#canada-provinces-together-daily-cases-error-measures-dlep-model)
 
 Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#alberta-daily-deaths-error-measures-dlep-model) | [Daily cases](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/README.md#alberta-daily-cases-error-measures-dlep-model)
 
