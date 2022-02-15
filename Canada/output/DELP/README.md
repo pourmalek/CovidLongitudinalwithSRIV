@@ -1476,8 +1476,9 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(8) Ontario [graph 216 8 2 C19 daily cases, Canada, Ontario, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+(8) Ontario [graph 217 8 2 C19 daily cases, Canada, Ontario, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%208%202%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153979519-0bb208f8-c01d-4e14-bf12-630e58e338e8.png)
 
 ****
 
@@ -1543,6 +1544,12 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
+(8) Quebec [graph 218 8 2 C19 daily cases, Canada, Quebec, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20218%208%202%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153979658-b4f0d582-64c4-4000-b0a8-b965b7073d8e.png)
+
+****
+
 *
 
 
@@ -1603,6 +1610,12 @@ Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
 (7) Saskatchewan [graph 219 8 C19 daily cases, Canada, Saskatchewan, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%208%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153737931-71537211-c0b5-48b1-a5b7-65eb6a684248.png)
+
+****
+
+(8) Saskatchewan [graph 219 8 2 C19 daily cases, Canada, Saskatchewan, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%208%202%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153979843-4a5a0cb6-3f7a-4544-be9d-5d65bb60f00e.png)
 
 ****
 
