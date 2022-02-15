@@ -1344,6 +1344,12 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
+(8) Newfoundland and Labrador [graph 215 8 2 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%208%202%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153979204-7b667e44-efe0-4449-b9b7-66eb5a8ba5e7.png)
+
+****
+
 *
 
 
@@ -1404,6 +1410,12 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
+(8) Nova Scotia [graph 216 8 2 C19 daily cases, Canada, Nova Scotia, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%208%202%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153979358-b5571b7f-04e5-4d24-aaf8-12591c8cb781.png)
+
+****
+
 *
 
 
@@ -1461,6 +1473,11 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 (7) Ontario [graph 217 8 C19 daily cases, Canada, Ontario, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20217%208%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153737208-b7ae5076-585b-4349-91a3-b74045437711.png)
+
+****
+
+(8) Ontario [graph 216 8 2 C19 daily cases, Canada, Ontario, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
 
 ****
 
