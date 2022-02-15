@@ -1079,8 +1079,9 @@ Long PDF file, see video [here](https://youtu.be/tyXjAZlfMNo).
 
 ****
 
-(8) Alberta [210 8 2 C19 daily deaths, Canada, Alberta, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%208%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+(8) Alberta [graph 210 8 2 C19 daily deaths, Canada, Alberta, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%208%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/153977168-2e8f5aa1-dc81-42b1-8cbc-1143a36cc7b2.png)
 
 ****
 
@@ -1140,6 +1141,11 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 (7) British Columbia [graph 212 8 C19 daily cases, Canada, British Columbia, DELP, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20212%208%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Absolute%20Percent%20Error.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/153735923-3cdc32fa-898e-4736-b1a1-a8ff7480131d.png)
+
+****
+
+(8) British Columbia [graph 210 8 2 C19 daily deaths, Canada, British Columbia, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
 
 ****
 
