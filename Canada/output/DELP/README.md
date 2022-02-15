@@ -1079,6 +1079,11 @@ Long PDF file, see video [here](https://youtu.be/tyXjAZlfMNo).
 
 ****
 
+(8) Alberta [210 8 2 C19 daily deaths, Canada, Alberta, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%208%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
+
+****
+
 *
 
 
