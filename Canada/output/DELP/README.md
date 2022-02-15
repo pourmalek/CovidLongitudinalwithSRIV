@@ -968,6 +968,12 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 ****
 
+(8) Canada National [210 8 2 C19 daily deaths, Canada, National, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20210%208%202%20C19%20daily%20cases%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153975579-85e30101-e622-47af-a106-60bfc9b3f6d7.png)
+
+****
+
 *
 
 
@@ -993,15 +999,21 @@ Long PDF file, see video [here](https://youtu.be/A0hhD0aWb4Q).
 
 ****
 
-(1) Canada provinces together [120 8 2 C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+(1) Canada provinces together [120 8 2 C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%208%202%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153975947-06e6f941-6d8b-45b9-aea9-041b96ba16ce.png)
 
 ****
 
-(2) Canada provinces together [120 8 2 b C19 daily cases, Canada, provinces together wo extremes NL NS, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+(2) Canada provinces together [120 8 2 b C19 daily cases, Canada, provinces together wo extremes MB, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%208%202%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153976084-be74673c-dac9-4903-91aa-975492b424b2.png)
 
 ****
 
-(3) Canada provinces together [120 8 2 c C19 daily cases, Canada, provinces together wo extremes NL NS BC SK, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
+(3) Canada provinces together [120 8 2 c C19 daily cases, Canada, provinces together wo extremes MB NS NL, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%208%202%20c%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/153976234-216b82fc-9b1a-46f9-9fab-56435d6f36ee.png)
 
 ****
 
