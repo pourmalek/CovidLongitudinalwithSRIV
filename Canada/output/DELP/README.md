@@ -121,25 +121,25 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Canada National [graph 110 07 C19 daily deaths, Canada, National, DELP, **Error**, mean over updates of **median error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20Mean1.pdf)
+(7) Canada National [graph 110 07 C19 daily deaths, Canada, National, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154563912-5e7b1d84-65a6-4783-aa34-bc3663ca0ade.png)
 
 **** 
 
-(8) Canada National [graph 110 09 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of **median absolute error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2009%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20Mean1.pdf)
+(8) Canada National [graph 110 09 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2009%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154587444-45909be7-f01e-44c5-a9cb-e03579b151f5.png)
 
 **** 
 
-(9) Canada National [graph 110 11 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of **median absolute error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2011%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error%20Mean1.pdf)
+(9) Canada National [graph 110 11 C19 daily deaths, Canada, National, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2011%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154587607-397b67a9-4d0a-432b-91f8-b3483ba2eba3.png)
 
 ****
 
-(10) Canada National [graph 110 13 C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **median absolute % error** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+(10) Canada National [graph 110 13 C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154518284-421e640c-dec2-4c36-8f70-3b8176292b6a.png)
 
@@ -248,15 +248,22 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Alberta [graph 111 05 C19 daily deaths, Canada, Alberta, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
+(7) Alberta [graph 111 07 C19 daily deaths, Canada, Alberta, DELP, **Error**, mean over updates of median error by epi weeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154527444-f8415766-5741-4822-a142-b167010c799c.png)
+**** 
+
+(8) Alberta [graph 111 09 C19 daily deaths, Canada, Alberta, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Alberta [graph 111 11 C19 daily deaths, Canada, Alberta, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
 
 ****
 
-(8) Alberta [graph 111 13 C19 daily deaths, Canada, Alberta, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+(10) Alberta [graph 111 13 C19 daily deaths, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154527629-4970ffcd-4158-40a7-bbe5-3284b4378b03.png)
 
 ****
 
@@ -314,21 +321,22 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) British Columbia [graph 112 05 C19 daily deaths, Canada, British Columbia, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2005%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
+(7) British Columbia [graph 112 07 C19 daily deaths, Canada, British Columbia, DELP, **Error**, mean over updates of median error by epi weeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154533760-eb8809a8-ccfc-459d-bef6-a4c7de8fae54.png)
+**** 
+
+(8) British Columbia [graph 112 09 C19 daily deaths, Canada, British Columbia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) British Columbia [graph 112 11 C19 daily deaths, Canada, British Columbia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
 
 ****
 
-(8) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Error, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2007%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error%20Mean1.pdf)
+(10) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154538471-7e71fe51-2c96-449b-a85c-0fee0c602030.png)
-
-****
-
-(9) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
-
-![image](https://user-images.githubusercontent.com/30849720/154533949-7063495b-d961-4454-935c-ad3da6dd79e6.png)
 
 ****
 
@@ -389,18 +397,24 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Manitoba [graph 113 05 C19 daily deaths, Canada, Manitoba, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
+(7) Manitoba [graph 113 07 C19 daily deaths, Canada, Manitoba, DELP, **Error**, mean over updates of median error by epi weeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154536217-a6f6332b-9ff9-46ff-bc2d-4cd1e18de842.png)
+**** 
+
+(8) Manitoba [graph 113 09 C19 daily deaths, Canada, Manitoba, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Manitoba [graph 113 11 C19 daily deaths, Canada, Manitoba, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
 
 ****
 
-(8) Manitoba [graph 113 13 C19 daily deaths, Canada, Manitoba, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Manitoba [graph 113 13 C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
-![image](https://user-images.githubusercontent.com/30849720/154537668-c9d233de-7edf-4bc6-bb8e-58acfce35b70.png)
 
 ****
-
 
 *
 
@@ -451,12 +465,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) New Brunswick [graph 114 05 C19 daily deaths, Canada, New Brunswick, DELP, absolute percent Error]()
+(7) New Brunswick [graph 114 07 C19 daily deaths, Canada, New Brunswick, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+**** 
+
+(8) New Brunswick [graph 114 09 C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) New Brunswick [graph 114 11 C19 daily deaths, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) New Brunswick [graph 114 13 C19 daily deaths, Canada, New Brunswick, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) New Brunswick [graph 114 13 C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
@@ -511,12 +534,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Newfoundland and Labrador [graph 115 05 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, absolute percent Error]()
+(7) Newfoundland and Labrador [graph 115 07 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+**** 
+
+(8) Newfoundland and Labrador [graph 115 09 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Newfoundland and Labrador [graph 115 11 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) Newfoundland and Labrador [graph 115 13 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Newfoundland and Labrador [graph 115 13 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
@@ -571,12 +603,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Nova Scotia [graph 116 05 C19 daily deaths, Canada, Nova Scotia, DELP, absolute percent Error]()
+(7) Nova Scotia [graph 116 07 C19 daily deaths, Canada, Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+**** 
+
+(8) Nova Scotia [graph 116 09 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Nova Scotia [graph 116 11 C19 daily deaths, Canada, Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) Nova Scotia [graph 116 13 C19 daily deaths, Canada, Nova Scotia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Nova Scotia [graph 116 13 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
@@ -631,16 +672,24 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Ontario [graph 117 05 C19 daily deaths, Canada, Ontario, DELP, absolute percent Error]()
+(7) Ontario [graph 117 07 C19 daily deaths, Canada, Ontario, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+**** 
+
+(8) Ontario [graph 117 09 C19 daily deaths, Canada, Ontario, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Ontario [graph 117 11 C19 daily deaths, Canada, Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
-
 
 *
 
@@ -693,12 +742,22 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Quebec [graph 118 05 C19 daily deaths, Canada, Quebec, DELP, absolute percent Error]()
+(7) Quebec [graph 118 07 C19 daily deaths, Canada, Quebec, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+**** 
+
+(8) Quebec [graph 118 09 C19 daily deaths, Canada, Quebec, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Quebec [graph 118 11 C19 daily deaths, Canada, Quebec, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) Quebec [graph 118 13 C19 daily deaths, Canada, Quebec, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Quebec [graph 118 13 C19 daily deaths, Canada, Quebec, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
@@ -755,12 +814,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Saskatchewan [graph 119 05 C19 daily deaths, Canada, Saskatchewan, DELP, absolute percent Error]()
+(7) Saskatchewan [graph 119 07 C19 daily deaths, Canada, Saskatchewan, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+**** 
+
+(8) Saskatchewan [graph 119 09 C19 daily deaths, Canada, Saskatchewan, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+**** 
+
+(9) Saskatchewan [graph 119 11 C19 daily deaths, Canada, Saskatchewan, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
 
-(8) Saskatchewan [graph 119 13 C19 daily deaths, Canada, Saskatchewan, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(10) Saskatchewan [graph 119 13 C19 daily deaths, Canada, Saskatchewan, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
 
 
 ****
