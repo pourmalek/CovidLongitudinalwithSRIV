@@ -170,11 +170,19 @@ Long PDF file, see video [here]().
 
 ****
 
+(4) Canada provinces together [graph 130 a C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20130%20a%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154520391-16cd7bbe-47cc-487f-adba-9e28e645b88e.png)
 
+****
 
+(5) Canada provinces together [graph 130 b C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and epi weeks, without extremes NL NS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20130%20b%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154521727-799a3e4b-786c-41ec-b607-86df82a287c8.png)
 
+****
+
+*
 
 
 
