@@ -85,9 +85,9 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blo
 
 ****
 
-(1) Canada National [graph 100 C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Canada National [graph 100 C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20%20all%20updates.pdf)
 
-Long PDF file, see video [here](https://youtu.be/xV6P6ZYF0lk).
+Long PDF file, see video [here]().
 
 ****
 
