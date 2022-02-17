@@ -306,7 +306,13 @@ Long PDF file, see video [here]().
 
 ****
 
-(8) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+(8) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Error, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2007%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154538471-7e71fe51-2c96-449b-a85c-0fee0c602030.png)
+
+****
+
+(9) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154533949-7063495b-d961-4454-935c-ad3da6dd79e6.png)
 
@@ -377,6 +383,7 @@ Long PDF file, see video [here]().
 
 (8) Manitoba [graph 113 13 C19 daily deaths, Canada, Manitoba, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
 
+![image](https://user-images.githubusercontent.com/30849720/154537668-c9d233de-7edf-4bc6-bb8e-58acfce35b70.png)
 
 ****
 
