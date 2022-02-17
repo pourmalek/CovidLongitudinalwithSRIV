@@ -272,13 +272,15 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) British Columbia [graph 112 01 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With extremes]()
+(2) British Columbia [graph 112 01 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2001%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154561526-0fdbf5c8-69d9-4253-bfd5-530e3e36c2d9.png)
 
 ****
 
-(3) British Columbia [graph 112 01b C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without extremes]()
+(3) British Columbia [graph 112 01b C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154561619-35984239-05b3-46d3-92fb-2e5b4ea29dc5.png)
 
 ****
 
