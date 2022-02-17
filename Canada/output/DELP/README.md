@@ -282,28 +282,33 @@ Long PDF file, see video [here]().
 
 ****
 
-(4) British Columbia [graph 112 02 C19 daily deaths, Canada, British Columbia, DELP, Error]()
+(4) British Columbia [graph 112 02 C19 daily deaths, Canada, British Columbia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2002%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error.pdf)
 
-
-****
-
-(5) British Columbia [graph 112 03 C19 daily deaths, Canada, British Columbia, DELP, absolute Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154533254-3904270d-44ec-4edc-a38e-af6b1c25050b.png)
 
 ****
 
-(6) British Columbia [graph 112 04 C19 daily deaths, Canada, British Columbia, DELP, percent Error]()
+(5) British Columbia [graph 112 03 C19 daily deaths, Canada, British Columbia, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2003%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154533416-0f37dea5-7a22-4753-a0ea-7e4a8f244f4c.png)
+
+****
+
+(6) British Columbia [graph 112 04 C19 daily deaths, Canada, British Columbia, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2004%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154533603-6cd55880-713a-4f25-b6fe-a52b058238f6.png)
 
 **** 
 
-(7) British Columbia [graph 112 05 C19 daily deaths, Canada, British Columbia, DELP, absolute percent Error]()
+(7) British Columbia [graph 112 05 C19 daily deaths, Canada, British Columbia, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2005%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154533760-eb8809a8-ccfc-459d-bef6-a4c7de8fae54.png)
 
 ****
 
-(8) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks]()
+(8) British Columbia [graph 112 13 C19 daily deaths, Canada, British Columbia, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154533949-7063495b-d961-4454-935c-ad3da6dd79e6.png)
 
 ****
 
