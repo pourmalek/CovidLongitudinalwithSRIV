@@ -91,8 +91,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 110 1 C19 daily deaths, Canada, National, DELP, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
+(2) Canada National [graph 110 01 C19 daily deaths, Canada, National, DELP, Updates together, With extremes.pdf](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154514788-2dbe6fd6-db56-4fe3-87ff-583f3149f4ff.png)
 
 ****
 
