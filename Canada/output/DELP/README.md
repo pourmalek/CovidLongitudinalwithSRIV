@@ -369,8 +369,9 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Manitoba [graph 113 05 C19 daily deaths, Canada, Manitoba, DELP, absolute percent Error]()
+(7) Manitoba [graph 113 05 C19 daily deaths, Canada, Manitoba, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154536217-a6f6332b-9ff9-46ff-bc2d-4cd1e18de842.png)
 
 ****
 
