@@ -91,50 +91,48 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 110 01 C19 daily deaths, Canada, National, DELP, Updates together, With extremes.pdf](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
+(2) Canada National [graph 110 01 C19 daily deaths, Canada, National, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154514788-2dbe6fd6-db56-4fe3-87ff-583f3149f4ff.png)
 
 ****
 
-(3) Canada National [graph 110 2 C19 daily deaths, Canada, National, DELP, Updates together, Without Update circles, Without extremes]()
+(3) Canada National [graph 110 01b C19 daily deaths, Canada, National, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
-
-****
-
-(4) Canada National [graph 110 3 C19 daily deaths, Canada, National, DELP, Updates together, With Update circles, With extremes]
-
+![image](https://user-images.githubusercontent.com/30849720/154515105-577f16f3-fc37-4aaa-8520-f52ae5ae33f7.png)
 
 ****
 
-(5) Canada National [graph 110 4 C19 daily deaths, Canada, National, DELP, Updates together, With Update circles, Without extremes]
+(4) Canada National [graph 110 02 C19 daily deaths, Canada, National, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2002%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154515350-dfbee906-d159-49e6-824c-125d659a0112.png)
 
 ****
 
-(6) Canada National [graph 110 5 C19 daily deaths, Canada, National, DELP, Error]
+(5) Canada National [graph 110 03 C19 daily deaths, Canada, National, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2003%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154515638-97205306-994f-428f-8769-f3ab64f8f4d7.png)
+
+****
+
+(6) Canada National [graph 110 04 C19 daily deaths, Canada, National, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2004%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154515875-2a8db57c-7497-4fe1-9a33-aa95e3404a83.png)
 
 **** 
 
-(7) Canada National [graph 110 6 C19 daily deaths, Canada, National, DELP, Absolute Error]
+(7) Canada National [graph 110 05 C19 daily deaths, Canada, National, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2005%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
-
-****
-
-(8) Canada National [graph 110 7 C19 daily deaths, Canada, National, DELP, Percent Error]
-
+![image](https://user-images.githubusercontent.com/30849720/154516076-48491d01-3ef8-40bd-9f00-99dca9842db0.png)
 
 ****
 
-(9) Canada National [graph 110 8 C19 daily deaths, Canada, National, DELP, Absolute Percent Error]
+(8) Canada National [graph 110 13 C19 daily deaths, Canada, National, DELP, Absolute Percent Error, mean over updates of median absolute % error by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
-
-****
-
-(10) Canada National [110 8 2 C19 daily deaths, Canada, National, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks]
-
+![image](https://user-images.githubusercontent.com/30849720/154518284-421e640c-dec2-4c36-8f70-3b8176292b6a.png)
 
 ****
+
 
 *
 
