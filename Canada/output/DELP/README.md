@@ -203,9 +203,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Alberta [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20%20all%20updates.pdf)
 
-Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
+Long PDF file, see video [here]().
 
 ****
 
@@ -281,9 +281,9 @@ Long PDF file, see video [here](https://youtu.be/Eu906PRRlM8).
 
 ****
 
-(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20update%2000000000.pdf)
+(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20%20all%20updates.pdf)
 
-Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
+Long PDF file, see video [here]().
 
 ****
 
@@ -362,9 +362,9 @@ Long PDF file, see video [here](https://youtu.be/ZxN79cmBuZQ).
 
 ****
 
-(1) Manitoba [graph 103 C19 daily deaths, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Manitoba [graph 103 C19 daily deaths, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20%20all%20updates.pdf)
 
-Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
+Long PDF file, see video [here]().
 
 ****
 
@@ -441,9 +441,9 @@ Long PDF file, see video [here](https://youtu.be/sd18maAcCkE).
 
 ****
 
-(1) New Brunswick [graph 104 C19 daily deaths, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
+(1) New Brunswick [graph 104 C19 daily deaths, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20%20all%20updates.pdf)
 
-Long PDF file, see video [here](https://youtu.be/5VtxqESMijg).
+Long PDF file, see video [here]().
 
 ****
 
