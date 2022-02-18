@@ -1548,48 +1548,56 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Nova Scotia [graph 216 01 C19 daily cases, Canada,Nova Scotia, DELP, Updates together, With extremes]()
+(2) Nova Scotia [graph 216 01 C19 daily cases, Canada,Nova Scotia, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2001%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154749718-8c3a78d6-5e0d-4989-b1d6-a9e35ae58703.png)
+
+****
+
+(3) Nova Scotia [graph 216 02 C19 daily cases, Canada,Nova Scotia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2002%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154749838-02168bd4-74a5-4935-a40e-19cbc6dba15a.png)
+
+****
+
+(4) Nova Scotia [graph 216 03 C19 daily cases, Canada,Nova Scotia, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2003%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154749976-37dcd90c-6ef3-409a-bef3-41e468afb9ad.png)
+
+****
+
+(5) Nova Scotia [graph 216 04 C19 daily cases, Canada,Nova Scotia, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2004%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20percent%20Error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154750076-55f88dee-12a2-4aaf-b8ce-2846bca9df32.png)
+
+****
+
+(6) Nova Scotia [graph 216 05 C19 daily cases, Canada,Nova Scotia, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2007%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error%20Mean1.pdf)
 
 
 ****
 
-(3) Nova Scotia [graph 216 02 C19 daily cases, Canada,Nova Scotia, DELP, Error]()
+(7) Nova Scotia [graph 216 07 C19 daily cases, Canada,Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks](https://www.youtube.com/watch?v=bvWRMAU6V-c)
 
-
-****
-
-(4) Nova Scotia [graph 216 03 C19 daily cases, Canada,Nova Scotia, DELP, absolute Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154750294-7242f32c-d3ff-4628-a315-87ad571fef66.png)
 
 ****
 
-(5) Nova Scotia [graph 216 04 C19 daily cases, Canada,Nova Scotia, DELP, percent Error]()
+(8) Nova Scotia [graph 216 09 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2009%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
-
-****
-
-(6) Nova Scotia [graph 216 05 C19 daily cases, Canada,Nova Scotia, DELP, absolute percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154750570-32585af0-7d79-47fe-9566-ddd315198d9a.png)
 
 ****
 
-(7) Nova Scotia [graph 216 07 C19 daily cases, Canada,Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks]()
+(9) Nova Scotia [graph 216 11 C19 daily cases, Canada,Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2011%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
-
-****
-
-(8) Nova Scotia [graph 216 09 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154750805-03814faa-9123-4967-b43e-c1c8bae96131.png)
 
 ****
 
-(9) Nova Scotia [graph 216 11 C19 daily cases, Canada,Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+(10) Nova Scotia [graph 216 13 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20216%2013%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-
-****
-
-(10) Nova Scotia [graph 216 13 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154750934-72fa0efe-a4bf-4ca3-b0f1-91904916b0c9.png)
 
 ****
 
