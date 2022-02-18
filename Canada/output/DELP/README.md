@@ -583,46 +583,46 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Nova Scotia [graph 116 01 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With extremes]()
+(2) Nova Scotia [graph 116 01 C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 
 ****
 
-(3) Nova Scotia [graph 116 01b C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without extremes]()
+(3) Nova Scotia [graph 116 01b C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
 
 ****
 
-(4) Nova Scotia [graph 116 02 C19 daily deaths, Canada, Nova Scotia, DELP, Error]()
+(4) Nova Scotia [graph 116 02 C19 daily deaths, Canada, Nova Scotia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error.pdf)
 
 
 ****
 
-(5) Nova Scotia [graph 116 03 C19 daily deaths, Canada, Nova Scotia, DELP, absolute Error]()
+(5) Nova Scotia [graph 116 03 C19 daily deaths, Canada, Nova Scotia, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20Error.pdf)
 
 
 ****
 
-(6) Nova Scotia [graph 116 04 C19 daily deaths, Canada, Nova Scotia, DELP, percent Error]()
+(6) Nova Scotia [graph 116 04 C19 daily deaths, Canada, Nova Scotia, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20percent%20Error.pdf)
 
 
 **** 
 
-(7) Nova Scotia [graph 116 07 C19 daily deaths, Canada, Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks]()
+(7) Nova Scotia [graph 116 07 C19 daily deaths, Canada, Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error%20Mean1.pdf)
 
 **** 
 
-(8) Nova Scotia [graph 116 09 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(8) Nova Scotia [graph 116 09 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
 
 **** 
 
-(9) Nova Scotia [graph 116 11 C19 daily deaths, Canada, Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+(9) Nova Scotia [graph 116 11 C19 daily deaths, Canada, Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
 
 ****
 
-(10) Nova Scotia [graph 116 13 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
+(10) Nova Scotia [graph 116 13 C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
 
 ****
@@ -652,46 +652,46 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Ontario [graph 117 01 C19 daily deaths, Canada, Ontario, DELP, Updates together, With extremes]()
+(2) Ontario [graph 117 01 C19 daily deaths, Canada, Ontario, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 
 ****
 
-(3) Ontario [graph 117 01b C19 daily deaths, Canada, Ontario, DELP, Updates together, Without extremes]()
+(3) Ontario [graph 117 01b C19 daily deaths, Canada, Ontario, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
 
 ****
 
-(4) Ontario [graph 117 02 C19 daily deaths, Canada, Ontario, DELP, Error]()
+(4) Ontario [graph 117 02 C19 daily deaths, Canada, Ontario, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error.pdf)
 
 
 ****
 
-(5) Ontario [graph 117 03 C19 daily deaths, Canada, Ontario, DELP, absolute Error]()
+(5) Ontario [graph 117 03 C19 daily deaths, Canada, Ontario, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20Error.pdf)
 
 
 ****
 
-(6) Ontario [graph 117 04 C19 daily deaths, Canada, Ontario, DELP, percent Error]()
+(6) Ontario [graph 117 04 C19 daily deaths, Canada, Ontario, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20percent%20Error.pdf)
 
 
 **** 
 
-(7) Ontario [graph 117 07 C19 daily deaths, Canada, Ontario, DELP, **Error**, mean over updates of median error by epi weeks]()
+(7) Ontario [graph 117 07 C19 daily deaths, Canada, Ontario, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error%20Mean1.pdf)
 
 **** 
 
-(8) Ontario [graph 117 09 C19 daily deaths, Canada, Ontario, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(8) Ontario [graph 117 09 C19 daily deaths, Canada, Ontario, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
 
 **** 
 
-(9) Ontario [graph 117 11 C19 daily deaths, Canada, Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+(9) Ontario [graph 117 11 C19 daily deaths, Canada, Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
 
 ****
 
-(10) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
+(10) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
 
 ****
