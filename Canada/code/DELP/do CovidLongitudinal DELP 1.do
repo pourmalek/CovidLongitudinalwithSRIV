@@ -18,7 +18,8 @@ log using "log CovidLongitudinal DELP 1.smcl", replace
 
 
 * download and prepare update files
-
+* input data files: download csv files
+* output data files: "CovidLongitudinal DELP 202?????.dta " (142 files)
 
 
 /*

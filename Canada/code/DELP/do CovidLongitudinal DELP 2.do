@@ -18,7 +18,8 @@ log using "log CovidLongitudinal DELP 2.smcl", replace
 
 
 * merge update files
-
+* input data files: "CovidLongitudinal DELP 202?????.dta " (142 files)
+* output data files: "CovidLongitudinal DELP.dta"
 
 
 use "CovidLongitudinal DELP 20200417.dta", clear  
@@ -204,6 +205,10 @@ save "CovidLongitudinal JOHN.dta", replace
 merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP.dta"
  
 drop _merge
+
+
+
+drop if date > td(01jan2022)
 
 save "CovidLongitudinal DELP.dta", replace
 

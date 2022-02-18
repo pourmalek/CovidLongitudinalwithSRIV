@@ -17,7 +17,22 @@ log using "log CovidLongitudinal DELP 8.smcl", replace
 ***************************************************************************
 
 
-* graphs, daily cases, Error measures
+* continue graphs, daily cases: four error types (graphs 110-119, 5, 6, 7, 8), updates together
+* 2 Error
+* 3 Absolute Error
+* 4 Pecent Error
+* 5 Absolute Pecent Error
+* 6  median error by epi weeks and updates
+* 7  mean over updates of median error by epi weeks
+* 8  median absolute error by epi weeks and updates
+* 9  mean over updates of median absolute error by epi weeks
+* 10 median percent error by epi weeks and updates
+* 11 mean over updates of median percent error by epi weeks
+* 12 median absolute percent error by epi weeks and updates
+* 13 mean over updates of median absolute percent error by epiweeks
+* 14 average MAPE over updtes and epi weeks (single value for each location-model)
+* input data files: "CovidLongitudinal DELP daily cases.dta"
+* output data files: "CovidLongitudinal DELP daily cases 2.dta" (error measures saved)
 
 
 /*
@@ -59,20 +74,19 @@ graph / `XYZ' / location
 116 XNS Nova Scotia
 117 XON Ontario
 118 XQC Quebec
-119 219 Saskatchewan
+119 XSK Saskatchewan
 
 */
 
 
 
-set maxvar 32767 // (MP & SE)
+set maxvar 32767 // (MP & SE) 
+
 
 
 grstyle init
 
 grstyle color background white
-
-
 
 
 
@@ -261,6 +275,9 @@ local list ///
 20211231
 
 
+drop if date >= td(31dec2021)
+
+sort provincestate date
 
 
 * (1) gen error TYPES by epi weeks and model updates
@@ -291,6 +308,7 @@ label var DCAbPeErA01`XYZ'`update' "DayCasMeSmA01S00`XYZ'`update' absolute perce
 *
 
 
+sort provincestate date
 
 
 * (2) gen MEDIAN of error types by epi weeks and updates = _Med1
@@ -325,6 +343,7 @@ label var DCAbPeErA01`XYZ'`update'_Med1 "DayCasMeSmA01S00`XYZ'`update' median ab
 
  
 
+sort provincestate date
  
  
 * (3) gen AVERAGE over updates of MEDIAN of error types by epi weeks = _Mean1
@@ -360,6 +379,7 @@ label var DCAbPeErA01`XYZ'_Mean1 "DayCasMeSmA01S00`XYZ' mean over updates of med
  
 
 
+sort provincestate date
 
 
 * (4) gen AVERAGE over epi weeks of _Mean1  = _Mean2
@@ -390,6 +410,29 @@ label var DCAbPeErA01`XYZ'_Mean2 "DayCasMeSmA01S00`XYZ' Mean over epi weeks of m
 
 
 
+* (5) 95% Uncertainty for _Mean2 = AVERAGE over epi weeks of _Mean1 = average MAPE over updates and epi weeks
+
+qui { 
+
+	foreach XYZ in XAB XBC XMB XXX XNB XNL XNS XON XQC XSK {
+		
+egen DCAbPeErA01`XYZ'_SD2 = sd(DCAbPeErA01`XYZ'_Mean1) 
+label var DCAbPeErA01`XYZ'_SD2 "DayCasMeSmA01S00`XYZ' SD over epi weeks of median absolute percent error over updates"
+
+
+gen DCAbPeErA01`XYZ'Mean2Up = DCAbPeErA01`XYZ'_Mean2 + (2 * DCAbPeErA01`XYZ'_SD2)
+label var DCAbPeErA01`XYZ'Mean2Up "DayCasMeSmA01S00`XYZ' Mean plus 2 SD over epi weeks of median absolute percent error over updates"
+
+
+gen DCAbPeErA01`XYZ'Mean2Lo = DCAbPeErA01`XYZ'_Mean2 - (2 * DCAbPeErA01`XYZ'_SD2)
+label var DCAbPeErA01`XYZ'Mean2Lo "DayCasMeSmA01S00`XYZ' Mean minus 2 SD over epi weeks of median absolute percent error over updates"
+
+
+	}
+
+}
+*
+
 
 
 
@@ -409,7 +452,7 @@ label var DCAbPeErA01`XYZ'_Mean2 "DayCasMeSmA01S00`XYZ' Mean over epi weeks of m
 
 ***********************************************
 
-* 210 5 Daily cases, National, Error
+* 210 2 Daily cases, National, Error
 
 twoway ///
 (line DCErrorA01XXX20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -554,15 +597,14 @@ twoway ///
 (line DCErrorA01XXX20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XXX20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XXX20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 5 C19 daily cases, $country, National, DELP, Error.gph", replace
-qui graph export "graph 210 5 C19 daily cases, $country, National, DELP, Error.pdf", replace
+qui graph export "graph 210 02 C19 daily cases, $country, National, DELP, Error.pdf", replace
 
 
 
@@ -570,7 +612,7 @@ qui graph export "graph 210 5 C19 daily cases, $country, National, DELP, Error.p
 
 ***********************************************
 
-* 210 6 Daily cases, National, absolute Error
+* 210 3 Daily cases, National, absolute Error
 
 twoway ///
 (line DCAbsErrA01XXX20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -714,17 +756,15 @@ twoway ///
 (line DCAbsErrA01XXX20211228 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XXX20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XXX20211230 date, sort lcolor(red) lwidth(medium)) /// 
-(line DCAbsErrA01XXX20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+(line DCAbsErrA01XXX20211231 date, sort lcolor(red) lwidth(medium)) ///
+if date >= td(01jan2020) & date <= td(01jan2022) /// 
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 6 C19 daily cases, $country, National, DELP, absolute Error.gph", replace
-qui graph export "graph 210 6 C19 daily cases, $country, National, DELP, absolute Error.pdf", replace
-
+qui graph export "graph 210 03 C19 daily cases, $country, National, DELP, absolute Error.pdf", replace
 
 
 
@@ -734,7 +774,7 @@ qui graph export "graph 210 6 C19 daily cases, $country, National, DELP, absolut
 
 ***********************************************
 
-* 210 7 Daily cases, National, percent Error
+* 210 4 Daily cases, National, percent Error
 
 twoway ///
 (line DCPerErrA01XXX20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -879,15 +919,15 @@ twoway ///
 (line DCPerErrA01XXX20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XXX20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XXX20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 7 C19 daily cases, $country, National, DELP, percent Error.gph", replace
-qui graph export "graph 210 7 C19 daily cases, $country, National, DELP, percent Error.pdf", replace
+qui graph export "graph 210 04 C19 daily cases, $country, National, DELP, percent Error.pdf", replace
+
 
 
 
@@ -895,7 +935,7 @@ qui graph export "graph 210 7 C19 daily cases, $country, National, DELP, percent
 
 ***********************************************
 
-* 210 8 Daily cases, National, absolute percent Error
+* 210 5 Daily cases, National, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XXX20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1040,15 +1080,14 @@ twoway ///
 (line DCAbPeErA01XXX20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XXX20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XXX20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 8 C19 daily cases, $country, National, DELP, absolute percent Error.gph", replace
-qui graph export "graph 210 8 C19 daily cases, $country, National, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 210 05 C19 daily cases, $country, National, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -1058,7 +1097,7 @@ qui graph export "graph 210 8 C19 daily cases, $country, National, DELP, absolut
 
 ***********************************************
 
-* 210 5 1 Daily cases, National, median error by epi weeks and updates
+* 210 6 Daily cases, National, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XXX20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1203,15 +1242,14 @@ twoway ///
 (line DCErrorA01XXX20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XXX20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XXX20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 5 1 C19 daily cases, $country, National, DELP, Error median1.gph", replace
-qui graph export "graph 210 5 1 C19 daily cases, $country, National, DELP, Error median1.pdf", replace
+qui graph export "graph 210 06 C19 daily cases, $country, National, DELP, Error median1.pdf", replace
 
 
 
@@ -1220,19 +1258,18 @@ qui graph export "graph 210 5 1 C19 daily cases, $country, National, DELP, Error
 
 ***********************************************
 
-* 210 5 2 Daily cases, National, AVERAGE over updates of median error by epi weeks
+* 210 7 Daily cases, National, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XXX_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, National, DELP", size(small))  
 
-qui graph save "graph 210 5 2 C19 daily cases, $country, National, DELP, Error Mean1.gph", replace
-qui graph export "graph 210 5 2 C19 daily cases, $country, National, DELP, Error Mean1.pdf", replace
+qui graph export "graph 210 07 C19 daily cases, $country, National, DELP, Error Mean1.pdf", replace
 
 
 
@@ -1243,7 +1280,7 @@ qui graph export "graph 210 5 2 C19 daily cases, $country, National, DELP, Error
 
 ***********************************************
 
-* 210 6 1 Daily cases, National, median absolute error by epi weeks and updates
+* 210 8 Daily cases, National, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XXX20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1388,15 +1425,14 @@ twoway ///
 (line DCAbsErrA01XXX20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XXX20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XXX20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 6 1 C19 daily cases, $country, National, DELP, absolute Error median1.gph", replace
-qui graph export "graph 210 6 1 C19 daily cases, $country, National, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 210 08 C19 daily cases, $country, National, DELP, Absolute Error median1.pdf", replace
 
 
 
@@ -1405,20 +1441,19 @@ qui graph export "graph 210 6 1 C19 daily cases, $country, National, DELP, absol
 
 ***********************************************
 
-* 210 6 2 Daily cases, National, mean over updates of median absolute error by epi weeks
+* 210 9 Daily cases, National, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XXX_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 6 2 C19 daily cases, $country, National, DELP, Error Mean1.gph", replace
-qui graph export "graph 210 6 2 C19 daily cases, $country, National, DELP, Error Mean1.pdf", replace
+qui graph export "graph 210 09 C19 daily cases, $country, National, DELP, Absolute Error Mean1.pdf", replace
 
 
 
@@ -1430,7 +1465,7 @@ qui graph export "graph 210 6 2 C19 daily cases, $country, National, DELP, Error
 
 ***********************************************
 
-* 210 7 1 Daily cases, National, median % error by epi weeks and updates
+* 210 10 Daily cases, National, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XXX20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1575,15 +1610,14 @@ twoway ///
 (line DCPerErrA01XXX20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XXX20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XXX20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 7 1 C19 daily cases, $country, National, DELP, percent Error median1.gph", replace
-qui graph export "graph 210 7 1 C19 daily cases, $country, National, DELP, percent Error median1.pdf", replace
+qui graph export "graph 210 10 C19 daily cases, $country, National, DELP, Percent Error median1.pdf", replace
 
 
 
@@ -1592,20 +1626,19 @@ qui graph export "graph 210 7 1 C19 daily cases, $country, National, DELP, perce
 
 ***********************************************
 
-* 210 7 2 Daily cases, National, mean over updates of median percent error by epi weeks
+* 210 11 Daily cases, National, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XXX_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, National, DELP", size(small))
 
-qui graph save "graph 210 7 2 C19 daily cases, $country, National, DELP, Error Mean1.gph", replace
-qui graph export "graph 210 7 2 C19 daily cases, $country, National, DELP, Error Mean1.pdf", replace
+qui graph export "graph 210 11 C19 daily cases, $country, National, DELP, Percent Error Mean1.pdf", replace
 
 
 
@@ -1615,7 +1648,7 @@ qui graph export "graph 210 7 2 C19 daily cases, $country, National, DELP, Error
 
 ***********************************************
 
-* 210 8 1 Daily cases, National, median absolute % error by epi weeks and updates
+* 210 12 Daily cases, National, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XXX20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1760,15 +1793,14 @@ twoway ///
 (line DCAbPeErA01XXX20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XXX20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XXX20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, National, DELP", size(small))
 
-qui graph save "graph 210 8 1 C19 daily cases, $country, National, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 210 8 1 C19 daily cases, $country, National, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 210 12 C19 daily cases, $country, National, DELP, Absolute Percent Error median1.pdf", replace
 
 
 
@@ -1778,20 +1810,19 @@ qui graph export "graph 210 8 1 C19 daily cases, $country, National, DELP, absol
 ***********************************************
 
 
-* 210 8 2 Daily cases, National, mean over updates of median absolute percent error by epi weeks
+* 210 13 Daily cases, National, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XXX_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, National, DELP", size(small)) 
 
-qui graph save "graph 210 8 2 C19 daily cases, $country, National, DELP, Error Mean1.gph", replace
-qui graph export "graph 210 8 2 C19 daily cases, $country, National, DELP, Error Mean1.pdf", replace
+qui graph export "graph 210 13 C19 daily cases, $country, National, DELP, Absolute Percent Error Mean1.pdf", replace
 
 
 
@@ -1810,7 +1841,7 @@ qui graph export "graph 210 8 2 C19 daily cases, $country, National, DELP, Error
 
 ***********************************************
 
-* 211 5 Daily cases, Alberta, Error
+* 211 2 Daily cases, Alberta, Error
 
 twoway ///
 (line DCErrorA01XAB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -1955,15 +1986,14 @@ twoway ///
 (line DCErrorA01XAB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XAB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XAB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 5 C19 daily cases, $country, Alberta, DELP, Error.gph", replace
-qui graph export "graph 211 5 C19 daily cases, $country, Alberta, DELP, Error.pdf", replace
+qui graph export "graph 211 02 C19 daily cases, $country, Alberta, DELP, Error.pdf", replace
 
 
 
@@ -1971,7 +2001,7 @@ qui graph export "graph 211 5 C19 daily cases, $country, Alberta, DELP, Error.pd
 
 ***********************************************
 
-* 211 6 Daily cases, Alberta, absolute Error
+* 211 3 Daily cases, Alberta, absolute Error
 
 twoway ///
 (line DCAbsErrA01XAB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2116,15 +2146,14 @@ twoway ///
 (line DCAbsErrA01XAB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XAB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XAB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 6 C19 daily cases, $country, Alberta, DELP, absolute Error.gph", replace
-qui graph export "graph 211 6 C19 daily cases, $country, Alberta, DELP, absolute Error.pdf", replace
+qui graph export "graph 211 03 C19 daily cases, $country, Alberta, DELP, absolute Error.pdf", replace
 
 
 
@@ -2135,7 +2164,7 @@ qui graph export "graph 211 6 C19 daily cases, $country, Alberta, DELP, absolute
 
 ***********************************************
 
-* 211 7 Daily cases, Alberta, percent Error
+* 211 4 Daily cases, Alberta, percent Error
 
 twoway ///
 (line DCPerErrA01XAB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2280,15 +2309,14 @@ twoway ///
 (line DCPerErrA01XAB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XAB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XAB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 7 C19 daily cases, $country, Alberta, DELP, percent Error.gph", replace
-qui graph export "graph 211 7 C19 daily cases, $country, Alberta, DELP, percent Error.pdf", replace
+qui graph export "graph 211 04 C19 daily cases, $country, Alberta, DELP, percent Error.pdf", replace
 
 
 
@@ -2296,7 +2324,7 @@ qui graph export "graph 211 7 C19 daily cases, $country, Alberta, DELP, percent 
 
 ***********************************************
 
-* 211 8 Daily cases, Alberta, absolute percent Error
+* 211 5 Daily cases, Alberta, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XAB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2441,15 +2469,14 @@ twoway ///
 (line DCAbPeErA01XAB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XAB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XAB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 8 C19 daily cases, $country, Alberta, DELP, absolute percent Error.gph", replace
-qui graph export "graph 211 8 C19 daily cases, $country, Alberta, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 211 05 C19 daily cases, $country, Alberta, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -2459,7 +2486,7 @@ qui graph export "graph 211 8 C19 daily cases, $country, Alberta, DELP, absolute
 
 ***********************************************
 
-* 211 5 1 Daily cases, Alberta, median error by epi weeks and updates
+* 211 6 Daily cases, Alberta, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XAB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2604,15 +2631,14 @@ twoway ///
 (line DCErrorA01XAB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XAB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XAB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 5 1 C19 daily cases, $country, Alberta, DELP, Error median1.gph", replace
-qui graph export "graph 211 5 1 C19 daily cases, $country, Alberta, DELP, Error median1.pdf", replace
+qui graph export "graph 211 06 C19 daily cases, $country, Alberta, DELP, Error median1.pdf", replace
 
 
 
@@ -2621,19 +2647,18 @@ qui graph export "graph 211 5 1 C19 daily cases, $country, Alberta, DELP, Error 
 
 ***********************************************
 
-* 211 5 2 Daily cases, Alberta, AVERAGE over updates of median error by epi weeks
+* 211 7 Daily cases, Alberta, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XAB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Alberta, DELP", size(small))  
 
-qui graph save "graph 211 5 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.gph", replace
-qui graph export "graph 211 5 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.pdf", replace
+qui graph export "graph 211 07 C19 daily cases, $country, Alberta, DELP, Error Mean1.pdf", replace
 
 
 
@@ -2644,7 +2669,7 @@ qui graph export "graph 211 5 2 C19 daily cases, $country, Alberta, DELP, Error 
 
 ***********************************************
 
-* 211 6 1 Daily cases, Alberta, median absolute error by epi weeks and updates
+* 211 8 Daily cases, Alberta, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XAB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2788,16 +2813,15 @@ twoway ///
 (line DCAbsErrA01XAB20211228_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XAB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XAB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-(line DCAbsErrA01XAB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+(line DCAbsErrA01XAB20211231_Med1 date, sort lcolor(red) lwidth(medium)) ///
+if date >= td(01jan2020) & date <= td(01jan2022) /// 
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 6 1 C19 daily cases, $country, Alberta, DELP, absolute Error median1.gph", replace
-qui graph export "graph 211 6 1 C19 daily cases, $country, Alberta, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 211 08 C19 daily cases, $country, Alberta, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -2806,20 +2830,19 @@ qui graph export "graph 211 6 1 C19 daily cases, $country, Alberta, DELP, absolu
 
 ***********************************************
 
-* 211 6 2 Daily cases, Alberta, mean over updates of median absolute error by epi weeks
+* 211 9 Daily cases, Alberta, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XAB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 6 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.gph", replace
-qui graph export "graph 211 6 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.pdf", replace
+qui graph export "graph 211 09 C19 daily cases, $country, Alberta, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -2831,7 +2854,7 @@ qui graph export "graph 211 6 2 C19 daily cases, $country, Alberta, DELP, Error 
 
 ***********************************************
 
-* 211 7 1 Daily cases, Alberta, median % error by epi weeks and updates
+* 211 10 Daily cases, Alberta, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XAB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -2976,15 +2999,14 @@ twoway ///
 (line DCPerErrA01XAB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XAB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XAB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 7 1 C19 daily cases, $country, Alberta, DELP, percent Error median1.gph", replace
-qui graph export "graph 211 7 1 C19 daily cases, $country, Alberta, DELP, percent Error median1.pdf", replace
+qui graph export "graph 211 10 C19 daily cases, $country, Alberta, DELP, percent Error median1.pdf", replace
 
 
 
@@ -2993,20 +3015,19 @@ qui graph export "graph 211 7 1 C19 daily cases, $country, Alberta, DELP, percen
 
 ***********************************************
 
-* 211 7 2 Daily cases, Alberta, mean over updates of median percent error by epi weeks
+* 211 11 Daily cases, Alberta, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XAB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Alberta, DELP", size(small))
 
-qui graph save "graph 211 7 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.gph", replace
-qui graph export "graph 211 7 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.pdf", replace
+qui graph export "graph 211 11 C19 daily cases, $country, Alberta, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -3016,7 +3037,7 @@ qui graph export "graph 211 7 2 C19 daily cases, $country, Alberta, DELP, Error 
 
 ***********************************************
 
-* 211 8 1 Daily cases, Alberta, median absolute % error by epi weeks and updates
+* 211 12 Daily cases, Alberta, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XAB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -3161,15 +3182,14 @@ twoway ///
 (line DCAbPeErA01XAB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XAB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XAB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Alberta, DELP", size(small))
 
-qui graph save "graph 211 8 1 C19 daily cases, $country, Alberta, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 211 8 1 C19 daily cases, $country, Alberta, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 211 12 C19 daily cases, $country, Alberta, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -3179,20 +3199,19 @@ qui graph export "graph 211 8 1 C19 daily cases, $country, Alberta, DELP, absolu
 ***********************************************
 
 
-* 211 8 2 Daily cases, Alberta, mean over updates of median absolute percent error by epi weeks
+* 211 13 Daily cases, Alberta, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
-(line DCAbPeErA01XAB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+(line DCAbPeErA01XAB_Mean1 date, sort lcolor(red) lwidth(medium)) ///
+if date >= td(01jan2020) & date <= td(01jan2022) /// 
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Alberta, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Alberta, DELP", size(small)) 
 
-qui graph save "graph 211 8 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.gph", replace
-qui graph export "graph 211 8 2 C19 daily cases, $country, Alberta, DELP, Error Mean1.pdf", replace
+qui graph export "graph 211 13 C19 daily cases, $country, Alberta, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -3211,7 +3230,7 @@ qui graph export "graph 211 8 2 C19 daily cases, $country, Alberta, DELP, Error 
 
 ***********************************************
 
-* 212 5 Daily cases, British Columbia, Error
+* 112 2 Daily cases, British Columbia, Error
 
 twoway ///
 (line DCErrorA01XBC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -3356,15 +3375,14 @@ twoway ///
 (line DCErrorA01XBC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XBC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XBC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 5 C19 daily cases, $country, British Columbia, DELP, Error.gph", replace
-qui graph export "graph 212 5 C19 daily cases, $country, British Columbia, DELP, Error.pdf", replace
+qui graph export "graph 212 02 C19 daily cases, $country, British Columbia, DELP, Error.pdf", replace
 
 
 
@@ -3372,7 +3390,7 @@ qui graph export "graph 212 5 C19 daily cases, $country, British Columbia, DELP,
 
 ***********************************************
 
-* 212 6 Daily cases, British Columbia, absolute Error
+* 112 3 Daily cases, British Columbia, absolute Error
 
 twoway ///
 (line DCAbsErrA01XBC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -3517,15 +3535,14 @@ twoway ///
 (line DCAbsErrA01XBC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XBC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XBC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 6 C19 daily cases, $country, British Columbia, DELP, absolute Error.gph", replace
-qui graph export "graph 212 6 C19 daily cases, $country, British Columbia, DELP, absolute Error.pdf", replace
+qui graph export "graph 212 03 C19 daily cases, $country, British Columbia, DELP, absolute Error.pdf", replace
 
 
 
@@ -3536,7 +3553,7 @@ qui graph export "graph 212 6 C19 daily cases, $country, British Columbia, DELP,
 
 ***********************************************
 
-* 212 7 Daily cases, British Columbia, percent Error
+* 112 4 Daily cases, British Columbia, percent Error
 
 twoway ///
 (line DCPerErrA01XBC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -3681,15 +3698,14 @@ twoway ///
 (line DCPerErrA01XBC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XBC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XBC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 7 C19 daily cases, $country, British Columbia, DELP, percent Error.gph", replace
-qui graph export "graph 212 7 C19 daily cases, $country, British Columbia, DELP, percent Error.pdf", replace
+qui graph export "graph 212 04 C19 daily cases, $country, British Columbia, DELP, percent Error.pdf", replace
 
 
 
@@ -3697,7 +3713,7 @@ qui graph export "graph 212 7 C19 daily cases, $country, British Columbia, DELP,
 
 ***********************************************
 
-* 212 8 Daily cases, British Columbia, absolute percent Error
+* 112 5 Daily cases, British Columbia, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XBC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -3842,15 +3858,14 @@ twoway ///
 (line DCAbPeErA01XBC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XBC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XBC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 8 C19 daily cases, $country, British Columbia, DELP, absolute percent Error.gph", replace
-qui graph export "graph 212 8 C19 daily cases, $country, British Columbia, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 212 05 C19 daily cases, $country, British Columbia, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -3860,7 +3875,7 @@ qui graph export "graph 212 8 C19 daily cases, $country, British Columbia, DELP,
 
 ***********************************************
 
-* 212 5 1 Daily cases, British Columbia, median error by epi weeks and updates
+* 112 6 Daily cases, British Columbia, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XBC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4005,15 +4020,14 @@ twoway ///
 (line DCErrorA01XBC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XBC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XBC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 5 1 C19 daily cases, $country, British Columbia, DELP, Error median1.gph", replace
-qui graph export "graph 212 5 1 C19 daily cases, $country, British Columbia, DELP, Error median1.pdf", replace
+qui graph export "graph 212 06 C19 daily cases, $country, British Columbia, DELP, Error median1.pdf", replace
 
 
 
@@ -4022,19 +4036,18 @@ qui graph export "graph 212 5 1 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 5 2 Daily cases, British Columbia, AVERAGE over updates of median error by epi weeks
+* 112 7 Daily cases, British Columbia, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XBC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, British Columbia, DELP", size(small))  
 
-qui graph save "graph 212 5 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.gph", replace
-qui graph export "graph 212 5 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 212 07 C19 daily cases, $country, British Columbia, DELP, Error Mean1.pdf", replace
 
 
 
@@ -4045,7 +4058,7 @@ qui graph export "graph 212 5 2 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 6 1 Daily cases, British Columbia, median absolute error by epi weeks and updates
+* 112 8 Daily cases, British Columbia, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XBC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4190,15 +4203,14 @@ twoway ///
 (line DCAbsErrA01XBC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XBC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XBC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 6 1 C19 daily cases, $country, British Columbia, DELP, absolute Error median1.gph", replace
-qui graph export "graph 212 6 1 C19 daily cases, $country, British Columbia, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 212 08 C19 daily cases, $country, British Columbia, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -4207,20 +4219,19 @@ qui graph export "graph 212 6 1 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 6 2 Daily cases, British Columbia, mean over updates of median absolute error by epi weeks
+* 112 9 Daily cases, British Columbia, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XBC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 6 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.gph", replace
-qui graph export "graph 212 6 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 212 09 C19 daily cases, $country, British Columbia, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -4232,7 +4243,7 @@ qui graph export "graph 212 6 2 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 7 1 Daily cases, British Columbia, median % error by epi weeks and updates
+* 112 10 Daily cases, British Columbia, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XBC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4377,15 +4388,14 @@ twoway ///
 (line DCPerErrA01XBC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XBC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XBC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 7 1 C19 daily cases, $country, British Columbia, DELP, percent Error median1.gph", replace
-qui graph export "graph 212 7 1 C19 daily cases, $country, British Columbia, DELP, percent Error median1.pdf", replace
+qui graph export "graph 212 10 C19 daily cases, $country, British Columbia, DELP, percent Error median1.pdf", replace
 
 
 
@@ -4394,20 +4404,19 @@ qui graph export "graph 212 7 1 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 7 2 Daily cases, British Columbia, mean over updates of median percent error by epi weeks
+* 112 11 Daily cases, British Columbia, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XBC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, British Columbia, DELP", size(small))
 
-qui graph save "graph 212 7 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.gph", replace
-qui graph export "graph 212 7 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 212 11 C19 daily cases, $country, British Columbia, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -4417,7 +4426,7 @@ qui graph export "graph 212 7 2 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 212 8 1 Daily cases, British Columbia, median absolute % error by epi weeks and updates
+* 112 12 Daily cases, British Columbia, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XBC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4562,15 +4571,14 @@ twoway ///
 (line DCAbPeErA01XBC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XBC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XBC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, British Columbia, DELP", size(small))
 
-qui graph save "graph 212 8 1 C19 daily cases, $country, British Columbia, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 212 8 1 C19 daily cases, $country, British Columbia, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 212 12 C19 daily cases, $country, British Columbia, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -4580,20 +4588,19 @@ qui graph export "graph 212 8 1 C19 daily cases, $country, British Columbia, DEL
 ***********************************************
 
 
-* 212 8 2 Daily cases, British Columbia, mean over updates of median absolute percent error by epi weeks
+* 112 13 Daily cases, British Columbia, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XBC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, British Columbia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, British Columbia, DELP", size(small)) 
 
-qui graph save "graph 212 8 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.gph", replace
-qui graph export "graph 212 8 2 C19 daily cases, $country, British Columbia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 212 13 C19 daily cases, $country, British Columbia, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -4613,7 +4620,7 @@ qui graph export "graph 212 8 2 C19 daily cases, $country, British Columbia, DEL
 
 ***********************************************
 
-* 213 5 Daily cases, Manitoba, Error
+* 213 2 Daily cases, Manitoba, Error
 
 twoway ///
 (line DCErrorA01XMB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4758,15 +4765,14 @@ twoway ///
 (line DCErrorA01XMB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XMB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XMB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 5 C19 daily cases, $country, Manitoba, DELP, Error.gph", replace
-qui graph export "graph 213 5 C19 daily cases, $country, Manitoba, DELP, Error.pdf", replace
+qui graph export "graph 213 02 C19 daily cases, $country, Manitoba, DELP, Error.pdf", replace
 
 
 
@@ -4774,7 +4780,7 @@ qui graph export "graph 213 5 C19 daily cases, $country, Manitoba, DELP, Error.p
 
 ***********************************************
 
-* 213 6 Daily cases, Manitoba, absolute Error
+* 213 3 Daily cases, Manitoba, absolute Error
 
 twoway ///
 (line DCAbsErrA01XMB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -4919,15 +4925,14 @@ twoway ///
 (line DCAbsErrA01XMB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XMB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XMB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 6 C19 daily cases, $country, Manitoba, DELP, absolute Error.gph", replace
-qui graph export "graph 213 6 C19 daily cases, $country, Manitoba, DELP, absolute Error.pdf", replace
+qui graph export "graph 213 03 C19 daily cases, $country, Manitoba, DELP, absolute Error.pdf", replace
 
 
 
@@ -4938,7 +4943,7 @@ qui graph export "graph 213 6 C19 daily cases, $country, Manitoba, DELP, absolut
 
 ***********************************************
 
-* 213 7 Daily cases, Manitoba, percent Error
+* 213 4 Daily cases, Manitoba, percent Error
 
 twoway ///
 (line DCPerErrA01XMB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5083,15 +5088,14 @@ twoway ///
 (line DCPerErrA01XMB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XMB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XMB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 7 C19 daily cases, $country, Manitoba, DELP, percent Error.gph", replace
-qui graph export "graph 213 7 C19 daily cases, $country, Manitoba, DELP, percent Error.pdf", replace
+qui graph export "graph 213 04 C19 daily cases, $country, Manitoba, DELP, percent Error.pdf", replace
 
 
 
@@ -5099,7 +5103,7 @@ qui graph export "graph 213 7 C19 daily cases, $country, Manitoba, DELP, percent
 
 ***********************************************
 
-* 213 8 Daily cases, Manitoba, absolute percent Error
+* 213 5 Daily cases, Manitoba, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XMB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5244,15 +5248,14 @@ twoway ///
 (line DCAbPeErA01XMB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XMB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XMB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 8 C19 daily cases, $country, Manitoba, DELP, absolute percent Error.gph", replace
-qui graph export "graph 213 8 C19 daily cases, $country, Manitoba, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 213 05 C19 daily cases, $country, Manitoba, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -5262,7 +5265,7 @@ qui graph export "graph 213 8 C19 daily cases, $country, Manitoba, DELP, absolut
 
 ***********************************************
 
-* 213 5 1 Daily cases, Manitoba, median error by epi weeks and updates
+* 213 6 Daily cases, Manitoba, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XMB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5407,15 +5410,14 @@ twoway ///
 (line DCErrorA01XMB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XMB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XMB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 5 1 C19 daily cases, $country, Manitoba, DELP, Error median1.gph", replace
-qui graph export "graph 213 5 1 C19 daily cases, $country, Manitoba, DELP, Error median1.pdf", replace
+qui graph export "graph 213 06 C19 daily cases, $country, Manitoba, DELP, Error median1.pdf", replace
 
 
 
@@ -5424,19 +5426,18 @@ qui graph export "graph 213 5 1 C19 daily cases, $country, Manitoba, DELP, Error
 
 ***********************************************
 
-* 213 5 2 Daily cases, Manitoba, AVERAGE over updates of median error by epi weeks
+* 213 7 Daily cases, Manitoba, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XMB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Manitoba, DELP", size(small))  
 
-qui graph save "graph 213 5 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.gph", replace
-qui graph export "graph 213 5 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.pdf", replace
+qui graph export "graph 213 07 C19 daily cases, $country, Manitoba, DELP, Error Mean1.pdf", replace
 
 
 
@@ -5447,7 +5448,7 @@ qui graph export "graph 213 5 2 C19 daily cases, $country, Manitoba, DELP, Error
 
 ***********************************************
 
-* 213 6 1 Daily cases, Manitoba, median absolute error by epi weeks and updates
+* 213 8 Daily cases, Manitoba, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XMB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5592,15 +5593,14 @@ twoway ///
 (line DCAbsErrA01XMB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XMB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XMB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 6 1 C19 daily cases, $country, Manitoba, DELP, absolute Error median1.gph", replace
-qui graph export "graph 213 6 1 C19 daily cases, $country, Manitoba, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 213 08 C19 daily cases, $country, Manitoba, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -5609,20 +5609,19 @@ qui graph export "graph 213 6 1 C19 daily cases, $country, Manitoba, DELP, absol
 
 ***********************************************
 
-* 213 6 2 Daily cases, Manitoba, mean over updates of median absolute error by epi weeks
+* 213 9 Daily cases, Manitoba, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XMB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 6 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.gph", replace
-qui graph export "graph 213 6 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.pdf", replace
+qui graph export "graph 213 09 C19 daily cases, $country, Manitoba, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -5634,7 +5633,7 @@ qui graph export "graph 213 6 2 C19 daily cases, $country, Manitoba, DELP, Error
 
 ***********************************************
 
-* 213 7 1 Daily cases, Manitoba, median % error by epi weeks and updates
+* 213 10 Daily cases, Manitoba, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XMB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5779,15 +5778,14 @@ twoway ///
 (line DCPerErrA01XMB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XMB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XMB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 7 1 C19 daily cases, $country, Manitoba, DELP, percent Error median1.gph", replace
-qui graph export "graph 213 7 1 C19 daily cases, $country, Manitoba, DELP, percent Error median1.pdf", replace
+qui graph export "graph 213 10 C19 daily cases, $country, Manitoba, DELP, percent Error median1.pdf", replace
 
 
 
@@ -5796,20 +5794,19 @@ qui graph export "graph 213 7 1 C19 daily cases, $country, Manitoba, DELP, perce
 
 ***********************************************
 
-* 213 7 2 Daily cases, Manitoba, mean over updates of median percent error by epi weeks
+* 213 11 Daily cases, Manitoba, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XMB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Manitoba, DELP", size(small))
 
-qui graph save "graph 213 7 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.gph", replace
-qui graph export "graph 213 7 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.pdf", replace
+qui graph export "graph 213 11 C19 daily cases, $country, Manitoba, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -5819,7 +5816,7 @@ qui graph export "graph 213 7 2 C19 daily cases, $country, Manitoba, DELP, Error
 
 ***********************************************
 
-* 213 8 1 Daily cases, Manitoba, median absolute % error by epi weeks and updates
+* 213 12 Daily cases, Manitoba, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XMB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -5964,15 +5961,14 @@ twoway ///
 (line DCAbPeErA01XMB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XMB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XMB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Manitoba, DELP", size(small))
 
-qui graph save "graph 213 8 1 C19 daily cases, $country, Manitoba, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 213 8 1 C19 daily cases, $country, Manitoba, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 213 12 C19 daily cases, $country, Manitoba, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -5982,20 +5978,19 @@ qui graph export "graph 213 8 1 C19 daily cases, $country, Manitoba, DELP, absol
 ***********************************************
 
 
-* 213 8 2 Daily cases, Manitoba, mean over updates of median absolute percent error by epi weeks
+* 213 13 Daily cases, Manitoba, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XMB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Manitoba, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Manitoba, DELP", size(small)) 
 
-qui graph save "graph 213 8 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.gph", replace
-qui graph export "graph 213 8 2 C19 daily cases, $country, Manitoba, DELP, Error Mean1.pdf", replace
+qui graph export "graph 213 13 C19 daily cases, $country, Manitoba, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -6015,7 +6010,7 @@ qui graph export "graph 213 8 2 C19 daily cases, $country, Manitoba, DELP, Error
 
 ***********************************************
 
-* 214 5 Daily cases, New Brunswick, Error
+* 214 2 Daily cases, New Brunswick, Error
 
 twoway ///
 (line DCErrorA01XNB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6160,15 +6155,14 @@ twoway ///
 (line DCErrorA01XNB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 5 C19 daily cases, $country, New Brunswick, DELP, Error.gph", replace
-qui graph export "graph 214 5 C19 daily cases, $country, New Brunswick, DELP, Error.pdf", replace
+qui graph export "graph 214 02 C19 daily cases, $country, New Brunswick, DELP, Error.pdf", replace
 
 
 
@@ -6176,7 +6170,7 @@ qui graph export "graph 214 5 C19 daily cases, $country, New Brunswick, DELP, Er
 
 ***********************************************
 
-* 214 6 Daily cases, New Brunswick, absolute Error
+* 214 3 Daily cases, New Brunswick, absolute Error
 
 twoway ///
 (line DCAbsErrA01XNB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6321,15 +6315,14 @@ twoway ///
 (line DCAbsErrA01XNB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 6 C19 daily cases, $country, New Brunswick, DELP, absolute Error.gph", replace
-qui graph export "graph 214 6 C19 daily cases, $country, New Brunswick, DELP, absolute Error.pdf", replace
+qui graph export "graph 214 03 C19 daily cases, $country, New Brunswick, DELP, absolute Error.pdf", replace
 
 
 
@@ -6340,7 +6333,7 @@ qui graph export "graph 214 6 C19 daily cases, $country, New Brunswick, DELP, ab
 
 ***********************************************
 
-* 214 7 Daily cases, New Brunswick, percent Error
+* 214 4 Daily cases, New Brunswick, percent Error
 
 twoway ///
 (line DCPerErrA01XNB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6485,15 +6478,14 @@ twoway ///
 (line DCPerErrA01XNB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 7 C19 daily cases, $country, New Brunswick, DELP, percent Error.gph", replace
-qui graph export "graph 213 7 C19 daily cases, $country, New Brunswick, DELP, percent Error.pdf", replace
+qui graph export "graph 214 04 C19 daily cases, $country, New Brunswick, DELP, percent Error.pdf", replace
 
 
 
@@ -6501,7 +6493,7 @@ qui graph export "graph 213 7 C19 daily cases, $country, New Brunswick, DELP, pe
 
 ***********************************************
 
-* 214 8 Daily cases, New Brunswick, absolute percent Error
+* 214 5 Daily cases, New Brunswick, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XNB20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6646,15 +6638,14 @@ twoway ///
 (line DCAbPeErA01XNB20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNB20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNB20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 8 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error.gph", replace
-qui graph export "graph 214 8 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 214 05 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -6664,7 +6655,7 @@ qui graph export "graph 214 8 C19 daily cases, $country, New Brunswick, DELP, ab
 
 ***********************************************
 
-* 214 5 1 Daily cases, New Brunswick, median error by epi weeks and updates
+* 214 6 Daily cases, New Brunswick, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XNB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6809,15 +6800,14 @@ twoway ///
 (line DCErrorA01XNB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 5 1 C19 daily cases, $country, New Brunswick, DELP, Error median1.gph", replace
-qui graph export "graph 214 5 1 C19 daily cases, $country, New Brunswick, DELP, Error median1.pdf", replace
+qui graph export "graph 214 06 C19 daily cases, $country, New Brunswick, DELP, Error median1.pdf", replace
 
 
 
@@ -6826,19 +6816,18 @@ qui graph export "graph 214 5 1 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 5 2 Daily cases, New Brunswick, AVERAGE over updates of median error by epi weeks
+* 214 7 Daily cases, New Brunswick, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XNB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, New Brunswick, DELP", size(small))  
 
-qui graph save "graph 214 5 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.gph", replace
-qui graph export "graph 214 5 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.pdf", replace
+qui graph export "graph 214 07 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.pdf", replace
 
 
 
@@ -6849,7 +6838,7 @@ qui graph export "graph 214 5 2 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 6 1 Daily cases, New Brunswick, median absolute error by epi weeks and updates
+* 214 8 Daily cases, New Brunswick, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XNB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -6994,15 +6983,14 @@ twoway ///
 (line DCAbsErrA01XNB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 6 1 C19 daily cases, $country, New Brunswick, DELP, absolute Error median1.gph", replace
-qui graph export "graph 214 6 1 C19 daily cases, $country, New Brunswick, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 214 08 C19 daily cases, $country, New Brunswick, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -7011,20 +6999,19 @@ qui graph export "graph 214 6 1 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 6 2 Daily cases, New Brunswick, mean over updates of median absolute error by epi weeks
+* 214 9 Daily cases, New Brunswick, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XNB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 6 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.gph", replace
-qui graph export "graph 214 6 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.pdf", replace
+qui graph export "graph 214 09 C19 daily cases, $country, New Brunswick, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -7036,7 +7023,7 @@ qui graph export "graph 214 6 2 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 7 1 Daily cases, New Brunswick, median % error by epi weeks and updates
+* 214 10 Daily cases, New Brunswick, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XNB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -7181,15 +7168,14 @@ twoway ///
 (line DCPerErrA01XNB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 7 1 C19 daily cases, $country, New Brunswick, DELP, percent Error median1.gph", replace
-qui graph export "graph 214 7 1 C19 daily cases, $country, New Brunswick, DELP, percent Error median1.pdf", replace
+qui graph export "graph 214 10 C19 daily cases, $country, New Brunswick, DELP, percent Error median1.pdf", replace
 
 
 
@@ -7198,20 +7184,19 @@ qui graph export "graph 214 7 1 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 7 2 Daily cases, New Brunswick, mean over updates of median percent error by epi weeks
+* 214 11 Daily cases, New Brunswick, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XNB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, New Brunswick, DELP", size(small))
 
-qui graph save "graph 214 7 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.gph", replace
-qui graph export "graph 214 7 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.pdf", replace
+qui graph export "graph 214 11 C19 daily cases, $country, New Brunswick, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -7221,7 +7206,7 @@ qui graph export "graph 214 7 2 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 214 8 1 Daily cases, New Brunswick, median absolute % error by epi weeks and updates
+* 214 12 Daily cases, New Brunswick, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XNB20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -7366,15 +7351,14 @@ twoway ///
 (line DCAbPeErA01XNB20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNB20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNB20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, New Brunswick, DELP", size(small))
 
-qui graph save "graph 214 8 1 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 214 8 1 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 214 12 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -7384,20 +7368,19 @@ qui graph export "graph 214 8 1 C19 daily cases, $country, New Brunswick, DELP, 
 ***********************************************
 
 
-* 214 8 2 Daily cases, New Brunswick, mean over updates of median absolute percent error by epi weeks
+* 214 13 Daily cases, New Brunswick, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XNB_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, New Brunswick, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, New Brunswick, DELP", size(small)) 
 
-qui graph save "graph 214 8 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.gph", replace
-qui graph export "graph 214 8 2 C19 daily cases, $country, New Brunswick, DELP, Error Mean1.pdf", replace
+qui graph export "graph 214 13 C19 daily cases, $country, New Brunswick, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -7423,7 +7406,7 @@ qui graph export "graph 214 8 2 C19 daily cases, $country, New Brunswick, DELP, 
 
 ***********************************************
 
-* 215 5 Daily cases, Newfoundland & Labrador, Error
+* 215 2 Daily cases, Newfoundland & Labrador, Error
 
 twoway ///
 (line DCErrorA01XNL20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -7568,15 +7551,14 @@ twoway ///
 (line DCErrorA01XNL20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNL20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNL20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 5 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error.gph", replace
-qui graph export "graph 215 5 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error.pdf", replace
+qui graph export "graph 215 02 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error.pdf", replace
 
 
 
@@ -7584,7 +7566,7 @@ qui graph export "graph 215 5 C19 daily cases, $country, Newfoundland & Labrador
 
 ***********************************************
 
-* 215 6 Daily cases, Newfoundland & Labrador, absolute Error
+* 215 3 Daily cases, Newfoundland & Labrador, absolute Error
 
 twoway ///
 (line DCAbsErrA01XNL20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -7729,15 +7711,14 @@ twoway ///
 (line DCAbsErrA01XNL20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNL20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNL20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 6 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error.gph", replace
-qui graph export "graph 215 6 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error.pdf", replace
+qui graph export "graph 215 03 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error.pdf", replace
 
 
 
@@ -7748,7 +7729,7 @@ qui graph export "graph 215 6 C19 daily cases, $country, Newfoundland & Labrador
 
 ***********************************************
 
-* 215 7 Daily cases, Newfoundland & Labrador, percent Error
+* 215 4 Daily cases, Newfoundland & Labrador, percent Error
 
 twoway ///
 (line DCPerErrA01XNL20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -7893,15 +7874,14 @@ twoway ///
 (line DCPerErrA01XNL20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNL20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNL20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 7 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error.gph", replace
-qui graph export "graph 215 7 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error.pdf", replace
+qui graph export "graph 215 04 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error.pdf", replace
 
 
 
@@ -7909,7 +7889,7 @@ qui graph export "graph 215 7 C19 daily cases, $country, Newfoundland & Labrador
 
 ***********************************************
 
-* 215 8 Daily cases, Newfoundland & Labrador, absolute percent Error
+* 215 5 Daily cases, Newfoundland & Labrador, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XNL20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8054,15 +8034,14 @@ twoway ///
 (line DCAbPeErA01XNL20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNL20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNL20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 8 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error.gph", replace
-qui graph export "graph 215 8 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 215 05 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -8072,7 +8051,7 @@ qui graph export "graph 215 8 C19 daily cases, $country, Newfoundland & Labrador
 
 ***********************************************
 
-* 215 5 1 Daily cases, Newfoundland & Labrador, median error by epi weeks and updates
+* 215 6 Daily cases, Newfoundland & Labrador, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XNL20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8217,15 +8196,14 @@ twoway ///
 (line DCErrorA01XNL20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNL20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNL20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 5 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error median1.gph", replace
-qui graph export "graph 215 5 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error median1.pdf", replace
+qui graph export "graph 215 06 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error median1.pdf", replace
 
 
 
@@ -8234,19 +8212,18 @@ qui graph export "graph 215 5 1 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 5 2 Daily cases, Newfoundland & Labrador, AVERAGE over updates of median error by epi weeks
+* 215 7 Daily cases, Newfoundland & Labrador, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XNL_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Newfoundland & Labrador, DELP", size(small))  
 
-qui graph save "graph 215 5 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.gph", replace
-qui graph export "graph 215 5 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.pdf", replace
+qui graph export "graph 215 07 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.pdf", replace
 
 
 
@@ -8257,7 +8234,7 @@ qui graph export "graph 215 5 2 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 6 1 Daily cases, Newfoundland & Labrador, median absolute error by epi weeks and updates
+* 215 8 Daily cases, Newfoundland & Labrador, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XNL20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8402,15 +8379,14 @@ twoway ///
 (line DCAbsErrA01XNL20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNL20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNL20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 6 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error median1.gph", replace
-qui graph export "graph 215 6 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 215 08 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -8419,20 +8395,19 @@ qui graph export "graph 215 6 1 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 6 2 Daily cases, Newfoundland & Labrador, mean over updates of median absolute error by epi weeks
+* 215 9 Daily cases, Newfoundland & Labrador, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XNL_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small)) ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 6 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.gph", replace
-qui graph export "graph 215 6 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.pdf", replace
+qui graph export "graph 215 09 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -8444,7 +8419,7 @@ qui graph export "graph 215 6 2 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 7 1 Daily cases, Newfoundland & Labrador, median % error by epi weeks and updates
+* 215 10 Daily cases, Newfoundland & Labrador, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XNL20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8589,15 +8564,14 @@ twoway ///
 (line DCPerErrA01XNL20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNL20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNL20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 7 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error median1.gph", replace
-qui graph export "graph 215 7 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error median1.pdf", replace
+qui graph export "graph 215 10 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error median1.pdf", replace
 
 
 
@@ -8606,20 +8580,19 @@ qui graph export "graph 215 7 1 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 7 2 Daily cases, Newfoundland & Labrador, mean over updates of median percent error by epi weeks
+* 215 11 Daily cases, Newfoundland & Labrador, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XNL_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Newfoundland & Labrador, DELP", size(small))
 
-qui graph save "graph 215 7 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.gph", replace
-qui graph export "graph 215 7 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.pdf", replace
+qui graph export "graph 215 11 C19 daily cases, $country, Newfoundland & Labrador, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -8629,7 +8602,7 @@ qui graph export "graph 215 7 2 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 215 8 1 Daily cases, Newfoundland & Labrador, median absolute % error by epi weeks and updates
+* 215 12 Daily cases, Newfoundland & Labrador, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XNL20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8774,15 +8747,14 @@ twoway ///
 (line DCAbPeErA01XNL20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNL20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNL20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Newfoundland & Labrador, DELP", size(small))
 
-qui graph save "graph 215 8 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 215 8 1 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 215 12 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -8792,20 +8764,19 @@ qui graph export "graph 215 8 1 C19 daily cases, $country, Newfoundland & Labrad
 ***********************************************
 
 
-* 215 8 2 Daily cases, Newfoundland & Labrador, mean over updates of median absolute percent error by epi weeks
+* 215 13 Daily cases, Newfoundland & Labrador, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XNL_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Newfoundland & Labrador, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Newfoundland & Labrador, DELP", size(small)) 
 
-qui graph save "graph 215 8 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.gph", replace
-qui graph export "graph 215 8 2 C19 daily cases, $country, Newfoundland & Labrador, DELP, Error Mean1.pdf", replace
+qui graph export "graph 215 13 C19 daily cases, $country, Newfoundland & Labrador, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -8827,7 +8798,7 @@ qui graph export "graph 215 8 2 C19 daily cases, $country, Newfoundland & Labrad
 
 ***********************************************
 
-* 216 5 Daily cases, Nova Scotia, Error
+* 216 2 Daily cases, Nova Scotia, Error
 
 twoway ///
 (line DCErrorA01XNS20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -8972,15 +8943,14 @@ twoway ///
 (line DCErrorA01XNS20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNS20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNS20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 5 C19 daily cases, $country, Nova Scotia, DELP, Error.gph", replace
-qui graph export "graph 216 5 C19 daily cases, $country, Nova Scotia, DELP, Error.pdf", replace
+qui graph export "graph 216 02 C19 daily cases, $country, Nova Scotia, DELP, Error.pdf", replace
 
 
 
@@ -8988,7 +8958,7 @@ qui graph export "graph 216 5 C19 daily cases, $country, Nova Scotia, DELP, Erro
 
 ***********************************************
 
-* 216 6 Daily cases, Nova Scotia, absolute Error
+* 216 3 Daily cases, Nova Scotia, absolute Error
 
 twoway ///
 (line DCAbsErrA01XNS20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9133,15 +9103,14 @@ twoway ///
 (line DCAbsErrA01XNS20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNS20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNS20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 6 C19 daily cases, $country, Nova Scotia, DELP, absolute Error.gph", replace
-qui graph export "graph 216 6 C19 daily cases, $country, Nova Scotia, DELP, absolute Error.pdf", replace
+qui graph export "graph 216 03 C19 daily cases, $country, Nova Scotia, DELP, absolute Error.pdf", replace
 
 
 
@@ -9152,7 +9121,7 @@ qui graph export "graph 216 6 C19 daily cases, $country, Nova Scotia, DELP, abso
 
 ***********************************************
 
-* 216 7 Daily cases, Nova Scotia, percent Error
+* 216 4 Daily cases, Nova Scotia, percent Error
 
 twoway ///
 (line DCPerErrA01XNS20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9297,15 +9266,14 @@ twoway ///
 (line DCPerErrA01XNS20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNS20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNS20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 7 C19 daily cases, $country, Nova Scotia, DELP, percent Error.gph", replace
-qui graph export "graph 216 7 C19 daily cases, $country, Nova Scotia, DELP, percent Error.pdf", replace
+qui graph export "graph 216 04 C19 daily cases, $country, Nova Scotia, DELP, percent Error.pdf", replace
 
 
 
@@ -9313,7 +9281,7 @@ qui graph export "graph 216 7 C19 daily cases, $country, Nova Scotia, DELP, perc
 
 ***********************************************
 
-* 216 8 Daily cases, Nova Scotia, absolute percent Error
+* 216 5 Daily cases, Nova Scotia, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XNS20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9458,15 +9426,14 @@ twoway ///
 (line DCAbPeErA01XNS20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNS20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNS20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 8 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error.gph", replace
-qui graph export "graph 216 8 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 216 05 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -9476,7 +9443,7 @@ qui graph export "graph 216 8 C19 daily cases, $country, Nova Scotia, DELP, abso
 
 ***********************************************
 
-* 216 5 1 Daily cases, Nova Scotia, median error by epi weeks and updates
+* 216 6 Daily cases, Nova Scotia, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XNS20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9621,15 +9588,14 @@ twoway ///
 (line DCErrorA01XNS20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNS20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XNS20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 5 1 C19 daily cases, $country, Nova Scotia, DELP, Error median1.gph", replace
-qui graph export "graph 216 5 1 C19 daily cases, $country, Nova Scotia, DELP, Error median1.pdf", replace
+qui graph export "graph 216 06 C19 daily cases, $country, Nova Scotia, DELP, Error median1.pdf", replace
 
 
 
@@ -9638,19 +9604,18 @@ qui graph export "graph 216 5 1 C19 daily cases, $country, Nova Scotia, DELP, Er
 
 ***********************************************
 
-* 216 5 2 Daily cases, Nova Scotia, AVERAGE over updates of median error by epi weeks
+* 216 7 Daily cases, Nova Scotia, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XNS_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Nova Scotia, DELP", size(small))  
 
-qui graph save "graph 216 5 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.gph", replace
-qui graph export "graph 216 5 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 216 07 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.pdf", replace
 
 
 
@@ -9661,7 +9626,7 @@ qui graph export "graph 216 5 2 C19 daily cases, $country, Nova Scotia, DELP, Er
 
 ***********************************************
 
-* 216 6 1 Daily cases, Nova Scotia, median absolute error by epi weeks and updates
+* 216 8 Daily cases, Nova Scotia, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XNS20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9806,15 +9771,14 @@ twoway ///
 (line DCAbsErrA01XNS20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNS20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XNS20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 6 1 C19 daily cases, $country, Nova Scotia, DELP, absolute Error median1.gph", replace
-qui graph export "graph 216 6 1 C19 daily cases, $country, Nova Scotia, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 216 08 C19 daily cases, $country, Nova Scotia, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -9823,20 +9787,19 @@ qui graph export "graph 216 6 1 C19 daily cases, $country, Nova Scotia, DELP, ab
 
 ***********************************************
 
-* 216 6 2 Daily cases, Nova Scotia, mean over updates of median absolute error by epi weeks
+* 216 9 Daily cases, Nova Scotia, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XNS_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 6 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.gph", replace
-qui graph export "graph 216 6 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 216 09 C19 daily cases, $country, Nova Scotia, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -9848,7 +9811,7 @@ qui graph export "graph 216 6 2 C19 daily cases, $country, Nova Scotia, DELP, Er
 
 ***********************************************
 
-* 216 7 1 Daily cases, Nova Scotia, median % error by epi weeks and updates
+* 216 10 Daily cases, Nova Scotia, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XNS20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -9993,15 +9956,14 @@ twoway ///
 (line DCPerErrA01XNS20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNS20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XNS20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 7 1 C19 daily cases, $country, Nova Scotia, DELP, percent Error median1.gph", replace
-qui graph export "graph 216 7 1 C19 daily cases, $country, Nova Scotia, DELP, percent Error median1.pdf", replace
+qui graph export "graph 216 10 C19 daily cases, $country, Nova Scotia, DELP, percent Error median1.pdf", replace
 
 
 
@@ -10010,20 +9972,19 @@ qui graph export "graph 216 7 1 C19 daily cases, $country, Nova Scotia, DELP, pe
 
 ***********************************************
 
-* 216 7 2 Daily cases, Nova Scotia, mean over updates of median percent error by epi weeks
+* 216 11 Daily cases, Nova Scotia, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XNS_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Nova Scotia, DELP", size(small))
 
-qui graph save "graph 216 7 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.gph", replace
-qui graph export "graph 216 7 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 216 11 C19 daily cases, $country, Nova Scotia, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -10033,7 +9994,7 @@ qui graph export "graph 216 7 2 C19 daily cases, $country, Nova Scotia, DELP, Er
 
 ***********************************************
 
-* 216 8 1 Daily cases, Nova Scotia, median absolute % error by epi weeks and updates
+* 216 12 Daily cases, Nova Scotia, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XNS20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -10178,15 +10139,14 @@ twoway ///
 (line DCAbPeErA01XNS20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNS20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XNS20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Nova Scotia, DELP", size(small))
 
-qui graph save "graph 216 8 1 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 216 8 1 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 216 12 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -10196,20 +10156,19 @@ qui graph export "graph 216 8 1 C19 daily cases, $country, Nova Scotia, DELP, ab
 ***********************************************
 
 
-* 216 8 2 Daily cases, Nova Scotia, mean over updates of median absolute percent error by epi weeks
+* 216 13 Daily cases, Nova Scotia, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
-(line DCAbPeErA01XNS_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+(line DCAbPeErA01XNS_Mean1 date, sort lcolor(red) lwidth(medium)) ///
+if date >= td(01jan2020) & date <= td(01jan2022) /// 
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Nova Scotia, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Nova Scotia, DELP", size(small)) 
 
-qui graph save "graph 216 8 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.gph", replace
-qui graph export "graph 216 8 2 C19 daily cases, $country, Nova Scotia, DELP, Error Mean1.pdf", replace
+qui graph export "graph 216 13 C19 daily cases, $country, Nova Scotia, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -10229,7 +10188,7 @@ qui graph export "graph 216 8 2 C19 daily cases, $country, Nova Scotia, DELP, Er
 
 ***********************************************
 
-* 217 5 Daily cases, Ontario, Error
+* 217 2 Daily cases, Ontario, Error
 
 twoway ///
 (line DCErrorA01XON20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -10374,15 +10333,14 @@ twoway ///
 (line DCErrorA01XON20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XON20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XON20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 5 C19 daily cases, $country, Ontario, DELP, Error.gph", replace
-qui graph export "graph 217 5 C19 daily cases, $country, Ontario, DELP, Error.pdf", replace
+qui graph export "graph 217 02 C19 daily cases, $country, Ontario, DELP, Error.pdf", replace
 
 
 
@@ -10390,7 +10348,7 @@ qui graph export "graph 217 5 C19 daily cases, $country, Ontario, DELP, Error.pd
 
 ***********************************************
 
-* 217 6 Daily cases, Ontario, absolute Error
+* 217 3 Daily cases, Ontario, absolute Error
 
 twoway ///
 (line DCAbsErrA01XON20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -10535,15 +10493,14 @@ twoway ///
 (line DCAbsErrA01XON20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XON20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XON20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 6 C19 daily cases, $country, Ontario, DELP, absolute Error.gph", replace
-qui graph export "graph 217 6 C19 daily cases, $country, Ontario, DELP, absolute Error.pdf", replace
+qui graph export "graph 217 03 C19 daily cases, $country, Ontario, DELP, absolute Error.pdf", replace
 
 
 
@@ -10554,7 +10511,7 @@ qui graph export "graph 217 6 C19 daily cases, $country, Ontario, DELP, absolute
 
 ***********************************************
 
-* 217 7 Daily cases, Ontario, percent Error
+* 217 4 Daily cases, Ontario, percent Error
 
 twoway ///
 (line DCPerErrA01XON20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -10699,15 +10656,14 @@ twoway ///
 (line DCPerErrA01XON20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XON20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XON20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 7 C19 daily cases, $country, Ontario, DELP, percent Error.gph", replace
-qui graph export "graph 217 7 C19 daily cases, $country, Ontario, DELP, percent Error.pdf", replace
+qui graph export "graph 217 04 C19 daily cases, $country, Ontario, DELP, percent Error.pdf", replace
 
 
 
@@ -10715,7 +10671,7 @@ qui graph export "graph 217 7 C19 daily cases, $country, Ontario, DELP, percent 
 
 ***********************************************
 
-* 217 8 Daily cases, Ontario, absolute percent Error
+* 217 5 Daily cases, Ontario, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XON20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -10860,15 +10816,14 @@ twoway ///
 (line DCAbPeErA01XON20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XON20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XON20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 8 C19 daily cases, $country, Ontario, DELP, absolute percent Error.gph", replace
-qui graph export "graph 217 8 C19 daily cases, $country, Ontario, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 217 05 C19 daily cases, $country, Ontario, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -10878,7 +10833,7 @@ qui graph export "graph 217 8 C19 daily cases, $country, Ontario, DELP, absolute
 
 ***********************************************
 
-* 217 5 1 Daily cases, Ontario, median error by epi weeks and updates
+* 217 6 Daily cases, Ontario, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XON20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11023,15 +10978,14 @@ twoway ///
 (line DCErrorA01XON20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XON20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XON20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 5 1 C19 daily cases, $country, Ontario, DELP, Error median1.gph", replace
-qui graph export "graph 217 5 1 C19 daily cases, $country, Ontario, DELP, Error median1.pdf", replace
+qui graph export "graph 217 06 C19 daily cases, $country, Ontario, DELP, Error median1.pdf", replace
 
 
 
@@ -11040,19 +10994,18 @@ qui graph export "graph 217 5 1 C19 daily cases, $country, Ontario, DELP, Error 
 
 ***********************************************
 
-* 217 5 2 Daily cases, Ontario, AVERAGE over updates of median error by epi weeks
+* 217 7 Daily cases, Ontario, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XON_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Ontario, DELP", size(small))  
 
-qui graph save "graph 217 5 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.gph", replace
-qui graph export "graph 217 5 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.pdf", replace
+qui graph export "graph 217 07 C19 daily cases, $country, Ontario, DELP, Error Mean1.pdf", replace
 
 
 
@@ -11063,7 +11016,7 @@ qui graph export "graph 217 5 2 C19 daily cases, $country, Ontario, DELP, Error 
 
 ***********************************************
 
-* 217 6 1 Daily cases, Ontario, median absolute error by epi weeks and updates
+* 217 8 Daily cases, Ontario, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XON20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11208,15 +11161,14 @@ twoway ///
 (line DCAbsErrA01XON20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XON20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XON20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 6 1 C19 daily cases, $country, Ontario, DELP, absolute Error median1.gph", replace
-qui graph export "graph 217 6 1 C19 daily cases, $country, Ontario, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 217 08 C19 daily cases, $country, Ontario, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -11225,20 +11177,19 @@ qui graph export "graph 217 6 1 C19 daily cases, $country, Ontario, DELP, absolu
 
 ***********************************************
 
-* 217 6 2 Daily cases, Ontario, mean over updates of median absolute error by epi weeks
+* 217 9 Daily cases, Ontario, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XON_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 6 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.gph", replace
-qui graph export "graph 217 6 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.pdf", replace
+qui graph export "graph 217 09 C19 daily cases, $country, Ontario, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -11250,7 +11201,7 @@ qui graph export "graph 217 6 2 C19 daily cases, $country, Ontario, DELP, Error 
 
 ***********************************************
 
-* 217 7 1 Daily cases, Ontario, median % error by epi weeks and updates
+* 217 10 Daily cases, Ontario, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XON20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11395,15 +11346,14 @@ twoway ///
 (line DCPerErrA01XON20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XON20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XON20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 7 1 C19 daily cases, $country, Ontario, DELP, percent Error median1.gph", replace
-qui graph export "graph 217 7 1 C19 daily cases, $country, Ontario, DELP, percent Error median1.pdf", replace
+qui graph export "graph 217 10 C19 daily cases, $country, Ontario, DELP, percent Error median1.pdf", replace
 
 
 
@@ -11412,20 +11362,19 @@ qui graph export "graph 217 7 1 C19 daily cases, $country, Ontario, DELP, percen
 
 ***********************************************
 
-* 217 7 2 Daily cases, Ontario, mean over updates of median percent error by epi weeks
+* 217 11 Daily cases, Ontario, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XON_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Ontario, DELP", size(small))
 
-qui graph save "graph 217 7 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.gph", replace
-qui graph export "graph 217 7 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.pdf", replace
+qui graph export "graph 217 11 C19 daily cases, $country, Ontario, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -11435,7 +11384,7 @@ qui graph export "graph 217 7 2 C19 daily cases, $country, Ontario, DELP, Error 
 
 ***********************************************
 
-* 217 8 1 Daily cases, Ontario, median absolute % error by epi weeks and updates
+* 217 12 Daily cases, Ontario, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XON20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11580,15 +11529,14 @@ twoway ///
 (line DCAbPeErA01XON20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XON20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XON20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Ontario, DELP", size(small))
 
-qui graph save "graph 217 8 1 C19 daily cases, $country, Ontario, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 217 8 1 C19 daily cases, $country, Ontario, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 217 12 C19 daily cases, $country, Ontario, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -11598,27 +11546,19 @@ qui graph export "graph 217 8 1 C19 daily cases, $country, Ontario, DELP, absolu
 ***********************************************
 
 
-* 217 8 2 Daily cases, Ontario, mean over updates of median absolute percent error by epi weeks
+* 217 13 Daily cases, Ontario, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XON_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Ontario, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Ontario, DELP", size(small)) 
 
-qui graph save "graph 217 8 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.gph", replace
-qui graph export "graph 217 8 2 C19 daily cases, $country, Ontario, DELP, Error Mean1.pdf", replace
-
-
-
-
-
-
-
+qui graph export "graph 217 13 C19 daily cases, $country, Ontario, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -11634,7 +11574,7 @@ qui graph export "graph 217 8 2 C19 daily cases, $country, Ontario, DELP, Error 
 
 ***********************************************
 
-* 218 5 Daily cases, Quebec, Error
+* 218 2 Daily cases, Quebec, Error
 
 twoway ///
 (line DCErrorA01XQC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11779,15 +11719,14 @@ twoway ///
 (line DCErrorA01XQC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XQC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XQC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 5 C19 daily cases, $country, Quebec, DELP, Error.gph", replace
-qui graph export "graph 218 5 C19 daily cases, $country, Quebec, DELP, Error.pdf", replace
+qui graph export "graph 218 02 C19 daily cases, $country, Quebec, DELP, Error.pdf", replace
 
 
 
@@ -11795,7 +11734,7 @@ qui graph export "graph 218 5 C19 daily cases, $country, Quebec, DELP, Error.pdf
 
 ***********************************************
 
-* 218 6 Daily cases, Quebec, absolute Error
+* 218 3 Daily cases, Quebec, absolute Error
 
 twoway ///
 (line DCAbsErrA01XQC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -11940,15 +11879,14 @@ twoway ///
 (line DCAbsErrA01XQC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XQC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XQC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 6 C19 daily cases, $country, Quebec, DELP, absolute Error.gph", replace
-qui graph export "graph 218 6 C19 daily cases, $country, Quebec, DELP, absolute Error.pdf", replace
+qui graph export "graph 218 03 C19 daily cases, $country, Quebec, DELP, absolute Error.pdf", replace
 
 
 
@@ -11959,7 +11897,7 @@ qui graph export "graph 218 6 C19 daily cases, $country, Quebec, DELP, absolute 
 
 ***********************************************
 
-* 218 7 Daily cases, Quebec, percent Error
+* 218 4 Daily cases, Quebec, percent Error
 
 twoway ///
 (line DCPerErrA01XQC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12104,15 +12042,14 @@ twoway ///
 (line DCPerErrA01XQC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XQC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XQC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 7 C19 daily cases, $country, Quebec, DELP, percent Error.gph", replace
-qui graph export "graph 218 7 C19 daily cases, $country, Quebec, DELP, percent Error.pdf", replace
+qui graph export "graph 218 04 C19 daily cases, $country, Quebec, DELP, percent Error.pdf", replace
 
 
 
@@ -12120,7 +12057,7 @@ qui graph export "graph 218 7 C19 daily cases, $country, Quebec, DELP, percent E
 
 ***********************************************
 
-* 218 8 Daily cases, Quebec, absolute percent Error
+* 218 5 Daily cases, Quebec, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XQC20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12265,15 +12202,14 @@ twoway ///
 (line DCAbPeErA01XQC20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XQC20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XQC20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 8 C19 daily cases, $country, Quebec, DELP, absolute percent Error.gph", replace
-qui graph export "graph 218 8 C19 daily cases, $country, Quebec, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 218 05 C19 daily cases, $country, Quebec, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -12283,7 +12219,7 @@ qui graph export "graph 218 8 C19 daily cases, $country, Quebec, DELP, absolute 
 
 ***********************************************
 
-* 218 5 1 Daily cases, Quebec, median error by epi weeks and updates
+* 218 6 Daily cases, Quebec, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XQC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12428,15 +12364,14 @@ twoway ///
 (line DCErrorA01XQC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XQC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XQC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 5 1 C19 daily cases, $country, Quebec, DELP, Error median1.gph", replace
-qui graph export "graph 218 5 1 C19 daily cases, $country, Quebec, DELP, Error median1.pdf", replace
+qui graph export "graph 218 06 C19 daily cases, $country, Quebec, DELP, Error median1.pdf", replace
 
 
 
@@ -12445,19 +12380,18 @@ qui graph export "graph 218 5 1 C19 daily cases, $country, Quebec, DELP, Error m
 
 ***********************************************
 
-* 218 5 2 Daily cases, Quebec, AVERAGE over updates of median error by epi weeks
+* 218 7 Daily cases, Quebec, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XQC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Quebec, DELP", size(small))  
 
-qui graph save "graph 218 5 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.gph", replace
-qui graph export "graph 218 5 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.pdf", replace
+qui graph export "graph 218 07 C19 daily cases, $country, Quebec, DELP, Error Mean1.pdf", replace
 
 
 
@@ -12468,7 +12402,7 @@ qui graph export "graph 218 5 2 C19 daily cases, $country, Quebec, DELP, Error M
 
 ***********************************************
 
-* 218 6 1 Daily cases, Quebec, median absolute error by epi weeks and updates
+* 218 8 Daily cases, Quebec, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XQC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12613,15 +12547,14 @@ twoway ///
 (line DCAbsErrA01XQC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XQC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XQC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 6 1 C19 daily cases, $country, Quebec, DELP, absolute Error median1.gph", replace
-qui graph export "graph 218 6 1 C19 daily cases, $country, Quebec, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 218 08 C19 daily cases, $country, Quebec, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -12630,20 +12563,19 @@ qui graph export "graph 218 6 1 C19 daily cases, $country, Quebec, DELP, absolut
 
 ***********************************************
 
-* 218 6 2 Daily cases, Quebec, mean over updates of median absolute error by epi weeks
+* 218 9 Daily cases, Quebec, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XQC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 6 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.gph", replace
-qui graph export "graph 218 6 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.pdf", replace
+qui graph export "graph 218 09 C19 daily cases, $country, Quebec, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -12655,7 +12587,7 @@ qui graph export "graph 218 6 2 C19 daily cases, $country, Quebec, DELP, Error M
 
 ***********************************************
 
-* 218 7 1 Daily cases, Quebec, median % error by epi weeks and updates
+* 218 10 Daily cases, Quebec, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XQC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12800,15 +12732,14 @@ twoway ///
 (line DCPerErrA01XQC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XQC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XQC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 7 1 C19 daily cases, $country, Quebec, DELP, percent Error median1.gph", replace
-qui graph export "graph 218 7 1 C19 daily cases, $country, Quebec, DELP, percent Error median1.pdf", replace
+qui graph export "graph 218 10 C19 daily cases, $country, Quebec, DELP, percent Error median1.pdf", replace
 
 
 
@@ -12817,20 +12748,19 @@ qui graph export "graph 218 7 1 C19 daily cases, $country, Quebec, DELP, percent
 
 ***********************************************
 
-* 218 7 2 Daily cases, Quebec, mean over updates of median percent error by epi weeks
+* 218 11 Daily cases, Quebec, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XQC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Quebec, DELP", size(small))
 
-qui graph save "graph 218 7 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.gph", replace
-qui graph export "graph 218 7 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.pdf", replace
+qui graph export "graph 218 11 C19 daily cases, $country, Quebec, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -12840,7 +12770,7 @@ qui graph export "graph 218 7 2 C19 daily cases, $country, Quebec, DELP, Error M
 
 ***********************************************
 
-* 218 8 1 Daily cases, Quebec, median absolute % error by epi weeks and updates
+* 218 12 Daily cases, Quebec, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XQC20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -12985,15 +12915,14 @@ twoway ///
 (line DCAbPeErA01XQC20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XQC20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XQC20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Quebec, DELP", size(small))
 
-qui graph save "graph 218 8 1 C19 daily cases, $country, Quebec, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 218 8 1 C19 daily cases, $country, Quebec, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 218 12 C19 daily cases, $country, Quebec, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -13003,20 +12932,19 @@ qui graph export "graph 218 8 1 C19 daily cases, $country, Quebec, DELP, absolut
 ***********************************************
 
 
-* 218 8 2 Daily cases, Quebec, mean over updates of median absolute percent error by epi weeks
+* 218 13 Daily cases, Quebec, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XQC_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Quebec, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Quebec, DELP", size(small)) 
 
-qui graph save "graph 218 8 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.gph", replace
-qui graph export "graph 218 8 2 C19 daily cases, $country, Quebec, DELP, Error Mean1.pdf", replace
+qui graph export "graph 218 13 C19 daily cases, $country, Quebec, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -13036,7 +12964,7 @@ qui graph export "graph 218 8 2 C19 daily cases, $country, Quebec, DELP, Error M
 
 ***********************************************
 
-* 219 5 Daily cases, Saskatchewan, Error
+* 219 2 Daily cases, Saskatchewan, Error
 
 twoway ///
 (line DCErrorA01XSK20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -13181,15 +13109,14 @@ twoway ///
 (line DCErrorA01XSK20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XSK20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XSK20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 5 C19 daily cases, $country, Saskatchewan, DELP, Error.gph", replace
-qui graph export "graph 219 5 C19 daily cases, $country, Saskatchewan, DELP, Error.pdf", replace
+qui graph export "graph 219 02 C19 daily cases, $country, Saskatchewan, DELP, Error.pdf", replace
 
 
 
@@ -13197,7 +13124,7 @@ qui graph export "graph 219 5 C19 daily cases, $country, Saskatchewan, DELP, Err
 
 ***********************************************
 
-* 219 6 Daily cases, Saskatchewan, absolute Error
+* 219 3 Daily cases, Saskatchewan, absolute Error
 
 twoway ///
 (line DCAbsErrA01XSK20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -13342,15 +13269,14 @@ twoway ///
 (line DCAbsErrA01XSK20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XSK20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XSK20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 6 C19 daily cases, $country, Saskatchewan, DELP, absolute Error.gph", replace
-qui graph export "graph 219 6 C19 daily cases, $country, Saskatchewan, DELP, absolute Error.pdf", replace
+qui graph export "graph 219 03 C19 daily cases, $country, Saskatchewan, DELP, absolute Error.pdf", replace
 
 
 
@@ -13361,7 +13287,7 @@ qui graph export "graph 219 6 C19 daily cases, $country, Saskatchewan, DELP, abs
 
 ***********************************************
 
-* 219 7 Daily cases, Saskatchewan, percent Error
+* 219 4 Daily cases, Saskatchewan, percent Error
 
 twoway ///
 (line DCPerErrA01XSK20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -13506,15 +13432,14 @@ twoway ///
 (line DCPerErrA01XSK20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XSK20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XSK20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases percent error by epi weeks and model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" /// 
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 7 C19 daily cases, $country, Saskatchewan, DELP, percent Error.gph", replace
-qui graph export "graph 219 7 C19 daily cases, $country, Saskatchewan, DELP, percent Error.pdf", replace
+qui graph export "graph 219 04 C19 daily cases, $country, Saskatchewan, DELP, percent Error.pdf", replace
 
 
 
@@ -13522,7 +13447,7 @@ qui graph export "graph 219 7 C19 daily cases, $country, Saskatchewan, DELP, per
 
 ***********************************************
 
-* 219 8 Daily cases, Saskatchewan, absolute percent Error
+* 219 5 Daily cases, Saskatchewan, absolute percent Error
 
 twoway ///
 (line DCAbPeErA01XSK20200417 date, sort lcolor(red) lwidth(medium)) /// 
@@ -13667,15 +13592,14 @@ twoway ///
 (line DCAbPeErA01XSK20211229 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XSK20211230 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XSK20211231 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily cases error measure) title("C-19 daily cases absolute % error by epi weeks & model updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 8 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error.gph", replace
-qui graph export "graph 219 8 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error.pdf", replace
+qui graph export "graph 219 05 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error.pdf", replace
 
 
 
@@ -13685,7 +13609,7 @@ qui graph export "graph 219 8 C19 daily cases, $country, Saskatchewan, DELP, abs
 
 ***********************************************
 
-* 219 5 1 Daily cases, Saskatchewan, median error by epi weeks and updates
+* 219 6 Daily cases, Saskatchewan, median error by epi weeks and updates
 
 twoway ///
 (line DCErrorA01XSK20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -13830,15 +13754,14 @@ twoway ///
 (line DCErrorA01XSK20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XSK20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCErrorA01XSK20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 5 1 C19 daily cases, $country, Saskatchewan, DELP, Error median1.gph", replace
-qui graph export "graph 219 5 1 C19 daily cases, $country, Saskatchewan, DELP, Error median1.pdf", replace
+qui graph export "graph 219 06 C19 daily cases, $country, Saskatchewan, DELP, Error median1.pdf", replace
 
 
 
@@ -13847,19 +13770,18 @@ qui graph export "graph 219 5 1 C19 daily cases, $country, Saskatchewan, DELP, E
 
 ***********************************************
 
-* 219 5 2 Daily cases, Saskatchewan, AVERAGE over updates of median error by epi weeks
+* 219 7 Daily cases, Saskatchewan, AVERAGE over updates of median error by epi weeks
 
 twoway ///
 (line DCErrorA01XSK_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"Error = Reference minus Model; Reference = JOHN, Model = DELP", size(small))  
+subtitle("$country, Saskatchewan, DELP", size(small))  
 
-qui graph save "graph 219 5 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.gph", replace
-qui graph export "graph 219 5 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.pdf", replace
+qui graph export "graph 219 07 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.pdf", replace
 
 
 
@@ -13870,7 +13792,7 @@ qui graph export "graph 219 5 2 C19 daily cases, $country, Saskatchewan, DELP, E
 
 ***********************************************
 
-* 219 6 1 Daily cases, Saskatchewan, median absolute error by epi weeks and updates
+* 219 8 Daily cases, Saskatchewan, median absolute error by epi weeks and updates
 
 twoway ///
 (line DCAbsErrA01XSK20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -14015,15 +13937,14 @@ twoway ///
 (line DCAbsErrA01XSK20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XSK20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbsErrA01XSK20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP" , size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 6 1 C19 daily cases, $country, Saskatchewan, DELP, absolute Error median1.gph", replace
-qui graph export "graph 219 6 1 C19 daily cases, $country, Saskatchewan, DELP, absolute Error median1.pdf", replace
+qui graph export "graph 219 08 C19 daily cases, $country, Saskatchewan, DELP, absolute Error median1.pdf", replace
 
 
 
@@ -14032,20 +13953,19 @@ qui graph export "graph 219 6 1 C19 daily cases, $country, Saskatchewan, DELP, a
 
 ***********************************************
 
-* 219 6 2 Daily cases, Saskatchewan, mean over updates of median absolute error by epi weeks
+* 219 9 Daily cases, Saskatchewan, mean over updates of median absolute error by epi weeks
 
 twoway ///
 (line DCAbsErrA01XSK_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute Error = | Reference minus Model |; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 6 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.gph", replace
-qui graph export "graph 219 6 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.pdf", replace
+qui graph export "graph 219 09 C19 daily cases, $country, Saskatchewan, DELP, absolute Error Mean1.pdf", replace
 
 
 
@@ -14057,7 +13977,7 @@ qui graph export "graph 219 6 2 C19 daily cases, $country, Saskatchewan, DELP, E
 
 ***********************************************
 
-* 219 7 1 Daily cases, Saskatchewan, median % error by epi weeks and updates
+* 219 10 Daily cases, Saskatchewan, median % error by epi weeks and updates
 
 twoway ///
 (line DCPerErrA01XSK20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -14202,15 +14122,14 @@ twoway ///
 (line DCPerErrA01XSK20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XSK20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCPerErrA01XSK20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 7 1 C19 daily cases, $country, Saskatchewan, DELP, percent Error median1.gph", replace
-qui graph export "graph 219 7 1 C19 daily cases, $country, Saskatchewan, DELP, percent Error median1.pdf", replace
+qui graph export "graph 219 10 C19 daily cases, $country, Saskatchewan, DELP, percent Error median1.pdf", replace
 
 
 
@@ -14219,20 +14138,19 @@ qui graph export "graph 219 7 1 C19 daily cases, $country, Saskatchewan, DELP, p
 
 ***********************************************
 
-* 219 7 2 Daily cases, Saskatchewan, mean over updates of median percent error by epi weeks
+* 219 11 Daily cases, Saskatchewan, mean over updates of median percent error by epi weeks
 
 twoway ///
 (line DCPerErrA01XSK_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median percent error by epi weeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"percent Error = 100 * (Reference minus Model) / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Saskatchewan, DELP", size(small))
 
-qui graph save "graph 219 7 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.gph", replace
-qui graph export "graph 219 7 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.pdf", replace
+qui graph export "graph 219 11 C19 daily cases, $country, Saskatchewan, DELP, percent Error Mean1.pdf", replace
 
 
 
@@ -14242,7 +14160,7 @@ qui graph export "graph 219 7 2 C19 daily cases, $country, Saskatchewan, DELP, E
 
 ***********************************************
 
-* 219 8 1 Daily cases, Saskatchewan, median absolute % error by epi weeks and updates
+* 219 12 Daily cases, Saskatchewan, median absolute % error by epi weeks and updates
 
 twoway ///
 (line DCAbPeErA01XSK20200417_Med1 date, sort lcolor(red) lwidth(medium)) /// 
@@ -14387,15 +14305,14 @@ twoway ///
 (line DCAbPeErA01XSK20211229_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XSK20211230_Med1 date, sort lcolor(red) lwidth(medium)) /// 
 (line DCAbPeErA01XSK20211231_Med1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily cases error measure) title("C-19 daily cases median absolute % error by epi weeks and updates", size(medium)) /// 
+ytitle(Daily cases error measure) title("C-19 daily cases, median absolute % error by epi weeks and updates", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small))
+subtitle("$country, Saskatchewan, DELP", size(small))
 
-qui graph save "graph 219 8 1 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error median1.gph", replace
-qui graph export "graph 219 8 1 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error median1.pdf", replace
+qui graph export "graph 219 12 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error median1.pdf", replace
 
 
 
@@ -14405,20 +14322,19 @@ qui graph export "graph 219 8 1 C19 daily cases, $country, Saskatchewan, DELP, a
 ***********************************************
 
 
-* 219 8 2 Daily cases, Saskatchewan, mean over updates of median absolute percent error by epi weeks
+* 219 13 Daily cases, Saskatchewan, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
 (line DCAbPeErA01XSK_Mean1 date, sort lcolor(red) lwidth(medium)) /// 
-, xtitle(Date) xlabel(#24, format(%tdYY-NN-DC) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily cases error measure) ///
-title("C-19 daily cases mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, DELP" ///
-"absolute % Error = 100 * | Reference minus Model | / Reference; Reference = JOHN, Model = DELP", size(small)) 
+subtitle("$country, Saskatchewan, DELP", size(small)) 
 
-qui graph save "graph 219 8 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.gph", replace
-qui graph export "graph 219 8 2 C19 daily cases, $country, Saskatchewan, DELP, Error Mean1.pdf", replace
+qui graph export "graph 219 13 C19 daily cases, $country, Saskatchewan, DELP, absolute percent Error Mean1.pdf", replace
 
 
 
@@ -14429,10 +14345,204 @@ qui graph export "graph 219 8 2 C19 daily cases, $country, Saskatchewan, DELP, E
 
 
 
+****************************
+****************************
+****************************
+
+* provinces together
 
 
 
 
+
+
+
+***********************************************
+
+
+* 220 a Daily cases, provinces together, mean over updates of median absolute percent error by epi weeks
+
+
+twoway ///
+(line DCAbPeErA01XXX_Mean1 date, sort lwidth(medium) lcolor(gray)) /// 1 "CAN" 
+(line DCAbPeErA01XAB_Mean1 date, sort lwidth(medium) lcolor(cyan)) /// 2 "AB" cyan
+(line DCAbPeErA01XBC_Mean1 date, sort lwidth(medium) lcolor(blue)) /// 3 "BC" blue
+(line DCAbPeErA01XMB_Mean1 date, sort lwidth(medium) lcolor(lime)) /// 4 "MB" lime
+(line DCAbPeErA01XNB_Mean1 date, sort lwidth(medium) lcolor(sienna)) /// 5 "NB" sienna
+(line DCAbPeErA01XNL_Mean1 date, sort lwidth(medium) lcolor(gold)) /// 6 "NL" gold
+(line DCAbPeErA01XNS_Mean1 date, sort lwidth(medium) lcolor(magenta)) /// 7 "NS" magenta
+(line DCAbPeErA01XON_Mean1 date, sort lwidth(medium) lcolor(red)) /// 8 "ON" red
+(line DCAbPeErA01XQC_Mean1 date, sort lwidth(medium) lcolor(black)) /// 9 "QC" black
+(line DCAbPeErA01XSK_Mean1 date, sort lwidth(medium) lcolor(brown)) /// 10 "SK" orange
+if date >= td(01jan2020) & date <= td(01mar2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
+yscale(titlegap(2)) ytitle(Daily cases error measure) ///
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+subtitle("$country, provinces together, DELP", size(small)) /// 
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))  
+
+
+qui graph export "graph 220 a C19 daily cases, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
+
+
+
+
+
+
+
+
+***********************************************
+
+
+* 220 b Daily cases, provinces together, mean over updates of median absolute percent error by epi weeks
+* w/o extremes NS NB 
+
+twoway ///
+(line DCAbPeErA01XXX_Mean1 date, sort lwidth(medium) lcolor(gray)) /// 1 "CAN" 
+(line DCAbPeErA01XAB_Mean1 date, sort lwidth(medium) lcolor(cyan)) /// 2 "AB" cyan
+(line DCAbPeErA01XBC_Mean1 date, sort lwidth(medium) lcolor(blue)) /// 3 "BC" blue
+(line DCAbPeErA01XMB_Mean1 date, sort lwidth(medium) lcolor(lime)) /// 4 "MB" lime
+(line DCAbPeErA01XNL_Mean1 date, sort lwidth(medium) lcolor(gold)) /// 5 "NL" gold
+(line DCAbPeErA01XON_Mean1 date, sort lwidth(medium) lcolor(red)) /// 6 "ON" red
+(line DCAbPeErA01XQC_Mean1 date, sort lwidth(medium) lcolor(black)) /// 7 "QC" black
+(line DCAbPeErA01XSK_Mean1 date, sort lwidth(medium) lcolor(brown)) /// 8 "SK" orange
+if date >= td(01jan2020) & date <= td(01mar2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
+yscale(titlegap(2)) ytitle(Daily cases error measure) ///
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+subtitle("$country, provinces together, DELP, without extremes NS NB", size(small)) /// 
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NL" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))  
+
+
+qui graph export "graph 220 b C19 daily cases, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
+
+
+
+
+
+
+
+
+***********************************************
+
+
+* 220 c Daily cases, provinces together, mean over updates of median absolute percent error by epi weeks
+* w/o extremes NS NB MB NL
+
+twoway ///
+(line DCAbPeErA01XXX_Mean1 date, sort lwidth(vthick) lcolor(gray)) /// 1 "CAN" 
+(line DCAbPeErA01XAB_Mean1 date, sort lwidth(medium) lcolor(cyan)) /// 2 "AB" cyan
+(line DCAbPeErA01XBC_Mean1 date, sort lwidth(medium) lcolor(blue)) /// 3 "BC" blue
+(line DCAbPeErA01XON_Mean1 date, sort lwidth(medium) lcolor(red)) /// 4 "ON" red
+(line DCAbPeErA01XQC_Mean1 date, sort lwidth(medium) lcolor(black)) /// 5 "QC" black
+(line DCAbPeErA01XSK_Mean1 date, sort lwidth(medium) lcolor(brown)) /// 6 "SK" orange
+if date >= td(01jan2020) & date <= td(01mar2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
+yscale(titlegap(2)) ytitle(Daily cases error measure) ///
+title("C-19 daily cases, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+subtitle("$country, provinces together, DELP, without extremes NS MB NL", size(small)) /// 
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "ON" 5 "QC" 6 "SK" ) rows(1) size(small)) 
+
+
+qui graph export "graph 220 c C19 daily cases, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
+
+
+
+
+
+
+
+
+
+
+***********************************************
+
+capture drop *2r
+
+gen DCAbPeErA01XXX_Mean2r = round(DCAbPeErA01XXX_Mean2,0.1)
+gen DCAbPeErA01XAB_Mean2r = round(DCAbPeErA01XAB_Mean2,0.1)
+gen DCAbPeErA01XBC_Mean2r = round(DCAbPeErA01XBC_Mean2,0.1)
+gen DCAbPeErA01XMB_Mean2r = round(DCAbPeErA01XMB_Mean2,0.1)
+gen DCAbPeErA01XNB_Mean2r = round(DCAbPeErA01XNB_Mean2,0.1)
+gen DCAbPeErA01XNL_Mean2r = round(DCAbPeErA01XNL_Mean2,0.1)
+gen DCAbPeErA01XNS_Mean2r = round(DCAbPeErA01XNS_Mean2,0.1)
+gen DCAbPeErA01XON_Mean2r = round(DCAbPeErA01XON_Mean2,0.1)
+gen DCAbPeErA01XQC_Mean2r = round(DCAbPeErA01XQC_Mean2,0.1)
+gen DCAbPeErA01XSK_Mean2r = round(DCAbPeErA01XSK_Mean2,0.1)
+
+* 230 a Daily cases, provinces together, Avergae of MAPE over updates and epi weeks
+
+graph bar ///
+(mean) DCAbPeErA01XXX_Mean2r /// 1 "CAN" gray
+(mean) DCAbPeErA01XAB_Mean2r /// 2 "AB" cyan
+(mean) DCAbPeErA01XBC_Mean2r /// 3 "BC" blue
+(mean) DCAbPeErA01XMB_Mean2r /// 4 "MB" lime
+(mean) DCAbPeErA01XNB_Mean2r /// 5 "NB" sienna
+(mean) DCAbPeErA01XNL_Mean2r /// 6 "NL" gold
+(mean) DCAbPeErA01XNS_Mean2r /// 7 "NS" magenta
+(mean) DCAbPeErA01XON_Mean2r /// 8 "ON" red
+(mean) DCAbPeErA01XQC_Mean2r /// 9 "QC" black
+(mean) DCAbPeErA01XSK_Mean2r /// 10 "SK" orange
+, bar(1, fcolor(gray) lcolor(gray)) ///
+bar(2, fcolor(cyan) lcolor(cyan)) ///
+bar(3, fcolor(blue) lcolor(blue)) ///
+bar(4, fcolor(lime) lcolor(lime)) ///
+bar(5, fcolor(sienna) lcolor(sienna)) ///
+bar(6, fcolor(gold) lcolor(gold)) ///
+bar(7, fcolor(magenta) lcolor(magenta)) ///
+bar(8, fcolor(red) lcolor(red)) ///
+bar(9, fcolor(black) lcolor(black)) ///
+bar(10, fcolor(orange) lcolor(orange)) ///
+blabel(bar) ytitle("Average MAPE") yscale(titlegap(2)) ///
+title("C-19 daily cases average MAPE over updates and epi weeks", size(medium)) ///
+subtitle("$country, provinces, DELP; MAPE: Median Absolute % Error", size(small)) /// 
+legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))
+
+qui graph export "graph 230 a C19 daily cases, $country, provinces together, DELP, Average MAPE.pdf", replace
+
+
+
+
+
+
+
+
+
+* 230 b Daily cases, provinces together, Avergae of MAPE over updates and epi weeks
+* wo extremes NS NL
+
+graph bar ///
+(mean) DCAbPeErA01XXX_Mean2r /// 1 "CAN" gray
+(mean) DCAbPeErA01XAB_Mean2r /// 2 "AB" cyan
+(mean) DCAbPeErA01XBC_Mean2r /// 3 "BC" blue
+(mean) DCAbPeErA01XMB_Mean2r /// 4 "MB" lime
+(mean) DCAbPeErA01XNB_Mean2r /// 5 "NB" sienna
+(mean) DCAbPeErA01XON_Mean2r /// 6 "ON" red
+(mean) DCAbPeErA01XQC_Mean2r /// 7 "QC" black
+(mean) DCAbPeErA01XSK_Mean2r /// 8 "SK" orange
+, bar(1, fcolor(gray) lcolor(gray)) ///
+bar(2, fcolor(cyan) lcolor(cyan)) ///
+bar(3, fcolor(blue) lcolor(blue)) ///
+bar(4, fcolor(lime) lcolor(lime)) ///
+bar(5, fcolor(sienna) lcolor(sienna)) ///
+bar(6, fcolor(red) lcolor(red)) ///
+bar(7, fcolor(black) lcolor(black)) ///
+bar(8, fcolor(orange) lcolor(orange)) ///
+blabel(bar) ytitle("Average MAPE") yscale(titlegap(2)) ///
+title("C-19 daily cases average MAPE over updates and epi weeks", size(medium)) ///
+subtitle("$country, provinces, DELP; MAPE: Median Absolute % Error" ///
+"without extremes NS NL", size(small)) /// 
+legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))
+
+qui graph export "graph 230 b C19 daily cases, $country, provinces together, DELP, Average MAPE.pdf", replace
 
 
 
