@@ -1802,48 +1802,57 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Saskatchewan [graph 219 01 C19 daily cases, Canada,Saskatchewan, DELP, Updates together, With extremes]()
+(2) Saskatchewan [graph 219 01 C19 daily cases, Canada,Saskatchewan, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2001%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-
-****
-
-(3) Saskatchewan [graph 219 02 C19 daily cases, Canada,Saskatchewan, DELP, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154753665-cae0dd27-5cf6-4738-beeb-0a249d4d1c55.png)
 
 ****
 
-(4) Saskatchewan [graph 219 03 C19 daily cases, Canada,Saskatchewan, DELP, absolute Error]()
+(3) Saskatchewan [graph 219 02 C19 daily cases, Canada,Saskatchewan, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2002%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Error.pdf)
 
-
-****
-
-(5) Saskatchewan [graph 219 04 C19 daily cases, Canada,Saskatchewan, DELP, percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154753754-b89acd56-1a26-4e2e-a1c8-e15558afb4dc.png)
 
 ****
 
-(6) Saskatchewan [graph 219 05 C19 daily cases, Canada,Saskatchewan, DELP, absolute percent Error]()
+(4) Saskatchewan [graph 219 03 C19 daily cases, Canada,Saskatchewan, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2003%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20Error.pdf)
 
-
-****
-
-(7) Saskatchewan [graph 219 07 C19 daily cases, Canada,Saskatchewan, DELP, **Error**, mean over updates of median error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154753856-179d3c08-d315-4183-ae75-628785fcf2bc.png)
 
 ****
 
-(8) Saskatchewan [graph 219 09 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(5) Saskatchewan [graph 219 04 C19 daily cases, Canada,Saskatchewan, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2004%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20percent%20Error.pdf)
 
-
-****
-
-(9) Saskatchewan [graph 219 11 C19 daily cases, Canada,Saskatchewan, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154753960-209d2c46-8bce-4b9a-a04a-5edeb3677dce.png)
 
 ****
 
-(10) Saskatchewan [graph 219 13 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+(6) Saskatchewan [graph 219 05 C19 daily cases, Canada,Saskatchewan, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2005%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154754068-8c31bc87-9d29-4c81-b43f-6667e0a9d176.png)
+
+****
+
+(7) Saskatchewan [graph 219 07 C19 daily cases, Canada,Saskatchewan, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2007%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154754173-28a50b79-92c0-45cd-9388-5500f1777520.png)
+
+****
+
+(8) Saskatchewan [graph 219 09 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2009%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154754269-80855c5b-da7e-4be2-9153-0a44b141b7ff.png)
+
+****
+
+(9) Saskatchewan [graph 219 11 C19 daily cases, Canada,Saskatchewan, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2011%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154754393-158b6a2d-67e5-4f2d-85ea-aa433aed7275.png)
+
+****
+
+(10) Saskatchewan [graph 219 13 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20219%2013%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154754479-a7f95726-d659-4d96-b9d9-7b2284572a0e.png)
 
 ****
 
