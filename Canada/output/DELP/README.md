@@ -822,16 +822,19 @@ Long PDF file, see video [here]().
 
 (2) Quebec [graph 118 01 C19 daily deaths, Canada, Quebec, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154623069-833beacb-3b9b-4d94-b98e-50c48f37ad9a.png)
 
 ****
 
 (3) Quebec [graph 118 01b C19 daily deaths, Canada, Quebec, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154623150-68d7abe7-676f-4e93-b106-d86186acb0ee.png)
 
 ****
 
 (4) Quebec [graph 118 02 C19 daily deaths, Canada, Quebec, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154623235-22b8ccd3-747a-4f96-8198-00027c4d3d62.png)
 
 ****
 
