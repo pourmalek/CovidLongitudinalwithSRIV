@@ -1459,7 +1459,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Newfoundland and Labrador [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, all updates]()
+(1) Newfoundland and Labrador [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20205%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
