@@ -109,9 +109,8 @@ Long PDF file, see video [here]().
 
 ****
 
-(5) Canada National [graph 110 03 C19 daily deaths, Canada, National, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2003%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20Error.pdf)
+(5) Canada National [graph 110 03 C19 daily deaths, Canada, National, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2007%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154515638-97205306-994f-428f-8769-f3ab64f8f4d7.png)
 
 ****
 
