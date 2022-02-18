@@ -1373,48 +1373,57 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) New Brunswick [graph 214 01 C19 daily cases, Canada, New Brunswick, DELP, Updates together, With extremes]()
+(2) New Brunswick [graph 214 01 C19 daily cases, Canada, New Brunswick, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2001%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-
-****
-
-(3) New Brunswick [graph 214 02 C19 daily cases, Canada, New Brunswick, DELP, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154732355-6963f64d-bb7b-4ee3-8566-54da9ccebea2.png)
 
 ****
 
-(4) New Brunswick [graph 214 03 C19 daily cases, Canada, New Brunswick, DELP, absolute Error]()
+(3) New Brunswick [graph 214 02 C19 daily cases, Canada, New Brunswick, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2002%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error.pdf)
 
-
-****
-
-(5) New Brunswick [graph 214 04 C19 daily cases, Canada, New Brunswick, DELP, percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154732516-f1653909-eb94-4a1b-830f-92948e2ee77a.png)
 
 ****
 
-(6) New Brunswick [graph 214 05 C19 daily cases, Canada, New Brunswick, DELP, absolute percent Error]()
+(4) New Brunswick [graph 214 03 C19 daily cases, Canada, New Brunswick, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2003%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20Error.pdf)
 
-
-****
-
-(7) New Brunswick [graph 214 07 C19 daily cases, Canada, New Brunswick, DELP, **Error**, mean over updates of median error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154732772-a4c0b2f7-2f87-49f1-a220-cda7f2031822.png)
 
 ****
 
-(8) New Brunswick [graph 214 09 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(5) New Brunswick [graph 214 04 C19 daily cases, Canada, New Brunswick, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2004%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20percent%20Error.pdf)
 
-
-****
-
-(9) New Brunswick [graph 214 11 C19 daily cases, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154733579-620834b0-3b7d-4a80-9f60-9561c6f394e7.png)
 
 ****
 
-(10) New Brunswick [graph 214 13 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+(6) New Brunswick [graph 214 05 C19 daily cases, Canada, New Brunswick, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2005%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154733729-b909b71a-b9e4-4313-90f5-2bfb661058b1.png)
+
+****
+
+(7) New Brunswick [graph 214 07 C19 daily cases, Canada, New Brunswick, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2007%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154733873-d0cf8988-bdbb-4ee6-bb34-44bedbc0fac3.png)
+
+****
+
+(8) New Brunswick [graph 214 09 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2009%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154734019-78ca934f-16ea-4c44-9bab-c91ea69f467b.png)
+
+****
+
+(9) New Brunswick [graph 214 11 C19 daily cases, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2011%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154734266-ea817180-9abf-4c49-96a6-6fc7e0b6516b.png)
+
+****
+
+(10) New Brunswick [graph 214 13 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20214%2013%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154734393-366443d0-77db-4014-bf2e-9907efb3fcfe.png)
 
 ****
 
