@@ -93,19 +93,16 @@ Long PDF file, see video [here]().
 
 (2) Canada National [graph 110 01 C19 daily deaths, Canada, National, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154514788-2dbe6fd6-db56-4fe3-87ff-583f3149f4ff.png)
 
 ****
 
 (3) Canada National [graph 110 01b C19 daily deaths, Canada, National, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154515105-577f16f3-fc37-4aaa-8520-f52ae5ae33f7.png)
 
 ****
 
 (4) Canada National [graph 110 02 C19 daily deaths, Canada, National, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2002%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154515350-dfbee906-d159-49e6-824c-125d659a0112.png)
 
 ****
 
@@ -211,31 +208,26 @@ Long PDF file, see video [here]().
 
 (2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154526833-4004169e-6da1-4774-b039-ff0bbb95f333.png)
 
 ****
 
 (3) Alberta [graph 111 01b C19 daily deaths, Canada, Alberta, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154529442-711779ee-463a-4189-bf08-a758685cb802.png)
 
 ****
 
 (4) Alberta [graph 111 02 C19 daily deaths, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154529617-374f61b3-c4d6-4425-bd66-166f9714c03f.png)
 
 ****
 
 (5) Alberta [graph 111 03 C19 daily deaths, Canada, Alberta, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154527074-cdab56b1-4ab2-4b7f-95f0-8d080ca3f3b6.png)
 
 ****
 
 (6) Alberta [graph 111 04 C19 daily deaths, Canada, Alberta, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154527286-f4a7be51-95c8-4933-b4a8-6301cb7fff61.png)
 
 **** 
 
@@ -286,31 +278,26 @@ Long PDF file, see video [here]().
 
 (2) British Columbia [graph 112 01 C19 daily deaths, Canada, British Columbia, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2001%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154561526-0fdbf5c8-69d9-4253-bfd5-530e3e36c2d9.png)
 
 ****
 
 (3) British Columbia [graph 112 01b C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154561619-35984239-05b3-46d3-92fb-2e5b4ea29dc5.png)
 
 ****
 
 (4) British Columbia [graph 112 02 C19 daily deaths, Canada, British Columbia, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2002%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154533254-3904270d-44ec-4edc-a38e-af6b1c25050b.png)
 
 ****
 
 (5) British Columbia [graph 112 03 C19 daily deaths, Canada, British Columbia, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2003%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154533416-0f37dea5-7a22-4753-a0ea-7e4a8f244f4c.png)
 
 ****
 
 (6) British Columbia [graph 112 04 C19 daily deaths, Canada, British Columbia, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2004%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20percent%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154533603-6cd55880-713a-4f25-b6fe-a52b058238f6.png)
 
 **** 
 
@@ -362,31 +349,26 @@ Long PDF file, see video [here]().
 
 (2) Manitoba [graph 113 01 C19 daily deaths, Canada, Manitoba, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154534633-21197d9f-c683-49da-b551-6fcbbeb0817b.png)
 
 ****
 
 (3) Manitoba [graph 113 01b C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154534898-affaa8ae-521e-4cb4-978b-70b3bc52c11b.png)
 
 ****
 
 (4) Manitoba [graph 113 02 C19 daily deaths, Canada, Manitoba, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154535150-42be55f2-a1c4-41a7-a1b2-edb37257eb6e.png)
 
 ****
 
 (5) Manitoba [graph 113 03 C19 daily deaths, Canada, Manitoba, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154535369-843892f3-b316-4929-855c-5eab77b1e527.png)
 
 ****
 
 (6) Manitoba [graph 113 04 C19 daily deaths, Canada, Manitoba, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20percent%20Error.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154535577-25b4bcd0-0369-4f7f-9dff-0cae2783c2b7.png)
 
 **** 
 
