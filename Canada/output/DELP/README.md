@@ -1465,12 +1465,13 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Newfoundland and Labrador [graph 215 01 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, With extremes]()
+(2) Newfoundland and Labrador [graph 215 01 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2001%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 
 ****
 
 (3) Newfoundland and Labrador [graph 215 02 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Error]()
+
 
 
 ****
