@@ -1266,7 +1266,7 @@ Long PDF file, see video [here]().
 
 
 
-*
+
 
 
 
@@ -1340,7 +1340,7 @@ Long PDF file, see video [here]().
 
 *
 
-*
+
 
 
 
@@ -1414,7 +1414,7 @@ Long PDF file, see video [here]().
 
 
 
-*
+
 
 
 
@@ -1488,7 +1488,7 @@ Long PDF file, see video [here]().
 
 
 
-*
+
 
 
 
@@ -1562,7 +1562,7 @@ Long PDF file, see video [here]().
 
 
 
-*
+
 
 
 
@@ -1586,8 +1586,57 @@ Long PDF file, see video [here]().
 
 ****
 
+(2) Ontario [graph 217 01 C19 daily cases, Canada,Ontario, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Ontario [graph 217 02 C19 daily cases, Canada,Ontario, DELP, Error]()
+
+
+****
+
+(4) Ontario [graph 217 03 C19 daily cases, Canada,Ontario, DELP, absolute Error]()
+
+
+****
+
+(5) Ontario [graph 217 04 C19 daily cases, Canada,Ontario, DELP, percent Error]()
+
+
+****
+
+(6) Ontario [graph 217 05 C19 daily cases, Canada,Ontario, DELP, absolute percent Error]()
+
+
+****
+
+(7) Ontario [graph 217 07 C19 daily cases, Canada,Ontario, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Ontario [graph 217 09 C19 daily cases, Canada,Ontario, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Ontario [graph 217 11 C19 daily cases, Canada,Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Ontario [graph 217 13 C19 daily cases, Canada,Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
 
 *
+
+
+
+
 
 
 
@@ -1613,8 +1662,57 @@ Long PDF file, see video [here]().
 
 ****
 
+(2) Quebec [graph 218 01 C19 daily cases, Canada,Quebec, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Quebec [graph 218 02 C19 daily cases, Canada,Quebec, DELP, Error]()
+
+
+****
+
+(4) Quebec [graph 218 03 C19 daily cases, Canada,Quebec, DELP, absolute Error]()
+
+
+****
+
+(5) Quebec [graph 218 04 C19 daily cases, Canada,Quebec, DELP, percent Error]()
+
+
+****
+
+(6) Quebec [graph 218 05 C19 daily cases, Canada,Quebec, DELP, absolute percent Error]()
+
+
+****
+
+(7) Quebec [graph 218 07 C19 daily cases, Canada,Quebec, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Quebec [graph 218 09 C19 daily cases, Canada,Quebec, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Quebec [graph 218 11 C19 daily cases, Canada,Quebec, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Quebec [graph 218 13 C19 daily cases, Canada,Quebec, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
 
 *
+
+
+
+
 
 
 
@@ -1641,6 +1739,52 @@ Long PDF file, see video [here]().
 
 ****
 
+(2) Saskatchewan [graph 219 01 C19 daily cases, Canada,Saskatchewan, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Saskatchewan [graph 219 02 C19 daily cases, Canada,Saskatchewan, DELP, Error]()
+
+
+****
+
+(4) Saskatchewan [graph 219 03 C19 daily cases, Canada,Saskatchewan, DELP, absolute Error]()
+
+
+****
+
+(5) Saskatchewan [graph 219 04 C19 daily cases, Canada,Saskatchewan, DELP, percent Error]()
+
+
+****
+
+(6) Saskatchewan [graph 219 05 C19 daily cases, Canada,Saskatchewan, DELP, absolute percent Error]()
+
+
+****
+
+(7) Saskatchewan [graph 219 07 C19 daily cases, Canada,Saskatchewan, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Saskatchewan [graph 219 09 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Saskatchewan [graph 219 11 C19 daily cases, Canada,Saskatchewan, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Saskatchewan [graph 219 13 C19 daily cases, Canada,Saskatchewan, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
 
 *
+
 
