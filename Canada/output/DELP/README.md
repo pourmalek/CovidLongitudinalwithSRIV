@@ -967,9 +967,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 201 C19 daily cases, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20201%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Alberta [graph 200 C19 daily cases, Canada, National, DELP, all updates]
 
-Long PDF file, see video [here](https://youtu.be/tyXjAZlfMNo).
+Long PDF file, see video [here]().
 
 
 *
@@ -989,9 +989,9 @@ Long PDF file, see video [here](https://youtu.be/tyXjAZlfMNo).
 
 ****
 
-(1) British Columbia [graph 202 C19 daily cases, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20202%20C19%20daily%20cases%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20update%2000000000.pdf)
+(1) British Columbia [graph 200 C19 daily cases, Canada, National, DELP, all updates]
 
-Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1016,9 +1016,9 @@ Long PDF file, see video [here](https://youtu.be/2kX2DIk-ndc).
 
 ****
 
-(1) Manitoba [graph 203 C19 daily cases, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20203%20C19%20daily%20cases%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Manitoba [graph 200 C19 daily cases, Canada, National, DELP, all updates]()
 
-Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
+Long PDF file, see video [here]().
 
 
 *
@@ -1039,9 +1039,9 @@ Long PDF file, see video [here](https://youtu.be/lFtVREOaIKc).
 
 ****
 
-(1) New Brunswick [graph 204 C19 daily cases, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20204%20C19%20daily%20cases%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20update%2000000000.pdf)
+(1) New Brunswick [graph 200 C19 daily cases, Canada, National, DELP, all updates]()
 
-Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1064,9 +1064,9 @@ Long PDF file, see video [here](https://youtu.be/r_E3nIc_DnQ).
 
 ****
 
-(1) Newfoundland and Labrador [graph 205 C19 daily cases, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20205%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Newfoundland and Labrador [graph 200 C19 daily cases, Canada, National, DELP, all updates](
 
-Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1089,9 +1089,9 @@ Long PDF file, see video [here](https://youtu.be/-YxnLE2nUh4).
 
 ****
 
-(1) Nova Scotia [graph 206 C19 daily cases, Canada, Nova Scotia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20206%20C19%20daily%20cases%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Nova Scotia [graph 200 C19 daily cases, Canada, National, DELP, all updates]()
 
-Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1114,9 +1114,9 @@ Long PDF file, see video [here](https://youtu.be/n8ZhNPmXR08).
 
 ****
 
-(1) Ontario [graph 207 C19 daily cases, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20207%20C19%20daily%20cases%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Ontario [graph 200 C19 daily cases, Canada, National, DELP, all updates](
 
-Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1141,9 +1141,9 @@ Long PDF file, see video [here](https://youtu.be/dB_al-O3xjk).
 
 ****
 
-(1) Quebec [graph 208 C19 daily cases, Canada, Quebec, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20208%20C19%20daily%20cases%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Quebec [graph 200 C19 daily cases, Canada, National, DELP, all updates]()
 
-Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
+Long PDF file, see video [here]().
 
 ****
 
@@ -1169,12 +1169,12 @@ Long PDF file, see video [here](https://youtu.be/-LLWDZVeGEg).
 
 ****
 
-(1) Saskatchewan [graph 209 C19 daily cases, Canada, Saskatchewan, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20209%20C19%20daily%20cases%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20update%2000000000.pdf)
+(1) Saskatchewan [graph 200 C19 daily cases, Canada, National, DELP, all updates]()
 
-Long PDF file, see video [here](https://youtu.be/s-yAl9uksj4).
+Long PDF file, see video [here]().
 
 ****
 
-(
+
 *
 
