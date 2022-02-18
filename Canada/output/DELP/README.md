@@ -514,46 +514,46 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Newfoundland and Labrador [graph 115 01 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, With extremes]()
+(2) Newfoundland and Labrador [graph 115 01 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 
 ****
 
-(3) Newfoundland and Labrador [graph 115 01b C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without extremes]()
+(3) Newfoundland and Labrador [graph 115 01b C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
 
 ****
 
-(4) Newfoundland and Labrador [graph 115 02 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error]()
+(4) Newfoundland and Labrador [graph 115 02 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error.pdf)
 
 
 ****
 
-(5) Newfoundland and Labrador [graph 115 03 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, absolute Error]()
+(5) Newfoundland and Labrador [graph 115 03 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20Error.pdf)
 
 
 ****
 
-(6) Newfoundland and Labrador [graph 115 04 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, percent Error]()
+(6) Newfoundland and Labrador [graph 115 04 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20percent%20Error.pdf)
 
 
 **** 
 
-(7) Newfoundland and Labrador [graph 115 07 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Error**, mean over updates of median error by epi weeks]()
+(7) Newfoundland and Labrador [graph 115 07 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error%20Mean1.pdf)
 
 **** 
 
-(8) Newfoundland and Labrador [graph 115 09 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(8) Newfoundland and Labrador [graph 115 09 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
 
 **** 
 
-(9) Newfoundland and Labrador [graph 115 11 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+(9) Newfoundland and Labrador [graph 115 11 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
 
 ****
 
-(10) Newfoundland and Labrador [graph 115 13 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks]()
+(10) Newfoundland and Labrador [graph 115 13 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
 
 ****
