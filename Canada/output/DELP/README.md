@@ -1137,48 +1137,57 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 211 01 C19 daily cases, Canada, Alberta, DELP, Updates together, With extremes]()
+(2) Alberta [graph 211 01 C19 daily cases, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2001%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
-
-****
-
-(3) Alberta [graph 211 02 C19 daily cases, Canada, Alberta, DELP, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154725269-ad9234b3-0cc5-4092-8043-5e778d74d7a1.png)
 
 ****
 
-(4) Alberta [graph 211 03 C19 daily cases, Canada, Alberta, DELP, absolute Error]()
+(3) Alberta [graph 211 02 C19 daily cases, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2002%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
-
-****
-
-(5) Alberta [graph 211 04 C19 daily cases, Canada, Alberta, DELP, percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/154725411-28b9ccb5-9bda-470f-a3b3-401c030f3f0e.png)
 
 ****
 
-(6) Alberta [graph 211 05 C19 daily cases, Canada, Alberta, DELP, absolute percent Error]()
+(4) Alberta [graph 211 03 C19 daily cases, Canada, Alberta, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2003%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error.pdf)
 
-
-****
-
-(7) Alberta [graph 211 07 C19 daily cases, Canada, Alberta, DELP, **Error**, mean over updates of median error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154725565-98ca099b-ccf7-4845-9d7a-33394a4a5752.png)
 
 ****
 
-(8) Alberta [graph 211 09 C19 daily cases, Canada, Alberta, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(5) Alberta [graph 211 04 C19 daily cases, Canada, Alberta, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2004%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error.pdf)
 
-
-****
-
-(9) Alberta [graph 211 11 C19 daily cases, Canada, Alberta, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/154725714-f17c5938-98de-458a-843b-9ac80135a4f7.png)
 
 ****
 
-(10) Alberta [graph 211 13 C19 daily cases, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+(6) Alberta [graph 211 05 C19 daily cases, Canada, Alberta, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2005%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154725868-401eeaf5-c58b-4819-954b-4ca1089ffa6e.png)
+
+****
+
+(7) Alberta [graph 211 07 C19 daily cases, Canada, Alberta, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2007%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154726043-b747396a-8ff4-4ae4-945d-4d53f7d0c1a6.png)
+
+****
+
+(8) Alberta [graph 211 09 C19 daily cases, Canada, Alberta, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2009%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154726181-00f8e598-450a-41c4-b4cd-4f3fb17e1768.png)
+
+****
+
+(9) Alberta [graph 211 11 C19 daily cases, Canada, Alberta, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2011%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154726282-22b97397-78bf-4e9d-af44-906115e1bb5c.png)
+
+****
+
+(10) Alberta [graph 211 13 C19 daily cases, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20211%2013%20C19%20daily%20cases%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154726398-95b5c634-05ea-47aa-a942-e7a03fab014f.png)
 
 ****
 
@@ -1207,6 +1216,55 @@ Long PDF file, see video [here]().
 
 ****
 
+(2) British Columbia [graph 212 01 C19 daily cases, Canada, British Columbia, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) British Columbia [graph 212 02 C19 daily cases, Canada, British Columbia, DELP, Error]()
+
+
+****
+
+(4) British Columbia [graph 212 03 C19 daily cases, Canada, British Columbia, DELP, absolute Error]()
+
+
+****
+
+(5) British Columbia [graph 212 04 C19 daily cases, Canada, British Columbia, DELP, percent Error]()
+
+
+****
+
+(6) British Columbia [graph 212 05 C19 daily cases, Canada, British Columbia, DELP, absolute percent Error]()
+
+
+****
+
+(7) British Columbia [graph 212 07 C19 daily cases, Canada, British Columbia, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) British Columbia [graph 212 09 C19 daily cases, Canada, British Columbia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) British Columbia [graph 212 11 C19 daily cases, Canada, British Columbia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) British Columbia [graph 212 13 C19 daily cases, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
+
+*
+
+
 
 *
 
@@ -1232,6 +1290,55 @@ Long PDF file, see video [here]().
 
 Long PDF file, see video [here]().
 
+****
+
+(2) Manitoba [graph 213 01 C19 daily cases, Canada, Manitoba, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Manitoba [graph 213 02 C19 daily cases, Canada, Manitoba, DELP, Error]()
+
+
+****
+
+(4) Manitoba [graph 213 03 C19 daily cases, Canada, Manitoba, DELP, absolute Error]()
+
+
+****
+
+(5) Manitoba [graph 213 04 C19 daily cases, Canada, Manitoba, DELP, percent Error]()
+
+
+****
+
+(6) Manitoba [graph 213 05 C19 daily cases, Canada, Manitoba, DELP, absolute percent Error]()
+
+
+****
+
+(7) Manitoba [graph 213 07 C19 daily cases, Canada, Manitoba, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Manitoba [graph 213 09 C19 daily cases, Canada, Manitoba, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Manitoba [graph 213 11 C19 daily cases, Canada, Manitoba, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Manitoba [graph 213 13 C19 daily cases, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
+
+*
 
 *
 
@@ -1256,6 +1363,55 @@ Long PDF file, see video [here]().
 Long PDF file, see video [here]().
 
 ****
+
+(2) New Brunswick [graph 214 01 C19 daily cases, Canada, New Brunswick, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) New Brunswick [graph 214 02 C19 daily cases, Canada, New Brunswick, DELP, Error]()
+
+
+****
+
+(4) New Brunswick [graph 214 03 C19 daily cases, Canada, New Brunswick, DELP, absolute Error]()
+
+
+****
+
+(5) New Brunswick [graph 214 04 C19 daily cases, Canada, New Brunswick, DELP, percent Error]()
+
+
+****
+
+(6) New Brunswick [graph 214 05 C19 daily cases, Canada, New Brunswick, DELP, absolute percent Error]()
+
+
+****
+
+(7) New Brunswick [graph 214 07 C19 daily cases, Canada, New Brunswick, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) New Brunswick [graph 214 09 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) New Brunswick [graph 214 11 C19 daily cases, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) New Brunswick [graph 214 13 C19 daily cases, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
+
+*
+
 
 
 *
@@ -1282,6 +1438,55 @@ Long PDF file, see video [here]().
 
 ****
 
+(2) Newfoundland and Labrador [graph 215 01 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Newfoundland and Labrador [graph 215 02 C19 daily cases, Canada, Newfoundland and Labrador, DELP, Error]()
+
+
+****
+
+(4) Newfoundland and Labrador [graph 215 03 C19 daily cases, Canada, Newfoundland and Labrador, DELP, absolute Error]()
+
+
+****
+
+(5) Newfoundland and Labrador [graph 215 04 C19 daily cases, Canada, Newfoundland and Labrador, DELP, percent Error]()
+
+
+****
+
+(6) Newfoundland and Labrador [graph 215 05 C19 daily cases, Canada, Newfoundland and Labrador, DELP, absolute percent Error]()
+
+
+****
+
+(7) Newfoundland and Labrador [graph 215 07 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Newfoundland and Labrador [graph 215 09 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Newfoundland and Labrador [graph 215 11 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Newfoundland and Labrador [graph 215 13 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
+
+*
+
+
 
 *
 
@@ -1306,6 +1511,55 @@ Long PDF file, see video [here]().
 Long PDF file, see video [here]().
 
 ****
+
+(2) Nova Scotia [graph 216 01 C19 daily cases, Canada,Nova Scotia, DELP, Updates together, With extremes]()
+
+
+****
+
+(3) Nova Scotia [graph 216 02 C19 daily cases, Canada,Nova Scotia, DELP, Error]()
+
+
+****
+
+(4) Nova Scotia [graph 216 03 C19 daily cases, Canada,Nova Scotia, DELP, absolute Error]()
+
+
+****
+
+(5) Nova Scotia [graph 216 04 C19 daily cases, Canada,Nova Scotia, DELP, percent Error]()
+
+
+****
+
+(6) Nova Scotia [graph 216 05 C19 daily cases, Canada,Nova Scotia, DELP, absolute percent Error]()
+
+
+****
+
+(7) Nova Scotia [graph 216 07 C19 daily cases, Canada,Nova Scotia, DELP, **Error**, mean over updates of median error by epi weeks]()
+
+
+****
+
+(8) Nova Scotia [graph 216 09 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Nova Scotia [graph 216 11 C19 daily cases, Canada,Nova Scotia, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Nova Scotia [graph 216 13 C19 daily cases, Canada,Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
+
+*
+
 
 
 *
