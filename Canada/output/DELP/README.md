@@ -1082,18 +1082,38 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Canada provinces together 
+(1) Canada provinces together [graph 220 a C19 daily cases, Canada, provinces together, DELP, absolute percent Error Mean1](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20a%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154721959-f8ee5650-e696-4842-ba20-7bb8d65cb68d.png)
+
 ****
 
-(2) Canada provinces together 
+(2) Canada provinces together [graph 220 b C19 daily cases, Canada, provinces together, DELP, absolute percent Error Mean1](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154722307-bc8a9883-af32-4ed6-a7e2-fb60efe66123.png)
+
 ****
 
-(3) Canada provinces together 
+(3) Canada provinces together [graph 220 c C19 daily cases, Canada, provinces together, DELP, absolute percent Error Mean1](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20c%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154722578-2293cbf0-7ff4-441a-b373-8579b305e3f6.png)
+
+****
+
+(4) Canada provinces together [graph 230 a C19 daily cases, Canada, provinces together, DELP, Average MAPE](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20230%20a%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154722820-3782d10b-a655-44eb-860f-e480bec1fad0.png)
+
+****
+
+(5) Canada provinces together [graph 230 b C19 daily cases, Canada, provinces together, DELP, Average MAPE](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20230%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/154723038-8813b195-fc44-48f0-8ec0-8c53f5c27aa5.png)
+
 ****
 
 
-
-
+*
 
 
 
