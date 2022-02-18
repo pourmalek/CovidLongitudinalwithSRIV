@@ -1497,21 +1497,25 @@ Long PDF file, see video [here]().
 
 (7) Newfoundland and Labrador [graph 215 07 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2007%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154749041-c34d6d59-5d4d-482f-a9d4-f65125846413.png)
 
 ****
 
 (8) Newfoundland and Labrador [graph 215 09 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2009%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154749124-23d2a9c5-9fd0-413e-9ec0-cb135154c282.png)
 
 ****
 
-(9) Newfoundland and Labrador [graph 215 11 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2011%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20percent%20Error%20Mean1.pdf()
+(9) Newfoundland and Labrador [graph 215 11 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2011%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154749298-2cf09e24-a9a0-42d2-84a0-1cd3a8292517.png)
 
 ****
 
-(10) Newfoundland and Labrador [graph 215 13 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+(10) Newfoundland and Labrador [graph 215 13 C19 daily cases, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20215%2013%20C19%20daily%20cases%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154749401-81b785ae-720d-4105-a5b2-7b4001be3c21.png)
 
 ****
 
