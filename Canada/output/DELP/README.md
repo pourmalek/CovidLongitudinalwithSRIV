@@ -1002,45 +1002,51 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National []()
+(2) Canada National [graph 210 01 C19 daily cases, Canada, National, DELP, Updates together, With extremes]()
 
 
 ****
 
-(3) Canada National []()
+(3) Canada National [graph 210 02 C19 daily cases, Canada, National, DELP, Error]()
 
 
 ****
 
-(4) Canada National []()
+(4) Canada National [graph 210 03 C19 daily cases, Canada, National, DELP, absolute Error]()
 
 
 ****
 
-(5) Canada National []()
+(5) Canada National [graph 210 04 C19 daily cases, Canada, National, DELP, percent Error]()
 
 
 ****
 
-(6) Canada National []()
+(6) Canada National [graph 210 05 C19 daily cases, Canada, National, DELP, absolute percent Error]()
 
 
 ****
 
-(7) Canada National []()
+(7) Canada National [graph 210 07 C19 daily cases, Canada, National, DELP, **Error**, mean over updates of median error by epi weeks]()
 
 
 ****
 
-(8) Canada National []()
+(8) Canada National [graph 210 09 C19 daily cases, Canada, National, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
 
 
 ****
 
-(9) Canada National []()
+(9) Canada National [graph 210 11 C19 daily cases, Canada, National, DELP, **Percent Error**, mean over updates of median percent error by epi weeks]()
 
 
 ****
+
+(10) Canada National [graph 210 13 C19 daily cases, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epi weeks]()
+
+
+****
+
 
 *
 
