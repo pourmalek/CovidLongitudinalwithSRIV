@@ -445,7 +445,7 @@ Long PDF file, see video [here]().
 
 (10) Manitoba [graph 113 11 C19 daily deaths, Canada, Manitoba, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154611756-d474e555-7880-422d-9c08-d975ab6e30df.png)
+![image](https://user-images.githubusercontent.com/30849720/154612071-fe3bf584-d00c-4caf-b8f8-2474630dfd32.png)
 
 ****
 
