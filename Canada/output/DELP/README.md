@@ -218,7 +218,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
+(2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
 
 ****
