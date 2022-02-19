@@ -60,26 +60,31 @@ Long PDF file, see video [here]().
 
 (2) Canada National [graph 2 C19 daily deaths, Canada, National, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154779346-b2ad82f7-0912-47ca-b240-384c10c9a3dc.png)
 
 ****
 
 (3) Canada National [graph 3 C19 daily deaths, Canada, National, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154779352-107c8698-6644-4029-b136-1f18af59746f.png)
 
 **** 
 
 (4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154779361-d14b5d7c-f96c-41d9-a6f0-527f95b4de45.png)
 
 ****
 
 (5) Canada National [graph 5 C19 daily deaths, Canada, National, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20National%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154779369-750c65d7-1ec5-4ccb-a9f9-ee7f6ddc50f4.png)
 
 ****
 
 (6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20National%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154779376-fd08b2fd-d197-4baa-aca9-a81a7fc3d9e8.png)
 
 ****
 
