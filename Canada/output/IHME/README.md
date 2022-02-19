@@ -391,11 +391,13 @@ Long PDF file, see video [here]().
 
 (2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785552-53fd7a61-2bc2-43f3-bd0a-fe4c3fb448cd.png)
 
 ****
 
 (3) Quebec [graph 3 C19 daily deaths, Canada, Quebec, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785569-250a8a7f-2374-4ded-927c-18daf60ddad6.png)
 
 ****
 
@@ -411,6 +413,7 @@ Long PDF file, see video [here]().
 
 (6) Quebec [graph 6 C19 daily deaths, Canada, Quebec, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Quebec%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785592-f39b833e-edbc-4728-95bf-564d1d36cd88.png)
 
 ****
 
