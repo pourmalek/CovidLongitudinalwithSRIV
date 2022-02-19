@@ -26,10 +26,6 @@ British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal
 
 Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#manitoba) 
 
-New Brunswick | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#new-brunswick) 
-
-Newfoundland and Labrador | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#newfoundland-and-labrador) 
-
 Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#nova-scotia) 
 
 Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#ontario) 
