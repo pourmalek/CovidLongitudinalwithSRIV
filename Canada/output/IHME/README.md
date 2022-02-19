@@ -16,6 +16,9 @@ Reference = JOHN, Model = IHME
 
 <br/><br/>
 
+
+
+
 **Locations and outcomes:**
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
@@ -49,7 +52,7 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blo
 
 ****
 
-(1) Canada National [graph 1 C19 daily deaths, Canada, National, IHME, all updates]()
+(1) Canada National [graph 1 C19 daily deaths, Canada, National, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -101,7 +104,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 1 C19 daily deaths, Canada, Alberta, IHME, All updates]()
+(1) Alberta [graph 1 C19 daily deaths, Canada, Alberta, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -149,7 +152,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) British Columbia [graph 1 C19 daily deaths, Canada, British Columbia, IHME, All updates]()
+(1) British Columbia [graph 1 C19 daily deaths, Canada, British Columbia, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20British%20Columbia%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -200,7 +203,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Manitoba [graph 1 C19 daily deaths, Canada, Manitoba, IHME, All updates]()
+(1) Manitoba [graph 1 C19 daily deaths, Canada, Manitoba, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Manitoba%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -250,7 +253,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Nova Scotia [graph 1 C19 daily deaths, Canada, Nova Scotia, IHME, All updates]()
+(1) Nova Scotia [graph 1 C19 daily deaths, Canada, Nova Scotia, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Nova%20Scotia%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -299,7 +302,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Ontario [graph 1 C19 daily deaths, Canada, Ontario, IHME, All updates](f)
+(1) Ontario [graph 1 C19 daily deaths, Canada, Ontario, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Ontario%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -350,7 +353,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Quebec [graph 1 C19 daily deaths, Canada, Quebec, IHME, All updates]()
+(1) Quebec [graph 1 C19 daily deaths, Canada, Quebec, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Quebec%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
@@ -402,7 +405,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Saskatchewan [graph 1 C19 daily deaths, Canada, Saskatchewan, IHME, All updates]()
+(1) Saskatchewan [graph 1 C19 daily deaths, Canada, Saskatchewan, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Saskatchewan%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
