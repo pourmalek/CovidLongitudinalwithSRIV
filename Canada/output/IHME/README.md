@@ -110,7 +110,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -158,7 +158,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) British Columbia [graph 2 C19 daily deaths, Canada, British Columbia, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20British%20Columbia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) British Columbia [graph 2 C19 daily deaths, Canada, British Columbia, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20British%20Columbia%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -209,7 +209,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -259,7 +259,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Nova Scotia [graph 2 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Nova%20Scotia%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Nova Scotia [graph 2 C19 daily deaths, Canada, Nova Scotia, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Nova%20Scotia%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -359,7 +359,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
@@ -411,7 +411,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Saskatchewan [graph 2 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Saskatchewan%20C-19%20daily%20reported%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Saskatchewan [graph 2 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Saskatchewan%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 
 ****
