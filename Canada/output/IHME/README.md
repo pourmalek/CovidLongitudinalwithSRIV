@@ -18,28 +18,28 @@ Reference = JOHN, Model = IHME
 
 **Locations and outcomes:**
 
-Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#canada-national) 
+Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
 
-Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#alberta) 
+Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#alberta-daily-deaths-error-measures-ihme-model) 
 
-British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#british-columbia) 
+British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#british-columbia-daily-deaths-error-measures-ihme-model) 
 
-Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#manitoba) 
+Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#manitoba-daily-deaths-error-measures-ihme-model) 
 
-Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#nova-scotia) 
+Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#nova-scotia-daily-deaths-error-measures-ihme-model) 
 
-Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#ontario) 
+Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#ontario-daily-deaths-error-measures-ihme-model) 
 
-Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#quebec) 
+Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#quebec-daily-deaths-error-measures-ihme-model) 
 
-Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IHME#saskatchewan) 
+Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#saskatchewan-daily-deaths-error-measures-ihme-model) 
 
 <br/><br/>
 
 
 ****
 
-### IHME model, Error measures for daily deaths
+### IHME model, Error measures for Daily Deaths
 
 
 ****
