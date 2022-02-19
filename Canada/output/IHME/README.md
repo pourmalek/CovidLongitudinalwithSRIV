@@ -448,26 +448,31 @@ Long PDF file, see video [here]().
 
 (2) Saskatchewan [graph 2 C19 daily deaths, Canada, Saskatchewan, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Saskatchewan%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785745-e5298935-4922-4019-8f7d-ec474ced7e82.png)
 
 ****
 
 (3) Saskatchewan [graph 3 C19 daily deaths, Canada, Saskatchewan, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Saskatchewan%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785765-73ebdafb-a3bd-41b6-9448-bbc7f62e27b0.png)
 
 ****
 
 (4) Saskatchewan [graph 4 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Saskatchewan%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785780-b21e8aeb-6437-451e-954b-dac957f495ae.png)
 
 ****
 
 (5) Saskatchewan [graph 5 C19 daily deaths, Canada, Saskatchewan, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Saskatchewan%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785803-094da89e-9076-4b4b-86a0-8e1e21fbf9d5.png)
 
 ****
 
 (6) Saskatchewan [graph 6 C19 daily deaths, Canada, Saskatchewan, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Saskatchewan%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154785835-147263aa-3b83-42b3-90a0-bd5d00f4fd0e.png)
 
 ****
 
