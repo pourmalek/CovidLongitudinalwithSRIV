@@ -226,26 +226,31 @@ Long PDF file, see video [here]().
 
 (2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154784239-7e55323d-936e-4c4a-b73e-0fb1f620db51.png)
 
 ****
 
 (3) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154784272-a4bbf380-2461-4ada-9ec0-5bf7648a611e.png)
 
 ****
 
 (4) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Manitoba%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154784293-b4cfa089-7b6f-4da2-9bc2-242ce853248e.png)
 
 ****
 
 (5) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Manitoba%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154784313-f88d5bbb-12c5-46da-a206-cd8cc3d4968b.png)
 
 ****
 
 (6) Manitoba [graph 9 C19 daily deaths, Canada, Manitoba, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Manitoba%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154784344-e67ca7ff-60bb-4900-a5b7-32993e426859.png)
 
 ****
 
