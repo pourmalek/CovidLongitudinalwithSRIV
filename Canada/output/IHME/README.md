@@ -1,4 +1,4 @@
-### IHME model, Error measures for daily deaths 
+### IHME model, Error measures for Daily Deaths
 
 <br/><br/>
 
