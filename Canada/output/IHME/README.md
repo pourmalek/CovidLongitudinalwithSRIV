@@ -49,6 +49,8 @@ summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
 
+Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-provinces-together-daily-deaths-error-measures-ihme-model)
+
 Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#alberta-daily-deaths-error-measures-ihme-model) 
 
 British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#british-columbia-daily-deaths-error-measures-ihme-model) 
@@ -135,6 +137,49 @@ Long PDF file, see video [here]().
 (10) Canada National [graph 10 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154971898-3d86912b-3220-4feb-b023-9b009448085c.png)
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
+****
+****
+
+### Canada provinces together, Daily Deaths, Error Measures, IHME Model
+
+****
+
+(1) Canada provinces together [graph 11 a C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+(2) Canada provinces together [graph 11 b C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ]()
+
+
+****
+
+(3) Canada provinces together [graph 11 c C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ]()
+
+
+****
+
+(4) Canada provinces together [graph 12 a C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks]()
+
+
+****
+
+(5) Canada provinces together [graph 12 b C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks, without extremes ]()
+
 
 ****
 
@@ -434,21 +479,25 @@ Long PDF file, see video [here]().
 
 (7) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003334-d2d6d590-1e5e-4763-b244-f3913ead12e5.png)
 
 ****
 
 (8) Nova Scotia [graph 8 C19 daily deaths, Canada, Nova Scotia, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003421-274e687f-0931-4a35-a01b-de86593ee9e4.png)
 
 ****
 
 (9) Nova Scotia [graph 9 C19 daily deaths, Canada, Nova Scotia, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003516-d3a2bbbc-ae29-4996-a53b-114efab024b9.png)
 
 ****
 
 (10) Nova Scotia [graph 10 C19 daily deaths, Canada, Nova Scotia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Nova%20Scotia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003590-f0597d39-e409-43ff-8472-fab625041c0a.png)
 
 ****
 
@@ -509,21 +558,25 @@ Long PDF file, see video [here]().
 
 (7) Ontario [graph 7 C19 daily deaths, Canada, Ontario, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003764-583ee7fe-ec3f-4c54-bfeb-a0435e35cc48.png)
 
 ****
 
 (8) Ontario [graph 8 C19 daily deaths, Canada, Ontario, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003864-0df537e1-738e-4cd6-93f0-4d76fdf0bbd1.png)
 
 ****
 
 (9) Ontario [graph 9 C19 daily deaths, Canada, Ontario, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155003934-9c521ff1-2099-433a-b210-aeea45a0ecac.png)
 
 ****
 
 (10) Ontario [graph 10 C19 daily deaths, Canada, Ontario, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Ontario%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004010-71bba294-fe5b-4048-a10b-c59d03c6c196.png)
 
 ****
 
@@ -586,21 +639,25 @@ Long PDF file, see video [here]().
 
 (7) Quebec [graph 7 C19 daily deaths, Canada, Quebec, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004095-dbc6b133-7a34-46de-aeff-b1abc264b355.png)
 
 ****
 
 (8) Quebec [graph 8 C19 daily deaths, Canada, Quebec, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004181-69391efa-2224-44c5-a227-8fb6c87baa0d.png)
 
 ****
 
 (9) Quebec [graph 9 C19 daily deaths, Canada, Quebec, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004250-1506b83b-ac2d-494b-b3ac-ca3aec1fd185.png)
 
 ****
 
 (10) Quebec [graph 10 C19 daily deaths, Canada, Quebec, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Quebec%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004344-19bce3f7-a903-473f-9606-5884320be2e8.png)
 
 ****
 
@@ -664,21 +721,25 @@ Long PDF file, see video [here]().
 
 (7) Saskatchewan [graph 7 C19 daily deaths, Canada, Saskatchewan, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Saskatchewan%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004453-6032cf2d-b2d7-4744-821b-1e4f4586a168.png)
 
 ****
 
 (8) Saskatchewan [graph 8 C19 daily deaths, Canada, Saskatchewan, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Saskatchewan%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004508-825e6a1d-2569-48cf-8493-792fd40478c9.png)
 
 ****
 
 (9) Saskatchewan [graph 9 C19 daily deaths, Canada, Saskatchewan, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Saskatchewan%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004594-e2f2987d-53b8-4fbd-bff1-23810aa6cd73.png)
 
 ****
 
 (10) Saskatchewan [graph 10 C19 daily deaths, Canada, Saskatchewan, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Saskatchewan%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155004662-94f466c7-9780-4431-a17c-5d156282cc39.png)
 
 ****
 
