@@ -29,7 +29,7 @@ summarization level = calendar time in days: transform calendar days to epidemio
 
 (2) get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-summarization level = updates: transform many updates to one update (142 to 1)
+summarization level = updates: transform many updates to one update (78 to 1)
 
 the last graphs under each location (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
 
@@ -111,6 +111,26 @@ Long PDF file, see video [here]().
 (6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20National%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154779376-fd08b2fd-d197-4baa-aca9-a81a7fc3d9e8.png)
+
+****
+
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, **Error**, mean over updates of median Error by epi weeks]()
+
+
+****
+
+(8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+
+
+****
+
+(9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, **Percent Error**, mean over updates of median percent error by epi weeks]()
+
+
+****
+
+(10) Canada National [graph 10 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks]()
+
 
 ****
 
