@@ -172,31 +172,31 @@ Long PDF file, see video [here]().
 
 (1) Canada provinces together [graph 120 a C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20a%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154601842-e2ce89f5-1840-4001-9a3a-a90459ee8e5b.png)
+![image](https://user-images.githubusercontent.com/30849720/155001221-8dd35ce8-dd5a-4ff7-b517-dd34422abd19.png)
 
 ****
 
 (2) Canada provinces together [graph 120 b C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NL NS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20b%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154601933-37fb833d-c246-4186-9b74-1d5987b2f650.png)
+![image](https://user-images.githubusercontent.com/30849720/155001323-d594604a-2bb8-44d5-be8a-7ec4c6595bb7.png)
 
 ****
 
-(3) Canada provinces together [graph 120 c C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NL NS BC SK MB](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20c%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+(3) Canada provinces together [graph 120 c C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NL NS SK](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20c%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154602005-5e717ba5-3f76-4c50-ac62-d61497ce53ab.png)
+![image](https://user-images.githubusercontent.com/30849720/155001401-3ea96755-fd8c-46ff-9fa3-2d5fc7fdde41.png)
 
 ****
 
 (4) Canada provinces together [graph 130 a C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20130%20a%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154602097-32a5782b-303d-4b25-9e7e-7ddd51ef61e7.png)
+![image](https://user-images.githubusercontent.com/30849720/155001498-1299b6bd-c510-47f9-9b52-107ba81183cc.png)
 
 ****
 
 (5) Canada provinces together [graph 130 b C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and epi weeks, without extremes NL NS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20130%20b%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154602176-3e005cff-1e27-4590-8233-efef97cb91f6.png)
+![image](https://user-images.githubusercontent.com/30849720/155001581-6a23b117-65b6-46c2-a360-f6b1c386a715.png)
 
 ****
 
@@ -1084,31 +1084,31 @@ Long PDF file, see video [here]().
 
 (1) Canada provinces together [graph 220 a C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20a%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154721959-f8ee5650-e696-4842-ba20-7bb8d65cb68d.png)
+![image](https://user-images.githubusercontent.com/30849720/155002125-e062af74-4711-4a7f-ae75-9f4c4f0ff16f.png)
 
 ****
 
-(2) Canada provinces together [graph 220 b C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NS NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+(2) Canada provinces together [graph 220 b C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NS MB](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154722307-bc8a9883-af32-4ed6-a7e2-fb60efe66123.png)
+![image](https://user-images.githubusercontent.com/30849720/155002214-52cf30d6-ad68-4aa7-a2db-b78b3db79998.png)
 
 ****
 
-(3) Canada provinces together [graph 220 c C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NS MB NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20c%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
+(3) Canada provinces together [graph 220 c C19 daily cases, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NS MB NL NB](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20220%20c%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154722578-2293cbf0-7ff4-441a-b373-8579b305e3f6.png)
+![image](https://user-images.githubusercontent.com/30849720/155002303-2cfd1729-ffe3-49bb-a912-199e2a0bd62a.png)
 
 ****
 
 (4) Canada provinces together [graph 230 a C19 daily cases, Canada, provinces together, DELP, Average **MAPE** over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20230%20a%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154722820-3782d10b-a655-44eb-860f-e480bec1fad0.png)
+![image](https://user-images.githubusercontent.com/30849720/155002389-e803338e-c88e-49fc-b052-97e3a4cddd6f.png)
 
 ****
 
 (5) Canada provinces together [graph 230 b C19 daily cases, Canada, provinces together, DELP, Average **MAPE** over updates and epi weeks,  without extremes NS NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20230%20b%20C19%20daily%20cases%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154723038-8813b195-fc44-48f0-8ec0-8c53f5c27aa5.png)
+![image](https://user-images.githubusercontent.com/30849720/155002484-62588da0-2497-43e4-acc0-0f3731e70e67.png)
 
 ****
 
