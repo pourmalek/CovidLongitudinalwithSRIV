@@ -1280,6 +1280,8 @@ qui graph export "graph 110 07 C19 daily deaths, $country, National, DELP, Error
 
 
 
+
+
 ***********************************************
 
 * 110 8 Daily deaths, National, median absolute error by epi weeks and updates
@@ -14390,7 +14392,7 @@ yscale(titlegap(2)) ytitle(Daily deaths error measure) ///
 title("C-19 daily deaths, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 subtitle("$country, provinces together, DELP", size(small)) /// 
-legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))  
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))  
 
 qui graph export "graph 120 a C19 daily deaths, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
 
@@ -14423,7 +14425,7 @@ yscale(titlegap(2)) ytitle(Daily deaths error measure) ///
 title("C-19 daily deaths, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 subtitle("$country, provinces together, DELP, without extremes NL NS", size(small)) /// 
-legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))  
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NB" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))  
 
 qui graph export "graph 120 b C19 daily deaths, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
 
@@ -14438,22 +14440,24 @@ qui graph export "graph 120 b C19 daily deaths, $country, provinces together, DE
 
 
 * 120 c Daily deaths, provinces together, mean over updates of median absolute percent error by epi weeks
-* w/o extremes NL NS BC SK MB
+* w/o extremes NL NS SK
 
 twoway ///
 (line DDAbPeErA01XXX_Mean1 date, sort lwidth(vthick) lcolor(gray)) /// 1 "CAN" 
 (line DDAbPeErA01XAB_Mean1 date, sort lwidth(medium) lcolor(cyan)) /// 2 "AB" cyan
-(line DDAbPeErA01XNB_Mean1 date, sort lwidth(medium) lcolor(sienna)) /// 3 "NB" sienna
-(line DDAbPeErA01XON_Mean1 date, sort lwidth(medium) lcolor(red)) /// 4 "ON" red
-(line DDAbPeErA01XQC_Mean1 date, sort lwidth(medium) lcolor(black)) /// 5 "QC" black
+(line DDAbPeErA01XBC_Mean1 date, sort lwidth(medium) lcolor(blue)) /// 3 "BC" blue
+(line DDAbPeErA01XMB_Mean1 date, sort lwidth(medium) lcolor(lime)) /// 4 "MB" lime
+(line DDAbPeErA01XNB_Mean1 date, sort lwidth(medium) lcolor(sienna)) /// 5 "NB" sienna
+(line DDAbPeErA01XON_Mean1 date, sort lwidth(medium) lcolor(red)) /// 6 "ON" red
+(line DDAbPeErA01XQC_Mean1 date, sort lwidth(medium) lcolor(black)) /// 7 "QC" black
 if date >= td(01jan2020) & date <= td(01mar2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 yscale(titlegap(2)) ytitle(Daily deaths error measure) ///
 title("C-19 daily deaths, mean over updates of median absolute % error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-subtitle("$country, provinces together, DELP, without extremes NL NS BC SK MB", size(small)) /// 
-legend(order(1 "CAN" 2 "AB" 3 "NB" 4 "ON" 5 "QC") rows(1) size(small))  
+subtitle("$country, provinces together, DELP, without extremes NL NS SK", size(small)) /// 
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NB" 6 "ON" 7 "QC") rows(1) size(small))  
 
 qui graph export "graph 120 c C19 daily deaths, $country, provinces together, DELP, absolute percent Error Mean1.pdf", replace
 
@@ -14506,7 +14510,7 @@ blabel(bar) ytitle("Average MAPE") yscale(titlegap(2)) ///
 title("C-19 daily deaths average MAPE over updates and epi weeks", size(medium)) ///
 subtitle("$country, provinces, DELP; MAPE: Median Absolute % Error", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NB" 6 "NL" 7 "NS" 8 "ON" 9 "QC" 10 "SK") rows(3) size(small))
 
 qui graph export "graph 130 a C19 daily deaths, $country, provinces together, DELP, Average MAPE.pdf", replace
 
@@ -14544,7 +14548,7 @@ title("C-19 daily deaths average MAPE over updates and epi weeks", size(medium))
 subtitle("$country, provinces, DELP; MAPE: Median Absolute % Error" ///
 "without extremes NL NS", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "NB" 5 "MB" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))
+legend(order(1 "CAN" 2 "AB" 3 "BC" 4 "MB" 5 "NB" 6 "ON" 7 "QC" 8 "SK") rows(3) size(small))
 
 qui graph export "graph 130 b C19 daily deaths, $country, provinces together, DELP, Average MAPE.pdf", replace
 
