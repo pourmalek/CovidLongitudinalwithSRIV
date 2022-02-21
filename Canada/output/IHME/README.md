@@ -116,25 +116,25 @@ Long PDF file, see video [here]().
 
 (7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154903357-fd7588a6-16c0-4800-99a8-b06c97b0670a.png)
+![image](https://user-images.githubusercontent.com/30849720/154971510-a40520ea-8615-4729-8f32-5667f418bcab.png)
 
 ****
 
 (8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154905812-c56755aa-8e83-42ef-9a18-008a2774afd4.png)
+![image](https://user-images.githubusercontent.com/30849720/154971684-7a31fe77-d63b-4a46-9beb-2c4e391c2c32.png)
 
 ****
 
 (9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154905983-2b27b474-0d71-41ee-9112-702755c9dcec.png)
+![image](https://user-images.githubusercontent.com/30849720/154971786-9c6fac3b-4a0c-49a9-a57d-7ef4f912ccb4.png)
 
 ****
 
 (10) Canada National [graph 10 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/154906089-6750a51a-dec2-48ed-a83b-3b6b7c92718d.png)
+![image](https://user-images.githubusercontent.com/30849720/154971898-3d86912b-3220-4feb-b023-9b009448085c.png)
 
 ****
 
@@ -197,21 +197,25 @@ Long PDF file, see video [here]().
 
 (7) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154972069-bfd72089-87c1-4760-bdab-613d911ce9b1.png)
 
 ****
 
 (8) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154994657-f9174b74-e4ba-4dcf-a308-bb2cd1c63777.png)
 
 ****
 
 (9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154994860-aaf6be1b-7dc3-4f19-a148-3b86f56cbc8b.png)
 
 ****
 
 (10) Alberta [graph 10 C19 daily deaths, Canada, Alberta, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Alberta%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154995013-632b6cfa-02e9-4df1-bf7b-f9a6528ca9b1.png)
 
 ****
 
@@ -271,21 +275,25 @@ Long PDF file, see video [here]().
 
 (7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154995227-308c76d2-be88-400c-b907-eda057293802.png)
 
 ****
 
 (8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154995319-a2641c6c-7fe2-44a3-becc-837c2f9651f1.png)
 
 ****
 
 (9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154995415-bdc0b1f3-fec6-44a7-94c9-cad765421495.png)
 
 ****
 
 (10) British Columbia [graph 10 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/154995500-2039f521-b4b9-442c-8a7c-b11ed89bc968.png)
 
 ****
 
