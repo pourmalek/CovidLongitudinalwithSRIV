@@ -149,6 +149,49 @@ Long PDF file, see video [here]().
 
 
 
+****
+****
+
+### Canada provinces together, Daily Deaths, Error Measures, IHME Model
+
+****
+
+(1) Canada provinces together [graph 11 a C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks]()
+
+
+****
+
+(2) Canada provinces together [graph 11 b C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ]()
+
+
+****
+
+(3) Canada provinces together [graph 11 c C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ]()
+
+
+****
+
+(4) Canada provinces together [graph 12 a C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks]()
+
+
+****
+
+(5) Canada provinces together [graph 12 b C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks, without extremes ]()
+
+
+****
+
+*
+
+
+
+
+
+
+
+
+
+
 
 
 
