@@ -269,6 +269,26 @@ Long PDF file, see video [here]().
 
 ****
 
+(7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
+
+
+****
+
+(8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+****
+
+(9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
+
+
+****
+
+(10) British Columbia [graph 10 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20British%20Columbia%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
+
+****
+
 *
 
 
@@ -322,6 +342,26 @@ Long PDF file, see video [here]().
 (6) Manitoba [graph 9 C19 daily deaths, Canada, Manitoba, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Manitoba%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154784344-e67ca7ff-60bb-4900-a5b7-32993e426859.png)
+
+****
+
+(7) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
+
+
+****
+
+(8) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+****
+
+(9) Manitoba [graph 9 C19 daily deaths, Canada, Manitoba, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
+
+
+****
+
+(10) Manitoba [graph 10 C19 daily deaths, Canada, Manitoba, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Manitoba%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
 
 ****
 
