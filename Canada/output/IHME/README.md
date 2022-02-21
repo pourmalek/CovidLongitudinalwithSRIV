@@ -49,6 +49,8 @@ summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
 
+Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-provinces-together-daily-deaths-error-measures-ihme-model)
+
 Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#alberta-daily-deaths-error-measures-ihme-model) 
 
 British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#british-columbia-daily-deaths-error-measures-ihme-model) 
