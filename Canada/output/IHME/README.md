@@ -50,7 +50,7 @@ Summarization level = calendar time in days: transform calendar days to epidemio
 
 (2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
+Summarization level = updates: transform many updates to one update (70 updates to 1 update-free)
 
 Graphs 7 to 10 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
 
