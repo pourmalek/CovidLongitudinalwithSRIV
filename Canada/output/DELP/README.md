@@ -61,7 +61,7 @@ The last graphs under each location (except provinces together) (shown below) fo
 
 Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
 
-(graphs shownunder "Canada provinces together")
+(graphs shown under "Canada provinces together")
 
 .
 
