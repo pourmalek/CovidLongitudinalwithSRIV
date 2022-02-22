@@ -52,7 +52,7 @@ Summarization level = calendar time in days: transform calendar days to epidemio
 
 Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
 
-Graphs 8 to 11 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
+Graphs 7 to 10 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
 
 .
 
