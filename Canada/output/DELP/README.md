@@ -11,13 +11,19 @@ Reference = JOHN, Model = DELP
 
 (graph 4 under each location, except provinces together)
 
+.
+
 (2) **Absolute Error** = | Reference minus Model | 
 
 (graph 5 under each location, except provinces together)
 
+.
+
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
 (graph 6 under each location, except provinces together)
+
+.
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
@@ -39,7 +45,7 @@ summarization level = calendar time in days: transform calendar days to epidemio
 
 (graphs not shown here to save space)
 
-
+.
 
 (2) get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
@@ -47,7 +53,7 @@ summarization level = updates: transform many updates to one update (142 updates
 
 the last graphs under each location (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
 
-
+.
 
 (3) get the AVERAGE over epi weeks of the above number (2)
 
@@ -55,7 +61,7 @@ summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 (graphs not shown here to save space)
 
-
+.
 
 <br/><br/>
 
