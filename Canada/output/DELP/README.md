@@ -9,19 +9,19 @@ Reference = JOHN, Model = DELP
 
 (1) Error = Reference minus Model 
 
-(graph 4 under each location)
+(graph 4 under each location, except provinces together)
 
 (2) Absolute Error = | Reference minus Model | 
 
-(graph 5 under each location)
+(graph 5 under each location, except provinces together)
 
 (3) Percent Error = 100 * (Reference minus Model) / Reference
 
-(graph 6 under each location)
+(graph 6 under each location, except provinces together)
 
 (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
 
-(graph 7 under each location)
+(graph 7 under each location, except provinces together)
 
 
 <br/><br/>
