@@ -51,7 +51,7 @@ summarization level = calendar time in days: transform calendar days to epidemio
 
 summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
 
-the last graphs under each location (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
+the last graphs under each location (except provinces together) (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
 
 .
 
