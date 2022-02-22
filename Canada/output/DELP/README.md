@@ -17,19 +17,19 @@ Reference = JOHN, Model = DELP
 
 (2) **Absolute Error** = | Reference minus Model | 
 
-(graph 5 under each location, except provinces together)
+(Under each location, except provinces together, graph 5 for daily deaths and graph 4 for daily cases, show the Absolute Error)
 
 .
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(graph 6 under each location, except provinces together)
+(Under each location, except provinces together, graph 6 for daily deaths and graph 5 for daily cases, show the Percent Error)
 
 .
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
-(graph 7 under each location, except provinces together)
+(Under each location, except provinces together, graph 7 for daily deaths and graph 6 for daily cases, show the Absolute Percent Error)
 
 
 <br/><br/>
