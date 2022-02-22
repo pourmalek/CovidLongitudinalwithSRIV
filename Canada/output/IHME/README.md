@@ -10,25 +10,25 @@ Reference = JOHN, Model = DELP
 
 (1) **Error** = Reference minus Model 
 
-(graph 3 under each location, except provinces together)
+(Graph 3 under each location, except provinces together, shows the Error by all calendar days and all updates)
 
 .
 
 (2) **Absolute Error** = | Reference minus Model | 
 
-(graph 4 under each location, except provinces together)
+(Graph 4 under each location, except provinces together, shows the Absolute Error by all calendar days and all updates)
 
 .
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(graph 5 under each location, except provinces together)
+(Graph 5 under each location, except provinces together, shows the Percent Error by all calendar days and all updates)
 
 .
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
-(graph 6 under each location, except provinces together)
+(Graph 6 under each location, except provinces together, shows the Absolute Percent Error by all calendar days and all updates)
 
 
 <br/><br/>
