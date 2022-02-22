@@ -39,25 +39,25 @@ First by epidemiological (epi) weeks and updates, then by epi weeks only (get ri
 <br/><br/>
 
 
-(1) get the MEDIAN of error types by epi weeks and updates
+(1) Get the MEDIAN of error types by epi weeks and updates
 
-summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
+Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
 
 (graphs not shown here to save space)
 
 .
 
-(2) get the AVERAGE over updates of MEDIAN of error types by epi weeks
+(2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
+Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
 
-the last graphs under each location (except provinces together) (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
+The last graphs under each location (except provinces together) (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
 
 .
 
-(3) get the AVERAGE over epi weeks of the above number (2)
+(3) Get the AVERAGE over epi weeks of the above number (2)
 
-summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
+Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
 
 (graphs not shown here to save space)
 
