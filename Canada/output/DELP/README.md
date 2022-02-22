@@ -5,15 +5,23 @@
 
 **Calculate the error measures:**
 
-Reference = JOHN, Model = DELP
+Reference = JOHN, Model = DELP 
 
 (1) Error = Reference minus Model 
 
-(2) Absolute Error = | Reference minus Model |
+(graph 4 under each location)
+
+(2) Absolute Error = | Reference minus Model | 
+
+(graph 5 under each location)
 
 (3) Percent Error = 100 * (Reference minus Model) / Reference
 
+(graph 6 under each location)
+
 (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
+
+(graph 7 under each location)
 
 
 <br/><br/>
