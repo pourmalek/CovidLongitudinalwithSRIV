@@ -45,7 +45,7 @@ First by epidemiological (epi) weeks and updates, then by epi weeks only (get ri
 
 Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
 
-(graphs not shown here to save space)
+(Graphs not shown here to save space)
 
 .
 
@@ -53,7 +53,7 @@ Summarization level = calendar time in days: transform calendar days to epidemio
 
 Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
 
-The last graphs under each location (except provinces together) (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
+Graphs 8 to 11 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
 
 .
 
@@ -61,7 +61,7 @@ The last graphs under each location (except provinces together) (shown below) fo
 
 Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
 
-(graphs shown under "Canada provinces together")
+(Graphs shown under "Canada provinces together")
 
 .
 
