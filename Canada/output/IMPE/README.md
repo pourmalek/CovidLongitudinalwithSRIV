@@ -103,22 +103,24 @@ Long PDF file, see video [here]().
 
 ****
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, With extremes]()
 
-![image](https://user-images.githubusercontent.com/30849720/155247271-7bb2afeb-09c5-44f7-b520-47a13c97f3f2.png)
-
-****
-
-(5) Canada National [graph 5 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, Without extremes]()
 
 ****
 
-(6) Canada National [graph 6 C19 daily deaths, Canada, National, IMPE, Error]
+(5) Canada National [graph 5 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%205%20National%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155247711-019d5608-3983-4d71-99c1-51d5db11c741.png)
+
+****
+
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, IMPE, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%206%20National%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/155247779-66f33549-239d-4280-a904-289ed28d68ca.png)
 
 **** 
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, IMPE, Absolute Error]
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, IMPE, Absolute Error]()
 
 
 ****
