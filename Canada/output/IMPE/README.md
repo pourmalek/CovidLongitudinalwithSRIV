@@ -103,8 +103,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, With extremes]()
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, Updates together, With Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155248090-e59a349a-345d-4170-9bda-1d6166d0823b.png)
 
 ****
 
