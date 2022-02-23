@@ -7,10 +7,10 @@ cd IHME
 
 capture log close 
 
-log using "log CovidVisualizedCountry IHME 5.smcl", replace
+log using "log CovidVisualizedCountry IHME 10.smcl", replace
 
 ***************************************************************************
-* This is "do CovidLongitudinal IHME 5.do"
+* This is "do CovidLongitudinal IHME 10.do"
 
 * Project: Longitudinal assessment of COVID-19 models                                                                         
 * Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
@@ -23,23 +23,23 @@ log using "log CovidVisualizedCountry IHME 5.smcl", replace
 * 9 Daily deaths, location, mean over updates of median percent error by epi weeks
 * 10 Daily deaths, location, mean over updates of median absolute percent error by epi weeks
 
-* location = National // XXX
+* location = Ontario // XON
 
 
 use "CovidVisualizedCountry IHME DayDea 2.dta", clear
 
-save "CovidVisualizedCountry IHME DayDea 2 National.dta", replace
+save "CovidVisualizedCountry IHME DayDea 2 Ontario.dta", replace
 
-keep if provincestate == " National" 
+keep if provincestate == "Ontario"
 
-drop *XAB *XBC *XMB *XNB *XNL *XNT *XNS *XNU *XON *XPE *XQC *XSK // extra for this do file
+drop *XXX *XAB *XBC *XMB *XNL *XNT *XNS *XNU *XPE *XQC *XSK // extra for this do file
 * XXX XAB  XBC  XMB  XNB  XNL  XNT  XNS  XNU  XON  XPE  XQC  XSK // all
 * XXX XAB  XBC  XMB  XNS  XON  XQC  XSK // IHME
 
 qui compress
 
 
-ssc install epiweek
+
 
 * Create new variables epi_week and epi_year from calendar date
 
@@ -160,17 +160,17 @@ foreach update of local list {
 
 qui {
 		
-bysort epi_yrwk : egen DDErrorA02XXX`update'_Med1 = median(DDErrorA02XXX`update')
-label var DDErrorA02XXX`update'_Med1 "DayDeaMeSmA02S01XXX`update' median error by epi weeks and updates"
+bysort epi_yrwk : egen DDErrorA02XON`update'_Med1 = median(DDErrorA02XON`update')
+label var DDErrorA02XON`update'_Med1 "DayDeaMeSmA02S01XON`update' median error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDAbsErrA02XXX`update'_Med1 = median(DDAbsErrA02XXX`update')
-label var DDAbsErrA02XXX`update'_Med1 "DayDeaMeSmA02S01XXX`update' median absolute error by epi weeks and updates"
+bysort epi_yrwk : egen DDAbsErrA02XON`update'_Med1 = median(DDAbsErrA02XON`update')
+label var DDAbsErrA02XON`update'_Med1 "DayDeaMeSmA02S01XON`update' median absolute error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDPerErrA02XXX`update'_Med1 = median(DDPerErrA02XXX`update')
-label var DDPerErrA02XXX`update'_Med1 "DayDeaMeSmA02S01XXX`update' median percent error by epi weeks and updates"
+bysort epi_yrwk : egen DDPerErrA02XON`update'_Med1 = median(DDPerErrA02XON`update')
+label var DDPerErrA02XON`update'_Med1 "DayDeaMeSmA02S01XON`update' median percent error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDAbPeErA02XXX`update'_Med1 = median(DDAbPeErA02XXX`update')
-label var DDAbPeErA02XXX`update'_Med1 "DayDeaMeSmA02S01XXX`update' median absolute percent error by epi weeks and updates" 
+bysort epi_yrwk : egen DDAbPeErA02XON`update'_Med1 = median(DDAbPeErA02XON`update')
+label var DDAbPeErA02XON`update'_Med1 "DayDeaMeSmA02S01XON`update' median absolute percent error by epi weeks and updates" 
 
 	}
 }
@@ -183,17 +183,17 @@ label var DDAbPeErA02XXX`update'_Med1 "DayDeaMeSmA02S01XXX`update' median absolu
 
 order *, alphabetic
 		
-egen DDErrorA02XXX_Mean1 = rowmean(DDErrorA02XXX20200422_Med1-DDErrorA02XXX20211221_Med1) 
-label var DDErrorA02XXX_Mean1 "DayDeaMeSmA02S01XXX mean over updates of median error by epi weeks"
+egen DDErrorA02XON_Mean1 = rowmean(DDErrorA02XON20200422_Med1-DDErrorA02XON20211221_Med1) 
+label var DDErrorA02XON_Mean1 "DayDeaMeSmA02S01XON mean over updates of median error by epi weeks"
 
-egen DDAbsErrA02XXX_Mean1 = rowmean(DDAbsErrA02XXX20200422_Med1-DDAbsErrA02XXX20211221_Med1) 
-label var DDAbsErrA02XXX_Mean1 "DayDeaMeSmA02S01XXX mean over updates of median absolute error by epi weeks"
+egen DDAbsErrA02XON_Mean1 = rowmean(DDAbsErrA02XON20200422_Med1-DDAbsErrA02XON20211221_Med1) 
+label var DDAbsErrA02XON_Mean1 "DayDeaMeSmA02S01XON mean over updates of median absolute error by epi weeks"
 
-egen DDPerErrA02XXX_Mean1 = rowmean(DDPerErrA02XXX20200422_Med1-DDPerErrA02XXX20211221_Med1) 
-label var DDPerErrA02XXX_Mean1 "DayDeaMeSmA02S01XXX mean over updates of median percent error by epi weeks"
+egen DDPerErrA02XON_Mean1 = rowmean(DDPerErrA02XON20200422_Med1-DDPerErrA02XON20211221_Med1) 
+label var DDPerErrA02XON_Mean1 "DayDeaMeSmA02S01XON mean over updates of median percent error by epi weeks"
 
-egen DDAbPeErA02XXX_Mean1 = rowmean(DDAbPeErA02XXX20200422_Med1-DDAbPeErA02XXX20211221_Med1) 
-label var DDAbPeErA02XXX_Mean1 "DayDeaMeSmA02S01XXX mean over updates of median absolute percent error by epi weeks"
+egen DDAbPeErA02XON_Mean1 = rowmean(DDAbPeErA02XON20200422_Med1-DDAbPeErA02XON20211221_Med1) 
+label var DDAbPeErA02XON_Mean1 "DayDeaMeSmA02S01XON mean over updates of median absolute percent error by epi weeks"
 
 
 * 
@@ -204,17 +204,17 @@ label var DDAbPeErA02XXX_Mean1 "DayDeaMeSmA02S01XXX mean over updates of median 
 * (4) gen AVERAGE over epi weeks of _Mean1  = _Mean2
  
 		
-egen DDErrorA02XXX_Mean2 = mean(DDErrorA02XXX_Mean1) // get mean for all epi weeks of _Mean1
-label var DDErrorA02XXX_Mean2 "DayDeaMeSmA02S01XXX Mean over epi weeks of median error over updates"
+egen DDErrorA02XON_Mean2 = mean(DDErrorA02XON_Mean1) // get mean for all epi weeks of _Mean1
+label var DDErrorA02XON_Mean2 "DayDeaMeSmA02S01XON Mean over epi weeks of median error over updates"
 
-egen DDAbsErrA02XXX_Mean2 = mean(DDAbsErrA02XXX_Mean1) // get mean for all epi weeks of _Mean1
-label var DDAbsErrA02XXX_Mean2 "DayDeaMeSmA02S01XXX Mean over epi weeks of median absolute error over updates"
+egen DDAbsErrA02XON_Mean2 = mean(DDAbsErrA02XON_Mean1) // get mean for all epi weeks of _Mean1
+label var DDAbsErrA02XON_Mean2 "DayDeaMeSmA02S01XON Mean over epi weeks of median absolute error over updates"
 
-egen DDPerErrA02XXX_Mean2 = mean(DDPerErrA02XXX_Mean1) // get mean for all epi weeks of _Mean1
-label var DDPerErrA02XXX_Mean2 "DayDeaMeSmA02S01XXX Mean over epi weeks of median Pecent error over updates"
+egen DDPerErrA02XON_Mean2 = mean(DDPerErrA02XON_Mean1) // get mean for all epi weeks of _Mean1
+label var DDPerErrA02XON_Mean2 "DayDeaMeSmA02S01XON Mean over epi weeks of median Pecent error over updates"
 
-egen DDAbPeErA02XXX_Mean2 = mean(DDAbPeErA02XXX_Mean1) // get mean for all epi weeks of _Mean1
-label var DDAbPeErA02XXX_Mean2 "DayDeaMeSmA02S01XXX Mean over epi weeks of median absolute percent error over updates"
+egen DDAbPeErA02XON_Mean2 = mean(DDAbPeErA02XON_Mean1) // get mean for all epi weeks of _Mean1
+label var DDAbPeErA02XON_Mean2 "DayDeaMeSmA02S01XON Mean over epi weeks of median absolute percent error over updates"
 
 
 *
@@ -224,7 +224,7 @@ label var DDAbPeErA02XXX_Mean2 "DayDeaMeSmA02S01XXX Mean over epi weeks of media
 
 qui compress
 
-save "CovidVisualizedCountry IHME DayDea 3 National.dta", replace
+save "CovidVisualizedCountry IHME DayDea 3 Ontario.dta", replace
 
 
 
@@ -244,18 +244,18 @@ grstyle color background white
 
 
 ***************************************************************
-* 7 Daily deaths, National, mean over updates of median error by epi weeks
+* 7 Daily deaths, Ontario, mean over updates of median error by epi weeks
 
 twoway ///
-(line DDErrorA02XXX_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDErrorA02XON_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Ontario, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 7 National C-19 daily deaths error, $country, IHME, Error Mean1.pdf", replace
+qui graph export "graph 7 Ontario C-19 daily deaths error, $country, IHME, Error Mean1.pdf", replace
 
 
 
@@ -264,18 +264,18 @@ qui graph export "graph 7 National C-19 daily deaths error, $country, IHME, Erro
 
 
 ***************************************************************
-* 8 Daily deaths, National, mean over updates of median absolute error by epi weeks
+* 8 Daily deaths, Ontario, mean over updates of median absolute error by epi weeks
 
 twoway ///
-(line DDAbsErrA02XXX_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDAbsErrA02XON_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Ontario, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 8 National C-19 daily deaths error, $country, IHME, Absolute Error Mean1.pdf", replace
+qui graph export "graph 8 Ontario C-19 daily deaths error, $country, IHME, Absolute Error Mean1.pdf", replace
 
 
 
@@ -283,50 +283,47 @@ qui graph export "graph 8 National C-19 daily deaths error, $country, IHME, Abso
 
 
 ***************************************************************
-* 9 Daily deaths, National, mean over updates of median percent error by epi weeks
+* 9 Daily deaths, Ontario, mean over updates of median percent error by epi weeks
 
 twoway ///
-(line DDPerErrA02XXX_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDPerErrA02XON_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Ontario, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 9 National C-19 daily deaths error, $country, IHME, Percent Error Mean1.pdf", replace
+qui graph export "graph 9 Ontario C-19 daily deaths error, $country, IHME, Percent Error Mean1.pdf", replace
 
 
 
 
 
 ***************************************************************
-* 10 Daily deaths, National, mean over updates of median absolute percent error by epi weeks
+* 10 Daily deaths, Ontario, mean over updates of median absolute percent error by epi weeks
 
 twoway ///
-(line DDAbPeErA02XXX_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDAbPeErA02XON_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median absolute percent error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, National, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Ontario, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 10 National C-19 daily deaths error, $country, IHME, Absolute Percent Error Mean1.pdf", replace
-
-
-
-
-
-
-keep loc_grand_name provincestate date DDAbPeErA02XXX_Mean1 DDAbPeErA02XXX_Mean2
-
-save "CovidVisualizedCountry IHME DayDea 3 National.dta", replace
+qui graph export "graph 10 Ontario C-19 daily deaths error, $country, IHME, Absolute Percent Error Mean1.pdf", replace
 
 
 
 
 
+
+
+
+keep loc_grand_name provincestate date DDAbPeErA02XON_Mean1 DDAbPeErA02XON_Mean2
+
+save "CovidVisualizedCountry IHME DayDea 3 Ontario.dta", replace
 
 
 
@@ -335,7 +332,7 @@ save "CovidVisualizedCountry IHME DayDea 3 National.dta", replace
 
 **********************
 
-view "log CovidVisualizedCountry IHME 5.smcl"
+view "log CovidVisualizedCountry IHME 10.smcl"
 
 log close
 
