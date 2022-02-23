@@ -144,6 +144,13 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Canada National [graph 11 C19 daily deaths, Canada, national, IMPE, Average MAPE over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%2011%20C19%20daily%20deaths%2C%20Canada%2C%20national%2C%20IMPE%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/155252112-4b150dce-58eb-4533-b760-54a4de6386d3.png)
+
+****
+
+
 *
 
 
