@@ -91,13 +91,13 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, IMPE, Updates together, Without Update circles, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IMPE%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, IMPE, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IMPE%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/155247147-278357ac-6263-4d7b-a7d9-13119f10b255.png)
 
 ****
 
-(3) Canada National [graph 3 C19 daily deaths, Canada, National, IMPE, Updates together, Without Update circles, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
+(3) Canada National [graph 3 C19 daily deaths, Canada, National, IMPE, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/155247217-a40bdb07-7735-4bc5-83f5-0d8e0ebbcacc.png)
 
