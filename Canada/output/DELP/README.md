@@ -5,44 +5,65 @@
 
 **Calculate the error measures:**
 
-Reference = JOHN, Model = DELP
+Reference = JOHN, Model = DELP 
 
-(1) Error = Reference minus Model 
+.
 
-(2) Absolute Error = | Reference minus Model |
+(1) **Error** = Reference minus Model 
 
-(3) Percent Error = 100 * (Reference minus Model) / Reference
+(Under each location, except provinces together, graph 4 for daily deaths and graph 3 for daily cases, show the Error by all calendar days and all updates)
 
-(4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
+.
+
+(2) **Absolute Error** = | Reference minus Model | 
+
+(Under each location, except provinces together, graph 5 for daily deaths and graph 4 for daily cases, show the Absolute Error by all calendar days and all updates)
+
+.
+
+(3) **Percent Error** = 100 * (Reference minus Model) / Reference
+
+(Under each location, except provinces together, graph 6 for daily deaths and graph 5 for daily cases, show the Percent Error by all calendar days and all updates)
+
+.
+
+(4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
+
+(Under each location, except provinces together, graph 7 for daily deaths and graph 6 for daily cases, show the Absolute Percent Error by all calendar days and all updates)
 
 
 <br/><br/>
 
 **Summarize the error measures:**
 
-(1) get the MEDIAN of error types by epi weeks and updates
+First by epidemiological (epi) weeks and updates, then by epi weeks only (get rid of updates), and finally by model-location only (get rid of epi weeks).
 
-summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 to 89 = 7 to 1)
-
-(graphs not shown here to save space)
+<br/><br/>
 
 
+(1) Get the MEDIAN of error types by epi weeks and updates
 
-(2) get the AVERAGE over updates of MEDIAN of error types by epi weeks
+Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
 
-summarization level = updates: transform many updates to one update (142 to 1)
+(Graphs not shown here to save space)
 
-the last graphs under each location (shown below) for Mean over updates of: **Median Absolute Percent Error** by epi weeks
+.
 
+(2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
+Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
 
-(3) get the AVERAGE over epi weeks of the above number (2)
+Graphs 8 to 11 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
 
-summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 to 1)
+.
 
-(graphs not shown here to save space)
+(3) Get the AVERAGE over epi weeks of the above number (2)
 
+Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
 
+(Graphs shown under "Canada provinces together")
+
+.
 
 <br/><br/>
 
