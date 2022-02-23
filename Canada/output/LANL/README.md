@@ -105,11 +105,13 @@ Long PDF file, see video [here]().
 
 (4) Canada National [graph 4 C19 daily deaths, Canada, National, LANL, **Absolute Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20LANL%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155355414-3aaa3807-4192-4406-bdc3-c3908996f7b7.png)
 
 ****
 
 (5) Canada National [graph 5 C19 daily deaths, Canada, National, LANL, **Percent Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%205%20National%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20LANL%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155355629-02a65183-3d6a-4862-97bb-b860ff597bf5.png)
 
 ****
 
@@ -118,7 +120,7 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, LANL, mean over updates of median **Error** by epi weekshttps://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%207%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20LANL%2C%20Error%20Mean1.pdf)
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, LANL, mean over updates of median **Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%207%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20LANL%2C%20Error%20Mean1.pdf)
 
 
 ****
