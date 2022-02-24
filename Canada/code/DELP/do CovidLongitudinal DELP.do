@@ -37,13 +37,6 @@ do "do CovidLongitudinal DELP 3.do"
 
 
 do "do CovidLongitudinal DELP 4.do"
-* graphs, daily cases: updates separate 
-* graphs (number 200-209) of each model update (separate) with official reports (JOHN)
-* input data files: "CovidLongitudinal DELP.dta"
-* output data files: "CovidLongitudinal DELP cases deaths.dta"
-
-
-do "do CovidLongitudinal DELP 5.do"
 * continue graphs, daily deaths: updates together (without error measures)
 * graphs (number 110-119, 1, 1b) of all model update (together) with official reports (JOHN)
 * 1 With extremes
@@ -52,14 +45,7 @@ do "do CovidLongitudinal DELP 5.do"
 * output data files: none, no changes saves in input files
 
 
-do "do CovidLongitudinal DELP 6.do"
-* continue graphs, daily cases: updates together (without error measures)
-* graphs (number 110-119, 1) of all model update (together) with official reports (JOHN)
-* input data files: "CovidLongitudinal DELP daily cases.dta"
-* output data files: none, no changes saves in input files
-
-
-do "do CovidLongitudinal DELP 7.do"
+do "do CovidLongitudinal DELP 5.do"
 * continue graphs, daily deaths: four error types (graphs 110-119, 5, 6, 7, 8), updates together
 * 2 Error
 * 3 Absolute Error
@@ -77,19 +63,4 @@ do "do CovidLongitudinal DELP 7.do"
 * output data files: "CovidLongitudinal DELP daily deaths 2.dta" (error measures saved)
 
 
-do "do CovidLongitudinal DELP 8.do"
-* continue graphs, daily cases: four error types (graphs 210-219, 5, 6, 7, 8), updates together
-* 2 Error
-* 3 Absolute Error
-* 4 Pecent Error
-* 5 Absolute Pecent Error
-* 6  median error by epi weeks and updates
-* 7  mean over updates of median error by epi weeks
-* 8  median absolute error by epi weeks and updates
-* 9  mean over updates of median absolute error by epi weeks
-* 10 median percent error by epi weeks and updates
-* 11 mean over updates of median percent error by epi weeks
-* 12 median absolute percent error by epi weeks and updates
-* 13 mean over updates of median absolute percent error by epiweeks
-* input data files: "CovidLongitudinal DELP daily cases.dta"
-* output data files: "CovidLongitudinal DELP daily cases 2.dta" (error measures saved)
+

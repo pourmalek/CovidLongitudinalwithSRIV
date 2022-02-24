@@ -188,9 +188,7 @@ local list ///
 
 
 
-foreach update of local list {
 
-di in red "This is update " `update'
 
 
 ****************
@@ -203,24 +201,28 @@ di in red "This is update " `update'
 
 * daily deaths, each update, National
 
+foreach update of local list {
+
+di in red "This is update " `update' " National"
+
 capture drop update_date
 
 gen update_date = date("`update'", "YMD")
 
 local update_date = date("`update'", "YMD")
+      
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is National"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == " National"
 
-di "summ DayDeaMeSmA01S00XXX`update' if date == update_date"
-summ DayDeaMeSmA01S00XXX`update' if date == update_date
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-gen DayDeaMeSmA01S00XXX`update'_val = r(mean)
-
-local value = DayDeaMeSmA01S00XXX`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XXX date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XXX`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == " National" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, National, DELP, update `update'", size(medium)) /// 
@@ -230,26 +232,41 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 100 C19 daily deaths, $country, National, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
+
+}
+*
+
+
+
 
 
 ***********************************************
 
 * daily deaths, each update, Alberta
 
+foreach update of local list {
+
+di in red "This is update " `update' " Alberta"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "DayDeaMeSmA01S00XAB`update' if date == update_date"
-summ DayDeaMeSmA01S00XAB`update' if date == update_date
+di "DayDeaMeSmA01S00`update' if date == update_date & provincestate is Alberta"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Alberta" 
 
-gen DayDeaMeSmA01S00XAB`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XAB`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
-twoway ///
+twoway /// 
 (line DayDeaMeSmA00S00XAB date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XAB`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Alberta" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Alberta, DELP, update `update'", size(medium)) /// 
@@ -259,6 +276,13 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 101 C19 daily deaths, $country, Alberta, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
+
+}
+*
+
+
+
 
 
 
@@ -266,20 +290,28 @@ qui graph export "graph 101 C19 daily deaths, $country, Alberta, DELP, update `u
 
 * daily deaths, each update, British Columbia
 
+foreach update of local list {
+
+di in red "This is update " `update' " British Columbia"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "DayDeaMeSmA01S00XBC`update' if date == update_date"
-summ DayDeaMeSmA01S00XBC`update' if date == update_date
+di "DayDeaMeSmA01S00XBC`update' if date == update_date & provincestate is British Columbia"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "British Columbia" 
 
-gen DayDeaMeSmA01S00XBC`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XBC`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XBC date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XBC`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "British Columbia" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, British Columbia, DELP, update `update'", size(medium)) /// 
@@ -289,27 +321,38 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 102 C19 daily deaths, $country, British Columbia, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
 
+}
+*
 
 
 ***********************************************
 
 * daily deaths, each update, Manitoba
 
+foreach update of local list {
+
+di in red "This is update " `update' " Manitoba"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "summ DayDeaMeSmA01S00XMB`update' if date == update_date"
-summ DayDeaMeSmA01S00XMB`update' if date == update_date
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is Manitoba"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Manitoba"
 
-gen DayDeaMeSmA01S00XMB`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XMB`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XMB date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XMB`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Manitoba" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Manitoba, DELP, update `update'", size(medium)) /// 
@@ -319,27 +362,38 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 103 C19 daily deaths, $country, Manitoba, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
 
+}
+*
 
 
 ***********************************************
 
 * daily deaths, each update, New Brunswick
 
+foreach update of local list {
+
+di in red "This is update " `update' " New Brunswick"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "summ DayDeaMeSmA01S00XNB`update' if date == update_date"
-summ DayDeaMeSmA01S00XNB`update' if date == update_date
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is New Brunswick"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "New Brunswick"
 
-gen DayDeaMeSmA01S00XNB`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XNB`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XNB date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XNB`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "New Brunswick" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.2fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, New Brunswick, DELP, update `update'", size(medium)) /// 
@@ -349,35 +403,51 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 104 C19 daily deaths, $country, New Brunswick, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
 
+}
+*
 
 
 ***********************************************
 
 * daily deaths, each update, Newfoundland and Labrador
 
+foreach update of local list {
+
+di in red "This is update " `update' " Newfoundland and Labrador"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "DayDeaMeSmA01S00XNL`update' if date == update_date"
-summ DayDeaMeSmA01S00XNL`update' if date == update_date
+di "DayDeaMeSmA01S00`update' if date == update_date & provincestate is Newfoundland and Labrador"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Newfoundland and Labrador"
 
-gen DayDeaMeSmA01S00XNL`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XNL`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XNL date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XNL`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022)  & provincestate == "Newfoundland and Labrador" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.2fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Newfoundland (NL), DELP, update `update'", size(medium)) /// 
+ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Newfoundland, DELP, update `update'", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 legend(order(1 "JOHN smooth" 2 "DELP smooth" 3 "Update release date and value") size(small) row(1)) ///
-subtitle("reference scenario", size(small)) yscale(titlegap(2))
+subtitle("Newfoundland and Labrador; reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 105 C19 daily deaths, $country, Newfoundland and Labrador, DELP, update `update'.pdf", replace
+
+drop DayDeaMeSmA01S00`update'_val
+
+}
+*
 
 
 
@@ -386,20 +456,28 @@ qui graph export "graph 105 C19 daily deaths, $country, Newfoundland and Labrado
 
 * daily deaths, each update, Nova Scotia
 
+foreach update of local list {
+
+di in red "This is update " `update' " Nova Scotia"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "DayDeaMeSmA01S00XNS`update' if date == update_date"
-summ DayDeaMeSmA01S00XNS`update' if date == update_date
+di "DayDeaMeSmA01S00`update' if date == update_date & provincestate is Nova Scotia"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Nova Scotia"
 
-gen DayDeaMeSmA01S00XNS`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XNS`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XNS date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XNS`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Nova Scotia" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.2fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Nova Scotia, DELP, update `update'", size(medium)) /// 
@@ -409,27 +487,38 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 106 C19 daily deaths, $country, Nova Scotia, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
 
+}
+*
 
 
 ***********************************************
 
 * daily deaths, each update, Ontario
 
+foreach update of local list {
+
+di in red "This is update " `update' " Ontario"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "summ DayDeaMeSmA01S00XON`update' if date == update_date"
-summ DayDeaMeSmA01S00XON`update' if date == update_date
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is Ontario"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Ontario"
 
-gen DayDeaMeSmA01S00XON`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XON`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XON date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XON`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Ontario" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Ontario, DELP, update `update'", size(medium)) /// 
@@ -439,6 +528,13 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 107 C19 daily deaths, $country, Ontario, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
+
+}
+*
+
+
+
 
 
 
@@ -446,20 +542,28 @@ qui graph export "graph 107 C19 daily deaths, $country, Ontario, DELP, update `u
 
 * daily deaths, each update, Quebec
 
+foreach update of local list {
+
+di in red "This is update " `update' " Quebec"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "summ DayDeaMeSmA01S00XQC`update' if date == update_date"
-summ DayDeaMeSmA01S00XQC`update' if date == update_date
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is Quebec"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Quebec"
 
-gen DayDeaMeSmA01S00XQC`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XQC`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XQC date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XQC`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Quebec" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Quebec, DELP, update `update'", size(medium)) /// 
@@ -469,26 +573,41 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 108 C19 daily deaths, $country, Quebec, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
+
+}
+*
+
+
+
 
 
 ***********************************************
 
 * daily deaths, each update, Saskatchewan
 
+foreach update of local list {
+
+di in red "This is update " `update' " Saskatchewan"
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 local update_date = date("`update'", "YMD")
 
-di "summ DayDeaMeSmA01S00XSK`update' if date == update_date"
-summ DayDeaMeSmA01S00XSK`update' if date == update_date
+di "summ DayDeaMeSmA01S00`update' if date == update_date & provincestate is Saskatchewan"
+summ DayDeaMeSmA01S00`update' if date == update_date & provincestate == "Saskatchewan"
 
-gen DayDeaMeSmA01S00XSK`update'_val = r(mean)
+gen DayDeaMeSmA01S00`update'_val = r(mean)
 
-local value = DayDeaMeSmA01S00XSK`update'_val
+local value = DayDeaMeSmA01S00`update'_val
 
 twoway ///
 (line DayDeaMeSmA00S00XSK date, sort lcolor(cyan) lwidth(thick)) /// 1 "JOHN smooth"
-(line DayDeaMeSmA01S00XSK`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
+(line DayDeaMeSmA01S00`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP smooth"
 (scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-if date >= td(01jan2020) & date <= td(01jan2022) ///
+if date >= td(01jan2020) & date <= td(01jan2022) & provincestate == "Saskatchewan" ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
 ytitle(Daily deaths) title("COVID-19 daily deaths, $country, Saskatchewan, DELP, update `update'", size(medium)) /// 
@@ -498,6 +617,7 @@ subtitle("reference scenario", size(small)) yscale(titlegap(2))
 
 qui graph export "graph 109 C19 daily deaths, $country, Saskatchewan, DELP, update `update'.pdf", replace
 
+drop DayDeaMeSmA01S00`update'_val
 
 }
 *

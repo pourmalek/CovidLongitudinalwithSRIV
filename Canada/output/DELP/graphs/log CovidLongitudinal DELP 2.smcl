@@ -1,0 +1,1824 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/DELP/log CovidLongitudinal DELP 2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Feb 2022, 18:32:57
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal DELP 2.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models                                                                         
+. * Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
+. ***************************************************************************
+. 
+. 
+. * merge update files
+. * input data files: "CovidLongitudinal DELP 202?????.dta " (142 files)
+. * output data files: "CovidLongitudinal DELP.dta"
+. 
+. 
+. use "CovidLongitudinal DELP 20200417.dta", clear  
+{txt}
+{com}. 
+. 
+. local list ///
+> 20200417 ///
+> 20200424 ///
+> 20200501 ///
+> 20200509 ///
+> 20200517 ///
+> 20200524 ///
+> 20200531 ///
+> 20200607 ///
+> 20200614 ///
+> 20200621 ///
+> 20200628 ///
+> 20200704 ///
+> 20200718 ///
+> 20200723 ///
+> 20200926 ///
+> 20201008 ///
+> 20201022 ///
+> 20201105 ///
+> 20201119 ///
+> 20201203 ///
+> 20201217 ///
+> 20201231 ///
+> 20210114 ///
+> 20210128 ///
+> 20210211 ///
+> 20210225 ///
+> 20210311 ///
+> 20210325 ///
+> 20210408 ///
+> 20210422 ///
+> 20210506 ///
+> 20210520 ///
+> 20210603 ///
+> 20210610 ///
+> 20210617 ///
+> 20210624 ///
+> 20210701 ///
+> 20210708 ///
+> 20210715 ///
+> 20210722 ///
+> 20210729 ///
+> 20210805 ///
+> 20210812 ///
+> 20210819 ///
+> 20210826 ///
+> 20210902 ///
+> 20210909 ///
+> 20210916 ///
+> 20210923 ///
+> 20210930 ///
+> 20211001 ///
+> 20211002 ///
+> 20211003 ///
+> 20211004 ///
+> 20211005 ///
+> 20211006 ///
+> 20211007 ///
+> 20211008 ///
+> 20211009 ///
+> 20211010 ///
+> 20211011 ///
+> 20211012 ///
+> 20211013 ///
+> 20211014 ///
+> 20211015 ///
+> 20211016 ///
+> 20211017 ///
+> 20211018 ///
+> 20211019 ///
+> 20211020 ///
+> 20211021 ///
+> 20211022 ///
+> 20211023 ///
+> 20211024 ///
+> 20211025 ///
+> 20211026 ///
+> 20211027 ///
+> 20211028 ///
+> 20211029 ///
+> 20211030 ///
+> 20211031 ///
+> 20211101 ///
+> 20211102 ///
+> 20211103 ///
+> 20211104 ///
+> 20211105 ///
+> 20211106 ///
+> 20211107 ///
+> 20211108 ///
+> 20211109 ///
+> 20211110 ///
+> 20211111 ///
+> 20211112 ///
+> 20211113 ///
+> 20211114 ///
+> 20211115 ///
+> 20211116 ///
+> 20211117 ///
+> 20211118 ///
+> 20211119 ///
+> 20211120 ///
+> 20211121 ///
+> 20211122 ///
+> 20211123 ///
+> 20211124 ///
+> 20211125 ///
+> 20211126 ///
+> 20211127 ///
+> 20211128 ///
+> 20211129 ///
+> 20211130 ///
+> 20211201 ///
+> 20211202 ///
+> 20211203 ///
+> 20211204 ///
+> 20211205 ///
+> 20211206 ///
+> 20211207 ///
+> 20211208 ///
+> 20211209 ///
+> 20211210 ///
+> 20211211 ///
+> 20211212 ///
+> 20211213 ///
+> 20211214 ///
+> 20211215 ///
+> 20211216 ///
+> 20211217 ///
+> 20211218 ///
+> 20211219 ///
+> 20211220 ///
+> 20211221 ///
+> 20211222 ///
+> 20211223 ///
+> 20211224 ///
+> 20211225 ///
+> 20211226 ///
+> 20211227 ///
+> 20211228 ///
+> 20211229 ///
+> 20211230 ///
+> 20211231
+{txt}
+{com}.  
+. 
+. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         di in red "This is update " `update'
+{txt}  3{com}.         
+.         merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP `update'.dta"
+{txt}  4{com}.         
+.         drop _merge
+{txt}  5{com}.         
+.         shell rm -r "CovidLongitudinal DELP `update'.dta"
+{txt}  6{com}. 
+. {c )-}
+{err}This is update 20200417
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}             600{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200424
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}              60
+{txt}{col 9}from master{col 30}{res}              60{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200501
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             140
+{txt}{col 9}from master{col 30}{res}             140{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             460{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200509
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             220
+{txt}{col 9}from master{col 30}{res}             220{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             380{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200517
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             300
+{txt}{col 9}from master{col 30}{res}             300{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             300{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200524
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             670
+{txt}{col 9}from master{col 30}{res}             370{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             300{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             230{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200531
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             440
+{txt}{col 9}from master{col 30}{res}             440{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             460{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200607
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             510
+{txt}{col 9}from master{col 30}{res}             510{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             390{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200614
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             890
+{txt}{col 9}from master{col 30}{res}             580{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             320{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200621
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             650
+{txt}{col 9}from master{col 30}{res}             650{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             560{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200628
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             720
+{txt}{col 9}from master{col 30}{res}             720{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             490{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200704
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           1,090
+{txt}{col 9}from master{col 30}{res}             780{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             430{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200718
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           1,220
+{txt}{col 9}from master{col 30}{res}             920{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             300{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}             600{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200723
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             245
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             245{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,820{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20200926
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             610
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             610{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           2,065{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201008
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           2,675{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201022
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             310
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           2,675{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201105
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           2,985{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201119
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             995
+{txt}{col 9}from master{col 30}{res}             995{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,990{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201203
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             995
+{txt}{col 9}from master{col 30}{res}             995{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,990{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201217
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           1,305
+{txt}{col 9}from master{col 30}{res}             995{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,990{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20201231
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}             995
+{txt}{col 9}from master{col 30}{res}             995{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           2,300{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210114
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           2,195
+{txt}{col 9}from master{col 30}{res}           1,915{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             280{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,380{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210128
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           1,915
+{txt}{col 9}from master{col 30}{res}           1,915{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,660{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210211
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           2,225
+{txt}{col 9}from master{col 30}{res}           1,915{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,660{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210225
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           1,915
+{txt}{col 9}from master{col 30}{res}           1,915{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,970{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210311
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,135
+{txt}{col 9}from master{col 30}{res}           2,835{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             300{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,050{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210325
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           2,835
+{txt}{col 9}from master{col 30}{res}           2,835{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,350{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210408
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,445
+{txt}{col 9}from master{col 30}{res}           2,835{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             610{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,350{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210422
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           2,835
+{txt}{col 9}from master{col 30}{res}           2,835{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,960{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210506
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           2,835
+{txt}{col 9}from master{col 30}{res}           2,835{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,960{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210520
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,370{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210603
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,370{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210610
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,735
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,370{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210617
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210624
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210701
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210708
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210715
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             610{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210722
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           2,290{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210729
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,425
+{txt}{col 9}from master{col 30}{res}           3,425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           2,290{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210805
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210812
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210819
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210826
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210902
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210909
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,345
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,680{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210916
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,035
+{txt}{col 9}from master{col 30}{res}           4,035{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,990{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210923
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,085
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             300{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,240{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20210930
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211001
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211002
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211003
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211004
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211005
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211006
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211007
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211008
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211009
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211010
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211011
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211012
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211013
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211014
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211015
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211016
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211017
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211018
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211019
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211020
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211021
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211022
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211023
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211024
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211025
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211026
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211027
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211028
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211029
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211030
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211031
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211101
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211102
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211103
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211104
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211105
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211106
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211107
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211108
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,095
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             310{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,540{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211109
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211110
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211111
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211112
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211113
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211114
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211115
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211116
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211117
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211118
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211119
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211120
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211121
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211122
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211123
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211124
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211125
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211126
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211127
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211128
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211129
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211130
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211201
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211202
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211203
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           4,785
+{txt}{col 9}from master{col 30}{res}           4,785{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,850{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211204
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           6,145
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             590{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,080{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211205
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211206
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211207
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211208
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211209
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211210
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211211
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211212
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211213
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211214
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211215
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211216
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211217
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211218
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211219
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211220
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211221
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211222
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211223
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211224
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211225
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211226
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211227
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211228
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211229
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211230
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{err}This is update 20211231
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           5,555
+{txt}{col 9}from master{col 30}{res}           5,555{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           1,670{txt}  (_merge==3)
+{col 5}{hline 41}
+
+
+{com}. *
+. 
+. save "CovidLongitudinal DELP.dta", replace
+{txt}file CovidLongitudinal DELP.dta saved
+
+{com}. 
+. desc, short
+
+{txt}Contains data from {res}CovidLongitudinal DELP.dta
+{txt}  obs:{res}         7,225                          
+{txt} vars:{res}           145                          23 Feb 2022 18:33
+{txt} size:{res}     4,342,225                          
+{txt}Sorted by: 
+
+{com}. 
+. 
+. * add JOHN
+. 
+. cd .. // /code/
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code
+{txt}
+{com}. 
+. cd JOHN
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/JOHN
+{txt}
+{com}. 
+. use "CovidLongitudinal JOHN.dta", clear 
+{txt}
+{com}. 
+. cd ..
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code
+{txt}
+{com}. 
+. cd DELP 
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/DELP
+{txt}
+{com}. 
+. save "CovidLongitudinal JOHN.dta", replace
+{txt}file CovidLongitudinal JOHN.dta saved
+
+{com}. 
+. merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP.dta"
+{res}
+{txt}{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}           3,925
+{txt}{col 9}from master{col 30}{res}           3,635{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             290{txt}  (_merge==2)
+
+{col 5}matched{col 30}{res}           6,935{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}.  
+. drop _merge
+{txt}
+{com}. 
+. 
+. 
+. drop if date > td(01jan2022)
+{txt}(906 observations deleted)
+
+{com}. 
+. save "CovidLongitudinal DELP.dta", replace
+{txt}file CovidLongitudinal DELP.dta saved
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. view "log CovidLongitudinal DELP 2.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/DELP/log CovidLongitudinal DELP 2.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}23 Feb 2022, 18:33:04
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

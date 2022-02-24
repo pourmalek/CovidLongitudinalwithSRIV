@@ -222,6 +222,8 @@ local list ///
 20200628 
 
 
+
+
 foreach update of local list {
 
 di in red "This is update " `update'
@@ -268,10 +270,6 @@ rename totaldetecteddeaths   TotDeaMeRaA01S00
 
 label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
 
-rename totaldetected   TotCasMeRaA01S00
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
-
 
 * gen daily vars and rename
 
@@ -279,38 +277,20 @@ sort provincestate date
 
 bysort provincestate (date): gen DayDeaMeRaA01S00 =  TotDeaMeRaA01S00[_n] - TotDeaMeRaA01S00[_n-1]
 
-bysort provincestate (date): gen DayCasMeRaA01S00 =  TotCasMeRaA01S00[_n] - TotCasMeRaA01S00[_n-1]
-
 
 
 label var DayDeaMeRaA01S00 "Daily Deaths Mean DELP S0"
 
-label var DayCasMeRaA01S00 "Daily Cases Mean DELP S0"
 
-label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
+keep loc_grand_name provincestate date DayDeaMeRaA01S00   
 
 
-
-keep ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
-
-
-order ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
+order loc_grand_name provincestate date DayDeaMeRaA01S00   
 
 
 
-* smooth daily deaths and daily cases
+
+* smooth daily deaths 
 
 qui {
 
@@ -326,15 +306,6 @@ tssmooth ma DayDeaMeSmA01S00 = DayDeaMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1
 label var DayDeaMeSmA01S00 "Daily deaths mean smooth DELP"
 
 
-
-tssmooth ma DayCasMeRaA01S00_window = DayCasMeRaA01S00 if DayCasMeRaA01S00 >= 0, window(3 1 3)
-
-tssmooth ma DayCasMeSmA01S00 = DayCasMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1) replace
-
-label var DayCasMeSmA01S00 "Daily cases mean smooth DELP"
-
-
-
 drop *_window
 
 drop provincestate_encoded
@@ -345,106 +316,8 @@ tsset, clear
 *
 
 
+drop DayDeaMeRaA01S00 
 
-
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeRaA01S00 DayCasMeRaA01S00 /// 
-TotDeaMeRaA01S00 TotCasMeRaA01S00 {
-
-
-*
-			 
-qui gen `var'XAB = `var' 
-qui replace `var'XAB = . if provincestate != "Alberta"
-
-qui gen `var'XBC = `var'
-qui replace `var'XBC = . if provincestate != "British Columbia"
-
-qui gen `var'XMB = `var'
-qui replace `var'XMB = . if provincestate != "Manitoba"
-
-qui gen `var'XXX = `var'
-qui replace `var'XXX = . if provincestate != " National"
-
-qui gen `var'XNB = `var'
-qui replace `var'XNB = . if provincestate != "New Brunswick"
-
-qui gen `var'XNL = `var'
-qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-
-qui gen `var'XNS = `var'
-qui replace `var'XNS = . if provincestate != "Nova Scotia"
-
-qui gen `var'XON = `var'
-qui replace `var'XON = . if provincestate != "Ontario"
-
-qui gen `var'XQC = `var'
-qui replace `var'XQC = . if provincestate != "Quebec"
-
-qui gen `var'XSK = `var'
-qui replace `var'XSK = . if provincestate != "Saskatchewan"
-
-
-label var `var'XAB "`var' Alberta"
-label var `var'XBC "`var' British Columbia"
-label var `var'XMB "`var' Manitoba"
-label var `var'XXX "`var' National"
-label var `var'XNB "`var' New Brunswick"
-label var `var'XNL "`var' Newfoundland and Labrador"
-label var `var'XNS "`var' Nova Scotia"
-label var `var'XON "`var' Ontario"
-label var `var'XQC "`var' Quebec"
-label var `var'XSK "`var' Saskatchewan"
-
-
-                
-}
-*
-
-
-
-
-* smooth daily deaths and daily cases
-
-encode provincestate, gen(provincestate_encoded)
-
-tsset provincestate_encoded date, daily   
-
-
-	foreach var of varlist ///
-	DayDeaMeRaA01S00XAB-DayCasMeRaA01S00XSK {
-
-
-qui tssmooth ma `var'_window = `var' if `var' >= 0, window(3 1 3)
-
-qui tssmooth ma `var'_sm = `var'_window, weights( 1 2 3 <4> 3 2 1) replace
-
-
-	}
-*
-
-drop *_window
-
-drop provincestate_encoded
-
-tsset, clear
-
-
-rename ///
-(DayDeaMeRaA01S00XAB_sm	DayDeaMeRaA01S00XBC_sm	DayDeaMeRaA01S00XMB_sm	DayDeaMeRaA01S00XXX_sm	DayDeaMeRaA01S00XNB_sm	DayDeaMeRaA01S00XNL_sm	DayDeaMeRaA01S00XNS_sm	DayDeaMeRaA01S00XON_sm	DayDeaMeRaA01S00XQC_sm	DayDeaMeRaA01S00XSK_sm	DayCasMeRaA01S00XAB_sm	DayCasMeRaA01S00XBC_sm	DayCasMeRaA01S00XMB_sm	DayCasMeRaA01S00XXX_sm	DayCasMeRaA01S00XNB_sm	DayCasMeRaA01S00XNL_sm	DayCasMeRaA01S00XNS_sm	DayCasMeRaA01S00XON_sm	DayCasMeRaA01S00XQC_sm	DayCasMeRaA01S00XSK_sm) ///
-(DayDeaMeSmA01S00XAB   	DayDeaMeSmA01S00XBC   	DayDeaMeSmA01S00XMB   	DayDeaMeSmA01S00XXX   	DayDeaMeSmA01S00XNB   	DayDeaMeSmA01S00XNL   	DayDeaMeSmA01S00XNS   	DayDeaMeSmA01S00XON   	DayDeaMeSmA01S00XQC   	DayDeaMeSmA01S00XSK   	DayCasMeSmA01S00XAB   	DayCasMeSmA01S00XBC   	DayCasMeSmA01S00XMB   	DayCasMeSmA01S00XXX   	DayCasMeSmA01S00XNB   	DayCasMeSmA01S00XNL   	DayCasMeSmA01S00XNS   	DayCasMeSmA01S00XON   	DayCasMeSmA01S00XQC   	DayCasMeSmA01S00XSK   )
-
-
-labvars DayDeaMeSmA01S00XAB-DayCasMeSmA01S00XSK ,names
-	   
-*
-
-
-drop TotDeaMeRaA01S00 DayDeaMeRaA01S00 TotCasMeRaA01S00 DayCasMeRaA01S00 DayDeaMeSmA01S00 DayCasMeSmA01S00
 
 
 * add update to varnames
@@ -463,6 +336,8 @@ qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
 
+
+shell rm -r "Global_`update'.csv"
 
 }
 *
@@ -536,9 +411,6 @@ rename totaldetecteddeaths   TotDeaMeRaA01S00
 
 label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
 
-rename totaldetected   TotCasMeRaA01S00
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
 * gen daily vars and rename
@@ -547,38 +419,18 @@ sort provincestate date
 
 bysort provincestate (date): gen DayDeaMeRaA01S00 =  TotDeaMeRaA01S00[_n] - TotDeaMeRaA01S00[_n-1]
 
-bysort provincestate (date): gen DayCasMeRaA01S00 =  TotCasMeRaA01S00[_n] - TotCasMeRaA01S00[_n-1]
-
-
 
 label var DayDeaMeRaA01S00 "Daily Deaths Mean DELP S0"
 
-label var DayCasMeRaA01S00 "Daily Cases Mean DELP S0"
-
-label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
+keep loc_grand_name provincestate date DayDeaMeRaA01S00   
 
-keep ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
-
-
-order ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
+order loc_grand_name provincestate date DayDeaMeRaA01S00  
 
 
 
-* smooth daily deaths and daily cases
+* smooth daily deaths 
 
 qui {
 
@@ -594,15 +446,6 @@ tssmooth ma DayDeaMeSmA01S00 = DayDeaMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1
 label var DayDeaMeSmA01S00 "Daily deaths mean smooth DELP"
 
 
-
-tssmooth ma DayCasMeRaA01S00_window = DayCasMeRaA01S00 if DayCasMeRaA01S00 >= 0, window(3 1 3)
-
-tssmooth ma DayCasMeSmA01S00 = DayCasMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1) replace
-
-label var DayCasMeSmA01S00 "Daily cases mean smooth DELP"
-
-
-
 drop *_window
 
 drop provincestate_encoded
@@ -613,106 +456,7 @@ tsset, clear
 *
 
 
-
-
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeRaA01S00 DayCasMeRaA01S00 /// 
-TotDeaMeRaA01S00 TotCasMeRaA01S00 {
-
-
-*
-			 
-qui gen `var'XAB = `var' 
-qui replace `var'XAB = . if provincestate != "Alberta"
-
-qui gen `var'XBC = `var'
-qui replace `var'XBC = . if provincestate != "British Columbia"
-
-qui gen `var'XMB = `var'
-qui replace `var'XMB = . if provincestate != "Manitoba"
-
-qui gen `var'XXX = `var'
-qui replace `var'XXX = . if provincestate != " National"
-
-qui gen `var'XNB = `var'
-qui replace `var'XNB = . if provincestate != "New Brunswick"
-
-qui gen `var'XNL = `var'
-qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-
-qui gen `var'XNS = `var'
-qui replace `var'XNS = . if provincestate != "Nova Scotia"
-
-qui gen `var'XON = `var'
-qui replace `var'XON = . if provincestate != "Ontario"
-
-qui gen `var'XQC = `var'
-qui replace `var'XQC = . if provincestate != "Quebec"
-
-qui gen `var'XSK = `var'
-qui replace `var'XSK = . if provincestate != "Saskatchewan"
-
-
-label var `var'XAB "`var' Alberta"
-label var `var'XBC "`var' British Columbia"
-label var `var'XMB "`var' Manitoba"
-label var `var'XXX "`var' National"
-label var `var'XNB "`var' New Brunswick"
-label var `var'XNL "`var' Newfoundland and Labrador"
-label var `var'XNS "`var' Nova Scotia"
-label var `var'XON "`var' Ontario"
-label var `var'XQC "`var' Quebec"
-label var `var'XSK "`var' Saskatchewan"
-
-
-                
-}
-*
-
-
-
-
-* smooth daily deaths and daily cases
-
-encode provincestate, gen(provincestate_encoded)
-
-tsset provincestate_encoded date, daily   
-
-
-	foreach var of varlist ///
-	DayDeaMeRaA01S00XAB-DayCasMeRaA01S00XSK {
-
-
-qui tssmooth ma `var'_window = `var' if `var' >= 0, window(3 1 3)
-
-qui tssmooth ma `var'_sm = `var'_window, weights( 1 2 3 <4> 3 2 1) replace
-
-
-	}
-*
-
-drop *_window
-
-drop provincestate_encoded
-
-tsset, clear
-
-
-rename ///
-(DayDeaMeRaA01S00XAB_sm	DayDeaMeRaA01S00XBC_sm	DayDeaMeRaA01S00XMB_sm	DayDeaMeRaA01S00XXX_sm	DayDeaMeRaA01S00XNB_sm	DayDeaMeRaA01S00XNL_sm	DayDeaMeRaA01S00XNS_sm	DayDeaMeRaA01S00XON_sm	DayDeaMeRaA01S00XQC_sm	DayDeaMeRaA01S00XSK_sm	DayCasMeRaA01S00XAB_sm	DayCasMeRaA01S00XBC_sm	DayCasMeRaA01S00XMB_sm	DayCasMeRaA01S00XXX_sm	DayCasMeRaA01S00XNB_sm	DayCasMeRaA01S00XNL_sm	DayCasMeRaA01S00XNS_sm	DayCasMeRaA01S00XON_sm	DayCasMeRaA01S00XQC_sm	DayCasMeRaA01S00XSK_sm) ///
-(DayDeaMeSmA01S00XAB   	DayDeaMeSmA01S00XBC   	DayDeaMeSmA01S00XMB   	DayDeaMeSmA01S00XXX   	DayDeaMeSmA01S00XNB   	DayDeaMeSmA01S00XNL   	DayDeaMeSmA01S00XNS   	DayDeaMeSmA01S00XON   	DayDeaMeSmA01S00XQC   	DayDeaMeSmA01S00XSK   	DayCasMeSmA01S00XAB   	DayCasMeSmA01S00XBC   	DayCasMeSmA01S00XMB   	DayCasMeSmA01S00XXX   	DayCasMeSmA01S00XNB   	DayCasMeSmA01S00XNL   	DayCasMeSmA01S00XNS   	DayCasMeSmA01S00XON   	DayCasMeSmA01S00XQC   	DayCasMeSmA01S00XSK   )
-
-
-labvars DayDeaMeSmA01S00XAB-DayCasMeSmA01S00XSK ,names
-	   
-*
-
-
-drop TotDeaMeRaA01S00 DayDeaMeRaA01S00 TotCasMeRaA01S00 DayCasMeRaA01S00 DayDeaMeSmA01S00 DayCasMeSmA01S00
+drop DayDeaMeRaA01S00 
 
 
 * add update to varnames
@@ -730,6 +474,8 @@ qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
 
+
+shell rm -r "Global_V2_`update'.csv"
 
 }
 *
@@ -809,9 +555,6 @@ rename totaldetecteddeaths   TotDeaMeRaA01S00
 
 label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
 
-rename totaldetected   TotCasMeRaA01S00
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
 * gen daily vars and rename
@@ -820,38 +563,20 @@ sort provincestate date
 
 bysort provincestate (date): gen DayDeaMeRaA01S00 =  TotDeaMeRaA01S00[_n] - TotDeaMeRaA01S00[_n-1]
 
-bysort provincestate (date): gen DayCasMeRaA01S00 =  TotCasMeRaA01S00[_n] - TotCasMeRaA01S00[_n-1]
-
 
 
 label var DayDeaMeRaA01S00 "Daily Deaths Mean DELP S0"
 
-label var DayCasMeRaA01S00 "Daily Cases Mean DELP S0"
-
-label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
 
-keep ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
+keep loc_grand_name provincestate date DayDeaMeRaA01S00   
 
-
-order ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
+order loc_grand_name provincestate date DayDeaMeRaA01S00 
 
 
 
-* smooth daily deaths and daily cases
+* smooth daily deaths 
 
 qui {
 
@@ -868,14 +593,6 @@ label var DayDeaMeSmA01S00 "Daily deaths mean smooth DELP"
 
 
 
-tssmooth ma DayCasMeRaA01S00_window = DayCasMeRaA01S00 if DayCasMeRaA01S00 >= 0, window(3 1 3)
-
-tssmooth ma DayCasMeSmA01S00 = DayCasMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1) replace
-
-label var DayCasMeSmA01S00 "Daily cases mean smooth DELP"
-
-
-
 drop *_window
 
 drop provincestate_encoded
@@ -886,106 +603,7 @@ tsset, clear
 *
 
 
-
-
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeRaA01S00 DayCasMeRaA01S00 /// 
-TotDeaMeRaA01S00 TotCasMeRaA01S00 {
-
-
-*
-			 
-qui gen `var'XAB = `var' 
-qui replace `var'XAB = . if provincestate != "Alberta"
-
-qui gen `var'XBC = `var'
-qui replace `var'XBC = . if provincestate != "British Columbia"
-
-qui gen `var'XMB = `var'
-qui replace `var'XMB = . if provincestate != "Manitoba"
-
-qui gen `var'XXX = `var'
-qui replace `var'XXX = . if provincestate != " National"
-
-qui gen `var'XNB = `var'
-qui replace `var'XNB = . if provincestate != "New Brunswick"
-
-qui gen `var'XNL = `var'
-qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-
-qui gen `var'XNS = `var'
-qui replace `var'XNS = . if provincestate != "Nova Scotia"
-
-qui gen `var'XON = `var'
-qui replace `var'XON = . if provincestate != "Ontario"
-
-qui gen `var'XQC = `var'
-qui replace `var'XQC = . if provincestate != "Quebec"
-
-qui gen `var'XSK = `var'
-qui replace `var'XSK = . if provincestate != "Saskatchewan"
-
-
-label var `var'XAB "`var' Alberta"
-label var `var'XBC "`var' British Columbia"
-label var `var'XMB "`var' Manitoba"
-label var `var'XXX "`var' National"
-label var `var'XNB "`var' New Brunswick"
-label var `var'XNL "`var' Newfoundland and Labrador"
-label var `var'XNS "`var' Nova Scotia"
-label var `var'XON "`var' Ontario"
-label var `var'XQC "`var' Quebec"
-label var `var'XSK "`var' Saskatchewan"
-
-
-                
-}
-*
-
-
-
-
-* smooth daily deaths and daily cases
-
-encode provincestate, gen(provincestate_encoded)
-
-tsset provincestate_encoded date, daily   
-
-
-	foreach var of varlist ///
-	DayDeaMeRaA01S00XAB-DayCasMeRaA01S00XSK {
-
-
-qui tssmooth ma `var'_window = `var' if `var' >= 0, window(3 1 3)
-
-qui tssmooth ma `var'_sm = `var'_window, weights( 1 2 3 <4> 3 2 1) replace
-
-
-	}
-*
-
-drop *_window
-
-drop provincestate_encoded
-
-tsset, clear
-
-
-rename ///
-(DayDeaMeRaA01S00XAB_sm	DayDeaMeRaA01S00XBC_sm	DayDeaMeRaA01S00XMB_sm	DayDeaMeRaA01S00XXX_sm	DayDeaMeRaA01S00XNB_sm	DayDeaMeRaA01S00XNL_sm	DayDeaMeRaA01S00XNS_sm	DayDeaMeRaA01S00XON_sm	DayDeaMeRaA01S00XQC_sm	DayDeaMeRaA01S00XSK_sm	DayCasMeRaA01S00XAB_sm	DayCasMeRaA01S00XBC_sm	DayCasMeRaA01S00XMB_sm	DayCasMeRaA01S00XXX_sm	DayCasMeRaA01S00XNB_sm	DayCasMeRaA01S00XNL_sm	DayCasMeRaA01S00XNS_sm	DayCasMeRaA01S00XON_sm	DayCasMeRaA01S00XQC_sm	DayCasMeRaA01S00XSK_sm) ///
-(DayDeaMeSmA01S00XAB   	DayDeaMeSmA01S00XBC   	DayDeaMeSmA01S00XMB   	DayDeaMeSmA01S00XXX   	DayDeaMeSmA01S00XNB   	DayDeaMeSmA01S00XNL   	DayDeaMeSmA01S00XNS   	DayDeaMeSmA01S00XON   	DayDeaMeSmA01S00XQC   	DayDeaMeSmA01S00XSK   	DayCasMeSmA01S00XAB   	DayCasMeSmA01S00XBC   	DayCasMeSmA01S00XMB   	DayCasMeSmA01S00XXX   	DayCasMeSmA01S00XNB   	DayCasMeSmA01S00XNL   	DayCasMeSmA01S00XNS   	DayCasMeSmA01S00XON   	DayCasMeSmA01S00XQC   	DayCasMeSmA01S00XSK   )
-
-
-labvars DayDeaMeSmA01S00XAB-DayCasMeSmA01S00XSK ,names
-	   
-*
-
-
-drop TotDeaMeRaA01S00 DayDeaMeRaA01S00 TotCasMeRaA01S00 DayCasMeRaA01S00 DayDeaMeSmA01S00 DayCasMeSmA01S00
+drop DayDeaMeRaA01S00 
 
 
 * add update to varnames
@@ -1003,21 +621,10 @@ qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
 
+shell rm -r "Global_V2_since100_`update'.csv"
 
 }
 *
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1209,9 +816,6 @@ rename totaldetecteddeaths   TotDeaMeRaA01S00
 
 label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
 
-rename totaldetected   TotCasMeRaA01S00
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
 * gen daily vars and rename
@@ -1220,38 +824,19 @@ sort provincestate date
 
 bysort provincestate (date): gen DayDeaMeRaA01S00 =  TotDeaMeRaA01S00[_n] - TotDeaMeRaA01S00[_n-1]
 
-bysort provincestate (date): gen DayCasMeRaA01S00 =  TotCasMeRaA01S00[_n] - TotCasMeRaA01S00[_n-1]
-
 
 
 label var DayDeaMeRaA01S00 "Daily Deaths Mean DELP S0"
 
-label var DayCasMeRaA01S00 "Daily Cases Mean DELP S0"
-
-label var TotDeaMeRaA01S00 "Total Deaths Mean DELP S0"
-
-label var TotCasMeRaA01S00 "Total Cases Mean DELP S0"
 
 
+keep loc_grand_name provincestate date DayDeaMeRaA01S00   
 
-keep ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
-
-
-order ///
-loc_grand_name provincestate date ///
-TotDeaMeRaA01S00  ///
-DayDeaMeRaA01S00  ///
-TotCasMeRaA01S00  ///
-DayCasMeRaA01S00  ///
+order loc_grand_name provincestate date DayDeaMeRaA01S00  
 
 
 
-* smooth daily deaths and daily cases
+* smooth daily deaths 
 
 qui {
 
@@ -1268,14 +853,6 @@ label var DayDeaMeSmA01S00 "Daily deaths mean smooth DELP"
 
 
 
-tssmooth ma DayCasMeRaA01S00_window = DayCasMeRaA01S00 if DayCasMeRaA01S00 >= 0, window(3 1 3)
-
-tssmooth ma DayCasMeSmA01S00 = DayCasMeRaA01S00_window, weights( 1 2 3 <4> 3 2 1) replace
-
-label var DayCasMeSmA01S00 "Daily cases mean smooth DELP"
-
-
-
 drop *_window
 
 drop provincestate_encoded
@@ -1287,105 +864,7 @@ tsset, clear
 
 
 
-
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeRaA01S00 DayCasMeRaA01S00 /// 
-TotDeaMeRaA01S00 TotCasMeRaA01S00 {
-
-
-*
-			 
-qui gen `var'XAB = `var' 
-qui replace `var'XAB = . if provincestate != "Alberta"
-
-qui gen `var'XBC = `var'
-qui replace `var'XBC = . if provincestate != "British Columbia"
-
-qui gen `var'XMB = `var'
-qui replace `var'XMB = . if provincestate != "Manitoba"
-
-qui gen `var'XXX = `var'
-qui replace `var'XXX = . if provincestate != " National"
-
-qui gen `var'XNB = `var'
-qui replace `var'XNB = . if provincestate != "New Brunswick"
-
-qui gen `var'XNL = `var'
-qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-
-qui gen `var'XNS = `var'
-qui replace `var'XNS = . if provincestate != "Nova Scotia"
-
-qui gen `var'XON = `var'
-qui replace `var'XON = . if provincestate != "Ontario"
-
-qui gen `var'XQC = `var'
-qui replace `var'XQC = . if provincestate != "Quebec"
-
-qui gen `var'XSK = `var'
-qui replace `var'XSK = . if provincestate != "Saskatchewan"
-
-
-label var `var'XAB "`var' Alberta"
-label var `var'XBC "`var' British Columbia"
-label var `var'XMB "`var' Manitoba"
-label var `var'XXX "`var' National"
-label var `var'XNB "`var' New Brunswick"
-label var `var'XNL "`var' Newfoundland and Labrador"
-label var `var'XNS "`var' Nova Scotia"
-label var `var'XON "`var' Ontario"
-label var `var'XQC "`var' Quebec"
-label var `var'XSK "`var' Saskatchewan"
-
-
-                
-}
-*
-
-
-
-
-* smooth daily deaths and daily cases
-
-encode provincestate, gen(provincestate_encoded)
-
-tsset provincestate_encoded date, daily   
-
-
-	foreach var of varlist ///
-	DayDeaMeRaA01S00XAB-DayCasMeRaA01S00XSK {
-
-
-qui tssmooth ma `var'_window = `var' if `var' >= 0, window(3 1 3)
-
-qui tssmooth ma `var'_sm = `var'_window, weights( 1 2 3 <4> 3 2 1) replace
-
-
-	}
-*
-
-drop *_window
-
-drop provincestate_encoded
-
-tsset, clear
-
-
-rename ///
-(DayDeaMeRaA01S00XAB_sm	DayDeaMeRaA01S00XBC_sm	DayDeaMeRaA01S00XMB_sm	DayDeaMeRaA01S00XXX_sm	DayDeaMeRaA01S00XNB_sm	DayDeaMeRaA01S00XNL_sm	DayDeaMeRaA01S00XNS_sm	DayDeaMeRaA01S00XON_sm	DayDeaMeRaA01S00XQC_sm	DayDeaMeRaA01S00XSK_sm	DayCasMeRaA01S00XAB_sm	DayCasMeRaA01S00XBC_sm	DayCasMeRaA01S00XMB_sm	DayCasMeRaA01S00XXX_sm	DayCasMeRaA01S00XNB_sm	DayCasMeRaA01S00XNL_sm	DayCasMeRaA01S00XNS_sm	DayCasMeRaA01S00XON_sm	DayCasMeRaA01S00XQC_sm	DayCasMeRaA01S00XSK_sm) ///
-(DayDeaMeSmA01S00XAB   	DayDeaMeSmA01S00XBC   	DayDeaMeSmA01S00XMB   	DayDeaMeSmA01S00XXX   	DayDeaMeSmA01S00XNB   	DayDeaMeSmA01S00XNL   	DayDeaMeSmA01S00XNS   	DayDeaMeSmA01S00XON   	DayDeaMeSmA01S00XQC   	DayDeaMeSmA01S00XSK   	DayCasMeSmA01S00XAB   	DayCasMeSmA01S00XBC   	DayCasMeSmA01S00XMB   	DayCasMeSmA01S00XXX   	DayCasMeSmA01S00XNB   	DayCasMeSmA01S00XNL   	DayCasMeSmA01S00XNS   	DayCasMeSmA01S00XON   	DayCasMeSmA01S00XQC   	DayCasMeSmA01S00XSK   )
-
-
-labvars DayDeaMeSmA01S00XAB-DayCasMeSmA01S00XSK ,names
-	   
-*
-
-
-drop TotDeaMeRaA01S00 DayDeaMeRaA01S00 TotCasMeRaA01S00 DayCasMeRaA01S00 DayDeaMeSmA01S00 DayCasMeSmA01S00
+drop DayDeaMeRaA01S00 
 
 
 * add update to varnames
@@ -1403,6 +882,7 @@ qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
 
+shell rm -r "Global_V4_since100_`update'.csv"
 
 }
 *

@@ -179,6 +179,8 @@ foreach update of local list {
 	merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP `update'.dta"
 	
 	drop _merge
+	
+	shell rm -r "CovidLongitudinal DELP `update'.dta"
 
 }
 *
