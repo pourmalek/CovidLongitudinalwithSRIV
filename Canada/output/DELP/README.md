@@ -1,4 +1,4 @@
-### DELP Model, Error Measures for Daily Deaths and Daily Cases
+### DELP Model, Error Measures for Daily Deaths 
 
 
 <br/><br/>
@@ -11,25 +11,25 @@ Reference = JOHN, Model = DELP
 
 (1) **Error** = Reference minus Model 
 
-(Under each location, except provinces together, graph 4 for daily deaths and graph 3 for daily cases, show the Error by all calendar days and all updates)
+(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)
 
 .
 
 (2) **Absolute Error** = | Reference minus Model | 
 
-(Under each location, except provinces together, graph 5 for daily deaths and graph 4 for daily cases, show the Absolute Error by all calendar days and all updates)
+(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)
 
 .
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(Under each location, except provinces together, graph 6 for daily deaths and graph 5 for daily cases, show the Percent Error by all calendar days and all updates)
+(Under each location, except provinces together, graph 6 shows the ercent Error by all calendar days and all updates)
 
 .
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
-(Under each location, except provinces together, graph 7 for daily deaths and graph 6 for daily cases, show the Absolute Percent Error by all calendar days and all updates)
+(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)
 
 
 <br/><br/>
