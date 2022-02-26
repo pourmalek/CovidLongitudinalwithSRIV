@@ -85,13 +85,13 @@ Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/
 
 ****
 
-(1) Canada National [graph 1 C19 daily deaths, Canada, National, LANL, all updates, updates in separate graphs](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20LANL%2C%20all%20updates.pdf)
+(1) Canada National [graph 1 C19 daily deaths, Canada, National, LANL, all updates, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20LANL%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, LANL, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20LANL%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, LANL, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/LANL/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20LANL%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/155355170-51ba3080-a8b8-4b7f-a847-dd1547b3d40b.png)
 
