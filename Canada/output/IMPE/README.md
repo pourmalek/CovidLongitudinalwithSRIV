@@ -85,7 +85,7 @@ Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/
 
 ****
 
-(1) Canada National [graph 1 C19 daily deaths, Canada, National, IMPE, all updates, updates in separate graphs](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IMPE%2C%20all%20updates.pdf)
+(1) Canada National [graph 1 C19 daily deaths, Canada, National, IMPE, all updates, updates in separate graphs](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20IMPE%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
