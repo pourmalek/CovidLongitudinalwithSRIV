@@ -66,25 +66,25 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 <br/><br/>
 
-**Locations and outcomes:**
+**Locations:**
 
-Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
+[Canada National](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
 
-Canada provinces together | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-provinces-together-daily-deaths-error-measures-ihme-model)
+[Canada provinces together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-provinces-together-daily-deaths-error-measures-ihme-model)
 
-Alberta | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#alberta-daily-deaths-error-measures-ihme-model) 
+[Alberta](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#alberta-daily-deaths-error-measures-ihme-model) 
 
-British Columbia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#british-columbia-daily-deaths-error-measures-ihme-model) 
+[British Columbia](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#british-columbia-daily-deaths-error-measures-ihme-model) 
 
-Manitoba | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#manitoba-daily-deaths-error-measures-ihme-model) 
+[Manitoba](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#manitoba-daily-deaths-error-measures-ihme-model) 
 
-Nova Scotia | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#nova-scotia-daily-deaths-error-measures-ihme-model) 
+[Nova Scotia](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#nova-scotia-daily-deaths-error-measures-ihme-model) 
 
-Ontario | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#ontario-daily-deaths-error-measures-ihme-model) 
+[Ontario](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#ontario-daily-deaths-error-measures-ihme-model) 
 
-Quebec | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#quebec-daily-deaths-error-measures-ihme-model) 
+[Quebec](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#quebec-daily-deaths-error-measures-ihme-model) 
 
-Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#saskatchewan-daily-deaths-error-measures-ihme-model) 
+[Saskatchewan](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#saskatchewan-daily-deaths-error-measures-ihme-model) 
 
 <br/><br/>
 
