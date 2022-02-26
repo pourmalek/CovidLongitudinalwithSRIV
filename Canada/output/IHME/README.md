@@ -101,13 +101,13 @@ Saskatchewan | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/blo
 
 ****
 
-(1) Canada National [graph 1 C19 daily deaths, Canada, National, IHME, all updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20update%2020200422.pdf)
+(1) Canada National [graph 1 C19 daily deaths, Canada, National, IHME, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20update%2020200422.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154779346-b2ad82f7-0912-47ca-b240-384c10c9a3dc.png)
 
@@ -230,13 +230,13 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 1 C19 daily deaths, Canada, Alberta, IHME, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(1) Alberta [graph 1 C19 daily deaths, Canada, Alberta, IHME, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/154783220-66162714-1d21-4b8a-bdcc-295421a6d47d.png)
 
