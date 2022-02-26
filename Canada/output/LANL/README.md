@@ -67,9 +67,9 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 <br/><br/>
 
 
-**Locations and outcomes:**
+**Locations:**
 
-Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/LANL#canada-national) 
+[Canada National](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/LANL#canada-national) 
 <br/><br/>
 
 
