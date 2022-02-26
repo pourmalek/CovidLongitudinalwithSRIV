@@ -323,7 +323,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates]()
+(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -410,7 +410,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Manitoba [graph 103 C19 daily deaths, Canada, Manitoba, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Manitoba [graph 103 C19 daily deaths, Canada, Manitoba, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20103%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -494,7 +494,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) New Brunswick [graph 104 C19 daily deaths, Canada, New Brunswick, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) New Brunswick [graph 104 C19 daily deaths, Canada, New Brunswick, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20104%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -579,7 +579,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Newfoundland and Labrador [graph 105 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20105%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Newfoundland and Labrador [graph 105 C19 daily deaths, Canada, Newfoundland and Labrador, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20105%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -664,7 +664,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Nova Scotia [graph 106 C19 daily deaths, Canada, Nova Scotia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20106%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Nova Scotia [graph 106 C19 daily deaths, Canada, Nova Scotia, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20106%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -749,7 +749,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Ontario [graph 107 C19 daily deaths, Canada, Ontario, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20107%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Ontario [graph 107 C19 daily deaths, Canada, Ontario, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20107%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -835,7 +835,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Quebec [graph 108 C19 daily deaths, Canada, Quebec, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20108%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Quebec [graph 108 C19 daily deaths, Canada, Quebec, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20108%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -922,7 +922,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Saskatchewan [graph 109 C19 daily deaths, Canada, Saskatchewan, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20109%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Saskatchewan [graph 109 C19 daily deaths, Canada, Saskatchewan, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20109%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
