@@ -106,7 +106,7 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 ****
 
-(1) Canada National [graph 100 C19 daily deaths, Canada, National, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Canada National [graph 100 C19 daily deaths, Canada, National, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20100%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -239,7 +239,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Alberta [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) Alberta [graph 101 C19 daily deaths, Canada, Alberta, DELP, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20101%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
@@ -323,7 +323,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20102%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20%20all%20updates.pdf)
+(1) British Columbia [graph 102 C19 daily deaths, Canada, British Columbia, DELP, All updates]()
 
 Long PDF file, see video [here]().
 
