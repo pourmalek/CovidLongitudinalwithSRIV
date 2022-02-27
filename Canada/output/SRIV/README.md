@@ -50,7 +50,7 @@ Summarization level = calendar time in days: transform calendar days to epidemio
 
 (2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-Summarization level = updates: transform many updates to one update, or 129 updates to 1 update-free)
+Summarization level = updates: transform many updates to one update, or 575 updates to 1 update-free)
 
 Graphs 7 to 10 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
 
@@ -67,9 +67,11 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 <br/><br/>
 
 
-**Locations and outcomes:**
+**Locations:**
 
-Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/SRIV#canada-national) 
+National only
+
+[Canada National](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/SRIV#canada-national) 
 <br/><br/>
 
 
@@ -85,58 +87,67 @@ Canada National | [Daily deaths](https://github.com/pourmalek/CovidLongitudinal/
 
 ****
 
-(1) Canada National [graph 1 C19 daily deaths, Canada, National, SRIV, all updates, updates in separate graphs](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20all%20updates.pdf)
+(1) Canada National [graph 1 C19 daily deaths, Canada, National, SRIV, all updates, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%201%20C-19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%202%20National%20C-19%20daily%20deaths%2C%20Canada%2C%20SRIV%2C%20reference%20scenario%2C%20all%20updates.pdf)
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%20110%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20Updates%20together%20With%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/155865871-860b8c79-bb9e-466a-8c10-6d68a5dbdc29.png)
+
+****
+
+(3) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%20110%202%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/155865894-f3a56200-b3c7-410e-ac32-5afdd97a80d7.png)
+
+****
+
+8888
+
+(3) Canada National [graph 3 C19 daily deaths, Canada, National, SRIV, **Error**]()
 
 
 ****
 
-(3) Canada National [graph 3 C19 daily deaths, Canada, National, SRIV, **Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%203%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20SRIV%2C%20all%20updates.pdf)
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, SRIV, **Absolute Error**]()
 
 
 ****
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, SRIV, **Absolute Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%204%20National%20C-19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20SRIV%2C%20all%20updates.pdf)
+(5) Canada National [graph 5 C19 daily deaths, Canada, National, SRIV, **Percent Error**]()
 
 
 ****
 
-(5) Canada National [graph 5 C19 daily deaths, Canada, National, SRIV, **Percent Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%205%20National%20C-19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20SRIV%2C%20all%20updates.pdf)
-
-
-****
-
-(6) Canada National [graph 6 C19 daily deaths, Canada, National, SRIV, **Absolute Percent Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%206%20National%20C-19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20SRIV%2C%20all%20updates.pdf)
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, SRIV, **Absolute Percent Error**]()
 
 
 **** 
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, SRIV, mean over updates of median **Error** by epi weekshttps://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%207%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20SRIV%2C%20Error%20Mean1.pdf)
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, SRIV, mean over updates of median **Error** by epi weeks()
 
 
 ****
 
-(8) Canada National [graph 8 C19 daily deaths, Canada, National, SRIV, mean over updates of **Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%208%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20SRIV%2C%20Absolute%20Error%20Mean1.pdf)
+(8) Canada National [graph 8 C19 daily deaths, Canada, National, SRIV, mean over updates of **Absolute Percent Error** by epi weeks]()
 
 
 ****
 
-(9) Canada National [graph 9 C19 daily deaths, Canada, National, SRIV, mean over updates of **Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%209%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20SRIV%2C%20Percent%20Error%20Mean1.pdf)
+(9) Canada National [graph 9 C19 daily deaths, Canada, National, SRIV, mean over updates of **Percent Error** by epi weeks]()
 
 
 ****
 
-(10) Canada National [graph 9 C19 daily deaths, Canada, National, SRIV, mean over updates of **Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%2010%20National%20C-19%20daily%20deaths%20error%2C%20Canada%2C%20SRIV%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+(10) Canada National [graph 9 C19 daily deaths, Canada, National, SRIV, mean over updates of **Absolute Percent Error** by epi weeks]()
 
 
 ****
 
-(11) Canada National [graph 11 C19 daily deaths, Canada, national, SRIV, Average MAPE over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%2011%20C19%20daily%20deaths%2C%20Canada%2C%20national%2C%20SRIV%2C%20Average%20MAPE.pdf)
+(11) Canada National [graph 11 C19 daily deaths, Canada, national, SRIV, Average MAPE over updates and epi weeks]()
 
 
 ****

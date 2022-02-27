@@ -69,6 +69,8 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 **Locations:**
 
+National only
+
 [Canada National](https://github.com/pourmalek/CovidLongitudinal/tree/main/Canada/output/IMPE#canada-national) 
 <br/><br/>
 
