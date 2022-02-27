@@ -93,10 +93,19 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, All updates together]()
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%20110%201%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155865871-860b8c79-bb9e-466a-8c10-6d68a5dbdc29.png)
 
 ****
+
+(3) Canada National [graph 2 C19 daily deaths, Canada, National, SRIV, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/SRIV/graphs/graph%20110%202%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/155865894-f3a56200-b3c7-410e-ac32-5afdd97a80d7.png)
+
+****
+
+8888
 
 (3) Canada National [graph 3 C19 daily deaths, Canada, National, SRIV, **Error**]()
 
