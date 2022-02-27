@@ -126,6 +126,7 @@ Long PDF file, see video [here]().
 
 (4) Canada National [graph 110 02 C19 daily deaths, Canada, National, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2002%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155898845-b49a9a39-4952-40bd-9179-7da6b066b60e.png)
 
 ****
 
