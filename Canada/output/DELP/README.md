@@ -193,13 +193,12 @@ Long PDF file, see video [here]().
 
 (1) Canada provinces together [graph 120 a C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20a%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/155001221-8dd35ce8-dd5a-4ff7-b517-dd34422abd19.png)
+![image](https://user-images.githubusercontent.com/30849720/155906959-0b9b0502-8603-43c9-8d78-66b476edfb1d.png)
 
 ****
 
 (2) Canada provinces together [graph 120 b C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes NL NS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%20b%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/155001323-d594604a-2bb8-44d5-be8a-7ec4c6595bb7.png)
 
 ****
 
