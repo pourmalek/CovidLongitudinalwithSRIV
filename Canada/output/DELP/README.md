@@ -247,11 +247,13 @@ Long PDF file, see video [here]().
 
 (2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155930444-a2d69e91-f351-4ba6-a813-4c274f09f044.png)
 
 ****
 
 (3) Alberta [graph 111 01b C19 daily deaths, Canada, Alberta, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155930522-d39cc72f-10ef-4066-b102-f465b4ada010.png)
 
 ****
 
