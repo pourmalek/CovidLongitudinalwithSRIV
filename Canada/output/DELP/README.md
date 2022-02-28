@@ -154,18 +154,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(9) Canada National [graph 110 09 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2009%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20Mean1.pdf)
+(9) Canada National [graph 110 09 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%209%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155905621-6bebcf2c-c681-4e97-a6fb-9a2e80775a73.png)
 
 **** 
 
 (10) Canada National [graph 110 11 C19 daily deaths, Canada, National, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2011%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155905668-d664a683-5246-4390-8438-214ff404a56c.png)
 
 ****
 
 (11) Canada National [graph 110 13 C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/155905707-ef763cdc-4520-4875-bbc4-d487a0ed0779.png)
 
 ****
 
