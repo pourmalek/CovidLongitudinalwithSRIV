@@ -462,6 +462,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (7) Manitoba [graph 113 05 C19 daily deaths, Canada, Manitoba, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156081926-49e4d7d3-b888-4079-b0b5-05ae5ca217e7.png)
 
 ****  
 
