@@ -120,6 +120,8 @@ Long PDF file, see video [here]().
 
 (3) Canada National [graph 110 01b C19 daily deaths, Canada, National, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
+
 ![image](https://user-images.githubusercontent.com/30849720/155929970-58d99e1b-b5a0-40eb-b18e-6904f4ee4224.png)
 
 ****
