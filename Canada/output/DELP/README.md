@@ -418,11 +418,13 @@ Long PDF file, see video [here]().
 
 (2) Manitoba [graph 113 01 C19 daily deaths, Canada, Manitoba, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156080745-59f831ce-f6d9-4a22-a7b5-74ac819bec6b.png)
 
 ****
 
 (3) Manitoba [graph 113 01b C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156080809-2bc722da-7eeb-4b0f-85ff-f6175f320436.png)
 
 ****
 
