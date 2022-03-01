@@ -255,6 +255,8 @@ Long PDF file, see video [here]().
 
 (3) Alberta [graph 111 01b C19 daily deaths, Canada, Alberta, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
+
 ![image](https://user-images.githubusercontent.com/30849720/155930522-d39cc72f-10ef-4066-b102-f465b4ada010.png)
 
 ****
@@ -338,6 +340,8 @@ Long PDF file, see video [here]().
 ****
 
 (3) British Columbia [graph 112 01b C19 daily deaths, Canada, British Columbia, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ![image](https://user-images.githubusercontent.com/30849720/155947817-cb8bbdb7-c785-4796-b1fd-ba21b1bf7ac5.png)
 
@@ -426,6 +430,8 @@ Long PDF file, see video [here]().
 
 (3) Manitoba [graph 113 01b C19 daily deaths, Canada, Manitoba, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
+
 ![image](https://user-images.githubusercontent.com/30849720/156080809-2bc722da-7eeb-4b0f-85ff-f6175f320436.png)
 
 ****
@@ -500,6 +506,8 @@ Long PDF file, see video [here]().
 ****
 
 (3) New Brunswick [graph 114 01b C19 daily deaths, Canada, New Brunswick, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
 
 
 ****
@@ -576,6 +584,7 @@ Long PDF file, see video [here]().
 
 (3) Newfoundland and Labrador [graph 115 01b C19 daily deaths, Canada, Newfoundland and Labrador, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20and%20Labrador%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ****
 
@@ -651,6 +660,7 @@ Long PDF file, see video [here]().
 
 (3) Nova Scotia [graph 116 01b C19 daily deaths, Canada, Nova Scotia, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ****
 
@@ -726,6 +736,7 @@ Long PDF file, see video [here]().
 
 (3) Ontario [graph 117 01b C19 daily deaths, Canada, Ontario, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ****
 
@@ -802,6 +813,7 @@ Long PDF file, see video [here]().
 
 (3) Quebec [graph 118 01b C19 daily deaths, Canada, Quebec, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ****
 
@@ -879,6 +891,7 @@ Long PDF file, see video [here]().
 
 (3) Saskatchewan [graph 119 01b C19 daily deaths, Canada, Saskatchewan, DELP, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%2001b%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+The graph ‘without extremes’ better depicts the trajectories. 
 
 ****
 
