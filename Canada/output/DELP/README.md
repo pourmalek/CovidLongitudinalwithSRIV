@@ -57,9 +57,9 @@ Summarization level = updates. Transform many updates to one update for each tim
 
 _(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
 
-_Graphs 8 to 11 show the four types of error by weekly time intervals._
+_Graphs 8 to 11 show the four types of error with weekly time intervals._
 
-_Graphs 12 show MAPE by monthly time intervals.)_
+_Graphs 12 show MAPE with monthly time intervals.)_
 
 
 
