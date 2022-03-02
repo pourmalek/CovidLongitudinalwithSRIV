@@ -23,7 +23,7 @@ Reference = JOHN, Model = DELP
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(Under each location, except provinces together, graph 6 shows the ercent Error by all calendar days and all updates)
+(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)
 
 .
 
