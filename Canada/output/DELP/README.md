@@ -36,30 +36,36 @@ Reference = JOHN, Model = DELP
 
 **Summarize the error measures:**
 
-First by epidemiological (epi) weeks and updates, then by epi weeks only (get rid of updates), and finally by model-location only (get rid of epi weeks).
+Summarize first by time intervals and updates, then by time intervals only (get rid of different updates), and finally by model-location only (get rid of different time intervals).
+
+Two time intervals were used separately: epidemiological weeks, and calendar months. 
 
 <br/><br/>
 
 
-(1) Get the MEDIAN of error types by epi weeks and updates
+(1) Get the MEDIAN of error types by time intervals and updates
 
-Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
+Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
 (Graphs not shown here to save space)
 
 .
 
-(2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
+(2) Get the AVERAGE over updates of MEDIAN of error types by time intervals
 
-Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
+Summarization level = updates. Transform many updates to one update for each time interval
 
-Graphs 8 to 11 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
+Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)
+
+Graphs 8 to 11 show the four types of error by weekly time intervals.
+
+Graphs 12 show one types of error (MAPE) by monthly time intervals.
 
 .
 
-(3) Get the AVERAGE over epi weeks of the above number (2)
+(3) Get the AVERAGE over time intervals of the above number (2) quantity
 
-Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
+Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
 
 (Graphs shown under "Canada provinces together")
 
