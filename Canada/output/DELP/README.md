@@ -105,7 +105,7 @@ For instance, Average MAPE for DELP-Alberta is 87.9 (with weekly time intervals)
 
 ****
 
-### DELP Model, Error Measures for Daily Deaths
+### DELP Model, Error Measures for Daily Deaths by location:
 
 
 ****
