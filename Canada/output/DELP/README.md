@@ -59,7 +59,7 @@ _(Graphs 8 to 12 under each location (except provinces together) (shown below) s
 
 _Graphs 8 to 11 show the four types of error by weekly time intervals._
 
-_Graphs 12 show one types of error (MAPE) by monthly time intervals.)_
+_Graphs 12 show MAPE by monthly time intervals.)_
 
 
 
