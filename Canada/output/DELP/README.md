@@ -65,7 +65,7 @@ _Graphs 12 show one types of error (MAPE) by monthly time intervals.)_
 
 (3) Get the **AVERAGE over time intervals of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals**
 
-Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
+Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). For instance, Average MAPE for DELP-Alberta is 87.9 (weekly time intervals) and 82.5 (monthly time intervals), graphs 4 and 9 respectively under "Canada provinces together".
 
 _(Graphs shown under "Canada provinces together")_
 
@@ -340,6 +340,7 @@ Long PDF file, see video [here]().
 
 The graph ‘without extremes’ better depicts the trajectories. 
 
+![image](https://user-images.githubusercontent.com/30849720/156412358-001bfdf6-5a32-4516-898d-7af20d77788a.png)
 
 ****
 
