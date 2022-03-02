@@ -43,7 +43,7 @@ Two time intervals were used separately: epidemiological weeks, and calendar mon
 <br/><br/>
 
 
-(1) Get the MEDIAN of error types by time intervals and updates
+(1) Get the **MEDIAN of error types by time intervals and updates**
 
 Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
@@ -51,7 +51,7 @@ Summarization level = calendar time in days. Transform calendar days to epidemio
 
 
 
-(2) Get the AVERAGE over updates of MEDIAN of error types by time intervals
+(2) Get the **AVERAGE over updates of MEDIAN of error types by time intervals**
 
 Summarization level = updates. Transform many updates to one update for each time interval
 
@@ -63,7 +63,7 @@ Graphs 12 show one types of error (MAPE) by monthly time intervals.
 
 
 
-(3) Get the AVERAGE over time intervals of the above number (2) quantity
+(3) Get the **AVERAGE over time intervals of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals**
 
 Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
 
