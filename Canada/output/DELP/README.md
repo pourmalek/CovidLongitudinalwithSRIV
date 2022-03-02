@@ -11,25 +11,25 @@ Reference = JOHN, Model = DELP
 
 (1) **Error** = Reference minus Model 
 
-(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
 
 
 
 (2) **Absolute Error** = | Reference minus Model | 
 
-(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)_
 
 
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)_
 
 
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
-(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)_
 
 
 <br/><br/>
@@ -47,7 +47,7 @@ Two time intervals were used separately: epidemiological weeks, and calendar mon
 
 Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
-(Graphs not shown here to save space)
+_(Graphs not shown here to save space)_
 
 
 
@@ -55,11 +55,11 @@ Summarization level = calendar time in days. Transform calendar days to epidemio
 
 Summarization level = updates. Transform many updates to one update for each time interval
 
-(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)
+_(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
 
-Graphs 8 to 11 show the four types of error by weekly time intervals.
+_Graphs 8 to 11 show the four types of error by weekly time intervals._
 
-Graphs 12 show one types of error (MAPE) by monthly time intervals.)
+_Graphs 12 show one types of error (MAPE) by monthly time intervals.)_
 
 
 
@@ -67,7 +67,7 @@ Graphs 12 show one types of error (MAPE) by monthly time intervals.)
 
 Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
 
-(Graphs shown under "Canada provinces together")
+_(Graphs shown under "Canada provinces together")_
 
 
 
