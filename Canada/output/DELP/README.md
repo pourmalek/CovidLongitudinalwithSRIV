@@ -772,6 +772,9 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Ontario [graph 117 13b C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+
+
 *
 
 
@@ -849,6 +852,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Quebec [graph 118 13b C19 daily deaths, Canada, Quebec, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
@@ -927,6 +931,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Saskatchewan [graph 119 13b C19 daily deaths, Canada, Saskatchewan, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
