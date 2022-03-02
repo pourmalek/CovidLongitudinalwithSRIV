@@ -9,25 +9,25 @@ Reference = JOHN, Model = DELP
 
 .
 
-#### (1) **Error** = Reference minus Model 
+#### (1) Error = Reference minus Model 
 
 _(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
 
 
 
-(2) **Absolute Error** = | Reference minus Model | 
+#### (2) Absolute Error = | Reference minus Model | 
 
 _(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)_
 
 
 
-(3) **Percent Error** = 100 * (Reference minus Model) / Reference
+#### (3) Percent Error = 100 * (Reference minus Model) / Reference
 
 _(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)_
 
 
 
-(4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
+#### (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
 
 _(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)_
 
@@ -43,7 +43,7 @@ Two time intervals were used separately: epidemiological weeks, and calendar mon
 <br/><br/>
 
 
-(1) Get the **MEDIAN of error types by time intervals and updates**
+#### (1) Get the _MEDIAN of error types by time intervals and updates_
 
 Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
@@ -51,7 +51,7 @@ _(Graphs not shown here to save space)_
 
 
 
-(2) Get the **AVERAGE over updates of MEDIAN of error types by time intervals**
+#### (2) Get the _AVERAGE over updates of MEDIAN of error types by time intervals_
 
 Summarization level = updates. Transform many updates to one update for each time interval
 
@@ -63,7 +63,7 @@ _Graphs 12 show MAPE with monthly time intervals.)_
 
 
 
-(3) Get the **AVERAGE over time intervals of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals**
+#### (3) Get the _AVERAGE over time intervals_ of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals
 
 Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
 
