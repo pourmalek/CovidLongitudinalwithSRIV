@@ -9,7 +9,7 @@ Reference = JOHN, Model = DELP
 
 .
 
-### (1) **Error** = Reference minus Model 
+#### (1) **Error** = Reference minus Model 
 
 _(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
 
