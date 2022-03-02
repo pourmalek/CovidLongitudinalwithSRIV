@@ -174,8 +174,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(12) Canada National [graph 110 13b C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
-(https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1b.pdf)
+(12) Canada National [graph 110 13b C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1b.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156344444-8eb29c9c-2f0e-4e2d-b1aa-4780b6893b79.png)
 
@@ -307,6 +306,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Alberta [graph 111 13b C19 daily deaths, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
@@ -383,6 +383,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) British Columbia [graph 112 13b C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
@@ -461,6 +462,8 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 
 ****
+
+(12) Manitoba [graph 113 13b C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
