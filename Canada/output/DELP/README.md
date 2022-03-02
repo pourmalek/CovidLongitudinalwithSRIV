@@ -3,7 +3,7 @@
 
 <br/><br/>
 
-**Calculate the error measures:**
+### Calculate the error measures:
 
 Reference = JOHN, Model = DELP 
 
@@ -34,7 +34,7 @@ _(Under each location, except provinces together, graph 7 shows Absolute Percent
 
 <br/><br/>
 
-**Summarize the error measures:**
+### Summarize the error measures:
 
 Summarize first by time intervals and updates, then by time intervals only (get rid of different updates), and finally by model-location only (get rid of different time intervals).
 
