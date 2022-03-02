@@ -13,19 +13,19 @@ Reference = JOHN, Model = DELP
 
 (Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)
 
-.
+
 
 (2) **Absolute Error** = | Reference minus Model | 
 
 (Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)
 
-.
+
 
 (3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
 (Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)
 
-.
+
 
 (4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
 
@@ -49,7 +49,7 @@ Summarization level = calendar time in days. Transform calendar days to epidemio
 
 (Graphs not shown here to save space)
 
-.
+
 
 (2) Get the AVERAGE over updates of MEDIAN of error types by time intervals
 
@@ -61,7 +61,7 @@ Graphs 8 to 11 show the four types of error by weekly time intervals.
 
 Graphs 12 show one types of error (MAPE) by monthly time intervals.
 
-.
+
 
 (3) Get the AVERAGE over time intervals of the above number (2) quantity
 
@@ -69,7 +69,7 @@ Summarization level = time intervals. Transform many time intervals (weeks or mo
 
 (Graphs shown under "Canada provinces together")
 
-.
+
 
 <br/><br/>
 
