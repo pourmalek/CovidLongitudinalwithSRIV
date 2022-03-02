@@ -203,11 +203,11 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ### Canada provinces together, Daily Deaths, Error Measures, DELP Model
 
-Time intervals: (a) epidemiological weeks, (b) calendar months, (c) both shown together
+_Time intervals: (a) epidemiological weeks, (b) calendar months, (c) both shown together_
 
 ****
 
-Time intervals: (a) epidemiological weeks
+_Time intervals: (a) epidemiological weeks_
 
 ****
 
@@ -247,7 +247,7 @@ The graph ‘without extremes’ better depicts other values.
 
 ****
 
-Time intervals: (b) calendar months
+_Time intervals: (b) calendar months_
 
 ****
 
@@ -287,7 +287,7 @@ The graph ‘without extremes’ better depicts other values.
 
 ****
 
-Time intervals: (c) both epidemiological weeks and calendar months shown together
+_Time intervals: (c) both epidemiological weeks and calendar months shown together_
 
 ****
 
@@ -332,6 +332,7 @@ Long PDF file, see video [here]().
 
 (2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156411862-66fd9c6c-5f43-42ba-a0ec-64408bc0494c.png)
 
 ****
 
