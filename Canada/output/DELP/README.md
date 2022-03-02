@@ -541,6 +541,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) New Brunswick [graph 114 13b C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
@@ -617,6 +618,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Newfoundland and Labrador [graph 115 13b C19 daily deaths, Canada, Newfoundland and Labrador, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
@@ -693,6 +695,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
+(12) Nova Scotia [graph 116 13b C19 daily deaths, Canada, Nova Scotia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 
 *
 
