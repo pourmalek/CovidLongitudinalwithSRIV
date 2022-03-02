@@ -55,11 +55,11 @@ Summarization level = calendar time in days. Transform calendar days to epidemio
 
 Summarization level = updates. Transform many updates to one update for each time interval
 
-Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)
+(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)
 
 Graphs 8 to 11 show the four types of error by weekly time intervals.
 
-Graphs 12 show one types of error (MAPE) by monthly time intervals.
+Graphs 12 show one types of error (MAPE) by monthly time intervals.)
 
 
 
