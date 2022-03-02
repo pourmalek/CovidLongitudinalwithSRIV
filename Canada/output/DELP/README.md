@@ -114,6 +114,7 @@ Long PDF file, see video [here]().
 
 (2) Canada National [graph 110 01 C19 daily deaths, Canada, National, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2001%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156336035-9cf12861-707c-429e-b81c-28a6c736a6ea.png)
 
 ****
 
@@ -121,26 +122,31 @@ Long PDF file, see video [here]().
 
 The graph ‘without extremes’ better depicts the trajectories. 
 
+![image](https://user-images.githubusercontent.com/30849720/156336252-47b67a56-c692-4ad5-b21e-e1d8fd2b1956.png)
 
 ****
 
 (4) Canada National [graph 110 02 C19 daily deaths, Canada, National, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2002%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156336370-f3b34b8a-47f4-4ab1-b64e-f02e4d684be0.png)
 
 ****
 
 (5) Canada National [graph 110 03 C19 daily deaths, Canada, National, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2003%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156336500-5068839c-6ff9-4cb9-9bd2-84b47eb08558.png)
 
 ****
 
 (6) Canada National [graph 110 04 C19 daily deaths, Canada, National, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2004%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156336614-fd1d574b-59fe-4570-9cb0-f8aca4131da2.png)
 
 ****
 
 (7) Canada National [graph 110 05 C19 daily deaths, Canada, National, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2005%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156336726-fd1eae2d-af98-4e0d-8e98-eef3eed483cb.png)
 
 ****  
 
