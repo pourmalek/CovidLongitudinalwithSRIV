@@ -474,7 +474,9 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(12) British Columbia [graph 112 13b C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(12) British Columbia [graph 112 13b C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156419132-bbb2342b-7840-4e16-99cc-f3442f6dd474.png)
 
 *
 
