@@ -197,6 +197,12 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ### Canada provinces together, Daily Deaths, Error Measures, DELP Model
 
+Time bins: (a) epidemiological weeks, (b) Calendar months
+
+****
+
+Time bins: (a) epidemiological weeks:
+
 ****
 
 (1) Canada provinces together [graph 120 1 1 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20120%201%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1.pdf)
@@ -224,6 +230,41 @@ The graph ‘without extremes’ better depicts the trajectories.
 ****
 
 (5) Canada provinces together [graph 130 1 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and epi weeks, without extremes NL NS]()
+
+The graph ‘without extremes’ better depicts other values. 
+
+
+****
+
+Time bins: (b) Calendar months:
+
+****
+
+(6) Canada provinces together [graph 120 2 1 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS]()
+
+
+****
+
+(7) Canada provinces together [graph 120 2 2 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes NL NS]()
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+
+****
+
+(8) Canada provinces together [graph 120 2 3 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes NL NS NB SK]()
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+
+****
+
+(9) Canada provinces together [graph 130 2 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS]()
+
+
+****
+
+(10) Canada provinces together [graph 130 2 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS, without extremes NL NS]()
 
 The graph ‘without extremes’ better depicts other values. 
 
