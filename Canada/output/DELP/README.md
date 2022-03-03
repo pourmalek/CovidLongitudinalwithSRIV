@@ -359,7 +359,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(6) Alberta [graph 111 04 C19 daily deaths, Canada, Alberta, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error.pdf)
+(6) Alberta [graph 111 04 C19 daily deaths, Canada, Alberta, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20%25%20Error.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156417658-dbb38512-a56f-4b7d-b9e2-c9ddc66a4f56.png)
 
