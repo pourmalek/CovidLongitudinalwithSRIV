@@ -397,7 +397,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link: Alberta graph 111 08 C19 daily deaths, DELP, median absolute error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2008%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20median1.pdf)
+[Link: Alberta graph 111 08 C19 daily deaths, DELP, median absolute error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2008%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error%20median1.pdf)
 
 ****  
 
