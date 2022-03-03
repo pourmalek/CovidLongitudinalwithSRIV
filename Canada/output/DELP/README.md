@@ -922,6 +922,7 @@ Long PDF file, see video [here]().
 
 (2) Ontario [graph 117 01 C19 daily deaths, Canada, Ontario, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156601023-410ab533-31c3-454b-8f35-65d56e77736b.png)
 
 ****
 
@@ -929,25 +930,31 @@ Long PDF file, see video [here]().
 
 The graph ‘without extremes’ better depicts the trajectories. 
 
+![image](https://user-images.githubusercontent.com/30849720/156601169-bf9a19e1-31f7-476a-9286-5be2907a13c5.png)
+
 ****
 
 (4) Ontario [graph 117 02 C19 daily deaths, Canada, Ontario, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156601292-21ca8b06-298e-4cc3-b350-b46981331b8c.png)
 
 ****
 
 (5) Ontario [graph 117 03 C19 daily deaths, Canada, Ontario, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156601449-8889bcb9-5bf2-4e04-8633-ec14bfa64a1e.png)
 
 ****
 
-(6) Ontario [graph 117 04 C19 daily deaths, Canada, Ontario, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20percent%20Error.pdf)
+(6) Ontario [graph 117 04 C19 daily deaths, Canada, Ontario, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20%25%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156601613-caa8f194-db32-42fb-875f-ad988b0ceeac.png)
 
 ****
 
-(7) Ontario [graph 117 05 C19 daily deaths, Canada, Ontario, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
+(7) Ontario [graph 117 05 C19 daily deaths, Canada, Ontario, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20%25%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156601787-ac32cf35-f375-46cd-91ed-1187956daa01.png)
 
 ****  
 
