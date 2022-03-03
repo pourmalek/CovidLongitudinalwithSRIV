@@ -670,13 +670,15 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(7) New Brunswick [graph 114 05 C19 daily deaths, Canada, New Brunswick, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2005%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
+(7) New Brunswick [graph 114 05 C19 daily deaths, Canada, New Brunswick, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2005%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20%25%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156594017-75b8d7d7-368b-4739-9b45-1cd448e15799.png)
 
 **** 
 
 (8) New Brunswick [graph 114 07 C19 daily deaths, Canada, New Brunswick, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2007%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156594162-78ca0271-b9cb-4c92-bb39-89d592afd865.png)
 
 ****  
 
@@ -686,20 +688,25 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (9) New Brunswick [graph 114 09 C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2009%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156594554-15772b14-5cbf-45d2-bad7-cf712f6b6d19.png)
 
 **** 
 
-(10) New Brunswick [graph 114 11 C19 daily deaths, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2011%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+(10) New Brunswick [graph 114 11 C19 daily deaths, Canada, New Brunswick, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2011%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20%25%20Error%20Mean1.pdf)
 
-
-****
-
-(11) New Brunswick [graph 114 13 C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2013%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
-
+![image](https://user-images.githubusercontent.com/30849720/156595351-1b0ac17a-3f4b-48c5-a966-ac4ad905e6ba.png)
 
 ****
 
-(12) New Brunswick [graph 114 13b C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(11) New Brunswick [graph 114 13 C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2013%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156595553-427d54bc-580c-4135-b161-4dae2abb4705.png)
+
+****
+
+(12) New Brunswick [graph 114 13b C19 daily deaths, Canada, New Brunswick, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156595741-61ca9a82-010f-443a-a378-87c5f6db689c.png)
 
 *
 
