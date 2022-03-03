@@ -169,25 +169,50 @@ local list ///
 20211230 ///
 20211231
  
+ 
 
+ 
+ 
+ 
+foreach update of local list {
+
+	use "CovidLongitudinal DELP `update'.dta", clear
+		
+	capture drop DayDeaFOREA01S00`update'
+	
+	qui gen DayDeaFOREA01S00`update' = DayDeaMeSmA01S00`update'
+	
+	replace DayDeaFOREA01S00`update' = . if date < update_date`update'
+	
+	label var DayDeaFOREA01S00`update' "DayDeaMeSmA01S00 Forecast only"
+	
+	qui save "CovidLongitudinal DELP `update'.dta", replace
+	
+}	
+* 
 
 
 foreach update of local list {
 
 	di in red "This is update " `update'
 	
-	merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP `update'.dta"
+	merge 1:1 date loc_grand_name provincestate using "CovidLongitudinal DELP `update'.dta"
 	
 	drop _merge
 	
-	shell rm -r "CovidLongitudinal DELP `update'.dta"
-
 }
 *
 
+
+isid provincestate date
+
+order loc_grand_name provincestate date DayDeaMeSmA01S00* DayDeaFOREA01S00* update_date*
+
+sort loc_grand_name provincestate date
+
 save "CovidLongitudinal DELP.dta", replace
 
-desc, short
+
 
 
 * add JOHN
@@ -208,9 +233,17 @@ merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP.dta"
  
 drop _merge
 
-
+isid provincestate date
 
 drop if date > td(01jan2022)
+
+
+drop DayDeaMeRaA00S00* TotDeaMeRaA00S00* DayCasMeRaA00S00* TotCasMeRaA00S00* DayCasMeSmA00S00*
+* keeps DayDeaMeSmA00S00XYZ
+
+sort loc_grand_name provincestate date
+
+qui compress
 
 save "CovidLongitudinal DELP.dta", replace
 

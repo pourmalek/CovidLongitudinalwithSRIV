@@ -319,6 +319,11 @@ tsset, clear
 drop DayDeaMeRaA01S00 
 
 
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
+
 
 * add update to varnames
 
@@ -457,6 +462,12 @@ tsset, clear
 
 
 drop DayDeaMeRaA01S00 
+
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 
 
 * add update to varnames
@@ -604,6 +615,12 @@ tsset, clear
 
 
 drop DayDeaMeRaA01S00 
+
+
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
 
 
 * add update to varnames
@@ -867,11 +884,19 @@ tsset, clear
 drop DayDeaMeRaA01S00 
 
 
+capture drop update_date
+
+gen update_date = date("`update'", "YMD")
+
+
+
+
 * add update to varnames
 
 rename (*) (*`update')
 
 rename (date`update' loc_grand_name`update' provincestate`update') (date loc_grand_name provincestate)
+
 
 
 sort date loc_grand_name provincestate 
