@@ -179,7 +179,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link: Canada National graph 110 08 C19 daily deaths, Canada, National, DELP, median absolute error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2008%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20median1.pdf)
+[Link: Canada National graph 110 10 C19 daily deaths, Canada, National, DELP, median % error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2010%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error%20median1.pdf)
 
 ****  
 
@@ -187,11 +187,19 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ![image](https://user-images.githubusercontent.com/30849720/156337539-1a4fcf61-7745-4c3c-8646-5685a09d8184.png)
 
+****  
+
+[Link: Canada National graph 110 12 C19 daily deaths, Canada, National, DELP, median absolute % error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2012%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20median1.pdf)
+
 ****
 
 (11) Canada National [graph 110 13 C19 daily deaths, Canada, National, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2013%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156337641-eba8039a-7b06-4323-a7b2-117454ca1504.png)
+
+****  
+
+[Link: Canada National graph 110 12b C19 daily deaths, Canada, National, DELP, median absolute % error by calendar months and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2012b%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Percent%20Error%20median1.pdf)
 
 ****
 
