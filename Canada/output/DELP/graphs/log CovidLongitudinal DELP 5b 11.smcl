@@ -1,0 +1,172 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/DELP/log CovidLongitudinal DELP 5b 11.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res} 2 Mar 2022, 18:45:24
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal DELP 5b 11.do"
+. 
+. * Project: Longitudinal assessment of C19 models                                                                         
+. * Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
+. ***************************************************************************
+. 
+. * months time bin
+. 
+. * compile the data created by DELP 5b 1.do to DELP 5b 10.do, for 10 locations: National and 9 provinces
+. 
+. * input data files: "CovidLongitudinal DELP 3 _LOCATION_.dta", where LOCATION is National and 9 provinces
+. * output data files: "CovidLongitudinal DELP 4.dta"
+. 
+. 
+. 
+. 
+. 
+. use "CovidLongitudinal DELP 3 National.dta", clear
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Alberta.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 British Columbia.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Manitoba.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 New Brunswick.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Newfoundland & Labrador.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Nova Scotia.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Ontario.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Quebec.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. merge m:m provincestate date using "CovidLongitudinal DELP 3 Saskatchewan.dta"
+{res}{txt}(label year_month_encoded already defined)
+
+{col 5}Result{col 38}# of obs.
+{col 5}{hline 41}
+{col 5}not matched{col 30}{res}               0
+{txt}{col 5}matched{col 30}{res}           9,954{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. 
+. 
+. qui compress 
+{txt}
+{com}. 
+. save "CovidLongitudinal DELP 4", replace 
+{txt}(note: file CovidLongitudinal DELP 4.dta not found)
+file CovidLongitudinal DELP 4.dta saved
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. view "log CovidLongitudinal DELP 5b 11.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Canada/code/DELP/log CovidLongitudinal DELP 5b 11.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res} 2 Mar 2022, 18:46:49
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
