@@ -47,7 +47,7 @@ Two time intervals were used separately: epidemiological weeks, and calendar mon
 
 Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
-_(Graphs not shown here to save space)_
+_(Graphs not shown below to save space; links to graphs are provided.)_
 
 
 
