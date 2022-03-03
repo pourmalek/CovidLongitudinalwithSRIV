@@ -391,7 +391,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Alberta graph 111 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Alberta graph 111 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****   
 
@@ -499,7 +499,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to British Columbia graph 112 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to British Columbia graph 112 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2006%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****     
 
@@ -610,7 +610,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Manitoba graph 113 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Manitoba graph 113 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****       
 
@@ -719,7 +719,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to New Brunswick graph 114 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to New Brunswick graph 114 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20114%2006%20C19%20daily%20deaths%2C%20Canada%2C%20New%20Brunswick%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****      
 
@@ -828,7 +828,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Newfoundland and Labrador graph 115 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Newfoundland and Labrador graph 115 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20115%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Newfoundland%20%26%20Labrador%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****        
 
@@ -937,7 +937,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Nova Scotia graph 116 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Nova Scotia graph 116 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20116%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Nova%20Scotia%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****     
 
@@ -1046,7 +1046,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Ontario graph 117 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Ontario graph 117 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****       
 
@@ -1157,7 +1157,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Quebec graph 118 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Quebec graph 118 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20118%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Quebec%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****         
 
@@ -1268,7 +1268,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[Link to Saskatchewan graph 119 06 C19 daily deaths, DELP, median error by epi weeks and updates]()
+[Link to Saskatchewan graph 119 06 C19 daily deaths, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20119%2006%20C19%20daily%20deaths%2C%20Canada%2C%20Saskatchewan%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****          
 
