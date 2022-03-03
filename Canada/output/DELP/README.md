@@ -147,7 +147,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(6) Canada National [graph 110 04 C19 daily deaths, Canada, National, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2004%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20percent%20Error.pdf)
+(6) Canada National [graph 110 04 C19 daily deaths, Canada, National, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2004%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20%25%20Error.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156336614-fd1d574b-59fe-4570-9cb0-f8aca4131da2.png)
 
