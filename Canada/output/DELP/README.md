@@ -3,67 +3,76 @@
 
 <br/><br/>
 
-**Calculate the error measures:**
+### Calculate the error measures:
 
 Reference = JOHN, Model = DELP 
 
 .
 
-(1) **Error** = Reference minus Model 
+#### (1) Error = Reference minus Model 
 
-(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
 
-.
 
-(2) **Absolute Error** = | Reference minus Model | 
 
-(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)
+#### (2) Absolute Error = | Reference minus Model | 
 
-.
+_(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)_
 
-(3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(Under each location, except provinces together, graph 6 shows the ercent Error by all calendar days and all updates)
 
-.
+#### (3) Percent Error = 100 * (Reference minus Model) / Reference
 
-(4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
+_(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)_
 
-(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)
+
+
+#### (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
+
+_(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)_
 
 
 <br/><br/>
 
-**Summarize the error measures:**
+### Summarize the error measures:
 
-First by epidemiological (epi) weeks and updates, then by epi weeks only (get rid of updates), and finally by model-location only (get rid of epi weeks).
+Summarize first by time intervals and updates, then by time intervals only (get rid of different updates), and finally by model-location only (get rid of different time intervals).
+
+Two time intervals were used separately: epidemiological weeks, and calendar months. 
 
 <br/><br/>
 
 
-(1) Get the MEDIAN of error types by epi weeks and updates
+#### (1) Get the MEDIAN of error types by time intervals and updates
 
-Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
+Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
-(Graphs not shown here to save space)
+_(Graphs not shown here to save space)_
 
-.
 
-(2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
 
-Summarization level = updates: transform many updates to one update (142 updates to 1 update-free)
+#### (2) Get the AVERAGE over updates of MEDIAN of error types by time intervals
 
-Graphs 8 to 11 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
+Summarization level = updates. Transform many updates to one update for each time interval
 
-.
+_(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
 
-(3) Get the AVERAGE over epi weeks of the above number (2)
+_Graphs 8 to 11 show the four types of error with weekly time intervals._
 
-Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
+_Graphs 12 show MAPE with monthly time intervals.)_
 
-(Graphs shown under "Canada provinces together")
 
-.
+
+#### (3) Get the AVERAGE over time intervals of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals
+
+Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., DELP-Alberta). 
+
+_(Graphs shown under "Canada provinces together")_
+
+For instance, Average MAPE for DELP-Alberta is 87.9 (with weekly time intervals) or 82.5 (with monthly time intervals), graphs 4 and 9 respectively under "Canada provinces together".
+
+
+
 
 <br/><br/>
 
@@ -96,7 +105,7 @@ Summarization level = calendar time in epi weeks: transform many epi weeks to a 
 
 ****
 
-### DELP Model, Error Measures for Daily Deaths
+### DELP Model, Error Measures for Daily Deaths by location:
 
 
 ****
@@ -197,11 +206,11 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ### Canada provinces together, Daily Deaths, Error Measures, DELP Model
 
-Time bins: (a) epidemiological weeks, (b) Calendar months
+_Time intervals: (a) epidemiological weeks, (b) calendar months, (c) both shown together_
 
 ****
 
-Time bins: (a) epidemiological weeks:
+_Time intervals: (a) epidemiological weeks_
 
 ****
 
@@ -241,7 +250,7 @@ The graph ‘without extremes’ better depicts other values.
 
 ****
 
-Time bins: (b) Calendar months:
+_Time intervals: (b) calendar months_
 
 ****
 
@@ -281,6 +290,25 @@ The graph ‘without extremes’ better depicts other values.
 
 ****
 
+_Time intervals: (c) both epidemiological weeks and calendar months shown together_
+
+****
+
+(11) Canada provinces together [graph 140 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20140%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156405186-20cd2934-63aa-41ae-9e54-0605ef1c6c6e.png)
+
+****
+
+(12) Canada provinces together [graph 140 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals,without extremes NS NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20140%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
+
+The graph ‘without extremes’ better depicts other values. 
+
+![image](https://user-images.githubusercontent.com/30849720/156405501-a95eb7fe-45a9-4ad4-8dd4-c8738cd0ee49.png)
+
+****
+
+
 *
 
 
@@ -307,6 +335,7 @@ Long PDF file, see video [here]().
 
 (2) Alberta [graph 111 01 C19 daily deaths, Canada, Alberta, DELP, Updates together, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2001%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156411862-66fd9c6c-5f43-42ba-a0ec-64408bc0494c.png)
 
 ****
 
@@ -314,50 +343,61 @@ Long PDF file, see video [here]().
 
 The graph ‘without extremes’ better depicts the trajectories. 
 
+![image](https://user-images.githubusercontent.com/30849720/156412358-001bfdf6-5a32-4516-898d-7af20d77788a.png)
 
 ****
 
 (4) Alberta [graph 111 02 C19 daily deaths, Canada, Alberta, DELP, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2002%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156417394-afd85746-2555-4247-82e9-d3a37780126f.png)
 
 ****
 
 (5) Alberta [graph 111 03 C19 daily deaths, Canada, Alberta, DELP, absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2003%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156417516-91a0d88e-e39e-4d09-abdf-0eebeabc9dd6.png)
 
 ****
 
 (6) Alberta [graph 111 04 C19 daily deaths, Canada, Alberta, DELP, percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2004%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156417658-dbb38512-a56f-4b7d-b9e2-c9ddc66a4f56.png)
 
 ****
 
 (7) Alberta [graph 111 05 C19 daily deaths, Canada, Alberta, DELP, absolute percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2005%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156417855-66a6f817-665e-4ac4-9ddd-974ee831e7a1.png)
 
 ****   
 
 (8) Alberta [graph 111 07 C19 daily deaths, Canada, Alberta, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156417978-8c2d6d05-1d1e-4ea9-8d69-c36fce8ec3aa.png)
 
 **** 
 
 (9) Alberta [graph 111 09 C19 daily deaths, Canada, Alberta, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156418272-85e7c5c5-108a-4491-9935-bc9363385739.png)
 
 **** 
 
 (10) Alberta [graph 111 11 C19 daily deaths, Canada, Alberta, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156418389-6eb3f32e-bc14-43b3-a2c4-84ca87df7364.png)
 
 ****
 
 (11) Alberta [graph 111 13 C19 daily deaths, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156418486-11b7ee95-bcf0-4612-aadd-a1a1367e41f5.png)
 
 ****
 
-(12) Alberta [graph 111 13b C19 daily deaths, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(12) Alberta [graph 111 13b C19 daily deaths, Canada, Alberta, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20111%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20Alberta%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156418657-fe1ec759-3805-4592-8c48-98bead480a5b.png)
 
 *
 
@@ -434,7 +474,9 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****
 
-(12) British Columbia [graph 112 13b C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(12) British Columbia [graph 112 13b C19 daily deaths, Canada, British Columbia, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20112%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20British%20Columbia%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156419132-bbb2342b-7840-4e16-99cc-f3442f6dd474.png)
 
 *
 
