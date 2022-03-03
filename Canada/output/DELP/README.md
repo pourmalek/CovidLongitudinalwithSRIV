@@ -582,6 +582,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (8) Manitoba [graph 113 07 C19 daily deaths, Canada, Manitoba, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156508600-56a3eaf2-4806-4114-810a-4c64c5e5f6cb.png)
 
 ****  
 
@@ -591,20 +592,27 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (9) Manitoba [graph 113 09 C19 daily deaths, Canada, Manitoba, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156508700-4c8e58d2-fa5c-4b35-8683-bc6f969b5ea5.png)
 
 **** 
 
-(10) Manitoba [graph 113 11 C19 daily deaths, Canada, Manitoba, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+(10) Manitoba [graph 113 11 C19 daily deaths, Canada, Manitoba, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20%25%20Error%20Mean1.pdf)
 
-
-****
-
-(11) Manitoba [graph 113 13 C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
-
+![image](https://user-images.githubusercontent.com/30849720/156508842-04eb2df1-6e64-4704-9aad-709ad7badec4.png)
 
 ****
 
-(12) Manitoba [graph 113 13b C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(11) Manitoba [graph 113 13 C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156509020-d00d5b8d-af3a-4a95-b950-cd7cbf4f6ba6.png)
+
+****
+
+(12) Manitoba [graph 113 13b C19 daily deaths, Canada, Manitoba, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20113%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20Manitoba%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156509155-c546b04b-f921-4d45-9c26-f5bc6ecc42a2.png)
+
+****
 
 *
 
