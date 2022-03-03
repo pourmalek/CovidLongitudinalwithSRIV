@@ -159,7 +159,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ****  
 
-[link: Canada National graph 110 06 C19 daily deaths, Canada, National, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2006%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error%20median1.pdf)
+[Link: Canada National graph 110 06 C19 daily deaths, Canada, National, DELP, median error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2006%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Error%20median1.pdf)
 
 ****
 
@@ -167,13 +167,21 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 ![image](https://user-images.githubusercontent.com/30849720/156336920-71f8b50d-9654-4cb9-b0f0-75ba7e7de00f.png)
 
+****  
+
+[Link: Canada National graph 110 08 C19 daily deaths, Canada, National, DELP, median absolute error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2008%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20median1.pdf)
+
 **** 
 
 (9) Canada National [graph 110 09 C19 daily deaths, Canada, National, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2009%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156337425-5b343f2f-c367-4106-bf0a-1ee6a2a14b2c.png)
 
-**** 
+****  
+
+[Link: Canada National graph 110 08 C19 daily deaths, Canada, National, DELP, median absolute error by epi weeks and updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2008%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Absolute%20Error%20median1.pdf)
+
+****  
 
 (10) Canada National [graph 110 11 C19 daily deaths, Canada, National, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20110%2011%20C19%20daily%20deaths%2C%20Canada%2C%20National%2C%20DELP%2C%20Percent%20Error%20Mean1.pdf)
 
