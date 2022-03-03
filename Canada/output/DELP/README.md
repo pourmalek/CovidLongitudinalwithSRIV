@@ -960,6 +960,7 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (8) Ontario [graph 117 07 C19 daily deaths, Canada, Ontario, DELP, **Error**, mean over updates of median error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2007%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156603064-54206944-424e-4876-9b80-34049cf4cb06.png)
 
 ****  
 
@@ -969,21 +970,25 @@ The graph ‘without extremes’ better depicts the trajectories.
 
 (9) Ontario [graph 117 09 C19 daily deaths, Canada, Ontario, DELP, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2009%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156603284-99bf665e-3f25-4b9d-8a88-a0ef76d7e2ad.png)
 
 **** 
 
-(10) Ontario [graph 117 11 C19 daily deaths, Canada, Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20percent%20Error%20Mean1.pdf)
+(10) Ontario [graph 117 11 C19 daily deaths, Canada, Ontario, DELP, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2011%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20%25%20Error%20Mean1.pdf)
 
-
-****
-
-(11) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20percent%20Error%20Mean1.pdf)
-
+![image](https://user-images.githubusercontent.com/30849720/156603478-ea398181-7ff0-44c2-9b32-c66a7ceb125f.png)
 
 ****
 
-(12) Ontario [graph 117 13b C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(11) Ontario [graph 117 13 C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by epiweeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2013%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156603631-976739ad-163d-4c36-8d6a-a01311622f4c.png)
+
+****
+
+(12) Ontario [graph 117 13b C19 daily deaths, Canada, Ontario, DELP, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20117%2013b%20C19%20daily%20deaths%2C%20Canada%2C%20Ontario%2C%20DELP%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156603797-5953cb50-0494-4a23-96a2-d394c4316572.png)
 
 *
 
