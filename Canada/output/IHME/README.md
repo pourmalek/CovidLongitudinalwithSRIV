@@ -273,15 +273,17 @@ _Time intervals: (c) both epidemiological weeks and calendar months shown togeth
 
 ****
 
-(11) Canada provinces together [graph 13 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals]()
+(11) Canada provinces together [graph 13 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2013%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156834263-baa55629-e3b5-44c9-b948-55ba4ca341d9.png)
 
 ****
 
-(12) Canada provinces together [graph 13 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals, without extremes ]()
+(12) Canada provinces together [graph 13 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals, without extremes CAN](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2013%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
 
 The graph ‘without extremes’ better depicts other values. 
 
+![image](https://user-images.githubusercontent.com/30849720/156834368-ca539205-2aaa-4469-a4d4-6b2cd536441d.png)
 
 ****
 
