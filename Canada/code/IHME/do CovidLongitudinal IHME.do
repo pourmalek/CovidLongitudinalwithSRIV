@@ -348,7 +348,12 @@ do "do CovidLongitudinal IHME 14b.do"
 * compile the data created by IHME 6b.do to IHME 13b.do, for 8 locations: National and 7 provinces
 * graphs provinces together
 * input data files: "CovidLongitudinal IHME 3b _LOCATION_.dta", where LOCATION is National and 7 provinces
-* output data files: "CovidLongitudinal IHME 5.dta"
+*                   "CovidLongitudinal IHME 4.dta" // weekly compiled
+* output data files: "CovidLongitudinal IHME 5.dta" // monthly compiled
+*                    "CovidLongitudinal IHME 6.dta" // weekly and monthly compiled
+
+
+
 
 
 

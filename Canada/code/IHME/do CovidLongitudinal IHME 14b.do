@@ -23,9 +23,9 @@ log using "log CovidLongitudinal IHME 1b.smcl", replace
 * graphs provinces together
 
 * input data files: "CovidLongitudinal IHME 3b _LOCATION_.dta", where LOCATION is National and 7 provinces
-* output data files: "CovidLongitudinal IHME 5.dta"
-
-
+*                   "CovidLongitudinal IHME 4.dta" // weekly compiled
+* output data files: "CovidLongitudinal IHME 5.dta" // monthly compiled
+*                    "CovidLongitudinal IHME 6.dta" // weekly and monthly compiled
 
 
 
@@ -224,6 +224,146 @@ legend(region(lcolor(none))) legend(bexpand) ///
 legend(order(1 "AB" 2 "BC" 3 "MB" 4 "NS" 5 "ON" 6 "QC" 7 "SK") rows(2) size(small))
 
 qui graph export "graph 12 2 2 C19 daily deaths, $country, provinces together, IHME, Average MAPE.pdf", replace
+
+
+
+
+*
+
+save "CovidLongitudinal IHME 5", replace
+
+
+
+
+
+
+
+
+**************************************************
+
+* time intervals (weekly and monthly) together
+
+
+
+* add weekly to monthly
+
+
+use "CovidLongitudinal IHME 5", clear // monthly
+
+append using "CovidLongitudinal IHME 4.dta" // weekly
+
+save "CovidLongitudinal IHME 6.dta", replace
+
+
+
+
+capture drop *2r
+
+gen DDAbPeErA02XXX_Mean2r = round(DDAbPeErA02XXX_Mean2,0.1)
+gen DDAbPeErA02XAB_Mean2r = round(DDAbPeErA02XAB_Mean2,0.1)
+gen DDAbPeErA02XBC_Mean2r = round(DDAbPeErA02XBC_Mean2,0.1)
+gen DDAbPeErA02XMB_Mean2r = round(DDAbPeErA02XMB_Mean2,0.1)
+gen DDAbPeErA02XNS_Mean2r = round(DDAbPeErA02XNS_Mean2,0.1)
+gen DDAbPeErA02XON_Mean2r = round(DDAbPeErA02XON_Mean2,0.1)
+gen DDAbPeErA02XQC_Mean2r = round(DDAbPeErA02XQC_Mean2,0.1)
+gen DDAbPeErA02XSK_Mean2r = round(DDAbPeErA02XSK_Mean2,0.1)
+
+
+
+* 13 1 Daily deaths, provinces together, Avergae of MAPE over updates 
+* and epi weeks or calendar months
+
+graph bar ///
+(mean) DDAbPeErA02XXX_Mean2br /// 	1 "CAN" gray monthly
+(mean) DDAbPeErA02XXX_Mean2r ///  	2 "CAN" gray weekly
+(mean) DDAbPeErA02XAB_Mean2br /// 	3 "AB" cyan monthly
+(mean) DDAbPeErA02XAB_Mean2r ///  	4 "AB" cyan weekly
+(mean) DDAbPeErA02XBC_Mean2br /// 	5 "BC" blue monthly
+(mean) DDAbPeErA02XBC_Mean2r ///  	6 "BC" blue weekly
+(mean) DDAbPeErA02XMB_Mean2br /// 	7 "MB" lime monthly
+(mean) DDAbPeErA02XMB_Mean2r ///  	8 "MB" lime weekly
+(mean) DDAbPeErA02XNS_Mean2br ///	9 "NS" magenta monthly
+(mean) DDAbPeErA02XNS_Mean2r /// 	10 "NS" magenta weekly
+(mean) DDAbPeErA02XON_Mean2br ///	11 "ON" red monthly
+(mean) DDAbPeErA02XON_Mean2r /// 	12 "ON" red weekly
+(mean) DDAbPeErA02XQC_Mean2br ///	13 "QC" black monthly
+(mean) DDAbPeErA02XQC_Mean2r /// 	14 "QC" black weekly
+(mean) DDAbPeErA02XSK_Mean2br ///	15 "SK" orange monthly
+(mean) DDAbPeErA02XSK_Mean2r /// 	16 "SK" orange weekly
+, bar(1, fcolor(gray) lcolor(white)) ///			1 "CAN" gray monthly
+bar(2, fcolor(gray*0.3) lcolor(white)) ///  		2 "CAN" gray weekly
+bar(3, fcolor(cyan) lcolor(white)) ///				3 "AB" cyan monthly
+bar(4, fcolor(cyan*0.3) lcolor(white)) ///			4 "AB" cyan weekly
+bar(5, fcolor(blue) lcolor(white)) ///				5 "BC" blue monthly
+bar(6, fcolor(blue*0.5) lcolor(white)) ///			6 "BC" blue weekly
+bar(7, fcolor(lime) lcolor(white)) ///				7 "MB" lime monthly
+bar(8, fcolor(lime*0.3) lcolor(white)) ///			8 "MB" lime weekly
+bar(9, fcolor(magenta) lcolor(white)) ///			9 "NS" magenta monthly
+bar(10, fcolor(magenta*0.3) lcolor(white)) ///		10 "NS" magenta weekly
+bar(11, fcolor(red) lcolor(white)) ///				11 "ON" red monthly
+bar(12, fcolor(red*0.3) lcolor(white)) ///			12 "ON" red weekly
+bar(13, fcolor(black) lcolor(white)) ///			13 "QC" black monthly
+bar(14, fcolor(black*0.3) lcolor(white)) ///		14 "QC" black weekly
+bar(15, fcolor(orange) lcolor(white)) ///			15 "SK" orange monthly
+bar(16, fcolor(orange*0.3) lcolor(white)) ///		16 "SK" orange weekly
+ytitle("Average MAPE") yscale(titlegap(2)) ///
+title("C19 daily deaths average MAPE over updates and time intervals", size(medsmall)) ///
+subtitle("$country, provinces, IHME, Forecast only. MAPE: Median Absolute % Error", size(small)) /// 
+legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "CAN" 3 "AB" 5 "BC" 7 "MB" 9 "NS" 11 "ON" 13 "QC" 15 "SK") rows(2) size(small)) ///
+note("Time intervals: Darker left bars show monthly. Paler right bars show weekly.", size(small))
+
+qui graph export "graph 13 1 C19 daily deaths, $country, provinces together, IHME, Average MAPE.pdf", replace
+
+
+
+
+
+
+
+* 13 2 Daily deaths, provinces together, Avergae of MAPE over updates 
+* and epi weeks or calendar months, without extremes CAN
+
+graph bar ///
+(mean) DDAbPeErA02XAB_Mean2br /// 	1 "AB" cyan monthly
+(mean) DDAbPeErA02XAB_Mean2r ///  	2 "AB" cyan weekly
+(mean) DDAbPeErA02XBC_Mean2br /// 	3 "BC" blue monthly
+(mean) DDAbPeErA02XBC_Mean2r ///  	4 "BC" blue weekly
+(mean) DDAbPeErA02XMB_Mean2br /// 	5 "MB" lime monthly
+(mean) DDAbPeErA02XMB_Mean2r ///  	6 "MB" lime weekly
+(mean) DDAbPeErA02XNS_Mean2br ///	7 "NS" magenta monthly
+(mean) DDAbPeErA02XNS_Mean2r /// 	8 "NS" magenta weekly
+(mean) DDAbPeErA02XON_Mean2br ///	9 "ON" red monthly
+(mean) DDAbPeErA02XON_Mean2r /// 	10 "ON" red weekly
+(mean) DDAbPeErA02XQC_Mean2br ///	11 "QC" black monthly
+(mean) DDAbPeErA02XQC_Mean2r /// 	12 "QC" black weekly
+(mean) DDAbPeErA02XSK_Mean2br ///	13 "SK" orange monthly
+(mean) DDAbPeErA02XSK_Mean2r /// 	14 "SK" orange weekly
+, bar(1, fcolor(cyan) lcolor(white)) ///			1 "AB" cyan monthly
+bar(2, fcolor(cyan*0.3) lcolor(white)) ///			2 "AB" cyan weekly
+bar(3, fcolor(blue) lcolor(white)) ///				3 "BC" blue monthly
+bar(4, fcolor(blue*0.5) lcolor(white)) ///			4 "BC" blue weekly
+bar(5, fcolor(lime) lcolor(white)) ///				5 "MB" lime monthly
+bar(6, fcolor(lime*0.3) lcolor(white)) ///			6 "MB" lime weekly
+bar(7, fcolor(magenta) lcolor(white)) ///			7 "NS" magenta monthly
+bar(8, fcolor(magenta*0.3) lcolor(white)) ///		8 "NS" magenta weekly
+bar(9, fcolor(red) lcolor(white)) ///				9 "ON" red monthly
+bar(10, fcolor(red*0.3) lcolor(white)) ///			10 "ON" red weekly
+bar(11, fcolor(black) lcolor(white)) ///			11 "QC" black monthly
+bar(12, fcolor(black*0.3) lcolor(white)) ///		12 "QC" black weekly
+bar(13, fcolor(orange) lcolor(white)) ///			13 "SK" orange monthly
+bar(14, fcolor(orange*0.3) lcolor(white)) ///		14 "SK" orange weekly
+ytitle("Average MAPE") yscale(titlegap(2)) ///
+title("C19 daily deaths average MAPE over updates and time intervals", size(medsmall)) ///
+subtitle("$country, provinces, IHME, Forecast only. MAPE: Median Absolute % Error" ///
+"without extremes CAN", size(small)) /// 
+legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "AB" 3 "BC" 5 "MB" 7 "NS" 9 "ON" 11 "QC" 13 "SK") rows(2) size(small)) ///
+note("Time intervals: Darker left bars show monthly. Paler right bars show weekly.", size(small))
+
+
+qui graph export "graph 13 2 C19 daily deaths, $country, provinces together, IHME, Average MAPE.pdf", replace
+
 
 
 
