@@ -552,8 +552,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Nova Scotia [graph 2 C19 daily deaths, Canada, Nova Scotia, IHME, All updates together]()
+(2) Nova Scotia [graph 2 C19 daily deaths, Canada, Nova Scotia, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Nova%20Scotia%20C19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156855717-575fc857-c735-4b55-94b1-c9172518319a.png)
 
 ****
 
