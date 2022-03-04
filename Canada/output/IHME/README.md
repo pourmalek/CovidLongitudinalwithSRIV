@@ -386,54 +386,63 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) British Columbia [graph 1 C19 daily deaths, Canada, British Columbia, IHME, All updates, separate]()
+(1) British Columbia [graph 1 C19 daily deaths, Canada, British Columbia, IHME, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20British%20Columbia%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) British Columbia [graph 2 C19 daily deaths, Canada, British Columbia, IHME, All updates together]()
+(2) British Columbia [graph 2 C19 daily deaths, Canada, British Columbia, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20British%20Columbia%20C19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
-
-****
-
-(3) British Columbia [graph 6 C19 daily deaths, Canada, British Columbia, IHME, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156847415-06cb9cb9-eea7-4e20-9794-693ff752019e.png)
 
 ****
 
-(4) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, Absolute Error]()
+(3) British Columbia [graph 6 C19 daily deaths, Canada, British Columbia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
-****
-
-(5) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, Percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156847507-4e04e095-cf75-41a8-b03b-c58fd9e9114c.png)
 
 ****
 
-(6) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error]()
+(4) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20British%20Columbia%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
-****
-
-(7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, **Error**, mean over updates of median Error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/156847598-1b3ba8dd-1ef7-4f51-b8c8-34883a866c1c.png)
 
 ****
 
-(8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
+(5) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Alberta%20C19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
-****
-
-(9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, **Percent Error**, mean over updates of median percent error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/156847744-cc5cc375-eea1-4a84-9e29-b7a00681d120.png)
 
 ****
 
-(10) British Columbia [graph 10 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks]()
+(6) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20British%20Columbia%20C19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156847824-e32ed087-6c3e-49fb-9f58-6caff9f96c8a.png)
+
+****
+
+(7) British Columbia [graph 7 C19 daily deaths, Canada, British Columbia, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156847905-f23f998b-c339-4ca0-9f5d-45444dcd8f54.png)
+
+****
+
+(8) British Columbia [graph 8 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156847978-e5c44de6-a7a1-4cf2-9511-5a8353e6195f.png)
+
+****
+
+(9) British Columbia [graph 9 C19 daily deaths, Canada, British Columbia, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156848063-ba9cb403-75ed-4894-ba4b-bc38a673f7c5.png)
+
+****
+
+(10) British Columbia [graph 10 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156848154-c2ce8c49-4340-4bae-8575-26dff60e1201.png)
 
 ****
 
