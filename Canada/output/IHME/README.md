@@ -227,9 +227,33 @@ _Time intervals: (b) calendar months_
 
 ****
 
+(6) Canada provinces together [graph 120 2 1 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS]()
 
 
-mmm
+****
+
+(7) Canada provinces together [graph 120 2 2 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes NS NL]()
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+
+****
+
+(8) Canada provinces together [graph 120 2 3 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes NS NL NB SK]()
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+
+****
+
+(9) Canada provinces together [graph 130 2 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS]()
+
+
+****
+
+(10) Canada provinces together [graph 130 2 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS, without extremes NL NS]()
+
+The graph ‘without extremes’ better depicts other values. 
 
 
 ****
