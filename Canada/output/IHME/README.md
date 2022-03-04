@@ -185,33 +185,106 @@ Long PDF file, see video [here]().
 
 ### Canada provinces together, Daily Deaths, Error Measures, IHME Model
 
+_Time intervals: (a) epidemiological weeks, (b) calendar months, (c) both shown together_
+
+****
+
+_Time intervals: (a) epidemiological weeks_
+
 ****
 
 (1) Canada provinces together [graph 11 1 1 C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%201%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/156821837-4907d9b9-4d4b-4842-9983-ba44362275bb.png)
+![image](https://user-images.githubusercontent.com/30849720/156826135-53790a43-f5b2-4333-85c3-da7b00733243.png)
 
 ****
 
-(2) Canada provinces together [graph 11 b C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ON]()
+(2) Canada provinces together [graph 11 1 2 C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes CAN ON](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%201%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+![image](https://user-images.githubusercontent.com/30849720/156826388-2e0dfe3a-4f21-43aa-bea8-aa1f024f9e55.png)
+
+****
+
+(3) Canada provinces together [graph 11 1 3 C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ON CAN QC](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%201%203%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+![image](https://user-images.githubusercontent.com/30849720/156826565-3d0c1ed5-2121-4563-9469-7f7921e0f6f9.png)
+
+****
+
+(4) Canada provinces together [graph 12 1 1 C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2012%201%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156826765-6077608e-d2ca-421a-9bf3-d31ba48d5e44.png)
+
+****
+
+(5) Canada provinces together [graph 12 1 2 C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks, without extremes CAN](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2012%201%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
+
+The graph ‘without extremes’ better depicts other values. 
+
+![image](https://user-images.githubusercontent.com/30849720/156826883-3764ed66-84a7-458e-b074-060c4b3081f0.png)
+
+****
+
+_Time intervals: (b) calendar months_
+
+****
+
+(6) Canada provinces together [graph 11 2 1 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%202%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156828077-c15866bf-5ceb-4355-bf97-71620f9bd66e.png)
+
+****
+
+(7) Canada provinces together [graph 120 2 2 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes CAN ON](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%202%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+![image](https://user-images.githubusercontent.com/30849720/156828209-28550089-541f-4d87-9557-c89c29ae672d.png)
+
+****
+
+(8) Canada provinces together [graph 11 2 3 C19 daily deaths, Canada, provinces together, DELP, Mean over updates of: **Median Absolute Percent Error** by CALENDAR MONTHS, without extremes CAN ON QC](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%202%203%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1b.pdf)
+
+The graph ‘without extremes’ better depicts the trajectories. 
+
+![image](https://user-images.githubusercontent.com/30849720/156828401-f114d833-15e9-4855-b1e2-c0cf432de718.png)
+
+****
+
+(9) Canada provinces together [graph 12 2 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2012%202%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156828562-b23357d0-a683-4c00-9d35-f81bc1444a30.png)
+
+****
+
+(10) Canada provinces together [graph 12 2 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and CALENDAR MONTHS, without extremes CAN](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2012%202%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20Average%20MAPE.pdf)
+
+The graph ‘without extremes’ better depicts other values. 
+
+![image](https://user-images.githubusercontent.com/30849720/156828720-8ebaae5b-3d41-45eb-b23c-c0887b4c5249.png)
+
+****
+
+_Time intervals: (c) both epidemiological weeks and calendar months shown together_
+
+****
+
+(11) Canada provinces together [graph 13 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals]()
 
 
 ****
 
-(3) Canada provinces together [graph 11 c C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks, without extremes ON CAN QC]()
+(12) Canada provinces together [graph 13 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals, without extremes ]()
+
+The graph ‘without extremes’ better depicts other values. 
 
 
 ****
 
-(4) Canada provinces together [graph 12 a C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks]()
-
-
-****
-
-(5) Canada provinces together [graph 12 b C19 daily deaths, Canada, provinces together, IHME, Average MAPE over updates and epi weeks, without extremes ]()
-
-
-****
 
 *
 

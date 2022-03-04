@@ -320,7 +320,7 @@ _Time intervals: (c) both epidemiological weeks and calendar months shown togeth
 
 ****
 
-(12) Canada provinces together [graph 140 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals,without extremes NS NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20140%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
+(12) Canada provinces together [graph 140 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals, without extremes NS NL](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/DELP/graphs/graph%20140%202%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20DELP%2C%20Average%20MAPE.pdf)
 
 The graph ‘without extremes’ better depicts other values. 
 
