@@ -185,6 +185,12 @@ Long PDF file, see video [here]().
 
 ### Canada provinces together, Daily Deaths, Error Measures, IHME Model
 
+_Time intervals: (a) epidemiological weeks, (b) calendar months, (c) both shown together_
+
+****
+
+_Time intervals: (a) epidemiological weeks_
+
 ****
 
 (1) Canada provinces together [graph 11 1 1 C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%201%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1.pdf)
@@ -216,6 +222,28 @@ Long PDF file, see video [here]().
 ![image](https://user-images.githubusercontent.com/30849720/156826883-3764ed66-84a7-458e-b074-060c4b3081f0.png)
 
 ****
+
+_Time intervals: (b) calendar months_
+
+****
+
+
+
+mmm
+
+
+****
+
+_Time intervals: (c) both epidemiological weeks and calendar months shown together_
+
+****
+
+
+mmm
+
+
+****
+
 
 *
 
