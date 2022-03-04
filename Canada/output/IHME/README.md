@@ -10,25 +10,25 @@ Reference = JOHN, Model = IHME
 
 #### (1) Error = Reference minus Model 
 
-_(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
+_(Under each location, except provinces together, graph 3 shows the Error by all calendar days and all updates)_
 
 
 
 #### (2) Absolute Error = | Reference minus Model | 
 
-_(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)_
+_(Under each location, except provinces together, graph 4 shows the Absolute Error by all calendar days and all updates)_
 
 
 
 #### (3) Percent Error = 100 * (Reference minus Model) / Reference
 
-_(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)_
+_(Under each location, except provinces together, graph 5 shows the Percent Error by all calendar days and all updates)_
 
 
 
 #### (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
 
-_(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)_
+_(Under each location, except provinces together, graph 6 shows Absolute Percent Error by all calendar days and all updates)_
 
 
 <br/><br/>
@@ -46,7 +46,7 @@ Two time intervals were used separately: epidemiological weeks, and calendar mon
 
 Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
 
-_(Graphs not shown below to save space; links to the graphs are provided.)_
+_(Graphs not shown below to save space.)_
 
 
 
@@ -54,11 +54,11 @@ _(Graphs not shown below to save space; links to the graphs are provided.)_
 
 Summarization level = updates. Transform many updates to one update for each time interval
 
-_(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
+_(Graphs 7 to 11 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
 
-_Graphs 8 to 11 show the four types of error with weekly time intervals._
+_Graphs 7 to 10 show the four types of error with weekly time intervals._
 
-_Graphs 12 show MAPE with monthly time intervals.)_
+_Graphs 11 show MAPE with monthly time intervals.)_
 
 
 
@@ -558,27 +558,33 @@ Long PDF file, see video [here]().
 
 ****
 
-(3) Nova Scotia [graph 3 C19 daily deaths, Canada, Nova Scotia, IHME, Error]()
+(3) Nova Scotia [graph 3 C19 daily deaths, Canada, Nova Scotia, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Nova%20Scotia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156856677-bede3cf2-29ca-4ff7-ad2a-1dcd22b4d74a.png)
 
 ****
 
-(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error]()
+(4) Nova Scotia [graph 4 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Nova%20Scotia%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
-****
-
-(5) Nova Scotia [graph 5 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156856747-76f7ef37-4276-49da-b35e-a5de5442c924.png)
 
 ****
 
-(6) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error]()
+(5) Nova Scotia [graph 5 C19 daily deaths, Canada, Nova Scotia, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Nova%20Scotia%20C19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156856809-cfa82a51-32a9-496b-97bf-c5ef882d3092.png)
+
+****
+
+(6) Nova Scotia [graph 6 C19 daily deaths, Canada, Nova Scotia, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Nova%20Scotia%20C19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156856848-8220261b-3f61-49ab-a1ca-99951fccde3a.png)
 
 ****
 
 (7) Nova Scotia [graph 7 C19 daily deaths, Canada, Nova Scotia, IHME, **Error**, mean over updates of median Error by epi weeks]()
 
+![image](https://user-images.githubusercontent.com/30849720/156856888-7ee6151e-5106-4285-a286-66a17fc816e3.png)
 
 ****
 
