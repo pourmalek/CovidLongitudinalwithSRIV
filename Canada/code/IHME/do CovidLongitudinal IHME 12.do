@@ -7,7 +7,7 @@ cd IHME
 
 capture log close 
 
-log using "log CovidVisualizedCountry IHME 12.smcl", replace
+log using "log CovidLongitudinal IHME 12.smcl", replace
 
 ***************************************************************************
 * This is "do CovidLongitudinal IHME 12.do"
@@ -16,25 +16,26 @@ log using "log CovidVisualizedCountry IHME 12.smcl", replace
 * Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
 ***************************************************************************
 
-
+* weeks time bin
+* location = Quebec // XQC
 * continue graphs
 * 7 Daily deaths, location, mean over updates of median error by epi weeks
 * 8 Daily deaths, location, mean over updates of median absolute error by epi weeks
-* 9 Daily deaths, location, mean over updates of median percent error by epi weeks
-* 10 Daily deaths, location, mean over updates of median absolute percent error by epi weeks
+* 9 Daily deaths, location, mean over updates of median % error by epi weeks
+* 10 Daily deaths, location, mean over updates of median absolute % error by epi weeks
+* input data files: "CovidLongitudinal IHME 3.dta"
+* output data files: "CovidLongitudinal IHME 3 Ontario.dta",
+*                    "CovidLongitudinal IHME 3 Ontario Mean1 Mean2.dta"
 
-* location = Saskatchewan // XSK
 
 
-use "CovidVisualizedCountry IHME DayDea 2.dta", clear
+use "CovidLongitudinal IHME 3", clear
 
-save "CovidVisualizedCountry IHME DayDea 2 Saskatchewan.dta", replace
+save "CovidLongitudinal IHME 3 Quebec.dta", replace
 
-keep if provincestate == "Saskatchewan"
+keep if provincestate == "Quebec" 
 
-drop *XXX *XAB *XBC *XMB *XNL *XNT *XNS *XNU *XON *XPE  *XQC // extra for this do file
-* XXX XAB  XBC  XMB  XNB  XNL  XNT  XNS  XNU  XSK  XPE  XQC  XSK // all
-* XXX XAB  XBC  XMB  XNS  XSK  XSK  XSK // IHME
+drop *XAB *XBC *XMB *XXX *XNS *XON      *XSK 
 
 qui compress
 
@@ -158,21 +159,21 @@ sort provincestate date
 
 foreach update of local list {
 
-qui {
+	* Running not quietly displays that the Stata is working and has not frozen. 
 		
-bysort epi_yrwk : egen DDErrorA02XSK`update'_Med1 = median(DDErrorA02XSK`update')
-label var DDErrorA02XSK`update'_Med1 "DayDeaMeSmA02S01XSK`update' median error by epi weeks and updates"
+bysort epi_yrwk : egen DDErrorA02XQC`update'_Med1 = median(DDErrorA02XQC`update')
+label var DDErrorA02XQC`update'_Med1 "DayDeaMeSmA02S01XQC`update' median error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDAbsErrA02XSK`update'_Med1 = median(DDAbsErrA02XSK`update')
-label var DDAbsErrA02XSK`update'_Med1 "DayDeaMeSmA02S01XSK`update' median absolute error by epi weeks and updates"
+bysort epi_yrwk : egen DDAbsErrA02XQC`update'_Med1 = median(DDAbsErrA02XQC`update')
+label var DDAbsErrA02XQC`update'_Med1 "DayDeaMeSmA02S01XQC`update' median absolute error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDPerErrA02XSK`update'_Med1 = median(DDPerErrA02XSK`update')
-label var DDPerErrA02XSK`update'_Med1 "DayDeaMeSmA02S01XSK`update' median percent error by epi weeks and updates"
+bysort epi_yrwk : egen DDPerErrA02XQC`update'_Med1 = median(DDPerErrA02XQC`update')
+label var DDPerErrA02XQC`update'_Med1 "DayDeaMeSmA02S01XQC`update' median % error by epi weeks and updates"
 
-bysort epi_yrwk : egen DDAbPeErA02XSK`update'_Med1 = median(DDAbPeErA02XSK`update')
-label var DDAbPeErA02XSK`update'_Med1 "DayDeaMeSmA02S01XSK`update' median absolute percent error by epi weeks and updates" 
+bysort epi_yrwk : egen DDAbPeErA02XQC`update'_Med1 = median(DDAbPeErA02XQC`update')
+label var DDAbPeErA02XQC`update'_Med1 "DayDeaMeSmA02S01XQC`update' median absolute % error by epi weeks and updates" 
 
-	}
+	
 }
 *
 
@@ -181,19 +182,360 @@ label var DDAbPeErA02XSK`update'_Med1 "DayDeaMeSmA02S01XSK`update' median absolu
  
 * (3) gen AVERAGE over updates of MEDIAN of error types by epi weeks = _Mean1
 
-order *, alphabetic
+
+
+
+order DDErrorA02XQC20211221_Med1
+order DDErrorA02XQC20211104_Med1
+order DDErrorA02XQC20211021_Med1
+order DDErrorA02XQC20211015_Med1
+order DDErrorA02XQC20210930_Med1
+order DDErrorA02XQC20210923_Med1
+order DDErrorA02XQC20210916_Med1
+order DDErrorA02XQC20210910_Med1
+order DDErrorA02XQC20210902_Med1
+order DDErrorA02XQC20210826_Med1
+order DDErrorA02XQC20210820_Med1
+order DDErrorA02XQC20210806_Med1
+order DDErrorA02XQC20210730_Med1
+order DDErrorA02XQC20210723_Med1
+order DDErrorA02XQC20210715_Med1
+order DDErrorA02XQC20210702_Med1
+order DDErrorA02XQC20210625_Med1
+order DDErrorA02XQC20210618_Med1
+order DDErrorA02XQC20210610_Med1
+order DDErrorA02XQC20210604_Med1
+order DDErrorA02XQC20210528_Med1
+order DDErrorA02XQC20210521_Med1
+order DDErrorA02XQC20210514_Med1
+order DDErrorA02XQC20210506_Med1
+order DDErrorA02XQC20210423_Med1
+order DDErrorA02XQC20210416_Med1
+order DDErrorA02XQC20210409_Med1
+order DDErrorA02XQC20210401_Med1
+order DDErrorA02XQC20210325_Med1
+order DDErrorA02XQC20210317_Med1
+order DDErrorA02XQC20210311_Med1
+order DDErrorA02XQC20210306_Med1
+order DDErrorA02XQC20210225_Med1
+order DDErrorA02XQC20210220_Med1
+order DDErrorA02XQC20210212_Med1
+order DDErrorA02XQC20210204_Med1
+order DDErrorA02XQC20210128_Med1
+order DDErrorA02XQC20210122_Med1
+order DDErrorA02XQC20210115_Med1
+order DDErrorA02XQC20201223_Med1
+order DDErrorA02XQC20201217_Med1
+order DDErrorA02XQC20201210_Med1
+order DDErrorA02XQC20201203_Med1
+order DDErrorA02XQC20201119_Med1
+order DDErrorA02XQC20201112_Med1
+order DDErrorA02XQC20201029_Med1
+order DDErrorA02XQC20201022_Med1
+order DDErrorA02XQC20201015_Med1
+order DDErrorA02XQC20201009_Med1
+order DDErrorA02XQC20201002_Med1
+order DDErrorA02XQC20200924_Med1
+order DDErrorA02XQC20200918_Med1
+order DDErrorA02XQC20200911_Med1
+order DDErrorA02XQC20200903_Med1
+order DDErrorA02XQC20200827_Med1
+order DDErrorA02XQC20200821_Med1
+order DDErrorA02XQC20200806_Med1
+order DDErrorA02XQC20200730_Med1
+order DDErrorA02XQC20200722_Med1
+order DDErrorA02XQC20200714_Med1
+order DDErrorA02XQC20200707_Med1
+order DDErrorA02XQC20200629_Med1
+order DDErrorA02XQC20200625_Med1
+order DDErrorA02XQC20200615_Med1
+order DDErrorA02XQC20200610_Med1
+order DDErrorA02XQC20200608_Med1
+order DDErrorA02XQC20200605_Med1
+order DDErrorA02XQC20200529_Med1
+order DDErrorA02XQC20200526_Med1
+order DDErrorA02XQC20200525_Med1
+order DDErrorA02XQC20200520_Med1
+order DDErrorA02XQC20200512_Med1
+order DDErrorA02XQC20200510_Med1
+order DDErrorA02XQC20200504_Med1
+order DDErrorA02XQC20200429_Med1
+order DDErrorA02XQC20200428_Med1
+order DDErrorA02XQC20200427_Med1
+order DDErrorA02XQC20200422_Med1
+
 		
-egen DDErrorA02XSK_Mean1 = rowmean(DDErrorA02XSK20200422_Med1-DDErrorA02XSK20211221_Med1) 
-label var DDErrorA02XSK_Mean1 "DayDeaMeSmA02S01XSK mean over updates of median error by epi weeks"
+egen DDErrorA02XQC_Mean1 = rowmean(DDErrorA02XQC20200422_Med1-DDErrorA02XQC20211221_Med1) 
+label var DDErrorA02XQC_Mean1 "DayDeaMeSmA02S01XQC mean over updates of median error by epi weeks"
 
-egen DDAbsErrA02XSK_Mean1 = rowmean(DDAbsErrA02XSK20200422_Med1-DDAbsErrA02XSK20211221_Med1) 
-label var DDAbsErrA02XSK_Mean1 "DayDeaMeSmA02S01XSK mean over updates of median absolute error by epi weeks"
 
-egen DDPerErrA02XSK_Mean1 = rowmean(DDPerErrA02XSK20200422_Med1-DDPerErrA02XSK20211221_Med1) 
-label var DDPerErrA02XSK_Mean1 "DayDeaMeSmA02S01XSK mean over updates of median percent error by epi weeks"
 
-egen DDAbPeErA02XSK_Mean1 = rowmean(DDAbPeErA02XSK20200422_Med1-DDAbPeErA02XSK20211221_Med1) 
-label var DDAbPeErA02XSK_Mean1 "DayDeaMeSmA02S01XSK mean over updates of median absolute percent error by epi weeks"
+
+
+
+
+order DDAbsErrA02XQC20211221_Med1
+order DDAbsErrA02XQC20211104_Med1
+order DDAbsErrA02XQC20211021_Med1
+order DDAbsErrA02XQC20211015_Med1
+order DDAbsErrA02XQC20210930_Med1
+order DDAbsErrA02XQC20210923_Med1
+order DDAbsErrA02XQC20210916_Med1
+order DDAbsErrA02XQC20210910_Med1
+order DDAbsErrA02XQC20210902_Med1
+order DDAbsErrA02XQC20210826_Med1
+order DDAbsErrA02XQC20210820_Med1
+order DDAbsErrA02XQC20210806_Med1
+order DDAbsErrA02XQC20210730_Med1
+order DDAbsErrA02XQC20210723_Med1
+order DDAbsErrA02XQC20210715_Med1
+order DDAbsErrA02XQC20210702_Med1
+order DDAbsErrA02XQC20210625_Med1
+order DDAbsErrA02XQC20210618_Med1
+order DDAbsErrA02XQC20210610_Med1
+order DDAbsErrA02XQC20210604_Med1
+order DDAbsErrA02XQC20210528_Med1
+order DDAbsErrA02XQC20210521_Med1
+order DDAbsErrA02XQC20210514_Med1
+order DDAbsErrA02XQC20210506_Med1
+order DDAbsErrA02XQC20210423_Med1
+order DDAbsErrA02XQC20210416_Med1
+order DDAbsErrA02XQC20210409_Med1
+order DDAbsErrA02XQC20210401_Med1
+order DDAbsErrA02XQC20210325_Med1
+order DDAbsErrA02XQC20210317_Med1
+order DDAbsErrA02XQC20210311_Med1
+order DDAbsErrA02XQC20210306_Med1
+order DDAbsErrA02XQC20210225_Med1
+order DDAbsErrA02XQC20210220_Med1
+order DDAbsErrA02XQC20210212_Med1
+order DDAbsErrA02XQC20210204_Med1
+order DDAbsErrA02XQC20210128_Med1
+order DDAbsErrA02XQC20210122_Med1
+order DDAbsErrA02XQC20210115_Med1
+order DDAbsErrA02XQC20201223_Med1
+order DDAbsErrA02XQC20201217_Med1
+order DDAbsErrA02XQC20201210_Med1
+order DDAbsErrA02XQC20201203_Med1
+order DDAbsErrA02XQC20201119_Med1
+order DDAbsErrA02XQC20201112_Med1
+order DDAbsErrA02XQC20201029_Med1
+order DDAbsErrA02XQC20201022_Med1
+order DDAbsErrA02XQC20201015_Med1
+order DDAbsErrA02XQC20201009_Med1
+order DDAbsErrA02XQC20201002_Med1
+order DDAbsErrA02XQC20200924_Med1
+order DDAbsErrA02XQC20200918_Med1
+order DDAbsErrA02XQC20200911_Med1
+order DDAbsErrA02XQC20200903_Med1
+order DDAbsErrA02XQC20200827_Med1
+order DDAbsErrA02XQC20200821_Med1
+order DDAbsErrA02XQC20200806_Med1
+order DDAbsErrA02XQC20200730_Med1
+order DDAbsErrA02XQC20200722_Med1
+order DDAbsErrA02XQC20200714_Med1
+order DDAbsErrA02XQC20200707_Med1
+order DDAbsErrA02XQC20200629_Med1
+order DDAbsErrA02XQC20200625_Med1
+order DDAbsErrA02XQC20200615_Med1
+order DDAbsErrA02XQC20200610_Med1
+order DDAbsErrA02XQC20200608_Med1
+order DDAbsErrA02XQC20200605_Med1
+order DDAbsErrA02XQC20200529_Med1
+order DDAbsErrA02XQC20200526_Med1
+order DDAbsErrA02XQC20200525_Med1
+order DDAbsErrA02XQC20200520_Med1
+order DDAbsErrA02XQC20200512_Med1
+order DDAbsErrA02XQC20200510_Med1
+order DDAbsErrA02XQC20200504_Med1
+order DDAbsErrA02XQC20200429_Med1
+order DDAbsErrA02XQC20200428_Med1
+order DDAbsErrA02XQC20200427_Med1
+order DDAbsErrA02XQC20200422_Med1
+
+
+
+egen DDAbsErrA02XQC_Mean1 = rowmean(DDAbsErrA02XQC20200422_Med1-DDAbsErrA02XQC20211221_Med1) 
+label var DDAbsErrA02XQC_Mean1 "DayDeaMeSmA02S01XQC mean over updates of median absolute error by epi weeks"
+
+
+
+
+
+
+
+
+
+
+order DDPerErrA02XQC20211221_Med1
+order DDPerErrA02XQC20211104_Med1
+order DDPerErrA02XQC20211021_Med1
+order DDPerErrA02XQC20211015_Med1
+order DDPerErrA02XQC20210930_Med1
+order DDPerErrA02XQC20210923_Med1
+order DDPerErrA02XQC20210916_Med1
+order DDPerErrA02XQC20210910_Med1
+order DDPerErrA02XQC20210902_Med1
+order DDPerErrA02XQC20210826_Med1
+order DDPerErrA02XQC20210820_Med1
+order DDPerErrA02XQC20210806_Med1
+order DDPerErrA02XQC20210730_Med1
+order DDPerErrA02XQC20210723_Med1
+order DDPerErrA02XQC20210715_Med1
+order DDPerErrA02XQC20210702_Med1
+order DDPerErrA02XQC20210625_Med1
+order DDPerErrA02XQC20210618_Med1
+order DDPerErrA02XQC20210610_Med1
+order DDPerErrA02XQC20210604_Med1
+order DDPerErrA02XQC20210528_Med1
+order DDPerErrA02XQC20210521_Med1
+order DDPerErrA02XQC20210514_Med1
+order DDPerErrA02XQC20210506_Med1
+order DDPerErrA02XQC20210423_Med1
+order DDPerErrA02XQC20210416_Med1
+order DDPerErrA02XQC20210409_Med1
+order DDPerErrA02XQC20210401_Med1
+order DDPerErrA02XQC20210325_Med1
+order DDPerErrA02XQC20210317_Med1
+order DDPerErrA02XQC20210311_Med1
+order DDPerErrA02XQC20210306_Med1
+order DDPerErrA02XQC20210225_Med1
+order DDPerErrA02XQC20210220_Med1
+order DDPerErrA02XQC20210212_Med1
+order DDPerErrA02XQC20210204_Med1
+order DDPerErrA02XQC20210128_Med1
+order DDPerErrA02XQC20210122_Med1
+order DDPerErrA02XQC20210115_Med1
+order DDPerErrA02XQC20201223_Med1
+order DDPerErrA02XQC20201217_Med1
+order DDPerErrA02XQC20201210_Med1
+order DDPerErrA02XQC20201203_Med1
+order DDPerErrA02XQC20201119_Med1
+order DDPerErrA02XQC20201112_Med1
+order DDPerErrA02XQC20201029_Med1
+order DDPerErrA02XQC20201022_Med1
+order DDPerErrA02XQC20201015_Med1
+order DDPerErrA02XQC20201009_Med1
+order DDPerErrA02XQC20201002_Med1
+order DDPerErrA02XQC20200924_Med1
+order DDPerErrA02XQC20200918_Med1
+order DDPerErrA02XQC20200911_Med1
+order DDPerErrA02XQC20200903_Med1
+order DDPerErrA02XQC20200827_Med1
+order DDPerErrA02XQC20200821_Med1
+order DDPerErrA02XQC20200806_Med1
+order DDPerErrA02XQC20200730_Med1
+order DDPerErrA02XQC20200722_Med1
+order DDPerErrA02XQC20200714_Med1
+order DDPerErrA02XQC20200707_Med1
+order DDPerErrA02XQC20200629_Med1
+order DDPerErrA02XQC20200625_Med1
+order DDPerErrA02XQC20200615_Med1
+order DDPerErrA02XQC20200610_Med1
+order DDPerErrA02XQC20200608_Med1
+order DDPerErrA02XQC20200605_Med1
+order DDPerErrA02XQC20200529_Med1
+order DDPerErrA02XQC20200526_Med1
+order DDPerErrA02XQC20200525_Med1
+order DDPerErrA02XQC20200520_Med1
+order DDPerErrA02XQC20200512_Med1
+order DDPerErrA02XQC20200510_Med1
+order DDPerErrA02XQC20200504_Med1
+order DDPerErrA02XQC20200429_Med1
+order DDPerErrA02XQC20200428_Med1
+order DDPerErrA02XQC20200427_Med1
+order DDPerErrA02XQC20200422_Med1
+
+
+egen DDPerErrA02XQC_Mean1 = rowmean(DDPerErrA02XQC20200422_Med1-DDPerErrA02XQC20211221_Med1) 
+label var DDPerErrA02XQC_Mean1 "DayDeaMeSmA02S01XQC mean over updates of median % error by epi weeks"
+
+
+
+
+
+
+order DDAbPeErA02XQC20211221_Med1
+order DDAbPeErA02XQC20211104_Med1
+order DDAbPeErA02XQC20211021_Med1
+order DDAbPeErA02XQC20211015_Med1
+order DDAbPeErA02XQC20210930_Med1
+order DDAbPeErA02XQC20210923_Med1
+order DDAbPeErA02XQC20210916_Med1
+order DDAbPeErA02XQC20210910_Med1
+order DDAbPeErA02XQC20210902_Med1
+order DDAbPeErA02XQC20210826_Med1
+order DDAbPeErA02XQC20210820_Med1
+order DDAbPeErA02XQC20210806_Med1
+order DDAbPeErA02XQC20210730_Med1
+order DDAbPeErA02XQC20210723_Med1
+order DDAbPeErA02XQC20210715_Med1
+order DDAbPeErA02XQC20210702_Med1
+order DDAbPeErA02XQC20210625_Med1
+order DDAbPeErA02XQC20210618_Med1
+order DDAbPeErA02XQC20210610_Med1
+order DDAbPeErA02XQC20210604_Med1
+order DDAbPeErA02XQC20210528_Med1
+order DDAbPeErA02XQC20210521_Med1
+order DDAbPeErA02XQC20210514_Med1
+order DDAbPeErA02XQC20210506_Med1
+order DDAbPeErA02XQC20210423_Med1
+order DDAbPeErA02XQC20210416_Med1
+order DDAbPeErA02XQC20210409_Med1
+order DDAbPeErA02XQC20210401_Med1
+order DDAbPeErA02XQC20210325_Med1
+order DDAbPeErA02XQC20210317_Med1
+order DDAbPeErA02XQC20210311_Med1
+order DDAbPeErA02XQC20210306_Med1
+order DDAbPeErA02XQC20210225_Med1
+order DDAbPeErA02XQC20210220_Med1
+order DDAbPeErA02XQC20210212_Med1
+order DDAbPeErA02XQC20210204_Med1
+order DDAbPeErA02XQC20210128_Med1
+order DDAbPeErA02XQC20210122_Med1
+order DDAbPeErA02XQC20210115_Med1
+order DDAbPeErA02XQC20201223_Med1
+order DDAbPeErA02XQC20201217_Med1
+order DDAbPeErA02XQC20201210_Med1
+order DDAbPeErA02XQC20201203_Med1
+order DDAbPeErA02XQC20201119_Med1
+order DDAbPeErA02XQC20201112_Med1
+order DDAbPeErA02XQC20201029_Med1
+order DDAbPeErA02XQC20201022_Med1
+order DDAbPeErA02XQC20201015_Med1
+order DDAbPeErA02XQC20201009_Med1
+order DDAbPeErA02XQC20201002_Med1
+order DDAbPeErA02XQC20200924_Med1
+order DDAbPeErA02XQC20200918_Med1
+order DDAbPeErA02XQC20200911_Med1
+order DDAbPeErA02XQC20200903_Med1
+order DDAbPeErA02XQC20200827_Med1
+order DDAbPeErA02XQC20200821_Med1
+order DDAbPeErA02XQC20200806_Med1
+order DDAbPeErA02XQC20200730_Med1
+order DDAbPeErA02XQC20200722_Med1
+order DDAbPeErA02XQC20200714_Med1
+order DDAbPeErA02XQC20200707_Med1
+order DDAbPeErA02XQC20200629_Med1
+order DDAbPeErA02XQC20200625_Med1
+order DDAbPeErA02XQC20200615_Med1
+order DDAbPeErA02XQC20200610_Med1
+order DDAbPeErA02XQC20200608_Med1
+order DDAbPeErA02XQC20200605_Med1
+order DDAbPeErA02XQC20200529_Med1
+order DDAbPeErA02XQC20200526_Med1
+order DDAbPeErA02XQC20200525_Med1
+order DDAbPeErA02XQC20200520_Med1
+order DDAbPeErA02XQC20200512_Med1
+order DDAbPeErA02XQC20200510_Med1
+order DDAbPeErA02XQC20200504_Med1
+order DDAbPeErA02XQC20200429_Med1
+order DDAbPeErA02XQC20200428_Med1
+order DDAbPeErA02XQC20200427_Med1
+order DDAbPeErA02XQC20200422_Med1
+
+egen DDAbPeErA02XQC_Mean1 = rowmean(DDAbPeErA02XQC20200422_Med1-DDAbPeErA02XQC20211221_Med1) 
+label var DDAbPeErA02XQC_Mean1 "DayDeaMeSmA02S01XQC mean over updates of median absolute % error by epi weeks"
 
 
 * 
@@ -204,17 +546,17 @@ label var DDAbPeErA02XSK_Mean1 "DayDeaMeSmA02S01XSK mean over updates of median 
 * (4) gen AVERAGE over epi weeks of _Mean1  = _Mean2
  
 		
-egen DDErrorA02XSK_Mean2 = mean(DDErrorA02XSK_Mean1) // get mean for all epi weeks of _Mean1
-label var DDErrorA02XSK_Mean2 "DayDeaMeSmA02S01XSK Mean over epi weeks of median error over updates"
+egen DDErrorA02XQC_Mean2 = mean(DDErrorA02XQC_Mean1) // get mean for all epi weeks of _Mean1
+label var DDErrorA02XQC_Mean2 "DayDeaMeSmA02S01XQC Mean over epi weeks of median error over updates"
 
-egen DDAbsErrA02XSK_Mean2 = mean(DDAbsErrA02XSK_Mean1) // get mean for all epi weeks of _Mean1
-label var DDAbsErrA02XSK_Mean2 "DayDeaMeSmA02S01XSK Mean over epi weeks of median absolute error over updates"
+egen DDAbsErrA02XQC_Mean2 = mean(DDAbsErrA02XQC_Mean1) // get mean for all epi weeks of _Mean1
+label var DDAbsErrA02XQC_Mean2 "DayDeaMeSmA02S01XQC Mean over epi weeks of median absolute error over updates"
 
-egen DDPerErrA02XSK_Mean2 = mean(DDPerErrA02XSK_Mean1) // get mean for all epi weeks of _Mean1
-label var DDPerErrA02XSK_Mean2 "DayDeaMeSmA02S01XSK Mean over epi weeks of median Pecent error over updates"
+egen DDPerErrA02XQC_Mean2 = mean(DDPerErrA02XQC_Mean1) // get mean for all epi weeks of _Mean1
+label var DDPerErrA02XQC_Mean2 "DayDeaMeSmA02S01XQC Mean over epi weeks of median Pecent error over updates"
 
-egen DDAbPeErA02XSK_Mean2 = mean(DDAbPeErA02XSK_Mean1) // get mean for all epi weeks of _Mean1
-label var DDAbPeErA02XSK_Mean2 "DayDeaMeSmA02S01XSK Mean over epi weeks of median absolute percent error over updates"
+egen DDAbPeErA02XQC_Mean2 = mean(DDAbPeErA02XQC_Mean1) // get mean for all epi weeks of _Mean1
+label var DDAbPeErA02XQC_Mean2 "DayDeaMeSmA02S01XQC Mean over epi weeks of median absolute % error over updates"
 
 
 *
@@ -224,7 +566,7 @@ label var DDAbPeErA02XSK_Mean2 "DayDeaMeSmA02S01XSK Mean over epi weeks of media
 
 qui compress
 
-save "CovidVisualizedCountry IHME DayDea 3 Saskatchewan.dta", replace
+save "CovidLongitudinal IHME 3 Quebec.dta", replace
 
 
 
@@ -244,18 +586,18 @@ grstyle color background white
 
 
 ***************************************************************
-* 7 Daily deaths, Saskatchewan, mean over updates of median error by epi weeks
+* 7 Daily deaths, Quebec, mean over updates of median error by epi weeks
 
 twoway ///
-(line DDErrorA02XSK_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDErrorA02XQC_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median error by epi weeks", size(medium)) /// 
+ytitle(Daily deaths error measure) title("C19 daily deaths, mean over updates of median error by epiweeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Quebec, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 7 Saskatchewan C-19 daily deaths error, $country, IHME, Error Mean1.pdf", replace
+qui graph export "graph 7 Quebec C19 daily deaths error, $country, IHME, Error Mean1.pdf", replace
 
 
 
@@ -264,18 +606,18 @@ qui graph export "graph 7 Saskatchewan C-19 daily deaths error, $country, IHME, 
 
 
 ***************************************************************
-* 8 Daily deaths, Saskatchewan, mean over updates of median absolute error by epi weeks
+* 8 Daily deaths, Quebec, mean over updates of median absolute error by epi weeks
 
 twoway ///
-(line DDAbsErrA02XSK_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDAbsErrA02XQC_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median absolute error by epi weeks", size(medium)) /// 
+ytitle(Daily deaths error measure) title("C19 daily deaths, mean over updates of median absolute error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Quebec, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 8 Saskatchewan C-19 daily deaths error, $country, IHME, Absolute Error Mean1.pdf", replace
+qui graph export "graph 8 Quebec C19 daily deaths error, $country, IHME, Absolute Error Mean1.pdf", replace
 
 
 
@@ -283,46 +625,46 @@ qui graph export "graph 8 Saskatchewan C-19 daily deaths error, $country, IHME, 
 
 
 ***************************************************************
-* 9 Daily deaths, Saskatchewan, mean over updates of median percent error by epi weeks
+* 9 Daily deaths, Quebec, mean over updates of median % error by epi weeks
 
 twoway ///
-(line DDPerErrA02XSK_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDPerErrA02XQC_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median percent error by epi weeks", size(medium)) /// 
+ytitle(Daily deaths error measure) title("C19 daily deaths, mean over updates of median % error by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Quebec, IHME", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 9 Saskatchewan C-19 daily deaths error, $country, IHME, Percent Error Mean1.pdf", replace
+qui graph export "graph 9 Quebec C19 daily deaths error, $country, IHME, Percent Error Mean1.pdf", replace
 
 
 
 
 
 ***************************************************************
-* 10 Daily deaths, Saskatchewan, mean over updates of median absolute percent error by epi weeks
+* 10 Daily deaths, Quebec, mean over updates of median absolute % error by epi weeks
 
 twoway ///
-(line DDAbPeErA02XSK_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
+(line DDAbPeErA02XQC_Mean1 date, sort lcolor(black) lwidth(medium)) /// 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, format(%15.0fc) labsize(small))  ylabel(, labsize(small) angle(horizontal)) ///
-ytitle(Daily deaths error measure) title("C-19 daily deaths, mean over updates of median absolute percent error by epi weeks", size(medium)) /// 
+ytitle(Daily deaths error measure) title("C19 daily deaths, mean over updates of MAPE by epi weeks", size(medium)) /// 
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) ///
-subtitle("$country, Saskatchewan, IHME", size(small)) yscale(titlegap(4)) 
+subtitle("$country, Quebec, IHME; MAPE: Median Absolute Percent Error", size(small)) yscale(titlegap(4)) 
 
-qui graph export "graph 10 Saskatchewan C-19 daily deaths error, $country, IHME, Absolute Percent Error Mean1.pdf", replace
-
-
+qui graph export "graph 10 Quebec C19 daily deaths error, $country, IHME, Absolute Percent Error Mean1.pdf", replace
 
 
 
 
 
-keep loc_grand_name provincestate date DDAbPeErA02XSK_Mean1 DDAbPeErA02XSK_Mean2
 
-save "CovidVisualizedCountry IHME DayDea 3 Saskatchewan.dta", replace
+
+keep loc_grand_name provincestate date DDAbPeErA02XQC_Mean1 DDAbPeErA02XQC_Mean2
+
+save "CovidLongitudinal IHME 3 Quebec Mean1 Mean2.dta", replace
 
 
 
@@ -332,7 +674,7 @@ save "CovidVisualizedCountry IHME DayDea 3 Saskatchewan.dta", replace
 
 **********************
 
-view "log CovidVisualizedCountry IHME 12.smcl"
+view "log CovidLongitudinal IHME 12.smcl"
 
 log close
 

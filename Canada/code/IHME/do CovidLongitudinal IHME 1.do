@@ -7,7 +7,7 @@ cd IHME
 
 capture log close 
 
-log using "log CovidVisualizedCountry IHME 1.smcl", replace
+log using "log CovidLongitudinal IHME 1.smcl", replace
 
 ***************************************************************************
 * This is "do CovidLongitudinal IHME 1.do"
@@ -18,18 +18,20 @@ log using "log CovidVisualizedCountry IHME 1.smcl", replace
 
 
 * download and prepare estimates files
-
-
+* input data files: download csv files
+* output data files: "IHME202?????.dta " (78 files)
+* "graph epoch update 202?????.pdf"
 
 * based on combinations of linkdate, download, and urldate
 * e.g., 				   04-Nov-21 ihme-covid19  2021-11-04	https://ihmecovid19storage.blob.core.windows.net/archive/2021-11-04/ihme-covid19.zip	data_download_file_reference_2020
 
-* Deatails: "do CovidVisualizedCountry IHME updates Canada.do"
-*           "IHME updates.xlsx"
+* Details: "do CovidLongitudinal IHME updates Canada.do"
 
 
 
+grstyle init
 
+grstyle color background white
 
 
 
@@ -46,6 +48,7 @@ log using "log CovidVisualizedCountry IHME 1.smcl", replace
 
 clear 
 				
+		
 
 di in red "This is urldate 2020_04_21, update 20200422" 
 
@@ -83,29 +86,28 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(22Apr2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200422", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 22Apr2020")
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200422.pdf", replace
 
 
 * There are no Daily deaths smoothed in data files, up to update 20200615
@@ -138,80 +140,17 @@ gen loc_grand_name = "$country"
 replace provincestate = " National" if provincestate == "$country"
 
 
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
 *
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch epoch
 
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
+sort loc_grand_name provincestate date 
 
 
-rename (*) (*20200422)
-
-rename (date20200422 loc_grand_name20200422) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200422 DayINFMeRaA02S0120200422 TotDeaMeSmA02S0120200422 DayDeaMeSmA02S0120200422
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
-
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200422 epoch20200422)
 
 qui compress
 
@@ -284,29 +223,27 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(27Apr2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200427", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 27Apr2020")
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200427.pdf", replace
 
 
 * gen Daily Deaths smoothed
@@ -343,78 +280,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-* gen vars by provincestate 
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
-
-*
-
-
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200427 epoch20200427)
+ 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200427)
-
-rename (date20200427 loc_grand_name20200427) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200427 DayINFMeRaA02S0120200427 TotDeaMeSmA02S0120200427 DayDeaMeSmA02S0120200427
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -490,29 +366,28 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
+ 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(28Apr2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200428", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 28Apr2020")
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200428.pdf", replace
 
 
 * gen Daily Deaths smoothed
@@ -537,10 +412,6 @@ tsset, clear
 
 
 
-
-
-
-
 rename location_name provincestate
 
 gen loc_grand_name = "$country"
@@ -550,77 +421,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200428 epoch20200428)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200428)
-
-rename (date20200428 loc_grand_name20200428) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -696,29 +508,34 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(29Apr2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200429", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 29Apr2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200429.pdf", replace
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+
+
 
 
 * gen Daily Deaths smoothed
@@ -756,77 +573,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
+sort loc_grand_name provincestate date
 
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200429)
-
-rename (date20200429 loc_grand_name20200429) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200429 epoch20200429)
 
 
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -902,29 +659,29 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(02May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200504", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 02May2020")
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200504.pdf", replace
 
 
 * gen Daily Deaths smoothed
@@ -951,8 +708,6 @@ tsset, clear
 
 
 
-
-
 rename location_name provincestate
 
 gen loc_grand_name = "$country"
@@ -962,77 +717,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
-
-*
-
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200504 epoch20200504)
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200504)
-
-rename (date20200504 loc_grand_name20200504) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -1113,29 +808,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(02May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200510", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 02May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200510.pdf", replace
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
 
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * gen Daily Deaths smoothed
@@ -1173,77 +870,16 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200510 epoch20200510)
 
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200510)
-
-rename (date20200510 loc_grand_name20200510) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -1321,29 +957,33 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(10May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200512", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 10May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200512.pdf", replace
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * gen Daily Deaths smoothed
@@ -1381,77 +1021,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
-
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200512 epoch20200512)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200512)
-
-rename (date20200512 loc_grand_name20200512) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -1522,29 +1104,36 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(08May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200520", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 08May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200520.pdf", replace
+
+
+
+
 
 
 * gen Daily Deaths smoothed
@@ -1582,58 +1171,6 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
 
 *
 
@@ -1641,18 +1178,18 @@ TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA0
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*20200520)
-
-rename (date20200520 loc_grand_name20200520) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200520 epoch20200520)
 
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 
 qui compress
@@ -1734,29 +1271,37 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200525", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200525.pdf", replace
+
+
+
+
+
 
 
 * gen Daily Deaths smoothed
@@ -1794,77 +1339,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200525 epoch20200525)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200525)
-
-rename (date20200525 loc_grand_name20200525) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -1942,29 +1428,36 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200526", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200526.pdf", replace
+
+
+
 
 
 * gen Daily Deaths smoothed
@@ -2002,77 +1495,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200526 epoch20200526)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200526)
-
-rename (date20200526 loc_grand_name20200526) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -2149,12 +1583,8 @@ codebook date
 drop year month day date2		
 		
 		
-		
+			
 * rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
 
 
 * Daily Deaths not smoothed
@@ -2162,19 +1592,26 @@ rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200529", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200529.pdf", replace
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * gen Daily Deaths smoothed
@@ -2212,77 +1649,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200529 epoch20200529)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200529)
-
-rename (date20200529 loc_grand_name20200529) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -2360,29 +1741,32 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200605", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200605.pdf", replace
+
 
 
 * gen Daily Deaths smoothed
@@ -2420,77 +1804,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200605 epoch20200605)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200605)
-
-rename (date20200605 loc_grand_name20200605) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -2511,7 +1838,7 @@ shell rm -r "2020_06_03"
 
 
 
-
+* temp end
 
 
 
@@ -2525,6 +1852,10 @@ shell rm -r "2020_06_03"
 * 08-Jun-20	2020_06_06	2020-06-08
 * filename Hospitalization_all_locs.csv
 * cd
+
+
+
+
 
 
 clear 
@@ -2566,30 +1897,10 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
 
 
 * Daily Deaths smoothed
@@ -2609,77 +1920,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120200608)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200608)
-
-rename (date20200608 loc_grand_name20200608) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -2692,6 +1945,31 @@ save "IHME20200608.dta", replace
 shell rm -r "2020_06_06"
 
 
+
+
+* update 20200608 epoch
+
+// br date DayDeaMeSmA02S0120200608 if  provincestate == " National"
+gen epoch = td(23May2020)
+di td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+twoway ///
+(line DayDeaMeSmA02S0120200608 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200608", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22058, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200608.pdf", replace
+
+rename epoch epoch20200608
+
+save "IHME20200608.dta", replace
 
 *
 ***
@@ -2756,27 +2034,6 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-
-
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
 
 
 * Daily Deaths smoothed
@@ -2784,11 +2041,29 @@ rename deaths_mean_smoothed  DayDeaMeSmA02S01
 label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
 
 
-
 * Daily Deaths not smoothed
-gen DayDeaMeRaA02S01 = . 
+gen DayDeaMeRaA02S01 = . // data file does not have it
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200610", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23May2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200610.pdf", replace
 
 
 rename location_name provincestate
@@ -2800,77 +2075,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200610 epoch20200610)
 
 
 
 
 
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200610)
-
-rename (date20200610 loc_grand_name20200610) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -2949,29 +2169,29 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total Deaths not smoothed, 
-gen  TotINFMeRaA02S01 = .
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(24May2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed, est_infections_mean not in data 
-gen DayINFMeRaA02S01 = . 
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200615", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 24May2020")
 
-
-* Total Deaths smoothed, totdea_mean_smoothed not in data
-gen TotDeaMeSmA02S01 = .
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200615.pdf", replace
 
 
 * gen Daily Deaths smoothed
@@ -3009,77 +2229,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200615 epoch20200615)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200615)
-
-rename (date20200615 loc_grand_name20200615) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -3118,7 +2281,7 @@ shell rm -r "2020_06_13"
 clear 
 				
 
-di in red "This is urldate 2021-05-14" 
+di in red "This is urldate 2020-06-25" 
 
 copy https://ihmecovid19storage.blob.core.windows.net/archive/2020-06-25/ihme-covid19.zip ihme-covid19.zip
 unzipfile ihme-covid19.zip, replace
@@ -3154,37 +2317,32 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
-
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(21Jun2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200625", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 21Jun2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200625.pdf", replace
+
 
 
 * Daily Deaths smoothed
@@ -3204,77 +2362,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200625 epoch20200625)
 
 
-keep date-DayDeaMeSmA02S01XSK
 
-
-rename (*) (*20200625)
-
-rename (date20200625 loc_grand_name20200625) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200625
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -3349,37 +2451,32 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(21Jun2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200629", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 21Jun2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200629.pdf", replace
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -3399,77 +2496,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200629 epoch20200629)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200629)
-
-rename (date20200629 loc_grand_name20200629) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200629
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -3551,37 +2589,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
-
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Jul2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200707", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Jul2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200707.pdf", replace
+
 
 
 * Daily Deaths smoothed
@@ -3601,77 +2633,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
 
 
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-keep date-DayDeaMeSmA02S01XSK
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*20200707)
 
-rename (date20200707 loc_grand_name20200707) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200707 epoch20200707)
 
-drop TotINFMeRaA02S0120200707
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 
 qui compress
@@ -3746,37 +2723,33 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
-
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12Jul2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200714", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12Jul2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200714.pdf", replace
+
+
 
 
 * Daily Deaths smoothed
@@ -3796,77 +2769,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
-
-*
-
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200714 epoch20200714)
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200714)
-
-rename (date20200714 loc_grand_name20200714) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200714
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -3946,9 +2859,6 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
 
 
 * Daily Deaths not smoothed
@@ -3956,27 +2866,25 @@ rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
-
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(19Jul2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200722", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 19Jul2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200722.pdf", replace
 
 
 * Daily Deaths smoothed
@@ -3996,77 +2904,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200722 epoch20200722)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200722)
-
-rename (date20200722 loc_grand_name20200722) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200722
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -4142,42 +2992,37 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(25Jul2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200730", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 25Jul2020")
 
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200730.pdf", replace
 
 
 * Daily Deaths smoothed
 rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
 label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
 
 
 
@@ -4192,77 +3037,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200730 epoch20200730)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200730)
-
-rename (date20200730 loc_grand_name20200730) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200730
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -4343,37 +3131,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(01Aug2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200806", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 01Aug2020")
 
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200806.pdf", replace
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -4393,77 +3175,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200806 epoch20200806)
 
 
-keep date-DayDeaMeSmA02S01XSK
 
-
-rename (*) (*20200806)
-
-rename (date20200806 loc_grand_name20200806) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200806
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -4544,37 +3270,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(01Aug2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200806", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 01Aug2020")
 
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200806.pdf", replace
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -4594,77 +3314,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200821 epoch20200821)
 
 
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200821)
-
-rename (date20200821 loc_grand_name20200821) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200821
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -4738,37 +3398,30 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(22Aug2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200827", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 22Aug2020")
 
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200827.pdf", replace
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -4788,77 +3441,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200827 epoch20200827)
 
 
-keep date-DayDeaMeSmA02S01XSK
 
-
-rename (*) (*20200827)
-
-rename (date20200827 loc_grand_name20200827) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200827
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -4942,37 +3539,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections
 
-* 
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(31Aug2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200903", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 31Aug2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200903.pdf", replace
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -4992,77 +3583,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200903 epoch20200903)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200903)
-
-rename (date20200903 loc_grand_name20200903) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120200903
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -5144,29 +3677,30 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections not smoothed (inf_cuml_mean present)
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Sep2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200911", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Sep2020")
 
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200911.pdf", replace
 
 
 * Daily Deaths smoothed
@@ -5186,77 +3720,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200911 epoch20200911)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200911)
-
-rename (date20200911 loc_grand_name20200911) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -5336,29 +3811,31 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections not smoothed (inf_cuml_mean present)
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12Sep2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200918", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12Sep2020")
 
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200918.pdf", replace
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -5378,77 +3855,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200918 epoch20200918)
 
 
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200918)
-
-rename (date20200918 loc_grand_name20200918) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -5526,29 +3944,30 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
-* Total infections not smoothed (inf_cuml_mean added to date starting from update 2020-09-11)
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(21Sep2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200924", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 21Sep2020")
 
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200924.pdf", replace
 
 
 * Daily Deaths smoothed
@@ -5568,77 +3987,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120200924 epoch20200924)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20200924)
-
-rename (date20200924 loc_grand_name20200924) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -5720,34 +4081,33 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
-*  
-
-bysort location_name (date): generate inf_cuml_mean = sum(est_infections_mean) 
-	format inf_cuml_mean %10.0f
-	replace inf_cuml_mean = . if est_infections_mean == .
-	
-* Total infections not smoothed (inf_cuml_mean present in update 2020-09-11)
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(26Sep2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201002", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 26Sep2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201002.pdf", replace
+
+
 
 
 * Daily Deaths smoothed
@@ -5766,78 +4126,17 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-* gen vars by provincestate 
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+sort loc_grand_name provincestate date
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201002 epoch20201002)
 
 
 
-*
-
-
-
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201002)
-
-rename (date20201002 loc_grand_name20201002) (date loc_grand_name) 
-
-drop TotINFMeRaA02S0120201002
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -5918,28 +4217,32 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
-* inf_cuml_mean present in data again	
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(03Oct2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201009", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 03Oct2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201009.pdf", replace
+
+
 
 
 * Daily Deaths smoothed
@@ -5959,77 +4262,24 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
 *
 
 
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*20201009)
 
-rename (date20201009 loc_grand_name20201009) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201009 epoch20201009)
+ 
 
 
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -6108,28 +4358,32 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
-* inf_cuml_mean present in data again	
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Oct2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201015", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Oct2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201015.pdf", replace
+
 
 
 * Daily Deaths smoothed
@@ -6149,77 +4403,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201015)
-
-rename (date20201015 loc_grand_name20201015) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201015 epoch20201015)
 
 
 
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -6297,28 +4495,30 @@ drop year month day date2
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
-* inf_cuml_mean present in data again	
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
 
 
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Oct2020)
+label var epoch "Forecast start date"
+local epoch = epoch
 
 
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201022", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Oct2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201022.pdf", replace
 
 
 * Daily Deaths smoothed
@@ -6338,77 +4538,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///        
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201022 epoch20201022)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201022)
-
-rename (date20201022 loc_grand_name20201022) (date loc_grand_name) 
-
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 
 qui compress
@@ -6445,6 +4588,7 @@ shell rm -r "2020_10_22"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020_10_29" 
 
@@ -6467,38 +4611,6 @@ keep if location_name == "$country" | ///
         location_name == "Saskatchewan" 
 
 		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -6507,7 +4619,44 @@ egen date2 = concat(day month year)
 gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
-drop year month day date2
+drop year month day date2		
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Oct2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201029", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Oct2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201029.pdf", replace
+
+
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -6519,76 +4668,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 DayDeaMeRaA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201029 epoch20201029)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201029)
-
-rename (date20201029 loc_grand_name20201029) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -6599,6 +4692,7 @@ save "IHME20201029.dta", replace
 
 
 shell rm -r "2020_10_29"
+
 
 
 *
@@ -6629,6 +4723,7 @@ shell rm -r "2020_10_29"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020-11-12" 
 
@@ -6651,38 +4746,7 @@ keep if location_name == "$country" | ///
         location_name == "Saskatchewan" 
 
 		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
+		
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -6692,6 +4756,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+	
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(09Nov2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201112", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 09Nov2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201112.pdf", replace
+	
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -6703,76 +4804,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201112 epoch20201112)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201112)
-
-rename (date20201112 loc_grand_name20201112) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -6807,6 +4851,7 @@ shell rm -r "2020_11_12"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020-11-19" 
 
@@ -6829,37 +4874,6 @@ keep if location_name == "$country" | ///
         location_name == "Saskatchewan" 
 
 		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
 
 rename date date_original
 gen year = substr(date_original,1,4) 
@@ -6870,6 +4884,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+		
+		
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(16Nov2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201119", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 16Nov2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201119.pdf", replace
+	
+	
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
 
 
 rename location_name provincestate
@@ -6881,76 +4931,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201119 epoch20201119)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201119)
-
-rename (date20201119 loc_grand_name20201119) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -6991,6 +4987,7 @@ shell rm -r "2020_11_19"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020-12-03" 
 
@@ -7012,39 +5009,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7054,6 +5018,40 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(28Nov2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201203", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 28Nov2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201203.pdf", replace
+	
+	
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
 
 
 rename location_name provincestate
@@ -7065,76 +5063,18 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201203 epoch20201203)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201203)
-
-rename (date20201203 loc_grand_name20201203) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -7176,6 +5116,7 @@ shell rm -r "2020_12_03"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020-12-10" 
 
@@ -7197,39 +5138,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7239,6 +5147,39 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Dec2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201210", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Dec2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201210.pdf", replace
+	
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
 
 
 rename location_name provincestate
@@ -7250,76 +5191,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201210 epoch20201210)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201210)
-
-rename (date20201210 loc_grand_name20201210) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -7356,6 +5241,7 @@ shell rm -r "2020_12_10"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2020-12-17" 
 
@@ -7377,39 +5263,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7419,6 +5272,41 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12Dec2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201217", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12Dec2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201217.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -7430,76 +5318,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201217 epoch20201217)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201217)
-
-rename (date20201217 loc_grand_name20201217) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -7534,6 +5367,8 @@ shell rm -r "2020_12_17"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+				
+clear
 
 di in red "This is urldate 2020-12-23" 
 
@@ -7555,39 +5390,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7597,6 +5399,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(18Dec2020)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20201223", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 18Dec2020")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20201223.pdf", replace
+		
+
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -7608,76 +5447,16 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
-
-*
-
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120201223 epoch20201223)
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20201223)
-
-rename (date20201223 loc_grand_name20201223) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -7716,6 +5495,7 @@ shell rm -r "2020_12_23"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-01-15" 
 
@@ -7737,39 +5517,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7779,6 +5526,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(11Jan2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210115", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 11Jan2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210115.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -7790,76 +5573,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210115 epoch20210115)
 
 
-rename (*) (*20210115)
 
-rename (date20210115 loc_grand_name20210115) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
+ 
 
 qui compress
 
@@ -7898,7 +5626,9 @@ shell rm -r "2021-01-15"
 * 22-Jan-21	2021_01_22	2021-01-22
 * filename reference_hospitalization_all_locs.csv
 * cd
-				
+		
+		
+clear
 
 di in red "This is urldate 2021-01-22" 
 
@@ -7920,39 +5650,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -7964,6 +5661,45 @@ codebook date
 drop year month day date2
 
 
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+	
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(16Jan2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210122", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 16Jan2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210122.pdf", replace
+		
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
+
+
 rename location_name provincestate
 
 gen loc_grand_name = "$country"
@@ -7973,76 +5709,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210122 epoch20210122)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210122)
-
-rename (date20210122 loc_grand_name20210122) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -8078,6 +5757,8 @@ shell rm -r "2021_01_22"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+				
+clear
 
 di in red "This is urldate 2021-01-28" 
 
@@ -8099,39 +5780,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -8141,6 +5789,41 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(22Jan2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210128", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 22Jan2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210128.pdf", replace
+		
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -8152,76 +5835,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210128 epoch20210128)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210128)
-
-rename (date20210128 loc_grand_name20210128) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -8258,6 +5886,8 @@ shell rm -r "2021_01_28"
 * cd
 				
 
+clear
+				
 di in red "This is urldate 2021-02-04" 
 
 copy https://ihmecovid19storage.blob.core.windows.net/archive/2021-02-04/ihme-covid19.zip ihme-covid19.zip
@@ -8278,39 +5908,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -8320,6 +5917,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(29Jan2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210204", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 29Jan2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210204.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -8331,76 +5964,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210204)
-
-rename (date20210204 loc_grand_name20210204) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210204 epoch20210204)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
+
 
 qui compress
 
@@ -8437,6 +6014,7 @@ shell rm -r "2021_02_04"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-02-12" 
 
@@ -8458,39 +6036,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -8500,6 +6045,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+	
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Feb2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210212", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Feb2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210212.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -8511,76 +6092,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210212 epoch20210212)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210212)
-
-rename (date20210212 loc_grand_name20210212) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -8614,7 +6139,8 @@ shell rm -r "2021_02_12"
 * 20-Feb-21	2021_02_20	2021-02-20
 * filename reference_hospitalization_all_locs.csv
 * cd
-				
+		
+clear		
 
 di in red "This is urldate 2021-02-20" 
 
@@ -8636,39 +6162,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -8678,6 +6171,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(13Feb2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210220", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 13Feb2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210220.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -8689,76 +6218,24 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
 *
 
 
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*20210220)
 
-rename (date20210220 loc_grand_name20210220) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210220 epoch20210220)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -8792,6 +6269,7 @@ shell rm -r "2021_02_20"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-02-25" 
 
@@ -8813,39 +6291,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -8855,6 +6300,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+	
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(19Feb2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210225", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 19Feb2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210225.pdf", replace
+
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -8866,58 +6347,6 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
 
 *
 
@@ -8925,17 +6354,18 @@ TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA0
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*20210225)
 
-rename (date20210225 loc_grand_name20210225) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210225 epoch20210225)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -8971,6 +6401,7 @@ shell rm -r "2021_02_25"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-03-06" 
 
@@ -8992,39 +6423,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9034,6 +6432,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(26Feb2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210306", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 26Feb2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210306.pdf", replace
+
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -9045,76 +6479,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210306 epoch20210306)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210306)
-
-rename (date20210306 loc_grand_name20210306) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -9147,6 +6525,7 @@ shell rm -r "2021_03_06"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-03-11" 
 
@@ -9168,39 +6547,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9210,6 +6556,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(05Mar2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210311", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 05Mar2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210311.pdf", replace
+
+	
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -9221,76 +6603,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210311 epoch20210311)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210311)
-
-rename (date20210311 loc_grand_name20210311) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -9327,6 +6652,7 @@ shell rm -r "2021_03_11"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-03-17" 
 
@@ -9348,39 +6674,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9392,6 +6685,42 @@ codebook date
 drop year month day date2
 
 
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12Mar2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210317", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12Mar2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210317.pdf", replace
+	
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
+
 rename location_name provincestate
 
 gen loc_grand_name = "$country"
@@ -9401,76 +6730,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210317 epoch20210317)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210317)
-
-rename (date20210317 loc_grand_name20210317) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -9503,6 +6776,7 @@ shell rm -r "2021_03_17"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-03-25" 
 
@@ -9524,39 +6798,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9566,6 +6807,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(19Mar2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210325", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 19Mar2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210325.pdf", replace
+	
+
+	
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -9577,76 +6855,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
-*
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210325 epoch20210325)
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210325)
-
-rename (date20210325 loc_grand_name20210325) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -9680,6 +6903,7 @@ shell rm -r "2021_03_25"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-04-01" 
 
@@ -9701,39 +6925,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9743,6 +6934,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(26Mar2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210401", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 26Mar2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210401.pdf", replace
+	
+
+	
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -9754,76 +6982,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
+
+
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210401 epoch20210401)
 
 
 
-
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210401)
-
-rename (date20210401 loc_grand_name20210401) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -9858,6 +7030,7 @@ shell rm -r "2021_04_01"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-04-09" 
 
@@ -9879,39 +7052,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -9921,6 +7061,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(01Apr2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210409", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 01Apr2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210409.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -9932,76 +7108,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210409)
-
-rename (date20210409 loc_grand_name20210409) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210409 epoch20210409)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
+
 
 qui compress
 
@@ -10035,6 +7157,7 @@ shell rm -r "2021_04_09"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-04-16" 
 
@@ -10056,39 +7179,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -10098,6 +7188,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12Apr2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210416", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12Apr2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210416.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -10109,76 +7235,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210416)
-
-rename (date20210416 loc_grand_name20210416) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210416 epoch20210416)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -10211,6 +7283,7 @@ shell rm -r "2021-04-16"
 * filename reference_hospitalization_all_locs.csv
 * cd
 				
+clear
 
 di in red "This is urldate 2021-04-23" 
 
@@ -10232,38 +7305,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
 
 rename date date_original
 gen year = substr(date_original,1,4) 
@@ -10275,6 +7316,40 @@ format date %tdDDMonCCYY
 codebook date
 drop year month day date2
 
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(19Apr2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210423", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 19Apr2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210423.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 rename location_name provincestate
 
@@ -10285,76 +7360,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210423)
-
-rename (date20210423 loc_grand_name20210423) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210423 epoch20210423)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -10390,7 +7411,6 @@ shell rm -r "2021_04_22"
 
 clear 
 				
-
 di in red "This is urldate 2021-05-06" 
 
 copy https://ihmecovid19storage.blob.core.windows.net/archive/2021-05-06/ihme-covid19.zip ihme-covid19.zip
@@ -10412,39 +7432,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -10454,6 +7441,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(03May2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210506", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 03May2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210506.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -10465,76 +7488,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210506)
-
-rename (date20210506 loc_grand_name20210506) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210506 epoch20210506)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 
 qui compress
@@ -10572,8 +7538,7 @@ shell rm -r "2021-05-06"
 * filename reference_hospitalization_all_locs.csv
 
 
-clear 
-				
+clear 	
 
 di in red "This is urldate 2021-05-14" 
 
@@ -10594,39 +7559,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -10636,6 +7568,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(12May2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210514", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 12May2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210514.pdf", replace
+		
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -10647,76 +7616,21 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-*
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210514)
-
-rename (date20210514 loc_grand_name20210514) (date loc_grand_name) 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210514 epoch20210514)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 
 qui compress
@@ -10769,7 +7683,7 @@ Canada update 63	78	20210702	02-Jul-21	ihme-covid19	2021-07-02
 Canada update 64	79	20210715	15-Jul-21	ihme-covid19	2021-07-15
 */
 
-
+clear
 
 local list3 ///
 2021-05-21 ///
@@ -10780,6 +7694,7 @@ local list3 ///
 2021-06-25 ///
 2021-07-02 ///
 2021-07-15 
+
 
 
 
@@ -10807,29 +7722,11 @@ keep if location_name == "$country" | ///
 		
 * rename variables
 
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
 
 
 * Daily Deaths not smoothed
 rename deaths_mean  DayDeaMeRaA02S01
 label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
 
 
 * Daily Deaths smoothed
@@ -10857,61 +7754,6 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
-
 
 
 gen updatedash = "`update'" 
@@ -10927,17 +7769,22 @@ local updatetag = updatetag
 drop updatedash year month day updatetag
 
 
-keep date-DayDeaMeSmA02S01XSK
 
 
-rename (*) (*`updatetag')
 
-rename (date`updatetag' loc_grand_name`updatetag') (date loc_grand_name)
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
+
+
+
+
+
 
 qui compress
 
@@ -10957,9 +7804,288 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 
 
 
+* update 20210521 epoch
+
+use "IHME20210521.dta", clear
+
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210521)
+
+// br date DayDeaMeSmA02S0120210521 if provincestate == " National"
+gen epoch = td(17May2021)
+di td(17May2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210521 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210521", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22417, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 17May2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210521.pdf", replace
+		
+rename epoch epoch20210521
+
+
+save "IHME20210521.dta", replace
+
+*
 
 
 
+
+* update 20210528 epoch
+
+use "IHME20210528.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210528)
+
+// br date DayDeaMeSmA02S0120210528 if provincestate == " National"
+gen epoch = td(23May2021)
+di td(21May2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210528 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210528", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22421, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 21May2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210528.pdf", replace
+		
+rename epoch epoch20210528
+
+save "IHME20210528.dta", replace
+
+*
+
+
+
+
+
+* update 20210604 epoch
+
+use "IHME20210604.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210604)
+
+// br date DayDeaMeSmA02S0120210604 if provincestate == " National"
+gen epoch = td(01Jun2021)
+di td(01Jun2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210604 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210604", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22431, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 01Jun2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210604.pdf", replace
+		
+
+rename epoch epoch20210604
+
+save "IHME20210604.dta", replace
+
+*
+
+
+
+
+
+
+
+
+* update 20210610 epoch
+
+use "IHME20210610.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210610)
+
+// br date DayDeaMeSmA02S0120210610 if provincestate == " National"
+gen epoch = td(08Jun2021)
+di td(08Jun2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210610 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210610", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22439, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 08Jun2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210610.pdf", replace
+		
+
+rename epoch epoch20210610
+
+save "IHME20210610.dta", replace
+
+*
+
+
+
+
+
+
+
+* update 20210618 epoch
+
+use "IHME20210618.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210618)
+
+// br date DayDeaMeSmA02S0120210618 if provincestate == " National"
+gen epoch = td(16Jun2021)
+di td(16Jun2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210618 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210618", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22447, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 16Jun2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210618.pdf", replace
+		
+
+rename epoch epoch20210618
+
+save "IHME20210618.dta", replace
+
+*
+
+
+
+
+
+
+
+* update 20210625 epoch
+
+use "IHME20210625.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210625)
+
+// br date DayDeaMeSmA02S0120210625 if provincestate == " National"
+gen epoch = td(23Jun2021)
+di td(23Jun2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210625 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210625", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22454, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23Jun2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210625.pdf", replace
+		
+
+rename epoch epoch20210625
+
+save "IHME20210625.dta", replace
+
+*
+
+
+
+
+
+
+
+* update 20210702 epoch
+
+use "IHME20210702.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210702)
+
+// br date DayDeaMeSmA02S0120210702 if provincestate == " National"
+gen epoch = td(30Jun2021)
+di td(30Jun2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210702 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210702", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22461, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 30Jun2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210702.pdf", replace
+		
+
+rename epoch epoch20210702
+
+save "IHME20210702.dta", replace
+
+*
+
+
+
+
+
+* update 20210715 epoch
+
+use "IHME20210715.dta", clear
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210715)
+
+// br date DayDeaMeSmA02S0120210715 if provincestate == " National"
+gen epoch = td(11Jul2021)
+di td(11Jul2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeSmA02S0120210715 date, sort lwidth(medium) lcolor(black)) /// 	
+if provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210715", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22472, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 11Jul2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210715.pdf", replace
+		
+rename epoch epoch20210715
+
+save "IHME20210715.dta", replace
+
+*
 
 
 
@@ -10973,6 +8099,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 
 
 		
+clear
 
 di in red "This is urldate 2021-07-25, update 20210723" 
 
@@ -10994,39 +8121,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11036,6 +8130,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(19Jul2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210723", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 19Jul2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210723.pdf", replace
+		
+
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -11047,75 +8178,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
-keep date-DayDeaMeSmA02S01XSK
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210723 epoch20210723)
 
 
-rename (*) (*20210723)
 
-rename (date20210723 loc_grand_name20210723) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -11147,6 +8223,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 * filename reference_hospitalization_all_locs.csv 
 
 		
+clear
 
 di in red "This is urldate 2021-07-31, update 20210730"
 
@@ -11168,39 +8245,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11211,6 +8255,42 @@ format date %tdDDMonCCYY
 codebook date
 drop year month day date2
 
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(26Jul2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210730", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 26Jul2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210730.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
+
 
 rename location_name provincestate
 
@@ -11220,77 +8300,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-* gen vars by provincestate 
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210730)
-
-rename (date20210730 loc_grand_name20210730) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210730 epoch20210730)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -11336,6 +8358,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 *   (and -cd ..- at the end before saving the final file) is needed. 
 
 		
+clear
 
 di in red "This is urldate 2021-08-09, update 20210806"
 
@@ -11358,39 +8381,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11400,6 +8390,43 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(01Aug2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210806", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 01Aug2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210806.pdf", replace
+		
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -11411,76 +8438,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210806)
-
-rename (date20210806 loc_grand_name20210806) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210806 epoch20210806)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -11518,6 +8491,7 @@ shell rm -r "2021_08_04"
 
 
 		
+clear
 
 di in red "This is urldate 2021-08-23, update 20210820"
 
@@ -11539,39 +8513,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11581,6 +8522,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+		
+* rename variables
+
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+	
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(15Aug2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210820", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 15Aug2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210820.pdf", replace
+		
+		
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -11592,77 +8569,22 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
 
 
 
-*
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
 
 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210820 epoch20210820)
 
 
-keep date-DayDeaMeSmA02S01XSK
 
-
-rename (*) (*20210820)
-
-rename (date20210820 loc_grand_name20210820) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -11702,6 +8624,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 
 
 		
+clear
 
 di in red "This is urldate 2021-08-26"
 
@@ -11723,39 +8646,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11765,6 +8655,42 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(23Aug2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210826", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 23Aug2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210826.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -11776,77 +8702,19 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210826 epoch20210826)
 
 
-keep date-DayDeaMeSmA02S01XSK
 
-
-rename (*) (*20210826)
-
-rename (date20210826 loc_grand_name20210826) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -11883,6 +8751,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 * filename reference_hospitalization_all_locs.csv 
 
 		
+clear
 
 di in red "This is urldate 2021-09-17, update 20210902"
 
@@ -11904,39 +8773,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -11946,6 +8782,41 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(30Aug2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210902", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 30Aug2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210902.pdf", replace
+		
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -11957,77 +8828,24 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
 
 
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-keep date-DayDeaMeSmA02S01XSK
 
 
-rename (*) (*20210902)
-
-rename (date20210902 loc_grand_name20210902) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210902 epoch20210902)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
+
 
 qui compress
 
@@ -12065,6 +8883,7 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 * filename reference_hospitalization_all_locs.csv 
 
 
+clear
 
 di in red "This is urldate 2021-09-14, update 20210910"
 
@@ -12086,39 +8905,6 @@ keep if location_name == "$country" | ///
         location_name == "Quebec" | ///
         location_name == "Saskatchewan" 
 
-		
-* rename variables
-
-* Total Deaths not smoothed
-rename totdea_mean  TotDeaMeRaA02S01
-label var TotDeaMeRaA02S01 "Total Deaths Mean not smoothed IHME S1"
-
-
-* Daily Deaths not smoothed
-rename deaths_mean  DayDeaMeRaA02S01
-label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
-
-	
-* Total infections not smoothed
-rename inf_cuml_mean  TotINFMeRaA02S01
-label var TotINFMeRaA02S01 "Total infections Mean not smoothed IHME S1"
-
-
-* Daily infections not smoothed
-rename est_infections_mean  DayINFMeRaA02S01
-label var DayINFMeRaA02S01 "Daily infections Mean not smoothed IHME S1"
-
-
-* Total Deaths smoothed
-rename totdea_mean_smoothed   TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Deaths Mean smoothed IHME S1"
-
-
-* Daily Deaths smoothed
-rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
-label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
-
-
 rename date date_original
 gen year = substr(date_original,1,4) 
 gen month = substr(date_original,6,2) 
@@ -12128,6 +8914,41 @@ gen date = date(date2, "DMY", 2050)
 format date %tdDDMonCCYY
 codebook date
 drop year month day date2
+
+		
+* rename variables
+
+
+* Daily Deaths not smoothed
+rename deaths_mean  DayDeaMeRaA02S01
+label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
+
+
+// br date DayDeaMeRaA02S01 if location_name == "Canada"
+gen epoch = td(07Sep2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line DayDeaMeRaA02S01 date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & location_name == "Canada" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20210910", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(`epoch', lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 07Sep2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210910.pdf", replace
+			
+
+* Daily Deaths smoothed
+rename deaths_mean_smoothed  DayDeaMeSmA02S01    	
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1"
+
+
+
 
 
 rename location_name provincestate
@@ -12139,76 +8960,20 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-* gen vars by provincestate 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 epoch
 
-foreach var of varlist ///
-TotDeaMeRaA02S01 DayDeaMeRaA02S01 TotINFMeRaA02S01 DayINFMeRaA02S01 TotDeaMeSmA02S01 DayDeaMeSmA02S01 {
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
-
-keep date-DayDeaMeSmA02S01XSK
-
-
-rename (*) (*20210910)
-
-rename (date20210910 loc_grand_name20210910) (date loc_grand_name)
+rename (DayDeaMeSmA02S01 epoch) (DayDeaMeSmA02S0120210910 epoch20210910)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
+
 
 qui compress
 
@@ -12249,11 +9014,13 @@ shell rm -r "worse_hospitalization_all_locs.csv"
 * filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
 
 
+
+clear
+
+
 local list1 ///
 2021-09-16 ///
 2021-09-23 
-
-
 
 
 foreach update of local list1 {				
@@ -12364,25 +9131,17 @@ drop year month day date2
 
 * rename variables
 
-* Total Reported Deaths smoothed
-rename seir_cumulative_unscaled_mean  TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Reported Deaths Mean smoothed IHME S1" // Cumulative reported deaths (mean estimate)
 
 * Daily Reported Deaths smoothed
 rename seir_daily_unscaled_mean  DayDeaMeSmA02S01
 label var DayDeaMeSmA02S01 "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
 		
-* Total infections smoothed
-rename inf_cuml_mean  TotINFMeSmA02S01
-label var TotINFMeSmA02S01 "Total infections Mean smoothed IHME S1" // Cumulative infections (mean estimate)
+		
+keep date location_name DayDeaMeSmA02S01 daily_deaths
 
-* Daily infections smoothed
-rename inf_mean  DayINFMeSmA02S01 // previously est_infections_mean
-label var DayINFMeSmA02S01 "Daily infections Mean smoothed IHME S1" // Daily infections (mean estimate)
+order date location_name DayDeaMeSmA02S01
 
-keep date location_name ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01
-	
+sort location_name date
 
 
 
@@ -12394,61 +9153,6 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
 
 
 gen updatedash = "`update'" 
@@ -12464,17 +9168,11 @@ local updatetag = updatetag
 drop updatedash year month day updatetag
 
 
-drop provincestate DayINFMeSmA02S01 TotINFMeSmA02S01 DayDeaMeSmA02S01 TotDeaMeSmA02S01
 
 
-rename (*) (*`updatetag')
-
-rename (date`updatetag' loc_grand_name`updatetag') (date loc_grand_name)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -12505,6 +9203,84 @@ shell rm -r "data_download_file_reference_2021.dta"
 
 
 
+* update 20210916 epoch
+
+use "IHME20210916.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(11Sep2021)
+di td(11Sep2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20210916", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22534, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 11Sep2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210916.pdf", replace
+		
+drop daily_deaths
+
+rename epoch epoch20210916
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210916)
+
+save "IHME20210916.dta", replace
+
+*
+
+
+
+
+
+
+
+* update 20210923 epoch
+
+use "IHME20210923.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(18Sep2021)
+di td(18Sep2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20210923", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22541, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 18Sep2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210923.pdf", replace
+		
+drop daily_deaths
+
+rename epoch epoch20210923
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210923)
+
+save "IHME20210923.dta", replace
+
+*
+
+
+
+
+
 
 
 
@@ -12518,6 +9294,7 @@ shell rm -r "data_download_file_reference_2021.dta"
 * filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
 
 
+clear
 
 di in red "This is urldate 2021-10-01, update 20210930" 
 
@@ -12623,30 +9400,10 @@ drop year month day date2
 
 * rename variables
 
-* Total Reported Deaths smoothed
-rename seir_cumulative_unscaled_mean  TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Reported Deaths Mean smoothed IHME S1" // Cumulative reported deaths (mean estimate)
-
-* Total Excess Deaths smoothed
-rename seir_cumulative_mean  TotDeXMeSmA02S01
-label var TotDeXMeSmA02S01 "Total Excess Deaths Mean smoothed IHME S1" // Cumulative excess deaths (mean estimate)
-
-* Daily Reported Deaths smoothed
-rename seir_daily_unscaled_mean  DayDeaMeSmA02S01
-label var DayDeaMeSmA02S01 "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
-		
-* Total infections smoothed
-rename inf_cuml_mean  TotINFMeSmA02S01
-label var TotINFMeSmA02S01 "Total infections Mean smoothed IHME S1" // Cumulative infections (mean estimate)
-
-* Daily infections smoothed
-rename inf_mean  DayINFMeSmA02S01 // previously est_infections_mean
-label var DayINFMeSmA02S01 "Daily infections Mean smoothed IHME S1" // Daily infections (mean estimate)
-
-keep date location_name ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01
+* Daily Deaths smoothed
+rename seir_daily_unscaled_mean  DayDeaMeSmA02S01 
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
 	
-
 
 
 rename location_name provincestate
@@ -12656,79 +9413,19 @@ gen loc_grand_name = "$country"
 replace provincestate = " National" if provincestate == "$country"
 
 
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 daily_deaths
 
+order date loc_grand_name provincestate DayDeaMeSmA02S01
 
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
+sort loc_grand_name provincestate date
 
 
 
 
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120210930)
 
 
-drop provincestate DayINFMeSmA02S01 TotINFMeSmA02S01 DayDeaMeSmA02S01 TotDeaMeSmA02S01
-
-
-rename (*) (*20210930)
-
-rename (date20210930 loc_grand_name20210930) (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
+order date loc_grand_name provincestate DayDeaMeSmA02S0120210930
 
 qui compress
 
@@ -12753,6 +9450,39 @@ shell rm -r "data_download_file_reference_2021.dta"
 
 
 
+
+* update 20210930 epoch
+
+use "IHME20210930.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(25Sep2021)
+di td(25Sep2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20210930", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22548, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 25Sep2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20210930.pdf", replace
+		
+drop daily_deaths
+
+rename epoch epoch20210930
+
+save "IHME20210930.dta", replace
+
+*
 
 
 
@@ -12783,6 +9513,9 @@ shell rm -r "data_download_file_reference_2021.dta"
 * 04-Nov-21	ihme-covid19	2021-11-04
 * filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
 
+
+
+clear
 
 local list1 ///
 2021-10-15 ///
@@ -12900,25 +9633,11 @@ drop year month day date2
 
 * rename variables
 
-* Total Reported Deaths smoothed
-rename seir_cumulative_unscaled_mean  TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Reported Deaths Mean smoothed IHME S1" // Cumulative reported deaths (mean estimate)
 
-* Daily Reported Deaths smoothed
+* Daily Deaths smoothed
 rename seir_daily_unscaled_mean  DayDeaMeSmA02S01
-label var DayDeaMeSmA02S01 "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
 		
-* Total infections smoothed
-rename inf_cuml_mean  TotINFMeSmA02S01
-label var TotINFMeSmA02S01 "Total infections Mean smoothed IHME S1" // Cumulative infections (mean estimate)
-
-* Daily infections smoothed
-rename inf_mean  DayINFMeSmA02S01 // previously est_infections_mean
-label var DayINFMeSmA02S01 "Daily infections Mean smoothed IHME S1" // Daily infections (mean estimate)
-
-keep date location_name ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01
-	
 
 
 
@@ -12929,62 +9648,6 @@ gen loc_grand_name = "$country"
 replace provincestate = " National" if provincestate == "$country"
 
 
-
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
 
 
 gen updatedash = "`update'" 
@@ -13000,17 +9663,13 @@ local updatetag = updatetag
 drop updatedash year month day updatetag
 
 
-drop provincestate DayINFMeSmA02S01 TotINFMeSmA02S01 DayDeaMeSmA02S01 TotDeaMeSmA02S01
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 daily_deaths
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*`updatetag')
-
-rename (date`updatetag' loc_grand_name`updatetag') (date loc_grand_name)
-
-
-order loc_grand_name date  
-
-sort loc_grand_name date  
 
 qui compress
 
@@ -13040,6 +9699,122 @@ shell rm -r "data_download_file_reference_2021.dta"
 
 
 
+* update 20211015 epoch
+
+use "IHME20211015.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(09Oct2021)
+di td(09Oct2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20211015", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22562, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 09Oct2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20211015.pdf", replace
+		
+drop daily_deaths
+
+rename DayDeaMeSmA02S01 DayDeaMeSmA02S0120211015
+rename epoch epoch20211015
+
+save "IHME20211015.dta", replace
+
+*
+
+
+
+
+
+
+
+* update 20211021 epoch
+
+use "IHME20211021.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(16Oct2021)
+di td(16Oct2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20211021", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22569, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 16Oct2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20211021.pdf", replace
+		
+drop daily_deaths
+
+rename DayDeaMeSmA02S01 DayDeaMeSmA02S0120211021
+rename epoch epoch20211021
+
+save "IHME20211021.dta", replace
+
+*
+
+
+
+
+
+
+* update 20211104 epoch
+
+use "IHME20211104.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(30Oct2021)
+di td(30Oct2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20211104", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22583, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 30Oct2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20211104.pdf", replace
+		
+drop daily_deaths
+
+rename DayDeaMeSmA02S01 DayDeaMeSmA02S0120211104
+rename epoch epoch20211104
+
+save "IHME20211104.dta", replace
+
+*
+
+
+
+
+
 
 
 
@@ -13056,11 +9831,10 @@ shell rm -r "data_download_file_reference_2021.dta"
 * filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
 
 
+clear
+
 local list1 ///
 2021-12-21 ///
-
-
-
 
 
 foreach update of local list1 {				
@@ -13171,25 +9945,10 @@ drop year month day date2
 
 * rename variables
 
-* Total Reported Deaths smoothed
-rename seir_cumulative_unscaled_mean  TotDeaMeSmA02S01
-label var TotDeaMeSmA02S01 "Total Reported Deaths Mean smoothed IHME S1" // Cumulative reported deaths (mean estimate)
-
-* Daily Reported Deaths smoothed
+* Daily Deaths smoothed
 rename seir_daily_unscaled_mean  DayDeaMeSmA02S01
-label var DayDeaMeSmA02S01 "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
+label var DayDeaMeSmA02S01 "Daily Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
 		
-* Total infections smoothed
-rename inf_cuml_mean  TotINFMeSmA02S01
-label var TotINFMeSmA02S01 "Total infections Mean smoothed IHME S1" // Cumulative infections (mean estimate)
-
-* Daily infections smoothed
-rename inf_mean  DayINFMeSmA02S01 // previously est_infections_mean
-label var DayINFMeSmA02S01 "Daily infections Mean smoothed IHME S1" // Daily infections (mean estimate)
-
-keep date location_name ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01
-	
 
 
 
@@ -13201,61 +9960,6 @@ replace provincestate = " National" if provincestate == "$country"
 
 
 
-
-* gen vars by provincestate 
-
-foreach var of varlist ///
-DayDeaMeSmA02S01 DayINFMeSmA02S01 TotDeaMeSmA02S01 TotINFMeSmA02S01 {
-
-	 
-	qui gen `var'XAB = `var' 
-	qui replace `var'XAB = . if provincestate != "Alberta"
-
-	qui gen `var'XBC = `var'
-	qui replace `var'XBC = . if provincestate != "British Columbia"
-	
-	qui gen `var'XMB = `var'
-	qui replace `var'XMB = . if provincestate != "Manitoba"
-	
-	qui gen `var'XXX = `var'
-	qui replace `var'XXX = . if provincestate != " National"
-	
-	qui gen `var'XNB = `var'
-	qui replace `var'XNB = . if provincestate != "New Brunswick"
-	
-	qui gen `var'XNL = `var'
-	qui replace `var'XNL = . if provincestate != "Newfoundland and Labrador"
-	
-	qui gen `var'XNS = `var'
-	qui replace `var'XNS = . if provincestate != "Nova Scotia"
-	
-	qui gen `var'XON = `var'
-	qui replace `var'XON = . if provincestate != "Ontario"
-	
-	qui gen `var'XQC = `var'
-	qui replace `var'XQC = . if provincestate != "Quebec"
-	
-	qui gen `var'XSK = `var'
-	qui replace `var'XSK = . if provincestate != "Saskatchewan"
-	
-	
-	label var `var'XAB "`var' Alberta"
-	label var `var'XBC "`var' British Columbia"
-	label var `var'XMB "`var' Manitoba"
-	label var `var'XXX "`var' National"
-	label var `var'XNB "`var' New Brunswick"
-	label var `var'XNL "`var' Newfoundland and Labrador"
-	label var `var'XNS "`var' Nova Scotia"
-	label var `var'XON "`var' Ontario"
-	label var `var'XQC "`var' Quebec"
-	label var `var'XSK "`var' Saskatchewan"
-                
-}
-*
-
-
-
-*
 
 
 gen updatedash = "`update'" 
@@ -13271,17 +9975,17 @@ local updatetag = updatetag
 drop updatedash year month day updatetag
 
 
-drop provincestate DayINFMeSmA02S01 TotINFMeSmA02S01 DayDeaMeSmA02S01 TotDeaMeSmA02S01
+keep date loc_grand_name provincestate DayDeaMeSmA02S01 daily_deaths
+
+order date loc_grand_name provincestate DayDeaMeSmA02S01
+
+sort loc_grand_name provincestate date
 
 
-rename (*) (*`updatetag')
-
-rename (date`updatetag' loc_grand_name`updatetag') (date loc_grand_name)
+rename (DayDeaMeSmA02S01) (DayDeaMeSmA02S0120211221)
 
 
-order loc_grand_name date  
 
-sort loc_grand_name date  
 
 qui compress
 
@@ -13313,6 +10017,39 @@ shell rm -r "data_download_file_reduce_hesitancy_2021.csv"
 
 
 
+* update 20211221 epoch
+
+use "IHME20211221.dta", clear
+
+* no raw estimated daily deaths in file
+
+// br date daily_deaths if provincestate == " National"
+gen epoch = td(11Dec2021)
+di td(11Dec2021)
+label var epoch "Forecast start date"
+local epoch = epoch
+
+
+twoway ///
+(line daily_deaths date, sort lwidth(medium) lcolor(black)) /// 	
+if date >= td(01Jan2020) & provincestate == " National" ///
+, xtitle(Date) xlabel(, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C-19 daily reported deaths raw, $country, National, IHME, update 20211221", size(medium)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+xline(22625, lwidth(thin) lcolor(red)) ///
+subtitle("Forecast start date is denoted with red line: 11Dec2021")
+
+qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20211221.pdf", replace
+		
+drop daily_deaths
+rename epoch epoch20211221
+
+save "IHME20211221.dta", replace
+
+*
+
+
 
 
 
@@ -13336,7 +10073,7 @@ shell rm -r "data_download_file_reduce_hesitancy_2021.csv"
 
 **********************
 
-view "log CovidVisualizedCountry IHME 1.smcl"
+view "log CovidLongitudinal IHME 1.smcl"
 
 log close
 

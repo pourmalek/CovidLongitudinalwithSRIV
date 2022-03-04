@@ -7,7 +7,7 @@ cd IHME
 
 capture log close 
 
-log using "log CovidVisualizedCountry IHME 2.smcl", replace
+log using "log CovidLongitudinal IHME 2.smcl", replace
 
 ***************************************************************************
 * This is "do CovidLongitudinal IHME 2.do"
@@ -20,11 +20,19 @@ log using "log CovidVisualizedCountry IHME 2.smcl", replace
 
 * continue preparation of estimates files and merge them, graphs: updates separate 
 * graphs (number 1) of each model update (separate) with official reports (JOHN)
+* Forecast and backcast
+* input data files: "IHME`update'.dta" (78 files) and "CovidLongitudinal JOHN.dta"
+* output data files: "CovidLongitudinal IHME.dta"
 
 
-* 79 updates
 
-local list1 ///
+
+
+
+* 78 updates
+
+
+local list ///
 20200422 ///
 20200427 ///
 20200428 ///
@@ -106,15 +114,51 @@ local list1 ///
 
 
 
-foreach update of local list1 {
 
-	append using "IHME`update'.dta"
+
+
+foreach update of local list {
+	
+	use "IHME`update'.dta", clear
+	
+	capture drop DayDeaFOREA02S01`update'
+	
+	gen DayDeaFOREA02S01`update' = DayDeaMeSmA02S01`update'
+	
+	replace DayDeaFOREA02S01`update' = . if date < epoch`update'
+	
+	label var DayDeaFOREA02S01`update' "DayDeaFWDA02S01 Forecast only"
+	
+	save "IHME`update'.dta", replace
+
+}
+*
+
+
+foreach update of local list {
+	
+	merge m:m date loc_grand_name provincestate using "IHME`update'.dta"
+	
+	drop _merge
 	
 }
 *	
 
 
-save "CovidVisualizedCountry IHME.dta", replace
+duplicates drop provincestate date, force
+
+isid provincestate date
+
+order loc_grand_name provincestate date DayDeaFOREA02S01* epoch*
+
+sort loc_grand_name provincestate date
+
+qui compress
+
+save "CovidLongitudinal IHME.dta", replace
+
+
+
 
 
 
@@ -133,14 +177,33 @@ cd IHME
 
 save "CovidLongitudinal JOHN.dta", replace 
 
-merge m:m loc_grand_name date using "CovidVisualizedCountry IHME.dta"
+
+merge m:m loc_grand_name provincestate date using "CovidLongitudinal IHME.dta"
 
 drop _merge
 
 
 drop if date > td(01jan2022)
 
-save "CovidVisualizedCountry IHME.dta", replace
+
+drop DayDeaMeRa*
+
+drop DayCas*
+
+drop Tot*
+
+
+drop DayDeaMeSmA00S00XNB DayDeaMeSmA00S00XNL DayDeaMeSmA00S00XNT ///
+DayDeaMeSmA00S00XNU DayDeaMeSmA00S00XPE DayDeaMeSmA00S00XYT
+
+
+* keeps DayDeaMeSmA00S00XAB DayDeaMeSmA00S00XBC DayDeaMeSmA00S00XMB DayDeaMeSmA00S00XXX 
+* DayDeaMeSmA00S00XNS DayDeaMeSmA00S00XON DayDeaMeSmA00S00XQC DayDeaMeSmA00S00XSK
+
+qui compress
+
+save "CovidLongitudinal IHME.dta", replace
+
 
 
 
@@ -160,310 +223,222 @@ grstyle color background white
 
 	
 	
-foreach update of local list1 {
+foreach update of local list {
 
-	******
-	* daily deaths, national, reference scenario = S1 
-	
-	di in red "This is update " `update' " for national"
-		
-	gen update_date = date("`update'", "YMD")
+	****** 
+	* daily deaths, National
 
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XXX`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XXX`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XXX`update'_val
-	
 	twoway ///
 	(line DayDeaMeSmA00S00XXX date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XXX`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) &  date <= td(01jan2022) ///
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == " National" ///
 	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, national, IHME, update `update'", size(medium)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, National, IHME, update `update'", size(medium)) ///
 	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
 	
-	qui graph export "graph 1 National C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XXX`update'_val
+	qui graph export "graph 1 National C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
 	
-	
-
-	******
-	* daily deaths, Alberta, reference scenario = S1 
-	
-	di in red "This is update " `update' " for Alberta"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XAB`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XAB`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XAB`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XAB date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XAB`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Alberta, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Alberta C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XAB`update'_val
-	
-	
-		 
-
-
-
-	******
-	* daily deaths, British Columbia, reference scenario = S1 
-	
-	di in red "This is update " `update' " British Columbia"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XBC`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XBC`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XBC`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XBC date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XBC`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, British Columbia, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 British Columbia C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XBC`update'_val
-	
-	
-	
-	
-
-
-	******
-	* daily deaths, Manitoba, reference scenario = S1 
-	
-	di in red "This is update " `update' " Manitoba"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XMB`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XMB`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XMB`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XMB date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XMB`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Manitoba, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Manitoba C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XMB`update'_val
-
-	
-	
-	
-	
-
-
-	******
-	* daily deaths, Nova Scotia, reference scenario = S1 
-	
-	di in red "This is update " `update' " Nova Scotia"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XNS`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XNS`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XNS`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XNS date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XNS`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.2fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Nova Scotia, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Nova Scotia C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XNS`update'_val
-
-	
-	
-	
-	
-
-
-	******
-	* daily deaths, Ontario, reference scenario = S1 
-	
-	di in red "This is update " `update' " for Ontario"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XON`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XON`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XON`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XON date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XON`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Ontario, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Ontario C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XON`update'_val
-
-	
-	
-	
-
-
-	******
-	* daily deaths, Quebec, reference scenario = S1 
-	
-	di in red "This is update " `update' " for Quebec"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XQC`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XQC`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XQC`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XQC date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XQC`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Quebec, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Quebec C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XQC`update'_val
-
-	
-	
-	
-
-
-	******
-	* daily deaths, Saskatchewan, reference scenario = S1 
-	
-	di in red "This is update " `update' " for Saskatchewan"
-		
-	gen update_date = date("`update'", "YMD")
-
-	local update_date = date("`update'", "YMD")
-
-	summ DayDeaMeSmA02S01XSK`update' if date == update_date
-
-	gen DayDeaMeSmA02S01XSK`update'_val = r(mean)
-
-	local value = DayDeaMeSmA02S01XSK`update'_val
-	
-	twoway ///
-	(line DayDeaMeSmA00S00XSK date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
-	(line DayDeaMeSmA02S01XSK`update' date, sort lwidth(medthick) lcolor(black)) /// 1 "IHME smooth"
-	(scatteri `value' `update_date', mcolor(red) msymbol(circle_hollow)) /// 3 "Update release date and value"
-	if date >= td(01jan2020) &  date <= td(01jan2022) ///
-	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
-	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
-	ytitle(Daily deaths) title("C-19 daily deaths, $country, Saskatchewan, IHME, update `update'", size(medium)) ///
-	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "IHME smooth" 3 "Update release date and value") rows(1)) ///
-	 subtitle(Reference scenario, size(small)) 
-	
-	qui graph export "graph 1 Saskatchewan C-19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
-
-	capture drop update_date DayDeaMeSmA02S01XSK`update'_val
-
-
-
-
 }
 *
 	
+
 	
 	
 	
 	
 
+foreach update of local list {
+
+	****** 
+	* daily deaths, Alberta
+
+	twoway ///
+	(line DayDeaMeSmA00S00XAB date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Alberta" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Alberta, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Alberta C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
 
 
 
 
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, British Columbia
+
+	twoway ///
+	(line DayDeaMeSmA00S00XBC date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "British Columbia" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, British Columbia, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 British Columbia C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+
+
+
+
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, Manitoba
+
+	twoway ///
+	(line DayDeaMeSmA00S00XMB date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Manitoba" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Manitoba, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Manitoba C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+
+
+
+
+
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, Nova Scotia
+
+	twoway ///
+	(line DayDeaMeSmA00S00XNS date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Nova Scotia" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.1fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Nova Scotia, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Nova Scotia C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+
+
+
+
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, Ontario
+
+	twoway ///
+	(line DayDeaMeSmA00S00XON date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Ontario" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Ontario, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Ontario C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+
+
+
+
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, Quebec
+
+	twoway ///
+	(line DayDeaMeSmA00S00XQC date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Quebec" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Quebec, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Quebec C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+
+
+
+
+
+
+foreach update of local list {
+
+	****** 
+	* daily deaths, Saskatchewan
+
+	twoway ///
+	(line DayDeaMeSmA00S00XSK date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaMeSmA02S01`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+	(line DayDeaFOREA02S01`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == "Saskatchewan" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, Saskatchewan, IHME, update `update'", size(medium)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "IHME smooth, Backcast" ///
+	3 "IHME smooth, Forecast") rows(1) size(small)) 
+	
+	qui graph export "graph 1 Saskatchewan C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+	
+}
+*	
+	
+	
+	
+	
 
 
 **********************
 
-view "log CovidVisualizedCountry IHME 2.smcl"
+view "log CovidLongitudinal IHME 2.smcl"
 
 log close
 
