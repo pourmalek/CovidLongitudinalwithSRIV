@@ -359,12 +359,13 @@ Long PDF file, see video [here]().
 
 (9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156850045-ff1915eb-4fc7-4e89-af23-f44c64c25793.png)
 
 ****
 
 (10) Alberta [graph 10 C19 daily deaths, Canada, Alberta, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/156847071-fa23e38c-6564-484a-a12a-fc4cfda1bfc7.png)
+![image](https://user-images.githubusercontent.com/30849720/156850170-8ed9e091-af66-4202-a9a0-b10ba48a80ed.png)
 
 ****
 
