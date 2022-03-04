@@ -8,64 +8,72 @@ Reference = JOHN, Model = IHME
 
 .
 
-(1) **Error** = Reference minus Model 
+#### (1) Error = Reference minus Model 
 
-(Graph 3 under each location, except provinces together, shows the Error by all calendar days and all updates)
+_(Under each location, except provinces together, graph 4 shows the Error by all calendar days and all updates)_
 
-.
 
-(2) **Absolute Error** = | Reference minus Model | 
 
-(Graph 4 under each location, except provinces together, shows the Absolute Error by all calendar days and all updates)
+#### (2) Absolute Error = | Reference minus Model | 
 
-.
+_(Under each location, except provinces together, graph 5 shows the Absolute Error by all calendar days and all updates)_
 
-(3) **Percent Error** = 100 * (Reference minus Model) / Reference
 
-(Graph 5 under each location, except provinces together, shows the Percent Error by all calendar days and all updates)
 
-.
+#### (3) Percent Error = 100 * (Reference minus Model) / Reference
 
-(4) **Absolute Percent Error** = 100 * | Reference minus Model | / Reference
+_(Under each location, except provinces together, graph 6 shows the Percent Error by all calendar days and all updates)_
 
-(Graph 6 under each location, except provinces together, shows the Absolute Percent Error by all calendar days and all updates)
+
+
+#### (4) Absolute Percent Error = 100 * | Reference minus Model | / Reference
+
+_(Under each location, except provinces together, graph 7 shows Absolute Percent Error by all calendar days and all updates)_
 
 
 <br/><br/>
 
-**Summarize the error measures:**
+### Summarize the error measures:
 
-First by epidemiological (epi) weeks and updates, then by epi weeks only (get rid of updates), and finally by model-location only (get rid of epi weeks).
+Summarize first by time intervals and updates, then by time intervals only (get rid of different updates), and finally by model-location only (get rid of different time intervals).
 
-<br/><br/>
-
-
-(1) Get the MEDIAN of error types by epi weeks and updates
-
-Summarization level = calendar time in days: transform calendar days to epidemiological weeks (623 days to 89 weeks = 7 to 1)
-
-(Graphs not shown here to save space)
-
-.
-
-(2) Get the AVERAGE over updates of MEDIAN of error types by epi weeks
-
-Summarization level = updates: transform many updates to one update (70 updates to 1 update-free)
-
-Graphs 7 to 10 under each location (except provinces together) (shown below) show the four types of error by epi weeks (update-free)
-
-.
-
-(3) Get the AVERAGE over epi weeks of the above number (2)
-
-Summarization level = calendar time in epi weeks: transform many epi weeks to a single statistic (89 week to 1 model-location)
-
-(Graphs shown under "Canada provinces together")
-
-.
+Two time intervals were used separately: epidemiological weeks, and calendar months. 
 
 <br/><br/>
 
+
+#### (1) Get the MEDIAN of error types by time intervals and updates
+
+Summarization level = calendar time in days. Transform calendar days to epidemiological weeks or calendar months.
+
+_(Graphs not shown below to save space; links to the graphs are provided.)_
+
+
+
+#### (2) Get the AVERAGE over updates of MEDIAN of error types by time intervals
+
+Summarization level = updates. Transform many updates to one update for each time interval
+
+_(Graphs 8 to 12 under each location (except provinces together) (shown below) show the four types of error by time intervals (update-free)_
+
+_Graphs 8 to 11 show the four types of error with weekly time intervals._
+
+_Graphs 12 show MAPE with monthly time intervals.)_
+
+
+
+#### (3) Get the AVERAGE over time intervals of the quantity number (2) above, i.e. AVERAGE over updates of MEDIAN of error types by time intervals
+
+Summarization level = time intervals. Transform many time intervals (weeks or months) to a single statistic for all updates and time intervals for a model-location (e.g., IHME-Alberta). 
+
+_(Graphs shown under "Canada provinces together")_
+
+For instance, Average MAPE for IHME-Alberta is ??.? (with weekly time intervals) or ??.? (with monthly time intervals), graphs 4 and 9 respectively under "Canada provinces together".
+
+
+
+
+<br/><br/>
 **Locations:**
 
 [Canada National](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/README.md#canada-national-daily-deaths-error-measures-ihme-model) 
