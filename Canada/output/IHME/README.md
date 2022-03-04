@@ -189,7 +189,7 @@ Long PDF file, see video [here]().
 
 (1) Canada provinces together [graph 11 1 1 C19 daily deaths, Canada, provinces together, IHME, Mean over updates of: **Median Absolute Percent Error** by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2011%201%201%20C19%20daily%20deaths%2C%20Canada%2C%20provinces%20together%2C%20IHME%2C%20absolute%20%25%20Error%20Mean1.pdf)
 
-![image](https://user-images.githubusercontent.com/30849720/156821837-4907d9b9-4d4b-4842-9983-ba44362275bb.png)
+![image](https://user-images.githubusercontent.com/30849720/156826135-53790a43-f5b2-4333-85c3-da7b00733243.png)
 
 ****
 
