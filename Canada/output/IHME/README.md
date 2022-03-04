@@ -127,18 +127,21 @@ Long PDF file, see video [here]().
 
 **** 
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error]()
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20National%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
-
-****
-
-(5) Canada National [graph 5 C19 daily deaths, Canada, National, IHME, Percent Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156819642-3b8ad40d-95bb-46eb-8e09-00fa2e02058f.png)
 
 ****
 
-(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error]()
+(5) Canada National [graph 5 C19 daily deaths, Canada, National, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20National%20C19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156819758-3a9ae9d0-3734-4be1-89c7-18ec77ece111.png)
+
+****
+
+(6) Canada National [graph 6 C19 daily deaths, Canada, National, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20National%20C19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156819870-041058ce-ef8a-431e-ae61-29a33243e43f.png)
 
 ****
 
