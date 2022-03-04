@@ -145,23 +145,27 @@ Long PDF file, see video [here]().
 
 ****
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, **Error**, mean over updates of median Error by epi weeks]()
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
 
-
-****
-
-(8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/156820674-880c4c86-07d5-4b05-927b-b4dca8819cd3.png)
 
 ****
 
-(9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, **Percent Error**, mean over updates of median percent error by epi weeks]()
+(8) Canada National [graph 8 C19 daily deaths, Canada, National, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156820805-4b3cd66d-24ab-42b0-8d02-7b692c6b8f3d.png)
 
 ****
 
-(10) Canada National [graph 10 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks]()
+(9) Canada National [graph 9 C19 daily deaths, Canada, National, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156820974-cd1db2bd-bf31-4899-a726-1ec5d5bcd9ce.png)
+
+****
+
+(10) Canada National [graph 10 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156821099-1b631e75-7dc0-43af-a2d3-d7f786ed2c2d.png)
 
 ****
 
