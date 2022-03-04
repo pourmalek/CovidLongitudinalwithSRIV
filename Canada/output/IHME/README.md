@@ -68,7 +68,7 @@ Summarization level = time intervals. Transform many time intervals (weeks or mo
 
 _(Graphs shown under "Canada provinces together")_
 
-For instance, Average MAPE for IHME-Alberta is ??.? (with weekly time intervals) or ??.? (with monthly time intervals), graphs 4 and 9 respectively under "Canada provinces together".
+For instance, Average MAPE for IHME-Alberta is 683.9 (with weekly time intervals) or 753.0 (with monthly time intervals), graphs 4 and 9 respectively under "Canada provinces together".
 
 
 
@@ -315,48 +315,56 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, All updates together]()
+(2) Alberta [graph 2 C19 daily deaths, Canada, Alberta, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Alberta%20C19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846376-f5a34735-4356-4bd9-a6cc-a9de72c997be.png)
+
+****
+
+(3) Alberta [graph 3 C19 daily deaths, Canada, Alberta, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846520-5e73856b-8bfd-4449-8dc8-c198132eb490.png)
+
+****
+
+(4) Alberta [graph 4 C19 daily deaths, Canada, Alberta, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Alberta%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846597-84f0ef20-42d5-4cc8-a2c0-bb850d934954.png)
+
+****
+
+(5) Alberta [graph 5 C19 daily deaths, Canada, Alberta, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Alberta%20C19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846670-9e793880-d064-47ed-8ad2-48f198bdaf29.png)
+
+****
+
+(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%206%20Alberta%20C19%20daily%20deaths%20absolute%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846770-0dd7db6e-1f08-4a32-98e6-5c938c5c8e06.png)
+
+****
+
+(7) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, **Error**, mean over updates of median Error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%207%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846850-52b7581f-aff9-46b4-b659-7afdfd732ec2.png)
+
+****
+
+(8) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%208%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156846962-3c4cf0f3-2052-45ae-ba80-481f11f2d966.png)
+
+****
+
+(9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, **Percent Error**, mean over updates of median percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
 
 ****
 
-(3) Alberta [graph 3 C19 daily deaths, Canada, Alberta, IHME, Error]()
+(10) Alberta [graph 10 C19 daily deaths, Canada, Alberta, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%209%20Alberta%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Percent%20Error%20Mean1.pdf)
 
-
-****
-
-(4) Alberta [graph 4 C19 daily deaths, Canada, Alberta, IHME, Absolute Error]()
-
-
-****
-
-(5) Alberta [graph 5 C19 daily deaths, Canada, Alberta, IHME, Percent Error]()
-
-
-****
-
-(6) Alberta [graph 6 C19 daily deaths, Canada, Alberta, IHME, Absolute Percent Error]()
-
-
-****
-
-(7) Alberta [graph 7 C19 daily deaths, Canada, Alberta, IHME, **Error**, mean over updates of median Error by epi weeks]()
-
-
-****
-
-(8) Alberta [graph 8 C19 daily deaths, Canada, Alberta, IHME, **Absolute Error**, mean over updates of median absolute error by epi weeks]()
-
-
-****
-
-(9) Alberta [graph 9 C19 daily deaths, Canada, Alberta, IHME, **Percent Error**, mean over updates of median percent error by epi weeks]()
-
-
-****
-
-(10) Alberta [graph 10 C19 daily deaths, Canada, Alberta, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks]()
-
+![image](https://user-images.githubusercontent.com/30849720/156847071-fa23e38c-6564-484a-a12a-fc4cfda1bfc7.png)
 
 ****
 
