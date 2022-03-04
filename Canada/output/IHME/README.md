@@ -466,29 +466,33 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Manitoba [graph 1 C19 daily deaths, Canada, Manitoba, IHME, All updates, separate]()
+(1) Manitoba [graph 1 C19 daily deaths, Canada, Manitoba, IHME, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Manitoba%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, All updates together]()
+(2) Manitoba [graph 2 C19 daily deaths, Canada, Manitoba, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Manitoba%20C19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
-
-****
-
-(3) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156848280-ad395eee-28df-4c6b-b315-0cf7685cd5eb.png)
 
 ****
 
-(4) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error]()
+(3) Manitoba [graph 6 C19 daily deaths, Canada, Manitoba, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Manitoba%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156848350-39b5bcb0-6d60-4b86-a49a-8d22116bc6af.png)
 
 ****
 
-(5) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, Percent Error]()
+(4) Manitoba [graph 7 C19 daily deaths, Canada, Manitoba, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Manitoba%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156848424-c795d44a-b8b6-4f5f-9586-425335205747.png)
+
+****
+
+(5) Manitoba [graph 8 C19 daily deaths, Canada, Manitoba, IHME, Percent Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%205%20Manitoba%20C19%20daily%20deaths%20percent%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156848520-6f3abcff-25f4-4abd-a85f-70e8c7a76555.png)
 
 ****
 
