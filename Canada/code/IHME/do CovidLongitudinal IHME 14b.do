@@ -76,7 +76,7 @@ save "CovidLongitudinal IHME 5", replace
 * 11 2 1 Daily deaths, provinces together, mean over updates of median absolute % error by calendar months
 
 twoway ///
-(line DDAbPeErA02XXX_Mean1b date, sort lwidth(medium) lcolor(gray)) /// 1 "CAN" 
+(line DDAbPeErA02XXX_Mean1b date, sort lwidth(vthick) lcolor(gray)) /// 1 "CAN" 
 (line DDAbPeErA02XAB_Mean1b date, sort lwidth(medium) lcolor(cyan)) /// 2 "AB" cyan
 (line DDAbPeErA02XBC_Mean1b date, sort lwidth(medium) lcolor(blue)) /// 3 "BC" blue
 (line DDAbPeErA02XMB_Mean1b date, sort lwidth(medium) lcolor(lime)) /// 4 "MB" lime
