@@ -273,8 +273,14 @@ _Time intervals: (c) both epidemiological weeks and calendar months shown togeth
 
 ****
 
+(11) Canada provinces together [graph 13 1 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals]()
 
-mmm
+
+****
+
+(12) Canada provinces together [graph 13 2 C19 daily deaths, Canada, provinces together, DELP, Average MAPE over updates and time intervals, without extremes ]()
+
+The graph ‘without extremes’ better depicts other values. 
 
 
 ****
