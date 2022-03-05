@@ -93,23 +93,27 @@ Long PDF file, see video [here]().
 
 ****
 
-(2) Canada National [graph 2 C19 daily deaths, Canada, National, IMPE, Updates together]()
+(2) Canada National [graph 2 C19 daily deaths, Canada, National, IMPE, Updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%202%20National%20C19%20daily%20deaths%2C%20Canada%2C%20IMPE%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
-
-****
-
-(3) Canada National [graph 3 C19 daily deaths, Canada, National, IMPE, **Error**]()
-
+![image](https://user-images.githubusercontent.com/30849720/156874179-b76c77d2-7f39-4501-b6d7-e74544453a37.png)
 
 ****
 
-(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, **Absolute Error**]()
+(3) Canada National [graph 3 C19 daily deaths, Canada, National, IMPE, **Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%203%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156874210-fe2c5ee1-3eb9-4c92-95ab-b9da2b298610.png)
 
 ****
 
-(5) Canada National [graph 5 C19 daily deaths, Canada, National, IMPE, **Percent Error**]()
+(4) Canada National [graph 4 C19 daily deaths, Canada, National, IMPE, **Absolute Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%204%20National%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156874246-f1c3d20c-8d91-4ed7-9791-f567abf9fbbb.png)
+
+****
+
+(5) Canada National [graph 5 C19 daily deaths, Canada, National, IMPE, **Percent Error**](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IMPE/graphs/graph%205%20National%20C19%20daily%20deaths%20%25%20error%2C%20Canada%2C%20IMPE%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156874269-6b1e4373-c5c2-4998-bc65-db7741e59af8.png)
 
 ****
 
@@ -118,27 +122,27 @@ Long PDF file, see video [here]().
 
 **** 
 
-(7) Canada National [graph 7 C19 daily deaths, Canada, National, IMPE, mean over updates of median **Error** by epi weeks]()
+(7) Canada National [graph 7 C19 daily deaths, Canada, National, IMPE, mean over updates of median **Error** by calendar months]()
 
 
 ****
 
-(8) Canada National [graph 8 C19 daily deaths, Canada, National, IMPE, mean over updates of **Absolute Percent Error** by epi weeks]()
+(8) Canada National [graph 8 C19 daily deaths, Canada, National, IMPE, mean over updates of **Absolute Percent Error** by calendar months]()
 
 
 ****
 
-(9) Canada National [graph 9 C19 daily deaths, Canada, National, IMPE, mean over updates of **Percent Error** by epi weeks]()
+(9) Canada National [graph 9 C19 daily deaths, Canada, National, IMPE, mean over updates of **Percent Error** by calendar months]()
 
 
 ****
 
-(10) Canada National [graph 9 C19 daily deaths, Canada, National, IMPE, mean over updates of **Absolute Percent Error** by epi weeks]()
+(10) Canada National [graph 9 C19 daily deaths, Canada, National, IMPE, mean over updates of **Absolute Percent Error** by calendar months]()
 
 
 ****
 
-(11) Canada National [graph 11 C19 daily deaths, Canada, national, IMPE, Average MAPE over updates and epi weeks]()
+(11) Canada National [graph 11 C19 daily deaths, Canada, national, IMPE, Average MAPE over updates and calendar months]()
 
 
 ****
