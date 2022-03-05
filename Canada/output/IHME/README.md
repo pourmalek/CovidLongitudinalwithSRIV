@@ -169,7 +169,7 @@ Long PDF file, see video [here]().
 
 ****
 
-(11) Canada National [graph 110 13b C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(11) Canada National [graph 11 C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
 (https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010b%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1b.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156860132-01f3c320-22d2-4355-8cad-1d65434a2920.png)
@@ -377,6 +377,12 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Canada National [graph 11 C19 daily deaths, Alberta, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
+
+****
+
 
 *
 
@@ -452,6 +458,12 @@ Long PDF file, see video [here]().
 (10) British Columbia [graph 10 C19 daily deaths, Canada, British Columbia, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20British%20Columbia%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156852350-18bfe4ed-091c-44a9-b60e-d1040d83d80e.png)
+
+****
+
+(11) British Columbia [graph 11 C19 daily deaths, British Columbia, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
 
 ****
 
@@ -535,6 +547,12 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Manitoba [graph 11 C19 daily deaths, Manitoba, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
+
+****
+
 *
 
 
@@ -614,6 +632,12 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Nova Scotia [graph 11 C19 daily deaths, Nova Scotia, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
+
+****
+
 
 *
 
@@ -690,6 +714,12 @@ Long PDF file, see video [here]().
 (10) Ontario [graph 10 C19 daily deaths, Canada, Ontario, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Ontario%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156857899-ff18242c-28bf-4392-ac85-14e8290920dc.png)
+
+****
+
+(11) Ontario [graph 11 C19 daily deaths, Ontario, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
 
 ****
 
@@ -774,6 +804,12 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Quebec [graph 11 C19 daily deaths, Quebec, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
+
+****
+
 
 *
 
@@ -853,6 +889,12 @@ Long PDF file, see video [here]().
 (10) Saskatchewan [graph 10 C19 daily deaths, Canada, Saskatchewan, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Saskatchewan%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/156858813-ae6534e9-4c02-49ae-bff4-f574955c5455.png)
+
+****
+
+(11) Saskatchewan [graph 11 C19 daily deaths, Saskatchewan, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+()
+
 
 ****
 
