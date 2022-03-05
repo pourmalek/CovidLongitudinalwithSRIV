@@ -169,6 +169,14 @@ Long PDF file, see video [here]().
 
 ****
 
+(11) Canada National [graph 110 13b C19 daily deaths, Canada, National, IHME, **Absolute Percent Error**, mean over updates of **MAPE** by CALENDAR MONTHS]
+(https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010b%20National%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1b.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156860132-01f3c320-22d2-4355-8cad-1d65434a2920.png)
+
+****
+
+
 *
 
 
