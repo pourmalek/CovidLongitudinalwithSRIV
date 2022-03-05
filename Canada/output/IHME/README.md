@@ -679,8 +679,9 @@ Long PDF file, see video [here]().
 
 ****
 
-(10) Ontario [graph 10 C19 daily deaths, Canada, Ontario, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks]()
+(10) Ontario [graph 10 C19 daily deaths, Canada, Ontario, IHME, **Absolute Percent Error**, mean over updates of median absolute percent error by epi weeks](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%2010%20Ontario%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20Absolute%20Percent%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156857899-ff18242c-28bf-4392-ac85-14e8290920dc.png)
 
 ****
 
@@ -705,24 +706,27 @@ Long PDF file, see video [here]().
 
 ****
 
-(1) Quebec [graph 1 C19 daily deaths, Canada, Quebec, IHME, All updates, separate]()
+(1) Quebec [graph 1 C19 daily deaths, Canada, Quebec, IHME, All updates, separate](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%201%20Quebec%20C-19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates%2C%20separate.pdf)
 
 Long PDF file, see video [here]().
 
 ****
 
-(2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, All updates together]()
+(2) Quebec [graph 2 C19 daily deaths, Canada, Quebec, IHME, All updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%202%20Quebec%20C19%20daily%20deaths%2C%20Canada%2C%20IHME%2C%20reference%20scenario%2C%20all%20updates.pdf)
 
-
-****
-
-(3) Quebec [graph 3 C19 daily deaths, Canada, Quebec, IHME, Error]()
-
+![image](https://user-images.githubusercontent.com/30849720/156857962-52eb5c59-1e19-4f6c-bf19-5b9ffb90628e.png)
 
 ****
 
-(4) Quebec [graph 4 C19 daily deaths, Canada, Quebec, IHME, Absolute Error]()
+(3) Quebec [graph 3 C19 daily deaths, Canada, Quebec, IHME, Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%203%20Quebec%20C19%20daily%20deaths%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/156858009-306125a2-6173-4e0e-814c-712dd28d995f.png)
+
+****
+
+(4) Quebec [graph 4 C19 daily deaths, Canada, Quebec, IHME, Absolute Error](https://github.com/pourmalek/CovidLongitudinal/blob/main/Canada/output/IHME/graphs/graph%204%20Quebec%20C19%20daily%20deaths%20absolute%20error%2C%20Canada%2C%20IHME%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/156858050-35ac39d7-89b4-4319-b2cb-8a2dab3239fa.png)
 
 ****
 
