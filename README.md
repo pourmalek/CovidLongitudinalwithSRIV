@@ -27,11 +27,6 @@ Longitudinal assessment of international periodically updating COVID-19 pandemic
 ******************************************************************************************************************************************** 
 
 
-<br/><br/>
-
-*****
-*****
-
 ### CovidVisualized repositories: ###
 
 [`covir2`](https://github.com/pourmalek/covir2) Combine and visualize predictions of international periodically updated COVID-19 pandemic models for countries without subnational level estimates: Iran
