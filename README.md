@@ -69,6 +69,8 @@ IHME: Institute for Health Metrics and Evaluation. COVID-19 pandemic model by de
 
 IMPE: Imperial. COVID-19 pandemic model developed by Imperial College, London. https://mrc-ide.github.io/global-lmic-reports/
 
+LANL: Los Alamos National Laboratories. COVID-19 pandemic model developed by Los Alamos National Laboratories, Los Alamos. https://covid-19.bsvgateway.org
+
 SRIV: Srivastava, Ajitesh. COVID-19 pandemic model developed by Ajitesh Srivastava, University of Southern California, Los Angeles. https://scc-usc.github.io/ReCOVER-COVID-19/#/
 
 .
