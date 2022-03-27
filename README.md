@@ -14,8 +14,8 @@ Longitudinal assessment of international periodically updating COVID-19 pandemic
 
 ### Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
 
-************************************************************************************************************************************************************
-************************************************************************************************************************************************************
+*********************************************************************************************************************************************
+*********************************************************************************************************************************************
 
 * Project: Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
 
