@@ -72,9 +72,7 @@ LANL: Los Alamos National Laboratories. COVID-19 pandemic model developed by Los
 
 SRIV: Srivastava, Ajitesh. COVID-19 pandemic model developed by Ajitesh Srivastava, University of Southern California, Los Angeles. https://scc-usc.github.io/ReCOVER-COVID-19/#/
 
-.
-
-JOHN: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, Baltimore. https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6 (Official reports of the countries to the World Health Organization)
+JOHN: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, Baltimore. https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6 (Official reports of the countries to the World Health Organization; benchmark)
 
 *****
 *****
