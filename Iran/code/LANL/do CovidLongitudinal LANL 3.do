@@ -172,7 +172,7 @@ foreach update of local list {
 	twoway ///
 	(line DayDeaMeSmA00 date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
 	(line DayDeaMeSmA04`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "LANL smooth, backcast"
-	(line DayDeaFOREA04`update' date, sort lwidth(medthick) lcolor(orange)) /// 3 "LANL smooth, forecast"
+	(line DayDeaFOREA04`update' date, sort lwidth(medthick) lcolor(brown)) /// 3 "LANL smooth, forecast"
 	if date >= td(01jan2020) &  date <= td(01jan2022) ///
 	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
