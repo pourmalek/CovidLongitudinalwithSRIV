@@ -5,7 +5,9 @@
 
 **************************
 **************************
+
 <br/><br/>  
+
 ### International periodically updated COVID-19 pandemic models: ###
 
 **(1) DELP**: DELPHI. Differential Equations Lead to Predictions of Hospitalizations and Infections. COVID-19 pandemic model named DELPHI developed by Massachusetts Institute of Technology, Cambridge. https://covidanalytics.io/projections
@@ -20,7 +22,6 @@
 
 **(0) JOHN**: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, Baltimore. https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6 (Official reports of the countries to the World Health Organization; benchmark)
 
-<br/><br/>  
 
 **************************
 **************************
@@ -38,8 +39,6 @@ Reference = JOHN
 (3) Percent error = 100 * (minus (Reference minus Model)) / Reference
 
 (4) Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
-
-<br/><br/>  
 
 
 **************************
