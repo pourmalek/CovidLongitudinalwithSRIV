@@ -6,7 +6,6 @@
 **************************
 **************************
 
-<br/><br/>  
 
 ### International periodically updated COVID-19 pandemic models: ###
 
@@ -26,8 +25,7 @@
 **************************
 **************************
 
-<br/><br/>  
-
+ 
 ### Four error types: ###
 
 Reference = JOHN
