@@ -188,7 +188,7 @@ Graph 8 [C19 daily deaths error, Iran, IHME, average median _absolute errors_](h
 Graph 9 [C19 daily deaths error, Iran, IHME,average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20%25%20Error%20Mean1.pdf)
 
 
-******
+.
 
 **************************
 **************************
