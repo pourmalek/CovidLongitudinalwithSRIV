@@ -493,6 +493,75 @@ Graph 10 [C19 daily deaths, Iran, SRIV, average median _absolute percent errors_
 **************************
 **************************
 
+### (6) Models together model
+
+<br/><br/>  
+
+******
+
+Graph 1 [C19 daily deaths, Iran, Models together, updates together]()
+
+******
+
+Graph 2 a [C19 daily deaths, Iran, Models together, Updates together With extremes]()
+
+******
+
+Graph 2 b [C19 daily deaths, Iran, Models together, Updates together, Without extremes]()
+
+******
+
+Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, With extremes, Forecast only]()
+
+******
+
+Graph 2 d [C19 daily deaths, Iran, Models together, Updates together, Without extremes, Forecast only]()
+
+******
+
+Graph 3 [C19 daily deaths _error_, Iran, Models together, all updates]()
+
+
+******
+
+Graph 4 [C19 daily deaths _absolute error_, Iran, Models together, all updates]()
+
+
+******
+
+Graph 5 [C19 daily deaths _percent error_, Iran, Models together, all updates]()
+
+
+******
+
+Graph 6 [C19 daily deaths _absolute percent error_, Iran, Models together, all updates]()
+
+******  
+
+Graph 7 [C19 daily deaths, Iran, Models together, average median _errors_]()
+
+
+******
+
+Graph 8 [C19 daily deaths, Iran, Models together, average median _absolute errors_]()
+
+
+******
+
+Graph 9 [C19 daily deaths, Iran, Models together, average median _percent errors_]()
+
+
+******
+
+Graph 10 [C19 daily deaths, Iran, Models together, average median _absolute percent errors_]()
+
+
+.
+
+**************************
+**************************
+
+
 
 
 
