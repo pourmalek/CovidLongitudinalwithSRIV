@@ -22,6 +22,8 @@
 
 **(0) JOHN**: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, Baltimore. https://www.arcgis.com/apps/dashboards/bda7594740fd40299423467b48e9ecf6 (Official reports of the countries to the World Health Organization; benchmark)
 
+<br/><br/>  
+
 **************************
 **************************
 
