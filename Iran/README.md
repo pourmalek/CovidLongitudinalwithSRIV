@@ -44,6 +44,22 @@ Reference = JOHN
 **************************
 **************************
 
+#### [DELP model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#delp-model)
+
+#### [IHME model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#ihme-model)
+
+#### [IMPE model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#impe-model)
+
+#### [LANL model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#lanl-model)
+
+#### [SRIV model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#sriv-model)
+
+#### [Models together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#models-together)
+
+
+**************************
+**************************
+
 ### DELP model
 
 <br/><br/>  
