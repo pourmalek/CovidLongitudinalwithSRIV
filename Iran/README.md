@@ -399,13 +399,15 @@ This is a multiple-page graph. A video of the graph pages is available [here]().
 
 ******
 
-Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes.pdf)
+Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%2C%20with%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168845746-18ae01c2-14d0-47ee-a0c0-1fc4b86094bb.png)
 
 ******
 
-Graph 2 b [C19 daily deaths, Iran, SRIV, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
+Graph 2 b [C19 daily deaths, Iran, SRIV, Updates together, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%2C%20without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168845950-7d2c5992-2d5d-4b58-9452-2244c8f67ccf.png)
 
 ******
 
