@@ -118,9 +118,7 @@ Graph 9 [C19 daily deaths error, Iran, DELP,average median _percent errors_](htt
 
 ![image](https://user-images.githubusercontent.com/30849720/168827797-eebee964-585c-472c-a9cd-7d40862ccc33.png)
 
-******
-
-*
+.
 
 **************************
 **************************
