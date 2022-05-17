@@ -66,7 +66,7 @@ Graph 2 b [C19 daily deaths, Iran, DELP, Updates together, Without extremes](htt
 
 ******
 
-Graph 2 c [C19 daily deaths, Iran, DELP, Updates together, With extremes, Forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+Graph 2 c [C19 daily deaths, Iran, DELP, Updates together, With extremes, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/168822314-63491236-45c4-4037-8d1e-6d1f42ec9a44.png)
 
