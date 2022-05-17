@@ -84,9 +84,21 @@ Graph 3 [C19 daily deaths error, Iran, DELP, all updates](https://github.com/pou
 
 ******
 
-**************************
-**************************
+Graph 4 [C19 daily deaths absolute error, Iran, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20DELP%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168825053-ff86d5ac-a6e2-4f78-b5ac-452566b5df89.png)
 
-  
+******
+
+Graph 5 [C19 daily deaths percent error, Iran, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20DELP%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/168825427-2202a6ee-4687-4107-bb6e-51115e9aad4c.png)
+
+******
+
+Graph 6 [C19 daily deaths absolute percent error, Iran, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20DELP%2C%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/168825764-f451656d-fcce-4362-996c-58cabc9af523.png)
+
+******  
 
