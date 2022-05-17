@@ -523,9 +523,9 @@ Graph 2 b [C19 daily deaths, Iran, Models together, Updates together, Without ex
 
 ******
 
-Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, With extremes, Forecast only]()
+Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, With extremes, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20With%20extremes.pdf)
 
-
+![image](https://user-images.githubusercontent.com/30849720/168873320-f0a76a3f-4696-46d7-85a9-3375d5cd0f20.png)
 
 ******
 
