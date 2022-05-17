@@ -44,23 +44,23 @@ Reference = JOHN
 **************************
 **************************
 
-#### [DELP model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#delp-model)
+#### [(1) DELP model]()
 
-#### [IHME model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#ihme-model)
+#### [(2) IHME model]()
 
-#### [IMPE model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#impe-model)
+#### [(3) IMPE model]()
 
-#### [LANL model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#lanl-model)
+#### [(4) LANL model]()
 
-#### [SRIV model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#sriv-model)
+#### [(5) SRIV model]()
 
-#### [Models together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#models-together)
+#### [(6) Models together]()
 
 
 **************************
 **************************
 
-### DELP model
+### (1) DELP model
 
 <br/><br/>  
 
@@ -147,7 +147,7 @@ Graph 10 [C19 daily deaths, Iran, DELP, average median _absolute percent errors_
 **************************
 **************************
 
-### IHME model
+### (2) IHME model
 
 <br/><br/>  
 
@@ -234,7 +234,7 @@ Graph 10 [C19 daily deaths, Iran, IHME, average median _absolute percent errors_
 **************************
 **************************
 
-### IMPE model
+### (3) IMPE model
 
 <br/><br/>  
 
@@ -320,7 +320,7 @@ Graph 10 [C19 daily deaths, Iran, IMPE, average median _absolute percent errors_
 **************************
 **************************
 
-### LANL model
+### (4) LANL model
 
 <br/><br/>  
 
@@ -405,7 +405,7 @@ Graph 10 [C19 daily deaths, Iran, LANL, average median _absolute percent errors_
 **************************
 **************************
 
-### SRIV model
+### (5) SRIV model
 
 <br/><br/>  
 
