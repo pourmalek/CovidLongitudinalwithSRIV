@@ -1,0 +1,34 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}14 May 2022, 08:35:50
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal IMPE.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models                                                                         
+. * Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
+. ***************************************************************************
+. 
+. 
+. 
+. do "do CovidLongitudinal IMPE 1a.do"
+{txt}
+{com}. 
+. clear all
+{txt}
+{com}. 
+. cd "$pathCovidLongitudinal"
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code
+{txt}
+{com}. 
+. cd IMPE
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE
+{txt}
+{com}. 
+. capture log close 
+{smcl}
+{com}{sf}{ul off}

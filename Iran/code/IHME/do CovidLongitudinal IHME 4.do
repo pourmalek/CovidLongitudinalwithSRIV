@@ -1,0 +1,480 @@
+
+clear all
+
+cd "$pathCovidLongitudinal"
+
+cd IHME
+
+capture log close 
+
+log using "log CovidLongitudinal IHME 4.smcl", replace
+
+***************************************************************************
+* This is "do CovidLongitudinal IHME 4.do"
+
+* Project: Longitudinal assessment of COVID-19 models                                                                         
+* Person: Farshad Pourmalek pourmalek_farshad at yahoo dotcom
+***************************************************************************
+
+
+
+* continue graphs, daily deaths: updates together (without error measures)
+* graphs 2 a b c d of all model updates (together) with official reports (JOHN)
+* 2 a With extremes
+* 2 b Without extremes
+* 2 c Forecast only, with extremes
+* 2 d Forecast only, ithout extremes
+* input data files: "CovidLongitudinal IHME.dta"
+* output data files: none. no change in data.
+
+
+
+
+
+
+
+use "CovidLongitudinal IHME", clear
+
+
+
+
+
+* updates together
+
+
+******
+* graph 2 a Daily deaths, Updates together, With extremes
+	
+twoway ///
+(line DayDeaMeSmA00S00 date, sort lwidth(vthick) lcolor(cyan)) /// JOHN smooth
+(line DayDeaMeSmA0220200625 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200629 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200707 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200714 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200722 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200730 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200806 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200821 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200827 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200903 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200911 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200918 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200924 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201002 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201009 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201015 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201022 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201029 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201112 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201119 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201203 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201210 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201217 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201223 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210115 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210122 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210128 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210204 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210212 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210220 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210225 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210306 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210311 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210317 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210325 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210401 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210409 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210416 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210423 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210506 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210514 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210521 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210528 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210604 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210610 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210618 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210625 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210702 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210715 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210723 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210730 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210806 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210820 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210826 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210902 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210910 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210916 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210923 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210930 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211015 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211021 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211104 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211221 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaFOREA0220200625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200629 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200707 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200714 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200722 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200730 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200806 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200821 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200827 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200903 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200911 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200918 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200924 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201002 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201009 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201022 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201029 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201112 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201119 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201203 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201210 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201217 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201223 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210115 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210122 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210128 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210204 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210212 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210220 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210225 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210306 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210311 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210317 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210325 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210401 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210409 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210416 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210423 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210506 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210514 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210521 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210528 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210604 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210610 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210618 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210702 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210715 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210723 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210730 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210806 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210820 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210826 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210902 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210910 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210916 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210923 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210930 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211021 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211104 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211221 date, sort lwidth(medium) lcolor(black)) /// 
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, all updates", size(medium) color(black)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "JOHN smooth" 2 "IHME backcast" 65 "IHME forecast") rows(1) size(small)) ///
+subtitle("With extremes", size(small)) 
+ 
+qui graph export "graph 2 a C19 daily deaths, Iran, IHME, Updates together With extremes.pdf", replace
+
+
+
+
+
+
+
+
+******
+
+* graph 2 b Daily deaths, Updates together, Without extremes
+
+* extremes (_Forecast_ much higher than other updates, i.e., > 1000) = update
+* 20200625 20200629 20200707 20200714 20200722 20200730 20200806 20200918 
+* 20210730 20210806 20210820 20210826 20210902 20210910 
+
+	
+twoway ///
+(line DayDeaMeSmA00S00 date, sort lwidth(vthick) lcolor(cyan)) /// JOHN smooth
+(line DayDeaMeSmA0220200821 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200827 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200903 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200911 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220200924 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201002 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201009 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201015 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201022 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201029 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201112 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201119 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201203 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201210 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201217 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220201223 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210115 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210122 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210128 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210204 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210212 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210220 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210225 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210306 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210311 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210317 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210325 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210401 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210409 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210416 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210423 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210506 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210514 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210521 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210528 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210604 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210610 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210618 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210625 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210702 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210715 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210723 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210916 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210923 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220210930 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211015 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211021 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211104 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaMeSmA0220211221 date, sort lwidth(thin) lcolor(gold)) /// 
+(line DayDeaFOREA0220200821 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200827 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200903 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200911 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200924 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201002 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201009 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201022 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201029 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201112 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201119 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201203 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201210 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201217 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201223 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210115 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210122 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210128 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210204 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210212 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210220 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210225 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210306 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210311 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210317 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210325 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210401 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210409 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210416 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210423 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210506 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210514 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210521 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210528 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210604 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210610 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210618 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210702 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210715 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210723 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210916 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210923 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210930 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211021 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211104 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211221 date, sort lwidth(thin) lcolor(black)) /// 
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, all updates", size(medium) color(black)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "JOHN smooth" 2 "IHME backcast" 65 "IHME forecast") rows(1) size(small)) ///
+subtitle("Without extremes", size(small)) 
+ 
+qui graph export "graph 2 b C19 daily deaths, Iran, IHME, Updates together Without extremes.pdf", replace
+
+
+
+
+
+
+******
+* graph 2 c Daily deaths, Updates together, With extremes, Forecast only
+	
+twoway ///
+(line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) /// JOHN smooth
+(line DayDeaFOREA0220200625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200629 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200707 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200714 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200722 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200730 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200806 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200821 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200827 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200903 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200911 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200918 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200924 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201002 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201009 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201022 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201029 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201112 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201119 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201203 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201210 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201217 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201223 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210115 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210122 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210128 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210204 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210212 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210220 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210225 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210306 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210311 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210317 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210325 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210401 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210409 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210416 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210423 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210506 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210514 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210521 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210528 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210604 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210610 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210618 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210702 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210715 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210723 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210730 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210806 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210820 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210826 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210902 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210910 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210916 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210923 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210930 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211021 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211104 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211221 date, sort lwidth(medium) lcolor(black)) /// 
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, all updates", size(medium) color(black)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "JOHN smooth" 2 "IHME forecast") rows(1) size(small)) ///
+subtitle("Forecast only, with extremes", size(small)) 
+ 
+qui graph export "graph 2 c C19 daily deaths, Iran, IHME, Updates together With extremes, Forecast only.pdf", replace
+
+
+
+
+
+******
+* graph 2 d Daily deaths, Updates together, Without extremes, Forecast only 
+
+* extremes (_Forecast_ much higher than other updates, i.e., > 1000) = update
+* 20200625 20200629 20200707 20200714 20200722 20200730 20200806 20200918 
+* 20210730 20210806 20210820 20210826 20210902 20210910 
+	
+twoway ///
+(line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) /// JOHN smooth
+(line DayDeaFOREA0220200821 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200827 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200903 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200911 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220200924 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201002 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201009 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201022 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201029 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201112 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201119 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201203 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201210 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201217 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220201223 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210115 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210122 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210128 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210204 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210212 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210220 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210225 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210306 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210311 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210317 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210325 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210401 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210409 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210416 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210423 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210506 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210514 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210521 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210528 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210604 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210610 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210618 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210625 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210702 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210715 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210723 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210916 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210923 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220210930 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211015 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211021 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211104 date, sort lwidth(thin) lcolor(black)) /// 
+(line DayDeaFOREA0220211221 date, sort lwidth(medium) lcolor(black)) /// 
+if date >= td(01jan2020) & date <= td(01jan2022) ///
+, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, all updates", size(medium) color(black)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+legend(order(1 "JOHN smooth" 2 "IHME forecast") rows(1) size(small)) ///
+subtitle("Forecast only, without extremes", size(small)) 
+ 
+qui graph export "graph 2 d C19 daily deaths, Iran, IHME, Updates together Without extremes, Forecast only.pdf", replace
+
+*
+
+
+
+
+
+
+**********************
+
+view "log CovidLongitudinal IHME 4.smcl"
+
+log close
+
+exit, clear
