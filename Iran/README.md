@@ -499,23 +499,33 @@ Graph 10 [C19 daily deaths, Iran, SRIV, average median _absolute percent errors_
 
 ******
 
-Graph 1 [C19 daily deaths, Iran, Models together, updates together]()
+Graph 1 [C19 daily deaths, Iran, Models together, updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video of the graph pages is available [here](). 
 
 ******
 
 Graph 2 a [C19 daily deaths, Iran, Models together, Updates together With extremes]()
 
+
+
 ******
 
 Graph 2 b [C19 daily deaths, Iran, Models together, Updates together, Without extremes]()
+
+
 
 ******
 
 Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, With extremes, Forecast only]()
 
+
+
 ******
 
 Graph 2 d [C19 daily deaths, Iran, Models together, Updates together, Without extremes, Forecast only]()
+
+
 
 ******
 
