@@ -302,6 +302,7 @@ Graph 7 [C19 daily deaths, Iran, IMPE, average median _errors_](https://github.c
 
 Graph 8 [C19 daily deaths, Iran, IMPE, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168869464-44ab168d-8830-4d39-b3fc-6eaa1b9f025c.png)
 
 ******
 
