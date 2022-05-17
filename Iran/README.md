@@ -54,7 +54,7 @@ Reference = JOHN
 
 #### [(5) SRIV model](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/README.md#5-sriv-model-1)
 
-#### [(6) Models together]()
+#### [(6) Models together](https://github.com/pourmalek/CovidLongitudinal/tree/main/Iran#6-models-together-model)
 
 
 **************************
