@@ -120,8 +120,14 @@ Graph 9 [C19 daily deaths error, Iran, DELP,average median _percent errors_](htt
 
 ******
 
+*
+
 **************************
 **************************
+
+### IHME model
+
+<br/><br/>  
 
 ******
 
