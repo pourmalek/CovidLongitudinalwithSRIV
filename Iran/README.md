@@ -27,7 +27,9 @@ JOHN: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, 
 **************************
 **************************
 
-### DELP
+### DELP model
+
+<br/><br/>  
 
 Graph 1 [C19 daily deaths, Iran, DELP, updates together](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%201%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20updates%20together.pdf)
 
