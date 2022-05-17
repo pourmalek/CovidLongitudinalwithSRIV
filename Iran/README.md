@@ -179,11 +179,13 @@ Graph 4 [C19 daily deaths _absolute error_, Iran, IHME, all updates](https://git
 
 Graph 5 [C19 daily deaths _percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168837664-f4a5f342-f356-46e9-a7ea-37c07a6b911a.png)
 
 ******
 
 Graph 6 [C19 daily deaths _absolute percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168838011-51a8e032-3b9a-449b-b34e-de48f7aa0109.png)
 
 ******  
 
