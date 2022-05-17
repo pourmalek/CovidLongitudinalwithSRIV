@@ -618,23 +618,19 @@ Graph 11 a [C19 daily deaths, Iran, Models together, Average Mean _Error_](https
 
 ******
 
-Graph 11 b [C19 daily deaths, Iran, Models together, Average Mean _Absolute Error_]
-
-
-
-******
-
-Graph 11 c [C19 daily deaths, Iran, Models together, Average Mean _ Percent Error_]
-
+Graph 11 b [C19 daily deaths, Iran, Models together, Average Mean _Absolute Error_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20b%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20Mean%20Absolute%20Error.pdf)
 
 
 ******
 
-Graph 11 d [C19 daily deaths, Iran, Models together, Average Mean _ Absolute Pecrcent Error_]
+Graph 11 c [C19 daily deaths, Iran, Models together, Average Mean _Percent Error_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20c%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20Mean%20Percent%20Error.pdf)
 
 
+******
 
+Graph 11 d [C19 daily deaths, Iran, Models together, Average Mean _Absolute Pecrcent Error_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20d%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20MAPE.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/168879496-7a53e36d-290f-4ec8-8728-427c12de51ea.png)
 
 .
 
