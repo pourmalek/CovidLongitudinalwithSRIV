@@ -164,21 +164,25 @@ Graph 10 b [C19 daily deaths, Iran, Models together, average median _absolute pe
 
 Graph 11 a [C19 daily deaths average of mean _errors_; Over updates and calendar months; Iran; Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20a%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20Mean%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169173952-b010ba42-5172-407e-9a8e-54353e917300.png)
 
 ******
 
 Graph 11 b [C19 daily deaths average of mean _absolute errors_; Over updates and calendar months; Iran; Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20b%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20Mean%20Absolute%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169173998-4ae03500-95a6-4fb2-b345-e2227e1a800f.png)
 
 ******
 
 Graph 11 c [C19 daily deaths average of mean _percent errors_; Over updates and calendar months; Iran; Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20c%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20Mean%20Percent%20Error.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169174046-2cec5d75-2379-4d5b-bda8-20a9f65dd243.png)
 
 ******
 
 Graph 11 d [C19 daily deaths average of mean _absolute percent errors_; Over updates and calendar months; Iran; Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2011%20d%20C19%20daily%20deaths%2C%20Iran%2C%20Average%20MAPE.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169174116-c638973c-fc96-4afc-993b-85ee10670631.png)
 
 ******
 
