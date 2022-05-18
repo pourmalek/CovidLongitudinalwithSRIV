@@ -1,13 +1,13 @@
-CovidLongitudinal - Iran
+## CovidLongitudinal - Iran
 
-Longitudinal assessment of international periodically updating COVID-19 pandemic studies - Iran
+## Longitudinal assessment of international periodically updating COVID-19 pandemic studies - Iran
 
 
 *****
 *****
 
 
-#### International periodically updated COVID-19 pandemic models: ####
+### International periodically updated COVID-19 pandemic models: ####
 
 DELP: DELPHI. Differential Equations Lead to Predictions of Hospitalizations and Infections. COVID-19 pandemic model named DELPHI developed by Massachusetts Institute of Technology, Cambridge. https://covidanalytics.io/projections
 
