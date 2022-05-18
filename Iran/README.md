@@ -90,13 +90,15 @@ Graph 2 e [C19 daily deaths, Iran, Models together, Updates together, Forecast o
 
 ******
 
-Graph 3 [C19 daily deaths _error_, Iran, Models together, all updates]()
+Graph 3 [C19 daily deaths _error_, Iran, Models together, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169171442-0791882e-c1f9-4a83-bcea-5100d183cf84.png)
 
 ******
 
-Graph 4 [C19 daily deaths _absolute error_, Iran, Models together, all updates]()
+Graph 4 [C19 daily deaths _absolute error_, Iran, Models together, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169171503-248b2f57-ee4b-4cad-87a0-6afb65501b5b.png)
 
 ******
 
