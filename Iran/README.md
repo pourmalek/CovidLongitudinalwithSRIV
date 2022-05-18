@@ -60,8 +60,9 @@ This is a multiple-page graph. A video is available [here](https://youtu.be/n3lv
 
 ******
 
-Graph 2 a [C19 daily deaths, Iran, Models together, Updates together With extremes]()
+Graph 2 a [C19 daily deaths, Iran, Models together, Updates together, With extremes, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169137501-e64e285d-3c73-4297-98c8-46ecfb82d09a.png)
 
 ******
 
