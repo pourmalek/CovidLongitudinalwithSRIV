@@ -25,3 +25,20 @@
 *****
 *****
 
+
+Four types of error measures:
+
+
+Error = minus (Reference minus Model) 
+
+Absolute error = | minus (Reference minus Model) |
+
+Percent error = 100 * (minus (Reference minus Model)) / Reference
+
+Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
+
+
+*****
+*****
+
+
