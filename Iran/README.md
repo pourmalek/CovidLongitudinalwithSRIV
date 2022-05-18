@@ -26,7 +26,7 @@
 *****
 
 
-Four types of error measures:
+### Four types of error measures:
 
 
 Error = minus (Reference minus Model) 
