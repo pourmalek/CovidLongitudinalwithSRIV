@@ -60,21 +60,25 @@ This is a multiple-page graph. A video is available [here](https://youtu.be/n3lv
 
 ******
 
-Graph 2 a [C19 daily deaths, Iran, Models together, Updates together, With extremes, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20With%20extremes.pdf)
+Graph 2 a [C19 daily deaths, Iran, Models together, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20With%20extremes.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/169137501-e64e285d-3c73-4297-98c8-46ecfb82d09a.png)
 
 ******
 
-Graph 2 b [C19 daily deaths, Iran, Models together, Updates together, Without extremes]()
+Graph 2 b [C19 daily deaths, Iran, Models together, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20Without%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/169170925-0485b67b-75cc-4d3a-9309-de6597ab0477.png)
 
 ******
 
-Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, With extremes, Forecast only]()
+Graph 2 c [C19 daily deaths, Iran, Models together, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20Updates%20together%20With%20extremes.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/169171064-0d1e8aff-0518-4355-825f-3b7239ef1f93.png)
 
 ******
 
-Graph 2 d [C19 daily deaths, Iran, Models together, Updates together, Without extremes, Forecast only]()
+Graph 2 d [C19 daily deaths, Iran, Models together, Updates together, Forecast only, Without extremes]()
 
 ******
 
