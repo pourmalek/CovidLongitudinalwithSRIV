@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 4.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 19:33:33
+ {txt}opened on:  {res}17 May 2022, 13:57:13
 {txt}
 {com}. 
 . ***************************************************************************
@@ -486,7 +486,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 4.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 19:33:48
+ {txt}closed on:  {res}17 May 2022, 13:57:25
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

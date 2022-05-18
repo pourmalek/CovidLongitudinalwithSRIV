@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 1.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 11:57:02
+ {txt}opened on:  {res}17 May 2022, 12:54:09
 {txt}
 {com}. 
 . ***************************************************************************
@@ -466,7 +466,8 @@
 {res}{col 27} 22027.5{col 37} 22036.5{col 47} 22051.5{col 57} 22066.5{col 67} 22075.5
 {col 26}22apr2020{col 36}01may2020{col 46}16may2020{col 56}31may2020{col 66}09jun2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200417.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200417.dta not found)
+file CovidLongitudinal DELP 20200417.dta saved
 
 {err}This is update 20200424
 {res}{text}(10 vars, 10,368 obs)
@@ -490,7 +491,8 @@
 {res}{col 27}   22033{col 37}   22041{col 47} 22054.5{col 57}   22068{col 67}   22076
 {col 26}28apr2020{col 36}06may2020{col 46}19may2020{col 56}02jun2020{col 66}10jun2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200424.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200424.dta not found)
+file CovidLongitudinal DELP 20200424.dta saved
 
 {err}This is update 20200501
 {res}{text}(10 vars, 9,200 obs)
@@ -514,7 +516,8 @@
 {res}{col 27}   22040{col 37}   22047{col 47} 22058.5{col 57}   22070{col 67}   22077
 {col 26}05may2020{col 36}12may2020{col 46}23may2020{col 56}04jun2020{col 66}11jun2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200501.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200501.dta not found)
+file CovidLongitudinal DELP 20200501.dta saved
 
 {err}This is update 20200509
 {res}{text}(10 vars, 7,828 obs)
@@ -538,7 +541,8 @@
 {res}{col 27}   22047{col 37}   22053{col 47} 22062.5{col 57}   22072{col 67}   22078
 {col 26}12may2020{col 36}18may2020{col 46}27may2020{col 56}06jun2020{col 66}12jun2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200509.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200509.dta not found)
+file CovidLongitudinal DELP 20200509.dta saved
 
 {err}This is update 20200517
 {res}{text}(10 vars, 6,450 obs)
@@ -562,7 +566,8 @@
 {res}{col 27} 22054.5{col 37}   22059{col 47} 22066.5{col 57}   22074{col 67} 22078.5
 {col 26}19may2020{col 36}24may2020{col 46}31may2020{col 56}08jun2020{col 66}12jun2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200517.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200517.dta not found)
+file CovidLongitudinal DELP 20200517.dta saved
 
 {err}This is update 20200524
 {res}{text}(10 vars, 11,607 obs)
@@ -586,7 +591,8 @@
 {res}{col 27}   22064{col 37}   22072{col 47}   22085{col 57}   22098{col 67}   22106
 {col 26}29may2020{col 36}06jun2020{col 46}19jun2020{col 56}02jul2020{col 66}10jul2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200524.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200524.dta not found)
+file CovidLongitudinal DELP 20200524.dta saved
 
 {err}This is update 20200531
 {res}{text}(10 vars, 10,154 obs)
@@ -610,7 +616,8 @@
 {res}{col 27}   22070{col 37}   22077{col 47} 22088.5{col 57}   22100{col 67}   22107
 {col 26}04jun2020{col 36}11jun2020{col 46}22jun2020{col 56}04jul2020{col 66}11jul2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200531.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200531.dta not found)
+file CovidLongitudinal DELP 20200531.dta saved
 
 {err}This is update 20200607
 {res}{text}(10 vars, 8,775 obs)
@@ -634,7 +641,8 @@
 {res}{col 27}   22076{col 37}   22082{col 47}   22092{col 57}   22102{col 67}   22108
 {col 26}10jun2020{col 36}16jun2020{col 46}26jun2020{col 56}06jul2020{col 66}12jul2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200607.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200607.dta not found)
+file CovidLongitudinal DELP 20200607.dta saved
 
 {err}This is update 20200614
 {res}{text}(10 vars, 14,175 obs)
@@ -658,7 +666,8 @@
 {res}{col 27}   22086{col 37}   22095{col 47}   22111{col 57}   22127{col 67}   22136
 {col 26}20jun2020{col 36}29jun2020{col 46}15jul2020{col 56}31jul2020{col 66}09aug2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200614.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200614.dta not found)
+file CovidLongitudinal DELP 20200614.dta saved
 
 {err}This is update 20200621
 {res}{text}(10 vars, 12,712 obs)
@@ -682,7 +691,8 @@
 {res}{col 27}   22092{col 37} 22100.5{col 47} 22114.5{col 57} 22128.5{col 67}   22137
 {col 26}26jun2020{col 36}04jul2020{col 46}18jul2020{col 56}01aug2020{col 66}10aug2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200621.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200621.dta not found)
+file CovidLongitudinal DELP 20200621.dta saved
 
 {err}This is update 20200628
 {res}{text}(10 vars, 11,172 obs)
@@ -706,7 +716,8 @@
 {res}{col 27}   22098{col 37}   22106{col 47}   22118{col 57}   22130{col 67}   22138
 {col 26}02jul2020{col 36}10jul2020{col 46}22jul2020{col 56}03aug2020{col 66}11aug2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200628.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200628.dta not found)
+file CovidLongitudinal DELP 20200628.dta saved
 
 
 {com}. *
@@ -880,7 +891,8 @@
 {res}{col 27}   22107{col 37}   22118{col 47} 22136.5{col 57}   22155{col 67}   22166
 {col 26}11jul2020{col 36}22jul2020{col 46}09aug2020{col 56}28aug2020{col 66}08sep2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200704.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200704.dta not found)
+file CovidLongitudinal DELP 20200704.dta saved
 
 {err}This is update 20200718
 {res}{text}(10 vars, 20,880 obs)
@@ -904,7 +916,8 @@
 {res}{col 27} 22122.5{col 37}   22136{col 47} 22158.5{col 57}   22181{col 67} 22194.5
 {col 26}26jul2020{col 36}09aug2020{col 46}31aug2020{col 56}23sep2020{col 66}06oct2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200718.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200718.dta not found)
+file CovidLongitudinal DELP 20200718.dta saved
 
 {err}This is update 20200801
 {res}{text}(10 vars, 17,860 obs)
@@ -928,7 +941,8 @@
 {res}{col 27}   22135{col 37} 22146.5{col 47} 22165.5{col 57} 22184.5{col 67}   22196
 {col 26}08aug2020{col 36}19aug2020{col 46}07sep2020{col 56}26sep2020{col 66}08oct2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200801.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200801.dta not found)
+file CovidLongitudinal DELP 20200801.dta saved
 
 {err}This is update 20200815
 {res}{text}(10 vars, 22,041 obs)
@@ -952,7 +966,8 @@
 {res}{col 27}   22151{col 37}   22165{col 47}   22188{col 57}   22211{col 67}   22225
 {col 26}24aug2020{col 36}07sep2020{col 46}30sep2020{col 56}23oct2020{col 66}06nov2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200815.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200815.dta not found)
+file CovidLongitudinal DELP 20200815.dta saved
 
 {err}This is update 20200829
 {res}{text}(10 vars, 18,802 obs)
@@ -976,7 +991,8 @@
 {res}{col 27}   22163{col 37}   22175{col 47}   22195{col 57}   22215{col 67}   22227
 {col 26}05sep2020{col 36}17sep2020{col 46}07oct2020{col 56}27oct2020{col 66}08nov2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200829.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200829.dta not found)
+file CovidLongitudinal DELP 20200829.dta saved
 
 {err}This is update 20200912
 {res}{text}(10 vars, 15,535 obs)
@@ -1000,7 +1016,8 @@
 {res}{col 27}   22176{col 37}   22186{col 47}   22202{col 57}   22218{col 67}   22228
 {col 26}18sep2020{col 36}28sep2020{col 46}14oct2020{col 56}30oct2020{col 66}09nov2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200912.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200912.dta not found)
+file CovidLongitudinal DELP 20200912.dta saved
 
 
 {com}. *
@@ -1178,7 +1195,8 @@
 {res}{col 27}   21994{col 37}   22029{col 47}   22087{col 57}   22145{col 67}   22180
 {col 26}20mar2020{col 36}24apr2020{col 46}21jun2020{col 56}18aug2020{col 66}22sep2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200723.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200723.dta not found)
+file CovidLongitudinal DELP 20200723.dta saved
 
 {err}This is update 20200926
 {res}{text}(16 vars, 61,767 obs)
@@ -1202,7 +1220,8 @@
 {res}{col 27}   22000{col 37}   22044{col 47} 22117.5{col 57}   22191{col 67}   22235
 {col 26}26mar2020{col 36}09may2020{col 46}21jul2020{col 56}03oct2020{col 66}16nov2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20200926.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20200926.dta not found)
+file CovidLongitudinal DELP 20200926.dta saved
 
 {err}This is update 20201008
 {res}{text}(16 vars, 61,847 obs)
@@ -1226,7 +1245,8 @@
 {res}{col 27}   22000{col 37}   22044{col 47} 22117.5{col 57}   22191{col 67}   22235
 {col 26}26mar2020{col 36}09may2020{col 46}21jul2020{col 56}03oct2020{col 66}16nov2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201008.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201008.dta not found)
+file CovidLongitudinal DELP 20201008.dta saved
 
 {err}This is update 20201022
 {res}{text}(16 vars, 69,287 obs)
@@ -1250,7 +1270,8 @@
 {res}{col 27}   22003{col 37}   22052{col 47}   22133{col 57}   22214{col 67}   22263
 {col 26}29mar2020{col 36}17may2020{col 46}06aug2020{col 56}26oct2020{col 66}14dec2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201022.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201022.dta not found)
+file CovidLongitudinal DELP 20201022.dta saved
 
 {err}This is update 20201105
 {res}{text}(16 vars, 69,287 obs)
@@ -1274,7 +1295,8 @@
 {res}{col 27}   22003{col 37}   22052{col 47}   22133{col 57}   22214{col 67}   22263
 {col 26}29mar2020{col 36}17may2020{col 46}06aug2020{col 56}26oct2020{col 66}14dec2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201105.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201105.dta not found)
+file CovidLongitudinal DELP 20201105.dta saved
 
 {err}This is update 20201119
 {res}{text}(10 vars, 47,468 obs)
@@ -1298,7 +1320,8 @@
 {res}{col 27}   22116{col 37}   22146{col 47}   22196{col 57}   22246{col 67}   22276
 {col 26}20jul2020{col 36}19aug2020{col 46}08oct2020{col 56}27nov2020{col 66}27dec2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201119.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201119.dta not found)
+file CovidLongitudinal DELP 20201119.dta saved
 
 
 {com}. *
@@ -1539,7 +1562,8 @@
 {res}{col 27}   22116{col 37}   22146{col 47}   22196{col 57}   22246{col 67}   22276
 {col 26}20jul2020{col 36}19aug2020{col 46}08oct2020{col 56}27nov2020{col 66}27dec2020
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201203.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201203.dta not found)
+file CovidLongitudinal DELP 20201203.dta saved
 
 {err}This is update 20201217
 {res}{text}(16 vars, 54,908 obs)
@@ -1563,7 +1587,8 @@
 {res}{col 27} 22119.5{col 37}   22154{col 47} 22211.5{col 57}   22269{col 67} 22303.5
 {col 26}23jul2020{col 36}27aug2020{col 46}23oct2020{col 56}20dec2020{col 66}23jan2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201217.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201217.dta not found)
+file CovidLongitudinal DELP 20201217.dta saved
 
 {err}This is update 20201231
 {res}{text}(16 vars, 54,908 obs)
@@ -1587,7 +1612,8 @@
 {res}{col 27} 22119.5{col 37}   22154{col 47} 22211.5{col 57}   22269{col 67} 22303.5
 {col 26}23jul2020{col 36}27aug2020{col 46}23oct2020{col 56}20dec2020{col 66}23jan2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20201231.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20201231.dta not found)
+file CovidLongitudinal DELP 20201231.dta saved
 
 {err}This is update 20210114
 {res}{text}(16 vars, 39,840 obs)
@@ -1611,7 +1637,8 @@
 {res}{col 27}   22205{col 37}   22230{col 47} 22271.5{col 57}   22313{col 67}   22338
 {col 26}17oct2020{col 36}11nov2020{col 46}22dec2020{col 56}02feb2021{col 66}27feb2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210114.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210114.dta not found)
+file CovidLongitudinal DELP 20210114.dta saved
 
 {err}This is update 20210128
 {res}{text}(16 vars, 39,840 obs)
@@ -1635,7 +1662,8 @@
 {res}{col 27}   22205{col 37}   22230{col 47} 22271.5{col 57}   22313{col 67}   22338
 {col 26}17oct2020{col 36}11nov2020{col 46}22dec2020{col 56}02feb2021{col 66}27feb2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210128.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210128.dta not found)
+file CovidLongitudinal DELP 20210128.dta saved
 
 {err}This is update 20210211
 {res}{text}(16 vars, 47,280 obs)
@@ -1659,7 +1687,8 @@
 {res}{col 27}   22208{col 37}   22238{col 47}   22287{col 57}   22336{col 67}   22366
 {col 26}20oct2020{col 36}19nov2020{col 46}07jan2021{col 56}25feb2021{col 66}27mar2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210211.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210211.dta not found)
+file CovidLongitudinal DELP 20210211.dta saved
 
 {err}This is update 20210225
 {res}{text}(16 vars, 47,280 obs)
@@ -1683,7 +1712,8 @@
 {res}{col 27}   22208{col 37}   22238{col 47}   22287{col 57}   22336{col 67}   22366
 {col 26}20oct2020{col 36}19nov2020{col 46}07jan2021{col 56}25feb2021{col 66}27mar2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210225.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210225.dta not found)
+file CovidLongitudinal DELP 20210225.dta saved
 
 {err}This is update 20210311
 {res}{text}(16 vars, 32,400 obs)
@@ -1707,7 +1737,8 @@
 {res}{col 27}   22294{col 37}   22314{col 47}   22348{col 57}   22382{col 67}   22402
 {col 26}14jan2021{col 36}03feb2021{col 46}09mar2021{col 56}12apr2021{col 66}02may2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210311.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210311.dta not found)
+file CovidLongitudinal DELP 20210311.dta saved
 
 {err}This is update 20210325
 {res}{text}(16 vars, 32,400 obs)
@@ -1731,7 +1762,8 @@
 {res}{col 27}   22294{col 37}   22314{col 47}   22348{col 57}   22382{col 67}   22402
 {col 26}14jan2021{col 36}03feb2021{col 46}09mar2021{col 56}12apr2021{col 66}02may2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210325.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210325.dta not found)
+file CovidLongitudinal DELP 20210325.dta saved
 
 {err}This is update 20210408
 {res}{text}(16 vars, 47,040 obs)
@@ -1755,7 +1787,8 @@
 {res}{col 27}   22300{col 37} 22329.5{col 47} 22378.5{col 57} 22427.5{col 67}   22457
 {col 26}20jan2021{col 36}18feb2021{col 46}08apr2021{col 56}27may2021{col 66}26jun2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210408.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210408.dta not found)
+file CovidLongitudinal DELP 20210408.dta saved
 
 {err}This is update 20210422
 {res}{text}(16 vars, 47,040 obs)
@@ -1779,7 +1812,8 @@
 {res}{col 27}   22300{col 37} 22329.5{col 47} 22378.5{col 57} 22427.5{col 67}   22457
 {col 26}20jan2021{col 36}18feb2021{col 46}08apr2021{col 56}27may2021{col 66}26jun2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210422.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210422.dta not found)
+file CovidLongitudinal DELP 20210422.dta saved
 
 {err}This is update 20210506
 {res}{text}(16 vars, 47,040 obs)
@@ -1803,7 +1837,8 @@
 {res}{col 27}   22300{col 37} 22329.5{col 47} 22378.5{col 57} 22427.5{col 67}   22457
 {col 26}20jan2021{col 36}18feb2021{col 46}08apr2021{col 56}27may2021{col 66}26jun2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210506.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210506.dta not found)
+file CovidLongitudinal DELP 20210506.dta saved
 
 {err}This is update 20210520
 {res}{text}(16 vars, 32,880 obs)
@@ -1827,7 +1862,8 @@
 {res}{col 27}   22353{col 37}   22374{col 47}   22408{col 57}   22442{col 67}   22463
 {col 26}14mar2021{col 36}04apr2021{col 46}08may2021{col 56}11jun2021{col 66}02jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210520.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210520.dta not found)
+file CovidLongitudinal DELP 20210520.dta saved
 
 {err}This is update 20210603
 {res}{text}(16 vars, 32,880 obs)
@@ -1851,7 +1887,8 @@
 {res}{col 27}   22353{col 37}   22374{col 47}   22408{col 57}   22442{col 67}   22463
 {col 26}14mar2021{col 36}04apr2021{col 46}08may2021{col 56}11jun2021{col 66}02jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210603.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210603.dta not found)
+file CovidLongitudinal DELP 20210603.dta saved
 
 {err}This is update 20210610
 {res}{text}(16 vars, 40,320 obs)
@@ -1875,7 +1912,8 @@
 {res}{col 27}   22356{col 37} 22381.5{col 47} 22423.5{col 57} 22465.5{col 67}   22491
 {col 26}17mar2021{col 36}11apr2021{col 46}23may2021{col 56}04jul2021{col 66}30jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210610.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210610.dta not found)
+file CovidLongitudinal DELP 20210610.dta saved
 
 {err}This is update 20210617
 {res}{text}(16 vars, 40,320 obs)
@@ -1899,7 +1937,8 @@
 {res}{col 27}   22356{col 37} 22381.5{col 47} 22423.5{col 57} 22465.5{col 67}   22491
 {col 26}17mar2021{col 36}11apr2021{col 46}23may2021{col 56}04jul2021{col 66}30jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210617.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210617.dta not found)
+file CovidLongitudinal DELP 20210617.dta saved
 
 {err}This is update 20210624
 {res}{text}(16 vars, 40,320 obs)
@@ -1923,7 +1962,8 @@
 {res}{col 27}   22356{col 37} 22381.5{col 47} 22423.5{col 57} 22465.5{col 67}   22491
 {col 26}17mar2021{col 36}11apr2021{col 46}23may2021{col 56}04jul2021{col 66}30jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210624.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210624.dta not found)
+file CovidLongitudinal DELP 20210624.dta saved
 
 {err}This is update 20210701
 {res}{text}(16 vars, 40,320 obs)
@@ -1947,7 +1987,8 @@
 {res}{col 27}   22356{col 37} 22381.5{col 47} 22423.5{col 57} 22465.5{col 67}   22491
 {col 26}17mar2021{col 36}11apr2021{col 46}23may2021{col 56}04jul2021{col 66}30jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210701.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210701.dta not found)
+file CovidLongitudinal DELP 20210701.dta saved
 
 {err}This is update 20210708
 {res}{text}(16 vars, 40,320 obs)
@@ -1971,7 +2012,8 @@
 {res}{col 27}   22356{col 37} 22381.5{col 47} 22423.5{col 57} 22465.5{col 67}   22491
 {col 26}17mar2021{col 36}11apr2021{col 46}23may2021{col 56}04jul2021{col 66}30jul2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210708.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210708.dta not found)
+file CovidLongitudinal DELP 20210708.dta saved
 
 {err}This is update 20210715
 {res}{text}(16 vars, 54,960 obs)
@@ -1995,7 +2037,8 @@
 {res}{col 27}   22362{col 37}   22397{col 47}   22454{col 57}   22511{col 67}   22546
 {col 26}23mar2021{col 36}27apr2021{col 46}23jun2021{col 56}19aug2021{col 66}23sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210715.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210715.dta not found)
+file CovidLongitudinal DELP 20210715.dta saved
 
 {err}This is update 20210722
 {res}{text}(16 vars, 54,960 obs)
@@ -2019,7 +2062,8 @@
 {res}{col 27}   22362{col 37}   22397{col 47}   22454{col 57}   22511{col 67}   22546
 {col 26}23mar2021{col 36}27apr2021{col 46}23jun2021{col 56}19aug2021{col 66}23sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210722.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210722.dta not found)
+file CovidLongitudinal DELP 20210722.dta saved
 
 {err}This is update 20210729
 {res}{text}(16 vars, 54,960 obs)
@@ -2043,7 +2087,8 @@
 {res}{col 27}   22362{col 37}   22397{col 47}   22454{col 57}   22511{col 67}   22546
 {col 26}23mar2021{col 36}27apr2021{col 46}23jun2021{col 56}19aug2021{col 66}23sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210729.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210729.dta not found)
+file CovidLongitudinal DELP 20210729.dta saved
 
 {err}This is update 20210805
 {res}{text}(16 vars, 40,320 obs)
@@ -2067,7 +2112,8 @@
 {res}{col 27}   22417{col 37} 22442.5{col 47} 22484.5{col 57} 22526.5{col 67}   22552
 {col 26}17may2021{col 36}11jun2021{col 46}23jul2021{col 56}03sep2021{col 66}29sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210805.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210805.dta not found)
+file CovidLongitudinal DELP 20210805.dta saved
 
 {err}This is update 20210812
 {res}{text}(16 vars, 40,320 obs)
@@ -2091,7 +2137,8 @@
 {res}{col 27}   22417{col 37} 22442.5{col 47} 22484.5{col 57} 22526.5{col 67}   22552
 {col 26}17may2021{col 36}11jun2021{col 46}23jul2021{col 56}03sep2021{col 66}29sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210812.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210812.dta not found)
+file CovidLongitudinal DELP 20210812.dta saved
 
 {err}This is update 20210819
 {res}{text}(16 vars, 40,320 obs)
@@ -2115,7 +2162,8 @@
 {res}{col 27}   22417{col 37} 22442.5{col 47} 22484.5{col 57} 22526.5{col 67}   22552
 {col 26}17may2021{col 36}11jun2021{col 46}23jul2021{col 56}03sep2021{col 66}29sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210819.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210819.dta not found)
+file CovidLongitudinal DELP 20210819.dta saved
 
 {err}This is update 20210826
 {res}{text}(16 vars, 40,320 obs)
@@ -2139,7 +2187,8 @@
 {res}{col 27}   22417{col 37} 22442.5{col 47} 22484.5{col 57} 22526.5{col 67}   22552
 {col 26}17may2021{col 36}11jun2021{col 46}23jul2021{col 56}03sep2021{col 66}29sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210826.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210826.dta not found)
+file CovidLongitudinal DELP 20210826.dta saved
 
 {err}This is update 20210902
 {res}{text}(16 vars, 40,320 obs)
@@ -2163,7 +2212,8 @@
 {res}{col 27}   22417{col 37} 22442.5{col 47} 22484.5{col 57} 22526.5{col 67}   22552
 {col 26}17may2021{col 36}11jun2021{col 46}23jul2021{col 56}03sep2021{col 66}29sep2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210902.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210902.dta not found)
+file CovidLongitudinal DELP 20210902.dta saved
 
 {err}This is update 20210909
 {res}{text}(16 vars, 47,760 obs)
@@ -2187,7 +2237,8 @@
 {res}{col 27}   22420{col 37}   22450{col 47}   22500{col 57}   22550{col 67}   22580
 {col 26}20may2021{col 36}19jun2021{col 46}08aug2021{col 56}27sep2021{col 66}27oct2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210909.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210909.dta not found)
+file CovidLongitudinal DELP 20210909.dta saved
 
 {err}This is update 20210916
 {res}{text}(16 vars, 47,760 obs)
@@ -2211,7 +2262,8 @@
 {res}{col 27}   22420{col 37}   22450{col 47}   22500{col 57}   22550{col 67}   22580
 {col 26}20may2021{col 36}19jun2021{col 46}08aug2021{col 56}27sep2021{col 66}27oct2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210916.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210916.dta not found)
+file CovidLongitudinal DELP 20210916.dta saved
 
 {err}This is update 20210923
 {res}{text}(16 vars, 36,960 obs)
@@ -2235,7 +2287,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210923.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210923.dta not found)
+file CovidLongitudinal DELP 20210923.dta saved
 
 {err}This is update 20210930
 {res}{text}(16 vars, 36,960 obs)
@@ -2259,7 +2312,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20210930.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20210930.dta not found)
+file CovidLongitudinal DELP 20210930.dta saved
 
 {err}This is update 20211007
 {res}{text}(16 vars, 36,960 obs)
@@ -2283,7 +2337,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211007.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211007.dta not found)
+file CovidLongitudinal DELP 20211007.dta saved
 
 {err}This is update 20211014
 {res}{text}(16 vars, 36,960 obs)
@@ -2307,7 +2362,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211014.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211014.dta not found)
+file CovidLongitudinal DELP 20211014.dta saved
 
 {err}This is update 20211021
 {res}{text}(16 vars, 36,960 obs)
@@ -2331,7 +2387,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211021.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211021.dta not found)
+file CovidLongitudinal DELP 20211021.dta saved
 
 {err}This is update 20211028
 {res}{text}(16 vars, 36,960 obs)
@@ -2355,7 +2412,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211028.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211028.dta not found)
+file CovidLongitudinal DELP 20211028.dta saved
 
 {err}This is update 20211104
 {res}{text}(16 vars, 36,960 obs)
@@ -2379,7 +2437,8 @@
 {res}{col 27}   22491{col 37}   22514{col 47} 22552.5{col 57}   22591{col 67}   22614
 {col 26}30jul2021{col 36}22aug2021{col 46}29sep2021{col 56}07nov2021{col 66}30nov2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211104.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211104.dta not found)
+file CovidLongitudinal DELP 20211104.dta saved
 
 {err}This is update 20211111
 {res}{text}(16 vars, 44,400 obs)
@@ -2403,7 +2462,8 @@
 {res}{col 27}   22494{col 37}   22522{col 47}   22568{col 57}   22614{col 67}   22642
 {col 26}02aug2021{col 36}30aug2021{col 46}15oct2021{col 56}30nov2021{col 66}28dec2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211111.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211111.dta not found)
+file CovidLongitudinal DELP 20211111.dta saved
 
 {err}This is update 20211118
 {res}{text}(16 vars, 44,400 obs)
@@ -2427,7 +2487,8 @@
 {res}{col 27}   22494{col 37}   22522{col 47}   22568{col 57}   22614{col 67}   22642
 {col 26}02aug2021{col 36}30aug2021{col 46}15oct2021{col 56}30nov2021{col 66}28dec2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211118.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211118.dta not found)
+file CovidLongitudinal DELP 20211118.dta saved
 
 {err}This is update 20211125
 {res}{text}(16 vars, 44,400 obs)
@@ -2451,7 +2512,8 @@
 {res}{col 27}   22494{col 37}   22522{col 47}   22568{col 57}   22614{col 67}   22642
 {col 26}02aug2021{col 36}30aug2021{col 46}15oct2021{col 56}30nov2021{col 66}28dec2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211125.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211125.dta not found)
+file CovidLongitudinal DELP 20211125.dta saved
 
 {err}This is update 20211202
 {res}{text}(16 vars, 44,400 obs)
@@ -2475,7 +2537,8 @@
 {res}{col 27}   22494{col 37}   22522{col 47}   22568{col 57}   22614{col 67}   22642
 {col 26}02aug2021{col 36}30aug2021{col 46}15oct2021{col 56}30nov2021{col 66}28dec2021
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211202.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211202.dta not found)
+file CovidLongitudinal DELP 20211202.dta saved
 
 {err}This is update 20211209
 {res}{text}(16 vars, 40,080 obs)
@@ -2499,7 +2562,8 @@
 {res}{col 27}   22569{col 37}   22594{col 47}   22636{col 57}   22678{col 67}   22703
 {col 26}16oct2021{col 36}10nov2021{col 46}22dec2021{col 56}02feb2022{col 66}27feb2022
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211209.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211209.dta not found)
+file CovidLongitudinal DELP 20211209.dta saved
 
 {err}This is update 20211216
 {res}{text}(16 vars, 40,080 obs)
@@ -2523,7 +2587,8 @@
 {res}{col 27}   22569{col 37}   22594{col 47}   22636{col 57}   22678{col 67}   22703
 {col 26}16oct2021{col 36}10nov2021{col 46}22dec2021{col 56}02feb2022{col 66}27feb2022
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211216.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211216.dta not found)
+file CovidLongitudinal DELP 20211216.dta saved
 
 {err}This is update 20211223
 {res}{text}(16 vars, 40,080 obs)
@@ -2547,7 +2612,8 @@
 {res}{col 27}   22569{col 37}   22594{col 47}   22636{col 57}   22678{col 67}   22703
 {col 26}16oct2021{col 36}10nov2021{col 46}22dec2021{col 56}02feb2022{col 66}27feb2022
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211223.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211223.dta not found)
+file CovidLongitudinal DELP 20211223.dta saved
 
 {err}This is update 20211230
 {res}{text}(16 vars, 40,080 obs)
@@ -2571,7 +2637,8 @@
 {res}{col 27}   22569{col 37}   22594{col 47}   22636{col 57}   22678{col 67}   22703
 {col 26}16oct2021{col 36}10nov2021{col 46}22dec2021{col 56}02feb2022{col 66}27feb2022
 {txt}(1 missing value generated)
-{res}{txt}file CovidLongitudinal DELP 20211230.dta saved
+{res}{txt}(note: file CovidLongitudinal DELP 20211230.dta not found)
+file CovidLongitudinal DELP 20211230.dta saved
 
 
 {com}. *
@@ -2584,7 +2651,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 1.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 11:59:45
+ {txt}closed on:  {res}17 May 2022, 12:56:24
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

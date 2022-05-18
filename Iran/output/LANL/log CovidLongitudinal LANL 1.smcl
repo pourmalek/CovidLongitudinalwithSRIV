@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 1.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 09:46:31
+ {txt}opened on:  {res}17 May 2022, 12:16:24
 {txt}
 {com}. 
 . ***************************************************************************
@@ -19,7 +19,7 @@
 . * output data files: "CovidLongitudinal LANL `update'.dta"
 . 
 . 
-. * updates without Iran: "2020-05-03"
+. * updates without this country: "2020-05-03"
 . 
 . 
 . local list `" "2020-04-26" "2020-04-29" "2020-05-06" "2020-05-10" "2020-05-13" "2020-05-17" "2020-05-20" "2020-05-24" "2020-05-27" "2020-05-31" "2020-06-03" "2020-06-07" "2020-06-10" "2020-06-13" "2020-06-17" "2020-06-21" "2020-06-23" "2020-06-28" "2020-07-01" "2020-07-05" "2020-07-08" "2020-07-12" "2020-07-15" "2020-07-19" "2020-07-22" "2020-07-26" "2020-07-29" "2020-08-02" "2020-08-05" "2020-08-09" "2020-08-12" "2020-08-16" "2020-08-19" "2020-08-23" "2020-08-26" "2020-08-30" "2020-09-02" "2020-09-06" "2020-09-09" "2020-09-13" "2020-09-16" "2020-09-20" "2020-09-23" "2020-09-27" "2020-09-30" "2020-10-04"  "2020-10-07" "2020-10-11" "2020-10-14" "2020-10-18" "2020-10-21" "2020-10-25" "'
@@ -3408,7 +3408,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210602.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210602.dta not found{txt})
+file CovidLongitudinal LANL 20210602.dta saved
 
 {err}This is update 2021-06-06
 {res}{text}(30 vars, 94,600 obs)
@@ -3436,7 +3437,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210606.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210606.dta not found{txt})
+file CovidLongitudinal LANL 20210606.dta saved
 
 {err}This is update 2021-06-13
 {res}{text}(30 vars, 95,804 obs)
@@ -3464,7 +3466,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210613.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210613.dta not found{txt})
+file CovidLongitudinal LANL 20210613.dta saved
 
 {err}This is update 2021-06-20
 {res}{text}(30 vars, 97,008 obs)
@@ -3492,7 +3495,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210620.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210620.dta not found{txt})
+file CovidLongitudinal LANL 20210620.dta saved
 
 {err}This is update 2021-06-27
 {res}{text}(30 vars, 99,354 obs)
@@ -3520,7 +3524,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210627.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210627.dta not found{txt})
+file CovidLongitudinal LANL 20210627.dta saved
 
 {err}This is update 2021-07-04
 {res}{text}(30 vars, 101,150 obs)
@@ -3548,7 +3553,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210704.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210704.dta not found{txt})
+file CovidLongitudinal LANL 20210704.dta saved
 
 {err}This is update 2021-07-11
 {res}{text}(30 vars, 102,375 obs)
@@ -3576,7 +3582,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210711.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210711.dta not found{txt})
+file CovidLongitudinal LANL 20210711.dta saved
 
 {err}This is update 2021-07-18
 {res}{text}(30 vars, 103,600 obs)
@@ -3604,7 +3611,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210718.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210718.dta not found{txt})
+file CovidLongitudinal LANL 20210718.dta saved
 
 {err}This is update 2021-07-25
 {res}{text}(30 vars, 104,825 obs)
@@ -3632,7 +3640,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210725.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210725.dta not found{txt})
+file CovidLongitudinal LANL 20210725.dta saved
 
 {err}This is update 2021-08-01
 {res}{text}(30 vars, 106,050 obs)
@@ -3660,7 +3669,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210801.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210801.dta not found{txt})
+file CovidLongitudinal LANL 20210801.dta saved
 
 {err}This is update 2021-08-08
 {res}{text}(30 vars, 108,501 obs)
@@ -3688,7 +3698,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210808.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210808.dta not found{txt})
+file CovidLongitudinal LANL 20210808.dta saved
 
 {err}This is update 2021-08-15
 {res}{text}(30 vars, 109,740 obs)
@@ -3716,7 +3727,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210815.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210815.dta not found{txt})
+file CovidLongitudinal LANL 20210815.dta saved
 
 {err}This is update 2021-08-22
 {res}{text}(30 vars, 110,979 obs)
@@ -3744,7 +3756,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210822.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210822.dta not found{txt})
+file CovidLongitudinal LANL 20210822.dta saved
 
 {err}This is update 2021-08-29
 {res}{text}(30 vars, 112,218 obs)
@@ -3772,7 +3785,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210829.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210829.dta not found{txt})
+file CovidLongitudinal LANL 20210829.dta saved
 
 {err}This is update 2021-09-05
 {res}{text}(30 vars, 113,457 obs)
@@ -3800,7 +3814,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210905.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210905.dta not found{txt})
+file CovidLongitudinal LANL 20210905.dta saved
 
 {err}This is update 2021-09-12
 {res}{text}(30 vars, 115,992 obs)
@@ -3828,7 +3843,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210912.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210912.dta not found{txt})
+file CovidLongitudinal LANL 20210912.dta saved
 
 {err}This is update 2021-09-19
 {res}{text}(30 vars, 117,245 obs)
@@ -3856,7 +3872,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210919.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210919.dta not found{txt})
+file CovidLongitudinal LANL 20210919.dta saved
 
 {err}This is update 2021-09-26
 {res}{text}(30 vars, 118,498 obs)
@@ -3884,7 +3901,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaMeRaA04S00 {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaMeRaA04S00_window
-{txt}file CovidLongitudinal LANL 20210926.dta saved
+{txt}(note: file CovidLongitudinal LANL 20210926.dta not found{txt})
+file CovidLongitudinal LANL 20210926.dta saved
 
 
 {com}. *
@@ -3907,7 +3925,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 1.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 09:55:38
+ {txt}closed on:  {res}17 May 2022, 12:24:24
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

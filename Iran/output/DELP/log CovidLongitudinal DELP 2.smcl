@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 2.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 11:59:45
+ {txt}opened on:  {res}17 May 2022, 12:56:24
 {txt}
 {com}. 
 . ***************************************************************************
@@ -959,7 +959,8 @@ file CovidLongitudinal DELP 20211230.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal DELP.dta", replace
-{txt}file CovidLongitudinal DELP.dta saved
+{txt}(note: file CovidLongitudinal DELP.dta not found)
+file CovidLongitudinal DELP.dta saved
 
 {com}. 
 . 
@@ -990,7 +991,8 @@ file CovidLongitudinal DELP 20211230.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal JOHN.dta", replace
-{txt}file CovidLongitudinal JOHN.dta saved
+{txt}(note: file CovidLongitudinal JOHN.dta not found)
+file CovidLongitudinal JOHN.dta saved
 
 {com}. 
 . merge m:m date loc_grand_name provincestate using "CovidLongitudinal DELP.dta"
@@ -1053,7 +1055,7 @@ file CovidLongitudinal DELP 20211230.dta saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 2.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 11:59:46
+ {txt}closed on:  {res}17 May 2022, 12:56:25
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

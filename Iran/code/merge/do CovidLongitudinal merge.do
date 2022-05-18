@@ -22,7 +22,7 @@ cd merge
 
 
 
-do "do CovidLongitudinal merge 1 a.do"
+do "do CovidLongitudinal merge 1.do"
 
 * merge models' files
 
@@ -36,16 +36,6 @@ do "do CovidLongitudinal merge 1 a.do"
 
 * output file(s):
 * "CovidLongitudinal merge.dta"
-
-
-
-do "do CovidLongitudinal merge 1 b.do"
-
-* graphs 1 a daily deaths, each update, backcast and forecast
-* graphs 1 b daily deaths, each update, forecast only
-* input file(s): "CovidLongitudinal merge.dta"
-* output data files: none (no change in data)
-
 
 
 
@@ -78,6 +68,7 @@ do "do CovidLongitudinal merge 3.do"
 
 do "do CovidLongitudinal merge 4.do"
 
+
 * graphs for four error types (graphs 3 to 11), updates together
 
 * graph 3 Error
@@ -99,6 +90,9 @@ do "do CovidLongitudinal merge 4.do"
 
 * input data files: "CovidLongitudinal merge.dta"
 * output data files: "CovidLongitudinal merge 2.dta"
+
+
+
 
 
 

@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 1.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 07:25:49
+ {txt}opened on:  {res}17 May 2022, 21:58:38
 {txt}
 {com}. 
 . ***************************************************************************
@@ -183,6 +183,7 @@ now 1
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200502.dta not found)
 file CovidLongitudinal SRIV 20200502.dta saved
 
 
@@ -193,6 +194,7 @@ file CovidLongitudinal SRIV 20200502.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200503.dta not found)
 file CovidLongitudinal SRIV 20200503.dta saved
 
 
@@ -203,6 +205,7 @@ file CovidLongitudinal SRIV 20200503.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(49 observations deleted)
+(note: file CovidLongitudinal SRIV 20211112.dta not found)
 file CovidLongitudinal SRIV 20211112.dta saved
 
 
@@ -213,6 +216,7 @@ file CovidLongitudinal SRIV 20211112.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(51 observations deleted)
+(note: file CovidLongitudinal SRIV 20211114.dta not found)
 file CovidLongitudinal SRIV 20211114.dta saved
 
 
@@ -243,6 +247,7 @@ file CovidLongitudinal SRIV 20200503.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200504.dta not found)
 file CovidLongitudinal SRIV 20200504.dta saved
 
 
@@ -253,6 +258,7 @@ file CovidLongitudinal SRIV 20200504.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200505.dta not found)
 file CovidLongitudinal SRIV 20200505.dta saved
 
 
@@ -263,6 +269,7 @@ file CovidLongitudinal SRIV 20200505.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200506.dta not found)
 file CovidLongitudinal SRIV 20200506.dta saved
 
 
@@ -273,6 +280,7 @@ file CovidLongitudinal SRIV 20200506.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200507.dta not found)
 file CovidLongitudinal SRIV 20200507.dta saved
 
 
@@ -283,6 +291,7 @@ file CovidLongitudinal SRIV 20200507.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200508.dta not found)
 file CovidLongitudinal SRIV 20200508.dta saved
 
 
@@ -293,6 +302,7 @@ file CovidLongitudinal SRIV 20200508.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200509.dta not found)
 file CovidLongitudinal SRIV 20200509.dta saved
 
 
@@ -303,6 +313,7 @@ file CovidLongitudinal SRIV 20200509.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200510.dta not found)
 file CovidLongitudinal SRIV 20200510.dta saved
 
 
@@ -313,6 +324,7 @@ file CovidLongitudinal SRIV 20200510.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200511.dta not found)
 file CovidLongitudinal SRIV 20200511.dta saved
 
 
@@ -323,6 +335,7 @@ file CovidLongitudinal SRIV 20200511.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200512.dta not found)
 file CovidLongitudinal SRIV 20200512.dta saved
 
 
@@ -333,6 +346,7 @@ file CovidLongitudinal SRIV 20200512.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200513.dta not found)
 file CovidLongitudinal SRIV 20200513.dta saved
 
 
@@ -343,6 +357,7 @@ file CovidLongitudinal SRIV 20200513.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200514.dta not found)
 file CovidLongitudinal SRIV 20200514.dta saved
 
 
@@ -353,6 +368,7 @@ file CovidLongitudinal SRIV 20200514.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200515.dta not found)
 file CovidLongitudinal SRIV 20200515.dta saved
 
 
@@ -363,6 +379,7 @@ file CovidLongitudinal SRIV 20200515.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200516.dta not found)
 file CovidLongitudinal SRIV 20200516.dta saved
 
 
@@ -373,6 +390,7 @@ file CovidLongitudinal SRIV 20200516.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200517.dta not found)
 file CovidLongitudinal SRIV 20200517.dta saved
 
 
@@ -383,6 +401,7 @@ file CovidLongitudinal SRIV 20200517.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200518.dta not found)
 file CovidLongitudinal SRIV 20200518.dta saved
 
 
@@ -393,6 +412,7 @@ file CovidLongitudinal SRIV 20200518.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200519.dta not found)
 file CovidLongitudinal SRIV 20200519.dta saved
 
 
@@ -403,6 +423,7 @@ file CovidLongitudinal SRIV 20200519.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200520.dta not found)
 file CovidLongitudinal SRIV 20200520.dta saved
 
 
@@ -413,6 +434,7 @@ file CovidLongitudinal SRIV 20200520.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200521.dta not found)
 file CovidLongitudinal SRIV 20200521.dta saved
 
 
@@ -423,6 +445,7 @@ file CovidLongitudinal SRIV 20200521.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200522.dta not found)
 file CovidLongitudinal SRIV 20200522.dta saved
 
 
@@ -433,6 +456,7 @@ file CovidLongitudinal SRIV 20200522.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200523.dta not found)
 file CovidLongitudinal SRIV 20200523.dta saved
 
 
@@ -443,6 +467,7 @@ file CovidLongitudinal SRIV 20200523.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200524.dta not found)
 file CovidLongitudinal SRIV 20200524.dta saved
 
 
@@ -453,6 +478,7 @@ file CovidLongitudinal SRIV 20200524.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200525.dta not found)
 file CovidLongitudinal SRIV 20200525.dta saved
 
 
@@ -463,6 +489,7 @@ file CovidLongitudinal SRIV 20200525.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200526.dta not found)
 file CovidLongitudinal SRIV 20200526.dta saved
 
 
@@ -473,6 +500,7 @@ file CovidLongitudinal SRIV 20200526.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200527.dta not found)
 file CovidLongitudinal SRIV 20200527.dta saved
 
 
@@ -483,6 +511,7 @@ file CovidLongitudinal SRIV 20200527.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200528.dta not found)
 file CovidLongitudinal SRIV 20200528.dta saved
 
 
@@ -493,6 +522,7 @@ file CovidLongitudinal SRIV 20200528.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200529.dta not found)
 file CovidLongitudinal SRIV 20200529.dta saved
 
 
@@ -503,6 +533,7 @@ file CovidLongitudinal SRIV 20200529.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200530.dta not found)
 file CovidLongitudinal SRIV 20200530.dta saved
 
 
@@ -513,6 +544,7 @@ file CovidLongitudinal SRIV 20200530.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200531.dta not found)
 file CovidLongitudinal SRIV 20200531.dta saved
 
 
@@ -523,6 +555,7 @@ file CovidLongitudinal SRIV 20200531.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200601.dta not found)
 file CovidLongitudinal SRIV 20200601.dta saved
 
 
@@ -533,6 +566,7 @@ file CovidLongitudinal SRIV 20200601.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200602.dta not found)
 file CovidLongitudinal SRIV 20200602.dta saved
 
 
@@ -543,6 +577,7 @@ file CovidLongitudinal SRIV 20200602.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200603.dta not found)
 file CovidLongitudinal SRIV 20200603.dta saved
 
 
@@ -553,6 +588,7 @@ file CovidLongitudinal SRIV 20200603.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200604.dta not found)
 file CovidLongitudinal SRIV 20200604.dta saved
 
 
@@ -563,6 +599,7 @@ file CovidLongitudinal SRIV 20200604.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200605.dta not found)
 file CovidLongitudinal SRIV 20200605.dta saved
 
 
@@ -573,6 +610,7 @@ file CovidLongitudinal SRIV 20200605.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200606.dta not found)
 file CovidLongitudinal SRIV 20200606.dta saved
 
 
@@ -583,6 +621,7 @@ file CovidLongitudinal SRIV 20200606.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200607.dta not found)
 file CovidLongitudinal SRIV 20200607.dta saved
 
 
@@ -593,6 +632,7 @@ file CovidLongitudinal SRIV 20200607.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200608.dta not found)
 file CovidLongitudinal SRIV 20200608.dta saved
 
 
@@ -603,6 +643,7 @@ file CovidLongitudinal SRIV 20200608.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200609.dta not found)
 file CovidLongitudinal SRIV 20200609.dta saved
 
 
@@ -613,6 +654,7 @@ file CovidLongitudinal SRIV 20200609.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200610.dta not found)
 file CovidLongitudinal SRIV 20200610.dta saved
 
 
@@ -623,6 +665,7 @@ file CovidLongitudinal SRIV 20200610.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200611.dta not found)
 file CovidLongitudinal SRIV 20200611.dta saved
 
 
@@ -633,6 +676,7 @@ file CovidLongitudinal SRIV 20200611.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200612.dta not found)
 file CovidLongitudinal SRIV 20200612.dta saved
 
 
@@ -643,6 +687,7 @@ file CovidLongitudinal SRIV 20200612.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200613.dta not found)
 file CovidLongitudinal SRIV 20200613.dta saved
 
 
@@ -653,6 +698,7 @@ file CovidLongitudinal SRIV 20200613.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200614.dta not found)
 file CovidLongitudinal SRIV 20200614.dta saved
 
 
@@ -663,6 +709,7 @@ file CovidLongitudinal SRIV 20200614.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200615.dta not found)
 file CovidLongitudinal SRIV 20200615.dta saved
 
 
@@ -673,6 +720,7 @@ file CovidLongitudinal SRIV 20200615.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200616.dta not found)
 file CovidLongitudinal SRIV 20200616.dta saved
 
 
@@ -683,6 +731,7 @@ file CovidLongitudinal SRIV 20200616.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200617.dta not found)
 file CovidLongitudinal SRIV 20200617.dta saved
 
 
@@ -693,6 +742,7 @@ file CovidLongitudinal SRIV 20200617.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200618.dta not found)
 file CovidLongitudinal SRIV 20200618.dta saved
 
 
@@ -703,6 +753,7 @@ file CovidLongitudinal SRIV 20200618.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200619.dta not found)
 file CovidLongitudinal SRIV 20200619.dta saved
 
 
@@ -713,6 +764,7 @@ file CovidLongitudinal SRIV 20200619.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200620.dta not found)
 file CovidLongitudinal SRIV 20200620.dta saved
 
 
@@ -723,6 +775,7 @@ file CovidLongitudinal SRIV 20200620.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200621.dta not found)
 file CovidLongitudinal SRIV 20200621.dta saved
 
 
@@ -733,6 +786,7 @@ file CovidLongitudinal SRIV 20200621.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200622.dta not found)
 file CovidLongitudinal SRIV 20200622.dta saved
 
 
@@ -743,6 +797,7 @@ file CovidLongitudinal SRIV 20200622.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200623.dta not found)
 file CovidLongitudinal SRIV 20200623.dta saved
 
 
@@ -753,6 +808,7 @@ file CovidLongitudinal SRIV 20200623.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200624.dta not found)
 file CovidLongitudinal SRIV 20200624.dta saved
 
 
@@ -763,6 +819,7 @@ file CovidLongitudinal SRIV 20200624.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200625.dta not found)
 file CovidLongitudinal SRIV 20200625.dta saved
 
 
@@ -773,6 +830,7 @@ file CovidLongitudinal SRIV 20200625.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200626.dta not found)
 file CovidLongitudinal SRIV 20200626.dta saved
 
 
@@ -783,6 +841,7 @@ file CovidLongitudinal SRIV 20200626.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200627.dta not found)
 file CovidLongitudinal SRIV 20200627.dta saved
 
 
@@ -793,6 +852,7 @@ file CovidLongitudinal SRIV 20200627.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200628.dta not found)
 file CovidLongitudinal SRIV 20200628.dta saved
 
 
@@ -803,6 +863,7 @@ file CovidLongitudinal SRIV 20200628.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200629.dta not found)
 file CovidLongitudinal SRIV 20200629.dta saved
 
 
@@ -813,6 +874,7 @@ file CovidLongitudinal SRIV 20200629.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200630.dta not found)
 file CovidLongitudinal SRIV 20200630.dta saved
 
 
@@ -823,6 +885,7 @@ file CovidLongitudinal SRIV 20200630.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200701.dta not found)
 file CovidLongitudinal SRIV 20200701.dta saved
 
 
@@ -833,6 +896,7 @@ file CovidLongitudinal SRIV 20200701.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200702.dta not found)
 file CovidLongitudinal SRIV 20200702.dta saved
 
 
@@ -843,6 +907,7 @@ file CovidLongitudinal SRIV 20200702.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200703.dta not found)
 file CovidLongitudinal SRIV 20200703.dta saved
 
 
@@ -853,6 +918,7 @@ file CovidLongitudinal SRIV 20200703.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200704.dta not found)
 file CovidLongitudinal SRIV 20200704.dta saved
 
 
@@ -863,6 +929,7 @@ file CovidLongitudinal SRIV 20200704.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200705.dta not found)
 file CovidLongitudinal SRIV 20200705.dta saved
 
 
@@ -873,6 +940,7 @@ file CovidLongitudinal SRIV 20200705.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200706.dta not found)
 file CovidLongitudinal SRIV 20200706.dta saved
 
 
@@ -883,6 +951,7 @@ file CovidLongitudinal SRIV 20200706.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200707.dta not found)
 file CovidLongitudinal SRIV 20200707.dta saved
 
 
@@ -893,6 +962,7 @@ file CovidLongitudinal SRIV 20200707.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200708.dta not found)
 file CovidLongitudinal SRIV 20200708.dta saved
 
 
@@ -903,6 +973,7 @@ file CovidLongitudinal SRIV 20200708.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200709.dta not found)
 file CovidLongitudinal SRIV 20200709.dta saved
 
 
@@ -913,6 +984,7 @@ file CovidLongitudinal SRIV 20200709.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200710.dta not found)
 file CovidLongitudinal SRIV 20200710.dta saved
 
 
@@ -923,6 +995,7 @@ file CovidLongitudinal SRIV 20200710.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200711.dta not found)
 file CovidLongitudinal SRIV 20200711.dta saved
 
 
@@ -933,6 +1006,7 @@ file CovidLongitudinal SRIV 20200711.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200712.dta not found)
 file CovidLongitudinal SRIV 20200712.dta saved
 
 
@@ -943,6 +1017,7 @@ file CovidLongitudinal SRIV 20200712.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200713.dta not found)
 file CovidLongitudinal SRIV 20200713.dta saved
 
 
@@ -953,6 +1028,7 @@ file CovidLongitudinal SRIV 20200713.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200714.dta not found)
 file CovidLongitudinal SRIV 20200714.dta saved
 
 
@@ -963,6 +1039,7 @@ file CovidLongitudinal SRIV 20200714.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200715.dta not found)
 file CovidLongitudinal SRIV 20200715.dta saved
 
 
@@ -973,6 +1050,7 @@ file CovidLongitudinal SRIV 20200715.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200716.dta not found)
 file CovidLongitudinal SRIV 20200716.dta saved
 
 
@@ -983,6 +1061,7 @@ file CovidLongitudinal SRIV 20200716.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200717.dta not found)
 file CovidLongitudinal SRIV 20200717.dta saved
 
 
@@ -993,6 +1072,7 @@ file CovidLongitudinal SRIV 20200717.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200718.dta not found)
 file CovidLongitudinal SRIV 20200718.dta saved
 
 
@@ -1003,6 +1083,7 @@ file CovidLongitudinal SRIV 20200718.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200719.dta not found)
 file CovidLongitudinal SRIV 20200719.dta saved
 
 
@@ -1013,6 +1094,7 @@ file CovidLongitudinal SRIV 20200719.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200720.dta not found)
 file CovidLongitudinal SRIV 20200720.dta saved
 
 
@@ -1023,6 +1105,7 @@ file CovidLongitudinal SRIV 20200720.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200721.dta not found)
 file CovidLongitudinal SRIV 20200721.dta saved
 
 
@@ -1033,6 +1116,7 @@ file CovidLongitudinal SRIV 20200721.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200722.dta not found)
 file CovidLongitudinal SRIV 20200722.dta saved
 
 
@@ -1043,6 +1127,7 @@ file CovidLongitudinal SRIV 20200722.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200723.dta not found)
 file CovidLongitudinal SRIV 20200723.dta saved
 
 
@@ -1053,6 +1138,7 @@ file CovidLongitudinal SRIV 20200723.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200724.dta not found)
 file CovidLongitudinal SRIV 20200724.dta saved
 
 
@@ -1063,6 +1149,7 @@ file CovidLongitudinal SRIV 20200724.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200725.dta not found)
 file CovidLongitudinal SRIV 20200725.dta saved
 
 
@@ -1073,6 +1160,7 @@ file CovidLongitudinal SRIV 20200725.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200726.dta not found)
 file CovidLongitudinal SRIV 20200726.dta saved
 
 
@@ -1083,6 +1171,7 @@ file CovidLongitudinal SRIV 20200726.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200727.dta not found)
 file CovidLongitudinal SRIV 20200727.dta saved
 
 
@@ -1093,6 +1182,7 @@ file CovidLongitudinal SRIV 20200727.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200728.dta not found)
 file CovidLongitudinal SRIV 20200728.dta saved
 
 
@@ -1103,6 +1193,7 @@ file CovidLongitudinal SRIV 20200728.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200729.dta not found)
 file CovidLongitudinal SRIV 20200729.dta saved
 
 
@@ -1113,6 +1204,7 @@ file CovidLongitudinal SRIV 20200729.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200730.dta not found)
 file CovidLongitudinal SRIV 20200730.dta saved
 
 
@@ -1123,6 +1215,7 @@ file CovidLongitudinal SRIV 20200730.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200731.dta not found)
 file CovidLongitudinal SRIV 20200731.dta saved
 
 
@@ -1133,6 +1226,7 @@ file CovidLongitudinal SRIV 20200731.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200801.dta not found)
 file CovidLongitudinal SRIV 20200801.dta saved
 
 
@@ -1143,6 +1237,7 @@ file CovidLongitudinal SRIV 20200801.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200802.dta not found)
 file CovidLongitudinal SRIV 20200802.dta saved
 
 
@@ -1153,6 +1248,7 @@ file CovidLongitudinal SRIV 20200802.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200803.dta not found)
 file CovidLongitudinal SRIV 20200803.dta saved
 
 
@@ -1163,6 +1259,7 @@ file CovidLongitudinal SRIV 20200803.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200804.dta not found)
 file CovidLongitudinal SRIV 20200804.dta saved
 
 
@@ -1173,6 +1270,7 @@ file CovidLongitudinal SRIV 20200804.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200805.dta not found)
 file CovidLongitudinal SRIV 20200805.dta saved
 
 
@@ -1183,6 +1281,7 @@ file CovidLongitudinal SRIV 20200805.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200806.dta not found)
 file CovidLongitudinal SRIV 20200806.dta saved
 
 
@@ -1193,6 +1292,7 @@ file CovidLongitudinal SRIV 20200806.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200807.dta not found)
 file CovidLongitudinal SRIV 20200807.dta saved
 
 
@@ -1203,6 +1303,7 @@ file CovidLongitudinal SRIV 20200807.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200808.dta not found)
 file CovidLongitudinal SRIV 20200808.dta saved
 
 
@@ -1213,6 +1314,7 @@ file CovidLongitudinal SRIV 20200808.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200809.dta not found)
 file CovidLongitudinal SRIV 20200809.dta saved
 
 
@@ -1223,6 +1325,7 @@ file CovidLongitudinal SRIV 20200809.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200810.dta not found)
 file CovidLongitudinal SRIV 20200810.dta saved
 
 
@@ -1233,6 +1336,7 @@ file CovidLongitudinal SRIV 20200810.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200811.dta not found)
 file CovidLongitudinal SRIV 20200811.dta saved
 
 
@@ -1243,6 +1347,7 @@ file CovidLongitudinal SRIV 20200811.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200812.dta not found)
 file CovidLongitudinal SRIV 20200812.dta saved
 
 
@@ -1253,6 +1358,7 @@ file CovidLongitudinal SRIV 20200812.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200813.dta not found)
 file CovidLongitudinal SRIV 20200813.dta saved
 
 
@@ -1263,6 +1369,7 @@ file CovidLongitudinal SRIV 20200813.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200814.dta not found)
 file CovidLongitudinal SRIV 20200814.dta saved
 
 
@@ -1273,6 +1380,7 @@ file CovidLongitudinal SRIV 20200814.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200815.dta not found)
 file CovidLongitudinal SRIV 20200815.dta saved
 
 
@@ -1283,6 +1391,7 @@ file CovidLongitudinal SRIV 20200815.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200816.dta not found)
 file CovidLongitudinal SRIV 20200816.dta saved
 
 
@@ -1293,6 +1402,7 @@ file CovidLongitudinal SRIV 20200816.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200817.dta not found)
 file CovidLongitudinal SRIV 20200817.dta saved
 
 
@@ -1303,6 +1413,7 @@ file CovidLongitudinal SRIV 20200817.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200818.dta not found)
 file CovidLongitudinal SRIV 20200818.dta saved
 
 
@@ -1313,6 +1424,7 @@ file CovidLongitudinal SRIV 20200818.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200819.dta not found)
 file CovidLongitudinal SRIV 20200819.dta saved
 
 
@@ -1323,6 +1435,7 @@ file CovidLongitudinal SRIV 20200819.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200820.dta not found)
 file CovidLongitudinal SRIV 20200820.dta saved
 
 
@@ -1333,6 +1446,7 @@ file CovidLongitudinal SRIV 20200820.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200821.dta not found)
 file CovidLongitudinal SRIV 20200821.dta saved
 
 
@@ -1343,6 +1457,7 @@ file CovidLongitudinal SRIV 20200821.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200822.dta not found)
 file CovidLongitudinal SRIV 20200822.dta saved
 
 
@@ -1353,6 +1468,7 @@ file CovidLongitudinal SRIV 20200822.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200823.dta not found)
 file CovidLongitudinal SRIV 20200823.dta saved
 
 
@@ -1363,6 +1479,7 @@ file CovidLongitudinal SRIV 20200823.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200824.dta not found)
 file CovidLongitudinal SRIV 20200824.dta saved
 
 
@@ -1373,6 +1490,7 @@ file CovidLongitudinal SRIV 20200824.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200825.dta not found)
 file CovidLongitudinal SRIV 20200825.dta saved
 
 
@@ -1383,6 +1501,7 @@ file CovidLongitudinal SRIV 20200825.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200826.dta not found)
 file CovidLongitudinal SRIV 20200826.dta saved
 
 
@@ -1393,6 +1512,7 @@ file CovidLongitudinal SRIV 20200826.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200827.dta not found)
 file CovidLongitudinal SRIV 20200827.dta saved
 
 
@@ -1403,6 +1523,7 @@ file CovidLongitudinal SRIV 20200827.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200828.dta not found)
 file CovidLongitudinal SRIV 20200828.dta saved
 
 
@@ -1413,6 +1534,7 @@ file CovidLongitudinal SRIV 20200828.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200829.dta not found)
 file CovidLongitudinal SRIV 20200829.dta saved
 
 
@@ -1423,6 +1545,7 @@ file CovidLongitudinal SRIV 20200829.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200830.dta not found)
 file CovidLongitudinal SRIV 20200830.dta saved
 
 
@@ -1433,6 +1556,7 @@ file CovidLongitudinal SRIV 20200830.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200831.dta not found)
 file CovidLongitudinal SRIV 20200831.dta saved
 
 
@@ -1443,6 +1567,7 @@ file CovidLongitudinal SRIV 20200831.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200901.dta not found)
 file CovidLongitudinal SRIV 20200901.dta saved
 
 
@@ -1453,6 +1578,7 @@ file CovidLongitudinal SRIV 20200901.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200902.dta not found)
 file CovidLongitudinal SRIV 20200902.dta saved
 
 
@@ -1463,6 +1589,7 @@ file CovidLongitudinal SRIV 20200902.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200903.dta not found)
 file CovidLongitudinal SRIV 20200903.dta saved
 
 
@@ -1473,6 +1600,7 @@ file CovidLongitudinal SRIV 20200903.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200904.dta not found)
 file CovidLongitudinal SRIV 20200904.dta saved
 
 
@@ -1483,6 +1611,7 @@ file CovidLongitudinal SRIV 20200904.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200905.dta not found)
 file CovidLongitudinal SRIV 20200905.dta saved
 
 
@@ -1493,6 +1622,7 @@ file CovidLongitudinal SRIV 20200905.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200906.dta not found)
 file CovidLongitudinal SRIV 20200906.dta saved
 
 
@@ -1503,6 +1633,7 @@ file CovidLongitudinal SRIV 20200906.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200907.dta not found)
 file CovidLongitudinal SRIV 20200907.dta saved
 
 
@@ -1513,6 +1644,7 @@ file CovidLongitudinal SRIV 20200907.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200908.dta not found)
 file CovidLongitudinal SRIV 20200908.dta saved
 
 
@@ -1523,6 +1655,7 @@ file CovidLongitudinal SRIV 20200908.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200909.dta not found)
 file CovidLongitudinal SRIV 20200909.dta saved
 
 
@@ -1533,6 +1666,7 @@ file CovidLongitudinal SRIV 20200909.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200910.dta not found)
 file CovidLongitudinal SRIV 20200910.dta saved
 
 
@@ -1543,6 +1677,7 @@ file CovidLongitudinal SRIV 20200910.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200911.dta not found)
 file CovidLongitudinal SRIV 20200911.dta saved
 
 
@@ -1553,6 +1688,7 @@ file CovidLongitudinal SRIV 20200911.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200912.dta not found)
 file CovidLongitudinal SRIV 20200912.dta saved
 
 
@@ -1563,6 +1699,7 @@ file CovidLongitudinal SRIV 20200912.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200913.dta not found)
 file CovidLongitudinal SRIV 20200913.dta saved
 
 
@@ -1573,6 +1710,7 @@ file CovidLongitudinal SRIV 20200913.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200914.dta not found)
 file CovidLongitudinal SRIV 20200914.dta saved
 
 
@@ -1583,6 +1721,7 @@ file CovidLongitudinal SRIV 20200914.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200915.dta not found)
 file CovidLongitudinal SRIV 20200915.dta saved
 
 
@@ -1593,6 +1732,7 @@ file CovidLongitudinal SRIV 20200915.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200916.dta not found)
 file CovidLongitudinal SRIV 20200916.dta saved
 
 
@@ -1603,6 +1743,7 @@ file CovidLongitudinal SRIV 20200916.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200917.dta not found)
 file CovidLongitudinal SRIV 20200917.dta saved
 
 
@@ -1613,6 +1754,7 @@ file CovidLongitudinal SRIV 20200917.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200918.dta not found)
 file CovidLongitudinal SRIV 20200918.dta saved
 
 
@@ -1623,6 +1765,7 @@ file CovidLongitudinal SRIV 20200918.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200919.dta not found)
 file CovidLongitudinal SRIV 20200919.dta saved
 
 
@@ -1633,6 +1776,7 @@ file CovidLongitudinal SRIV 20200919.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200920.dta not found)
 file CovidLongitudinal SRIV 20200920.dta saved
 
 
@@ -1643,6 +1787,7 @@ file CovidLongitudinal SRIV 20200920.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200921.dta not found)
 file CovidLongitudinal SRIV 20200921.dta saved
 
 
@@ -1653,6 +1798,7 @@ file CovidLongitudinal SRIV 20200921.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200922.dta not found)
 file CovidLongitudinal SRIV 20200922.dta saved
 
 
@@ -1663,6 +1809,7 @@ file CovidLongitudinal SRIV 20200922.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200923.dta not found)
 file CovidLongitudinal SRIV 20200923.dta saved
 
 
@@ -1673,6 +1820,7 @@ file CovidLongitudinal SRIV 20200923.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200924.dta not found)
 file CovidLongitudinal SRIV 20200924.dta saved
 
 
@@ -1683,6 +1831,7 @@ file CovidLongitudinal SRIV 20200924.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200925.dta not found)
 file CovidLongitudinal SRIV 20200925.dta saved
 
 
@@ -1693,6 +1842,7 @@ file CovidLongitudinal SRIV 20200925.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200926.dta not found)
 file CovidLongitudinal SRIV 20200926.dta saved
 
 
@@ -1703,6 +1853,7 @@ file CovidLongitudinal SRIV 20200926.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200927.dta not found)
 file CovidLongitudinal SRIV 20200927.dta saved
 
 
@@ -1713,6 +1864,7 @@ file CovidLongitudinal SRIV 20200927.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200928.dta not found)
 file CovidLongitudinal SRIV 20200928.dta saved
 
 
@@ -1723,6 +1875,7 @@ file CovidLongitudinal SRIV 20200928.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200929.dta not found)
 file CovidLongitudinal SRIV 20200929.dta saved
 
 
@@ -1733,6 +1886,7 @@ file CovidLongitudinal SRIV 20200929.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20200930.dta not found)
 file CovidLongitudinal SRIV 20200930.dta saved
 
 
@@ -1743,6 +1897,7 @@ file CovidLongitudinal SRIV 20200930.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201001.dta not found)
 file CovidLongitudinal SRIV 20201001.dta saved
 
 
@@ -1753,6 +1908,7 @@ file CovidLongitudinal SRIV 20201001.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201002.dta not found)
 file CovidLongitudinal SRIV 20201002.dta saved
 
 
@@ -1763,6 +1919,7 @@ file CovidLongitudinal SRIV 20201002.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201003.dta not found)
 file CovidLongitudinal SRIV 20201003.dta saved
 
 
@@ -1773,6 +1930,7 @@ file CovidLongitudinal SRIV 20201003.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201004.dta not found)
 file CovidLongitudinal SRIV 20201004.dta saved
 
 
@@ -1783,6 +1941,7 @@ file CovidLongitudinal SRIV 20201004.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201006.dta not found)
 file CovidLongitudinal SRIV 20201006.dta saved
 
 
@@ -1793,6 +1952,7 @@ file CovidLongitudinal SRIV 20201006.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201007.dta not found)
 file CovidLongitudinal SRIV 20201007.dta saved
 
 
@@ -1803,6 +1963,7 @@ file CovidLongitudinal SRIV 20201007.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201008.dta not found)
 file CovidLongitudinal SRIV 20201008.dta saved
 
 
@@ -1813,6 +1974,7 @@ file CovidLongitudinal SRIV 20201008.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201009.dta not found)
 file CovidLongitudinal SRIV 20201009.dta saved
 
 
@@ -1823,6 +1985,7 @@ file CovidLongitudinal SRIV 20201009.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201010.dta not found)
 file CovidLongitudinal SRIV 20201010.dta saved
 
 
@@ -1833,6 +1996,7 @@ file CovidLongitudinal SRIV 20201010.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201011.dta not found)
 file CovidLongitudinal SRIV 20201011.dta saved
 
 
@@ -1843,6 +2007,7 @@ file CovidLongitudinal SRIV 20201011.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201012.dta not found)
 file CovidLongitudinal SRIV 20201012.dta saved
 
 
@@ -1853,6 +2018,7 @@ file CovidLongitudinal SRIV 20201012.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201013.dta not found)
 file CovidLongitudinal SRIV 20201013.dta saved
 
 
@@ -1863,6 +2029,7 @@ file CovidLongitudinal SRIV 20201013.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201014.dta not found)
 file CovidLongitudinal SRIV 20201014.dta saved
 
 
@@ -1873,6 +2040,7 @@ file CovidLongitudinal SRIV 20201014.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201015.dta not found)
 file CovidLongitudinal SRIV 20201015.dta saved
 
 
@@ -1883,6 +2051,7 @@ file CovidLongitudinal SRIV 20201015.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201016.dta not found)
 file CovidLongitudinal SRIV 20201016.dta saved
 
 
@@ -1893,6 +2062,7 @@ file CovidLongitudinal SRIV 20201016.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201017.dta not found)
 file CovidLongitudinal SRIV 20201017.dta saved
 
 
@@ -1903,6 +2073,7 @@ file CovidLongitudinal SRIV 20201017.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201018.dta not found)
 file CovidLongitudinal SRIV 20201018.dta saved
 
 
@@ -1913,6 +2084,7 @@ file CovidLongitudinal SRIV 20201018.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201019.dta not found)
 file CovidLongitudinal SRIV 20201019.dta saved
 
 
@@ -1923,6 +2095,7 @@ file CovidLongitudinal SRIV 20201019.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201020.dta not found)
 file CovidLongitudinal SRIV 20201020.dta saved
 
 
@@ -1933,6 +2106,7 @@ file CovidLongitudinal SRIV 20201020.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201021.dta not found)
 file CovidLongitudinal SRIV 20201021.dta saved
 
 
@@ -1943,6 +2117,7 @@ file CovidLongitudinal SRIV 20201021.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201022.dta not found)
 file CovidLongitudinal SRIV 20201022.dta saved
 
 
@@ -1953,6 +2128,7 @@ file CovidLongitudinal SRIV 20201022.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201023.dta not found)
 file CovidLongitudinal SRIV 20201023.dta saved
 
 
@@ -1963,6 +2139,7 @@ file CovidLongitudinal SRIV 20201023.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201024.dta not found)
 file CovidLongitudinal SRIV 20201024.dta saved
 
 
@@ -1973,6 +2150,7 @@ file CovidLongitudinal SRIV 20201024.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201025.dta not found)
 file CovidLongitudinal SRIV 20201025.dta saved
 
 
@@ -1983,6 +2161,7 @@ file CovidLongitudinal SRIV 20201025.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201026.dta not found)
 file CovidLongitudinal SRIV 20201026.dta saved
 
 
@@ -1993,6 +2172,7 @@ file CovidLongitudinal SRIV 20201026.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201027.dta not found)
 file CovidLongitudinal SRIV 20201027.dta saved
 
 
@@ -2003,6 +2183,7 @@ file CovidLongitudinal SRIV 20201027.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201028.dta not found)
 file CovidLongitudinal SRIV 20201028.dta saved
 
 
@@ -2013,6 +2194,7 @@ file CovidLongitudinal SRIV 20201028.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201029.dta not found)
 file CovidLongitudinal SRIV 20201029.dta saved
 
 
@@ -2023,6 +2205,7 @@ file CovidLongitudinal SRIV 20201029.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201030.dta not found)
 file CovidLongitudinal SRIV 20201030.dta saved
 
 
@@ -2033,6 +2216,7 @@ file CovidLongitudinal SRIV 20201030.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201031.dta not found)
 file CovidLongitudinal SRIV 20201031.dta saved
 
 
@@ -2043,6 +2227,7 @@ file CovidLongitudinal SRIV 20201031.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201101.dta not found)
 file CovidLongitudinal SRIV 20201101.dta saved
 
 
@@ -2053,6 +2238,7 @@ file CovidLongitudinal SRIV 20201101.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201102.dta not found)
 file CovidLongitudinal SRIV 20201102.dta saved
 
 
@@ -2063,6 +2249,7 @@ file CovidLongitudinal SRIV 20201102.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201103.dta not found)
 file CovidLongitudinal SRIV 20201103.dta saved
 
 
@@ -2073,6 +2260,7 @@ file CovidLongitudinal SRIV 20201103.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201104.dta not found)
 file CovidLongitudinal SRIV 20201104.dta saved
 
 
@@ -2083,6 +2271,7 @@ file CovidLongitudinal SRIV 20201104.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201105.dta not found)
 file CovidLongitudinal SRIV 20201105.dta saved
 
 
@@ -2093,6 +2282,7 @@ file CovidLongitudinal SRIV 20201105.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201106.dta not found)
 file CovidLongitudinal SRIV 20201106.dta saved
 
 
@@ -2103,6 +2293,7 @@ file CovidLongitudinal SRIV 20201106.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201107.dta not found)
 file CovidLongitudinal SRIV 20201107.dta saved
 
 
@@ -2113,6 +2304,7 @@ file CovidLongitudinal SRIV 20201107.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201108.dta not found)
 file CovidLongitudinal SRIV 20201108.dta saved
 
 
@@ -2123,6 +2315,7 @@ file CovidLongitudinal SRIV 20201108.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201109.dta not found)
 file CovidLongitudinal SRIV 20201109.dta saved
 
 
@@ -2133,6 +2326,7 @@ file CovidLongitudinal SRIV 20201109.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201110.dta not found)
 file CovidLongitudinal SRIV 20201110.dta saved
 
 
@@ -2143,6 +2337,7 @@ file CovidLongitudinal SRIV 20201110.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201111.dta not found)
 file CovidLongitudinal SRIV 20201111.dta saved
 
 
@@ -2153,6 +2348,7 @@ file CovidLongitudinal SRIV 20201111.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201112.dta not found)
 file CovidLongitudinal SRIV 20201112.dta saved
 
 
@@ -2163,6 +2359,7 @@ file CovidLongitudinal SRIV 20201112.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201113.dta not found)
 file CovidLongitudinal SRIV 20201113.dta saved
 
 
@@ -2173,6 +2370,7 @@ file CovidLongitudinal SRIV 20201113.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201114.dta not found)
 file CovidLongitudinal SRIV 20201114.dta saved
 
 
@@ -2183,6 +2381,7 @@ file CovidLongitudinal SRIV 20201114.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201115.dta not found)
 file CovidLongitudinal SRIV 20201115.dta saved
 
 
@@ -2193,6 +2392,7 @@ file CovidLongitudinal SRIV 20201115.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201116.dta not found)
 file CovidLongitudinal SRIV 20201116.dta saved
 
 
@@ -2203,6 +2403,7 @@ file CovidLongitudinal SRIV 20201116.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201117.dta not found)
 file CovidLongitudinal SRIV 20201117.dta saved
 
 
@@ -2213,6 +2414,7 @@ file CovidLongitudinal SRIV 20201117.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201118.dta not found)
 file CovidLongitudinal SRIV 20201118.dta saved
 
 
@@ -2223,6 +2425,7 @@ file CovidLongitudinal SRIV 20201118.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201119.dta not found)
 file CovidLongitudinal SRIV 20201119.dta saved
 
 
@@ -2233,6 +2436,7 @@ file CovidLongitudinal SRIV 20201119.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201120.dta not found)
 file CovidLongitudinal SRIV 20201120.dta saved
 
 
@@ -2243,6 +2447,7 @@ file CovidLongitudinal SRIV 20201120.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201121.dta not found)
 file CovidLongitudinal SRIV 20201121.dta saved
 
 
@@ -2253,6 +2458,7 @@ file CovidLongitudinal SRIV 20201121.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201122.dta not found)
 file CovidLongitudinal SRIV 20201122.dta saved
 
 
@@ -2263,6 +2469,7 @@ file CovidLongitudinal SRIV 20201122.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201123.dta not found)
 file CovidLongitudinal SRIV 20201123.dta saved
 
 
@@ -2273,6 +2480,7 @@ file CovidLongitudinal SRIV 20201123.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201124.dta not found)
 file CovidLongitudinal SRIV 20201124.dta saved
 
 
@@ -2283,6 +2491,7 @@ file CovidLongitudinal SRIV 20201124.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201125.dta not found)
 file CovidLongitudinal SRIV 20201125.dta saved
 
 
@@ -2293,6 +2502,7 @@ file CovidLongitudinal SRIV 20201125.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201126.dta not found)
 file CovidLongitudinal SRIV 20201126.dta saved
 
 
@@ -2303,6 +2513,7 @@ file CovidLongitudinal SRIV 20201126.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201127.dta not found)
 file CovidLongitudinal SRIV 20201127.dta saved
 
 
@@ -2313,6 +2524,7 @@ file CovidLongitudinal SRIV 20201127.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201128.dta not found)
 file CovidLongitudinal SRIV 20201128.dta saved
 
 
@@ -2323,6 +2535,7 @@ file CovidLongitudinal SRIV 20201128.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201129.dta not found)
 file CovidLongitudinal SRIV 20201129.dta saved
 
 
@@ -2333,6 +2546,7 @@ file CovidLongitudinal SRIV 20201129.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201130.dta not found)
 file CovidLongitudinal SRIV 20201130.dta saved
 
 
@@ -2343,6 +2557,7 @@ file CovidLongitudinal SRIV 20201130.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201201.dta not found)
 file CovidLongitudinal SRIV 20201201.dta saved
 
 
@@ -2353,6 +2568,7 @@ file CovidLongitudinal SRIV 20201201.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201202.dta not found)
 file CovidLongitudinal SRIV 20201202.dta saved
 
 
@@ -2363,6 +2579,7 @@ file CovidLongitudinal SRIV 20201202.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201203.dta not found)
 file CovidLongitudinal SRIV 20201203.dta saved
 
 
@@ -2373,6 +2590,7 @@ file CovidLongitudinal SRIV 20201203.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201204.dta not found)
 file CovidLongitudinal SRIV 20201204.dta saved
 
 
@@ -2383,6 +2601,7 @@ file CovidLongitudinal SRIV 20201204.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201205.dta not found)
 file CovidLongitudinal SRIV 20201205.dta saved
 
 
@@ -2393,6 +2612,7 @@ file CovidLongitudinal SRIV 20201205.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201206.dta not found)
 file CovidLongitudinal SRIV 20201206.dta saved
 
 
@@ -2403,6 +2623,7 @@ file CovidLongitudinal SRIV 20201206.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201207.dta not found)
 file CovidLongitudinal SRIV 20201207.dta saved
 
 
@@ -2413,6 +2634,7 @@ file CovidLongitudinal SRIV 20201207.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201208.dta not found)
 file CovidLongitudinal SRIV 20201208.dta saved
 
 
@@ -2423,6 +2645,7 @@ file CovidLongitudinal SRIV 20201208.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201209.dta not found)
 file CovidLongitudinal SRIV 20201209.dta saved
 
 
@@ -2433,6 +2656,7 @@ file CovidLongitudinal SRIV 20201209.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201210.dta not found)
 file CovidLongitudinal SRIV 20201210.dta saved
 
 
@@ -2443,6 +2667,7 @@ file CovidLongitudinal SRIV 20201210.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201211.dta not found)
 file CovidLongitudinal SRIV 20201211.dta saved
 
 
@@ -2453,6 +2678,7 @@ file CovidLongitudinal SRIV 20201211.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201212.dta not found)
 file CovidLongitudinal SRIV 20201212.dta saved
 
 
@@ -2463,6 +2689,7 @@ file CovidLongitudinal SRIV 20201212.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201213.dta not found)
 file CovidLongitudinal SRIV 20201213.dta saved
 
 
@@ -2473,6 +2700,7 @@ file CovidLongitudinal SRIV 20201213.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201214.dta not found)
 file CovidLongitudinal SRIV 20201214.dta saved
 
 
@@ -2483,6 +2711,7 @@ file CovidLongitudinal SRIV 20201214.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201216.dta not found)
 file CovidLongitudinal SRIV 20201216.dta saved
 
 
@@ -2493,6 +2722,7 @@ file CovidLongitudinal SRIV 20201216.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201217.dta not found)
 file CovidLongitudinal SRIV 20201217.dta saved
 
 
@@ -2503,6 +2733,7 @@ file CovidLongitudinal SRIV 20201217.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201218.dta not found)
 file CovidLongitudinal SRIV 20201218.dta saved
 
 
@@ -2513,6 +2744,7 @@ file CovidLongitudinal SRIV 20201218.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201219.dta not found)
 file CovidLongitudinal SRIV 20201219.dta saved
 
 
@@ -2523,6 +2755,7 @@ file CovidLongitudinal SRIV 20201219.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201220.dta not found)
 file CovidLongitudinal SRIV 20201220.dta saved
 
 
@@ -2533,6 +2766,7 @@ file CovidLongitudinal SRIV 20201220.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201221.dta not found)
 file CovidLongitudinal SRIV 20201221.dta saved
 
 
@@ -2543,6 +2777,7 @@ file CovidLongitudinal SRIV 20201221.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201222.dta not found)
 file CovidLongitudinal SRIV 20201222.dta saved
 
 
@@ -2553,6 +2788,7 @@ file CovidLongitudinal SRIV 20201222.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201223.dta not found)
 file CovidLongitudinal SRIV 20201223.dta saved
 
 
@@ -2563,6 +2799,7 @@ file CovidLongitudinal SRIV 20201223.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201224.dta not found)
 file CovidLongitudinal SRIV 20201224.dta saved
 
 
@@ -2573,6 +2810,7 @@ file CovidLongitudinal SRIV 20201224.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201225.dta not found)
 file CovidLongitudinal SRIV 20201225.dta saved
 
 
@@ -2583,6 +2821,7 @@ file CovidLongitudinal SRIV 20201225.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201226.dta not found)
 file CovidLongitudinal SRIV 20201226.dta saved
 
 
@@ -2593,6 +2832,7 @@ file CovidLongitudinal SRIV 20201226.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201227.dta not found)
 file CovidLongitudinal SRIV 20201227.dta saved
 
 
@@ -2603,6 +2843,7 @@ file CovidLongitudinal SRIV 20201227.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201229.dta not found)
 file CovidLongitudinal SRIV 20201229.dta saved
 
 
@@ -2613,6 +2854,7 @@ file CovidLongitudinal SRIV 20201229.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201230.dta not found)
 file CovidLongitudinal SRIV 20201230.dta saved
 
 
@@ -2623,6 +2865,7 @@ file CovidLongitudinal SRIV 20201230.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20201231.dta not found)
 file CovidLongitudinal SRIV 20201231.dta saved
 
 
@@ -2633,6 +2876,7 @@ file CovidLongitudinal SRIV 20201231.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210101.dta not found)
 file CovidLongitudinal SRIV 20210101.dta saved
 
 
@@ -2643,6 +2887,7 @@ file CovidLongitudinal SRIV 20210101.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210102.dta not found)
 file CovidLongitudinal SRIV 20210102.dta saved
 
 
@@ -2653,6 +2898,7 @@ file CovidLongitudinal SRIV 20210102.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210103.dta not found)
 file CovidLongitudinal SRIV 20210103.dta saved
 
 
@@ -2663,6 +2909,7 @@ file CovidLongitudinal SRIV 20210103.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210104.dta not found)
 file CovidLongitudinal SRIV 20210104.dta saved
 
 
@@ -2673,6 +2920,7 @@ file CovidLongitudinal SRIV 20210104.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210105.dta not found)
 file CovidLongitudinal SRIV 20210105.dta saved
 
 
@@ -2683,6 +2931,7 @@ file CovidLongitudinal SRIV 20210105.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210106.dta not found)
 file CovidLongitudinal SRIV 20210106.dta saved
 
 
@@ -2693,6 +2942,7 @@ file CovidLongitudinal SRIV 20210106.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210107.dta not found)
 file CovidLongitudinal SRIV 20210107.dta saved
 
 
@@ -2703,6 +2953,7 @@ file CovidLongitudinal SRIV 20210107.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210108.dta not found)
 file CovidLongitudinal SRIV 20210108.dta saved
 
 
@@ -2713,6 +2964,7 @@ file CovidLongitudinal SRIV 20210108.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210109.dta not found)
 file CovidLongitudinal SRIV 20210109.dta saved
 
 
@@ -2723,6 +2975,7 @@ file CovidLongitudinal SRIV 20210109.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210110.dta not found)
 file CovidLongitudinal SRIV 20210110.dta saved
 
 
@@ -2733,6 +2986,7 @@ file CovidLongitudinal SRIV 20210110.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210111.dta not found)
 file CovidLongitudinal SRIV 20210111.dta saved
 
 
@@ -2743,6 +2997,7 @@ file CovidLongitudinal SRIV 20210111.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210112.dta not found)
 file CovidLongitudinal SRIV 20210112.dta saved
 
 
@@ -2753,6 +3008,7 @@ file CovidLongitudinal SRIV 20210112.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210113.dta not found)
 file CovidLongitudinal SRIV 20210113.dta saved
 
 
@@ -2763,6 +3019,7 @@ file CovidLongitudinal SRIV 20210113.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210114.dta not found)
 file CovidLongitudinal SRIV 20210114.dta saved
 
 
@@ -2773,6 +3030,7 @@ file CovidLongitudinal SRIV 20210114.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210115.dta not found)
 file CovidLongitudinal SRIV 20210115.dta saved
 
 
@@ -2783,6 +3041,7 @@ file CovidLongitudinal SRIV 20210115.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210116.dta not found)
 file CovidLongitudinal SRIV 20210116.dta saved
 
 
@@ -2793,6 +3052,7 @@ file CovidLongitudinal SRIV 20210116.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210117.dta not found)
 file CovidLongitudinal SRIV 20210117.dta saved
 
 
@@ -2803,6 +3063,7 @@ file CovidLongitudinal SRIV 20210117.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210118.dta not found)
 file CovidLongitudinal SRIV 20210118.dta saved
 
 
@@ -2813,6 +3074,7 @@ file CovidLongitudinal SRIV 20210118.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210119.dta not found)
 file CovidLongitudinal SRIV 20210119.dta saved
 
 
@@ -2823,6 +3085,7 @@ file CovidLongitudinal SRIV 20210119.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210120.dta not found)
 file CovidLongitudinal SRIV 20210120.dta saved
 
 
@@ -2833,6 +3096,7 @@ file CovidLongitudinal SRIV 20210120.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210121.dta not found)
 file CovidLongitudinal SRIV 20210121.dta saved
 
 
@@ -2843,6 +3107,7 @@ file CovidLongitudinal SRIV 20210121.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210122.dta not found)
 file CovidLongitudinal SRIV 20210122.dta saved
 
 
@@ -2853,6 +3118,7 @@ file CovidLongitudinal SRIV 20210122.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210123.dta not found)
 file CovidLongitudinal SRIV 20210123.dta saved
 
 
@@ -2863,6 +3129,7 @@ file CovidLongitudinal SRIV 20210123.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210124.dta not found)
 file CovidLongitudinal SRIV 20210124.dta saved
 
 
@@ -2873,6 +3140,7 @@ file CovidLongitudinal SRIV 20210124.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210125.dta not found)
 file CovidLongitudinal SRIV 20210125.dta saved
 
 
@@ -2883,6 +3151,7 @@ file CovidLongitudinal SRIV 20210125.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210126.dta not found)
 file CovidLongitudinal SRIV 20210126.dta saved
 
 
@@ -2893,6 +3162,7 @@ file CovidLongitudinal SRIV 20210126.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210127.dta not found)
 file CovidLongitudinal SRIV 20210127.dta saved
 
 
@@ -2903,6 +3173,7 @@ file CovidLongitudinal SRIV 20210127.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210128.dta not found)
 file CovidLongitudinal SRIV 20210128.dta saved
 
 
@@ -2913,6 +3184,7 @@ file CovidLongitudinal SRIV 20210128.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210129.dta not found)
 file CovidLongitudinal SRIV 20210129.dta saved
 
 
@@ -2923,6 +3195,7 @@ file CovidLongitudinal SRIV 20210129.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210130.dta not found)
 file CovidLongitudinal SRIV 20210130.dta saved
 
 
@@ -2933,6 +3206,7 @@ file CovidLongitudinal SRIV 20210130.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210131.dta not found)
 file CovidLongitudinal SRIV 20210131.dta saved
 
 
@@ -2943,6 +3217,7 @@ file CovidLongitudinal SRIV 20210131.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210201.dta not found)
 file CovidLongitudinal SRIV 20210201.dta saved
 
 
@@ -2953,6 +3228,7 @@ file CovidLongitudinal SRIV 20210201.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210202.dta not found)
 file CovidLongitudinal SRIV 20210202.dta saved
 
 
@@ -2963,6 +3239,7 @@ file CovidLongitudinal SRIV 20210202.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210203.dta not found)
 file CovidLongitudinal SRIV 20210203.dta saved
 
 
@@ -2973,6 +3250,7 @@ file CovidLongitudinal SRIV 20210203.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210204.dta not found)
 file CovidLongitudinal SRIV 20210204.dta saved
 
 
@@ -2983,6 +3261,7 @@ file CovidLongitudinal SRIV 20210204.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210205.dta not found)
 file CovidLongitudinal SRIV 20210205.dta saved
 
 
@@ -2993,6 +3272,7 @@ file CovidLongitudinal SRIV 20210205.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210206.dta not found)
 file CovidLongitudinal SRIV 20210206.dta saved
 
 
@@ -3003,6 +3283,7 @@ file CovidLongitudinal SRIV 20210206.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210207.dta not found)
 file CovidLongitudinal SRIV 20210207.dta saved
 
 
@@ -3013,6 +3294,7 @@ file CovidLongitudinal SRIV 20210207.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210208.dta not found)
 file CovidLongitudinal SRIV 20210208.dta saved
 
 
@@ -3023,6 +3305,7 @@ file CovidLongitudinal SRIV 20210208.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210209.dta not found)
 file CovidLongitudinal SRIV 20210209.dta saved
 
 
@@ -3033,6 +3316,7 @@ file CovidLongitudinal SRIV 20210209.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210210.dta not found)
 file CovidLongitudinal SRIV 20210210.dta saved
 
 
@@ -3043,6 +3327,7 @@ file CovidLongitudinal SRIV 20210210.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210211.dta not found)
 file CovidLongitudinal SRIV 20210211.dta saved
 
 
@@ -3053,6 +3338,7 @@ file CovidLongitudinal SRIV 20210211.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210212.dta not found)
 file CovidLongitudinal SRIV 20210212.dta saved
 
 
@@ -3063,6 +3349,7 @@ file CovidLongitudinal SRIV 20210212.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210213.dta not found)
 file CovidLongitudinal SRIV 20210213.dta saved
 
 
@@ -3073,6 +3360,7 @@ file CovidLongitudinal SRIV 20210213.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210214.dta not found)
 file CovidLongitudinal SRIV 20210214.dta saved
 
 
@@ -3083,6 +3371,7 @@ file CovidLongitudinal SRIV 20210214.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210215.dta not found)
 file CovidLongitudinal SRIV 20210215.dta saved
 
 
@@ -3093,6 +3382,7 @@ file CovidLongitudinal SRIV 20210215.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210216.dta not found)
 file CovidLongitudinal SRIV 20210216.dta saved
 
 
@@ -3103,6 +3393,7 @@ file CovidLongitudinal SRIV 20210216.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210217.dta not found)
 file CovidLongitudinal SRIV 20210217.dta saved
 
 
@@ -3113,6 +3404,7 @@ file CovidLongitudinal SRIV 20210217.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210218.dta not found)
 file CovidLongitudinal SRIV 20210218.dta saved
 
 
@@ -3123,6 +3415,7 @@ file CovidLongitudinal SRIV 20210218.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210219.dta not found)
 file CovidLongitudinal SRIV 20210219.dta saved
 
 
@@ -3133,6 +3426,7 @@ file CovidLongitudinal SRIV 20210219.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210220.dta not found)
 file CovidLongitudinal SRIV 20210220.dta saved
 
 
@@ -3143,6 +3437,7 @@ file CovidLongitudinal SRIV 20210220.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210221.dta not found)
 file CovidLongitudinal SRIV 20210221.dta saved
 
 
@@ -3153,6 +3448,7 @@ file CovidLongitudinal SRIV 20210221.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210222.dta not found)
 file CovidLongitudinal SRIV 20210222.dta saved
 
 
@@ -3163,6 +3459,7 @@ file CovidLongitudinal SRIV 20210222.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210223.dta not found)
 file CovidLongitudinal SRIV 20210223.dta saved
 
 
@@ -3173,6 +3470,7 @@ file CovidLongitudinal SRIV 20210223.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210224.dta not found)
 file CovidLongitudinal SRIV 20210224.dta saved
 
 
@@ -3183,6 +3481,7 @@ file CovidLongitudinal SRIV 20210224.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210225.dta not found)
 file CovidLongitudinal SRIV 20210225.dta saved
 
 
@@ -3193,6 +3492,7 @@ file CovidLongitudinal SRIV 20210225.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210226.dta not found)
 file CovidLongitudinal SRIV 20210226.dta saved
 
 
@@ -3203,6 +3503,7 @@ file CovidLongitudinal SRIV 20210226.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210227.dta not found)
 file CovidLongitudinal SRIV 20210227.dta saved
 
 
@@ -3213,6 +3514,7 @@ file CovidLongitudinal SRIV 20210227.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210228.dta not found)
 file CovidLongitudinal SRIV 20210228.dta saved
 
 
@@ -3223,6 +3525,7 @@ file CovidLongitudinal SRIV 20210228.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210301.dta not found)
 file CovidLongitudinal SRIV 20210301.dta saved
 
 
@@ -3233,6 +3536,7 @@ file CovidLongitudinal SRIV 20210301.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210302.dta not found)
 file CovidLongitudinal SRIV 20210302.dta saved
 
 
@@ -3243,6 +3547,7 @@ file CovidLongitudinal SRIV 20210302.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210303.dta not found)
 file CovidLongitudinal SRIV 20210303.dta saved
 
 
@@ -3253,6 +3558,7 @@ file CovidLongitudinal SRIV 20210303.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210304.dta not found)
 file CovidLongitudinal SRIV 20210304.dta saved
 
 
@@ -3263,6 +3569,7 @@ file CovidLongitudinal SRIV 20210304.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210305.dta not found)
 file CovidLongitudinal SRIV 20210305.dta saved
 
 
@@ -3273,6 +3580,7 @@ file CovidLongitudinal SRIV 20210305.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210306.dta not found)
 file CovidLongitudinal SRIV 20210306.dta saved
 
 
@@ -3283,6 +3591,7 @@ file CovidLongitudinal SRIV 20210306.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210307.dta not found)
 file CovidLongitudinal SRIV 20210307.dta saved
 
 
@@ -3293,6 +3602,7 @@ file CovidLongitudinal SRIV 20210307.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210308.dta not found)
 file CovidLongitudinal SRIV 20210308.dta saved
 
 
@@ -3303,6 +3613,7 @@ file CovidLongitudinal SRIV 20210308.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210309.dta not found)
 file CovidLongitudinal SRIV 20210309.dta saved
 
 
@@ -3313,6 +3624,7 @@ file CovidLongitudinal SRIV 20210309.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210310.dta not found)
 file CovidLongitudinal SRIV 20210310.dta saved
 
 
@@ -3323,6 +3635,7 @@ file CovidLongitudinal SRIV 20210310.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210311.dta not found)
 file CovidLongitudinal SRIV 20210311.dta saved
 
 
@@ -3333,6 +3646,7 @@ file CovidLongitudinal SRIV 20210311.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210312.dta not found)
 file CovidLongitudinal SRIV 20210312.dta saved
 
 
@@ -3343,6 +3657,7 @@ file CovidLongitudinal SRIV 20210312.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210313.dta not found)
 file CovidLongitudinal SRIV 20210313.dta saved
 
 
@@ -3353,6 +3668,7 @@ file CovidLongitudinal SRIV 20210313.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210314.dta not found)
 file CovidLongitudinal SRIV 20210314.dta saved
 
 
@@ -3363,6 +3679,7 @@ file CovidLongitudinal SRIV 20210314.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210315.dta not found)
 file CovidLongitudinal SRIV 20210315.dta saved
 
 
@@ -3373,6 +3690,7 @@ file CovidLongitudinal SRIV 20210315.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210316.dta not found)
 file CovidLongitudinal SRIV 20210316.dta saved
 
 
@@ -3383,6 +3701,7 @@ file CovidLongitudinal SRIV 20210316.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210317.dta not found)
 file CovidLongitudinal SRIV 20210317.dta saved
 
 
@@ -3393,6 +3712,7 @@ file CovidLongitudinal SRIV 20210317.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210318.dta not found)
 file CovidLongitudinal SRIV 20210318.dta saved
 
 
@@ -3403,6 +3723,7 @@ file CovidLongitudinal SRIV 20210318.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210319.dta not found)
 file CovidLongitudinal SRIV 20210319.dta saved
 
 
@@ -3413,6 +3734,7 @@ file CovidLongitudinal SRIV 20210319.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210320.dta not found)
 file CovidLongitudinal SRIV 20210320.dta saved
 
 
@@ -3423,6 +3745,7 @@ file CovidLongitudinal SRIV 20210320.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210321.dta not found)
 file CovidLongitudinal SRIV 20210321.dta saved
 
 
@@ -3433,6 +3756,7 @@ file CovidLongitudinal SRIV 20210321.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210322.dta not found)
 file CovidLongitudinal SRIV 20210322.dta saved
 
 
@@ -3443,6 +3767,7 @@ file CovidLongitudinal SRIV 20210322.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210323.dta not found)
 file CovidLongitudinal SRIV 20210323.dta saved
 
 
@@ -3453,6 +3778,7 @@ file CovidLongitudinal SRIV 20210323.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210324.dta not found)
 file CovidLongitudinal SRIV 20210324.dta saved
 
 
@@ -3463,6 +3789,7 @@ file CovidLongitudinal SRIV 20210324.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210325.dta not found)
 file CovidLongitudinal SRIV 20210325.dta saved
 
 
@@ -3473,6 +3800,7 @@ file CovidLongitudinal SRIV 20210325.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210326.dta not found)
 file CovidLongitudinal SRIV 20210326.dta saved
 
 
@@ -3483,6 +3811,7 @@ file CovidLongitudinal SRIV 20210326.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210327.dta not found)
 file CovidLongitudinal SRIV 20210327.dta saved
 
 
@@ -3493,6 +3822,7 @@ file CovidLongitudinal SRIV 20210327.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210328.dta not found)
 file CovidLongitudinal SRIV 20210328.dta saved
 
 
@@ -3503,6 +3833,7 @@ file CovidLongitudinal SRIV 20210328.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210329.dta not found)
 file CovidLongitudinal SRIV 20210329.dta saved
 
 
@@ -3513,6 +3844,7 @@ file CovidLongitudinal SRIV 20210329.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210330.dta not found)
 file CovidLongitudinal SRIV 20210330.dta saved
 
 
@@ -3523,6 +3855,7 @@ file CovidLongitudinal SRIV 20210330.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210331.dta not found)
 file CovidLongitudinal SRIV 20210331.dta saved
 
 
@@ -3533,6 +3866,7 @@ file CovidLongitudinal SRIV 20210331.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210401.dta not found)
 file CovidLongitudinal SRIV 20210401.dta saved
 
 
@@ -3543,6 +3877,7 @@ file CovidLongitudinal SRIV 20210401.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210402.dta not found)
 file CovidLongitudinal SRIV 20210402.dta saved
 
 
@@ -3553,6 +3888,7 @@ file CovidLongitudinal SRIV 20210402.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210403.dta not found)
 file CovidLongitudinal SRIV 20210403.dta saved
 
 
@@ -3563,6 +3899,7 @@ file CovidLongitudinal SRIV 20210403.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210404.dta not found)
 file CovidLongitudinal SRIV 20210404.dta saved
 
 
@@ -3573,6 +3910,7 @@ file CovidLongitudinal SRIV 20210404.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210405.dta not found)
 file CovidLongitudinal SRIV 20210405.dta saved
 
 
@@ -3583,6 +3921,7 @@ file CovidLongitudinal SRIV 20210405.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210406.dta not found)
 file CovidLongitudinal SRIV 20210406.dta saved
 
 
@@ -3593,6 +3932,7 @@ file CovidLongitudinal SRIV 20210406.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210407.dta not found)
 file CovidLongitudinal SRIV 20210407.dta saved
 
 
@@ -3603,6 +3943,7 @@ file CovidLongitudinal SRIV 20210407.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210408.dta not found)
 file CovidLongitudinal SRIV 20210408.dta saved
 
 
@@ -3613,6 +3954,7 @@ file CovidLongitudinal SRIV 20210408.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210409.dta not found)
 file CovidLongitudinal SRIV 20210409.dta saved
 
 
@@ -3623,6 +3965,7 @@ file CovidLongitudinal SRIV 20210409.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210410.dta not found)
 file CovidLongitudinal SRIV 20210410.dta saved
 
 
@@ -3633,6 +3976,7 @@ file CovidLongitudinal SRIV 20210410.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210411.dta not found)
 file CovidLongitudinal SRIV 20210411.dta saved
 
 
@@ -3643,6 +3987,7 @@ file CovidLongitudinal SRIV 20210411.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210412.dta not found)
 file CovidLongitudinal SRIV 20210412.dta saved
 
 
@@ -3653,6 +3998,7 @@ file CovidLongitudinal SRIV 20210412.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210413.dta not found)
 file CovidLongitudinal SRIV 20210413.dta saved
 
 
@@ -3663,6 +4009,7 @@ file CovidLongitudinal SRIV 20210413.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210414.dta not found)
 file CovidLongitudinal SRIV 20210414.dta saved
 
 
@@ -3673,6 +4020,7 @@ file CovidLongitudinal SRIV 20210414.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210415.dta not found)
 file CovidLongitudinal SRIV 20210415.dta saved
 
 
@@ -3683,6 +4031,7 @@ file CovidLongitudinal SRIV 20210415.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210416.dta not found)
 file CovidLongitudinal SRIV 20210416.dta saved
 
 
@@ -3693,6 +4042,7 @@ file CovidLongitudinal SRIV 20210416.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210417.dta not found)
 file CovidLongitudinal SRIV 20210417.dta saved
 
 
@@ -3703,6 +4053,7 @@ file CovidLongitudinal SRIV 20210417.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210418.dta not found)
 file CovidLongitudinal SRIV 20210418.dta saved
 
 
@@ -3713,6 +4064,7 @@ file CovidLongitudinal SRIV 20210418.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210419.dta not found)
 file CovidLongitudinal SRIV 20210419.dta saved
 
 
@@ -3723,6 +4075,7 @@ file CovidLongitudinal SRIV 20210419.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210420.dta not found)
 file CovidLongitudinal SRIV 20210420.dta saved
 
 
@@ -3733,6 +4086,7 @@ file CovidLongitudinal SRIV 20210420.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210421.dta not found)
 file CovidLongitudinal SRIV 20210421.dta saved
 
 
@@ -3743,6 +4097,7 @@ file CovidLongitudinal SRIV 20210421.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210422.dta not found)
 file CovidLongitudinal SRIV 20210422.dta saved
 
 
@@ -3753,6 +4108,7 @@ file CovidLongitudinal SRIV 20210422.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210423.dta not found)
 file CovidLongitudinal SRIV 20210423.dta saved
 
 
@@ -3763,6 +4119,7 @@ file CovidLongitudinal SRIV 20210423.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210424.dta not found)
 file CovidLongitudinal SRIV 20210424.dta saved
 
 
@@ -3773,6 +4130,7 @@ file CovidLongitudinal SRIV 20210424.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210425.dta not found)
 file CovidLongitudinal SRIV 20210425.dta saved
 
 
@@ -3783,6 +4141,7 @@ file CovidLongitudinal SRIV 20210425.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210426.dta not found)
 file CovidLongitudinal SRIV 20210426.dta saved
 
 
@@ -3793,6 +4152,7 @@ file CovidLongitudinal SRIV 20210426.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210427.dta not found)
 file CovidLongitudinal SRIV 20210427.dta saved
 
 
@@ -3803,6 +4163,7 @@ file CovidLongitudinal SRIV 20210427.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210428.dta not found)
 file CovidLongitudinal SRIV 20210428.dta saved
 
 
@@ -3813,6 +4174,7 @@ file CovidLongitudinal SRIV 20210428.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210429.dta not found)
 file CovidLongitudinal SRIV 20210429.dta saved
 
 
@@ -3823,6 +4185,7 @@ file CovidLongitudinal SRIV 20210429.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210430.dta not found)
 file CovidLongitudinal SRIV 20210430.dta saved
 
 
@@ -3833,6 +4196,7 @@ file CovidLongitudinal SRIV 20210430.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210501.dta not found)
 file CovidLongitudinal SRIV 20210501.dta saved
 
 
@@ -3843,6 +4207,7 @@ file CovidLongitudinal SRIV 20210501.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210502.dta not found)
 file CovidLongitudinal SRIV 20210502.dta saved
 
 
@@ -3853,6 +4218,7 @@ file CovidLongitudinal SRIV 20210502.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210503.dta not found)
 file CovidLongitudinal SRIV 20210503.dta saved
 
 
@@ -3863,6 +4229,7 @@ file CovidLongitudinal SRIV 20210503.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210504.dta not found)
 file CovidLongitudinal SRIV 20210504.dta saved
 
 
@@ -3873,6 +4240,7 @@ file CovidLongitudinal SRIV 20210504.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210505.dta not found)
 file CovidLongitudinal SRIV 20210505.dta saved
 
 
@@ -3883,6 +4251,7 @@ file CovidLongitudinal SRIV 20210505.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210506.dta not found)
 file CovidLongitudinal SRIV 20210506.dta saved
 
 
@@ -3893,6 +4262,7 @@ file CovidLongitudinal SRIV 20210506.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210507.dta not found)
 file CovidLongitudinal SRIV 20210507.dta saved
 
 
@@ -3903,6 +4273,7 @@ file CovidLongitudinal SRIV 20210507.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210508.dta not found)
 file CovidLongitudinal SRIV 20210508.dta saved
 
 
@@ -3913,6 +4284,7 @@ file CovidLongitudinal SRIV 20210508.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210509.dta not found)
 file CovidLongitudinal SRIV 20210509.dta saved
 
 
@@ -3923,6 +4295,7 @@ file CovidLongitudinal SRIV 20210509.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210510.dta not found)
 file CovidLongitudinal SRIV 20210510.dta saved
 
 
@@ -3933,6 +4306,7 @@ file CovidLongitudinal SRIV 20210510.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210511.dta not found)
 file CovidLongitudinal SRIV 20210511.dta saved
 
 
@@ -3943,6 +4317,7 @@ file CovidLongitudinal SRIV 20210511.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210512.dta not found)
 file CovidLongitudinal SRIV 20210512.dta saved
 
 
@@ -3953,6 +4328,7 @@ file CovidLongitudinal SRIV 20210512.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210513.dta not found)
 file CovidLongitudinal SRIV 20210513.dta saved
 
 
@@ -3963,6 +4339,7 @@ file CovidLongitudinal SRIV 20210513.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210514.dta not found)
 file CovidLongitudinal SRIV 20210514.dta saved
 
 
@@ -3973,6 +4350,7 @@ file CovidLongitudinal SRIV 20210514.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210515.dta not found)
 file CovidLongitudinal SRIV 20210515.dta saved
 
 
@@ -3983,6 +4361,7 @@ file CovidLongitudinal SRIV 20210515.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210516.dta not found)
 file CovidLongitudinal SRIV 20210516.dta saved
 
 
@@ -3993,6 +4372,7 @@ file CovidLongitudinal SRIV 20210516.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210517.dta not found)
 file CovidLongitudinal SRIV 20210517.dta saved
 
 
@@ -4003,6 +4383,7 @@ file CovidLongitudinal SRIV 20210517.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210518.dta not found)
 file CovidLongitudinal SRIV 20210518.dta saved
 
 
@@ -4013,6 +4394,7 @@ file CovidLongitudinal SRIV 20210518.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210519.dta not found)
 file CovidLongitudinal SRIV 20210519.dta saved
 
 
@@ -4023,6 +4405,7 @@ file CovidLongitudinal SRIV 20210519.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210520.dta not found)
 file CovidLongitudinal SRIV 20210520.dta saved
 
 
@@ -4033,6 +4416,7 @@ file CovidLongitudinal SRIV 20210520.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210521.dta not found)
 file CovidLongitudinal SRIV 20210521.dta saved
 
 
@@ -4043,6 +4427,7 @@ file CovidLongitudinal SRIV 20210521.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210522.dta not found)
 file CovidLongitudinal SRIV 20210522.dta saved
 
 
@@ -4053,6 +4438,7 @@ file CovidLongitudinal SRIV 20210522.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210523.dta not found)
 file CovidLongitudinal SRIV 20210523.dta saved
 
 
@@ -4063,6 +4449,7 @@ file CovidLongitudinal SRIV 20210523.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210524.dta not found)
 file CovidLongitudinal SRIV 20210524.dta saved
 
 
@@ -4073,6 +4460,7 @@ file CovidLongitudinal SRIV 20210524.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210525.dta not found)
 file CovidLongitudinal SRIV 20210525.dta saved
 
 
@@ -4083,6 +4471,7 @@ file CovidLongitudinal SRIV 20210525.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210526.dta not found)
 file CovidLongitudinal SRIV 20210526.dta saved
 
 
@@ -4093,6 +4482,7 @@ file CovidLongitudinal SRIV 20210526.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210527.dta not found)
 file CovidLongitudinal SRIV 20210527.dta saved
 
 
@@ -4103,6 +4493,7 @@ file CovidLongitudinal SRIV 20210527.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210528.dta not found)
 file CovidLongitudinal SRIV 20210528.dta saved
 
 
@@ -4113,6 +4504,7 @@ file CovidLongitudinal SRIV 20210528.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210529.dta not found)
 file CovidLongitudinal SRIV 20210529.dta saved
 
 
@@ -4123,6 +4515,7 @@ file CovidLongitudinal SRIV 20210529.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210530.dta not found)
 file CovidLongitudinal SRIV 20210530.dta saved
 
 
@@ -4133,6 +4526,7 @@ file CovidLongitudinal SRIV 20210530.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210531.dta not found)
 file CovidLongitudinal SRIV 20210531.dta saved
 
 
@@ -4143,6 +4537,7 @@ file CovidLongitudinal SRIV 20210531.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210601.dta not found)
 file CovidLongitudinal SRIV 20210601.dta saved
 
 
@@ -4153,6 +4548,7 @@ file CovidLongitudinal SRIV 20210601.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210602.dta not found)
 file CovidLongitudinal SRIV 20210602.dta saved
 
 
@@ -4163,6 +4559,7 @@ file CovidLongitudinal SRIV 20210602.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210603.dta not found)
 file CovidLongitudinal SRIV 20210603.dta saved
 
 
@@ -4173,6 +4570,7 @@ file CovidLongitudinal SRIV 20210603.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210604.dta not found)
 file CovidLongitudinal SRIV 20210604.dta saved
 
 
@@ -4183,6 +4581,7 @@ file CovidLongitudinal SRIV 20210604.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210605.dta not found)
 file CovidLongitudinal SRIV 20210605.dta saved
 
 
@@ -4193,6 +4592,7 @@ file CovidLongitudinal SRIV 20210605.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210606.dta not found)
 file CovidLongitudinal SRIV 20210606.dta saved
 
 
@@ -4203,6 +4603,7 @@ file CovidLongitudinal SRIV 20210606.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210607.dta not found)
 file CovidLongitudinal SRIV 20210607.dta saved
 
 
@@ -4213,6 +4614,7 @@ file CovidLongitudinal SRIV 20210607.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210608.dta not found)
 file CovidLongitudinal SRIV 20210608.dta saved
 
 
@@ -4223,6 +4625,7 @@ file CovidLongitudinal SRIV 20210608.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210609.dta not found)
 file CovidLongitudinal SRIV 20210609.dta saved
 
 
@@ -4233,6 +4636,7 @@ file CovidLongitudinal SRIV 20210609.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210610.dta not found)
 file CovidLongitudinal SRIV 20210610.dta saved
 
 
@@ -4243,6 +4647,7 @@ file CovidLongitudinal SRIV 20210610.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210611.dta not found)
 file CovidLongitudinal SRIV 20210611.dta saved
 
 
@@ -4253,6 +4658,7 @@ file CovidLongitudinal SRIV 20210611.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210612.dta not found)
 file CovidLongitudinal SRIV 20210612.dta saved
 
 
@@ -4263,6 +4669,7 @@ file CovidLongitudinal SRIV 20210612.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210613.dta not found)
 file CovidLongitudinal SRIV 20210613.dta saved
 
 
@@ -4273,6 +4680,7 @@ file CovidLongitudinal SRIV 20210613.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210614.dta not found)
 file CovidLongitudinal SRIV 20210614.dta saved
 
 
@@ -4283,6 +4691,7 @@ file CovidLongitudinal SRIV 20210614.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210615.dta not found)
 file CovidLongitudinal SRIV 20210615.dta saved
 
 
@@ -4293,6 +4702,7 @@ file CovidLongitudinal SRIV 20210615.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210616.dta not found)
 file CovidLongitudinal SRIV 20210616.dta saved
 
 
@@ -4303,6 +4713,7 @@ file CovidLongitudinal SRIV 20210616.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210617.dta not found)
 file CovidLongitudinal SRIV 20210617.dta saved
 
 
@@ -4313,6 +4724,7 @@ file CovidLongitudinal SRIV 20210617.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210618.dta not found)
 file CovidLongitudinal SRIV 20210618.dta saved
 
 
@@ -4323,6 +4735,7 @@ file CovidLongitudinal SRIV 20210618.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210619.dta not found)
 file CovidLongitudinal SRIV 20210619.dta saved
 
 
@@ -4333,6 +4746,7 @@ file CovidLongitudinal SRIV 20210619.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210620.dta not found)
 file CovidLongitudinal SRIV 20210620.dta saved
 
 
@@ -4343,6 +4757,7 @@ file CovidLongitudinal SRIV 20210620.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210621.dta not found)
 file CovidLongitudinal SRIV 20210621.dta saved
 
 
@@ -4353,6 +4768,7 @@ file CovidLongitudinal SRIV 20210621.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210622.dta not found)
 file CovidLongitudinal SRIV 20210622.dta saved
 
 
@@ -4363,6 +4779,7 @@ file CovidLongitudinal SRIV 20210622.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210623.dta not found)
 file CovidLongitudinal SRIV 20210623.dta saved
 
 
@@ -4373,6 +4790,7 @@ file CovidLongitudinal SRIV 20210623.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210624.dta not found)
 file CovidLongitudinal SRIV 20210624.dta saved
 
 
@@ -4383,6 +4801,7 @@ file CovidLongitudinal SRIV 20210624.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210627.dta not found)
 file CovidLongitudinal SRIV 20210627.dta saved
 
 
@@ -4393,6 +4812,7 @@ file CovidLongitudinal SRIV 20210627.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210630.dta not found)
 file CovidLongitudinal SRIV 20210630.dta saved
 
 
@@ -4403,6 +4823,7 @@ file CovidLongitudinal SRIV 20210630.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210703.dta not found)
 file CovidLongitudinal SRIV 20210703.dta saved
 
 
@@ -4413,6 +4834,7 @@ file CovidLongitudinal SRIV 20210703.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210704.dta not found)
 file CovidLongitudinal SRIV 20210704.dta saved
 
 
@@ -4423,6 +4845,7 @@ file CovidLongitudinal SRIV 20210704.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210705.dta not found)
 file CovidLongitudinal SRIV 20210705.dta saved
 
 
@@ -4433,6 +4856,7 @@ file CovidLongitudinal SRIV 20210705.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210706.dta not found)
 file CovidLongitudinal SRIV 20210706.dta saved
 
 
@@ -4443,6 +4867,7 @@ file CovidLongitudinal SRIV 20210706.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210707.dta not found)
 file CovidLongitudinal SRIV 20210707.dta saved
 
 
@@ -4453,6 +4878,7 @@ file CovidLongitudinal SRIV 20210707.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210708.dta not found)
 file CovidLongitudinal SRIV 20210708.dta saved
 
 
@@ -4463,6 +4889,7 @@ file CovidLongitudinal SRIV 20210708.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210709.dta not found)
 file CovidLongitudinal SRIV 20210709.dta saved
 
 
@@ -4473,6 +4900,7 @@ file CovidLongitudinal SRIV 20210709.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210710.dta not found)
 file CovidLongitudinal SRIV 20210710.dta saved
 
 
@@ -4483,6 +4911,7 @@ file CovidLongitudinal SRIV 20210710.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210711.dta not found)
 file CovidLongitudinal SRIV 20210711.dta saved
 
 
@@ -4493,6 +4922,7 @@ file CovidLongitudinal SRIV 20210711.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210712.dta not found)
 file CovidLongitudinal SRIV 20210712.dta saved
 
 
@@ -4503,6 +4933,7 @@ file CovidLongitudinal SRIV 20210712.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210713.dta not found)
 file CovidLongitudinal SRIV 20210713.dta saved
 
 
@@ -4513,6 +4944,7 @@ file CovidLongitudinal SRIV 20210713.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210714.dta not found)
 file CovidLongitudinal SRIV 20210714.dta saved
 
 
@@ -4523,6 +4955,7 @@ file CovidLongitudinal SRIV 20210714.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210715.dta not found)
 file CovidLongitudinal SRIV 20210715.dta saved
 
 
@@ -4533,6 +4966,7 @@ file CovidLongitudinal SRIV 20210715.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210716.dta not found)
 file CovidLongitudinal SRIV 20210716.dta saved
 
 
@@ -4543,6 +4977,7 @@ file CovidLongitudinal SRIV 20210716.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210717.dta not found)
 file CovidLongitudinal SRIV 20210717.dta saved
 
 
@@ -4553,6 +4988,7 @@ file CovidLongitudinal SRIV 20210717.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210718.dta not found)
 file CovidLongitudinal SRIV 20210718.dta saved
 
 
@@ -4563,6 +4999,7 @@ file CovidLongitudinal SRIV 20210718.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210719.dta not found)
 file CovidLongitudinal SRIV 20210719.dta saved
 
 
@@ -4573,6 +5010,7 @@ file CovidLongitudinal SRIV 20210719.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210720.dta not found)
 file CovidLongitudinal SRIV 20210720.dta saved
 
 
@@ -4583,6 +5021,7 @@ file CovidLongitudinal SRIV 20210720.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210721.dta not found)
 file CovidLongitudinal SRIV 20210721.dta saved
 
 
@@ -4593,6 +5032,7 @@ file CovidLongitudinal SRIV 20210721.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210722.dta not found)
 file CovidLongitudinal SRIV 20210722.dta saved
 
 
@@ -4603,6 +5043,7 @@ file CovidLongitudinal SRIV 20210722.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210723.dta not found)
 file CovidLongitudinal SRIV 20210723.dta saved
 
 
@@ -4613,6 +5054,7 @@ file CovidLongitudinal SRIV 20210723.dta saved
 {res}{txt}(101 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210724.dta not found)
 file CovidLongitudinal SRIV 20210724.dta saved
 
 
@@ -4623,6 +5065,7 @@ file CovidLongitudinal SRIV 20210724.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210725.dta not found)
 file CovidLongitudinal SRIV 20210725.dta saved
 
 
@@ -4633,6 +5076,7 @@ file CovidLongitudinal SRIV 20210725.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210726.dta not found)
 file CovidLongitudinal SRIV 20210726.dta saved
 
 
@@ -4643,6 +5087,7 @@ file CovidLongitudinal SRIV 20210726.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210727.dta not found)
 file CovidLongitudinal SRIV 20210727.dta saved
 
 
@@ -4653,6 +5098,7 @@ file CovidLongitudinal SRIV 20210727.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210728.dta not found)
 file CovidLongitudinal SRIV 20210728.dta saved
 
 
@@ -4663,6 +5109,7 @@ file CovidLongitudinal SRIV 20210728.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210729.dta not found)
 file CovidLongitudinal SRIV 20210729.dta saved
 
 
@@ -4673,6 +5120,7 @@ file CovidLongitudinal SRIV 20210729.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210730.dta not found)
 file CovidLongitudinal SRIV 20210730.dta saved
 
 
@@ -4683,6 +5131,7 @@ file CovidLongitudinal SRIV 20210730.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210731.dta not found)
 file CovidLongitudinal SRIV 20210731.dta saved
 
 
@@ -4693,6 +5142,7 @@ file CovidLongitudinal SRIV 20210731.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210801.dta not found)
 file CovidLongitudinal SRIV 20210801.dta saved
 
 
@@ -4703,6 +5153,7 @@ file CovidLongitudinal SRIV 20210801.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210808.dta not found)
 file CovidLongitudinal SRIV 20210808.dta saved
 
 
@@ -4713,6 +5164,7 @@ file CovidLongitudinal SRIV 20210808.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210809.dta not found)
 file CovidLongitudinal SRIV 20210809.dta saved
 
 
@@ -4723,6 +5175,7 @@ file CovidLongitudinal SRIV 20210809.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210810.dta not found)
 file CovidLongitudinal SRIV 20210810.dta saved
 
 
@@ -4733,6 +5186,7 @@ file CovidLongitudinal SRIV 20210810.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210811.dta not found)
 file CovidLongitudinal SRIV 20210811.dta saved
 
 
@@ -4743,6 +5197,7 @@ file CovidLongitudinal SRIV 20210811.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210813.dta not found)
 file CovidLongitudinal SRIV 20210813.dta saved
 
 
@@ -4753,6 +5208,7 @@ file CovidLongitudinal SRIV 20210813.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210814.dta not found)
 file CovidLongitudinal SRIV 20210814.dta saved
 
 
@@ -4763,6 +5219,7 @@ file CovidLongitudinal SRIV 20210814.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210815.dta not found)
 file CovidLongitudinal SRIV 20210815.dta saved
 
 
@@ -4773,6 +5230,7 @@ file CovidLongitudinal SRIV 20210815.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210816.dta not found)
 file CovidLongitudinal SRIV 20210816.dta saved
 
 
@@ -4783,6 +5241,7 @@ file CovidLongitudinal SRIV 20210816.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210817.dta not found)
 file CovidLongitudinal SRIV 20210817.dta saved
 
 
@@ -4793,6 +5252,7 @@ file CovidLongitudinal SRIV 20210817.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210818.dta not found)
 file CovidLongitudinal SRIV 20210818.dta saved
 
 
@@ -4803,6 +5263,7 @@ file CovidLongitudinal SRIV 20210818.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210819.dta not found)
 file CovidLongitudinal SRIV 20210819.dta saved
 
 
@@ -4813,6 +5274,7 @@ file CovidLongitudinal SRIV 20210819.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210820.dta not found)
 file CovidLongitudinal SRIV 20210820.dta saved
 
 
@@ -4823,6 +5285,7 @@ file CovidLongitudinal SRIV 20210820.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210821.dta not found)
 file CovidLongitudinal SRIV 20210821.dta saved
 
 
@@ -4833,6 +5296,7 @@ file CovidLongitudinal SRIV 20210821.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210822.dta not found)
 file CovidLongitudinal SRIV 20210822.dta saved
 
 
@@ -4843,6 +5307,7 @@ file CovidLongitudinal SRIV 20210822.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210823.dta not found)
 file CovidLongitudinal SRIV 20210823.dta saved
 
 
@@ -4853,6 +5318,7 @@ file CovidLongitudinal SRIV 20210823.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210824.dta not found)
 file CovidLongitudinal SRIV 20210824.dta saved
 
 
@@ -4863,6 +5329,7 @@ file CovidLongitudinal SRIV 20210824.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210825.dta not found)
 file CovidLongitudinal SRIV 20210825.dta saved
 
 
@@ -4873,6 +5340,7 @@ file CovidLongitudinal SRIV 20210825.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210826.dta not found)
 file CovidLongitudinal SRIV 20210826.dta saved
 
 
@@ -4883,6 +5351,7 @@ file CovidLongitudinal SRIV 20210826.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210827.dta not found)
 file CovidLongitudinal SRIV 20210827.dta saved
 
 
@@ -4893,6 +5362,7 @@ file CovidLongitudinal SRIV 20210827.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210828.dta not found)
 file CovidLongitudinal SRIV 20210828.dta saved
 
 
@@ -4903,6 +5373,7 @@ file CovidLongitudinal SRIV 20210828.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210829.dta not found)
 file CovidLongitudinal SRIV 20210829.dta saved
 
 
@@ -4913,6 +5384,7 @@ file CovidLongitudinal SRIV 20210829.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210830.dta not found)
 file CovidLongitudinal SRIV 20210830.dta saved
 
 
@@ -4923,6 +5395,7 @@ file CovidLongitudinal SRIV 20210830.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210831.dta not found)
 file CovidLongitudinal SRIV 20210831.dta saved
 
 
@@ -4933,6 +5406,7 @@ file CovidLongitudinal SRIV 20210831.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210901.dta not found)
 file CovidLongitudinal SRIV 20210901.dta saved
 
 
@@ -4943,6 +5417,7 @@ file CovidLongitudinal SRIV 20210901.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210902.dta not found)
 file CovidLongitudinal SRIV 20210902.dta saved
 
 
@@ -4953,6 +5428,7 @@ file CovidLongitudinal SRIV 20210902.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210903.dta not found)
 file CovidLongitudinal SRIV 20210903.dta saved
 
 
@@ -4963,6 +5439,7 @@ file CovidLongitudinal SRIV 20210903.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210904.dta not found)
 file CovidLongitudinal SRIV 20210904.dta saved
 
 
@@ -4973,6 +5450,7 @@ file CovidLongitudinal SRIV 20210904.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210905.dta not found)
 file CovidLongitudinal SRIV 20210905.dta saved
 
 
@@ -4983,6 +5461,7 @@ file CovidLongitudinal SRIV 20210905.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210906.dta not found)
 file CovidLongitudinal SRIV 20210906.dta saved
 
 
@@ -4993,6 +5472,7 @@ file CovidLongitudinal SRIV 20210906.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210907.dta not found)
 file CovidLongitudinal SRIV 20210907.dta saved
 
 
@@ -5003,6 +5483,7 @@ file CovidLongitudinal SRIV 20210907.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210908.dta not found)
 file CovidLongitudinal SRIV 20210908.dta saved
 
 
@@ -5013,6 +5494,7 @@ file CovidLongitudinal SRIV 20210908.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210909.dta not found)
 file CovidLongitudinal SRIV 20210909.dta saved
 
 
@@ -5023,6 +5505,7 @@ file CovidLongitudinal SRIV 20210909.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210910.dta not found)
 file CovidLongitudinal SRIV 20210910.dta saved
 
 
@@ -5033,6 +5516,7 @@ file CovidLongitudinal SRIV 20210910.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210911.dta not found)
 file CovidLongitudinal SRIV 20210911.dta saved
 
 
@@ -5043,6 +5527,7 @@ file CovidLongitudinal SRIV 20210911.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210912.dta not found)
 file CovidLongitudinal SRIV 20210912.dta saved
 
 
@@ -5053,6 +5538,7 @@ file CovidLongitudinal SRIV 20210912.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210913.dta not found)
 file CovidLongitudinal SRIV 20210913.dta saved
 
 
@@ -5063,6 +5549,7 @@ file CovidLongitudinal SRIV 20210913.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210914.dta not found)
 file CovidLongitudinal SRIV 20210914.dta saved
 
 
@@ -5073,6 +5560,7 @@ file CovidLongitudinal SRIV 20210914.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210915.dta not found)
 file CovidLongitudinal SRIV 20210915.dta saved
 
 
@@ -5083,6 +5571,7 @@ file CovidLongitudinal SRIV 20210915.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210916.dta not found)
 file CovidLongitudinal SRIV 20210916.dta saved
 
 
@@ -5093,6 +5582,7 @@ file CovidLongitudinal SRIV 20210916.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210917.dta not found)
 file CovidLongitudinal SRIV 20210917.dta saved
 
 
@@ -5103,6 +5593,7 @@ file CovidLongitudinal SRIV 20210917.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210918.dta not found)
 file CovidLongitudinal SRIV 20210918.dta saved
 
 
@@ -5113,6 +5604,7 @@ file CovidLongitudinal SRIV 20210918.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210919.dta not found)
 file CovidLongitudinal SRIV 20210919.dta saved
 
 
@@ -5123,6 +5615,7 @@ file CovidLongitudinal SRIV 20210919.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210920.dta not found)
 file CovidLongitudinal SRIV 20210920.dta saved
 
 
@@ -5133,6 +5626,7 @@ file CovidLongitudinal SRIV 20210920.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210921.dta not found)
 file CovidLongitudinal SRIV 20210921.dta saved
 
 
@@ -5143,6 +5637,7 @@ file CovidLongitudinal SRIV 20210921.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210922.dta not found)
 file CovidLongitudinal SRIV 20210922.dta saved
 
 
@@ -5153,6 +5648,7 @@ file CovidLongitudinal SRIV 20210922.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210923.dta not found)
 file CovidLongitudinal SRIV 20210923.dta saved
 
 
@@ -5163,6 +5659,7 @@ file CovidLongitudinal SRIV 20210923.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(0 observations deleted)
+(note: file CovidLongitudinal SRIV 20210924.dta not found)
 file CovidLongitudinal SRIV 20210924.dta saved
 
 
@@ -5173,6 +5670,7 @@ file CovidLongitudinal SRIV 20210924.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(1 observation deleted)
+(note: file CovidLongitudinal SRIV 20210925.dta not found)
 file CovidLongitudinal SRIV 20210925.dta saved
 
 
@@ -5183,6 +5681,7 @@ file CovidLongitudinal SRIV 20210925.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(2 observations deleted)
+(note: file CovidLongitudinal SRIV 20210926.dta not found)
 file CovidLongitudinal SRIV 20210926.dta saved
 
 
@@ -5193,6 +5692,7 @@ file CovidLongitudinal SRIV 20210926.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(3 observations deleted)
+(note: file CovidLongitudinal SRIV 20210927.dta not found)
 file CovidLongitudinal SRIV 20210927.dta saved
 
 
@@ -5203,6 +5703,7 @@ file CovidLongitudinal SRIV 20210927.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(4 observations deleted)
+(note: file CovidLongitudinal SRIV 20210928.dta not found)
 file CovidLongitudinal SRIV 20210928.dta saved
 
 
@@ -5213,6 +5714,7 @@ file CovidLongitudinal SRIV 20210928.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(5 observations deleted)
+(note: file CovidLongitudinal SRIV 20210929.dta not found)
 file CovidLongitudinal SRIV 20210929.dta saved
 
 
@@ -5223,6 +5725,7 @@ file CovidLongitudinal SRIV 20210929.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(6 observations deleted)
+(note: file CovidLongitudinal SRIV 20210930.dta not found)
 file CovidLongitudinal SRIV 20210930.dta saved
 
 
@@ -5233,6 +5736,7 @@ file CovidLongitudinal SRIV 20210930.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(7 observations deleted)
+(note: file CovidLongitudinal SRIV 20211001.dta not found)
 file CovidLongitudinal SRIV 20211001.dta saved
 
 
@@ -5243,6 +5747,7 @@ file CovidLongitudinal SRIV 20211001.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(8 observations deleted)
+(note: file CovidLongitudinal SRIV 20211002.dta not found)
 file CovidLongitudinal SRIV 20211002.dta saved
 
 
@@ -5253,6 +5758,7 @@ file CovidLongitudinal SRIV 20211002.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(9 observations deleted)
+(note: file CovidLongitudinal SRIV 20211003.dta not found)
 file CovidLongitudinal SRIV 20211003.dta saved
 
 
@@ -5263,6 +5769,7 @@ file CovidLongitudinal SRIV 20211003.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(10 observations deleted)
+(note: file CovidLongitudinal SRIV 20211004.dta not found)
 file CovidLongitudinal SRIV 20211004.dta saved
 
 
@@ -5273,6 +5780,7 @@ file CovidLongitudinal SRIV 20211004.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(11 observations deleted)
+(note: file CovidLongitudinal SRIV 20211005.dta not found)
 file CovidLongitudinal SRIV 20211005.dta saved
 
 
@@ -5283,6 +5791,7 @@ file CovidLongitudinal SRIV 20211005.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(12 observations deleted)
+(note: file CovidLongitudinal SRIV 20211006.dta not found)
 file CovidLongitudinal SRIV 20211006.dta saved
 
 
@@ -5293,6 +5802,7 @@ file CovidLongitudinal SRIV 20211006.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(13 observations deleted)
+(note: file CovidLongitudinal SRIV 20211007.dta not found)
 file CovidLongitudinal SRIV 20211007.dta saved
 
 
@@ -5303,6 +5813,7 @@ file CovidLongitudinal SRIV 20211007.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(14 observations deleted)
+(note: file CovidLongitudinal SRIV 20211008.dta not found)
 file CovidLongitudinal SRIV 20211008.dta saved
 
 
@@ -5313,6 +5824,7 @@ file CovidLongitudinal SRIV 20211008.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(15 observations deleted)
+(note: file CovidLongitudinal SRIV 20211009.dta not found)
 file CovidLongitudinal SRIV 20211009.dta saved
 
 
@@ -5323,6 +5835,7 @@ file CovidLongitudinal SRIV 20211009.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(16 observations deleted)
+(note: file CovidLongitudinal SRIV 20211010.dta not found)
 file CovidLongitudinal SRIV 20211010.dta saved
 
 
@@ -5333,6 +5846,7 @@ file CovidLongitudinal SRIV 20211010.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(17 observations deleted)
+(note: file CovidLongitudinal SRIV 20211011.dta not found)
 file CovidLongitudinal SRIV 20211011.dta saved
 
 
@@ -5343,6 +5857,7 @@ file CovidLongitudinal SRIV 20211011.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(18 observations deleted)
+(note: file CovidLongitudinal SRIV 20211012.dta not found)
 file CovidLongitudinal SRIV 20211012.dta saved
 
 
@@ -5353,6 +5868,7 @@ file CovidLongitudinal SRIV 20211012.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(19 observations deleted)
+(note: file CovidLongitudinal SRIV 20211013.dta not found)
 file CovidLongitudinal SRIV 20211013.dta saved
 
 
@@ -5363,6 +5879,7 @@ file CovidLongitudinal SRIV 20211013.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(20 observations deleted)
+(note: file CovidLongitudinal SRIV 20211014.dta not found)
 file CovidLongitudinal SRIV 20211014.dta saved
 
 
@@ -5373,6 +5890,7 @@ file CovidLongitudinal SRIV 20211014.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(21 observations deleted)
+(note: file CovidLongitudinal SRIV 20211015.dta not found)
 file CovidLongitudinal SRIV 20211015.dta saved
 
 
@@ -5383,6 +5901,7 @@ file CovidLongitudinal SRIV 20211015.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(22 observations deleted)
+(note: file CovidLongitudinal SRIV 20211016.dta not found)
 file CovidLongitudinal SRIV 20211016.dta saved
 
 
@@ -5393,6 +5912,7 @@ file CovidLongitudinal SRIV 20211016.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(23 observations deleted)
+(note: file CovidLongitudinal SRIV 20211017.dta not found)
 file CovidLongitudinal SRIV 20211017.dta saved
 
 
@@ -5403,6 +5923,7 @@ file CovidLongitudinal SRIV 20211017.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(30 observations deleted)
+(note: file CovidLongitudinal SRIV 20211024.dta not found)
 file CovidLongitudinal SRIV 20211024.dta saved
 
 
@@ -5413,6 +5934,7 @@ file CovidLongitudinal SRIV 20211024.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(31 observations deleted)
+(note: file CovidLongitudinal SRIV 20211025.dta not found)
 file CovidLongitudinal SRIV 20211025.dta saved
 
 
@@ -5423,6 +5945,7 @@ file CovidLongitudinal SRIV 20211025.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(32 observations deleted)
+(note: file CovidLongitudinal SRIV 20211026.dta not found)
 file CovidLongitudinal SRIV 20211026.dta saved
 
 
@@ -5433,6 +5956,7 @@ file CovidLongitudinal SRIV 20211026.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(33 observations deleted)
+(note: file CovidLongitudinal SRIV 20211027.dta not found)
 file CovidLongitudinal SRIV 20211027.dta saved
 
 
@@ -5443,6 +5967,7 @@ file CovidLongitudinal SRIV 20211027.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(34 observations deleted)
+(note: file CovidLongitudinal SRIV 20211028.dta not found)
 file CovidLongitudinal SRIV 20211028.dta saved
 
 
@@ -5453,6 +5978,7 @@ file CovidLongitudinal SRIV 20211028.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(35 observations deleted)
+(note: file CovidLongitudinal SRIV 20211029.dta not found)
 file CovidLongitudinal SRIV 20211029.dta saved
 
 
@@ -5463,6 +5989,7 @@ file CovidLongitudinal SRIV 20211029.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(36 observations deleted)
+(note: file CovidLongitudinal SRIV 20211030.dta not found)
 file CovidLongitudinal SRIV 20211030.dta saved
 
 
@@ -5473,6 +6000,7 @@ file CovidLongitudinal SRIV 20211030.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(37 observations deleted)
+(note: file CovidLongitudinal SRIV 20211031.dta not found)
 file CovidLongitudinal SRIV 20211031.dta saved
 
 
@@ -5483,6 +6011,7 @@ file CovidLongitudinal SRIV 20211031.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(38 observations deleted)
+(note: file CovidLongitudinal SRIV 20211101.dta not found)
 file CovidLongitudinal SRIV 20211101.dta saved
 
 
@@ -5493,6 +6022,7 @@ file CovidLongitudinal SRIV 20211101.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(39 observations deleted)
+(note: file CovidLongitudinal SRIV 20211102.dta not found)
 file CovidLongitudinal SRIV 20211102.dta saved
 
 
@@ -5503,6 +6033,7 @@ file CovidLongitudinal SRIV 20211102.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(40 observations deleted)
+(note: file CovidLongitudinal SRIV 20211103.dta not found)
 file CovidLongitudinal SRIV 20211103.dta saved
 
 
@@ -5513,6 +6044,7 @@ file CovidLongitudinal SRIV 20211103.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(41 observations deleted)
+(note: file CovidLongitudinal SRIV 20211104.dta not found)
 file CovidLongitudinal SRIV 20211104.dta saved
 
 
@@ -5523,6 +6055,7 @@ file CovidLongitudinal SRIV 20211104.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(42 observations deleted)
+(note: file CovidLongitudinal SRIV 20211105.dta not found)
 file CovidLongitudinal SRIV 20211105.dta saved
 
 
@@ -5533,6 +6066,7 @@ file CovidLongitudinal SRIV 20211105.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(43 observations deleted)
+(note: file CovidLongitudinal SRIV 20211106.dta not found)
 file CovidLongitudinal SRIV 20211106.dta saved
 
 
@@ -5543,6 +6077,7 @@ file CovidLongitudinal SRIV 20211106.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(44 observations deleted)
+(note: file CovidLongitudinal SRIV 20211107.dta not found)
 file CovidLongitudinal SRIV 20211107.dta saved
 
 
@@ -5553,6 +6088,7 @@ file CovidLongitudinal SRIV 20211107.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(45 observations deleted)
+(note: file CovidLongitudinal SRIV 20211108.dta not found)
 file CovidLongitudinal SRIV 20211108.dta saved
 
 
@@ -5563,6 +6099,7 @@ file CovidLongitudinal SRIV 20211108.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(46 observations deleted)
+(note: file CovidLongitudinal SRIV 20211109.dta not found)
 file CovidLongitudinal SRIV 20211109.dta saved
 
 
@@ -5573,6 +6110,7 @@ file CovidLongitudinal SRIV 20211109.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(47 observations deleted)
+(note: file CovidLongitudinal SRIV 20211110.dta not found)
 file CovidLongitudinal SRIV 20211110.dta saved
 
 
@@ -5583,6 +6121,7 @@ file CovidLongitudinal SRIV 20211110.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(48 observations deleted)
+(note: file CovidLongitudinal SRIV 20211111.dta not found)
 file CovidLongitudinal SRIV 20211111.dta saved
 
 
@@ -5613,6 +6152,7 @@ file CovidLongitudinal SRIV 20211114.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(52 observations deleted)
+(note: file CovidLongitudinal SRIV 20211115.dta not found)
 file CovidLongitudinal SRIV 20211115.dta saved
 
 
@@ -5623,6 +6163,7 @@ file CovidLongitudinal SRIV 20211115.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(53 observations deleted)
+(note: file CovidLongitudinal SRIV 20211116.dta not found)
 file CovidLongitudinal SRIV 20211116.dta saved
 
 
@@ -5633,6 +6174,7 @@ file CovidLongitudinal SRIV 20211116.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(54 observations deleted)
+(note: file CovidLongitudinal SRIV 20211117.dta not found)
 file CovidLongitudinal SRIV 20211117.dta saved
 
 
@@ -5643,6 +6185,7 @@ file CovidLongitudinal SRIV 20211117.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(55 observations deleted)
+(note: file CovidLongitudinal SRIV 20211118.dta not found)
 file CovidLongitudinal SRIV 20211118.dta saved
 
 
@@ -5653,6 +6196,7 @@ file CovidLongitudinal SRIV 20211118.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(56 observations deleted)
+(note: file CovidLongitudinal SRIV 20211119.dta not found)
 file CovidLongitudinal SRIV 20211119.dta saved
 
 
@@ -5663,6 +6207,7 @@ file CovidLongitudinal SRIV 20211119.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(57 observations deleted)
+(note: file CovidLongitudinal SRIV 20211120.dta not found)
 file CovidLongitudinal SRIV 20211120.dta saved
 
 
@@ -5673,6 +6218,7 @@ file CovidLongitudinal SRIV 20211120.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(58 observations deleted)
+(note: file CovidLongitudinal SRIV 20211121.dta not found)
 file CovidLongitudinal SRIV 20211121.dta saved
 
 
@@ -5683,6 +6229,7 @@ file CovidLongitudinal SRIV 20211121.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(59 observations deleted)
+(note: file CovidLongitudinal SRIV 20211122.dta not found)
 file CovidLongitudinal SRIV 20211122.dta saved
 
 
@@ -5693,6 +6240,7 @@ file CovidLongitudinal SRIV 20211122.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(61 observations deleted)
+(note: file CovidLongitudinal SRIV 20211124.dta not found)
 file CovidLongitudinal SRIV 20211124.dta saved
 
 
@@ -5703,6 +6251,7 @@ file CovidLongitudinal SRIV 20211124.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(63 observations deleted)
+(note: file CovidLongitudinal SRIV 20211126.dta not found)
 file CovidLongitudinal SRIV 20211126.dta saved
 
 
@@ -5713,6 +6262,7 @@ file CovidLongitudinal SRIV 20211126.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(64 observations deleted)
+(note: file CovidLongitudinal SRIV 20211127.dta not found)
 file CovidLongitudinal SRIV 20211127.dta saved
 
 
@@ -5723,6 +6273,7 @@ file CovidLongitudinal SRIV 20211127.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(65 observations deleted)
+(note: file CovidLongitudinal SRIV 20211128.dta not found)
 file CovidLongitudinal SRIV 20211128.dta saved
 
 
@@ -5733,6 +6284,7 @@ file CovidLongitudinal SRIV 20211128.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(66 observations deleted)
+(note: file CovidLongitudinal SRIV 20211129.dta not found)
 file CovidLongitudinal SRIV 20211129.dta saved
 
 
@@ -5743,6 +6295,7 @@ file CovidLongitudinal SRIV 20211129.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(67 observations deleted)
+(note: file CovidLongitudinal SRIV 20211130.dta not found)
 file CovidLongitudinal SRIV 20211130.dta saved
 
 
@@ -5753,6 +6306,7 @@ file CovidLongitudinal SRIV 20211130.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(68 observations deleted)
+(note: file CovidLongitudinal SRIV 20211201.dta not found)
 file CovidLongitudinal SRIV 20211201.dta saved
 
 
@@ -5763,6 +6317,7 @@ file CovidLongitudinal SRIV 20211201.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(69 observations deleted)
+(note: file CovidLongitudinal SRIV 20211202.dta not found)
 file CovidLongitudinal SRIV 20211202.dta saved
 
 
@@ -5773,6 +6328,7 @@ file CovidLongitudinal SRIV 20211202.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(70 observations deleted)
+(note: file CovidLongitudinal SRIV 20211203.dta not found)
 file CovidLongitudinal SRIV 20211203.dta saved
 
 
@@ -5783,6 +6339,7 @@ file CovidLongitudinal SRIV 20211203.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(72 observations deleted)
+(note: file CovidLongitudinal SRIV 20211205.dta not found)
 file CovidLongitudinal SRIV 20211205.dta saved
 
 
@@ -5793,6 +6350,7 @@ file CovidLongitudinal SRIV 20211205.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(74 observations deleted)
+(note: file CovidLongitudinal SRIV 20211207.dta not found)
 file CovidLongitudinal SRIV 20211207.dta saved
 
 
@@ -5803,6 +6361,7 @@ file CovidLongitudinal SRIV 20211207.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(75 observations deleted)
+(note: file CovidLongitudinal SRIV 20211208.dta not found)
 file CovidLongitudinal SRIV 20211208.dta saved
 
 
@@ -5813,6 +6372,7 @@ file CovidLongitudinal SRIV 20211208.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(76 observations deleted)
+(note: file CovidLongitudinal SRIV 20211209.dta not found)
 file CovidLongitudinal SRIV 20211209.dta saved
 
 
@@ -5823,6 +6383,7 @@ file CovidLongitudinal SRIV 20211209.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(77 observations deleted)
+(note: file CovidLongitudinal SRIV 20211210.dta not found)
 file CovidLongitudinal SRIV 20211210.dta saved
 
 
@@ -5833,6 +6394,7 @@ file CovidLongitudinal SRIV 20211210.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(78 observations deleted)
+(note: file CovidLongitudinal SRIV 20211211.dta not found)
 file CovidLongitudinal SRIV 20211211.dta saved
 
 
@@ -5843,6 +6405,7 @@ file CovidLongitudinal SRIV 20211211.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(79 observations deleted)
+(note: file CovidLongitudinal SRIV 20211212.dta not found)
 file CovidLongitudinal SRIV 20211212.dta saved
 
 
@@ -5853,6 +6416,7 @@ file CovidLongitudinal SRIV 20211212.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(80 observations deleted)
+(note: file CovidLongitudinal SRIV 20211213.dta not found)
 file CovidLongitudinal SRIV 20211213.dta saved
 
 
@@ -5863,6 +6427,7 @@ file CovidLongitudinal SRIV 20211213.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(81 observations deleted)
+(note: file CovidLongitudinal SRIV 20211214.dta not found)
 file CovidLongitudinal SRIV 20211214.dta saved
 
 
@@ -5873,6 +6438,7 @@ file CovidLongitudinal SRIV 20211214.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(82 observations deleted)
+(note: file CovidLongitudinal SRIV 20211215.dta not found)
 file CovidLongitudinal SRIV 20211215.dta saved
 
 
@@ -5883,6 +6449,7 @@ file CovidLongitudinal SRIV 20211215.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(83 observations deleted)
+(note: file CovidLongitudinal SRIV 20211216.dta not found)
 file CovidLongitudinal SRIV 20211216.dta saved
 
 
@@ -5893,6 +6460,7 @@ file CovidLongitudinal SRIV 20211216.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(84 observations deleted)
+(note: file CovidLongitudinal SRIV 20211217.dta not found)
 file CovidLongitudinal SRIV 20211217.dta saved
 
 
@@ -5903,6 +6471,7 @@ file CovidLongitudinal SRIV 20211217.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(85 observations deleted)
+(note: file CovidLongitudinal SRIV 20211218.dta not found)
 file CovidLongitudinal SRIV 20211218.dta saved
 
 
@@ -5913,6 +6482,7 @@ file CovidLongitudinal SRIV 20211218.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(86 observations deleted)
+(note: file CovidLongitudinal SRIV 20211219.dta not found)
 file CovidLongitudinal SRIV 20211219.dta saved
 
 
@@ -5923,6 +6493,7 @@ file CovidLongitudinal SRIV 20211219.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(93 observations deleted)
+(note: file CovidLongitudinal SRIV 20211226.dta not found)
 file CovidLongitudinal SRIV 20211226.dta saved
 
 
@@ -5933,6 +6504,7 @@ file CovidLongitudinal SRIV 20211226.dta saved
 {res}{txt}(100 real changes made)
 (1 missing value generated)
 {res}{txt}(94 observations deleted)
+(note: file CovidLongitudinal SRIV 20211227.dta not found)
 file CovidLongitudinal SRIV 20211227.dta saved
 
 
@@ -5950,7 +6522,7 @@ file CovidLongitudinal SRIV 20211227.dta saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 1.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 07:34:19
+ {txt}closed on:  {res}17 May 2022, 22:09:47
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

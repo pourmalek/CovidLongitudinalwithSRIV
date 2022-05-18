@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 5.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 19:38:16
+ {txt}opened on:  {res}17 May 2022, 13:57:26
 {txt}
 {com}. 
 . ***************************************************************************
@@ -304,10 +304,10 @@
 (612 missing values generated)
 (612 missing values generated)
 (612 missing values generated)
-(609 missing values generated)
-(609 missing values generated)
-(609 missing values generated)
-(609 missing values generated)
+(612 missing values generated)
+(612 missing values generated)
+(612 missing values generated)
+(612 missing values generated)
 (633 missing values generated)
 (633 missing values generated)
 (633 missing values generated)
@@ -2136,7 +2136,7 @@
 . 
 . graph bar ///
 > (mean) DDAbPeErA02_Mean2r /// 
-> , bar(1, fcolor(gray) lcolor(gray)) ///
+> , bar(1, fcolor(black) lcolor(black)) ///
 > blabel(bar) ytitle("Average MAPE") yscale(titlegap(2)) ///
 > title("C19 daily deaths average MAPE over updates and calendar months", size(medium) color(black)) ///
 > subtitle("$country, IHME, forecast only. MAPE: Median Absolute Percent Error", size(small)) /// 
@@ -2159,7 +2159,8 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal IHME 2.dta", replace 
-{txt}file CovidLongitudinal IHME 2.dta saved
+{txt}(note: file CovidLongitudinal IHME 2.dta not found)
+file CovidLongitudinal IHME 2.dta saved
 
 {com}. 
 . 
@@ -2174,7 +2175,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 5.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 19:38:38
+ {txt}closed on:  {res}17 May 2022, 13:57:42
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

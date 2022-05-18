@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 2.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}15 May 2022, 07:02:28
+ {txt}opened on:  {res}17 May 2022, 12:26:51
 {txt}
 {com}. 
 . ***************************************************************************
@@ -161,22 +161,24 @@
 {txt}  2{com}. 
 . use "CovidLongitudinal LANL `update'.dta", clear
 {txt}  3{com}. 
-. rename DayDeaMeSmA04`update' DayDeaMeSmA04`update'
+. capture rename DayDeaMeSmA04_`update' DayDeaMeSmA04`update'
 {txt}  4{com}. 
-. capture drop update_date
+. rename DayDeaMeSmA04`update' DayDeaMeSmA04`update'
 {txt}  5{com}. 
-. gen update_date = date("`update'", "YMD")
+. capture drop update_date
 {txt}  6{com}. 
-. capture drop DayDeaFOREA04`update'
+. gen update_date = date("`update'", "YMD")
 {txt}  7{com}. 
-. gen DayDeaFOREA04`update' = DayDeaMeSmA04`update'
+. capture drop DayDeaFOREA04`update'
 {txt}  8{com}. 
-. replace DayDeaFOREA04`update' = . if date < update_date
+. gen DayDeaFOREA04`update' = DayDeaMeSmA04`update'
 {txt}  9{com}. 
-. label var DayDeaFOREA04`update' "DayDeaMeSmA04 Forecast only"
+. replace DayDeaFOREA04`update' = . if date < update_date
 {txt} 10{com}. 
-. save "CovidLongitudinal LANL `update'.dta", replace
+. label var DayDeaFOREA04`update' "DayDeaMeSmA04 Forecast only"
 {txt} 11{com}. 
+. save "CovidLongitudinal LANL `update'.dta", replace
+{txt} 12{com}. 
 . {c )-}
 {res}{txt}  (all {it:newnames}=={it:oldnames})
 (48 real changes made, 48 to missing)
@@ -1863,7 +1865,8 @@ file CovidLongitudinal LANL 20210926.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal LANL.dta", replace
-{txt}file CovidLongitudinal LANL.dta saved
+{txt}(note: file CovidLongitudinal LANL.dta not found)
+file CovidLongitudinal LANL.dta saved
 
 {com}. 
 . 
@@ -1897,7 +1900,8 @@ file CovidLongitudinal LANL 20210926.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal JOHN.dta", replace
-{txt}file CovidLongitudinal JOHN.dta saved
+{txt}(note: file CovidLongitudinal JOHN.dta not found)
+file CovidLongitudinal JOHN.dta saved
 
 {com}. 
 . merge m:m date loc_grand_name using "CovidLongitudinal LANL.dta"
@@ -1933,7 +1937,8 @@ file CovidLongitudinal LANL 20210926.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal LANL 2.dta", replace
-{txt}file CovidLongitudinal LANL 2.dta saved
+{txt}(note: file CovidLongitudinal LANL 2.dta not found)
+file CovidLongitudinal LANL 2.dta saved
 
 {com}. 
 . 
@@ -1949,7 +1954,7 @@ file CovidLongitudinal LANL 20210926.dta saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 2.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}15 May 2022, 07:02:30
+ {txt}closed on:  {res}17 May 2022, 12:26:53
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

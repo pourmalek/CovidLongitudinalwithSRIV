@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 4.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 12:00:52
+ {txt}opened on:  {res}17 May 2022, 12:57:23
 {txt}
 {com}. 
 . ***************************************************************************
@@ -563,7 +563,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 4.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 12:01:08
+ {txt}closed on:  {res}17 May 2022, 12:57:40
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

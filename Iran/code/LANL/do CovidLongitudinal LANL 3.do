@@ -161,6 +161,10 @@ use "CovidLongitudinal LANL 2.dta", clear
 
 
 
+grstyle init
+
+grstyle color background white
+
 
 
 ***********************************************

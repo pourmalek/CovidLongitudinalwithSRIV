@@ -649,8 +649,8 @@ twoway ///
 (line DayDeaFOREA02`update' date, sort lcolor(black) lpattern(tight_dot) lwidth(vthick)) /// 5 "IHME forecast"
 (line DayDeaMeSmA03`update' date, sort lcolor(magenta) lwidth(medthick)) /// 6 "IMPE all"
 (line DayDeaFOREA03`update' date, sort lcolor(magenta) lpattern(tight_dot) lwidth(vthick)) /// 7 "IMPE forecast"
-(line DayDeaMeSmA04`update' date, sort lcolor(orange) lwidth(medthick)) /// 8 "LANL all"
-(line DayDeaFOREA04`update' date, sort lcolor(orange) lpattern(tight_dot) lwidth(vthick)) /// 9 "LANL forecast"
+(line DayDeaMeSmA04`update' date, sort lcolor(brown) lwidth(medthick)) /// 8 "LANL all"
+(line DayDeaFOREA04`update' date, sort lcolor(brown) lpattern(tight_dot) lwidth(vthick)) /// 9 "LANL forecast"
 (line DayDeaMeSmA05`update' date, sort lcolor(green) lwidth(medthick)) /// 10 "SRIV all" 
 (line DayDeaFOREA05`update' date, sort lcolor(green) lpattern(tight_dot) lwidth(vthick)) /// 11 "SRIV forecast" 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
@@ -662,7 +662,7 @@ legend(order(1 "JOHN" 2 "DELP" 4 "IHME" 6 "IMPE" 8 "LANL" 10 "SRIV") size(small)
 subtitle("Backcasts and forecasts", size(small)) ///
 note("Reference scenario forecasts are marked with |||||||||||| " , size(small)) 
 
-qui graph export "graph 1 C19 daily deaths, $country, update `update'.pdf", replace
+qui graph export "graph 1 a C19 daily deaths, $country, update `update'.pdf", replace
 
 }
 *
@@ -682,7 +682,7 @@ twoway ///
 (line DayDeaFOREA01`update' date, sort lcolor(red) lwidth(medthick)) /// 2 "DELP forecast"
 (line DayDeaFOREA02`update' date, sort lcolor(black) lwidth(medthick)) /// 3 "IHME forecast"
 (line DayDeaFOREA03`update' date, sort lcolor(magenta) lwidth(medthick)) /// 4 "IMPE forecast"
-(line DayDeaFOREA04`update' date, sort lcolor(orange) lwidth(medthick)) /// 5 "LANL forecast"
+(line DayDeaFOREA04`update' date, sort lcolor(brown) lwidth(medthick)) /// 5 "LANL forecast"
 (line DayDeaFOREA05`update' date, sort lcolor(green) lwidth(medthick)) /// 6 "SRIV forecast" 
 if date >= td(01jan2020) & date <= td(01jan2022) ///
 , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
@@ -692,7 +692,7 @@ xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) lege
 legend(order(1 "JOHN" 2 "DELP" 3 "IHME" 4 "IMPE" 5 "LANL" 6 "SRIV") size(small) row(1)) ///
 subtitle("Forecast only", size(small))  
 
-qui graph export "graph 2 C19 daily deaths, $country, update `update' forecast only.pdf", replace
+qui graph export "graph 1 b C19 daily deaths, $country, update `update' forecast only.pdf", replace
 
 }
 *

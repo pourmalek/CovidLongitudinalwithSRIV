@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 4.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 22:55:37
+ {txt}opened on:  {res}17 May 2022, 21:54:56
 {txt}
 {com}. 
 . ***************************************************************************
@@ -2762,7 +2762,7 @@
 . 
 . graph bar ///
 > (mean) DDAbPeErA03_Mean2r /// 
-> , bar(1, fcolor(gray) lcolor(gray)) ///
+> , bar(1, fcolor(magenta) lcolor(magenta)) ///
 > blabel(bar) ytitle("Average MAPE") yscale(titlegap(2)) ///
 > title("C19 daily deaths average MAPE over updates and calendar months", size(medium) color(black)) ///
 > subtitle("$country, IMPE, forecast only. MAPE: Median Absolute Percent Error", size(small)) /// 
@@ -2792,7 +2792,8 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal IMPE 3.dta", replace
-{txt}file CovidLongitudinal IMPE 3.dta saved
+{txt}(note: file CovidLongitudinal IMPE 3.dta not found)
+file CovidLongitudinal IMPE 3.dta saved
 
 {com}. 
 . 
@@ -2804,7 +2805,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 4.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 22:56:02
+ {txt}closed on:  {res}17 May 2022, 21:55:23
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 2.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 07:55:37
+ {txt}opened on:  {res}17 May 2022, 22:09:47
 {txt}
 {com}. 
 . ***************************************************************************
@@ -626,1148 +626,1720 @@
 {txt} 11{com}. 
 . {c )-}
 {txt}(1 real change made, 1 to missing)
+(note: file SRIV 20200502.dta not found)
 file SRIV 20200502.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200503.dta not found)
 file SRIV 20200503.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200504.dta not found)
 file SRIV 20200504.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200505.dta not found)
 file SRIV 20200505.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200506.dta not found)
 file SRIV 20200506.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200507.dta not found)
 file SRIV 20200507.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200508.dta not found)
 file SRIV 20200508.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200509.dta not found)
 file SRIV 20200509.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200510.dta not found)
 file SRIV 20200510.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200511.dta not found)
 file SRIV 20200511.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200512.dta not found)
 file SRIV 20200512.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200513.dta not found)
 file SRIV 20200513.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200514.dta not found)
 file SRIV 20200514.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200515.dta not found)
 file SRIV 20200515.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200516.dta not found)
 file SRIV 20200516.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200517.dta not found)
 file SRIV 20200517.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200518.dta not found)
 file SRIV 20200518.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200519.dta not found)
 file SRIV 20200519.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200520.dta not found)
 file SRIV 20200520.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200521.dta not found)
 file SRIV 20200521.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200522.dta not found)
 file SRIV 20200522.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200523.dta not found)
 file SRIV 20200523.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200524.dta not found)
 file SRIV 20200524.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200525.dta not found)
 file SRIV 20200525.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200526.dta not found)
 file SRIV 20200526.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200527.dta not found)
 file SRIV 20200527.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200528.dta not found)
 file SRIV 20200528.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200529.dta not found)
 file SRIV 20200529.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200530.dta not found)
 file SRIV 20200530.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200531.dta not found)
 file SRIV 20200531.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200601.dta not found)
 file SRIV 20200601.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200602.dta not found)
 file SRIV 20200602.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200603.dta not found)
 file SRIV 20200603.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200604.dta not found)
 file SRIV 20200604.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200605.dta not found)
 file SRIV 20200605.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200606.dta not found)
 file SRIV 20200606.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200607.dta not found)
 file SRIV 20200607.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200608.dta not found)
 file SRIV 20200608.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200609.dta not found)
 file SRIV 20200609.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200610.dta not found)
 file SRIV 20200610.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200611.dta not found)
 file SRIV 20200611.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200612.dta not found)
 file SRIV 20200612.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200613.dta not found)
 file SRIV 20200613.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200614.dta not found)
 file SRIV 20200614.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200615.dta not found)
 file SRIV 20200615.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200616.dta not found)
 file SRIV 20200616.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200617.dta not found)
 file SRIV 20200617.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200618.dta not found)
 file SRIV 20200618.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200619.dta not found)
 file SRIV 20200619.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200620.dta not found)
 file SRIV 20200620.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200621.dta not found)
 file SRIV 20200621.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200622.dta not found)
 file SRIV 20200622.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200623.dta not found)
 file SRIV 20200623.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200624.dta not found)
 file SRIV 20200624.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200625.dta not found)
 file SRIV 20200625.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200626.dta not found)
 file SRIV 20200626.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200627.dta not found)
 file SRIV 20200627.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200628.dta not found)
 file SRIV 20200628.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200629.dta not found)
 file SRIV 20200629.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200630.dta not found)
 file SRIV 20200630.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200701.dta not found)
 file SRIV 20200701.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200702.dta not found)
 file SRIV 20200702.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200703.dta not found)
 file SRIV 20200703.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200704.dta not found)
 file SRIV 20200704.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200705.dta not found)
 file SRIV 20200705.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200706.dta not found)
 file SRIV 20200706.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200707.dta not found)
 file SRIV 20200707.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200708.dta not found)
 file SRIV 20200708.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200709.dta not found)
 file SRIV 20200709.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200710.dta not found)
 file SRIV 20200710.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200711.dta not found)
 file SRIV 20200711.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200712.dta not found)
 file SRIV 20200712.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200713.dta not found)
 file SRIV 20200713.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200714.dta not found)
 file SRIV 20200714.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200715.dta not found)
 file SRIV 20200715.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200716.dta not found)
 file SRIV 20200716.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200717.dta not found)
 file SRIV 20200717.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200718.dta not found)
 file SRIV 20200718.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200719.dta not found)
 file SRIV 20200719.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200720.dta not found)
 file SRIV 20200720.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200721.dta not found)
 file SRIV 20200721.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200722.dta not found)
 file SRIV 20200722.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200723.dta not found)
 file SRIV 20200723.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200724.dta not found)
 file SRIV 20200724.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200725.dta not found)
 file SRIV 20200725.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200726.dta not found)
 file SRIV 20200726.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200727.dta not found)
 file SRIV 20200727.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200728.dta not found)
 file SRIV 20200728.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200729.dta not found)
 file SRIV 20200729.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200730.dta not found)
 file SRIV 20200730.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200731.dta not found)
 file SRIV 20200731.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200801.dta not found)
 file SRIV 20200801.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200802.dta not found)
 file SRIV 20200802.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200803.dta not found)
 file SRIV 20200803.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200804.dta not found)
 file SRIV 20200804.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200805.dta not found)
 file SRIV 20200805.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200806.dta not found)
 file SRIV 20200806.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200807.dta not found)
 file SRIV 20200807.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200808.dta not found)
 file SRIV 20200808.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200809.dta not found)
 file SRIV 20200809.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200810.dta not found)
 file SRIV 20200810.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200811.dta not found)
 file SRIV 20200811.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200812.dta not found)
 file SRIV 20200812.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200813.dta not found)
 file SRIV 20200813.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200814.dta not found)
 file SRIV 20200814.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200815.dta not found)
 file SRIV 20200815.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200816.dta not found)
 file SRIV 20200816.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200817.dta not found)
 file SRIV 20200817.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200818.dta not found)
 file SRIV 20200818.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200819.dta not found)
 file SRIV 20200819.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200820.dta not found)
 file SRIV 20200820.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200821.dta not found)
 file SRIV 20200821.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200822.dta not found)
 file SRIV 20200822.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200823.dta not found)
 file SRIV 20200823.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200824.dta not found)
 file SRIV 20200824.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200825.dta not found)
 file SRIV 20200825.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200826.dta not found)
 file SRIV 20200826.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200827.dta not found)
 file SRIV 20200827.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200828.dta not found)
 file SRIV 20200828.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200829.dta not found)
 file SRIV 20200829.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200830.dta not found)
 file SRIV 20200830.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200831.dta not found)
 file SRIV 20200831.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200901.dta not found)
 file SRIV 20200901.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200902.dta not found)
 file SRIV 20200902.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200903.dta not found)
 file SRIV 20200903.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200904.dta not found)
 file SRIV 20200904.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200905.dta not found)
 file SRIV 20200905.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200906.dta not found)
 file SRIV 20200906.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200907.dta not found)
 file SRIV 20200907.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200908.dta not found)
 file SRIV 20200908.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200909.dta not found)
 file SRIV 20200909.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200910.dta not found)
 file SRIV 20200910.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200911.dta not found)
 file SRIV 20200911.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200912.dta not found)
 file SRIV 20200912.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200913.dta not found)
 file SRIV 20200913.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200914.dta not found)
 file SRIV 20200914.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200915.dta not found)
 file SRIV 20200915.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200916.dta not found)
 file SRIV 20200916.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200917.dta not found)
 file SRIV 20200917.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200918.dta not found)
 file SRIV 20200918.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200919.dta not found)
 file SRIV 20200919.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200920.dta not found)
 file SRIV 20200920.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200921.dta not found)
 file SRIV 20200921.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200922.dta not found)
 file SRIV 20200922.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200923.dta not found)
 file SRIV 20200923.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200924.dta not found)
 file SRIV 20200924.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200925.dta not found)
 file SRIV 20200925.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200926.dta not found)
 file SRIV 20200926.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200927.dta not found)
 file SRIV 20200927.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200928.dta not found)
 file SRIV 20200928.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200929.dta not found)
 file SRIV 20200929.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20200930.dta not found)
 file SRIV 20200930.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201001.dta not found)
 file SRIV 20201001.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201002.dta not found)
 file SRIV 20201002.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201003.dta not found)
 file SRIV 20201003.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201004.dta not found)
 file SRIV 20201004.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201006.dta not found)
 file SRIV 20201006.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201007.dta not found)
 file SRIV 20201007.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201008.dta not found)
 file SRIV 20201008.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201009.dta not found)
 file SRIV 20201009.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201010.dta not found)
 file SRIV 20201010.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201011.dta not found)
 file SRIV 20201011.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201012.dta not found)
 file SRIV 20201012.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201013.dta not found)
 file SRIV 20201013.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201014.dta not found)
 file SRIV 20201014.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201015.dta not found)
 file SRIV 20201015.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201016.dta not found)
 file SRIV 20201016.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201017.dta not found)
 file SRIV 20201017.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201018.dta not found)
 file SRIV 20201018.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201019.dta not found)
 file SRIV 20201019.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201020.dta not found)
 file SRIV 20201020.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201021.dta not found)
 file SRIV 20201021.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201022.dta not found)
 file SRIV 20201022.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201023.dta not found)
 file SRIV 20201023.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201024.dta not found)
 file SRIV 20201024.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201025.dta not found)
 file SRIV 20201025.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201026.dta not found)
 file SRIV 20201026.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201027.dta not found)
 file SRIV 20201027.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201028.dta not found)
 file SRIV 20201028.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201029.dta not found)
 file SRIV 20201029.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201030.dta not found)
 file SRIV 20201030.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201031.dta not found)
 file SRIV 20201031.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201101.dta not found)
 file SRIV 20201101.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201102.dta not found)
 file SRIV 20201102.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201103.dta not found)
 file SRIV 20201103.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201104.dta not found)
 file SRIV 20201104.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201105.dta not found)
 file SRIV 20201105.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201106.dta not found)
 file SRIV 20201106.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201107.dta not found)
 file SRIV 20201107.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201108.dta not found)
 file SRIV 20201108.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201109.dta not found)
 file SRIV 20201109.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201110.dta not found)
 file SRIV 20201110.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201111.dta not found)
 file SRIV 20201111.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201112.dta not found)
 file SRIV 20201112.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201113.dta not found)
 file SRIV 20201113.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201114.dta not found)
 file SRIV 20201114.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201115.dta not found)
 file SRIV 20201115.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201116.dta not found)
 file SRIV 20201116.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201117.dta not found)
 file SRIV 20201117.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201118.dta not found)
 file SRIV 20201118.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201119.dta not found)
 file SRIV 20201119.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201120.dta not found)
 file SRIV 20201120.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201121.dta not found)
 file SRIV 20201121.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201122.dta not found)
 file SRIV 20201122.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201123.dta not found)
 file SRIV 20201123.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201124.dta not found)
 file SRIV 20201124.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201125.dta not found)
 file SRIV 20201125.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201126.dta not found)
 file SRIV 20201126.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201127.dta not found)
 file SRIV 20201127.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201128.dta not found)
 file SRIV 20201128.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201129.dta not found)
 file SRIV 20201129.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201130.dta not found)
 file SRIV 20201130.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201201.dta not found)
 file SRIV 20201201.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201202.dta not found)
 file SRIV 20201202.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201203.dta not found)
 file SRIV 20201203.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201204.dta not found)
 file SRIV 20201204.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201205.dta not found)
 file SRIV 20201205.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201206.dta not found)
 file SRIV 20201206.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201207.dta not found)
 file SRIV 20201207.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201208.dta not found)
 file SRIV 20201208.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201209.dta not found)
 file SRIV 20201209.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201210.dta not found)
 file SRIV 20201210.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201211.dta not found)
 file SRIV 20201211.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201212.dta not found)
 file SRIV 20201212.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201213.dta not found)
 file SRIV 20201213.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201214.dta not found)
 file SRIV 20201214.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201216.dta not found)
 file SRIV 20201216.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201217.dta not found)
 file SRIV 20201217.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201218.dta not found)
 file SRIV 20201218.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201219.dta not found)
 file SRIV 20201219.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201220.dta not found)
 file SRIV 20201220.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201221.dta not found)
 file SRIV 20201221.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201222.dta not found)
 file SRIV 20201222.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201223.dta not found)
 file SRIV 20201223.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201224.dta not found)
 file SRIV 20201224.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201225.dta not found)
 file SRIV 20201225.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201226.dta not found)
 file SRIV 20201226.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201227.dta not found)
 file SRIV 20201227.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201229.dta not found)
 file SRIV 20201229.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201230.dta not found)
 file SRIV 20201230.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20201231.dta not found)
 file SRIV 20201231.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210101.dta not found)
 file SRIV 20210101.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210102.dta not found)
 file SRIV 20210102.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210103.dta not found)
 file SRIV 20210103.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210104.dta not found)
 file SRIV 20210104.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210105.dta not found)
 file SRIV 20210105.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210106.dta not found)
 file SRIV 20210106.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210107.dta not found)
 file SRIV 20210107.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210108.dta not found)
 file SRIV 20210108.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210109.dta not found)
 file SRIV 20210109.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210110.dta not found)
 file SRIV 20210110.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210111.dta not found)
 file SRIV 20210111.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210112.dta not found)
 file SRIV 20210112.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210113.dta not found)
 file SRIV 20210113.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210114.dta not found)
 file SRIV 20210114.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210115.dta not found)
 file SRIV 20210115.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210116.dta not found)
 file SRIV 20210116.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210117.dta not found)
 file SRIV 20210117.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210118.dta not found)
 file SRIV 20210118.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210119.dta not found)
 file SRIV 20210119.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210120.dta not found)
 file SRIV 20210120.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210121.dta not found)
 file SRIV 20210121.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210122.dta not found)
 file SRIV 20210122.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210123.dta not found)
 file SRIV 20210123.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210124.dta not found)
 file SRIV 20210124.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210125.dta not found)
 file SRIV 20210125.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210126.dta not found)
 file SRIV 20210126.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210127.dta not found)
 file SRIV 20210127.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210128.dta not found)
 file SRIV 20210128.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210129.dta not found)
 file SRIV 20210129.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210130.dta not found)
 file SRIV 20210130.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210131.dta not found)
 file SRIV 20210131.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210201.dta not found)
 file SRIV 20210201.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210202.dta not found)
 file SRIV 20210202.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210203.dta not found)
 file SRIV 20210203.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210204.dta not found)
 file SRIV 20210204.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210205.dta not found)
 file SRIV 20210205.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210206.dta not found)
 file SRIV 20210206.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210207.dta not found)
 file SRIV 20210207.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210208.dta not found)
 file SRIV 20210208.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210209.dta not found)
 file SRIV 20210209.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210210.dta not found)
 file SRIV 20210210.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210211.dta not found)
 file SRIV 20210211.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210212.dta not found)
 file SRIV 20210212.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210213.dta not found)
 file SRIV 20210213.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210214.dta not found)
 file SRIV 20210214.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210215.dta not found)
 file SRIV 20210215.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210216.dta not found)
 file SRIV 20210216.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210217.dta not found)
 file SRIV 20210217.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210218.dta not found)
 file SRIV 20210218.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210219.dta not found)
 file SRIV 20210219.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210220.dta not found)
 file SRIV 20210220.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210221.dta not found)
 file SRIV 20210221.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210222.dta not found)
 file SRIV 20210222.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210223.dta not found)
 file SRIV 20210223.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210224.dta not found)
 file SRIV 20210224.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210225.dta not found)
 file SRIV 20210225.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210226.dta not found)
 file SRIV 20210226.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210227.dta not found)
 file SRIV 20210227.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210228.dta not found)
 file SRIV 20210228.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210301.dta not found)
 file SRIV 20210301.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210302.dta not found)
 file SRIV 20210302.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210303.dta not found)
 file SRIV 20210303.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210304.dta not found)
 file SRIV 20210304.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210305.dta not found)
 file SRIV 20210305.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210306.dta not found)
 file SRIV 20210306.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210307.dta not found)
 file SRIV 20210307.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210308.dta not found)
 file SRIV 20210308.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210309.dta not found)
 file SRIV 20210309.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210310.dta not found)
 file SRIV 20210310.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210311.dta not found)
 file SRIV 20210311.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210312.dta not found)
 file SRIV 20210312.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210313.dta not found)
 file SRIV 20210313.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210314.dta not found)
 file SRIV 20210314.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210315.dta not found)
 file SRIV 20210315.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210316.dta not found)
 file SRIV 20210316.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210317.dta not found)
 file SRIV 20210317.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210318.dta not found)
 file SRIV 20210318.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210319.dta not found)
 file SRIV 20210319.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210320.dta not found)
 file SRIV 20210320.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210321.dta not found)
 file SRIV 20210321.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210322.dta not found)
 file SRIV 20210322.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210323.dta not found)
 file SRIV 20210323.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210324.dta not found)
 file SRIV 20210324.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210325.dta not found)
 file SRIV 20210325.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210326.dta not found)
 file SRIV 20210326.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210327.dta not found)
 file SRIV 20210327.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210328.dta not found)
 file SRIV 20210328.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210329.dta not found)
 file SRIV 20210329.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210330.dta not found)
 file SRIV 20210330.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210331.dta not found)
 file SRIV 20210331.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210401.dta not found)
 file SRIV 20210401.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210402.dta not found)
 file SRIV 20210402.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210403.dta not found)
 file SRIV 20210403.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210404.dta not found)
 file SRIV 20210404.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210405.dta not found)
 file SRIV 20210405.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210406.dta not found)
 file SRIV 20210406.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210407.dta not found)
 file SRIV 20210407.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210408.dta not found)
 file SRIV 20210408.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210409.dta not found)
 file SRIV 20210409.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210410.dta not found)
 file SRIV 20210410.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210411.dta not found)
 file SRIV 20210411.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210412.dta not found)
 file SRIV 20210412.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210413.dta not found)
 file SRIV 20210413.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210414.dta not found)
 file SRIV 20210414.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210415.dta not found)
 file SRIV 20210415.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210416.dta not found)
 file SRIV 20210416.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210417.dta not found)
 file SRIV 20210417.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210418.dta not found)
 file SRIV 20210418.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210419.dta not found)
 file SRIV 20210419.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210420.dta not found)
 file SRIV 20210420.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210421.dta not found)
 file SRIV 20210421.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210422.dta not found)
 file SRIV 20210422.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210423.dta not found)
 file SRIV 20210423.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210424.dta not found)
 file SRIV 20210424.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210425.dta not found)
 file SRIV 20210425.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210426.dta not found)
 file SRIV 20210426.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210427.dta not found)
 file SRIV 20210427.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210428.dta not found)
 file SRIV 20210428.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210429.dta not found)
 file SRIV 20210429.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210430.dta not found)
 file SRIV 20210430.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210501.dta not found)
 file SRIV 20210501.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210502.dta not found)
 file SRIV 20210502.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210503.dta not found)
 file SRIV 20210503.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210504.dta not found)
 file SRIV 20210504.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210505.dta not found)
 file SRIV 20210505.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210506.dta not found)
 file SRIV 20210506.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210507.dta not found)
 file SRIV 20210507.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210508.dta not found)
 file SRIV 20210508.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210509.dta not found)
 file SRIV 20210509.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210510.dta not found)
 file SRIV 20210510.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210511.dta not found)
 file SRIV 20210511.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210512.dta not found)
 file SRIV 20210512.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210513.dta not found)
 file SRIV 20210513.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210514.dta not found)
 file SRIV 20210514.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210515.dta not found)
 file SRIV 20210515.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210516.dta not found)
 file SRIV 20210516.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210517.dta not found)
 file SRIV 20210517.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210518.dta not found)
 file SRIV 20210518.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210519.dta not found)
 file SRIV 20210519.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210520.dta not found)
 file SRIV 20210520.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210521.dta not found)
 file SRIV 20210521.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210522.dta not found)
 file SRIV 20210522.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210523.dta not found)
 file SRIV 20210523.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210524.dta not found)
 file SRIV 20210524.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210525.dta not found)
 file SRIV 20210525.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210526.dta not found)
 file SRIV 20210526.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210527.dta not found)
 file SRIV 20210527.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210528.dta not found)
 file SRIV 20210528.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210529.dta not found)
 file SRIV 20210529.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210530.dta not found)
 file SRIV 20210530.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210531.dta not found)
 file SRIV 20210531.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210601.dta not found)
 file SRIV 20210601.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210602.dta not found)
 file SRIV 20210602.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210603.dta not found)
 file SRIV 20210603.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210604.dta not found)
 file SRIV 20210604.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210605.dta not found)
 file SRIV 20210605.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210606.dta not found)
 file SRIV 20210606.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210607.dta not found)
 file SRIV 20210607.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210608.dta not found)
 file SRIV 20210608.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210609.dta not found)
 file SRIV 20210609.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210610.dta not found)
 file SRIV 20210610.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210611.dta not found)
 file SRIV 20210611.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210612.dta not found)
 file SRIV 20210612.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210613.dta not found)
 file SRIV 20210613.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210614.dta not found)
 file SRIV 20210614.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210615.dta not found)
 file SRIV 20210615.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210616.dta not found)
 file SRIV 20210616.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210617.dta not found)
 file SRIV 20210617.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210618.dta not found)
 file SRIV 20210618.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210619.dta not found)
 file SRIV 20210619.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210620.dta not found)
 file SRIV 20210620.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210621.dta not found)
 file SRIV 20210621.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210622.dta not found)
 file SRIV 20210622.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210623.dta not found)
 file SRIV 20210623.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210624.dta not found)
 file SRIV 20210624.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210627.dta not found)
 file SRIV 20210627.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210630.dta not found)
 file SRIV 20210630.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210703.dta not found)
 file SRIV 20210703.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210704.dta not found)
 file SRIV 20210704.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210705.dta not found)
 file SRIV 20210705.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210706.dta not found)
 file SRIV 20210706.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210707.dta not found)
 file SRIV 20210707.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210708.dta not found)
 file SRIV 20210708.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210709.dta not found)
 file SRIV 20210709.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210710.dta not found)
 file SRIV 20210710.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210711.dta not found)
 file SRIV 20210711.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210712.dta not found)
 file SRIV 20210712.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210713.dta not found)
 file SRIV 20210713.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210714.dta not found)
 file SRIV 20210714.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210715.dta not found)
 file SRIV 20210715.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210716.dta not found)
 file SRIV 20210716.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210717.dta not found)
 file SRIV 20210717.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210718.dta not found)
 file SRIV 20210718.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210719.dta not found)
 file SRIV 20210719.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210720.dta not found)
 file SRIV 20210720.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210721.dta not found)
 file SRIV 20210721.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210722.dta not found)
 file SRIV 20210722.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210723.dta not found)
 file SRIV 20210723.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210724.dta not found)
 file SRIV 20210724.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210725.dta not found)
 file SRIV 20210725.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210726.dta not found)
 file SRIV 20210726.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210727.dta not found)
 file SRIV 20210727.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210728.dta not found)
 file SRIV 20210728.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210729.dta not found)
 file SRIV 20210729.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210730.dta not found)
 file SRIV 20210730.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210731.dta not found)
 file SRIV 20210731.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210801.dta not found)
 file SRIV 20210801.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210808.dta not found)
 file SRIV 20210808.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210809.dta not found)
 file SRIV 20210809.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210810.dta not found)
 file SRIV 20210810.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210811.dta not found)
 file SRIV 20210811.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210813.dta not found)
 file SRIV 20210813.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210814.dta not found)
 file SRIV 20210814.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210815.dta not found)
 file SRIV 20210815.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210816.dta not found)
 file SRIV 20210816.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210817.dta not found)
 file SRIV 20210817.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210818.dta not found)
 file SRIV 20210818.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210819.dta not found)
 file SRIV 20210819.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210820.dta not found)
 file SRIV 20210820.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210821.dta not found)
 file SRIV 20210821.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210822.dta not found)
 file SRIV 20210822.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210823.dta not found)
 file SRIV 20210823.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210824.dta not found)
 file SRIV 20210824.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210825.dta not found)
 file SRIV 20210825.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210826.dta not found)
 file SRIV 20210826.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210827.dta not found)
 file SRIV 20210827.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210828.dta not found)
 file SRIV 20210828.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210829.dta not found)
 file SRIV 20210829.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210830.dta not found)
 file SRIV 20210830.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210831.dta not found)
 file SRIV 20210831.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210901.dta not found)
 file SRIV 20210901.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210902.dta not found)
 file SRIV 20210902.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210903.dta not found)
 file SRIV 20210903.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210904.dta not found)
 file SRIV 20210904.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210905.dta not found)
 file SRIV 20210905.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210906.dta not found)
 file SRIV 20210906.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210907.dta not found)
 file SRIV 20210907.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210908.dta not found)
 file SRIV 20210908.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210909.dta not found)
 file SRIV 20210909.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210910.dta not found)
 file SRIV 20210910.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210911.dta not found)
 file SRIV 20210911.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210912.dta not found)
 file SRIV 20210912.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210913.dta not found)
 file SRIV 20210913.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210914.dta not found)
 file SRIV 20210914.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210915.dta not found)
 file SRIV 20210915.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210916.dta not found)
 file SRIV 20210916.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210917.dta not found)
 file SRIV 20210917.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210918.dta not found)
 file SRIV 20210918.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210919.dta not found)
 file SRIV 20210919.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210920.dta not found)
 file SRIV 20210920.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210921.dta not found)
 file SRIV 20210921.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210922.dta not found)
 file SRIV 20210922.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210923.dta not found)
 file SRIV 20210923.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210924.dta not found)
 file SRIV 20210924.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210925.dta not found)
 file SRIV 20210925.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210926.dta not found)
 file SRIV 20210926.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210927.dta not found)
 file SRIV 20210927.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210928.dta not found)
 file SRIV 20210928.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210929.dta not found)
 file SRIV 20210929.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20210930.dta not found)
 file SRIV 20210930.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211001.dta not found)
 file SRIV 20211001.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211002.dta not found)
 file SRIV 20211002.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211003.dta not found)
 file SRIV 20211003.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211004.dta not found)
 file SRIV 20211004.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211005.dta not found)
 file SRIV 20211005.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211006.dta not found)
 file SRIV 20211006.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211007.dta not found)
 file SRIV 20211007.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211008.dta not found)
 file SRIV 20211008.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211009.dta not found)
 file SRIV 20211009.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211010.dta not found)
 file SRIV 20211010.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211011.dta not found)
 file SRIV 20211011.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211012.dta not found)
 file SRIV 20211012.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211013.dta not found)
 file SRIV 20211013.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211014.dta not found)
 file SRIV 20211014.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211015.dta not found)
 file SRIV 20211015.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211016.dta not found)
 file SRIV 20211016.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211017.dta not found)
 file SRIV 20211017.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211024.dta not found)
 file SRIV 20211024.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211025.dta not found)
 file SRIV 20211025.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211026.dta not found)
 file SRIV 20211026.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211027.dta not found)
 file SRIV 20211027.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211028.dta not found)
 file SRIV 20211028.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211029.dta not found)
 file SRIV 20211029.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211030.dta not found)
 file SRIV 20211030.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211031.dta not found)
 file SRIV 20211031.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211101.dta not found)
 file SRIV 20211101.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211102.dta not found)
 file SRIV 20211102.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211103.dta not found)
 file SRIV 20211103.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211104.dta not found)
 file SRIV 20211104.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211105.dta not found)
 file SRIV 20211105.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211106.dta not found)
 file SRIV 20211106.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211107.dta not found)
 file SRIV 20211107.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211108.dta not found)
 file SRIV 20211108.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211109.dta not found)
 file SRIV 20211109.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211110.dta not found)
 file SRIV 20211110.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211111.dta not found)
 file SRIV 20211111.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211112.dta not found)
 file SRIV 20211112.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211114.dta not found)
 file SRIV 20211114.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211115.dta not found)
 file SRIV 20211115.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211116.dta not found)
 file SRIV 20211116.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211117.dta not found)
 file SRIV 20211117.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211118.dta not found)
 file SRIV 20211118.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211119.dta not found)
 file SRIV 20211119.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211120.dta not found)
 file SRIV 20211120.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211121.dta not found)
 file SRIV 20211121.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211122.dta not found)
 file SRIV 20211122.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211124.dta not found)
 file SRIV 20211124.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211126.dta not found)
 file SRIV 20211126.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211127.dta not found)
 file SRIV 20211127.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211128.dta not found)
 file SRIV 20211128.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211129.dta not found)
 file SRIV 20211129.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211130.dta not found)
 file SRIV 20211130.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211201.dta not found)
 file SRIV 20211201.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211202.dta not found)
 file SRIV 20211202.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211203.dta not found)
 file SRIV 20211203.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211205.dta not found)
 file SRIV 20211205.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211207.dta not found)
 file SRIV 20211207.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211208.dta not found)
 file SRIV 20211208.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211209.dta not found)
 file SRIV 20211209.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211210.dta not found)
 file SRIV 20211210.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211211.dta not found)
 file SRIV 20211211.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211212.dta not found)
 file SRIV 20211212.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211213.dta not found)
 file SRIV 20211213.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211214.dta not found)
 file SRIV 20211214.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211215.dta not found)
 file SRIV 20211215.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211216.dta not found)
 file SRIV 20211216.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211217.dta not found)
 file SRIV 20211217.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211218.dta not found)
 file SRIV 20211218.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211219.dta not found)
 file SRIV 20211219.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211226.dta not found)
 file SRIV 20211226.dta saved
 (1 real change made, 1 to missing)
+(note: file SRIV 20211227.dta not found)
 file SRIV 20211227.dta saved
 
 {com}. * 
@@ -1798,7 +2370,8 @@ file SRIV 20211227.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal SRIV temp.dta", replace
-{txt}file CovidLongitudinal SRIV temp.dta saved
+{txt}(note: file CovidLongitudinal SRIV temp.dta not found)
+file CovidLongitudinal SRIV temp.dta saved
 
 {com}. 
 . 
@@ -1828,7 +2401,8 @@ file SRIV 20211227.dta saved
 {txt}
 {com}. 
 . save "CovidLongitudinal JOHN.dta", replace
-{txt}file CovidLongitudinal JOHN.dta saved
+{txt}(note: file CovidLongitudinal JOHN.dta not found)
+file CovidLongitudinal JOHN.dta saved
 
 {com}. 
 . merge m:m date loc_grand_name using "CovidLongitudinal SRIV temp.dta"
@@ -1878,7 +2452,8 @@ file SRIV 20211227.dta saved
 
 {com}. 
 . save "CovidLongitudinal SRIV.dta", replace
-{txt}file CovidLongitudinal SRIV.dta saved
+{txt}(note: file CovidLongitudinal SRIV.dta not found)
+file CovidLongitudinal SRIV.dta saved
 
 {com}. 
 . 
@@ -1892,7 +2467,7 @@ file SRIV 20211227.dta saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 2.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 07:55:40
+ {txt}closed on:  {res}17 May 2022, 22:09:51
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

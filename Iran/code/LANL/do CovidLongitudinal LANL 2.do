@@ -163,6 +163,8 @@ foreach update of local list {
 
 use "CovidLongitudinal LANL `update'.dta", clear
 
+capture rename DayDeaMeSmA04_`update' DayDeaMeSmA04`update'
+
 rename DayDeaMeSmA04`update' DayDeaMeSmA04`update'
 
 capture drop update_date

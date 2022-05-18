@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 3.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}15 May 2022, 07:02:44
+ {txt}opened on:  {res}17 May 2022, 12:28:35
 {txt}
 {com}. 
 . ***************************************************************************
@@ -160,6 +160,12 @@
 {com}. 
 . 
 . 
+. grstyle init
+{res}{txt}
+{com}. 
+. grstyle color background white
+{txt}
+{com}. 
 . 
 . 
 . ***********************************************
@@ -171,7 +177,7 @@
 .         twoway ///
 >         (line DayDeaMeSmA00 date, sort lwidth(thick) lcolor(cyan)) ///  1 "JOHN smooth"
 >         (line DayDeaMeSmA04`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "LANL smooth, backcast"
->         (line DayDeaFOREA04`update' date, sort lwidth(medthick) lcolor(orange)) /// 3 "LANL smooth, forecast"
+>         (line DayDeaFOREA04`update' date, sort lwidth(medthick) lcolor(brown)) /// 3 "LANL smooth, forecast"
 >         if date >= td(01jan2020) &  date <= td(01jan2022) ///
 >         , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 >         xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
@@ -205,7 +211,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/LANL/log CovidLongitudinal LANL 3.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}15 May 2022, 07:04:20
+ {txt}closed on:  {res}17 May 2022, 12:30:24
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 1.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res} 5 May 2022, 20:53:37
+ {txt}opened on:  {res}17 May 2022, 13:17:04
 {txt}
 {com}. 
 . ***************************************************************************
@@ -16,7 +16,7 @@
 . 
 . * download and prepare estimates files
 . * input data files: download csv files
-. * output data files: "IHME202?????.dta " (63 files)
+. * output data files: "IHME202?????.dta " 
 . * "graph epoch update 202?????.pdf"
 . 
 . * based on combinations of linkdate, download, and urldate
@@ -1533,7 +1533,7 @@ successfully unzipped ihme-covid19.zip to current directory
 . 
 . 
 . // br date DayDeaMeRaA02S01 
-. gen epoch = td(01Aug2020)
+. gen epoch = td(04Aug2020)
 {txt}
 {com}. label var epoch "Forecast start date"
 {txt}
@@ -1549,7 +1549,7 @@ successfully unzipped ihme-covid19.zip to current directory
 > ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200806", size(medium)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 > xline(`epoch', lwidth(thin) lcolor(red)) ///
-> subtitle("Forecast start date is denoted with red line: 01Aug2020")
+> subtitle("Forecast start date is denoted with red line: 04Aug2020")
 {res}{txt}
 {com}. 
 . qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200806.pdf", replace
@@ -7854,7 +7854,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210506.dta", replace
-{txt}file IHME20210506.dta saved
+{txt}(note: file IHME20210506.dta not found)
+file IHME20210506.dta saved
 
 {com}. 
 . 
@@ -8045,7 +8046,8 @@ successfully unzipped ihme-covid19.zip to current directory
 . 
 . 
 . save "IHME20210514.dta", replace
-{txt}file IHME20210514.dta saved
+{txt}(note: file IHME20210514.dta not found)
+file IHME20210514.dta saved
 
 {com}. 
 . 
@@ -8244,6 +8246,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22006{col 37} 22092.5{col 47} 22236.5{col 57} 22380.5{col 67}   22467
 {col 26}01apr2020{col 36}26jun2020{col 46}17nov2020{col 56}10apr2021{col 66}06jul2021
 {txt}(576 real changes made)
+(note: file IHME20210521.dta not found)
 file IHME20210521.dta saved
 
 
@@ -8278,6 +8281,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22006{col 37} 22092.5{col 47} 22236.5{col 57} 22380.5{col 67}   22467
 {col 26}01apr2020{col 36}26jun2020{col 46}17nov2020{col 56}10apr2021{col 66}06jul2021
 {txt}(576 real changes made)
+(note: file IHME20210528.dta not found)
 file IHME20210528.dta saved
 
 
@@ -8312,6 +8316,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22006{col 37} 22092.5{col 47} 22236.5{col 57} 22380.5{col 67}   22467
 {col 26}01apr2020{col 36}26jun2020{col 46}17nov2020{col 56}10apr2021{col 66}06jul2021
 {txt}(576 real changes made)
+(note: file IHME20210604.dta not found)
 file IHME20210604.dta saved
 
 
@@ -8346,6 +8351,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22009{col 37}   22100{col 47} 22251.5{col 57}   22403{col 67}   22494
 {col 26}04apr2020{col 36}04jul2020{col 46}02dec2020{col 56}03may2021{col 66}02aug2021
 {txt}(606 real changes made)
+(note: file IHME20210610.dta not found)
 file IHME20210610.dta saved
 
 
@@ -8380,6 +8386,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22009{col 37}   22100{col 47} 22251.5{col 57}   22403{col 67}   22494
 {col 26}04apr2020{col 36}04jul2020{col 46}02dec2020{col 56}03may2021{col 66}02aug2021
 {txt}(606 real changes made)
+(note: file IHME20210618.dta not found)
 file IHME20210618.dta saved
 
 
@@ -8414,6 +8421,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22009{col 37}   22100{col 47} 22251.5{col 57}   22403{col 67}   22494
 {col 26}04apr2020{col 36}04jul2020{col 46}02dec2020{col 56}03may2021{col 66}02aug2021
 {txt}(606 real changes made)
+(note: file IHME20210625.dta not found)
 file IHME20210625.dta saved
 
 
@@ -8448,6 +8456,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22009{col 37}   22100{col 47} 22251.5{col 57}   22403{col 67}   22494
 {col 26}04apr2020{col 36}04jul2020{col 46}02dec2020{col 56}03may2021{col 66}02aug2021
 {txt}(606 real changes made)
+(note: file IHME20210702.dta not found)
 file IHME20210702.dta saved
 
 
@@ -8482,6 +8491,7 @@ successfully unzipped ihme-covid19.zip to current directory
 {res}{col 27}   22012{col 37}   22108{col 47}   22267{col 57}   22426{col 67}   22522
 {col 26}07apr2020{col 36}12jul2020{col 46}18dec2020{col 56}26may2021{col 66}30aug2021
 {txt}(637 real changes made)
+(note: file IHME20210715.dta not found)
 file IHME20210715.dta saved
 
 
@@ -9038,7 +9048,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210723.dta", replace
-{txt}file IHME20210723.dta saved
+{txt}(note: file IHME20210723.dta not found)
+file IHME20210723.dta saved
 
 {com}. 
 . 
@@ -9228,7 +9239,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210730.dta", replace
-{txt}file IHME20210730.dta saved
+{txt}(note: file IHME20210730.dta not found)
+file IHME20210730.dta saved
 
 {com}. 
 . 
@@ -9444,7 +9456,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210806.dta", replace
-{txt}file IHME20210806.dta saved
+{txt}(note: file IHME20210806.dta not found)
+file IHME20210806.dta saved
 
 {com}. 
 . 
@@ -9634,7 +9647,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210820.dta", replace
-{txt}file IHME20210820.dta saved
+{txt}(note: file IHME20210820.dta not found)
+file IHME20210820.dta saved
 
 {com}. 
 . 
@@ -9833,7 +9847,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210826.dta", replace
-{txt}file IHME20210826.dta saved
+{txt}(note: file IHME20210826.dta not found)
+file IHME20210826.dta saved
 
 {com}. 
 . 
@@ -10032,7 +10047,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210902.dta", replace
-{txt}file IHME20210902.dta saved
+{txt}(note: file IHME20210902.dta not found)
+file IHME20210902.dta saved
 
 {com}. 
 . 
@@ -10229,7 +10245,8 @@ successfully unzipped ihme-covid19.zip to current directory
 {txt}
 {com}. 
 . save "IHME20210910.dta", replace
-{txt}file IHME20210910.dta saved
+{txt}(note: file IHME20210910.dta not found)
+file IHME20210910.dta saved
 
 {com}. 
 . 
@@ -10519,6 +10536,7 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22018{col 37}   22123{col 47} 22297.5{col 57}   22472{col 67}   22577
 {col 26}13apr2020{col 36}27jul2020{col 46}17jan2021{col 56}11jul2021{col 66}24oct2021
 {txt}(698 real changes made)
+(note: file IHME20210916.dta not found)
 file IHME20210916.dta saved
 
 
@@ -10603,6 +10621,7 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22018{col 37}   22123{col 47} 22297.5{col 57}   22472{col 67}   22577
 {col 26}13apr2020{col 36}27jul2020{col 46}17jan2021{col 56}11jul2021{col 66}24oct2021
 {txt}(698 real changes made)
+(note: file IHME20210923.dta not found)
 file IHME20210923.dta saved
 
 
@@ -10981,7 +11000,8 @@ float, now double to accommodate using data's values)
 {txt}
 {com}. 
 . save "IHME20210930.dta", replace
-{txt}file IHME20210930.dta saved
+{txt}(note: file IHME20210930.dta not found)
+file IHME20210930.dta saved
 
 {com}. 
 . 
@@ -11361,6 +11381,7 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22018{col 37}   22123{col 47} 22297.5{col 57}   22472{col 67}   22577
 {col 26}13apr2020{col 36}27jul2020{col 46}17jan2021{col 56}11jul2021{col 66}24oct2021
 {txt}(698 real changes made)
+(note: file IHME20211015.dta not found)
 file IHME20211015.dta saved
 
 
@@ -11468,6 +11489,7 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22021{col 37}   22131{col 47}   22313{col 57}   22495{col 67}   22605
 {col 26}16apr2020{col 36}04aug2020{col 46}02feb2021{col 56}03aug2021{col 66}21nov2021
 {txt}(729 real changes made)
+(note: file IHME20211021.dta not found)
 file IHME20211021.dta saved
 
 
@@ -11575,6 +11597,7 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22024{col 37}   22138{col 47}   22327{col 57}   22516{col 67}   22630
 {col 26}19apr2020{col 36}11aug2020{col 46}16feb2021{col 56}24aug2021{col 66}16dec2021
 {txt}(757 real changes made)
+(note: file IHME20211104.dta not found)
 file IHME20211104.dta saved
 
 
@@ -12032,7 +12055,8 @@ float, now double to accommodate using data's values)
 {res}{col 27}   22024{col 37}   22138{col 47}   22327{col 57}   22516{col 67}   22630
 {col 26}19apr2020{col 36}11aug2020{col 46}16feb2021{col 56}24aug2021{col 66}16dec2021
 {txt}(757 real changes made)
-{res}{txt}file IHME20211221.dta saved
+{res}{txt}(note: file IHME20211221.dta not found)
+file IHME20211221.dta saved
 
 
 
@@ -12115,7 +12139,7 @@ float, now double to accommodate using data's values)
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 1.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res} 5 May 2022, 21:33:17
+ {txt}closed on:  {res}17 May 2022, 13:56:27
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

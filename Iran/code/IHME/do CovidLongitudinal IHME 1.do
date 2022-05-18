@@ -996,7 +996,7 @@ label var DayDeaMeRaA02S01 "Daily Deaths Mean not smoothed IHME S1"
 
 
 // br date DayDeaMeRaA02S01 
-gen epoch = td(01Aug2020)
+gen epoch = td(04Aug2020)
 label var epoch "Forecast start date"
 local epoch = epoch
 
@@ -1009,7 +1009,7 @@ xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, la
 ytitle(Daily deaths) title("C-19 daily deaths, $country, National, IHME, update 20200806", size(medium)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 xline(`epoch', lwidth(thin) lcolor(red)) ///
-subtitle("Forecast start date is denoted with red line: 01Aug2020")
+subtitle("Forecast start date is denoted with red line: 04Aug2020")
 
 qui graph export "$pathCovidLongitudinal/IHME/graph epoch update 20200806.pdf", replace
 

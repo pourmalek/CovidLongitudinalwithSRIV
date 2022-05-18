@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 4.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 08:06:05
+ {txt}opened on:  {res}17 May 2022, 22:16:39
 {txt}
 {com}. 
 . ***************************************************************************
@@ -989,7 +989,7 @@
 > (line DayDeaMeSmA0520210405 date, sort lcolor(green) lwidth(thin)) /// 
 > (line DayDeaMeSmA0520210406 date, sort lcolor(green) lwidth(thin)) /// 
 > (line DayDeaMeSmA0520210407 date, sort lcolor(green) lwidth(thin)) /// 
-> (line DayDeaMeSmA0520210408 date, sort lcolor(green) lwidth(thin)) ///  
+> (line DayDeaMeSmA0520210408 date, sort lcolor(green) lwidth(thin)) /// 
 > (line DayDeaMeSmA0520210418 date, sort lcolor(green) lwidth(thin)) /// 
 > (line DayDeaMeSmA0520210419 date, sort lcolor(green) lwidth(thin)) /// 
 > (line DayDeaMeSmA0520210420 date, sort lcolor(green) lwidth(thin)) /// 
@@ -1244,7 +1244,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 4.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 08:06:52
+ {txt}closed on:  {res}17 May 2022, 22:17:25
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

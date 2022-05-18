@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 3.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 19:55:09
+ {txt}opened on:  {res}17 May 2022, 21:52:34
 {txt}
 {com}. 
 . ***************************************************************************
@@ -46,7 +46,8 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal JOHN.dta", replace
-{txt}file CovidLongitudinal JOHN.dta saved
+{txt}(note: file CovidLongitudinal JOHN.dta not found)
+file CovidLongitudinal JOHN.dta saved
 
 {com}. 
 . merge m:m date loc_grand_name using "CovidLongitudinal IMPE.dta"
@@ -82,12 +83,12 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal IMPE 2.dta", replace
-{txt}file CovidLongitudinal IMPE 2.dta saved
+{txt}(note: file CovidLongitudinal IMPE 2.dta not found)
+file CovidLongitudinal IMPE 2.dta saved
 
 {com}. 
 . 
 . 
-. * 93 updates
 . 
 . local list ///
 > 20200614 ///
@@ -999,7 +1000,7 @@ DayDeaMeSm.. {c |}{res}          1    43.04589           .   43.04589   43.04589
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 3.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 19:56:40
+ {txt}closed on:  {res}17 May 2022, 21:54:32
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

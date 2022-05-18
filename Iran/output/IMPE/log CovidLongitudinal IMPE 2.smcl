@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 2.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}14 May 2022, 19:54:45
+ {txt}opened on:  {res}17 May 2022, 20:42:50
 {txt}
 {com}. 
 . ***************************************************************************
@@ -191,7 +191,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200614_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200614_window
-{txt}file CovidLongitudinal IMPE 20200614.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200614.dta not found{txt})
+file CovidLongitudinal IMPE 20200614.dta saved
 ({txt}169{txt} real change{txt}s{txt} made{txt}, 169{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 30Dec2019 to 13Sep2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -203,7 +204,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200616_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200616_window
-{txt}file CovidLongitudinal IMPE 20200616.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200616.dta not found{txt})
+file CovidLongitudinal IMPE 20200616.dta saved
 ({txt}168{txt} real change{txt}s{txt} made{txt}, 168{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 03Jan2020 to 16Sep2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -215,7 +217,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200619_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200619_window
-{txt}file CovidLongitudinal IMPE 20200619.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200619.dta not found{txt})
+file CovidLongitudinal IMPE 20200619.dta saved
 ({txt}173{txt} real change{txt}s{txt} made{txt}, 173{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 02Jan2020 to 20Sep2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -227,7 +230,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200623_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200623_window
-{txt}file CovidLongitudinal IMPE 20200623.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200623.dta not found{txt})
+file CovidLongitudinal IMPE 20200623.dta saved
 ({txt}186{txt} real change{txt}s{txt} made{txt}, 186{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 29Dec2019 to 29Sep2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -239,7 +243,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200702_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200702_window
-{txt}file CovidLongitudinal IMPE 20200702.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200702.dta not found{txt})
+file CovidLongitudinal IMPE 20200702.dta saved
 ({txt}185{txt} real change{txt}s{txt} made{txt}, 185{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 31Dec2019 to 30Sep2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -251,7 +256,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200703_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200703_window
-{txt}file CovidLongitudinal IMPE 20200703.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200703.dta not found{txt})
+file CovidLongitudinal IMPE 20200703.dta saved
 ({txt}182{txt} real change{txt}s{txt} made{txt}, 182{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 04Jan2020 to 01Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -263,7 +269,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200704_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200704_window
-{txt}file CovidLongitudinal IMPE 20200704.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200704.dta not found{txt})
+file CovidLongitudinal IMPE 20200704.dta saved
 ({txt}188{txt} real change{txt}s{txt} made{txt}, 188{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 04Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -275,7 +282,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200707_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200707_window
-{txt}file CovidLongitudinal IMPE 20200707.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200707.dta not found{txt})
+file CovidLongitudinal IMPE 20200707.dta saved
 ({txt}190{txt} real change{txt}s{txt} made{txt}, 190{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 03Jan2020 to 08Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -287,7 +295,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200711_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200711_window
-{txt}file CovidLongitudinal IMPE 20200711.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200711.dta not found{txt})
+file CovidLongitudinal IMPE 20200711.dta saved
 ({txt}193{txt} real change{txt}s{txt} made{txt}, 193{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 03Jan2020 to 11Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -299,7 +308,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200714_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200714_window
-{txt}file CovidLongitudinal IMPE 20200714.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200714.dta not found{txt})
+file CovidLongitudinal IMPE 20200714.dta saved
 ({txt}196{txt} real change{txt}s{txt} made{txt}, 196{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 12Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -311,7 +321,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200715_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200715_window
-{txt}file CovidLongitudinal IMPE 20200715.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200715.dta not found{txt})
+file CovidLongitudinal IMPE 20200715.dta saved
 ({txt}202{txt} real change{txt}s{txt} made{txt}, 202{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 29Dec2019 to 15Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -323,7 +334,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200718_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200718_window
-{txt}file CovidLongitudinal IMPE 20200718.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200718.dta not found{txt})
+file CovidLongitudinal IMPE 20200718.dta saved
 ({txt}201{txt} real change{txt}s{txt} made{txt}, 201{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 17Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -335,7 +347,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200720_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200720_window
-{txt}file CovidLongitudinal IMPE 20200720.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200720.dta not found{txt})
+file CovidLongitudinal IMPE 20200720.dta saved
 ({txt}203{txt} real change{txt}s{txt} made{txt}, 203{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 19Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -347,7 +360,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200722_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200722_window
-{txt}file CovidLongitudinal IMPE 20200722.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200722.dta not found{txt})
+file CovidLongitudinal IMPE 20200722.dta saved
 ({txt}211{txt} real change{txt}s{txt} made{txt}, 211{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 27Dec2019 to 22Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -359,7 +373,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200725_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200725_window
-{txt}file CovidLongitudinal IMPE 20200725.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200725.dta not found{txt})
+file CovidLongitudinal IMPE 20200725.dta saved
 ({txt}209{txt} real change{txt}s{txt} made{txt}, 209{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 31Dec2019 to 24Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -371,7 +386,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200727_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200727_window
-{txt}file CovidLongitudinal IMPE 20200727.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200727.dta not found{txt})
+file CovidLongitudinal IMPE 20200727.dta saved
 ({txt}217{txt} real change{txt}s{txt} made{txt}, 217{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 27Dec2019 to 28Oct2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -383,7 +399,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200731_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200731_window
-{txt}file CovidLongitudinal IMPE 20200731.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200731.dta not found{txt})
+file CovidLongitudinal IMPE 20200731.dta saved
 ({txt}220{txt} real change{txt}s{txt} made{txt}, 220{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 05Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -395,7 +412,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200808_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200808_window
-{txt}file CovidLongitudinal IMPE 20200808.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200808.dta not found{txt})
+file CovidLongitudinal IMPE 20200808.dta saved
 ({txt}225{txt} real change{txt}s{txt} made{txt}, 225{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 29Dec2019 to 07Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -407,7 +425,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200810_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200810_window
-{txt}file CovidLongitudinal IMPE 20200810.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200810.dta not found{txt})
+file CovidLongitudinal IMPE 20200810.dta saved
 ({txt}223{txt} real change{txt}s{txt} made{txt}, 223{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 08Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -419,7 +438,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200811_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200811_window
-{txt}file CovidLongitudinal IMPE 20200811.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200811.dta not found{txt})
+file CovidLongitudinal IMPE 20200811.dta saved
 ({txt}225{txt} real change{txt}s{txt} made{txt}, 225{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 10Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -431,7 +451,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200813_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200813_window
-{txt}file CovidLongitudinal IMPE 20200813.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200813.dta not found{txt})
+file CovidLongitudinal IMPE 20200813.dta saved
 ({txt}222{txt} real change{txt}s{txt} made{txt}, 222{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 05Jan2020 to 11Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -443,7 +464,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200814_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200814_window
-{txt}file CovidLongitudinal IMPE 20200814.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200814.dta not found{txt})
+file CovidLongitudinal IMPE 20200814.dta saved
 ({txt}226{txt} real change{txt}s{txt} made{txt}, 226{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 04Jan2020 to 14Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -455,7 +477,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200817_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200817_window
-{txt}file CovidLongitudinal IMPE 20200817.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200817.dta not found{txt})
+file CovidLongitudinal IMPE 20200817.dta saved
 ({txt}227{txt} real change{txt}s{txt} made{txt}, 227{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 20Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -467,7 +490,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200823_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200823_window
-{txt}file CovidLongitudinal IMPE 20200823.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200823.dta not found{txt})
+file CovidLongitudinal IMPE 20200823.dta saved
 ({txt}232{txt} real change{txt}s{txt} made{txt}, 232{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 22Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -479,7 +503,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200825_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200825_window
-{txt}file CovidLongitudinal IMPE 20200825.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200825.dta not found{txt})
+file CovidLongitudinal IMPE 20200825.dta saved
 ({txt}234{txt} real change{txt}s{txt} made{txt}, 234{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 24Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -491,7 +516,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200827_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200827_window
-{txt}file CovidLongitudinal IMPE 20200827.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200827.dta not found{txt})
+file CovidLongitudinal IMPE 20200827.dta saved
 ({txt}241{txt} real change{txt}s{txt} made{txt}, 241{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 03Jan2020 to 28Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -503,7 +529,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200831_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200831_window
-{txt}file CovidLongitudinal IMPE 20200831.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200831.dta not found{txt})
+file CovidLongitudinal IMPE 20200831.dta saved
 ({txt}236{txt} real change{txt}s{txt} made{txt}, 236{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 30Nov2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -515,7 +542,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200902_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200902_window
-{txt}file CovidLongitudinal IMPE 20200902.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200902.dta not found{txt})
+file CovidLongitudinal IMPE 20200902.dta saved
 ({txt}240{txt} real change{txt}s{txt} made{txt}, 240{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 04Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -527,7 +555,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200906_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200906_window
-{txt}file CovidLongitudinal IMPE 20200906.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200906.dta not found{txt})
+file CovidLongitudinal IMPE 20200906.dta saved
 ({txt}242{txt} real change{txt}s{txt} made{txt}, 242{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 06Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -539,7 +568,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200908_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200908_window
-{txt}file CovidLongitudinal IMPE 20200908.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200908.dta not found{txt})
+file CovidLongitudinal IMPE 20200908.dta saved
 ({txt}246{txt} real change{txt}s{txt} made{txt}, 246{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 10Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -551,7 +581,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200912_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200912_window
-{txt}file CovidLongitudinal IMPE 20200912.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200912.dta not found{txt})
+file CovidLongitudinal IMPE 20200912.dta saved
 ({txt}242{txt} real change{txt}s{txt} made{txt}, 242{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 17Jan2020 to 13Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -563,7 +594,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200915_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200915_window
-{txt}file CovidLongitudinal IMPE 20200915.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200915.dta not found{txt})
+file CovidLongitudinal IMPE 20200915.dta saved
 ({txt}251{txt} real change{txt}s{txt} made{txt}, 251{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 12Jan2020 to 17Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -575,7 +607,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200919_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200919_window
-{txt}file CovidLongitudinal IMPE 20200919.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200919.dta not found{txt})
+file CovidLongitudinal IMPE 20200919.dta saved
 ({txt}261{txt} real change{txt}s{txt} made{txt}, 261{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 21Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -587,7 +620,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200923_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200923_window
-{txt}file CovidLongitudinal IMPE 20200923.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200923.dta not found{txt})
+file CovidLongitudinal IMPE 20200923.dta saved
 ({txt}261{txt} real change{txt}s{txt} made{txt}, 261{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 23Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -599,7 +633,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320200925_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320200925_window
-{txt}file CovidLongitudinal IMPE 20200925.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20200925.dta not found{txt})
+file CovidLongitudinal IMPE 20200925.dta saved
 ({txt}273{txt} real change{txt}s{txt} made{txt}, 273{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 04Jan2020 to 31Dec2020
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -611,7 +646,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201003_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201003_window
-{txt}file CovidLongitudinal IMPE 20201003.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201003.dta not found{txt})
+file CovidLongitudinal IMPE 20201003.dta saved
 ({txt}278{txt} real change{txt}s{txt} made{txt}, 278{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 02Jan2020 to 03Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -623,7 +659,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201006_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201006_window
-{txt}file CovidLongitudinal IMPE 20201006.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201006.dta not found{txt})
+file CovidLongitudinal IMPE 20201006.dta saved
 ({txt}285{txt} real change{txt}s{txt} made{txt}, 285{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 09Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -635,7 +672,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201012_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201012_window
-{txt}file CovidLongitudinal IMPE 20201012.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201012.dta not found{txt})
+file CovidLongitudinal IMPE 20201012.dta saved
 ({txt}291{txt} real change{txt}s{txt} made{txt}, 291{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 02Jan2020 to 16Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -647,7 +685,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201019_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201019_window
-{txt}file CovidLongitudinal IMPE 20201019.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201019.dta not found{txt})
+file CovidLongitudinal IMPE 20201019.dta saved
 ({txt}291{txt} real change{txt}s{txt} made{txt}, 291{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 22Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -659,7 +698,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201025_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201025_window
-{txt}file CovidLongitudinal IMPE 20201025.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201025.dta not found{txt})
+file CovidLongitudinal IMPE 20201025.dta saved
 ({txt}295{txt} real change{txt}s{txt} made{txt}, 295{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 07Jan2020 to 25Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -671,7 +711,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201028_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201028_window
-{txt}file CovidLongitudinal IMPE 20201028.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201028.dta not found{txt})
+file CovidLongitudinal IMPE 20201028.dta saved
 ({txt}298{txt} real change{txt}s{txt} made{txt}, 298{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 29Jan2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -683,7 +724,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201101_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201101_window
-{txt}file CovidLongitudinal IMPE 20201101.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201101.dta not found{txt})
+file CovidLongitudinal IMPE 20201101.dta saved
 ({txt}306{txt} real change{txt}s{txt} made{txt}, 306{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 07Feb2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -695,7 +737,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201110_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201110_window
-{txt}file CovidLongitudinal IMPE 20201110.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201110.dta not found{txt})
+file CovidLongitudinal IMPE 20201110.dta saved
 ({txt}313{txt} real change{txt}s{txt} made{txt}, 313{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 11Feb2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -707,7 +750,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201114_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201114_window
-{txt}file CovidLongitudinal IMPE 20201114.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201114.dta not found{txt})
+file CovidLongitudinal IMPE 20201114.dta saved
 ({txt}317{txt} real change{txt}s{txt} made{txt}, 317{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 15Feb2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -719,7 +763,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201118_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201118_window
-{txt}file CovidLongitudinal IMPE 20201118.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201118.dta not found{txt})
+file CovidLongitudinal IMPE 20201118.dta saved
 ({txt}321{txt} real change{txt}s{txt} made{txt}, 321{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 07Jan2020 to 20Feb2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -731,7 +776,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201123_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201123_window
-{txt}file CovidLongitudinal IMPE 20201123.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201123.dta not found{txt})
+file CovidLongitudinal IMPE 20201123.dta saved
 ({txt}326{txt} real change{txt}s{txt} made{txt}, 326{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 26Feb2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -743,7 +789,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201129_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201129_window
-{txt}file CovidLongitudinal IMPE 20201129.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201129.dta not found{txt})
+file CovidLongitudinal IMPE 20201129.dta saved
 ({txt}330{txt} real change{txt}s{txt} made{txt}, 330{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 03Mar2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -755,7 +802,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201204_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201204_window
-{txt}file CovidLongitudinal IMPE 20201204.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201204.dta not found{txt})
+file CovidLongitudinal IMPE 20201204.dta saved
 ({txt}340{txt} real change{txt}s{txt} made{txt}, 340{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 07Jan2020 to 11Mar2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -767,7 +815,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201212_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201212_window
-{txt}file CovidLongitudinal IMPE 20201212.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201212.dta not found{txt})
+file CovidLongitudinal IMPE 20201212.dta saved
 ({txt}347{txt} real change{txt}s{txt} made{txt}, 347{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 19Mar2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -779,7 +828,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201220_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201220_window
-{txt}file CovidLongitudinal IMPE 20201220.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201220.dta not found{txt})
+file CovidLongitudinal IMPE 20201220.dta saved
 ({txt}355{txt} real change{txt}s{txt} made{txt}, 355{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 25Mar2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -791,7 +841,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320201226_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320201226_window
-{txt}file CovidLongitudinal IMPE 20201226.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20201226.dta not found{txt})
+file CovidLongitudinal IMPE 20201226.dta saved
 ({txt}365{txt} real change{txt}s{txt} made{txt}, 365{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 09Apr2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -803,7 +854,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210110_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210110_window
-{txt}file CovidLongitudinal IMPE 20210110.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210110.dta not found{txt})
+file CovidLongitudinal IMPE 20210110.dta saved
 ({txt}366{txt} real change{txt}s{txt} made{txt}, 366{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 12Jan2020 to 11Apr2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -815,7 +867,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210112_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210112_window
-{txt}file CovidLongitudinal IMPE 20210112.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210112.dta not found{txt})
+file CovidLongitudinal IMPE 20210112.dta saved
 ({txt}371{txt} real change{txt}s{txt} made{txt}, 371{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 13Jan2020 to 17Apr2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -827,7 +880,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210118_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210118_window
-{txt}file CovidLongitudinal IMPE 20210118.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210118.dta not found{txt})
+file CovidLongitudinal IMPE 20210118.dta saved
 ({txt}378{txt} real change{txt}s{txt} made{txt}, 378{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 12Jan2020 to 23Apr2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -839,7 +893,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210124_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210124_window
-{txt}file CovidLongitudinal IMPE 20210124.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210124.dta not found{txt})
+file CovidLongitudinal IMPE 20210124.dta saved
 ({txt}386{txt} real change{txt}s{txt} made{txt}, 386{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 29Apr2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -851,7 +906,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210130_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210130_window
-{txt}file CovidLongitudinal IMPE 20210130.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210130.dta not found{txt})
+file CovidLongitudinal IMPE 20210130.dta saved
 ({txt}389{txt} real change{txt}s{txt} made{txt}, 389{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 03May2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -863,7 +919,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210203_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210203_window
-{txt}file CovidLongitudinal IMPE 20210203.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210203.dta not found{txt})
+file CovidLongitudinal IMPE 20210203.dta saved
 ({txt}397{txt} real change{txt}s{txt} made{txt}, 397{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 10May2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -875,7 +932,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210210_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210210_window
-{txt}file CovidLongitudinal IMPE 20210210.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210210.dta not found{txt})
+file CovidLongitudinal IMPE 20210210.dta saved
 ({txt}405{txt} real change{txt}s{txt} made{txt}, 405{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 17May2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -887,7 +945,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210217_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210217_window
-{txt}file CovidLongitudinal IMPE 20210217.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210217.dta not found{txt})
+file CovidLongitudinal IMPE 20210217.dta saved
 ({txt}412{txt} real change{txt}s{txt} made{txt}, 412{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 26May2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -899,7 +958,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210226_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210226_window
-{txt}file CovidLongitudinal IMPE 20210226.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210226.dta not found{txt})
+file CovidLongitudinal IMPE 20210226.dta saved
 ({txt}417{txt} real change{txt}s{txt} made{txt}, 417{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 13Jan2020 to 02Jun2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -911,7 +971,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210305_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210305_window
-{txt}file CovidLongitudinal IMPE 20210305.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210305.dta not found{txt})
+file CovidLongitudinal IMPE 20210305.dta saved
 ({txt}426{txt} real change{txt}s{txt} made{txt}, 426{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 09Jun2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -923,7 +984,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210312_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210312_window
-{txt}file CovidLongitudinal IMPE 20210312.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210312.dta not found{txt})
+file CovidLongitudinal IMPE 20210312.dta saved
 ({txt}434{txt} real change{txt}s{txt} made{txt}, 434{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 16Jun2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -935,7 +997,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210319_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210319_window
-{txt}file CovidLongitudinal IMPE 20210319.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210319.dta not found{txt})
+file CovidLongitudinal IMPE 20210319.dta saved
 ({txt}450{txt} real change{txt}s{txt} made{txt}, 450{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 04Jan2020 to 26Jun2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -947,7 +1010,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210329_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210329_window
-{txt}file CovidLongitudinal IMPE 20210329.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210329.dta not found{txt})
+file CovidLongitudinal IMPE 20210329.dta saved
 ({txt}454{txt} real change{txt}s{txt} made{txt}, 454{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 04Jul2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -959,7 +1023,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210406_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210406_window
-{txt}file CovidLongitudinal IMPE 20210406.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210406.dta not found{txt})
+file CovidLongitudinal IMPE 20210406.dta saved
 ({txt}464{txt} real change{txt}s{txt} made{txt}, 464{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 15Jul2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -971,7 +1036,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210417_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210417_window
-{txt}file CovidLongitudinal IMPE 20210417.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210417.dta not found{txt})
+file CovidLongitudinal IMPE 20210417.dta saved
 ({txt}471{txt} real change{txt}s{txt} made{txt}, 471{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 15Jul2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -983,7 +1049,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210424_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210424_window
-{txt}file CovidLongitudinal IMPE 20210424.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210424.dta not found{txt})
+file CovidLongitudinal IMPE 20210424.dta saved
 ({txt}485{txt} real change{txt}s{txt} made{txt}, 485{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 07Aug2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -995,7 +1062,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210510_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210510_window
-{txt}file CovidLongitudinal IMPE 20210510.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210510.dta not found{txt})
+file CovidLongitudinal IMPE 20210510.dta saved
 ({txt}491{txt} real change{txt}s{txt} made{txt}, 491{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 11Jan2020 to 13Aug2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1007,7 +1075,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210516_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210516_window
-{txt}file CovidLongitudinal IMPE 20210516.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210516.dta not found{txt})
+file CovidLongitudinal IMPE 20210516.dta saved
 ({txt}498{txt} real change{txt}s{txt} made{txt}, 498{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 10Jan2020 to 19Aug2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1019,7 +1088,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210522_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210522_window
-{txt}file CovidLongitudinal IMPE 20210522.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210522.dta not found{txt})
+file CovidLongitudinal IMPE 20210522.dta saved
 ({txt}504{txt} real change{txt}s{txt} made{txt}, 504{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 09Jan2020 to 24Aug2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1031,7 +1101,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210527_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210527_window
-{txt}file CovidLongitudinal IMPE 20210527.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210527.dta not found{txt})
+file CovidLongitudinal IMPE 20210527.dta saved
 ({txt}513{txt} real change{txt}s{txt} made{txt}, 513{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 08Jan2020 to 01Sep2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1043,7 +1114,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210604_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210604_window
-{txt}file CovidLongitudinal IMPE 20210604.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210604.dta not found{txt})
+file CovidLongitudinal IMPE 20210604.dta saved
 ({txt}521{txt} real change{txt}s{txt} made{txt}, 521{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 07Jan2020 to 08Sep2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1055,7 +1127,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210611_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210611_window
-{txt}file CovidLongitudinal IMPE 20210611.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210611.dta not found{txt})
+file CovidLongitudinal IMPE 20210611.dta saved
 ({txt}529{txt} real change{txt}s{txt} made{txt}, 529{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 06Jan2020 to 15Sep2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1067,7 +1140,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210618_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210618_window
-{txt}file CovidLongitudinal IMPE 20210618.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210618.dta not found{txt})
+file CovidLongitudinal IMPE 20210618.dta saved
 ({txt}538{txt} real change{txt}s{txt} made{txt}, 538{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 05Jan2020 to 23Sep2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1079,7 +1153,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210626_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210626_window
-{txt}file CovidLongitudinal IMPE 20210626.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210626.dta not found{txt})
+file CovidLongitudinal IMPE 20210626.dta saved
 ({txt}545{txt} real change{txt}s{txt} made{txt}, 545{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 04Jan2020 to 29Sep2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1091,7 +1166,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210702_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210702_window
-{txt}file CovidLongitudinal IMPE 20210702.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210702.dta not found{txt})
+file CovidLongitudinal IMPE 20210702.dta saved
 ({txt}553{txt} real change{txt}s{txt} made{txt}, 553{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 03Jan2020 to 06Oct2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1103,7 +1179,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210709_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210709_window
-{txt}file CovidLongitudinal IMPE 20210709.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210709.dta not found{txt})
+file CovidLongitudinal IMPE 20210709.dta saved
 ({txt}564{txt} real change{txt}s{txt} made{txt}, 564{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 02Jan2020 to 16Oct2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1115,7 +1192,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210719_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210719_window
-{txt}file CovidLongitudinal IMPE 20210719.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210719.dta not found{txt})
+file CovidLongitudinal IMPE 20210719.dta saved
 ({txt}583{txt} real change{txt}s{txt} made{txt}, 583{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 01Jan2020 to 03Nov2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1127,7 +1205,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210806_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210806_window
-{txt}file CovidLongitudinal IMPE 20210806.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210806.dta not found{txt})
+file CovidLongitudinal IMPE 20210806.dta saved
 ({txt}598{txt} real change{txt}s{txt} made{txt}, 598{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 30Dec2019 to 16Nov2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1139,7 +1218,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210819_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210819_window
-{txt}file CovidLongitudinal IMPE 20210819.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210819.dta not found{txt})
+file CovidLongitudinal IMPE 20210819.dta saved
 ({txt}604{txt} real change{txt}s{txt} made{txt}, 604{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 30Dec2019 to 22Nov2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1151,7 +1231,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210825_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210825_window
-{txt}file CovidLongitudinal IMPE 20210825.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210825.dta not found{txt})
+file CovidLongitudinal IMPE 20210825.dta saved
 ({txt}619{txt} real change{txt}s{txt} made{txt}, 619{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 30Dec2019 to 07Dec2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1163,7 +1244,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210909_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210909_window
-{txt}file CovidLongitudinal IMPE 20210909.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210909.dta not found{txt})
+file CovidLongitudinal IMPE 20210909.dta saved
 ({txt}634{txt} real change{txt}s{txt} made{txt}, 634{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 30Dec2019 to 22Dec2021
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1175,7 +1257,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320210924_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320210924_window
-{txt}file CovidLongitudinal IMPE 20210924.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20210924.dta not found{txt})
+file CovidLongitudinal IMPE 20210924.dta saved
 ({txt}647{txt} real change{txt}s{txt} made{txt}, 647{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 29Dec2019 to 03Jan2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1187,7 +1270,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211006_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211006_window
-{txt}file CovidLongitudinal IMPE 20211006.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211006.dta not found{txt})
+file CovidLongitudinal IMPE 20211006.dta saved
 ({txt}664{txt} real change{txt}s{txt} made{txt}, 664{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 27Dec2019 to 18Jan2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1199,7 +1283,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211021_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211021_window
-{txt}file CovidLongitudinal IMPE 20211021.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211021.dta not found{txt})
+file CovidLongitudinal IMPE 20211021.dta saved
 ({txt}671{txt} real change{txt}s{txt} made{txt}, 671{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 24Jan2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1211,7 +1296,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211027_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211027_window
-{txt}file CovidLongitudinal IMPE 20211027.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211027.dta not found{txt})
+file CovidLongitudinal IMPE 20211027.dta saved
 ({txt}678{txt} real change{txt}s{txt} made{txt}, 678{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 31Jan2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1223,7 +1309,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211103_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211103_window
-{txt}file CovidLongitudinal IMPE 20211103.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211103.dta not found{txt})
+file CovidLongitudinal IMPE 20211103.dta saved
 ({txt}690{txt} real change{txt}s{txt} made{txt}, 690{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 12Feb2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1235,7 +1322,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211115_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211115_window
-{txt}file CovidLongitudinal IMPE 20211115.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211115.dta not found{txt})
+file CovidLongitudinal IMPE 20211115.dta saved
 ({txt}696{txt} real change{txt}s{txt} made{txt}, 696{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 18Feb2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1247,7 +1335,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211121_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211121_window
-{txt}file CovidLongitudinal IMPE 20211121.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211121.dta not found{txt})
+file CovidLongitudinal IMPE 20211121.dta saved
 ({txt}704{txt} real change{txt}s{txt} made{txt}, 704{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 26Feb2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1259,7 +1348,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211129_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211129_window
-{txt}file CovidLongitudinal IMPE 20211129.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211129.dta not found{txt})
+file CovidLongitudinal IMPE 20211129.dta saved
 ({txt}710{txt} real change{txt}s{txt} made{txt}, 710{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 04Mar2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1271,7 +1361,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211205_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211205_window
-{txt}file CovidLongitudinal IMPE 20211205.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211205.dta not found{txt})
+file CovidLongitudinal IMPE 20211205.dta saved
 ({txt}718{txt} real change{txt}s{txt} made{txt}, 718{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 26Dec2019 to 12Mar2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1283,7 +1374,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211213_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211213_window
-{txt}file CovidLongitudinal IMPE 20211213.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211213.dta not found{txt})
+file CovidLongitudinal IMPE 20211213.dta saved
 ({txt}721{txt} real change{txt}s{txt} made{txt}, 721{txt} to missing{txt})
 {res}{txt}{col 9}{txt}time variable:  {res}{col 25}{res}date, 05Jan2020 to 25Mar2022
 {txt}{col 17}{txt}delta:  {res}1 day
@@ -1295,7 +1387,8 @@
 {res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DayDeaFOREA0320211226_raw {p_end}
 {txt}The smoother applied was
 {res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DayDeaFOREA0320211226_window
-{txt}file CovidLongitudinal IMPE 20211226.dta saved
+{txt}(note: file CovidLongitudinal IMPE 20211226.dta not found{txt})
+file CovidLongitudinal IMPE 20211226.dta saved
 
 {smcl}
 {com}. *
@@ -2257,7 +2350,8 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal IMPE.dta", replace
-{txt}file CovidLongitudinal IMPE.dta saved
+{txt}(note: file CovidLongitudinal IMPE.dta not found)
+file CovidLongitudinal IMPE.dta saved
 
 {com}. 
 . 
@@ -2272,7 +2366,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IMPE/log CovidLongitudinal IMPE 2.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}14 May 2022, 19:54:50
+ {txt}closed on:  {res}17 May 2022, 20:42:55
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

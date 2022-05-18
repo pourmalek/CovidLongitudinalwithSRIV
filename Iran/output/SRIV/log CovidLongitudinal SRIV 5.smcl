@@ -1,9 +1,9 @@
 {smcl}
-{com}{sf}{ul off}{txt}{.-}
+{txt}{sf}{ul off}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 5.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}16 May 2022, 17:27:35
+ {txt}opened on:  {res}17 May 2022, 22:17:25
 {txt}
 {com}. 
 . ***************************************************************************
@@ -12858,7 +12858,8 @@
 {txt}
 {com}. 
 . save "CovidLongitudinal SRIV 2.dta", replace
-{txt}file CovidLongitudinal SRIV 2.dta saved
+{txt}(note: file CovidLongitudinal SRIV 2.dta not found)
+file CovidLongitudinal SRIV 2.dta saved
 
 {com}. 
 . 
@@ -12872,7 +12873,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/SRIV/log CovidLongitudinal SRIV 5.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}16 May 2022, 17:29:44
+ {txt}closed on:  {res}17 May 2022, 22:19:30
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
