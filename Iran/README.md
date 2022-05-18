@@ -159,6 +159,28 @@ Graph 10 a [C19 daily deaths, Iran, Models together, average median _absolute pe
 Graph 11 a [C19 daily deaths average of mean _errors_; Over updates and calendar months; Iran; Forecast only]()
 
 
+******
+
+Graph 11 b [C19 daily deaths average of mean _absolute errors_; Over updates and calendar months; Iran; Forecast only]()
+
+
+******
+
+Graph 11 c [C19 daily deaths average of mean _percent errors_; Over updates and calendar months; Iran; Forecast only]()
+
+
+******
+
+Graph 11 c [C19 daily deaths average of mean _absolute percent errors_; Over updates and calendar months; Iran; Forecast only]()
+
+
+******
+
+
+
+
+
+
 .
 
 **************************
