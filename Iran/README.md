@@ -54,7 +54,7 @@ This is a multiple-page graph. A video is available [here](https://youtu.be/mlke
 
 ******
 
-Graph 1 b [C19 daily deaths, Iran, Models together, Updates together, Forecast only]
+Graph 1 b [C19 daily deaths, Iran, Models together, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20update%20together%20forecast%20only.pdf)
 
 This is a multiple-page graph. A video is available [here](). 
 
