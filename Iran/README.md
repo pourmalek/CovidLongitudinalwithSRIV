@@ -132,18 +132,21 @@ Graph 8 a [C19 daily deaths, Iran, Models together, average median _absolute err
 
 ******
 
-Graph 8 b [C19 daily deaths, Iran, Models together, average median _absolute errors_, smoothed for better viewing]()
+Graph 8 b [C19 daily deaths, Iran, Models together, average median _absolute errors_, smoothed for better viewing](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%208%20b%20C19%20daily%20deaths%20error%2C%20Iran%2C%20Absolute%20Error%20Mean1%20smooth.pdf)
 
-
-******
-
-Graph 9 a [C19 daily deaths, Iran, Models together, average median _percent errors_]()
-
+![image](https://user-images.githubusercontent.com/30849720/169172992-bedc0247-538f-4b70-b263-f093f5a65d3e.png)
 
 ******
 
-Graph 9 b [C19 daily deaths, Iran, Models together, average median _percent errors_, smoothed for better viewing]()
+Graph 9 a [C19 daily deaths, Iran, Models together, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20%25%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169173049-35d566f0-2f18-4192-b7da-6e59fbcfbc87.png)
+
+******
+
+Graph 9 b [C19 daily deaths, Iran, Models together, average median _percent errors_, smoothed for better viewing](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%209%20b%20C19%20daily%20deaths%20error%2C%20Iran%2C%20%25%20Error%20Mean1%20smooth.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/169173105-c0861438-6e4c-4dfe-8287-724a06c9bd6f.png)
 
 ******
 
