@@ -68,13 +68,13 @@ Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
 
 Graph 1 a [C19 daily deaths, Iran, DELP, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
 Graph 1 b [C19 daily deaths, Iran, DELP, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
@@ -161,13 +161,13 @@ Graph 10 [C19 daily deaths, Iran, DELP, average median _absolute percent errors_
 
 Graph 1 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20reference%20scenario%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
 Graph 1 b [C19 daily deaths, Iran, IHME, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20reference%20scenario%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
@@ -240,13 +240,13 @@ Graph 10 [C19 daily deaths, Iran, IHME, average median _absolute percent errors_
 
 Graph 1 a [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
 Graph 1 b [C19 daily deaths, Iran, IMPE, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
@@ -319,13 +319,13 @@ Graph 10 [C19 daily deaths, Iran, IMPE, average median _absolute percent errors_
 
 Graph 1 a [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
 Graph 1 b [C19 daily deaths, Iran, LANL, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
@@ -398,13 +398,13 @@ Graph 10 [C19 daily deaths, Iran, LANL, average median _absolute percent errors_
 
 Graph 1 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
 Graph 1 b [C19 daily deaths, Iran, SRIV, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](mmmm). 
+This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
