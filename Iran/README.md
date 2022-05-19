@@ -363,7 +363,7 @@ Graph 2 a [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast
 
 ******
 
-Graph 2 b [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast, Without extremes - No extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes.pdf)
+Graph 2 b [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast, Without extremes - LANL estimates have no extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/169373278-5b43d1e6-d19a-4078-a5dc-908bd0694303.png)
 
@@ -375,7 +375,7 @@ Graph 2 c [C19 daily deaths, Iran, LANL, Updates together, Forecast only, With e
 
 ******
 
-Graph 2 d [C19 daily deaths, Iran, LANL, Updates together, Forecast only, Without extremes  - No extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+Graph 2 d [C19 daily deaths, Iran, LANL, Updates together, Forecast only, Without extremes - LANL estimates have no extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/169373898-a611a753-c5cb-4427-a910-743cab90490b.png)
 
