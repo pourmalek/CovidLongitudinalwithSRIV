@@ -38,7 +38,8 @@ do "do CovidLongitudinal IMPE 2.do"
 
 do "do CovidLongitudinal IMPE 3.do"
 * graphs:
-* graphs 1 updates separate
+* graph 1 a C19 daily deaths, $country, IMPE, update `update', Backcast and forecast
+* graph 1 b C19 daily deaths, $country, IMPE, update `update', Forecast only
 * input data files: "CovidLongitudinal IMPE.dta", "CovidLongitudinal JOHN.dta"
 * output data files: "CovidLongitudinal IMPE 2.dta"
 

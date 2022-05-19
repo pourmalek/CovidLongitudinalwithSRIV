@@ -35,7 +35,8 @@ do "do CovidLongitudinal IHME 2.do"
 
 do "do CovidLongitudinal IHME 3.do"
 * graphs, daily deaths: updates separate 
-* graph 1 C19 daily deaths, $country, IHME, update `update' 
+* graph 1 a C19 daily deaths, $country, IHME, update `update', Backcast and forecast
+* graph 1 b C19 daily deaths, $country, IHME, update `update', Forecast only
 * input data files: "CovidLongitudinal IHME.dta"
 * output data files: none. no change in data.
 

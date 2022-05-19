@@ -30,6 +30,8 @@ do "do CovidLongitudinal LANL 2.do"
 do "do CovidLongitudinal LANL 3.do"
 * graphs:
 * graphs 1 updates separate 
+* graph 1 a C19 daily deaths, $country, LANL, update `update', Backcast and forecast
+* graph 1 b C19 daily deaths, $country, LANL, update `update', Forecast only
 * input data files: "CovidLongitudinal LANL 2.dta"
 * output data files: none (no change in date)
 

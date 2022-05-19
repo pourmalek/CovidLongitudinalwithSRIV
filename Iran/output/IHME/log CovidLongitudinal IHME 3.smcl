@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 3.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}17 May 2022, 13:56:28
+ {txt}opened on:  {res}19 May 2022, 10:07:12
 {txt}
 {com}. 
 . ***************************************************************************
@@ -16,7 +16,8 @@
 . 
 . 
 . * graphs, daily deaths: updates separate 
-. * graph 1 C19 daily deaths, $country, IHME, update `update' 
+. * graph 1 a C19 daily deaths, $country, IHME, update `update', Backcast and forecast
+. * graph 1 b C19 daily deaths, $country, IHME, update `update', Forecast only
 . * input data files: "CovidLongitudinal IHME.dta"
 . * output data files: none. no change in data.
 . 
@@ -116,20 +117,49 @@
 . foreach update of local list {c -(}
 {txt}  2{com}. 
 .         ****** 
-.         * daily deaths, National
+.         * daily deaths, Backcast and forecast
 . 
 .         twoway ///
 >         (line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) ///       1 "JOHN smooth"
 >         (line DayDeaMeSmA02`update' date, sort lwidth(medthick) lcolor(gold)) /// 2 "IHME smooth, Backcast"
+>         (line DayDeaFOREA02`update' date, sort lwidth(medthick) lcolor(black)) /// 3 "IHME smooth, Forecast only"
+>         if date >= td(01jan2020) &  date <= td(01jan2022) ///
+>         , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+>         xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+>         ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, update `update'", size(medium)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+>         legend(order(1 "JOHN smooth" 2 "IHME smooth, backcast" 3 "IHME smooth, forecast") rows(1) size(small)) ///
+>         subtitle("Backcasts and forecasts", size(small)) 
+{txt}  3{com}. 
+.         qui graph export "graph 1 a C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+{txt}  4{com}.         
+. {c )-}
+{res}{txt}
+{com}. *
+.         
+. 
+.         
+.         
+.         
+.         
+.         
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         ****** 
+.         * daily deaths, Forecast only
+. 
+.         twoway ///
+>         (line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) ///       1 "JOHN smooth"
 >         (line DayDeaFOREA02`update' date, sort lwidth(medthick) lcolor(black)) /// 2 "IHME smooth, Forecast only"
 >         if date >= td(01jan2020) &  date <= td(01jan2022) ///
 >         , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 >         xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
 >         ytitle(Daily deaths) title("C19 daily deaths, $country, IHME, update `update'", size(medium)) ///
 >         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
->         legend(order(1 "JOHN smooth" 2 "IHME smooth, backcast" 3 "IHME smooth, forecast") rows(1) size(small)) 
-{txt}  3{com}.         
-.         qui graph export "graph 1 National C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
+>         legend(order(1 "JOHN smooth" 2 "IHME smooth, forecast") rows(1) size(small)) ///
+>         subtitle("Forecast only", size(small))   
+{txt}  3{com}. 
+.         qui graph export "graph 1 b C19 daily deaths, $country, IHME, reference scenario, update `update'.pdf", replace
 {txt}  4{com}.         
 . {c )-}
 {res}{txt}
@@ -151,7 +181,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/IHME/log CovidLongitudinal IHME 3.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}17 May 2022, 13:57:13
+ {txt}closed on:  {res}19 May 2022, 10:09:11
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
