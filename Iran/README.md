@@ -494,24 +494,31 @@ Graph 5 [C19 daily deaths _percent error_, Iran, SRIV, all updates](https://gith
 
 Graph 6 [C19 daily deaths _absolute percent error_, Iran, SRIV, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20SRIV%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169382993-c9a5c094-eb8e-49d1-b9e0-8b327cd7f58a.png)
 
 ******  
 
 Graph 7 [C19 daily deaths, Iran, SRIV, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169383342-cadfd52c-d27d-4c1d-b73b-30bc57a9501c.png)
 
 ******
 
 Graph 8 [C19 daily deaths, Iran, SRIV, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169384038-0137b7b0-657e-4baf-a807-9d2bad159077.png)
 
 ******
 
 Graph 9 [C19 daily deaths, Iran, SRIV, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20%25%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169384152-78077ecb-9ab5-4055-a346-b2da1399f6f8.png)
+
 ******
 
 Graph 10 [C19 daily deaths, Iran, SRIV, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/169384253-51499625-9490-4557-95a3-ec08f332afb1.png)
 
 .
 
