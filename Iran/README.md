@@ -173,51 +173,61 @@ This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmm
 
 Graph 2 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169365567-4d9efa9d-8f6c-4192-b987-e18525023288.png)
 
 ******
 
 Graph 2 b [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169365781-53b1190a-8eae-4e24-a7c3-8d6e149cbce7.png)
 
 ******
 
 Graph 2 c [C19 daily deaths, Iran, IHME, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169365889-b59e37ab-081f-45a3-90a4-68736d3bfedd.png)
 
 ******
 
 Graph 2 d [C19 daily deaths, Iran, IHME, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169366001-0f32cc76-7e4f-4dda-9493-28718aeae840.png)
 
 ******
 
 Graph 3 [C19 daily deaths _error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169366131-23a264cc-7b61-4bb7-9c27-525d5a8138d9.png)
 
 ******
 
 Graph 4 [C19 daily deaths _absolute error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169366422-aa9a2801-6754-4c59-b673-977b979f2c27.png)
 
 ******
 
 Graph 5 [C19 daily deaths _percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169366637-0f1522da-3e32-4cfc-8078-84d4779937ed.png)
 
 ******
 
 Graph 6 [C19 daily deaths _absolute percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169366872-3d6c0634-4849-46cf-930f-606868e46836.png)
 
 ******  
 
 Graph 7 [C19 daily deaths, Iran, IHME, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169367110-df93f531-1a9f-4d3f-8586-dde223449ade.png)
 
 ******
 
 Graph 8 [C19 daily deaths, Iran, IHME, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169367357-45c38e09-0f72-49e2-83d2-923f7eda7f0f.png)
 
 ******
 
