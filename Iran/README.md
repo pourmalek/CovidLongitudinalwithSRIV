@@ -450,22 +450,22 @@ This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmm
 
 ******
 
-Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes.pdf)
+Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, With extremes - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%2C%20with%20extremes.pdf)
 
 
 ******
 
-Graph 2 b [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
+Graph 2 b [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, Without extremes - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
 
 
 ******
 
-Graph 2 c [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+Graph 2 c [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, With extremes - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
 
 ******
 
-Graph 2 d [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
+Graph 2 d [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, Without extremes - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
 
 
 ******
