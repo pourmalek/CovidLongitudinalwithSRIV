@@ -48,15 +48,15 @@ Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
 
 ******
 
-Graph 1 a [C19 daily deaths, Iran, DELP, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20updates%20together.pdf)
+Graph 1 a [C19 daily deaths, Iran, DELP, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](https://youtu.be/mlkeWzTzqT0). 
+This is a multiple-page graph. A video is available [here](mmmmm). 
 
 ******
 
-Graph 1 b [C19 daily deaths, Iran, DELP, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20update%20together%20forecast%20only.pdf)
+Graph 1 b [C19 daily deaths, Iran, DELP, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20updates%20together.pdf)
 
-This is a multiple-page graph. A video is available [here](https://youtu.be/n3lvM5_iwmA). 
+This is a multiple-page graph. A video is available [here](mmmm). 
 
 ******
 
