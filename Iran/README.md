@@ -233,9 +233,12 @@ Graph 8 [C19 daily deaths, Iran, IHME, average median _absolute errors_](https:/
 
 Graph 9 [C19 daily deaths, Iran, IHME, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20%25%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169367714-1a0c53ab-081c-4253-a0ba-46117011a3e6.png)
+
 ******
 
 Graph 10 [C19 daily deaths, Iran, IHME, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
 
 .
 
@@ -317,7 +320,7 @@ Graph 9 [C19 daily deaths, Iran, IMPE, average median _percent errors_](https://
 Graph 10 [C19 daily deaths, Iran, IMPE, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20Absolute%20%25%20Error%20Mean1.pdf)
 
 .
-
+ 
 **************************
 **************************
 
