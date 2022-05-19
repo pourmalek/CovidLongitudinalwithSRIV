@@ -186,10 +186,15 @@ Graph 11 d [C19 daily deaths average of mean _absolute percent errors_; Over upd
 
 ******
 
+Graph 12 a [C19 daily deaths, Iran, average of error measures - error types, models](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2012%20a%20C19%20daily%20deaths%2C%20Iran%2C%20average%20of%20error%20measures%20-%20error%20types%2C%20models.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169324392-35acd2e4-ac9e-40c2-bd24-c03eb9781346.png)
 
+******
 
+Graph 12 b [C19 daily deaths, Iran, average of error measures - models, error types](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/merge/graph%2012%20b%20C19%20daily%20deaths%2C%20Iran%2C%20average%20of%20error%20measures%20-%20models%2C%20error%20types.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169324715-e2d4b777-ec78-4bd1-a722-a92c81f40fe9.png)
 
 .
 
