@@ -80,26 +80,31 @@ This is a multiple-page graph. A video is available [here](mmmm).
 
 Graph 2 a [C19 daily deaths, Iran, DELP, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169363177-79a835f3-1a7f-4f3d-81c2-ebe1686d2529.png)
 
 ******
 
 Graph 2 b [C19 daily deaths, Iran, DELP, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169363342-57978644-f1bf-4539-ba19-182926fb8949.png)
 
 ******
 
 Graph 2 c [C19 daily deaths, Iran, DELP, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169363585-6ddbd283-afd8-4972-8543-e8f1a71cb8c7.png)
 
 ******
 
 Graph 2 d [C19 daily deaths, Iran, DELP, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20DELP%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169363721-bff0e9ca-c40d-49e0-b598-f1f4152f91c1.png)
 
 ******
 
 Graph 3 [C19 daily deaths _error_, Iran, DELP, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/DELP/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20DELP%2C%20all%20updates.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169363865-620111f6-baad-4966-955e-2894ea6e8951.png)
 
 ******
 
