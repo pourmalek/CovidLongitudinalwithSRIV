@@ -359,6 +359,7 @@ This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmm
 
 Graph 2 a [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169373278-5b43d1e6-d19a-4078-a5dc-908bd0694303.png)
 
 ******
 
