@@ -4088,8 +4088,7 @@ qui graph export "graph 10 b C19 daily deaths error, $country, Absolute % Error 
 
 ***********************************************
 
-capture drop *2r
-
+capture drop DDErrorA01_Mean2r DDErrorA02_Mean2r DDErrorA03_Mean2r DDErrorA04_Mean2r DDErrorA05_Mean2r
 gen DDErrorA01_Mean2r = round(DDErrorA01_Mean2,0.1)
 gen DDErrorA02_Mean2r = round(DDErrorA02_Mean2,0.1)
 gen DDErrorA03_Mean2r = round(DDErrorA03_Mean2,0.1)
@@ -4129,8 +4128,7 @@ qui graph export "graph 11 a C19 daily deaths, $country, Average Mean Error.pdf"
 
 ***********************************************
 
-capture drop *2r
-
+capture drop DDAbsErrA01_Mean2r DDAbsErrA02_Mean2r DDAbsErrA03_Mean2r DDAbsErrA04_Mean2r DDAbsErrA05_Mean2r
 gen DDAbsErrA01_Mean2r = round(DDAbsErrA01_Mean2,0.1)
 gen DDAbsErrA02_Mean2r = round(DDAbsErrA02_Mean2,0.1)
 gen DDAbsErrA03_Mean2r = round(DDAbsErrA03_Mean2,0.1)
@@ -4169,8 +4167,7 @@ qui graph export "graph 11 b C19 daily deaths, $country, Average Mean Absolute E
 
 ***********************************************
 
-capture drop *2r
-
+capture drop DDPerErrA01_Mean2r DDPerErrA02_Mean2r DDPerErrA03_Mean2r DDPerErrA04_Mean2r DDPerErrA05_Mean2r
 gen DDPerErrA01_Mean2r = round(DDPerErrA01_Mean2,0.1)
 gen DDPerErrA02_Mean2r = round(DDPerErrA02_Mean2,0.1)
 gen DDPerErrA03_Mean2r = round(DDPerErrA03_Mean2,0.1)
@@ -4211,8 +4208,7 @@ qui graph export "graph 11 c C19 daily deaths, $country, Average Mean Percent Er
 
 ***********************************************
 
-capture drop *2r
-
+capture drop DDAbPeErA01_Mean2r DDAbPeErA02_Mean2r DDAbPeErA03_Mean2r DDAbPeErA04_Mean2r DDAbPeErA05_Mean2r
 gen DDAbPeErA01_Mean2r = round(DDAbPeErA01_Mean2,0.1)
 gen DDAbPeErA02_Mean2r = round(DDAbPeErA02_Mean2,0.1)
 gen DDAbPeErA03_Mean2r = round(DDAbPeErA03_Mean2,0.1)

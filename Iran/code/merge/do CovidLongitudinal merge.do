@@ -93,6 +93,11 @@ do "do CovidLongitudinal merge 4.do"
 
 
 
+do "do CovidLongitudinal merge 5.do"
+
+* graph error types and models together
+* "graph 12 a C19 daily deaths, $country, average of error measures - error types, models"
+* "graph 12 b C19 daily deaths, $country, average of error measures - models, error types"
 
 
 
