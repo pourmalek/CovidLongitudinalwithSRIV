@@ -31,7 +31,8 @@ do "do CovidLongitudinal DELP 2.do"
 
 do "do CovidLongitudinal DELP 3.do"
 * graphs, daily deaths: updates separate 
-* graph 1 C19 daily deaths, $country, DELP, update `update' 
+* graph 1 a C19 daily deaths, $country, DELP, update `update', Backcast and forecast
+* graph 1 b C19 daily deaths, $country, DELP, update `update', Forecast only
 * input data files: "CovidLongitudinal DELP.dta"
 * output data files: none. no change in data.
 

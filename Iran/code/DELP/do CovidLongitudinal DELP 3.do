@@ -18,7 +18,8 @@ log using "log CovidLongitudinal DELP 3.smcl", replace
 
 
 * graphs, daily deaths: updates separate 
-* graph 1 C19 daily deaths, $country, DELP, update `update' 
+* graph 1 a C19 daily deaths, $country, DELP, update `update', Backcast and forecast
+* graph 1 b C19 daily deaths, $country, DELP, update `update', Forecast only
 * input data files: "CovidLongitudinal DELP.dta"
 * output data files: none. no change in data.
 
@@ -117,7 +118,7 @@ local list ///
 
 ***********************************************
 
-* daily deaths, each update
+* daily deaths, each update, Backcast and forecast
 
 foreach update of local list {
 
@@ -130,12 +131,39 @@ foreach update of local list {
 	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
 	ytitle(Daily deaths) title("C19 daily deaths, $country, DELP, update `update'", size(medium) color(black)) ///
 	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
-	legend(order(1 "JOHN smooth" 2 "DELP smooth, backcast" 3 "DELP smooth, forecast") rows(1) size(small)) 
-
-	qui graph export "graph 1 C19 daily deaths, $country, DELP, update `update'.pdf", replace
+	legend(order(1 "JOHN smooth" 2 "DELP smooth, backcast" 3 "DELP smooth, forecast") rows(1) size(small)) ///
+	subtitle("Backcasts and forecasts", size(small)) 
+	
+	qui graph export "graph 1 a C19 daily deaths, $country, DELP, update `update'.pdf", replace
 
 }
 *
+
+
+
+
+***********************************************
+
+* daily deaths, each update, Forecast only
+
+foreach update of local list {
+
+	twoway ///
+	(line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) /// 	1 "JOHN smooth"
+	(line DayDeaFOREA01`update' date, sort lwidth(medthick) lcolor(red)) /// 2 "DELP smooth, forecast"
+	if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == " National" ///
+	, xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, $country, DELP, update `update'", size(medium) color(black)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	legend(order(1 "JOHN smooth" 2 "DELP smooth, forecast") rows(1) size(small)) ///
+	subtitle("Forecast only", size(small))  
+	
+	qui graph export "graph 1 b C19 daily deaths, $country, DELP, update `update'.pdf", replace
+
+}
+*
+
 
 
 

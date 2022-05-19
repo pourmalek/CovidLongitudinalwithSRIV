@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 3.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}17 May 2022, 12:56:25
+ {txt}opened on:  {res}19 May 2022, 09:18:48
 {txt}
 {com}. 
 . ***************************************************************************
@@ -15,7 +15,8 @@
 . 
 . 
 . * graphs, daily deaths: updates separate 
-. * graph 1 C19 daily deaths, $country, DELP, update `update' 
+. * graph 1 a C19 daily deaths, $country, DELP, update `update', Backcast and forecast
+. * graph 1 b C19 daily deaths, $country, DELP, update `update', Forecast only
 . * input data files: "CovidLongitudinal DELP.dta"
 . * output data files: none. no change in data.
 . 
@@ -118,7 +119,7 @@
 . 
 . ***********************************************
 . 
-. * daily deaths, each update
+. * daily deaths, each update, Backcast and forecast
 . 
 . foreach update of local list {c -(}
 {txt}  2{com}. 
@@ -131,13 +132,41 @@
 >         xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
 >         ytitle(Daily deaths) title("C19 daily deaths, $country, DELP, update `update'", size(medium) color(black)) ///
 >         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
->         legend(order(1 "JOHN smooth" 2 "DELP smooth, backcast" 3 "DELP smooth, forecast") rows(1) size(small)) 
-{txt}  3{com}. 
-.         qui graph export "graph 1 C19 daily deaths, $country, DELP, update `update'.pdf", replace
+>         legend(order(1 "JOHN smooth" 2 "DELP smooth, backcast" 3 "DELP smooth, forecast") rows(1) size(small)) ///
+>         subtitle("Backcasts and forecasts", size(small)) 
+{txt}  3{com}.         
+.         qui graph export "graph 1 a C19 daily deaths, $country, DELP, update `update'.pdf", replace
 {txt}  4{com}. 
 . {c )-}
 {res}{txt}
 {com}. *
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. * daily deaths, each update, Forecast only
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         twoway ///
+>         (line DayDeaMeSmA00S00 date, sort lwidth(thick) lcolor(cyan)) ///       1 "JOHN smooth"
+>         (line DayDeaFOREA01`update' date, sort lwidth(medthick) lcolor(red)) /// 2 "DELP smooth, forecast"
+>         if date >= td(01jan2020) &  date <= td(01jan2022) & provincestate == " National" ///
+>         , xtitle(Date) xlabel(#24, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+>         xlabel(, angle(forty_five)) ylabel(, format(%9.0fc) labsize(small))  ylabel(, labsize(small) angle(forty_five)) ///
+>         ytitle(Daily deaths) title("C19 daily deaths, $country, DELP, update `update'", size(medium) color(black)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+>         legend(order(1 "JOHN smooth" 2 "DELP smooth, forecast") rows(1) size(small)) ///
+>         subtitle("Forecast only", size(small))  
+{txt}  3{com}.         
+.         qui graph export "graph 1 b C19 daily deaths, $country, DELP, update `update'.pdf", replace
+{txt}  4{com}. 
+. {c )-}
+{res}{txt}
+{com}. *
+. 
 . 
 . 
 . 
@@ -155,7 +184,7 @@
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/Iran/code/DELP/log CovidLongitudinal DELP 3.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}17 May 2022, 12:57:23
+ {txt}closed on:  {res}19 May 2022, 09:20:36
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
