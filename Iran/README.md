@@ -43,15 +43,15 @@ Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
 
 ### Graphs:
 
-### (1) DELP model
+[(1) DELP model](https://github.com/pourmalek/CovidLongitudinal/tree/main/Iran#1-delp-model-1)
 
-### (2) IHME model
+(2) IHME model
 
-### (3) IMPE model
+(3) IMPE model
 
-### (4) LANL model
+(4) LANL model
 
-### (5) SRIV model
+(5) SRIV model
 
 ### (6) Models together 
 
