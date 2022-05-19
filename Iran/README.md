@@ -266,6 +266,7 @@ This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmm
 
 Graph 2 a [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20With%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169368998-b6416562-d332-4397-bb60-10fe5e3f8d3c.png)
 
 ******
 
