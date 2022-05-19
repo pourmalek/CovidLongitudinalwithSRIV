@@ -452,6 +452,7 @@ This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmm
 
 Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, With extremes - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%2C%20with%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169377599-223816fc-07a2-4035-b82e-c7d617921b13.png)
 
 ******
 
