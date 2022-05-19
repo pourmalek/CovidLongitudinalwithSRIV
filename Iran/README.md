@@ -145,13 +145,13 @@ Graph 10 [C19 daily deaths, Iran, DELP, average median _absolute percent errors_
 
 ******
 
-Graph 1 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20updates%20together.pdf)
+Graph 1 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20reference%20scenario%2C%20updates%20together.pdf)
 
 This is a multiple-page graph. A video is available [here](mmmmm). 
 
 ******
 
-Graph 1 b [C19 daily deaths, Iran, IHME, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20updates%20together.pdf)
+Graph 1 b [C19 daily deaths, Iran, IHME, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20reference%20scenario%2C%20updates%20together.pdf)
 
 This is a multiple-page graph. A video is available [here](mmmm). 
 
