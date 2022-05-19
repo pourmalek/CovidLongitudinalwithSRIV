@@ -438,13 +438,13 @@ Graph 10 [C19 daily deaths, Iran, LANL, average median _absolute percent errors_
 
 ******
 
-Graph 1 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
+Graph 1 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
 
 This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
 ******
 
-Graph 1 b [C19 daily deaths, Iran, SRIV, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
+Graph 1 b [C19 daily deaths, Iran, SRIV, Updates together, Forecast only - SRIV estimates are forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
 
 This is a multiple-page graph. A video is available [here](mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm). 
 
