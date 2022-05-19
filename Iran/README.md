@@ -38,6 +38,22 @@ Percent error = 100 * (minus (Reference minus Model)) / Reference
 Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
 
 
+**************************
+**************************
+
+### Graphs:
+
+### (1) DELP model
+
+### (2) IHME model
+
+### (3) IMPE model
+
+### (4) LANL model
+
+### (5) SRIV model
+
+### (6) Models together 
 
 **************************
 **************************
@@ -437,7 +453,7 @@ Graph 10 [C19 daily deaths, Iran, SRIV, average median _absolute percent errors_
 **************************
 **************************
 
-### (6) Models together model
+### (6) Models together 
 
 <br/><br/>  
 
