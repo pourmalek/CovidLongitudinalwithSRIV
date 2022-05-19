@@ -42,7 +42,7 @@ Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
 **************************
 **************************
 
-### (6) DELP model
+### (1) DELP model
 
 <br/><br/>  
 
@@ -121,6 +121,321 @@ Graph 10 [C19 daily deaths, Iran, DELP, average median _absolute percent errors_
 **************************
 **************************
 
+### (2) IHME model
+
+<br/><br/>  
+
+******
+
+Graph 1 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmmm). 
+
+******
+
+Graph 1 b [C19 daily deaths, Iran, IHME, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmm). 
+
+******
+
+Graph 2 a [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20With%20extremes.pdf)
+
+
+******
+
+Graph 2 b [C19 daily deaths, Iran, IHME, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20Without%20extremes.pdf)
+
+
+******
+
+Graph 2 c [C19 daily deaths, Iran, IHME, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 2 d [C19 daily deaths, Iran, IHME, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20IHME%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 3 [C19 daily deaths _error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 4 [C19 daily deaths _absolute error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 5 [C19 daily deaths _percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 6 [C19 daily deaths _absolute percent error_, Iran, IHME, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20IHME%2C%20all%20updates.pdf)
+
+
+******  
+
+Graph 7 [C19 daily deaths, Iran, IHME, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 8 [C19 daily deaths, Iran, IHME, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 9 [C19 daily deaths, Iran, IHME, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20%25%20Error%20Mean1.pdf)
+
+******
+
+Graph 10 [C19 daily deaths, Iran, IHME, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IHME/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IHME%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+.
+
+**************************
+**************************
+
+### (3) IMPE model
+
+<br/><br/>  
+
+******
+
+Graph 1 a [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmmm). 
+
+******
+
+Graph 1 b [C19 daily deaths, Iran, IMPE, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmm). 
+
+******
+
+Graph 2 a [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20With%20extremes.pdf)
+
+
+******
+
+Graph 2 b [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20Without%20extremes.pdf)
+
+
+******
+
+Graph 2 c [C19 daily deaths, Iran, IMPE, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 2 d [C19 daily deaths, Iran, IMPE, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 3 [C19 daily deaths _error_, Iran, IMPE, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 4 [C19 daily deaths _absolute error_, Iran, IMPE, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20IMPE%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 5 [C19 daily deaths _percent error_, Iran, IMPE, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20IMPE%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 6 [C19 daily deaths _absolute percent error_, Iran, IMPE, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20IMPE%2C%20all%20updates.pdf)
+
+
+******  
+
+Graph 7 [C19 daily deaths, Iran, IMPE, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 8 [C19 daily deaths, Iran, IMPE, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 9 [C19 daily deaths, Iran, IMPE, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20%25%20Error%20Mean1.pdf)
+
+******
+
+Graph 10 [C19 daily deaths, Iran, IMPE, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20IMPE%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+.
+
+**************************
+**************************
+
+### (4) LANL model
+
+<br/><br/>  
+
+******
+
+Graph 1 a [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmmm). 
+
+******
+
+Graph 1 b [C19 daily deaths, Iran, LANL, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmm). 
+
+******
+
+Graph 2 a [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes.pdf)
+
+
+******
+
+Graph 2 b [C19 daily deaths, Iran, LANL, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20Without%20extremes.pdf)
+
+
+******
+
+Graph 2 c [C19 daily deaths, Iran, LANL, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 2 d [C19 daily deaths, Iran, LANL, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20LANL%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 3 [C19 daily deaths _error_, Iran, LANL, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 4 [C19 daily deaths _absolute error_, Iran, LANL, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20LANL%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 5 [C19 daily deaths _percent error_, Iran, LANL, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20LANL%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 6 [C19 daily deaths _absolute percent error_, Iran, LANL, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20LANL%2C%20all%20updates.pdf)
+
+
+******  
+
+Graph 7 [C19 daily deaths, Iran, LANL, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 8 [C19 daily deaths, Iran, LANL, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 9 [C19 daily deaths, Iran, LANL, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20%25%20Error%20Mean1.pdf)
+
+******
+
+Graph 10 [C19 daily deaths, Iran, LANL, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+.
+
+**************************
+**************************
+
+### (5) SRIV model
+
+<br/><br/>  
+
+******
+
+Graph 1 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmmm). 
+
+******
+
+Graph 1 b [C19 daily deaths, Iran, SRIV, Updates together, Forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%201%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20updates%20together.pdf)
+
+This is a multiple-page graph. A video is available [here](mmmm). 
+
+******
+
+Graph 2 a [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20a%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes.pdf)
+
+
+******
+
+Graph 2 b [C19 daily deaths, Iran, SRIV, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes.pdf)
+
+
+******
+
+Graph 2 c [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 2 d [C19 daily deaths, Iran, SRIV, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20SRIV%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
+
+
+******
+
+Graph 3 [C19 daily deaths _error_, Iran, SRIV, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%203%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 4 [C19 daily deaths _absolute error_, Iran, SRIV, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%204%20C19%20daily%20deaths%20absolute%20error%2C%20Iran%2C%20SRIV%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 5 [C19 daily deaths _percent error_, Iran, SRIV, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%205%20C19%20daily%20deaths%20%25%20error%2C%20Iran%2C%20SRIV%2C%20all%20updates.pdf)
+
+
+******
+
+Graph 6 [C19 daily deaths _absolute percent error_, Iran, SRIV, all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%206%20C19%20daily%20deaths%20absolute%20%25%20error%2C%20Iran%2C%20SRIV%2C%20all%20updates.pdf)
+
+
+******  
+
+Graph 7 [C19 daily deaths, Iran, SRIV, average median _errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%207%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 8 [C19 daily deaths, Iran, SRIV, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Absolute%20Error%20Mean1.pdf)
+
+
+******
+
+Graph 9 [C19 daily deaths, Iran, SRIV, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20%25%20Error%20Mean1.pdf)
+
+******
+
+Graph 10 [C19 daily deaths, Iran, SRIV, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/SRIV/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20SRIV%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+.
+
+**************************
+**************************
 
 ### (6) Models together model
 
