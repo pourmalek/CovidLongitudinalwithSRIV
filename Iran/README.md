@@ -272,16 +272,19 @@ Graph 2 a [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast
 
 Graph 2 b [C19 daily deaths, Iran, IMPE, Updates together, Backcast and forecast, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20b%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20Without%20extremes.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169371457-b4369b64-f99f-49ee-816a-702635eab4a2.png)
 
 ******
 
 Graph 2 c [C19 daily deaths, Iran, IMPE, Updates together, Forecast only, With extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20c%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20With%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169371580-8b63f5e8-b04b-489d-a55d-a231458f2441.png)
 
 ******
 
 Graph 2 d [C19 daily deaths, Iran, IMPE, Updates together, Forecast only, Without extremes](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/IMPE/graph%202%20d%20C19%20daily%20deaths%2C%20Iran%2C%20IMPE%2C%20Updates%20together%20Without%20extremes%2C%20Forecast%20only.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169371665-27071515-43b3-4269-8dcd-dbcc921e4068.png)
 
 ******
 
