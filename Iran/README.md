@@ -413,14 +413,19 @@ Graph 7 [C19 daily deaths, Iran, LANL, average median _errors_](https://github.c
 
 Graph 8 [C19 daily deaths, Iran, LANL, average median _absolute errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%208%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20Absolute%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169374779-38acbf62-2849-46a1-9b87-5e483b3c2014.png)
 
 ******
 
 Graph 9 [C19 daily deaths, Iran, LANL, average median _percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%209%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20%25%20Error%20Mean1.pdf)
 
+![image](https://user-images.githubusercontent.com/30849720/169374927-96d4b5bf-b5f6-4af2-b023-56c3379b3187.png)
+
 ******
 
 Graph 10 [C19 daily deaths, Iran, LANL, average median _absolute percent errors_](https://github.com/pourmalek/CovidLongitudinal/blob/main/Iran/output/LANL/graph%2010%20a%20C19%20daily%20deaths%20error%2C%20Iran%2C%20LANL%2C%20Absolute%20%25%20Error%20Mean1.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/169375318-eb32e6ff-48b2-4716-b9cb-318ed7f85484.png)
 
 .
 
