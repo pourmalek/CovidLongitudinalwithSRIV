@@ -74,3 +74,6 @@ JOHN: Johns Hopkins. The coronavirus resource center, Johns Hopkins University, 
 
 
 Add internal consistency and plausibility of the model assumptions. Internal consistency is not met when the predicted infections and deaths fall (compared to previous updates) but hospitalizations do not change. One implausible assumption is the assumption about continuation of mask use percent in reference scenario of IHME, meaning that the mask use percent will be at the level of last obtained data before the predictions were made. However, the mask use percent might decrease according to the trend of the observed data and as the later observed data show.
+
+Timing of prediction updates in relation with new waves (be before rises, not during the rise or after the peak).
+
