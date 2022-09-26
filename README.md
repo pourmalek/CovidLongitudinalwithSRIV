@@ -13,6 +13,15 @@ Longitudinal assessment of international periodically updating COVID-19 pandemic
 
 ### Compare predictions of periodically updated international COVID-19 pandemic models with official reports of the countries to the World Health Organization.
 
+
+***
+
+Correction to be made:
+
+On page https://github.com/scc-usc/ReCOVER-COVID-19/tree/master/results/historical_forecasts 
+
+2022-06-05 Fix broken variants source
+
 *********************************************************************************************************************************************
 *********************************************************************************************************************************************
 
