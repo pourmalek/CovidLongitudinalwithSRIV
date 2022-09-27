@@ -4,6 +4,8 @@ Longitudinal assessment of international periodically updating COVID-19 pandemic
 
  // work in progress
  
+ correction or update: SRIV has subnational for USA (but not for all updates)
+ 
 
 ****************************************************************************************************************************************************
 ****************************************************************************************************************************************************
