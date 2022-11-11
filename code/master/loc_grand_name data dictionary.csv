@@ -1,0 +1,22 @@
+name,varlab
+loc_grand_order,country order
+loc_grand_name,country name
+loc_grand_id,country id number
+loc_grand_iso,country iso3 code
+region,WHO region
+UNFPA2020,country names used in UNFPA 2020 population estimates
+population2020,UNFPA 2020 population estimates
+UNFPA2021,country names used in UNFPA 2021 population estimates
+population2021,UNFPA 2021 population estimates
+UNFPA2022,country names used in UNFPA 2022 population estimates
+population2022,UNFPA 2022 population estimates
+DELP,country names used in DELP COVID-19 epidemic model
+IHME,country names used in IHME COVID-19 epidemic model
+IMPE,country names used in IMPE COVID-19 epidemic model
+LANL,country names used in LANL COVID-19 epidemic model
+SRIV,country names used in SRIV COVID-19 epidemic model
+UCLA,country names used in UCLA COVID-19 epidemic model
+YYGU,country names used in YYGU COVID-19 epidemic model
+JOHN,country names used in JOHNs Hopkins COVID-19 epidemic data
+loc_grand_name_numlabel,country name number label
+loc_grand_name_snail,country name snail
