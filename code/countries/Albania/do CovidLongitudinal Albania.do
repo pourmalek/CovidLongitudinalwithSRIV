@@ -14,7 +14,7 @@ cd "$pathCovidLongitudinal/countries/Albania"
 * Objective: Process the reported deaths by JOHN and 
 	* the estimates by models (DELP, IHME, IMPE, LANL, SRIV, UCLA, YYGU)
 	* and calculate the error measures
-	* for each country ---->> Albania / ARG <<----                                                                 
+	* for each country ---->> Albania <<----                                                                 
 ***************************************************************************
 
 

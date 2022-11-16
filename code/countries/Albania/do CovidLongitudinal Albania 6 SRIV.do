@@ -13,7 +13,7 @@ log using "log CovidLongitudinal Albania 6 SRIV.smcl", replace
 * Project: Longitudinal assessment of COVID-19 models 
 
 * Objective: Run calculations for error measures
-	* for each country ---->> Albania / ARG <<----                                                                 
+	* for each country ---->> Albania <<----                                                                 
 ***************************************************************************
 
 

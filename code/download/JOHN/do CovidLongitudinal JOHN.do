@@ -183,6 +183,21 @@ qui tsset loc_grand_name_encoded date, daily
 		
 		qui label var DayDeaMeSmJOHN`iso'`update' "Daily deaths smooth mean JOHN `iso'" 
 		
+		***************************
+
+		/*
+		Smoothed daily deaths with very small values lead to unduly inflated 
+		Percent Error and Absolute Percent Error. 
+		To remedy this problem, smoothed daily deaths with values > 0 and < 0.05 
+		are replace with 0.05.
+		Similarly, non-missing smoothed daily deaths with values of zero
+		are replaced with 0.01.
+		*/
+
+		replace DayDeaMeSmJOHN`iso' = 0.05 if DayDeaMeSmJOHN`iso' > 0 & DayDeaMeSmJOHN`iso' < 0.05
+
+		replace DayDeaMeSmJOHN`iso' = 0.01 if DayDeaMeSmJOHN`iso' == 0
+		
 }
 *
 
@@ -234,6 +249,8 @@ drop _merge
 isid loc_grand_name date, sort missok
 
 
+
+qui compress
 	
 save "CovidLongitudinal JOHN.dta", replace
 

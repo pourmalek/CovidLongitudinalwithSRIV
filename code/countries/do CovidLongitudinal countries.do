@@ -15,13 +15,13 @@ cd "$pathCovidLongitudinal/countries"
 
 
 
-
-do "$pathCovidLongitudinal/countries/Afghanistan/do CovidLongitudinal Afghanistan.do"
-
-do "$pathCovidLongitudinal/countries/Albania/do CovidLongitudinal Albania.do"
-
-do "$pathCovidLongitudinal/countries/Algeria/do CovidLongitudinal Algeria.do"
+local list `" "Afghanistan" "Albania" "Algeria" "Argentina" "Iran" "United States of America" "'
 
 
+foreach country of local list {
 
+	do "$pathCovidLongitudinal/countries/`country'/do CovidLongitudinal `country'.do"
+
+}
+*
 

@@ -13,7 +13,7 @@ log using "log CovidLongitudinal Argentina 9.smcl", replace
 * Project: Longitudinal assessment of COVID-19 models 
 
 * Objective: Merge calculations results for error measures by models
-	* for each country ---->> Argentina / ARG <<----                                                                 
+	* for each country ---->> Argentina <<----                                                                 
 ***************************************************************************
 
 
@@ -7160,7 +7160,8 @@ bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
 bar(6, fcolor(blue) lcolor(blue)) ///
 bar(7, fcolor(gold) lcolor(gold)) ///
-blabel(bar) ytitle("Average Mean Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Mean Error") ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Mean Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -7242,7 +7243,8 @@ bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
 bar(6, fcolor(blue) lcolor(blue)) ///
 bar(7, fcolor(gold) lcolor(gold)) ///
-blabel(bar) ytitle("Average Absolute Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Absolute Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Absolute Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -7324,7 +7326,8 @@ bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
 bar(6, fcolor(blue) lcolor(blue)) ///
 bar(7, fcolor(gold) lcolor(gold)) ///
-blabel(bar) ytitle("Average Percent Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -7406,7 +7409,8 @@ bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
 bar(6, fcolor(blue) lcolor(blue)) ///
 bar(7, fcolor(gold) lcolor(gold)) ///
-blabel(bar) ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) /// 
+ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Absolute Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -7537,7 +7541,8 @@ bar(1, fcolor(stone) lcolor(stone)) ///
 bar(2, fcolor(sand) lcolor(sand)) ///
 bar(3, fcolor(ltblue) lcolor(ltblue)) ///
 bar(4, fcolor(ebblue) lcolor(ebblue)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average error measures") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths, models across average error measures", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -7652,13 +7657,85 @@ bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
 bar(6, fcolor(blue) lcolor(blue)) ///
 bar(7, fcolor(gold) lcolor(gold)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average error measures") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths, average of error measures across models", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Argentina", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
 legend(order(1 "DELP" 2 "IHME" 3 "IMPE" 4 "LANL" 5 "SRIV" 6 "UCLA" 7 "YYGU") size(small) row(2)) 
 
 qui graph export "graph 12 b Argentina ALL MODELS C19 daily deaths, error measures across models.pdf", replace
+
+
+
+
+
+* reshape wide
+
+
+drop type
+
+reshape wide DDA1 DDA2 DDA3 DDA4 DDA5 DDA6 DDA7, i(i) j(E, string)
+
+
+rename (DDA1E1 DDA2E1 DDA3E1 DDA4E1 DDA5E1 DDA6E1 DDA7E1) ///
+       (DD_DELP_Errorr DD_IHME_Errorr DD_IMPE_Errorr DD_LANL_Errorr DD_SRIV_Errorr DD_UCLA_Errorr DD_YYGU_Errorr)
+
+label var DD_DELP_Errorr "Daily Deaths DELP Error mean of medians over updates and calendar months"
+label var DD_IHME_Errorr "Daily Deaths IHME Error mean of medians over updates and calendar months"
+label var DD_IMPE_Errorr "Daily Deaths IMPE Error mean of medians over updates and calendar months"
+label var DD_LANL_Errorr "Daily Deaths LANL Error mean of medians over updates and calendar months"
+label var DD_SRIV_Errorr "Daily Deaths SRIV Error mean of medians over updates and calendar months"
+label var DD_UCLA_Errorr "Daily Deaths UCLA Error mean of medians over updates and calendar months"
+label var DD_YYGU_Errorr "Daily Deaths YYGU Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E2 DDA2E2 DDA3E2 DDA4E2 DDA5E2 DDA6E2 DDA7E2) ///
+       (DD_DELP_AbsErr DD_IHME_AbsErr DD_IMPE_AbsErr DD_LANL_AbsErr DD_SRIV_AbsErr DD_UCLA_AbsErr DD_YYGU_AbsErr)
+
+label var DD_DELP_AbsErr "Daily Deaths DELP Absolute Error mean of medians over updates and calendar months"
+label var DD_IHME_AbsErr "Daily Deaths IHME Absolute Error mean of medians over updates and calendar months"
+label var DD_IMPE_AbsErr "Daily Deaths IMPE Absolute Error mean of medians over updates and calendar months"
+label var DD_LANL_AbsErr "Daily Deaths LANL Absolute Error mean of medians over updates and calendar months"
+label var DD_SRIV_AbsErr "Daily Deaths SRIV Absolute Error mean of medians over updates and calendar months"
+label var DD_UCLA_AbsErr "Daily Deaths UCLA Absolute Error mean of medians over updates and calendar months"
+label var DD_YYGU_AbsErr "Daily Deaths YYGU Absolute Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E3 DDA2E3 DDA3E3 DDA4E3 DDA5E3 DDA6E3 DDA7E3) ///
+       (DD_DELP_PerErr DD_IHME_PerErr DD_IMPE_PerErr DD_LANL_PerErr DD_SRIV_PerErr DD_UCLA_PerErr DD_YYGU_PerErr)
+
+label var DD_DELP_PerErr "Daily Deaths DELP Percent Error mean of medians over updates and calendar months"
+label var DD_IHME_PerErr "Daily Deaths IHME Percent Error mean of medians over updates and calendar months"
+label var DD_IMPE_PerErr "Daily Deaths IMPE Percent Error mean of medians over updates and calendar months"
+label var DD_LANL_PerErr "Daily Deaths LANL Percent Error mean of medians over updates and calendar months"
+label var DD_SRIV_PerErr "Daily Deaths SRIV Percent Error mean of medians over updates and calendar months"
+label var DD_UCLA_PerErr "Daily Deaths UCLA Percent Error mean of medians over updates and calendar months"
+label var DD_YYGU_PerErr "Daily Deaths YYGU Percent Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E4 DDA2E4 DDA3E4 DDA4E4 DDA5E4 DDA6E4 DDA7E4) ///
+(DD_DELP_AbPeEr DD_IHME_AbPeEr DD_IMPE_AbPeEr DD_LANL_AbPeEr DD_SRIV_AbPeEr DD_UCLA_AbPeEr DD_YYGU_AbPeEr)
+
+label var DD_DELP_AbPeEr "Daily Deaths DELP Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_IHME_AbPeEr "Daily Deaths IHME Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_IMPE_AbPeEr "Daily Deaths IMPE Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_LANL_AbPeEr "Daily Deaths LANL Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_SRIV_AbPeEr "Daily Deaths SRIV Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_UCLA_AbPeEr "Daily Deaths UCLA Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_YYGU_AbPeEr "Daily Deaths YYGU Absolute Percent Error mean of medians over updates and calendar months"
+
+
+
+drop i
+
+gen country = "Albania"
+
+gen iso = "ALB"
+
+order country iso
+
+qui compress
 
 
 

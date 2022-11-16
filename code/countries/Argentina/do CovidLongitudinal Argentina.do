@@ -14,7 +14,7 @@ cd "$pathCovidLongitudinal/countries/Argentina"
 * Objective: Process the reported deaths by JOHN and 
 	* the estimates by models (DELP, IHME, IMPE, LANL, SRIV, UCLA, YYGU)
 	* and calculate the error measures
-	* for each country ---->> Argentina / ARG <<----                                                                 
+	* for each country ---->> Argentina <<----                                                                 
 ***************************************************************************
 
 

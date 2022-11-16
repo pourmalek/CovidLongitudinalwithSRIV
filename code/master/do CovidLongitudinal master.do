@@ -4,12 +4,10 @@
 
 * Project: Longitudinal assessment of COVID-19 models 
 
-* Objective: Run the do files in located in directories                                                                        
+* Objective: Run the major do files in located in directories                                                                        
 ***************************************************************************
 
-capture log close master
 
-log using "log CovidLongitudinal master.smcl", replace name(master)
 
 
 
@@ -105,26 +103,27 @@ grstyle color background white
 
 
 **************************************************************************
-** Run the do files in located in directories:
+** Run the major do files in located in directories:
 
 
-* Create list of countries' names and other attributes
 do "$pathCovidLongitudinal/master/do CovidLongitudinal loc_grand_name.do"
+* Create list of countries' names and attributes
 
 
-* Download estimates by models
 do "$pathCovidLongitudinal/download/do CovidLongitudinal download.do"
+* Download estimates by models
 
 
-* Process estimates for countries  
 do "$pathCovidLongitudinal/countries/do CovidLongitudinal countries.do"
+* Process estimates for countries  
+
+
+do "$pathCovidLongitudinal/merge/do CovidLongitudinal merge.do"
+* Describe the predictive performance of models and assess the determinants
 
 
 
 
-
-
-view "log CovidLongitudinal master.smcl"
 
 log close _all
 

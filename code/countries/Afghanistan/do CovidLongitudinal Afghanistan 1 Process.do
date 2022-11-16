@@ -1152,8 +1152,6 @@ foreach update of local list {
 	* graph Afghanistan IHME daily deaths each update
 	
 	twoway ///
-	(line DayDeaMeRaIHME`update' date, sort lwidth(thin) lcolor(gold)) /// 	
-	(line DayDeaMeSmIHME`update' date, sort lwidth(thick) lcolor(lime)) /// 
 	(line DayDeaMeFoIHME`update' date, sort lwidth(thin) lcolor(black)) /// 
 	if date >= td(01Jan2020) & loc_grand_name != "" ///
 	, xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
@@ -1161,7 +1159,6 @@ foreach update of local list {
 	ytitle(Daily deaths) title("C19 daily deaths, Afghanistan, IHME, update `update'", size(medium) color(black)) ///
 	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
 	xline(`epoch`update'', lwidth(thin) lcolor(red)) ///
-	legend(order(1 "Raw" 2 "Smooth" 3 "Forecast only") rows(1)) ///
 	subtitle("Forecast start date is denoted with red line: `wanted'") ///
 	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) 
 	

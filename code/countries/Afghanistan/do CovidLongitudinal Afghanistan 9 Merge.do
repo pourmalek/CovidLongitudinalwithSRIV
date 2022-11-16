@@ -13,7 +13,7 @@ log using "log CovidLongitudinal Afghanistan 9 Merge.smcl", replace
 * Project: Longitudinal assessment of COVID-19 models 
 
 * Objective: Merge calculations results for error measures by models
-	* for each country ---->> Afghanistan / ARG <<----                                                                 
+	* for each country ---->> Afghanistan <<----                                                                 
 ***************************************************************************
 
 
@@ -54,6 +54,13 @@ log using "log CovidLongitudinal Afghanistan 9 Merge.smcl", replace
 * "graph 12 a Afghanistan ALL MODELS C19 daily deaths, models across error measures.pdf"
 ****** graph all error measures across models:
 * "graph 12 b Afghanistan ALL MODELS C19 daily deaths, error measures across models.pdf"
+
+
+
+
+grstyle init
+
+grstyle color background white
 
 
 
@@ -6334,36 +6341,39 @@ qui graph export "graph 10 b Afghanistan ALL MODELS C19 daily deaths average med
 
 
 
+
+
+
 ***********************************************
 
-* gen string "%8.1f" copy of DDError`model'_Mean2 for display
+* gen string "%10.0f" copy of DDError`model'_Mean2 for display
 
 summ DDErrorDELP_Mean2, meanonly
-local DDErrorDELP_Mean2str = string(r(mean),"%8.1f")
+local DDErrorDELP_Mean2str = string(r(mean),"%10.0f")
 capture drop DDErrorDELP_Mean2str
 gen DDErrorDELP_Mean2str = `DDErrorDELP_Mean2str'
 label var DDErrorDELP_Mean2str "DDErrorDELP Mean over calendar months of median error over updates string"
 
 summ DDErrorIHME_Mean2, meanonly
-local DDErrorIHME_Mean2str = string(r(mean),"%8.1f")
+local DDErrorIHME_Mean2str = string(r(mean),"%10.0f")
 capture drop DDErrorIHME_Mean2str
 gen DDErrorIHME_Mean2str = `DDErrorIHME_Mean2str'
 label var DDErrorIHME_Mean2str "DDErrorIHME Mean over calendar months of median error over updates string"
 
 summ DDErrorIMPE_Mean2, meanonly
-local DDErrorIMPE_Mean2str = string(r(mean),"%8.1f")
+local DDErrorIMPE_Mean2str = string(r(mean),"%10.0f")
 capture drop DDErrorIMPE_Mean2str
 gen DDErrorIMPE_Mean2str = `DDErrorIMPE_Mean2str'
 label var DDErrorIMPE_Mean2str "DDErrorIMPE Mean over calendar months of median error over updates string"
 
 summ DDErrorLANL_Mean2, meanonly
-local DDErrorLANL_Mean2str = string(r(mean),"%8.1f")
+local DDErrorLANL_Mean2str = string(r(mean),"%10.0f")
 capture drop DDErrorLANL_Mean2str
 gen DDErrorLANL_Mean2str = `DDErrorLANL_Mean2str'
 label var DDErrorLANL_Mean2str "DDErrorLANL Mean over calendar months of median error over updates string"
 
 summ DDErrorSRIV_Mean2, meanonly
-local DDErrorSRIV_Mean2str = string(r(mean),"%8.1f")
+local DDErrorSRIV_Mean2str = string(r(mean),"%10.0f")
 capture drop DDErrorSRIV_Mean2str
 gen DDErrorSRIV_Mean2str = `DDErrorSRIV_Mean2str'
 label var DDErrorSRIV_Mean2str "DDErrorSRIV Mean over calendar months of median error over updates string"
@@ -6384,7 +6394,8 @@ bar(2, fcolor(black) lcolor(black)) ///
 bar(3, fcolor(magenta) lcolor(magenta)) ///
 bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average Mean Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Mean Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Mean Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6404,34 +6415,34 @@ qui graph export "graph 11 a Afghanistan ALL MODELS C19 daily deaths Average Mea
 
 ***********************************************
 
-* gen string "%8.1f" copy of DDAbsErr`model'_Mean2 for display
+* gen string "%10.0f" copy of DDAbsErr`model'_Mean2 for display
 
 summ DDAbsErrDELP_Mean2, meanonly
-local DDAbsErrDELP_Mean2str = string(r(mean),"%8.1f")
+local DDAbsErrDELP_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbsErrDELP_Mean2str
 gen DDAbsErrDELP_Mean2str = `DDAbsErrDELP_Mean2str'
 label var DDAbsErrDELP_Mean2str "DDAbsErrDELP Mean over calendar months of median error over updates string"
 
 summ DDAbsErrIHME_Mean2, meanonly
-local DDAbsErrIHME_Mean2str = string(r(mean),"%8.1f")
+local DDAbsErrIHME_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbsErrIHME_Mean2str
 gen DDAbsErrIHME_Mean2str = `DDAbsErrIHME_Mean2str'
 label var DDAbsErrIHME_Mean2str "DDAbsErrIHME Mean over calendar months of median error over updates string"
 
 summ DDAbsErrIMPE_Mean2, meanonly
-local DDAbsErrIMPE_Mean2str = string(r(mean),"%8.1f")
+local DDAbsErrIMPE_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbsErrIMPE_Mean2str
 gen DDAbsErrIMPE_Mean2str = `DDAbsErrIMPE_Mean2str'
 label var DDAbsErrIMPE_Mean2str "DDAbsErrIMPE Mean over calendar months of median error over updates string"
 
 summ DDAbsErrLANL_Mean2, meanonly
-local DDAbsErrLANL_Mean2str = string(r(mean),"%8.1f")
+local DDAbsErrLANL_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbsErrLANL_Mean2str
 gen DDAbsErrLANL_Mean2str = `DDAbsErrLANL_Mean2str'
 label var DDAbsErrLANL_Mean2str "DDAbsErrLANL Mean over calendar months of median error over updates string"
 
 summ DDAbsErrSRIV_Mean2, meanonly
-local DDAbsErrSRIV_Mean2str = string(r(mean),"%8.1f")
+local DDAbsErrSRIV_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbsErrSRIV_Mean2str
 gen DDAbsErrSRIV_Mean2str = `DDAbsErrSRIV_Mean2str'
 label var DDAbsErrSRIV_Mean2str "DDAbsErrSRIV Mean over calendar months of median error over updates string"
@@ -6452,7 +6463,8 @@ bar(2, fcolor(black) lcolor(black)) ///
 bar(3, fcolor(magenta) lcolor(magenta)) ///
 bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average Absolute Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Absolute Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Absolute Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6472,34 +6484,34 @@ qui graph export "graph 11 b Afghanistan ALL MODELS C19 daily deaths Average Abs
 
 ***********************************************
 
-* gen string "%8.1f" copy of DDPerErr`model'_Mean2 for display
+* gen string "%10.0f" copy of DDPerErr`model'_Mean2 for display
 
 summ DDPerErrDELP_Mean2, meanonly
-local DDPerErrDELP_Mean2str = string(r(mean),"%8.1f")
+local DDPerErrDELP_Mean2str = string(r(mean),"%10.0f")
 capture drop DDPerErrDELP_Mean2str
 gen DDPerErrDELP_Mean2str = `DDPerErrDELP_Mean2str'
 label var DDPerErrDELP_Mean2str "DDPerErrDELP Mean over calendar months of median error over updates string"
 
 summ DDPerErrIHME_Mean2, meanonly
-local DDPerErrIHME_Mean2str = string(r(mean),"%8.1f")
+local DDPerErrIHME_Mean2str = string(r(mean),"%10.0f")
 capture drop DDPerErrIHME_Mean2str
 gen DDPerErrIHME_Mean2str = `DDPerErrIHME_Mean2str'
 label var DDPerErrIHME_Mean2str "DDPerErrIHME Mean over calendar months of median error over updates string"
 
 summ DDPerErrIMPE_Mean2, meanonly
-local DDPerErrIMPE_Mean2str = string(r(mean),"%8.1f")
+local DDPerErrIMPE_Mean2str = string(r(mean),"%10.0f")
 capture drop DDPerErrIMPE_Mean2str
 gen DDPerErrIMPE_Mean2str = `DDPerErrIMPE_Mean2str'
 label var DDPerErrIMPE_Mean2str "DDPerErrIMPE Mean over calendar months of median error over updates string"
 
 summ DDPerErrLANL_Mean2, meanonly
-local DDPerErrLANL_Mean2str = string(r(mean),"%8.1f")
+local DDPerErrLANL_Mean2str = string(r(mean),"%10.0f")
 capture drop DDPerErrLANL_Mean2str
 gen DDPerErrLANL_Mean2str = `DDPerErrLANL_Mean2str'
 label var DDPerErrLANL_Mean2str "DDPerErrLANL Mean over calendar months of median error over updates string"
 
 summ DDPerErrSRIV_Mean2, meanonly
-local DDPerErrSRIV_Mean2str = string(r(mean),"%8.1f")
+local DDPerErrSRIV_Mean2str = string(r(mean),"%10.0f")
 capture drop DDPerErrSRIV_Mean2str
 gen DDPerErrSRIV_Mean2str = `DDPerErrSRIV_Mean2str'
 label var DDPerErrSRIV_Mean2str "DDPerErrSRIV Mean over calendar months of median error over updates string"
@@ -6520,7 +6532,8 @@ bar(2, fcolor(black) lcolor(black)) ///
 bar(3, fcolor(magenta) lcolor(magenta)) ///
 bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average Percent Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6540,34 +6553,34 @@ qui graph export "graph 11 c Afghanistan ALL MODELS C19 daily deaths Average Per
 
 ***********************************************
 
-* gen string "%8.1f" copy of DDAbPeEr`model'_Mean2 for display
+* gen string "%10.0f" copy of DDAbPeEr`model'_Mean2 for display
 
 summ DDAbPeErDELP_Mean2, meanonly
-local DDAbPeErDELP_Mean2str = string(r(mean),"%8.1f")
+local DDAbPeErDELP_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbPeErDELP_Mean2str
 gen DDAbPeErDELP_Mean2str = `DDAbPeErDELP_Mean2str'
 label var DDAbPeErDELP_Mean2str "DDAbPeErDELP Mean over calendar months of median error over updates string"
 
 summ DDAbPeErIHME_Mean2, meanonly
-local DDAbPeErIHME_Mean2str = string(r(mean),"%8.1f")
+local DDAbPeErIHME_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbPeErIHME_Mean2str
 gen DDAbPeErIHME_Mean2str = `DDAbPeErIHME_Mean2str'
 label var DDAbPeErIHME_Mean2str "DDAbPeErIHME Mean over calendar months of median error over updates string"
 
 summ DDAbPeErIMPE_Mean2, meanonly
-local DDAbPeErIMPE_Mean2str = string(r(mean),"%8.1f")
+local DDAbPeErIMPE_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbPeErIMPE_Mean2str
 gen DDAbPeErIMPE_Mean2str = `DDAbPeErIMPE_Mean2str'
 label var DDAbPeErIMPE_Mean2str "DDAbPeErIMPE Mean over calendar months of median error over updates string"
 
 summ DDAbPeErLANL_Mean2, meanonly
-local DDAbPeErLANL_Mean2str = string(r(mean),"%8.1f")
+local DDAbPeErLANL_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbPeErLANL_Mean2str
 gen DDAbPeErLANL_Mean2str = `DDAbPeErLANL_Mean2str'
 label var DDAbPeErLANL_Mean2str "DDAbPeErLANL Mean over calendar months of median error over updates string"
 
 summ DDAbPeErSRIV_Mean2, meanonly
-local DDAbPeErSRIV_Mean2str = string(r(mean),"%8.1f")
+local DDAbPeErSRIV_Mean2str = string(r(mean),"%10.0f")
 capture drop DDAbPeErSRIV_Mean2str
 gen DDAbPeErSRIV_Mean2str = `DDAbPeErSRIV_Mean2str'
 label var DDAbPeErSRIV_Mean2str "DDAbPeErSRIV Mean over calendar months of median error over updates string"
@@ -6588,7 +6601,8 @@ bar(2, fcolor(black) lcolor(black)) ///
 bar(3, fcolor(magenta) lcolor(magenta)) ///
 bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths average of Absolute Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; Forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6718,7 +6732,8 @@ bar(1, fcolor(stone) lcolor(stone)) ///
 bar(2, fcolor(sand) lcolor(sand)) ///
 bar(3, fcolor(ltblue) lcolor(ltblue)) ///
 bar(4, fcolor(ebblue) lcolor(ebblue)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average error measures") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths, models across average error measures", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6730,6 +6745,7 @@ qui graph export "graph 12 a Afghanistan ALL MODELS C19 daily deaths, models acr
 qui compress
 
 save "ALL MODELS Afghanistan error - only models across error measures.dta", replace
+
 
 
 
@@ -6827,7 +6843,8 @@ bar(2, fcolor(black) lcolor(black)) ///
 bar(3, fcolor(magenta) lcolor(magenta)) ///
 bar(4, fcolor(brown) lcolor(brown)) ///
 bar(5, fcolor(green) lcolor(green)) ///
-blabel(bar, size(vsmall) orientation(vertical)) ytitle("Average error measures") yscale(titlegap(2)) ///
+blabel(bar, size(vsmall) orientation(horizontal) format(%10.0fc)) ///
+ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) format(%10.0fc)) ///
 title("C19 daily deaths, average of error measures across models", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Afghanistan", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
@@ -6836,6 +6853,95 @@ legend(order(1 "DELP" 2 "IHME" 3 "IMPE" 4 "LANL" 5 "SRIV") size(small) row(2))
 qui graph export "graph 12 b Afghanistan ALL MODELS C19 daily deaths, error measures across models.pdf", replace
 
 
+
+
+
+* reshape wide
+
+
+drop type
+
+reshape wide DDA1 DDA2 DDA3 DDA4 DDA5, i(i) j(E, string)
+
+
+rename (DDA1E1 DDA2E1 DDA3E1 DDA4E1 DDA5E1) (DD_DELP_Errorr DD_IHME_Errorr DD_IMPE_Errorr DD_LANL_Errorr DD_SRIV_Errorr)
+
+label var DD_DELP_Errorr "Daily Deaths DELP Error mean of medians over updates and calendar months"
+label var DD_IHME_Errorr "Daily Deaths IHME Error mean of medians over updates and calendar months"
+label var DD_IMPE_Errorr "Daily Deaths IMPE Error mean of medians over updates and calendar months"
+label var DD_LANL_Errorr "Daily Deaths LANL Error mean of medians over updates and calendar months"
+label var DD_SRIV_Errorr "Daily Deaths SRIV Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E2 DDA2E2 DDA3E2 DDA4E2 DDA5E2) (DD_DELP_AbsErr DD_IHME_AbsErr DD_IMPE_AbsErr DD_LANL_AbsErr DD_SRIV_AbsErr)
+
+label var DD_DELP_AbsErr "Daily Deaths DELP Absolute Error mean of medians over updates and calendar months"
+label var DD_IHME_AbsErr "Daily Deaths IHME Absolute Error mean of medians over updates and calendar months"
+label var DD_IMPE_AbsErr "Daily Deaths IMPE Absolute Error mean of medians over updates and calendar months"
+label var DD_LANL_AbsErr "Daily Deaths LANL Absolute Error mean of medians over updates and calendar months"
+label var DD_SRIV_AbsErr "Daily Deaths SRIV Absolute Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E3 DDA2E3 DDA3E3 DDA4E3 DDA5E3) (DD_DELP_PerErr DD_IHME_PerErr DD_IMPE_PerErr DD_LANL_PerErr DD_SRIV_PerErr)
+
+label var DD_DELP_PerErr "Daily Deaths DELP Percent Error mean of medians over updates and calendar months"
+label var DD_IHME_PerErr "Daily Deaths IHME Percent Error mean of medians over updates and calendar months"
+label var DD_IMPE_PerErr "Daily Deaths IMPE Percent Error mean of medians over updates and calendar months"
+label var DD_LANL_PerErr "Daily Deaths LANL Percent Error mean of medians over updates and calendar months"
+label var DD_SRIV_PerErr "Daily Deaths SRIV Percent Error mean of medians over updates and calendar months"
+
+
+rename (DDA1E4 DDA2E4 DDA3E4 DDA4E4 DDA5E4) (DD_DELP_AbPeEr DD_IHME_AbPeEr DD_IMPE_AbPeEr DD_LANL_AbPeEr DD_SRIV_AbPeEr)
+
+label var DD_DELP_AbPeEr "Daily Deaths DELP Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_IHME_AbPeEr "Daily Deaths IHME Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_IMPE_AbPeEr "Daily Deaths IMPE Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_LANL_AbPeEr "Daily Deaths LANL Absolute Percent Error mean of medians over updates and calendar months"
+label var DD_SRIV_AbPeEr "Daily Deaths SRIV Absolute Percent Error mean of medians over updates and calendar months"
+
+
+
+
+* add UCLA and YYGU as missing
+
+gen DD_UCLA_Errorr = . 
+gen DD_UCLA_AbsErr = . 
+gen DD_UCLA_PerErr = . 
+gen DD_UCLA_AbPeEr = . 
+
+label var DD_UCLA_Errorr "Daily Deaths UCLA Error mean of medians over updates and calendar months"
+label var DD_UCLA_AbsErr "Daily Deaths UCLA Absolute Error mean of medians over updates and calendar months"
+label var DD_UCLA_PerErr "Daily Deaths UCLA Percent Error mean of medians over updates and calendar months"
+label var DD_UCLA_AbPeEr "Daily Deaths UCLA Absolute Percent Error mean of medians over updates and calendar months"
+
+
+gen DD_YYGU_Errorr = . 
+gen DD_YYGU_AbsErr = . 
+gen DD_YYGU_PerErr = . 
+gen DD_YYGU_AbPeEr = . 
+
+label var DD_YYGU_Errorr "Daily Deaths YYGU Error mean of medians over updates and calendar months"
+label var DD_YYGU_AbsErr "Daily Deaths YYGU Absolute Error mean of medians over updates and calendar months"
+label var DD_YYGU_PerErr "Daily Deaths YYGU Percent Error mean of medians over updates and calendar months"
+label var DD_YYGU_AbPeEr "Daily Deaths YYGU Absolute Percent Error mean of medians over updates and calendar months"
+
+
+order DD_UCLA_Errorr DD_UCLA_AbsErr DD_UCLA_PerErr DD_UCLA_AbPeEr ///
+      DD_YYGU_Errorr DD_YYGU_AbsErr DD_YYGU_PerErr DD_YYGU_AbPeEr, after(DD_SRIV_PerErr)
+
+
+
+
+
+drop i
+
+gen country = "Afghanistan"
+
+gen iso = "AFG"
+
+order country iso
+
+qui compress
 
 save "ALL MODELS Afghanistan error - only error measures across models.dta", replace
 

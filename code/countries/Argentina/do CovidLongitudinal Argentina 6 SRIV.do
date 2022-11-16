@@ -13,7 +13,7 @@ log using "log CovidLongitudinal Argentina 6 SRIV.smcl", replace
 * Project: Longitudinal assessment of COVID-19 models 
 
 * Objective: Run calculations for error measures
-	* for each country ---->> Argentina / ARG <<----                                                                 
+	* for each country ---->> Argentina <<----                                                                 
 ***************************************************************************
 
 
