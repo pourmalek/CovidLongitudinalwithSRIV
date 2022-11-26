@@ -34,6 +34,18 @@ graph 2-4 [COVID-19 daily deaths, Afghanistan, LANL, all updates, forecast only]
 
 ***
 
+graph 2-5 [COVID-19 daily deaths, Afghanistan, SRIV, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%202%20Afghanistan%20SRIV%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/204109546-8de69c3c-4857-4c7d-9c89-4d5641e09a77.png)
+
+***
+
+graph 2-6 [COVID-19 daily deaths, Afghanistan, all models, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%202%20Afghanistan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/204109597-d5a6020d-8a6d-4f07-8622-ea70fc6adbf2.png)
+
+***
+
 
 
 
