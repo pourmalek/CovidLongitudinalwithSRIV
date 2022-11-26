@@ -15,3 +15,9 @@ graph 2-1 [COVID-19 daily deaths, Afghanistan, DELP, all updates, forecast only]
 ![image](https://user-images.githubusercontent.com/30849720/204109278-9b6c2af2-384e-4ea9-aab0-41cd612574c7.png)
 
 ***
+
+graph 2-2 [COVID-19 daily deaths, Afghanistan, IHME, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%202%20Afghanistan%20IHME%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/204109324-65578358-8ed5-40ab-99d0-cea3b984b202.png)
+
+***
