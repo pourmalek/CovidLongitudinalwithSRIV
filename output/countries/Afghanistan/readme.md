@@ -4,6 +4,10 @@ CovidLongitudinal / output / countries / Afghanistan
 
 ***
 
+graphs 2 COVID-19 daily deaths, Afghanistan, each model, all updates, forecast only
+
+***
+
 graph 2-0 [COVID-19 daily deaths, Afghanistan, JOHN, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%202%20Afghanistan%20JOHN%20C19%20daily%20deaths%20reported.pdf)
 
 ![image](https://user-images.githubusercontent.com/30849720/204109442-5ac03719-bcad-4a6e-80e2-719e14487519.png)
