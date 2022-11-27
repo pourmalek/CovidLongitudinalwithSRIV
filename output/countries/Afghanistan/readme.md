@@ -4,7 +4,19 @@ CovidLongitudinal / output / countries / Afghanistan
 
 ***
 
-graphs 2 COVID-19 daily deaths, Afghanistan, each model, all updates, forecast only
+graphs 2 COVID-19 daily deaths, Afghanistan, each model and JOHN, all updates, forecast only
+
+graphs 3 COVID-19 daily deaths, ERROR, Afghanistan, each model, all updates, forecast only
+
+graphs 4 COVID-19 daily deaths, ABSOLUTE ERROR, Afghanistan, each model, all updates, forecast only
+
+graphs 5 COVID-19 daily deaths, PERCENT ERROR, Afghanistan, each model, all updates, forecast only
+
+graphs 6 COVID-19 daily deaths, ABSOLUTE PERCENT ERROR, Afghanistan, each model, all updates, forecast only
+
+graphs 7 COVID-19 daily deaths, _average median_ ERROR, Afghanistan, each model, all updates, forecast only
+
+
 
 ***
 
@@ -50,7 +62,7 @@ graph 2-6 [COVID-19 daily deaths, Afghanistan, all models, all updates, forecast
 
 ***
 
-graphs 3 COVID-19 daily deaths, ERROR, Afghanistan, each model, all updates, forecast only
+
 
 ***
 
