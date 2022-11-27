@@ -56,7 +56,19 @@ graphs 3 COVID-19 daily deaths, ERROR, Afghanistan, each model, all updates, for
 
 graph 3-1 [COVID-19 daily deaths, ERROR, Afghanistan, DELP, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20DELP%20C19%20daily%20deaths%20error.pdf)
 
-https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20DELP%20C19%20daily%20deaths%20error.pdf
+![image](https://user-images.githubusercontent.com/30849720/204113504-50d2982b-2e58-41cb-85a3-e4cd13478f0e.png)
+
+***
+
+graph 3-2 [COVID-19 daily deaths, ERROR, Afghanistan, IHME, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20IHME%20C19%20daily%20deaths%20error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/204113544-fc67e6fe-09e6-4860-ac57-e72fcd4167ca.png)
+
+***
+
+graph 3-2 [COVID-19 daily deaths, ERROR, Afghanistan, IMPE, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20IMPE%20C19%20daily%20deaths%20error.pdf)
+
+![image](https://user-images.githubusercontent.com/30849720/204113769-5830a4a8-484d-4f4c-a2ed-6a9026c78686.png)
 
 ***
 
