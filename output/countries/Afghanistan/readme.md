@@ -50,7 +50,15 @@ graph 2-6 [COVID-19 daily deaths, Afghanistan, all models, all updates, forecast
 
 ***
 
+graphs 3 COVID-19 daily deaths, ERROR, Afghanistan, each model, all updates, forecast only
 
+***
+
+graph 3-1 [COVID-19 daily deaths, ERROR, Afghanistan, DELP, all updates, forecast only](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20DELP%20C19%20daily%20deaths%20error.pdf)
+
+https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Afghanistan/graph%203%20Afghanistan%20DELP%20C19%20daily%20deaths%20error.pdf
+
+***
 
 
 
