@@ -1,0 +1,68 @@
+
+clear all
+
+cd "$pathCovidLongitudinal/countries/Belgium"
+
+
+
+
+***************************************************************************
+* This is "do CovidLongitudinal Belgium.do"
+
+* Project: Longitudinal assessment of COVID-19 models 
+
+* Objective: Process the reported deaths by JOHN and 
+	* the estimates by models (DELP, IHME, IMPE, LANL, SRIV, UCLA, YYGU)
+	* and calculate the error measures
+	* for each country ---->> Belgium <<----                                                                 
+***************************************************************************
+
+
+* This do file runs the "do CovidLongitudinal Belgium ?.do" files
+
+
+do "do CovidLongitudinal Belgium 1 Process.do"
+* Process the reported deaths by JOHN and the estimates by models (DELP, IHME, IMPE, LANL, SRIV, UCLA, YYGU)
+
+
+do "do CovidLongitudinal Belgium 2 DELP.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = DELP **
+
+
+do "do CovidLongitudinal Belgium 3 IHME.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = IHME **
+
+
+do "do CovidLongitudinal Belgium 4 IMPE.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = IMPE **
+
+
+do "do CovidLongitudinal Belgium 5 LANL.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = LANL **
+
+
+do "do CovidLongitudinal Belgium 6 SRIV.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = SRIV **
+
+/* Belgium not included in UCLA
+do "do CovidLongitudinal Belgium 7 UCLA.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = UCLA **/ 
+
+
+do "do CovidLongitudinal Belgium 8 YYGU.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** model = YYGU **
+
+
+do "do CovidLongitudinal Belgium 9 Merge.do"
+* run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+** Merge models 
+
+
+
