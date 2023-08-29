@@ -230,6 +230,8 @@ gen update_date`update' = date("`update'", "YMD")
 
 rename DayDeaMeRaUCLA DayDeaMeRaUCLA`update'
 
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+
 qui compress 
 
 save "CovidLongitudinal UCLA `update'.dta", replace
@@ -309,6 +311,8 @@ gen update_date`update' = date("`update'", "YMD")
 
 rename DayDeaMeRaUCLA DayDeaMeRaUCLA`update'
 
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+
 qui compress 
 
 save "CovidLongitudinal UCLA `update'.dta", replace
@@ -329,6 +333,12 @@ graph export "DayDeaMeRaUCLA USA `update'.pdf", replace */
 
 
 
+
+**********************************************
+**********************************************
+
+**********************************************
+**********************************************
 
 * gen list of countries and update dates
 
@@ -531,7 +541,8 @@ rename country loc_grand_name
 *
 
 
-
+**********************************************
+**********************************************
 * country names to loc_grand_name
 
 replace loc_grand_name = "United States of America" if loc_grand_name == "US" 

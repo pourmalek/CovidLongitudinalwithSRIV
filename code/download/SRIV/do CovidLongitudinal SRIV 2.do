@@ -57,14 +57,14 @@ clear
 	
 set obs 1
 		
-local list `" "2021-01-02" "2021-08-12" "2021-10-18" "2021-10-19" "2021-10-20" "2021-10-21" "2021-10-22" "2021-10-23" "2021-11-13" "2021-11-23" "2021-12-06" "2022-04-12" "2022-05-23" "2022-05-24" "2022-05-25" "2022-05-26" "2022-05-27" "2022-05-28" "2022-05-29" "2022-05-30" "2022-05-31" "2022-06-01" "2022-07-29" "2022-07-30" "2022-07-31" "2022-08-01" "2022-08-02" "2022-08-03" "2022-08-04" "2022-08-05" "2022-08-06" "2022-08-07" "2022-08-08" "2022-08-09" "2022-08-10" "2022-08-11" "2022-08-12" "2022-09-12" "2022-09-15" "'
-
+local list `" "2021-01-02" "2021-08-12" "2021-10-18" "2021-10-19" "2021-10-20" "2021-10-21" "2021-10-22" "2021-10-23" "2021-11-13" "2021-11-23" "2021-12-06" "2022-04-12" "2022-05-23" "2022-05-24" "2022-05-25" "2022-05-26" "2022-05-27" "2022-05-28" "2022-05-29" "2022-05-30" "2022-05-31" "2022-06-01" "2022-07-29" "2022-07-30" "2022-07-31" "2022-08-01" "2022-08-02" "2022-08-03" "2022-08-04" "2022-08-05" "2022-08-06" "2022-08-07" "2022-08-08" "2022-08-09" "2022-08-10" "2022-08-11" "2022-08-12" "2022-09-12" "2022-09-15" "2022-11-16" "'	
+	
 	
 foreach update of local list {	
 	
 	capture shell rm -r "us_forecasts_deaths.csv"
 	
-	di in red "This is SRIV update " "`update'"
+	di in red "This is SRIV USA-only update " "`update'"
 	
 	* transfrom update (2020-05-02) to updatestring (20200502)
 	
@@ -88,7 +88,8 @@ foreach update of local list {
 	copy https://raw.githubusercontent.com/scc-usc/ReCOVER-COVID-19/master/results/historical_forecasts/`update'/us_forecasts_deaths.csv us_forecasts_deaths.csv 
 			
 	import delimited "us_forecasts_deaths.csv", clear varnames(1) 
-		
+	
+	
 	qui destring *, replace
 	
 	* destring for Total Deaths that contain NaN instead of numbers
@@ -145,50 +146,18 @@ foreach update of local list {
 	format update_date %tdDDMonCCYY
 	codebook update_date
 	
-	
-	* gen sum for national level
-	
-	local update = update
 
-	sort date country
+	replace country = "United States of America" if country == "United States" 
+	replace country = "United States of America" if country == "US" 
 	
-	collapse (sum) TotDeaMeRaSRIV`update', by(date)
-	
-	
-	* gen daily deaths
-	
-	sort date 
-	
-	gen DayDeaMeRaSRIV`update' =  TotDeaMeRaSRIV`update'[_n] - TotDeaMeRaSRIV`update'[_n-1]
-	
-	drop TotDeaMeRaSRIV`update'
-	
-	
-	* smooth
-	
-	tsset date, daily   
-	
-	qui {
-		tssmooth ma DayDeaMeRaSRIV`update'_window = DayDeaMeRaSRIV`update' if DayDeaMeRaSRIV`update' >= 0, window(3 1 3) 
-		
-		tssmooth ma DayDeaMeSmSRIV`update' = DayDeaMeRaSRIV`update'_window, weights( 1 2 3 <4> 3 2 1) replace
-		
-		label var DayDeaMeSmSRIV`update' "Daily deaths smooth mean SRIV"
-		
-		drop DayDeaMeRaSRIV`update'_window DayDeaMeRaSRIV`update'
-		
-	}	
-	*	
-	
-
-	gen country = "United States"
 	
 	qui compress
 	
 	save "SRIV `updatestring'.dta", replace
 	 
-	shell rm -r "us_forecasts_deaths.csv" 
+	shell rm -r "global_forecasts_deaths.csv" 
 
+		
 }
 *
 
@@ -200,6 +169,13 @@ foreach update of local list {
 
 
 
+
+
+**********************************************
+**********************************************
+
+**********************************************
+**********************************************
 
 * gen list of countries and update dates
 
@@ -1056,9 +1032,55 @@ local list ///
 20221030 ///
 20221031 ///
 20221101 ///
-20221102
-
-
+20221102 ///
+20221114 ///
+20221115 ///
+20221116 ///
+20221117 /// 
+20221118 /// 
+20221119 /// 
+20221120 /// 
+20221121 /// 
+20221122 /// 
+20221123 ///
+20221124 /// 
+20221125 /// 
+20221126 /// 
+20221127 /// 
+20221128 /// 
+20221129 /// 
+20221130 /// 
+20221201 /// 
+20221202 ///
+20221203 /// 
+20221204 /// 
+20221205 ///
+20221206 ///
+20221207 ///
+20221208 ///
+20221209 ///
+20221210 ///
+20221211 ///
+20221212 ///
+20221213 ///
+20221214 ///
+20221215 ///
+20221216 ///
+20221217 ///
+20221218 ///
+20221219 ///
+20221220 ///
+20221221 ///
+20221222 ///
+20221223 ///
+20221224 ///
+20221225 ///
+20221226 ///
+20221227 ///
+20221228 ///
+20221229 ///
+20221230 ///
+20221231
 
 
 foreach update of local list {
@@ -1220,7 +1242,8 @@ rename country loc_grand_name
 *
 
 
-
+**********************************************
+**********************************************
 * country names to loc_grand_name
 
 replace loc_grand_name = "Bahamas" if loc_grand_name == "The Bahamas" 
@@ -1239,6 +1262,10 @@ replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
 
                                            
 	
+isid loc_grand_name update_date_block, sort
+
+duplicates drop loc_grand_name update_date_block, force
+
 isid loc_grand_name update_date_block, sort
                                            
 

@@ -3,6 +3,7 @@ clear all
 
 cd "$pathCovidLongitudinal/download/JOHN"
 
+
 capture log close 
 
 log using "log CovidLongitudinal JOHN.smcl", replace
@@ -106,25 +107,23 @@ replace DayDeaMeRaJOHN = 17 if date == td(22jan2020) & loc_grand_name == "China"
 
 
 
+**********************************************
+**********************************************
 * change JOHN country names to loc_grand_name country names
 
 replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
-replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
 replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
 replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
 replace loc_grand_name = "Korea North" if loc_grand_name == "Korea, North"
-
 replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
 replace loc_grand_name = "Myanmar" if loc_grand_name == "Burma"
 replace loc_grand_name = "Palestine" if loc_grand_name == "West Bank and Gaza"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
 replace loc_grand_name = "Taiwan" if loc_grand_name == "Taiwan*"
 replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
-
 replace loc_grand_name = "United States of America" if loc_grand_name == "US"
 replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
-
-
-
 
 
 * drop non-countries
@@ -182,21 +181,6 @@ qui tsset loc_grand_name_encoded date, daily
 		drop *_window
 		
 		qui label var DayDeaMeSmJOHN`iso'`update' "Daily deaths smooth mean JOHN `iso'" 
-		
-		***************************
-
-		/*
-		Smoothed daily deaths with very small values lead to unduly inflated 
-		Percent Error and Absolute Percent Error. 
-		To remedy this problem, smoothed daily deaths with values > 0 and < 0.05 
-		are replace with 0.05.
-		Similarly, non-missing smoothed daily deaths with values of zero
-		are replaced with 0.01.
-		*/
-
-		replace DayDeaMeSmJOHN`iso' = 0.05 if DayDeaMeSmJOHN`iso' > 0 & DayDeaMeSmJOHN`iso' < 0.05
-
-		replace DayDeaMeSmJOHN`iso' = 0.01 if DayDeaMeSmJOHN`iso' == 0
 		
 }
 *
@@ -268,6 +252,218 @@ preserve
     export delimited name varlab using "CovidLongitudinal JOHN data dictionary.csv", replace 
 	
 restore
+
+
+
+
+* graph all countries JOHN daily deaths
+
+twoway ///
+(line DayDeaMeSmJOHNAFG date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNALB date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNDZA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNAND date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNAGO date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNATG date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNARG date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNARM date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNAUS date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNAUT date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNAZE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNBHS date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNBHR date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNBGD date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNBRB date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNBLR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNBEL date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNBLZ date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNBEN date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNBTN date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNBOL date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNBIH date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNBWA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNBRA date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNBRN date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNBGR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNBFA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNBDI date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNKHM date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNCMR date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCAN date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNCPV date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCAF date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNTCD date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCHL date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNCHN date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNCOL date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNCOM date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCOG date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCOD date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNCRI date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNCIV date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNHRV date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNCUB date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNCYP date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNCZE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNDNK date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNDJI date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNDMA date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNDOM date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNECU date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNEGY date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNSLV date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNGNQ date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNERI date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNEST date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSWZ date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNETH date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNFJI date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNFIN date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNFRA date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNGAB date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNGMB date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNGEO date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNDEU date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNGHA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNGRC date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNGRD date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNGTM date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNGIN date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNGNB date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNGUY date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNHTI date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNVAT date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNHND date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNHUN date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNISL date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNIND date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNIDN date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNIRN date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNIRQ date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNIRL date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNISR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNITA date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNJAM date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNJPN date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNJOR date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNKAZ date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNKEN date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNKIR date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNPRK date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNKOR date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNKOS date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNKWT date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNKGZ date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNLAO date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNLVA date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNLBN date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNLSO date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNLBR date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNLBY date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNLIE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNLTU date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNLUX date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNMDG date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMWI date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMYS date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNMDV date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNMLI date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMLT date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNMRT date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMUS date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMEX date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNFSM date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNMDA date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNMCO date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNMNG date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNMNE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNMAR date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNMOZ date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMMR date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNNAM date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNNPL date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNNLD date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNNZL date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNNIC date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNNER date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNNGA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNMKD date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNNOR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNOMN date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNPAK date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNPSE date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNPAN date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNPNG date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNPRY date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNPER date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNPHL date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNPOL date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNPRT date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNQAT date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNROU date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNRUS date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNRWA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNKNA date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNLCA date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNVCT date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNWSM date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNSMR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSTP date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNSAU date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNSEN date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNSRB date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSYC date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNSLE date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNSGP date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNSVK date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSVN date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSLB date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNSOM date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNZAF date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNSSD date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNESP date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNLKA date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNSDN date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNSUR date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNSWE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNCHE date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNSYR date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNTJK date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNTWN date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNTZA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNTHA date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNTLS date, sort lwidth(thin) lcolor(cyan)) ///
+(line DayDeaMeSmJOHNTGO date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNTON date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNTTO date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNTUN date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNTUR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNUGA date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNUKR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNARE date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNGBR date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNUSA date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNURY date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNUZB date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNVUT date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNVEN date, sort lwidth(thin) lcolor(red)) ///
+(line DayDeaMeSmJOHNVNM date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeSmJOHNYEM date, sort lwidth(thin) lcolor(gold)) ///
+(line DayDeaMeSmJOHNZMB date, sort lwidth(thin) lcolor(brown)) ///
+(line DayDeaMeSmJOHNZWE date, sort lwidth(thin) lcolor(brown)) ///
+if date >= td(01jan2020) & date <= td(01jan2023) ///
+, xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+ytitle(Daily deaths) title("C19 daily deaths, all countries, JOHN", size(medium) color(black)) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+legend(position(6) order(3 "AFR countries" 6 "AMR countries" 1 "EMR countries" ///
+ 2 "EUR countries" 14 "SEAR countries" 9 "WPR countries") ///
+rows(2) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
+
+qui graph export "graph 03 all countries JOHN C19 daily deaths reported.pdf", replace
+
+
+
 
 
 

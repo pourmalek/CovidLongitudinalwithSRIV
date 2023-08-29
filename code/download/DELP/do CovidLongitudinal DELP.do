@@ -799,6 +799,16 @@ sort loc_grand_name provincestate update_date`update' date
 
 order date loc_grand_name provincestate update_date`update'
 
+* country names to loc_grand_name
+
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
 qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
@@ -884,7 +894,7 @@ label var date "calendar date"
 
 drop year month day date2
 
-*
+* 
 
 rename totaldetecteddeaths TotDeaMeRaDELP
 
@@ -910,6 +920,16 @@ rename (date`update' loc_grand_name`update' provincestate`update') (date loc_gra
 sort loc_grand_name provincestate update_date`update' date
 
 order date loc_grand_name provincestate update_date`update'
+
+* country names to loc_grand_name
+
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
 
 qui compress
 
@@ -994,7 +1014,7 @@ label var date "calendar date"
 
 drop year month day date2
 
-*
+* 
 
 rename totaldetecteddeaths TotDeaMeRaDELP
 
@@ -1020,6 +1040,16 @@ rename (date`update' loc_grand_name`update' provincestate`update') (date loc_gra
 sort loc_grand_name provincestate update_date`update' date
 
 order date loc_grand_name provincestate update_date`update'
+
+* country names to loc_grand_name
+
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
 
 qui compress
 
@@ -1388,7 +1418,7 @@ label var date "calendar date"
 
 drop year month day date2
 
-*
+* 
 
 rename totaldetecteddeaths TotDeaMeRaDELP
 
@@ -1415,6 +1445,16 @@ sort loc_grand_name provincestate update_date`update' date
 
 order date loc_grand_name provincestate update_date`update'
 
+* country names to loc_grand_name
+
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
 qui compress
 
 save "CovidLongitudinal DELP `update'.dta", replace
@@ -1429,7 +1469,19 @@ shell rm -r "Global_V4_since100_`update'.csv"
 
 
 
-**************************************************
+
+
+
+
+
+
+
+**********************************************
+**********************************************
+
+**********************************************
+**********************************************
+
 * gen list of countries and update dates
 
 
@@ -1909,7 +1961,8 @@ rename country loc_grand_name
 *
 
 
-
+**********************************************
+**********************************************
 * country names to loc_grand_name
 
 replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"               

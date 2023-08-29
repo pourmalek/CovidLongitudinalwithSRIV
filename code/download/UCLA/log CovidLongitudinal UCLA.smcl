@@ -1,0 +1,2256 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA/log CovidLongitudinal UCLA.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}28 Aug 2023, 06:01:25
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal UCLA.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models 
+. 
+. * Objective: Download estimates files for UCLA model                                                                   
+. ***************************************************************************
+. 
+. 
+. * download and prepare update files
+. * input data files: download csv files
+. * output data files: "CovidLongitudinal UCLA 202?????.dta" 
+. *                    "UCLA countries.dta"
+. *                    "UCLA countries long.dta"
+. 
+. 
+. 
+. 
+. * (1) all countries (some countries of the world): "pred_world_`update'.csv"
+. * (2) USA only
+. 
+. 
+. /*
+> 
+> UCLA updates:
+> 
+> ** (1) all countries (some countries of the world), file name format: pred_world_01-03.csv
+> 
+> pred_world_01-03.csv
+> pred_world_01-10.csv
+> pred_world_02-06.csv
+> pred_world_03-07.csv
+> pred_world_03-15.csv
+> pred_world_03-28.csv
+> pred_world_04-04.csv
+> pred_world_07-12.csv
+> pred_world_07-19.csv
+> pred_world_07-26.csv
+> pred_world_08-02.csv
+> pred_world_08-09.csv
+> pred_world_08-16.csv
+> pred_world_08-23.csv
+> pred_world_08-30.csv
+> pred_world_09-06.csv
+> pred_world_09-13.csv
+> pred_world_09-20.csv
+> pred_world_09-27.csv
+> pred_world_10-04.csv
+> pred_world_10-11.csv
+> pred_world_10-18.csv
+> pred_world_10-25.csv
+> pred_world_11-01.csv
+> pred_world_11-08.csv
+> pred_world_11-22.csv
+> pred_world_11-29.csv
+> pred_world_12-06.csv
+> pred_world_12-13.csv
+> pred_world_12-20.csv
+> 
+> 
+> * misnomer:
+> * pred_world_11-15.csv          is not world [countries], it is USA states
+> * pred_world-05-01-210.csv      is not world [countries], it is USA [national]
+> * pred_world-05-08.csv          is not world [countries], it is USA [national]
+> * pred_world-4-24.csv           is not world [countries], it is USA [national]
+> * pred_world_07-12.zip          contains pred_world_new.csv, the file pred_world_07-12.csv used instead 
+> 
+> 
+> 
+> 
+> ** (2) USA, appearing in world and state files (order of convention for use here)
+> 
+> world                                   ||      state                                   ||      used here                                       ||      Not usable (do not contain pre_fata_daily:)
+> 
+> pred_world_01-03.csv    ||      pred_state_01-03.csv    ||      pred_world_01-03.csv            ||      
+> pred_world_01-10.csv    ||      pred_state_01-10.csv    ||      pred_world_01-10.csv            ||      
+> pred_world_02-06.csv    ||      pred_state_02-06.csv    ||      pred_world_02-06.csv            ||      
+>                                                 ||      pred_state_02-28.csv    ||      pred_state_02-28.csv            ||      
+> pred_world_03-07.csv    ||                                                      ||      pred_world_03-07.csv            ||      
+> pred_world_03-15.csv    ||                                                      ||      pred_world_03-15.csv            ||      
+> pred_world_03-28.csv    ||      pred_state_03-28.csv    ||      pred_world_03-28.csv            ||      
+> pred_world_04-04.csv    ||      pred_state_04-04.csv    ||      pred_world_04-04.csv            ||      
+>                                                 ||      pred_state_04-24.csv    ||                                                              ||      pred_state_04-24.csv
+>                                                 ||      pred_state_05-01.csv    ||                                                              ||      pred_state_05-01.csv
+>                                                 ||      pred_state_05-07.csv    ||                                                              ||      pred_state_05-07.csv
+>                                                 ||      pred_state_05-13.csv    ||                                                              ||      pred_state_05-13.csv
+>                                                 ||      pred_state_05-14.csv    ||                                                              ||      pred_state_05-14.csv
+>                                                 ||      pred_state_05-21.csv    ||                                                              ||      pred_state_05-21.csv
+>                                                 ||      pred_state_06-06.csv    ||      pred_state_06-06.csv            ||      
+>                                                 ||      pred_state_06-14.csv    ||      pred_state_06-14.csv            ||      
+>                                                 ||      pred_state_06-21.csv    ||      pred_state_06-21.csv            ||      
+>                                                 ||  pred_state_06-27.csv        ||      pred_state_06-27.csv            ||      
+>                                                 ||      pred_state_06-30.csv    ||      pred_state_06-30.csv            ||      
+>                                                 ||      pred_state_07-06.csv    ||      pred_state_07-06.csv            ||      
+> pred_world_07-12.csv    ||      pred_state_07-12.csv    ||      pred_world_07-12.csv            ||      
+> pred_world_07-19.csv    ||      pred_state_07-19.csv    ||      pred_world_07-19.csv            ||      
+> pred_world_07-26.csv    ||      pred_state_07-26.csv    ||      pred_world_07-26.csv            ||      
+> pred_world_08-02.csv    ||      pred_state_08-02.csv    ||      pred_world_08-02.csv            ||      
+> pred_world_08-09.csv    ||      pred_state_08-09.csv    ||      pred_world_08-09.csv            ||      
+> pred_world_08-16.csv    ||      pred_state_08-16.csv    ||      pred_world_08-16.csv            ||      
+> pred_world_08-23.csv    ||      pred_state_08-23.csv    ||      pred_world_08-23.csv            ||      
+> pred_world_08-30.csv    ||      pred_state_08-30.csv    ||      pred_world_08-30.csv            ||      
+> pred_world_09-06.csv    ||      pred_state_09-06.csv    ||      pred_world_09-06.csv            ||      
+> pred_world_09-13.csv    ||      pred_state_09-13.csv    ||      pred_world_09-13.csv            ||      
+> pred_world_09-20.csv    ||      pred_state_09-20.csv    ||      pred_world_09-20.csv            ||      
+> pred_world_09-27.csv    ||      pred_state_09-27.csv    ||      pred_world_09-27.csv            ||      
+> pred_world_10-04.csv    ||      pred_state_10-04.csv    ||      pred_world_10-04.csv            ||      
+> pred_world_10-11.csv    ||      pred_state_10-11.csv    ||      pred_world_10-11.csv            ||      
+> pred_world_10-18.csv    ||      pred_state_10-18.csv    ||      pred_world_10-18.csv            ||      
+> pred_world_10-25.csv    ||      pred_state_10-25.csv    ||      pred_world_10-25.csv            ||      
+> pred_world_11-01.csv    ||      pred_state_11-01.csv    ||      pred_world_11-01.csv            ||      
+> pred_world_11-08.csv    ||      pred_state_11-08.csv    ||      pred_world_11-08.csv            ||      
+>                                                 ||      pred_state_11-15.csv    ||      pred_state_11-15.csv            ||      
+> pred_world_11-22.csv    ||      pred_state_11-22.csv    ||      pred_world_11-22.csv            ||      
+> pred_world_11-29.csv    ||      pred_state_11-29.csv    ||      pred_world_11-29.csv            ||      
+> pred_world_12-06.csv    ||      pred_state_12-06.csv    ||      pred_world_12-06.csv            ||      
+> pred_world_12-13.csv    ||      pred_state_12-13.csv    ||      pred_world_12-13.csv            ||      
+> pred_world_12-20.csv    ||      pred_state_12-20.csv    ||      pred_world_12-20.csv            ||      
+> 
+> 
+> */
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. * (2) USA only = updates with USA estimates in "pred_state_??-?.csv"
+. 
+. 
+. 
+. /* "pred_state_??-?.csv"
+> 
+> pred_state_02-28.csv
+> pred_state_06-06.csv
+> pred_state_06-14.csv
+> pred_state_06-21.csv
+> pred_state_06-27.csv
+> pred_state_06-30.csv
+> pred_state_07-06.csv
+> pred_state_11-15.csv
+> 
+> * do not contain pre_fata_daily:
+> pred_state_04-24.csv 
+> pred_state_05-01.csv
+> pred_state_05-07.csv
+> pred_state_05-13.csv
+> pred_state_05-14.csv
+> pred_state_05-21.csv
+> 
+> */
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. * (1) all countries (some countries of the world): "pred_world_`update'.csv"
+. 
+. local list `" "01-03" "01-10" "02-06" "03-07" "03-15" "03-28" "04-04" "07-12" "07-19" "07-26" "08-02" "08-09" "08-16" "08-23" "08-30" "09-06" "09-13" "09-20" "09-27" "10-04" "10-11" "10-18" "10-25" "11-01" "11-08" "11-22" "11-29" "12-06" "12-13" "12-20" "'
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+. di in red "This is UCLA update 2021-" "`update'"
+{txt}  3{com}. 
+. capture shell rm -r  "pred_world_`update'.csv"
+{txt}  4{com}. 
+. clear
+{txt}  5{com}. 
+. copy https://raw.githubusercontent.com/uclaml/ucla-covid19-forecasts/master/projection_result/pred_world_`update'.csv pred_world_`update'.csv
+{txt}  6{com}. 
+. import delimited using "pred_world_`update'.csv", clear varnames(1)
+{txt}  7{com}. 
+. rename date date_original
+{txt}  8{com}. gen year = substr(date_original,1,4) 
+{txt}  9{com}. gen month = substr(date_original,6,2) 
+{txt} 10{com}. gen day = substr(date_original,9,2) 
+{txt} 11{com}. egen date2 = concat(day month year)
+{txt} 12{com}. gen date = date(date2, "DMY", 2050)
+{txt} 13{com}. format date %tdDDMonCCYY
+{txt} 14{com}. codebook date
+{txt} 15{com}. drop year month day date2
+{txt} 16{com}. 
+. keep date region pre_fata_daily
+{txt} 17{com}. 
+. rename pre_fata_daily DayDeaMeRaUCLA
+{txt} 18{com}. 
+. rename region loc_grand_name
+{txt} 19{com}. 
+. label var loc_grand_name loc_grand_name
+{txt} 20{com}. 
+. label var DayDeaMeRaUCLA "Daily Deaths Mean UCLA"
+{txt} 21{com}. 
+. gen update = "`update'"
+{txt} 22{com}. 
+. replace update = subinstr(update, "-", "",.)
+{txt} 23{com}. 
+. gen year2021 = "2021"
+{txt} 24{com}. 
+. gen updatenew = year2021 + update
+{txt} 25{com}. 
+. drop update
+{txt} 26{com}. 
+. rename updatenew update
+{txt} 27{com}. 
+. destring update, replace
+{txt} 28{com}. 
+. format update %8.0f
+{txt} 29{com}. 
+. local update = update
+{txt} 30{com}. 
+. gen update_date`update' = date("`update'", "YMD")
+{txt} 31{com}. 
+. rename DayDeaMeRaUCLA DayDeaMeRaUCLA`update'
+{txt} 32{com}. 
+. replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+{txt} 33{com}. 
+. qui compress 
+{txt} 34{com}. 
+. save "CovidLongitudinal UCLA `update'.dta", replace
+{txt} 35{com}. 
+. /* line DayDeaMeRaUCLA`update' date if loc_grand_name == "US"
+> 
+> graph export "DayDeaMeRaUCLA USA `update'.pdf", replace */
+. 
+. {c )-}
+{err}This is UCLA update 2021-01-03
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22283{txt},{res}22382{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}03jan2021{txt},{res}12apr2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22332.5}{txt} = {res}21feb2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22292.5}{ralign 11: 22307.5}{ralign 11: 22332.5}{ralign 11: 22357.5}{ralign 11: 22372.5}
+{col 25}{ralign 9:12jan2021}{ralign 11:27jan2021}{ralign 11:21feb2021}{ralign 11:18mar2021}{ralign 11:02apr2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210103.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-01-10
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22290{txt},{res}22389{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}10jan2021{txt},{res}19apr2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22339.5}{txt} = {res}28feb2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22299.5}{ralign 11: 22314.5}{ralign 11: 22339.5}{ralign 11: 22364.5}{ralign 11: 22379.5}
+{col 25}{ralign 9:19jan2021}{ralign 11:03feb2021}{ralign 11:28feb2021}{ralign 11:25mar2021}{ralign 11:09apr2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210110.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-02-06
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22317{txt},{res}22416{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06feb2021{txt},{res}16may2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22366.5}{txt} = {res}27mar2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22326.5}{ralign 11: 22341.5}{ralign 11: 22366.5}{ralign 11: 22391.5}{ralign 11: 22406.5}
+{col 25}{ralign 9:15feb2021}{ralign 11:02mar2021}{ralign 11:27mar2021}{ralign 11:21apr2021}{ralign 11:06may2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210206.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-03-07
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22346{txt},{res}22445{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}07mar2021{txt},{res}14jun2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22395.5}{txt} = {res}25apr2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22355.5}{ralign 11: 22370.5}{ralign 11: 22395.5}{ralign 11: 22420.5}{ralign 11: 22435.5}
+{col 25}{ralign 9:16mar2021}{ralign 11:31mar2021}{ralign 11:25apr2021}{ralign 11:20may2021}{ralign 11:04jun2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210307.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-03-15
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22354{txt},{res}22453{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}15mar2021{txt},{res}22jun2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22403.5}{txt} = {res}03may2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22363.5}{ralign 11: 22378.5}{ralign 11: 22403.5}{ralign 11: 22428.5}{ralign 11: 22443.5}
+{col 25}{ralign 9:24mar2021}{ralign 11:08apr2021}{ralign 11:03may2021}{ralign 11:28may2021}{ralign 11:12jun2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210315.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-03-28
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22367{txt},{res}22466{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}28mar2021{txt},{res}05jul2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22416.5}{txt} = {res}16may2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22376.5}{ralign 11: 22391.5}{ralign 11: 22416.5}{ralign 11: 22441.5}{ralign 11: 22456.5}
+{col 25}{ralign 9:06apr2021}{ralign 11:21apr2021}{ralign 11:16may2021}{ralign 11:10jun2021}{ralign 11:25jun2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210328.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-04-04
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22374{txt},{res}22473{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}04apr2021{txt},{res}12jul2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22423.5}{txt} = {res}23may2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22383.5}{ralign 11: 22398.5}{ralign 11: 22423.5}{ralign 11: 22448.5}{ralign 11: 22463.5}
+{col 25}{ralign 9:13apr2021}{ralign 11:28apr2021}{ralign 11:23may2021}{ralign 11:17jun2021}{ralign 11:02jul2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210404.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-07-12
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22108{txt},{res}22207{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}12jul2020{txt},{res}19oct2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22157.5}{txt} = {res}30aug2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22117.5}{ralign 11: 22132.5}{ralign 11: 22157.5}{ralign 11: 22182.5}{ralign 11: 22197.5}
+{col 25}{ralign 9:21jul2020}{ralign 11:05aug2020}{ralign 11:30aug2020}{ralign 11:24sep2020}{ralign 11:09oct2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210712.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-07-19
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22115{txt},{res}22214{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}19jul2020{txt},{res}26oct2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22164.5}{txt} = {res}06sep2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22124.5}{ralign 11: 22139.5}{ralign 11: 22164.5}{ralign 11: 22189.5}{ralign 11: 22204.5}
+{col 25}{ralign 9:28jul2020}{ralign 11:12aug2020}{ralign 11:06sep2020}{ralign 11:01oct2020}{ralign 11:16oct2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210719.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-07-26
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22122{txt},{res}22221{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}26jul2020{txt},{res}02nov2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22171.5}{txt} = {res}13sep2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22131.5}{ralign 11: 22146.5}{ralign 11: 22171.5}{ralign 11: 22196.5}{ralign 11: 22211.5}
+{col 25}{ralign 9:04aug2020}{ralign 11:19aug2020}{ralign 11:13sep2020}{ralign 11:08oct2020}{ralign 11:23oct2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210726.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-08-02
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22129{txt},{res}22228{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}02aug2020{txt},{res}09nov2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22178.5}{txt} = {res}20sep2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22138.5}{ralign 11: 22153.5}{ralign 11: 22178.5}{ralign 11: 22203.5}{ralign 11: 22218.5}
+{col 25}{ralign 9:11aug2020}{ralign 11:26aug2020}{ralign 11:20sep2020}{ralign 11:15oct2020}{ralign 11:30oct2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210802.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-08-09
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22136{txt},{res}22235{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}09aug2020{txt},{res}16nov2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22185.5}{txt} = {res}27sep2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22145.5}{ralign 11: 22160.5}{ralign 11: 22185.5}{ralign 11: 22210.5}{ralign 11: 22225.5}
+{col 25}{ralign 9:18aug2020}{ralign 11:02sep2020}{ralign 11:27sep2020}{ralign 11:22oct2020}{ralign 11:06nov2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210809.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-08-16
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22143{txt},{res}22242{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}16aug2020{txt},{res}23nov2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22192.5}{txt} = {res}04oct2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22152.5}{ralign 11: 22167.5}{ralign 11: 22192.5}{ralign 11: 22217.5}{ralign 11: 22232.5}
+{col 25}{ralign 9:25aug2020}{ralign 11:09sep2020}{ralign 11:04oct2020}{ralign 11:29oct2020}{ralign 11:13nov2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210816.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-08-23
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22150{txt},{res}22249{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}23aug2020{txt},{res}30nov2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22199.5}{txt} = {res}11oct2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22159.5}{ralign 11: 22174.5}{ralign 11: 22199.5}{ralign 11: 22224.5}{ralign 11: 22239.5}
+{col 25}{ralign 9:01sep2020}{ralign 11:16sep2020}{ralign 11:11oct2020}{ralign 11:05nov2020}{ralign 11:20nov2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210823.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-08-30
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22157{txt},{res}22256{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}30aug2020{txt},{res}07dec2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22206.5}{txt} = {res}18oct2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22166.5}{ralign 11: 22181.5}{ralign 11: 22206.5}{ralign 11: 22231.5}{ralign 11: 22246.5}
+{col 25}{ralign 9:08sep2020}{ralign 11:23sep2020}{ralign 11:18oct2020}{ralign 11:12nov2020}{ralign 11:27nov2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210830.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-09-06
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22164{txt},{res}22263{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06sep2020{txt},{res}14dec2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22213.5}{txt} = {res}25oct2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22173.5}{ralign 11: 22188.5}{ralign 11: 22213.5}{ralign 11: 22238.5}{ralign 11: 22253.5}
+{col 25}{ralign 9:15sep2020}{ralign 11:30sep2020}{ralign 11:25oct2020}{ralign 11:19nov2020}{ralign 11:04dec2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210906.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-09-13
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22171{txt},{res}22270{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}13sep2020{txt},{res}21dec2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22220.5}{txt} = {res}01nov2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22180.5}{ralign 11: 22195.5}{ralign 11: 22220.5}{ralign 11: 22245.5}{ralign 11: 22260.5}
+{col 25}{ralign 9:22sep2020}{ralign 11:07oct2020}{ralign 11:01nov2020}{ralign 11:26nov2020}{ralign 11:11dec2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210913.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-09-20
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22178{txt},{res}22277{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}20sep2020{txt},{res}28dec2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22227.5}{txt} = {res}08nov2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22187.5}{ralign 11: 22202.5}{ralign 11: 22227.5}{ralign 11: 22252.5}{ralign 11: 22267.5}
+{col 25}{ralign 9:29sep2020}{ralign 11:14oct2020}{ralign 11:08nov2020}{ralign 11:03dec2020}{ralign 11:18dec2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210920.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-09-27
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22185{txt},{res}22284{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}27sep2020{txt},{res}04jan2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22234.5}{txt} = {res}15nov2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22194.5}{ralign 11: 22209.5}{ralign 11: 22234.5}{ralign 11: 22259.5}{ralign 11: 22274.5}
+{col 25}{ralign 9:06oct2020}{ralign 11:21oct2020}{ralign 11:15nov2020}{ralign 11:10dec2020}{ralign 11:25dec2020}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210927.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-10-04
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22192{txt},{res}22291{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}04oct2020{txt},{res}11jan2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22241.5}{txt} = {res}22nov2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22201.5}{ralign 11: 22216.5}{ralign 11: 22241.5}{ralign 11: 22266.5}{ralign 11: 22281.5}
+{col 25}{ralign 9:13oct2020}{ralign 11:28oct2020}{ralign 11:22nov2020}{ralign 11:17dec2020}{ralign 11:01jan2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211004.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-10-11
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22199{txt},{res}22298{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}11oct2020{txt},{res}18jan2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22248.5}{txt} = {res}29nov2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22208.5}{ralign 11: 22223.5}{ralign 11: 22248.5}{ralign 11: 22273.5}{ralign 11: 22288.5}
+{col 25}{ralign 9:20oct2020}{ralign 11:04nov2020}{ralign 11:29nov2020}{ralign 11:24dec2020}{ralign 11:08jan2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211011.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-10-18
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22206{txt},{res}22305{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}18oct2020{txt},{res}25jan2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22255.5}{txt} = {res}06dec2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22215.5}{ralign 11: 22230.5}{ralign 11: 22255.5}{ralign 11: 22280.5}{ralign 11: 22295.5}
+{col 25}{ralign 9:27oct2020}{ralign 11:11nov2020}{ralign 11:06dec2020}{ralign 11:31dec2020}{ralign 11:15jan2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211018.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-10-25
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22213{txt},{res}22312{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}25oct2020{txt},{res}01feb2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22262.5}{txt} = {res}13dec2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22222.5}{ralign 11: 22237.5}{ralign 11: 22262.5}{ralign 11: 22287.5}{ralign 11: 22302.5}
+{col 25}{ralign 9:03nov2020}{ralign 11:18nov2020}{ralign 11:13dec2020}{ralign 11:07jan2021}{ralign 11:22jan2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211025.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-11-01
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22220{txt},{res}22319{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}01nov2020{txt},{res}08feb2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22269.5}{txt} = {res}20dec2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22229.5}{ralign 11: 22244.5}{ralign 11: 22269.5}{ralign 11: 22294.5}{ralign 11: 22309.5}
+{col 25}{ralign 9:10nov2020}{ralign 11:25nov2020}{ralign 11:20dec2020}{ralign 11:14jan2021}{ralign 11:29jan2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211101.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-11-08
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22227{txt},{res}22326{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}08nov2020{txt},{res}15feb2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22276.5}{txt} = {res}27dec2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22236.5}{ralign 11: 22251.5}{ralign 11: 22276.5}{ralign 11: 22301.5}{ralign 11: 22316.5}
+{col 25}{ralign 9:17nov2020}{ralign 11:02dec2020}{ralign 11:27dec2020}{ralign 11:21jan2021}{ralign 11:05feb2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211108.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-11-22
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22241{txt},{res}22340{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}22nov2020{txt},{res}01mar2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22290.5}{txt} = {res}10jan2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22250.5}{ralign 11: 22265.5}{ralign 11: 22290.5}{ralign 11: 22315.5}{ralign 11: 22330.5}
+{col 25}{ralign 9:01dec2020}{ralign 11:16dec2020}{ralign 11:10jan2021}{ralign 11:04feb2021}{ralign 11:19feb2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211122.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-11-29
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22248{txt},{res}22347{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}29nov2020{txt},{res}08mar2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22297.5}{txt} = {res}17jan2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22257.5}{ralign 11: 22272.5}{ralign 11: 22297.5}{ralign 11: 22322.5}{ralign 11: 22337.5}
+{col 25}{ralign 9:08dec2020}{ralign 11:23dec2020}{ralign 11:17jan2021}{ralign 11:11feb2021}{ralign 11:26feb2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211129.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-12-06
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22255{txt},{res}22354{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06dec2020{txt},{res}15mar2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22304.5}{txt} = {res}24jan2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22264.5}{ralign 11: 22279.5}{ralign 11: 22304.5}{ralign 11: 22329.5}{ralign 11: 22344.5}
+{col 25}{ralign 9:15dec2020}{ralign 11:30dec2020}{ralign 11:24jan2021}{ralign 11:18feb2021}{ralign 11:05mar2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211206.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-12-13
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22262{txt},{res}22361{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}13dec2020{txt},{res}22mar2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22311.5}{txt} = {res}31jan2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22271.5}{ralign 11: 22286.5}{ralign 11: 22311.5}{ralign 11: 22336.5}{ralign 11: 22351.5}
+{col 25}{ralign 9:22dec2020}{ralign 11:06jan2021}{ralign 11:31jan2021}{ralign 11:25feb2021}{ralign 11:12mar2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211213.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update 2021-12-20
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22269{txt},{res}22368{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}20dec2020{txt},{res}29mar2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22318.5}{txt} = {res}07feb2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22278.5}{ralign 11: 22293.5}{ralign 11: 22318.5}{ralign 11: 22343.5}{ralign 11: 22358.5}
+{col 25}{ralign 9:29dec2020}{ralign 11:13jan2021}{ralign 11:07feb2021}{ralign 11:04mar2021}{ralign 11:19mar2021}
+{txt}(2,600 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str20{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211220.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. * (2) USA only
+. 
+. 
+. local list `" "02-28" "06-06" "06-14" "06-21" "06-27" "06-30" "07-06" "11-15" "'
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+. di in red "This is UCLA update pred_state_ 2021-" "`update'"
+{txt}  3{com}. 
+. capture shell rm -r  "pred_state_`update'.csv"
+{txt}  4{com}. 
+. clear
+{txt}  5{com}. 
+. copy https://raw.githubusercontent.com/uclaml/ucla-covid19-forecasts/master/projection_result/pred_state_`update'.csv pred_state_`update'.csv
+{txt}  6{com}. 
+. import delimited using "pred_state_`update'.csv", clear varnames(1)
+{txt}  7{com}. 
+. rename date date_original
+{txt}  8{com}. gen year = substr(date_original,1,4) 
+{txt}  9{com}. gen month = substr(date_original,6,2) 
+{txt} 10{com}. gen day = substr(date_original,9,2) 
+{txt} 11{com}. egen date2 = concat(day month year)
+{txt} 12{com}. gen date = date(date2, "DMY", 2050)
+{txt} 13{com}. format date %tdDDMonCCYY
+{txt} 14{com}. codebook date
+{txt} 15{com}. drop year month day date2
+{txt} 16{com}. 
+. keep date region pre_fata_daily 
+{txt} 17{com}. 
+. collapse (sum) pre_fata_daily, by(date) 
+{txt} 18{com}. 
+. rename pre_fata_daily DayDeaMeRaUCLA
+{txt} 19{com}. 
+. gen loc_grand_name = "US"
+{txt} 20{com}. 
+. label var DayDeaMeRaUCLA "Daily Deaths Mean UCLA"
+{txt} 21{com}. 
+. gen update = "`update'"
+{txt} 22{com}. 
+. replace update = subinstr(update, "-", "",.)
+{txt} 23{com}. 
+. gen year2021 = "2021"
+{txt} 24{com}. 
+. gen updatenew = year2021 + update
+{txt} 25{com}. 
+. drop update
+{txt} 26{com}. 
+. rename updatenew update
+{txt} 27{com}. 
+. destring update, replace
+{txt} 28{com}. 
+. format update %8.0f
+{txt} 29{com}. 
+. local update = update
+{txt} 30{com}. 
+. gen update_date`update' = date("`update'", "YMD")
+{txt} 31{com}. 
+. rename DayDeaMeRaUCLA DayDeaMeRaUCLA`update'
+{txt} 32{com}. 
+. replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+{txt} 33{com}. 
+. qui compress 
+{txt} 34{com}. 
+. save "CovidLongitudinal UCLA `update'.dta", replace
+{txt} 35{com}. 
+. /* line DayDeaMeRaUCLA`update' date if loc_grand_name == "US"
+> 
+> graph export "DayDeaMeRaUCLA USA `update'.pdf", replace */
+. 
+. {c )-}
+{err}This is UCLA update pred_state_ 2021-02-28
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,300 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22339{txt},{res}22438{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}28feb2021{txt},{res}07jun2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}5,300
+
+{txt}{col 19}Mean: {res}{ralign 7:22388.5}{txt} = {res}18apr2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8688}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22348.5}{ralign 11: 22363.5}{ralign 11: 22388.5}{ralign 11: 22413.5}{ralign 11: 22428.5}
+{col 25}{ralign 9:09mar2021}{ralign 11:24mar2021}{ralign 11:18apr2021}{ralign 11:13may2021}{ralign 11:28may2021}
+{txt}(100 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210228.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-06-06
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,151 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22072{txt},{res}22172{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06jun2020{txt},{res}14sep2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}101{col 51}{txt}Missing .: {res}0{txt}/{res}5,151
+
+{txt}{col 19}Mean: {res}{ralign 7:22122}{txt} = {res}26jul2020{txt}
+{col 14}Std. dev.: {res}{ralign 7:29.1576}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22082}{ralign 11:   22097}{ralign 11:   22122}{ralign 11:   22147}{ralign 11:   22162}
+{col 25}{ralign 9:16jun2020}{ralign 11:01jul2020}{ralign 11:26jul2020}{ralign 11:20aug2020}{ralign 11:04sep2020}
+{txt}(101 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(101 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210606.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-06-14
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,151 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22080{txt},{res}22180{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}14jun2020{txt},{res}22sep2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}101{col 51}{txt}Missing .: {res}0{txt}/{res}5,151
+
+{txt}{col 19}Mean: {res}{ralign 7:22130}{txt} = {res}03aug2020{txt}
+{col 14}Std. dev.: {res}{ralign 7:29.1576}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22090}{ralign 11:   22105}{ralign 11:   22130}{ralign 11:   22155}{ralign 11:   22170}
+{col 25}{ralign 9:24jun2020}{ralign 11:09jul2020}{ralign 11:03aug2020}{ralign 11:28aug2020}{ralign 11:12sep2020}
+{txt}(101 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(101 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210614.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-06-21
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,151 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22087{txt},{res}22187{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}21jun2020{txt},{res}29sep2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}101{col 51}{txt}Missing .: {res}0{txt}/{res}5,151
+
+{txt}{col 19}Mean: {res}{ralign 7:22137}{txt} = {res}10aug2020{txt}
+{col 14}Std. dev.: {res}{ralign 7:29.1576}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22097}{ralign 11:   22112}{ralign 11:   22137}{ralign 11:   22162}{ralign 11:   22177}
+{col 25}{ralign 9:01jul2020}{ralign 11:16jul2020}{ralign 11:10aug2020}{ralign 11:04sep2020}{ralign 11:19sep2020}
+{txt}(101 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(101 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210621.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-06-27
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,138 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22089{txt},{res}22190{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}23jun2020{txt},{res}02oct2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}102{col 51}{txt}Missing .: {res}0{txt}/{res}5,138
+
+{txt}{col 19}Mean: {res}{ralign 7:22139.4}{txt} = {res}12aug2020{txt}(+ 9 hours)
+{col 14}Std. dev.: {res}{ralign 7:29.0921}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22099}{ralign 11:   22114}{ralign 11:   22139}{ralign 11:   22165}{ralign 11:   22180}
+{col 25}{ralign 9:03jul2020}{ralign 11:18jul2020}{ralign 11:12aug2020}{ralign 11:07sep2020}{ralign 11:22sep2020}
+{txt}(102 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(102 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210627.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-06-30
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,541 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22096{txt},{res}22196{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}30jun2020{txt},{res}08oct2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}101{col 51}{txt}Missing .: {res}0{txt}/{res}5,541
+
+{txt}{col 19}Mean: {res}{ralign 7:22145.9}{txt} = {res}18aug2020{txt}(+ 21 hours)
+{col 14}Std. dev.: {res}{ralign 7:29.0855}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22106}{ralign 11:   22121}{ralign 11:   22146}{ralign 11:   22171}{ralign 11:   22186}
+{col 25}{ralign 9:10jul2020}{ralign 11:25jul2020}{ralign 11:19aug2020}{ralign 11:13sep2020}{ralign 11:28sep2020}
+{txt}(101 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(101 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210630.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-07-06
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 5,500 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22102{txt},{res}22201{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06jul2020{txt},{res}13oct2020{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}5,500
+
+{txt}{col 19}Mean: {res}{ralign 7:22151.5}{txt} = {res}24aug2020{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8687}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22111.5}{ralign 11: 22126.5}{ralign 11: 22151.5}{ralign 11: 22176.5}{ralign 11: 22191.5}
+{col 25}{ralign 9:15jul2020}{ralign 11:30jul2020}{ralign 11:24aug2020}{ralign 11:18sep2020}{ralign 11:03oct2020}
+{txt}(100 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20210706.dta{rm}
+saved
+{p_end}
+{err}This is UCLA update pred_state_ 2021-11-15
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(17 vars, 2,600 obs)
+{res}
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22234{txt},{res}22333{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}15nov2020{txt},{res}22feb2021{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}100{col 51}{txt}Missing .: {res}0{txt}/{res}2,600
+
+{txt}{col 19}Mean: {res}{ralign 7:22283.5}{txt} = {res}03jan2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:28.8716}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22243.5}{ralign 11: 22258.5}{ralign 11: 22283.5}{ralign 11: 22308.5}{ralign 11: 22323.5}
+{col 25}{ralign 9:24nov2020}{ralign 11:09dec2020}{ralign 11:03jan2021}{ralign 11:28jan2021}{ralign 11:12feb2021}
+{txt}(100 real changes made)
+{res}{txt}update: all characters numeric; {res}replaced {txt}as {res}long
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str2{sf}{txt} now {bf}{res}str24{sf}
+{txt}(100 real changes made)
+{p 0 4 2}
+file {bf}
+CovidLongitudinal UCLA 20211115.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. **********************************************
+. **********************************************
+. 
+. **********************************************
+. **********************************************
+. 
+. * gen list of countries and update dates
+. 
+. 
+. local list ///
+> 20210103 ///
+> 20210110 ///
+> 20210206 ///
+> 20210228 ///
+> 20210307 ///
+> 20210315 ///
+> 20210328 ///
+> 20210404 ///
+> 20210606 ///
+> 20210614 ///
+> 20210621 ///
+> 20210627 ///
+> 20210630 ///
+> 20210706 ///
+> 20210712 ///
+> 20210719 ///
+> 20210726 ///
+> 20210802 ///
+> 20210809 ///
+> 20210816 ///
+> 20210823 ///
+> 20210830 ///
+> 20210906 ///
+> 20210913 ///
+> 20210920 ///
+> 20210927 ///
+> 20211004 ///
+> 20211011 ///
+> 20211018 ///
+> 20211025 ///
+> 20211101 ///
+> 20211108 ///
+> 20211115 ///
+> 20211122 ///
+> 20211129 ///
+> 20211206 ///
+> 20211213 ///
+> 20211220
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         use "CovidLongitudinal UCLA `update'.dta", clear
+{txt}  3{com}.                         
+.         contract loc_grand_name
+{txt}  4{com}.         
+.         drop _freq
+{txt}  5{com}.                 
+.         rename loc_grand_name loc_grand_name`update'
+{txt}  6{com}.         
+.         gen counter = _n
+{txt}  7{com}.         
+.         save "UCLA `update' countries.dta", replace
+{txt}  8{com}. 
+. {c )-}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210103 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210110 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210206 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210228 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210307 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210315 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210328 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210404 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210606 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210614 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210621 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210627 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210630 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210706 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210712 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210719 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210726 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210802 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210809 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210816 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210823 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210830 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210906 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210913 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210920 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20210927 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211004 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211011 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211018 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211025 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211101 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211108 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211115 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211122 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211129 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211206 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211213 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+file {bf}
+UCLA 20211220 countries.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. use "UCLA 20210103 countries.dta" 
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         merge m:m counter using "UCLA `update' countries.dta"
+{txt}  3{com}.         
+.         drop _merge
+{txt}  4{com}. 
+. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              25
+{txt}{col 9}from master{col 30}{res}              25{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               1{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              26{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. *
+. 
+. 
+. order counter
+{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "UCLA countries.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+UCLA countries.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. * determine earliest date each country was present (date_present_first) 
+. * dates on which each country was absent (after their first presence)(date_absent_1*)
+. 
+. use "UCLA countries.dta", clear 
+{txt}
+{com}. 
+. rename counter obs_no
+{res}{txt}
+{com}. 
+. rename (loc_grand_name*) (countries*)
+{res}{txt}
+{com}. 
+. * use fillin- in a long file:
+. 
+. * https://www.statalist.org/forums/forum/general-stata-discussion/general/1687043-how-to-rearrange-the-values-of-string-variables-according-to-a-criterion
+. 
+. reshape long countries, i(obs_no) j(str_date) string
+{txt}(j = 20210103 20210110 20210206 20210228 20210307 20210315 20210328 20210404 20210606 20210614 20210621 20210627 20210630 20210706 20210712 20210719 20210726 20210802 20210809 20210816 20210823 20210830 20210906 20210913 20210920 20210927 20211004 20211011 20211018 20211025 20211101 20211108 20211115 20211122 20211129 20211206 20211213 20211220)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}          26   {txt}->   {res}988         
+{txt}Number of variables        {res}          39   {txt}->   {res}3           
+{txt}j variable (38 values)                    ->   {res}str_date
+{txt}xij variables:
+{res}countries20210103 countries20210110 ... countries20211220{txt}->{res}countries
+{txt}{hline 77}
+
+{com}. gen int real_date = daily(str_date, "YMD")
+{txt}
+{com}. assert missing(str_date) == missing(real_date)
+{txt}
+{com}. format real_date %td
+{txt}
+{com}. drop str_date
+{txt}
+{com}. 
+. rename countries country
+{res}{txt}
+{com}. drop if missing(country)
+{txt}(200 observations deleted)
+
+{com}. fillin country real_date
+{txt}
+{com}. rename _fillin absent
+{res}{txt}
+{com}. drop obs_no
+{txt}
+{com}. 
+. by country (real_date), sort: egen date_present_first = min(cond(!absent, real_date, .))
+{txt}
+{com}. format date_present_first %td
+{txt}
+{com}. 
+. by country (real_date): gen absent_dates = ///
+>     cond(absent, string(real_date, "%tdCCYYNNDD"), "") if _n == 1
+{txt}(988 missing values generated)
+
+{com}. by country (real_date): replace absent_dates = ///
+>     absent_dates[_n-1] + cond(absent, " " + string(real_date, "%tdCCYYNNDD"), "") ///
+>     if _n > 1
+{txt}(875 real changes made)
+
+{com}. by country (real_date): replace absent_dates = absent_dates[_N]
+{txt}(800 real changes made)
+
+{com}. split absent_dates, gen(date_absent)
+{res}variables created as string: 
+{txt}{col 1}date_absent1{col 15}date_absent3{col 29}date_absent5{col 43}date_absent7
+{col 1}date_absent2{col 15}date_absent4{col 29}date_absent6{col 43}date_absent8
+
+{com}. drop absent_dates
+{txt}
+{com}. isid country real_date, sort
+{txt}(data already sorted by {bf:country real_date})
+
+{com}. 
+. * 
+. 
+. 
+. gen year = year(real_date)
+{txt}
+{com}. gen month = month(real_date)
+{txt}
+{com}. gen day = day(real_date)
+{txt}
+{com}. tostring year month day, replace
+{txt}year was {res:float} now {res:str4}
+month was {res:float} now {res:str2}
+day was {res:float} now {res:str2}
+
+{com}. replace month = "01" if month == "1"
+{txt}(52 real changes made)
+
+{com}. replace month = "02" if month == "2"
+{txt}(52 real changes made)
+
+{com}. replace month = "03" if month == "3"
+{txt}(78 real changes made)
+
+{com}. replace month = "04" if month == "4"
+{txt}(26 real changes made)
+
+{com}. replace month = "05" if month == "5"
+{txt}(0 real changes made)
+
+{com}. replace month = "06" if month == "6"
+{txt}(130 real changes made)
+
+{com}. replace month = "07" if month == "7"
+{txt}(104 real changes made)
+
+{com}. replace month = "08" if month == "8"
+{txt}(130 real changes made)
+
+{com}. replace month = "09" if month == "9"
+{txt}(104 real changes made)
+
+{com}. replace day = "01" if day == "1"
+{txt}(26 real changes made)
+
+{com}. replace day = "02" if day == "2"
+{txt}(26 real changes made)
+
+{com}. replace day = "03" if day == "3"
+{txt}(26 real changes made)
+
+{com}. replace day = "04" if day == "4"
+{txt}(52 real changes made)
+
+{com}. replace day = "05" if day == "5"
+{txt}(0 real changes made)
+
+{com}. replace day = "06" if day == "6"
+{txt}(130 real changes made)
+
+{com}. replace day = "07" if day == "7"
+{txt}(26 real changes made)
+
+{com}. replace day = "08" if day == "8"
+{txt}(26 real changes made)
+
+{com}. replace day = "09" if day == "9"
+{txt}(26 real changes made)
+
+{com}. 
+. gen blockdate_string = year + month + day
+{txt}
+{com}. destring blockdate_string, gen(blockdate)
+{txt}blockdate_string: all characters numeric; blockdate {res}generated {txt}as {res}long
+{txt}
+{com}. drop year month day blockdate_string
+{txt}
+{com}. order blockdate, before(real_date)
+{txt}
+{com}. 
+. rename blockdate update_date_block
+{res}{txt}
+{com}. rename real_date update_date_real
+{res}{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. gen year = year(date_present_first)
+{txt}
+{com}. gen month = month(date_present_first)
+{txt}
+{com}. gen day = day(date_present_first)
+{txt}
+{com}. tostring year month day, replace
+{txt}year was {res:float} now {res:str4}
+month was {res:float} now {res:str1}
+day was {res:float} now {res:str1}
+
+{com}. replace month = "01" if month == "1"
+{txt}variable {bf}{res}month{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str2{sf}
+{txt}(988 real changes made)
+
+{com}. replace month = "02" if month == "2"
+{txt}(0 real changes made)
+
+{com}. replace month = "03" if month == "3"
+{txt}(0 real changes made)
+
+{com}. replace month = "04" if month == "4"
+{txt}(0 real changes made)
+
+{com}. replace month = "05" if month == "5"
+{txt}(0 real changes made)
+
+{com}. replace month = "06" if month == "6"
+{txt}(0 real changes made)
+
+{com}. replace month = "07" if month == "7"
+{txt}(0 real changes made)
+
+{com}. replace month = "08" if month == "8"
+{txt}(0 real changes made)
+
+{com}. replace month = "09" if month == "9"
+{txt}(0 real changes made)
+
+{com}. replace day = "01" if day == "1"
+{txt}(0 real changes made)
+
+{com}. replace day = "02" if day == "2"
+{txt}(0 real changes made)
+
+{com}. replace day = "03" if day == "3"
+{txt}variable {bf}{res}day{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str2{sf}
+{txt}(988 real changes made)
+
+{com}. replace day = "04" if day == "4"
+{txt}(0 real changes made)
+
+{com}. replace day = "05" if day == "5"
+{txt}(0 real changes made)
+
+{com}. replace day = "06" if day == "6"
+{txt}(0 real changes made)
+
+{com}. replace day = "07" if day == "7"
+{txt}(0 real changes made)
+
+{com}. replace day = "08" if day == "8"
+{txt}(0 real changes made)
+
+{com}. replace day = "09" if day == "9"
+{txt}(0 real changes made)
+
+{com}. 
+. gen date_present_first_block = year + month + day
+{txt}
+{com}. destring date_present_first_block, replace
+{txt}date_present_first_block: all characters numeric; {res}replaced {txt}as {res}long
+{txt}
+{com}. drop year month day 
+{txt}
+{com}. order date_present_first_block, before(date_present_first)
+{txt}
+{com}. rename date_present_first date_present_first_real
+{res}{txt}
+{com}. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. *
+. 
+. 
+. **********************************************
+. **********************************************
+. * country names to loc_grand_name
+. 
+. replace loc_grand_name = "United States of America" if loc_grand_name == "US" 
+{txt}(0 real changes made)
+
+{com}. 
+.                                            
+.         
+. isid loc_grand_name update_date_block, sort
+{txt}(data now sorted by {bf:loc_grand_name update_date_block})
+
+{com}.                                            
+. 
+. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "UCLA countries long.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+UCLA countries long.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. view "log CovidLongitudinal UCLA.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA/log CovidLongitudinal UCLA.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}28 Aug 2023, 06:02:48
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

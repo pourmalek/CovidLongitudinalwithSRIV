@@ -19,16 +19,16 @@ cd "$pathCovidLongitudinal"
 do "$pathCovidLongitudinal/download/JOHN/do CovidLongitudinal JOHN.do"
 
 
-* Download estimated deaths by IMPE
-do "$pathCovidLongitudinal/download/IMPE/do CovidLongitudinal IMPE.do"
+* Download estimated deaths by DELP
+do "$pathCovidLongitudinal/download/DELP/do CovidLongitudinal DELP.do"
 
 
 * Download estimated deaths by IHME
 do "$pathCovidLongitudinal/download/IHME/do CovidLongitudinal IHME.do"
 
 
-* Download estimated deaths by DELP
-do "$pathCovidLongitudinal/download/DELP/do CovidLongitudinal DELP.do"
+* Download estimated deaths by IMPE
+do "$pathCovidLongitudinal/download/IMPE/do CovidLongitudinal IMPE.do"
 
 
 * Download estimated deaths by LANL

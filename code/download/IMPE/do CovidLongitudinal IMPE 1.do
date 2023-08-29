@@ -303,7 +303,7 @@ https://github.com/mrc-ide/global-lmic-reports/tree/master/data
 2022-07-28_v9.csv.zip
 2022-08-08_v9.csv.zip
 2022-09-01_v10.csv.zip
-
+2022-12-25_v10.csv.zip
 
 */
 
@@ -361,6 +361,23 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
 
 drop iso3c report_date version
 
@@ -439,6 +456,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -516,6 +551,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -591,6 +644,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -668,6 +739,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -743,6 +832,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -821,6 +928,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -898,6 +1023,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -973,6 +1116,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1050,6 +1211,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1126,6 +1305,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1201,6 +1398,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1279,6 +1494,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1354,6 +1587,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1431,6 +1682,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1507,6 +1776,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1581,6 +1868,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1657,6 +1962,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1731,6 +2054,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1807,6 +2148,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -1881,6 +2240,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -1959,6 +2336,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2034,6 +2429,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2107,6 +2520,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -2184,6 +2615,23 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2259,6 +2707,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -2336,6 +2802,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2412,6 +2896,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2486,6 +2988,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -2563,6 +3083,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2637,6 +3175,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -2716,6 +3272,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2792,6 +3366,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -2870,6 +3462,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -2945,6 +3555,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3023,6 +3651,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3098,6 +3744,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3175,6 +3839,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3249,6 +3931,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3326,6 +4026,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3398,6 +4116,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3474,6 +4210,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3548,6 +4302,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3627,6 +4399,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3701,6 +4491,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3779,6 +4587,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3859,6 +4685,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -3927,6 +4771,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -3997,6 +4859,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4065,6 +4945,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4135,6 +5033,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4203,6 +5119,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4273,6 +5207,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4341,6 +5293,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
 
 drop iso3c report_date version
 
@@ -4411,6 +5381,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4479,6 +5467,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4549,6 +5555,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4617,6 +5641,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4687,6 +5729,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4755,6 +5815,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4825,6 +5903,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -4893,6 +5989,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -4963,6 +6077,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5031,6 +6163,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5101,6 +6251,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5169,6 +6337,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5239,6 +6425,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5307,6 +6511,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5377,6 +6599,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5445,6 +6685,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5515,6 +6773,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5583,6 +6859,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5653,6 +6947,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5721,6 +7033,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5791,6 +7121,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5859,6 +7207,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -5929,6 +7295,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -5997,6 +7381,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -6067,6 +7469,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6135,6 +7555,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -6205,6 +7643,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6273,6 +7729,23 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
 
 drop iso3c report_date version
 
@@ -6343,6 +7816,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6411,6 +7902,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -6481,6 +7990,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6549,6 +8076,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -6619,6 +8164,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6687,6 +8250,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 
@@ -6757,6 +8338,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6825,6 +8424,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
 
 drop iso3c report_date version
 
@@ -6895,6 +8512,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -6964,6 +8599,24 @@ drop year month day date2 date_original
 
 rename country loc_grand_name 
 
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+ 
+
 drop iso3c report_date version
 
 rename y_mean DayDeaMeRaIMPES02
@@ -7032,6 +8685,24 @@ drop year month day date2 date_original
 
 
 rename country loc_grand_name 
+
+replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
+
 
 drop iso3c report_date version
 

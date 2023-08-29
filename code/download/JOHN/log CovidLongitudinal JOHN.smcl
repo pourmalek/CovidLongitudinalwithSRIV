@@ -1,0 +1,934 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/JOHN/log CovidLongitudinal JOHN.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Aug 2023, 08:44:48
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal JOHN.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models                                                                         
+. 
+. * Objective: Download data files for JOHN                                                                    
+. ***************************************************************************
+. 
+. 
+. * input data files: "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+. 
+. * output data files: "CovidLongitudinal JOHN.dta"
+. 
+. * output data dictionary files: "CovidLongitudinal JOHN data dictionary.csv"
+. 
+. 
+. 
+. 
+. ****************************************
+. ****************************************
+. 
+. * get Johns Hopkins data for deaths
+. 
+. 
+. import delimited ///
+> "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv" ///
+> , clear varnames(1) colrange(1:2)
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(2 vars, 289 obs)
+
+{com}. 
+. save "time_series_covid19_deaths_global col 2.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+time_series_covid19_deaths_global col 2.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+time_series_covid19_deaths_global col 2.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. import delimited ///
+> "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv" ///
+> , clear varnames(1) colrange(5)
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(1,143 vars, 289 obs)
+
+{com}. 
+. save "time_series_covid19_deaths_global col 5 on.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+time_series_covid19_deaths_global col 5 on.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+time_series_covid19_deaths_global col 5 on.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. use "time_series_covid19_deaths_global col 2.dta", clear 
+{txt}
+{com}. 
+. merge 1:1 _n using "time_series_covid19_deaths_global col 5 on.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             289{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. order provincestate countryregion, last
+{txt}
+{com}. 
+. count
+  {res}289
+{txt}
+{com}. 
+. qui destring v*, replace
+{txt}
+{com}. 
+. collapse (sum) v*, by(countryregion) // sum to add subnational estimates to national level and omit subnational estimates
+{res}{txt}
+{com}. 
+. count
+  {res}201
+{txt}
+{com}. 
+. replace countryregion = trim(countryregion)
+{txt}(0 real changes made)
+
+{com}. 
+. rename countryregion loc_grand_name
+{res}{txt}
+{com}. 
+. label var loc_grand_name loc_grand_name
+{txt}
+{com}. 
+. 
+. gen counter = _n
+{txt}
+{com}. 
+. reshape long v, i(counter) 
+{txt}(j = 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 500 501 502 503 504 505 506 507 508 509 510 511 512 513 514 515 516 517 518 519 520 521 522 523 524 525 526 527 528 529 530 531 532 533 534 535 536 537 538 539 540 541 542 543 544 545 546 547 548 549 550 551 552 553 554 555 556 557 558 559 560 561 562 563 564 565 566 567 568 569 570 571 572 573 574 575 576 577 578 579 580 581 582 583 584 585 586 587 588 589 590 591 592 593 594 595 596 597 598 599 600 601 602 603 604 605 606 607 608 609 610 611 612 613 614 615 616 617 618 619 620 621 622 623 624 625 626 627 628 629 630 631 632 633 634 635 636 637 638 639 640 641 642 643 644 645 646 647 648 649 650 651 652 653 654 655 656 657 658 659 660 661 662 663 664 665 666 667 668 669 670 671 672 673 674 675 676 677 678 679 680 681 682 683 684 685 686 687 688 689 690 691 692 693 694 695 696 697 698 699 700 701 702 703 704 705 706 707 708 709 710 711 712 713 714 715 716 717 718 719 720 721 722 723 724 725 726 727 728 729 730 731 732 733 734 735 736 737 738 739 740 741 742 743 744 745 746 747 748 749 750 751 752 753 754 755 756 757 758 759 760 761 762 763 764 765 766 767 768 769 770 771 772 773 774 775 776 777 778 779 780 781 782 783 784 785 786 787 788 789 790 791 792 793 794 795 796 797 798 799 800 801 802 803 804 805 806 807 808 809 810 811 812 813 814 815 816 817 818 819 820 821 822 823 824 825 826 827 828 829 830 831 832 833 834 835 836 837 838 839 840 841 842 843 844 845 846 847 848 849 850 851 852 853 854 855 856 857 858 859 860 861 862 863 864 865 866 867 868 869 870 871 872 873 874 875 876 877 878 879 880 881 882 883 884 885 886 887 888 889 890 891 892 893 894 895 896 897 898 899 900 901 902 903 904 905 906 907 908 909 910 911 912 913 914 915 916 917 918 919 920 921 922 923 924 925 926 927 928 929 930 931 932 933 934 935 936 937 938 939 940 941 942 943 944 945 946 947 948 949 950 951 952 953 954 955 956 957 958 959 960 961 962 963 964 965 966 967 968 969 970 971 972 973 974 975 976 977 978 979 980 981 982 983 984 985 986 987 988 989 990 991 992 993 994 995 996 997 998 999 1000 1001 1002 1003 1004 1005 1006 1007 1008 1009 1010 1011 1012 1013 1014 1015 1016 1017 1018 1019 1020 1021 1022 1023 1024 1025 1026 1027 1028 1029 1030 1031 1032 1033 1034 1035 1036 1037 1038 1039 1040 1041 1042 1043 1044 1045 1046 1047 1048 1049 1050 1051 1052 1053 1054 1055 1056 1057 1058 1059 1060 1061 1062 1063 1064 1065 1066 1067 1068 1069 1070 1071 1072 1073 1074 1075 1076 1077 1078 1079 1080 1081 1082 1083 1084 1085 1086 1087 1088 1089 1090 1091 1092 1093 1094 1095 1096 1097 1098 1099 1100 1101 1102 1103 1104 1105 1106 1107 1108 1109 1110 1111 1112 1113 1114 1115 1116 1117 1118 1119 1120 1121 1122 1123 1124 1125 1126 1127 1128 1129 1130 1131 1132 1133 1134 1135 1136 1137 1138 1139 1140 1141 1142 1143)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}         201   {txt}->   {res}229,743     
+{txt}Number of variables        {res}       1,145   {txt}->   {res}4           
+{txt}j variable (1143 values)                  ->   {res}_j
+{txt}xij variables:
+                        {res}v1 v2 ... v1143   {txt}->   {res}v
+{txt}{hline 77}
+
+{com}. 
+. 
+. rename v TotDeaMeRaJOHN
+{res}{txt}
+{com}. 
+. label var TotDeaMeRaJOHN "Total deaths raw JOHN JOHN"
+{txt}
+{com}. 
+. bysort loc_grand_name: gen DayDeaMeRaJOHN =  TotDeaMeRaJOHN[_n] - TotDeaMeRaJOHN[_n-1]
+{txt}(201 missing values generated)
+
+{com}. 
+. label var DayDeaMeRaJOHN "Daily deaths raw JOHN JOHN"
+{txt}
+{com}. 
+. drop TotDeaMeRaJOHN
+{txt}
+{com}. 
+. 
+. 
+. * JOHN starts from 22 Jan 2020
+. 
+. gen date = date("22 Jan 2020", "DMY")
+{txt}
+{com}. 
+. bysort loc_grand_name: replace date = date + _j - 1
+{txt}(229542 real changes made)
+
+{com}. 
+. format date %td
+{txt}
+{com}. 
+. label var date "calendar date"
+{txt}
+{com}. 
+. codebook date
+
+{txt}{hline}
+{res}date{right:calendar date}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21936{txt},{res}23078{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}22jan2020{txt},{res}09mar2023{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}1,143{col 51}{txt}Missing .: {res}0{txt}/{res}229,743
+
+{txt}{col 19}Mean: {res}{ralign 7:22507}{txt} = {res}15aug2021{txt}
+{col 14}Std. dev.: {res}{ralign 7:329.956}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22050}{ralign 11:   22221}{ralign 11:   22507}{ralign 11:   22793}{ralign 11:   22964}
+{col 25}{ralign 9:15may2020}{ralign 11:02nov2020}{ralign 11:15aug2021}{ralign 11:28may2022}{ralign 11:15nov2022}
+{txt}
+{com}. 
+. drop counter _j
+{txt}
+{com}. 
+. 
+. replace DayDeaMeRaJOHN = 0 if date == td(22jan2020)
+{txt}(201 real changes made)
+
+{com}.         
+. replace DayDeaMeRaJOHN = 17 if date == td(22jan2020) & loc_grand_name == "China" // first day report frpm China
+{txt}(1 real change made)
+
+{com}. 
+. 
+. 
+. **********************************************
+. **********************************************
+. * change JOHN country names to loc_grand_name country names
+. 
+. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Congo (Kinshasa)"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Congo (Brazzaville)"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "Korea, North"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Myanmar" if loc_grand_name == "Burma"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "West Bank and Gaza"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Taiwan" if loc_grand_name == "Taiwan*"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+{txt}(1,143 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(1,143 real changes made)
+
+{com}. 
+. 
+. * drop non-countries
+. 
+. drop if loc_grand_name == "Antarctica"
+{txt}(1,143 observations deleted)
+
+{com}. drop if loc_grand_name == "Diamond Princess"
+{txt}(1,143 observations deleted)
+
+{com}. drop if loc_grand_name == "MS Zaandam"
+{txt}(1,143 observations deleted)
+
+{com}. drop if loc_grand_name == "Summer Olympics 2020"
+{txt}(1,143 observations deleted)
+
+{com}. drop if loc_grand_name == "Winter Olympics 2022"
+{txt}(1,143 observations deleted)
+
+{com}. 
+. codebook loc_grand_name
+
+{txt}{hline}
+{res}loc_grand_name{right:loc_grand_name}
+{txt}{hline}
+
+{col 19}Type: String ({res}str32{txt})
+
+{col 10}Unique values: {res}196{col 51}{txt}Missing "": {res}0{txt}/{res}224,028
+
+{txt}{col 15}Examples: {res}"Congo DR"
+{col 25}"Indonesia"
+{col 25}"Mongolia"
+{col 25}"Seychelles"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{com}. 
+. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "CovidLongitudinal JOHN interim.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+CovidLongitudinal JOHN interim.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "time_series_covid19_deaths_global col 2.dta"
+{txt}
+
+{com}. shell rm -r "time_series_covid19_deaths_global col 5 on.dta"
+{txt}
+
+{com}. 
+. 
+. 
+. 
+. 
+. use "CovidLongitudinal JOHN interim.dta", clear 
+{txt}
+{com}. 
+. merge m:m loc_grand_name using "$pathCovidLongitudinal/master/loc_grand_name.dta"
+{res}{txt}{p 0 7 2}
+(variable
+{bf:loc_grand_name} was {bf:str32}, now {bf:str33} to accommodate using data's values)
+{p_end}
+
+{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           1,165
+{txt}{col 9}from master{col 30}{res}           1,143{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              22{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         222,885{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. keep if _merge == 3
+{txt}(1,165 observations deleted)
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. 
+. 
+. * smooth
+. 
+. sort loc_grand_name date
+{txt}
+{com}. 
+. encode loc_grand_name, gen(loc_grand_name_encoded)
+{txt}
+{com}. 
+. qui tsset loc_grand_name_encoded date, daily   
+{txt}
+{com}. 
+.         levelsof loc_grand_iso, local(levels) 
+{res}{txt}`"AFG"' `"AGO"' `"ALB"' `"AND"' `"ARE"' `"ARG"' `"ARM"' `"ATG"' `"AUS"' `"AUT"' `"AZE"' `"BDI"' `"BEL"' `"BEN"' `"BFA"' `"BGD"' `"BGR"' `"BHR"' `"BHS"' `"BIH"' `"BLR"' `"BLZ"' `"BOL"' `"BRA"' `"BRB"' `"BRN"' `"BTN"' `"BWA"' `"CAF"' `"CAN"' `"CHE"' `"CHL"' `"CHN"' `"CIV"' `"CMR"' `"COD"' `"COG"' `"COL"' `"COM"' `"CPV"' `"CRI"' `"CUB"' `"CYP"' `"CZE"' `"DEU"' `"DJI"' `"DMA"' `"DNK"' `"DOM"' `"DZA"' `"ECU"' `"EGY"' `"ERI"' `"ESP"' `"EST"' `"ETH"' `"FIN"' `"FJI"' `"FRA"' `"FSM"' `"GAB"' `"GBR"' `"GEO"' `"GHA"' `"GIN"' `"GMB"' `"GNB"' `"GNQ"' `"GRC"' `"GRD"' `"GTM"' `"GUY"' `"HND"' `"HRV"' `"HTI"' `"HUN"' `"IDN"' `"IND"' `"IRL"' `"IRN"' `"IRQ"' `"ISL"' `"ISR"' `"ITA"' `"JAM"' `"JOR"' `"JPN"' `"KAZ"' `"KEN"' `"KGZ"' `"KHM"' `"KIR"' `"KNA"' `"KOR"' `"KOS"' `"KWT"' `"LAO"' `"LBN"' `"LBR"' `"LBY"' `"LCA"' `"LIE"' `"LKA"' `"LSO"' `"LTU"' `"LUX"' `"LVA"' `"MAR"' `"MCO"' `"MDA"' `"MDG"' `"MDV"' `"MEX"' `"MHL"' `"MKD"' `"MLI"' `"MLT"' `"MMR"' `"MNE"' `"MNG"' `"MOZ"' `"MRT"' `"MUS"' `"MWI"' `"MYS"' `"NAM"' `"NER"' `"NGA"' `"NIC"' `"NLD"' `"NOR"' `"NPL"' `"NZL"' `"OMN"' `"PAK"' `"PAN"' `"PER"' `"PHL"' `"PLW"' `"PNG"' `"POL"' `"PRK"' `"PRT"' `"PRY"' `"PSE"' `"QAT"' `"ROU"' `"RUS"' `"RWA"' `"SAU"' `"SDN"' `"SEN"' `"SGP"' `"SLB"' `"SLE"' `"SLV"' `"SMR"' `"SOM"' `"SRB"' `"SSD"' `"STP"' `"SUR"' `"SVK"' `"SVN"' `"SWE"' `"SWZ"' `"SYC"' `"SYR"' `"TCD"' `"TGO"' `"THA"' `"TJK"' `"TLS"' `"TON"' `"TTO"' `"TUN"' `"TUR"' `"TUV"' `"TWN"' `"TZA"' `"UGA"' `"UKR"' `"URY"' `"USA"' `"UZB"' `"VAT"' `"VCT"' `"VEN"' `"VNM"' `"VUT"' `"WSM"' `"YEM"' `"ZAF"' `"ZMB"' `"ZWE"'
+
+{com}.                 
+.         foreach iso of local levels {c -(}
+{txt}  2{com}.                         
+.                 di "Smoothing Daily Deaths; The current country iso is: " "`iso'"
+{txt}  3{com}.                                         
+.                 qui tssmooth ma DayDeaMeRaJOHN`iso'`update'_window = DayDeaMeRaJOHN`update' if DayDeaMeRaJOHN`update' >= 0 & loc_grand_iso == "`iso'", window(3 1 3) 
+{txt}  4{com}. 
+.                 qui tssmooth ma DayDeaMeSmJOHN`iso'`update' = DayDeaMeRaJOHN`iso'`update'_window if loc_grand_iso == "`iso'", weights( 1 2 3 <4> 3 2 1) replace
+{txt}  5{com}. 
+.                 drop *_window
+{txt}  6{com}.                 
+.                 qui label var DayDeaMeSmJOHN`iso'`update' "Daily deaths smooth mean JOHN `iso'" 
+{txt}  7{com}.                 
+. {c )-}
+Smoothing Daily Deaths; The current country iso is: AFG
+Smoothing Daily Deaths; The current country iso is: AGO
+Smoothing Daily Deaths; The current country iso is: ALB
+Smoothing Daily Deaths; The current country iso is: AND
+Smoothing Daily Deaths; The current country iso is: ARE
+Smoothing Daily Deaths; The current country iso is: ARG
+Smoothing Daily Deaths; The current country iso is: ARM
+Smoothing Daily Deaths; The current country iso is: ATG
+Smoothing Daily Deaths; The current country iso is: AUS
+Smoothing Daily Deaths; The current country iso is: AUT
+Smoothing Daily Deaths; The current country iso is: AZE
+Smoothing Daily Deaths; The current country iso is: BDI
+Smoothing Daily Deaths; The current country iso is: BEL
+Smoothing Daily Deaths; The current country iso is: BEN
+Smoothing Daily Deaths; The current country iso is: BFA
+Smoothing Daily Deaths; The current country iso is: BGD
+Smoothing Daily Deaths; The current country iso is: BGR
+Smoothing Daily Deaths; The current country iso is: BHR
+Smoothing Daily Deaths; The current country iso is: BHS
+Smoothing Daily Deaths; The current country iso is: BIH
+Smoothing Daily Deaths; The current country iso is: BLR
+Smoothing Daily Deaths; The current country iso is: BLZ
+Smoothing Daily Deaths; The current country iso is: BOL
+Smoothing Daily Deaths; The current country iso is: BRA
+Smoothing Daily Deaths; The current country iso is: BRB
+Smoothing Daily Deaths; The current country iso is: BRN
+Smoothing Daily Deaths; The current country iso is: BTN
+Smoothing Daily Deaths; The current country iso is: BWA
+Smoothing Daily Deaths; The current country iso is: CAF
+Smoothing Daily Deaths; The current country iso is: CAN
+Smoothing Daily Deaths; The current country iso is: CHE
+Smoothing Daily Deaths; The current country iso is: CHL
+Smoothing Daily Deaths; The current country iso is: CHN
+Smoothing Daily Deaths; The current country iso is: CIV
+Smoothing Daily Deaths; The current country iso is: CMR
+Smoothing Daily Deaths; The current country iso is: COD
+Smoothing Daily Deaths; The current country iso is: COG
+Smoothing Daily Deaths; The current country iso is: COL
+Smoothing Daily Deaths; The current country iso is: COM
+Smoothing Daily Deaths; The current country iso is: CPV
+Smoothing Daily Deaths; The current country iso is: CRI
+Smoothing Daily Deaths; The current country iso is: CUB
+Smoothing Daily Deaths; The current country iso is: CYP
+Smoothing Daily Deaths; The current country iso is: CZE
+Smoothing Daily Deaths; The current country iso is: DEU
+Smoothing Daily Deaths; The current country iso is: DJI
+Smoothing Daily Deaths; The current country iso is: DMA
+Smoothing Daily Deaths; The current country iso is: DNK
+Smoothing Daily Deaths; The current country iso is: DOM
+Smoothing Daily Deaths; The current country iso is: DZA
+Smoothing Daily Deaths; The current country iso is: ECU
+Smoothing Daily Deaths; The current country iso is: EGY
+Smoothing Daily Deaths; The current country iso is: ERI
+Smoothing Daily Deaths; The current country iso is: ESP
+Smoothing Daily Deaths; The current country iso is: EST
+Smoothing Daily Deaths; The current country iso is: ETH
+Smoothing Daily Deaths; The current country iso is: FIN
+Smoothing Daily Deaths; The current country iso is: FJI
+Smoothing Daily Deaths; The current country iso is: FRA
+Smoothing Daily Deaths; The current country iso is: FSM
+Smoothing Daily Deaths; The current country iso is: GAB
+Smoothing Daily Deaths; The current country iso is: GBR
+Smoothing Daily Deaths; The current country iso is: GEO
+Smoothing Daily Deaths; The current country iso is: GHA
+Smoothing Daily Deaths; The current country iso is: GIN
+Smoothing Daily Deaths; The current country iso is: GMB
+Smoothing Daily Deaths; The current country iso is: GNB
+Smoothing Daily Deaths; The current country iso is: GNQ
+Smoothing Daily Deaths; The current country iso is: GRC
+Smoothing Daily Deaths; The current country iso is: GRD
+Smoothing Daily Deaths; The current country iso is: GTM
+Smoothing Daily Deaths; The current country iso is: GUY
+Smoothing Daily Deaths; The current country iso is: HND
+Smoothing Daily Deaths; The current country iso is: HRV
+Smoothing Daily Deaths; The current country iso is: HTI
+Smoothing Daily Deaths; The current country iso is: HUN
+Smoothing Daily Deaths; The current country iso is: IDN
+Smoothing Daily Deaths; The current country iso is: IND
+Smoothing Daily Deaths; The current country iso is: IRL
+Smoothing Daily Deaths; The current country iso is: IRN
+Smoothing Daily Deaths; The current country iso is: IRQ
+Smoothing Daily Deaths; The current country iso is: ISL
+Smoothing Daily Deaths; The current country iso is: ISR
+Smoothing Daily Deaths; The current country iso is: ITA
+Smoothing Daily Deaths; The current country iso is: JAM
+Smoothing Daily Deaths; The current country iso is: JOR
+Smoothing Daily Deaths; The current country iso is: JPN
+Smoothing Daily Deaths; The current country iso is: KAZ
+Smoothing Daily Deaths; The current country iso is: KEN
+Smoothing Daily Deaths; The current country iso is: KGZ
+Smoothing Daily Deaths; The current country iso is: KHM
+Smoothing Daily Deaths; The current country iso is: KIR
+Smoothing Daily Deaths; The current country iso is: KNA
+Smoothing Daily Deaths; The current country iso is: KOR
+Smoothing Daily Deaths; The current country iso is: KOS
+Smoothing Daily Deaths; The current country iso is: KWT
+Smoothing Daily Deaths; The current country iso is: LAO
+Smoothing Daily Deaths; The current country iso is: LBN
+Smoothing Daily Deaths; The current country iso is: LBR
+Smoothing Daily Deaths; The current country iso is: LBY
+Smoothing Daily Deaths; The current country iso is: LCA
+Smoothing Daily Deaths; The current country iso is: LIE
+Smoothing Daily Deaths; The current country iso is: LKA
+Smoothing Daily Deaths; The current country iso is: LSO
+Smoothing Daily Deaths; The current country iso is: LTU
+Smoothing Daily Deaths; The current country iso is: LUX
+Smoothing Daily Deaths; The current country iso is: LVA
+Smoothing Daily Deaths; The current country iso is: MAR
+Smoothing Daily Deaths; The current country iso is: MCO
+Smoothing Daily Deaths; The current country iso is: MDA
+Smoothing Daily Deaths; The current country iso is: MDG
+Smoothing Daily Deaths; The current country iso is: MDV
+Smoothing Daily Deaths; The current country iso is: MEX
+Smoothing Daily Deaths; The current country iso is: MHL
+Smoothing Daily Deaths; The current country iso is: MKD
+Smoothing Daily Deaths; The current country iso is: MLI
+Smoothing Daily Deaths; The current country iso is: MLT
+Smoothing Daily Deaths; The current country iso is: MMR
+Smoothing Daily Deaths; The current country iso is: MNE
+Smoothing Daily Deaths; The current country iso is: MNG
+Smoothing Daily Deaths; The current country iso is: MOZ
+Smoothing Daily Deaths; The current country iso is: MRT
+Smoothing Daily Deaths; The current country iso is: MUS
+Smoothing Daily Deaths; The current country iso is: MWI
+Smoothing Daily Deaths; The current country iso is: MYS
+Smoothing Daily Deaths; The current country iso is: NAM
+Smoothing Daily Deaths; The current country iso is: NER
+Smoothing Daily Deaths; The current country iso is: NGA
+Smoothing Daily Deaths; The current country iso is: NIC
+Smoothing Daily Deaths; The current country iso is: NLD
+Smoothing Daily Deaths; The current country iso is: NOR
+Smoothing Daily Deaths; The current country iso is: NPL
+Smoothing Daily Deaths; The current country iso is: NZL
+Smoothing Daily Deaths; The current country iso is: OMN
+Smoothing Daily Deaths; The current country iso is: PAK
+Smoothing Daily Deaths; The current country iso is: PAN
+Smoothing Daily Deaths; The current country iso is: PER
+Smoothing Daily Deaths; The current country iso is: PHL
+Smoothing Daily Deaths; The current country iso is: PLW
+Smoothing Daily Deaths; The current country iso is: PNG
+Smoothing Daily Deaths; The current country iso is: POL
+Smoothing Daily Deaths; The current country iso is: PRK
+Smoothing Daily Deaths; The current country iso is: PRT
+Smoothing Daily Deaths; The current country iso is: PRY
+Smoothing Daily Deaths; The current country iso is: PSE
+Smoothing Daily Deaths; The current country iso is: QAT
+Smoothing Daily Deaths; The current country iso is: ROU
+Smoothing Daily Deaths; The current country iso is: RUS
+Smoothing Daily Deaths; The current country iso is: RWA
+Smoothing Daily Deaths; The current country iso is: SAU
+Smoothing Daily Deaths; The current country iso is: SDN
+Smoothing Daily Deaths; The current country iso is: SEN
+Smoothing Daily Deaths; The current country iso is: SGP
+Smoothing Daily Deaths; The current country iso is: SLB
+Smoothing Daily Deaths; The current country iso is: SLE
+Smoothing Daily Deaths; The current country iso is: SLV
+Smoothing Daily Deaths; The current country iso is: SMR
+Smoothing Daily Deaths; The current country iso is: SOM
+Smoothing Daily Deaths; The current country iso is: SRB
+Smoothing Daily Deaths; The current country iso is: SSD
+Smoothing Daily Deaths; The current country iso is: STP
+Smoothing Daily Deaths; The current country iso is: SUR
+Smoothing Daily Deaths; The current country iso is: SVK
+Smoothing Daily Deaths; The current country iso is: SVN
+Smoothing Daily Deaths; The current country iso is: SWE
+Smoothing Daily Deaths; The current country iso is: SWZ
+Smoothing Daily Deaths; The current country iso is: SYC
+Smoothing Daily Deaths; The current country iso is: SYR
+Smoothing Daily Deaths; The current country iso is: TCD
+Smoothing Daily Deaths; The current country iso is: TGO
+Smoothing Daily Deaths; The current country iso is: THA
+Smoothing Daily Deaths; The current country iso is: TJK
+Smoothing Daily Deaths; The current country iso is: TLS
+Smoothing Daily Deaths; The current country iso is: TON
+Smoothing Daily Deaths; The current country iso is: TTO
+Smoothing Daily Deaths; The current country iso is: TUN
+Smoothing Daily Deaths; The current country iso is: TUR
+Smoothing Daily Deaths; The current country iso is: TUV
+Smoothing Daily Deaths; The current country iso is: TWN
+Smoothing Daily Deaths; The current country iso is: TZA
+Smoothing Daily Deaths; The current country iso is: UGA
+Smoothing Daily Deaths; The current country iso is: UKR
+Smoothing Daily Deaths; The current country iso is: URY
+Smoothing Daily Deaths; The current country iso is: USA
+Smoothing Daily Deaths; The current country iso is: UZB
+Smoothing Daily Deaths; The current country iso is: VAT
+Smoothing Daily Deaths; The current country iso is: VCT
+Smoothing Daily Deaths; The current country iso is: VEN
+Smoothing Daily Deaths; The current country iso is: VNM
+Smoothing Daily Deaths; The current country iso is: VUT
+Smoothing Daily Deaths; The current country iso is: WSM
+Smoothing Daily Deaths; The current country iso is: YEM
+Smoothing Daily Deaths; The current country iso is: ZAF
+Smoothing Daily Deaths; The current country iso is: ZMB
+Smoothing Daily Deaths; The current country iso is: ZWE
+{txt}
+{com}. *
+. 
+. drop DayDeaMeRaJOHN
+{txt}
+{com}. 
+. qui compress
+{txt}
+{com}. 
+. save "CovidLongitudinal JOHN.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+CovidLongitudinal JOHN.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. * gen calendar file
+. 
+. clear
+{txt}
+{com}. 
+. di td(01jan2020) // 21915
+{res}21915
+{txt}
+{com}. 
+. di td(01jan2023) // 23011
+{res}23011
+{txt}
+{com}. 
+. di td(01jan2023) - td(01jan2020) + 1 // 1097
+{res}1097
+{txt}
+{com}. 
+. 
+. 
+. set obs 1097
+{txt}{p}
+Number of observations ({bf:_N}) was 0,
+now 1,097.
+{p_end}
+
+{com}. 
+. gen date = .
+{txt}(1,097 missing values generated)
+
+{com}. 
+. replace date = 21915 in 1
+{txt}(1 real change made)
+
+{com}. 
+. replace date = date[_n-1] + 1 in 2/l
+{txt}(1,096 real changes made)
+
+{com}. 
+. replace date = date[_n-1] + 1 in 2/1097
+{txt}(0 real changes made)
+
+{com}. 
+. format date %tdDDMonCCYY
+{txt}
+{com}. 
+. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21915{txt},{res}23011{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}01jan2020{txt},{res}01jan2023{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}1,097{col 51}{txt}Missing .: {res}0{txt}/{res}1,097
+
+{txt}{col 19}Mean: {res}{ralign 7:22463}{txt} = {res}02jul2021{txt}
+{col 14}Std. dev.: {res}{ralign 7:316.821}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22024}{ralign 11:   22189}{ralign 11:   22463}{ralign 11:   22737}{ralign 11:   22902}
+{col 25}{ralign 9:19apr2020}{ralign 11:01oct2020}{ralign 11:02jul2021}{ralign 11:02apr2022}{ralign 11:14sep2022}
+{txt}
+{com}. 
+. save "calendar file.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+calendar file.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. merge m:m date using "CovidLongitudinal JOHN.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}          13,086
+{txt}{col 9}from master{col 30}{res}              21{txt}  (_merge==1)
+{col 9}from using{col 30}{res}          13,065{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}         209,820{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. 
+. isid loc_grand_name date, sort missok
+{txt}(data now sorted by {bf:loc_grand_name date})
+
+{com}. 
+. 
+. 
+. qui compress
+{txt}
+{com}.         
+. save "CovidLongitudinal JOHN.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+CovidLongitudinal JOHN.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "CovidLongitudinal JOHN data dictionary.csv", replace 
+{res}{txt}file {bf:CovidLongitudinal JOHN data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. * graph all countries JOHN daily deaths
+. 
+. twoway ///
+> (line DayDeaMeSmJOHNAFG date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNALB date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNDZA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNAND date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNAGO date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNATG date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNARG date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNARM date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNAUS date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNAUT date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNAZE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNBHS date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNBHR date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNBGD date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNBRB date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNBLR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNBEL date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNBLZ date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNBEN date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNBTN date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNBOL date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNBIH date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNBWA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNBRA date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNBRN date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNBGR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNBFA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNBDI date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNKHM date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNCMR date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCAN date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNCPV date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCAF date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNTCD date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCHL date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNCHN date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNCOL date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNCOM date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCOG date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCOD date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNCRI date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNCIV date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNHRV date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNCUB date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNCYP date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNCZE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNDNK date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNDJI date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNDMA date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNDOM date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNECU date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNEGY date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNSLV date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNGNQ date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNERI date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNEST date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSWZ date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNETH date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNFJI date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNFIN date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNFRA date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNGAB date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNGMB date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNGEO date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNDEU date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNGHA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNGRC date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNGRD date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNGTM date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNGIN date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNGNB date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNGUY date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNHTI date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNVAT date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNHND date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNHUN date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNISL date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNIND date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNIDN date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNIRN date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNIRQ date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNIRL date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNISR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNITA date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNJAM date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNJPN date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNJOR date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNKAZ date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNKEN date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNKIR date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNPRK date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNKOR date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNKOS date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNKWT date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNKGZ date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNLAO date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNLVA date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNLBN date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNLSO date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNLBR date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNLBY date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNLIE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNLTU date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNLUX date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNMDG date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMWI date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMYS date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNMDV date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNMLI date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMLT date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNMRT date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMUS date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMEX date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNFSM date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNMDA date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNMCO date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNMNG date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNMNE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNMAR date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNMOZ date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMMR date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNNAM date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNNPL date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNNLD date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNNZL date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNNIC date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNNER date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNNGA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNMKD date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNNOR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNOMN date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNPAK date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNPSE date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNPAN date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNPNG date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNPRY date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNPER date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNPHL date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNPOL date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNPRT date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNQAT date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNROU date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNRUS date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNRWA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNKNA date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNLCA date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNVCT date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNWSM date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNSMR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSTP date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNSAU date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNSEN date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNSRB date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSYC date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNSLE date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNSGP date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNSVK date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSVN date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSLB date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNSOM date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNZAF date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNSSD date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNESP date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNLKA date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNSDN date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNSUR date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNSWE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNCHE date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNSYR date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNTJK date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNTWN date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNTZA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNTHA date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNTLS date, sort lwidth(thin) lcolor(cyan)) ///
+> (line DayDeaMeSmJOHNTGO date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNTON date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNTTO date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNTUN date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNTUR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNUGA date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNUKR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNARE date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNGBR date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNUSA date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNURY date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNUZB date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNVUT date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNVEN date, sort lwidth(thin) lcolor(red)) ///
+> (line DayDeaMeSmJOHNVNM date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeSmJOHNYEM date, sort lwidth(thin) lcolor(gold)) ///
+> (line DayDeaMeSmJOHNZMB date, sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeSmJOHNZWE date, sort lwidth(thin) lcolor(brown)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths) title("C19 daily deaths, all countries, JOHN", size(medium) color(black)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> legend(position(6) order(3 "AFR countries" 6 "AMR countries" 1 "EMR countries" ///
+>  2 "EUR countries" 14 "SEAR countries" 9 "WPR countries") ///
+> rows(2) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
+> 
+{res}{txt}
+{com}. qui graph export "graph 03 all countries JOHN C19 daily deaths reported.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. view "log CovidLongitudinal JOHN.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/JOHN/log CovidLongitudinal JOHN.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}29 Aug 2023, 09:00:24
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

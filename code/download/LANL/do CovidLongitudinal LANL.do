@@ -59,6 +59,8 @@ foreach update of local list {
 	
 	di in red "This is LANL update " "`update'"
 	
+	capture shell rm -r "`update'_deaths_incidence_quantiles_global_website.csv"
+	
 	copy https://covid-19.bsvgateway.org/forecast/global/`update'/files/`update'_deaths_incidence_quantiles_global_website.csv `update'_deaths_incidence_quantiles_global_website.csv
 	
 	import delimited using "`update'_deaths_incidence_quantiles_global_website.csv", clear varnames(1)
@@ -97,12 +99,23 @@ foreach update of local list {
 	
 	rename q50  DayDeaMeRaLANL`this'
 	
-	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL S0"
+	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL"
 	
 	drop update fcst_date year month day
 	
 	codebook loc_grand_name
 	
+	replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+	replace loc_grand_name = "Congo" if loc_grand_name == "Republic of Congo"
+	replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of the Congo"
+	replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+	replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+	replace loc_grand_name = "Myanmar" if loc_grand_name == "Burma"
+	replace loc_grand_name = "Palestine" if loc_grand_name == "West Bank and Gaza"
+	replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+	replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+	replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+
 	qui compress
 	
 	save "CovidLongitudinal LANL `this'.dta", replace
@@ -133,6 +146,8 @@ foreach update of local list {
 	clear
 	
 	di in red "This is update " "`update'"
+	
+	capture shell rm -r "`update'_deaths_incidence_quantiles_global_website.csv"	
 	
 	copy https://covid-19.bsvgateway.org/forecast/global/`update'/files/`update'_deaths_incidence_quantiles_global_website.csv `update'_deaths_incidence_quantiles_global_website.csv
 	
@@ -172,10 +187,24 @@ foreach update of local list {
 	
 	rename q50  DayDeaMeRaLANL`this'
 	
-	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL S0"
+	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL"
 	
 	
 	drop update fcst_date year month day
+	
+	
+	codebook loc_grand_name
+	
+	replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+	replace loc_grand_name = "Congo" if loc_grand_name == "Republic of Congo"
+	replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of the Congo"
+	replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+	replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+	replace loc_grand_name = "Myanmar" if loc_grand_name == "Burma"
+	replace loc_grand_name = "Palestine" if loc_grand_name == "West Bank and Gaza"
+	replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+	replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+	replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
 	
 	qui compress
 	
@@ -207,6 +236,8 @@ foreach update of local list {
 	clear
 	
 	di in red "This is update " "`update'"
+	
+	capture shell rm -r "`update'_global_incidence_daily_deaths_website.csv"		
 	
 	copy https://covid-19.bsvgateway.org/forecast/global/`update'/files/`update'_global_incidence_daily_deaths_website.csv `update'_global_incidence_daily_deaths_website.csv 
 	
@@ -246,10 +277,24 @@ foreach update of local list {
 	
 	rename q50  DayDeaMeRaLANL`this'
 	
-	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL S0"
+	label var DayDeaMeRaLANL`this' "Daily deaths Mean LANL"
 	
 
 	drop update fcst_date year month day
+	
+	
+	codebook loc_grand_name
+	
+	replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+	replace loc_grand_name = "Congo" if loc_grand_name == "Republic of Congo"
+	replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of the Congo"
+	replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+	replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+	replace loc_grand_name = "Myanmar" if loc_grand_name == "Burma"
+	replace loc_grand_name = "Palestine" if loc_grand_name == "West Bank and Gaza"
+	replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+	replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+	replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"	
 	
 	qui compress
 	
@@ -273,11 +318,11 @@ foreach update of local list {
 
 
 
+**********************************************
+**********************************************
 
-
-
-
-
+**********************************************
+**********************************************
 
 * gen list of countries and update dates
 
@@ -573,7 +618,8 @@ rename country loc_grand_name
 *
 
 
-
+**********************************************
+**********************************************
 * country names to loc_grand_name
 
 replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde" 

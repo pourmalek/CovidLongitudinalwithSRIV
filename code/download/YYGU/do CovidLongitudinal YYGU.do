@@ -32,6 +32,7 @@ log using "log CovidLongitudinal YYGU.smcl", replace
 
 https://github.com/youyanggu/covid19_projections/tree/master/projections/combined/ 2020-??-??_global.csv
 
+
 (2) Estimates for the USA are located in 2020-??-??_us.csv files
 
 https://github.com/youyanggu/covid19_projections/tree/master/projections/combined/ 2020-??-??_us.csv
@@ -116,6 +117,11 @@ rename predicted_deaths_mean DayDeaMeRaYYGU
 
 rename country loc_grand_name
 
+
+* country names to loc_grand_name
+
+replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea" 
+
 label var DayDeaMeRaYYGU "Daily Deaths Mean YYGU"
 
 gen update = "`update'"
@@ -140,7 +146,7 @@ merge m:m date using "calendar 2020.dta"
 
 drop _merge
 
-save "CovidLongitudinal YYGU `update'.dta", replace
+save "CovidLongitudinal YYGU global `update'.dta", replace
 
 
 }
@@ -198,7 +204,7 @@ merge m:m date using "calendar 2020.dta"
 
 drop _merge
 
-save "CovidLongitudinal YYGU 20201005.dta", replace
+save "CovidLongitudinal YYGU global 20201005.dta", replace
 
 *
 
@@ -243,6 +249,9 @@ keep date country predicted_deaths_mean
 rename predicted_deaths_mean DayDeaMeRaYYGU
 
 rename country loc_grand_name
+
+* country names to loc_grand_name
+replace loc_grand_name = "United States of America" if loc_grand_name == "US" 
 
 label var DayDeaMeRaYYGU "Daily Deaths Mean YYGU"
 
@@ -475,13 +484,18 @@ local list ///
 
 foreach update of local list { 
 
-	use "CovidLongitudinal YYGU `update'.dta", clear 
+	use "CovidLongitudinal YYGU global `update'.dta", clear 
 	
 	merge m:m loc_grand_name date using "CovidLongitudinal YYGU USA `update'.dta"
 	
+	* country names to loc_grand_name
+
+	replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea" 
+	replace loc_grand_name = "United States of America" if loc_grand_name == "US" 
+	
 	drop _merge
 	
-	save "CovidLongitudinal YYGU with USA `update'.dta", replace
+	save "CovidLongitudinal YYGU `update'.dta", replace
 
 }
 *
@@ -496,10 +510,11 @@ foreach update of local list {
 
 use "CovidLongitudinal YYGU USA 20200401.dta"
 save "CovidLongitudinal YYGU with USA 20200401.dta", replace
-
+save "CovidLongitudinal YYGU 20200401.dta", replace
 
 use "CovidLongitudinal YYGU 20201005.dta", clear 
 save "CovidLongitudinal YYGU with USA 20201005.dta", replace
+save "CovidLongitudinal YYGU 20201005.dta", replace
 
 
 
@@ -507,8 +522,18 @@ save "CovidLongitudinal YYGU with USA 20201005.dta", replace
 
 
 
+
+
+
+
+**********************************************
+**********************************************
+
+**********************************************
+**********************************************
 
 * gen list of countries and update dates
+
 
 
 local list ///
@@ -706,7 +731,7 @@ local list ///
 
 foreach update of local list {
 
-	use "CovidLongitudinal YYGU with USA `update'.dta", clear
+	use "CovidLongitudinal YYGU `update'.dta", clear
 			
 	contract loc_grand_name
 	
@@ -867,6 +892,8 @@ rename country loc_grand_name
 
 
 
+**********************************************
+**********************************************
 * country names to loc_grand_name
 
 replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea" 
@@ -874,6 +901,10 @@ replace loc_grand_name = "United States of America" if loc_grand_name == "US"
    
                                            
 	
+capture isid loc_grand_name update_date_block, sort
+
+duplicates drop loc_grand_name update_date_block, force
+
 isid loc_grand_name update_date_block, sort
                                            
 

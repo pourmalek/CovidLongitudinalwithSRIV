@@ -1,0 +1,5680 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IMPE/log CovidLongitudinal IMPE 3.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Aug 2023, 06:51:16
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal IMPE 3.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models                                                                         
+. 
+. * Objective: Download estimates files for IMPE model, part 3 of 3                                                                   
+. ***************************************************************************
+. 
+. 
+. * download estimates files - part 3 of 3 - 2022 (from 2020, 2021, 2022)
+. * input data files: csv files on web site
+. * output data files: "IMPE `update'.dta" 
+. *                    "IMPE countries.dta"
+. *                    "IMPE countries long.dta"
+. 
+. 
+. /*
+> 
+> An additional issue that will occur with downloading the IMPE estimates files:
+> 
+> Is described below. 
+> 
+> The more recent updates are stored on the following web page (ONE):
+> 
+> https://github.com/mrc-ide/global-lmic-reports/tree/master/data
+> 
+> And some of the older updates in the above web page are periodically moved (for backup) to the following web page (TWO):
+> 
+> https://mrcdata.dide.ic.ac.uk/global-lmic-reports/
+> 
+> Once some files are moved from the web page (TWO) to the web page (ONE), the Stata codes in
+> the Stata codes in the do file "$pathCovidLongitudinal/download/IMPE/do CovidLongitudinal IMPE 3.do" 
+> will need to be adapted for such changes of the web pages which store the IMPE model update files. 
+> 
+> 
+> */
+. 
+. 
+. 
+. /*
+> 
+> * IMPE updates all 
+> 
+> 
+> *** web page (TWO): https://mrcdata.dide.ic.ac.uk/global-lmic-reports/ ***
+> 
+> 
+> copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/202?-??-??_v?.csv.zip 202?-??-??_v?.csv.zip
+> 
+> 
+> 2020-04-28_v1.csv.zip
+> 2020-04-29_v1.csv.zip
+> 2020-04-30_v1.csv.zip
+> 2020-05-01_v1.csv.zip
+> 2020-05-02_v1.csv.zip
+> 2020-05-03_v1.csv.zip
+> 2020-05-04_v1.csv.zip
+> 2020-05-05_v1.csv.zip
+> 2020-05-06_v1.csv.zip
+> 2020-05-07_v1.csv.zip
+> 2020-05-08_v1.csv.zip
+> 2020-05-09_v1.csv.zip
+> 2020-05-10_v1.csv.zip
+> 2020-05-11_v1.csv.zip
+> 2020-05-12_v1.csv.zip
+> 2020-05-13_v1.csv.zip
+> 2020-05-14_v1.csv.zip
+> 2020-05-15_v1.csv.zip
+> 2020-05-16_v1.csv.zip
+> 2020-05-17_v1.csv.zip
+> 2020-05-19_v1.csv.zip
+> 2020-05-20_v1.csv.zip
+> 2020-05-21_v1.csv.zip
+> 2020-05-22_v1.csv.zip
+> 2020-05-23_v1.csv.zip
+> 2020-05-24_v1.csv.zip
+> 2020-05-25_v1.csv.zip
+> 2020-05-26_v1.csv.zip
+> 2020-05-27_v1.csv.zip
+> 2020-05-28_v1.csv.zip
+> 2020-05-29_v1.csv.zip
+> 2020-05-30_v1.csv.zip
+> 2020-05-31_v2.csv.zip
+> 2020-06-01_v2.csv.zip
+> 2020-06-02_v2.csv.zip
+> 2020-06-03_v2.csv.zip
+> 2020-06-04_v2.csv.zip
+> 2020-06-06_v2.csv.zip
+> 2020-06-09_v2.csv.zip
+> 2020-06-14_v4.csv.zip
+> 2020-06-16_v4.csv.zip
+> 2020-06-19_v4.csv.zip
+> 2020-06-21_v4.csv.zip
+> 2020-06-23_v4.csv.zip
+> 2020-06-26_v4.csv.zip
+> 2020-06-28_v4.csv.zip
+> 2020-07-02_v4.csv.zip
+> 2020-07-03_v4.csv.zip
+> 2020-07-04_v4.csv.zip
+> 2020-07-07_v4.csv.zip
+> 2020-07-11_v4.csv.zip
+> 2020-07-14_v4.csv.zip
+> 2020-07-15_v4.csv.zip
+> 2020-07-18_v4.csv.zip
+> 2020-07-20_v4.csv.zip
+> 2020-07-22_v4.csv.zip
+> 2020-07-25_v4.csv.zip
+> 2020-07-27_v4.csv.zip
+> 2020-07-31_v4.csv.zip
+> 2020-08-08_v5.csv.zip
+> 2020-08-10_v5.csv.zip
+> 2020-08-11_v5.csv.zip
+> 2020-08-13_v5.csv.zip
+> 2020-08-14_v5.csv.zip
+> 2020-08-17_v5.csv.zip
+> 2020-08-23_v5.csv.zip
+> 2020-08-25_v5.csv.zip
+> 2020-08-27_v5.csv.zip
+> 2020-08-31_v5.csv.zip
+> 2020-09-02_v5.csv.zip
+> 2020-09-06_v5.csv.zip
+> 2020-09-08_v5.csv.zip
+> 2020-09-12_v5.csv.zip
+> 2020-09-15_v5.csv.zip
+> 2020-09-19_v5.csv.zip
+> 2020-09-23_v5.csv.zip
+> 2020-09-25_v5.csv.zip
+> 2020-10-03_v5.csv.zip
+> 2020-10-06_v5.csv.zip
+> 2020-10-12_v5.csv.zip
+> 2020-10-19_v5.csv.zip
+> 2020-10-25_v5.csv.zip
+> 2020-10-28_v5.csv.zip
+> 2020-11-01_v5.csv.zip
+> 2020-11-10_v6.csv.zip
+> 2020-11-14_v6.csv.zip
+> 2020-11-18_v6.csv.zip
+> 2020-11-23_v6.csv.zip
+> 2020-11-29_v6.csv.zip
+> 2020-12-04_v6.csv.zip
+> 2020-12-12_v6.csv.zip
+> 2020-12-20_v6.csv.zip
+> 2020-12-26_v6.csv.zip
+> 
+> 
+> 
+> 2021-01-04_v6.csv.zip
+> 2021-01-10_v6.csv.zip
+> 2021-01-12_v6.csv.zip
+> 2021-01-18_v7.csv.zip
+> 2021-01-24_v7.csv.zip
+> 2021-01-30_v7.csv.zip
+> 2021-02-03_v7.csv.zip
+> 2021-02-10_v7.csv.zip
+> 2021-02-17_v7.csv.zip
+> 2021-02-26_v7.csv.zip
+> 2021-03-05_v7.csv.zip
+> 2021-03-12_v7.csv.zip
+> 2021-03-19_v7.csv.zip
+> 2021-03-29_v7.csv.zip
+> 2021-04-06_v7.csv.zip
+> 2021-04-17_v7.csv.zip
+> 2021-04-24_v7.csv.zip
+> 2021-05-10_v8.csv.zip
+> 2021-05-16_v8.csv.zip
+> 2021-05-22_v8.csv.zip
+> 2021-05-27_v8.csv.zip
+> 2021-06-04_v8.csv.zip
+> 2021-06-11_v8.csv.zip
+> 2021-06-18_v8.csv.zip
+> 2021-06-26_v8.csv.zip
+> 2021-07-02_v8.csv.zip
+> 2021-07-09_v8.csv.zip
+> 2021-07-19_v8.csv.zip
+> 2021-08-06_v8.csv.zip
+> 2021-08-19_v8.csv.zip
+> 2021-08-25_v8.csv.zip
+> 2021-09-09_v8.csv.zip
+> 2021-09-24_v8.csv.zip
+> 2021-10-06_v8.csv.zip
+> 2021-10-21_v8.csv.zip
+> 2021-10-27_v8.csv.zip
+> 2021-11-03_v9.csv.zip
+> 2021-11-15_v9.csv.zip
+> 2021-11-21_v9.csv.zip
+> 2021-11-29_v9.csv.zip
+> 2021-12-05_v9.csv.zip
+> 2021-12-13_v9.csv.zip
+> 2021-12-26_v9.csv.zip
+> 
+> 
+> 2022-01-02_v9.csv.zip
+> 2022-01-20_v9.csv.zip
+> 2022-01-31_v9.csv.zip
+> 2022-03-15_v9.csv.zip
+> 2022-05-30_v9.csv.zip
+> 
+> 
+> 
+> 
+> *** web page (ONE): https://github.com/mrc-ide/global-lmic-reports/tree/master/data ***
+> 
+> copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-??-??_v*.csv.zip
+> 
+> 
+> 2022-06-20_v9.csv.zip
+> 2022-07-03_v9.csv.zip
+> 2022-07-12_v9.csv.zip
+> 2022-07-28_v9.csv.zip
+> 2022-08-08_v9.csv.zip
+> 2022-09-01_v10.csv.zip
+> 2022-12-25_v10.csv.zip
+> 
+> 
+> */
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *
+. 
+. * update 2022-01-02 20220102
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/2022-01-02_v9.csv.zip 2022-01-02_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-01-02_v9.csv.zip, replace
+{res}{text:    inflating: 2022-01-02_v9.csv}
+
+{text:successfully unzipped 2022-01-02_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-01-02_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-01-02_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(14 vars, 8,921,388 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Maintain Status Quo"
+{txt}(7,434,424 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,351,907 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21883{txt},{res}22736{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}30nov2019{txt},{res}01apr2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}854{col 51}{txt}Missing .: {res}0{txt}/{res}135,057
+
+{txt}{col 19}Mean: {res}{ralign 7:22357.1}{txt} = {res}18mar2021{txt}(+ 1 hour)
+{col 14}Std. dev.: {res}{ralign 7:226.394}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22038}{ralign 11:   22165}{ralign 11:   22363}{ralign 11:   22553}{ralign 11:   22666}
+{col 25}{ralign 9:03may2020}{ralign 11:07sep2020}{ralign 11:24mar2021}{ralign 11:30sep2021}{ralign 11:21jan2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(274 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(777 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(784 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(797 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(760 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(826 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(783 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(382 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(782 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(562 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(496 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(410 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(817 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(664 real changes made)
+
+{com}. 
+.  
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220102
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220102.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220102.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220102.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-01-02_v9.csv.zip" 
+{txt}
+rm: 2022-01-02_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-01-20 20220120
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/2022-01-20_v9.csv.zip 2022-01-20_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-01-20_v9.csv.zip, replace
+{res}{text:    inflating: 2022-01-20_v9.csv}
+
+{text:successfully unzipped 2022-01-20_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-01-20_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-01-20_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(14 vars, 7,630,704 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Maintain Status Quo"
+{txt}(6,358,953 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,156,241 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21883{txt},{res}22754{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}30nov2019{txt},{res}19apr2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}872{col 51}{txt}Missing .: {res}0{txt}/{res}115,510
+
+{txt}{col 19}Mean: {res}{ralign 7:22369.7}{txt} = {res}30mar2021{txt}(+ 17 hours)
+{col 14}Std. dev.: {res}{ralign 7:230.773}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22044}{ralign 11:   22175}{ralign 11:   22377}{ralign 11:   22570}{ralign 11:   22684}
+{col 25}{ralign 9:09may2020}{ralign 11:17sep2020}{ralign 11:07apr2021}{ralign 11:17oct2021}{ralign 11:08feb2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(292 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(801 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(802 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(815 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(763 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(844 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(802 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(399 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(792 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(578 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(514 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(417 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(682 real changes made)
+
+{com}. 
+.  
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220120
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220120.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220120.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220120.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-01-20_v9.csv.zip" 
+{txt}
+rm: 2022-01-20_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. *
+. 
+. * update 2022-01-31 20220131
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/2022-01-31_v9.csv.zip 2022-01-31_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-01-31_v9.csv.zip, replace
+{res}{text:    inflating: 2022-01-31_v9.csv}
+
+{text:successfully unzipped 2022-01-31_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-01-31_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-01-31_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(14 vars, 7,629,333 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Maintain Status Quo"
+{txt}(6,357,761 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,156,077 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21883{txt},{res}22765{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}30nov2019{txt},{res}30apr2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}883{col 51}{txt}Missing .: {res}0{txt}/{res}115,495
+
+{txt}{col 19}Mean: {res}{ralign 7:22376.1}{txt} = {res}06apr2021{txt}(+ 1 hour)
+{col 14}Std. dev.: {res}{ralign 7:233.596}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22046}{ralign 11:   22179}{ralign 11:   22383}{ralign 11:   22579}{ralign 11:   22694}
+{col 25}{ralign 9:11may2020}{ralign 11:21sep2020}{ralign 11:13apr2021}{ralign 11:26oct2021}{ralign 11:18feb2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(303 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(814 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(813 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(826 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(785 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(855 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(813 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(404 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(804 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(572 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(525 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(443 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(693 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220131
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220131.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220131.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220131.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-01-31_v9.csv.zip" 
+{txt}
+rm: 2022-01-31_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-03-15 20220315
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/2022-03-15_v9.csv.zip 2022-03-15_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-03-15_v9.csv.zip, replace
+{res}{text:    inflating: 2022-03-15_v9.csv}
+
+{text:successfully unzipped 2022-03-15_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-03-15_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-03-15_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(14 vars, 9,767,277 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Maintain Status Quo"
+{txt}(8,139,700 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,479,737 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}21899{txt},{res}22808{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}16dec2019{txt},{res}12jun2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}910{col 51}{txt}Missing .: {res}0{txt}/{res}147,840
+
+{txt}{col 19}Mean: {res}{ralign 7:22394.9}{txt} = {res}24apr2021{txt}(+ 23 hours)
+{col 14}Std. dev.: {res}{ralign 7:246.361}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22048}{ralign 11:   22186}{ralign 11:   22401}{ralign 11:   22609}{ralign 11:   22731}
+{col 25}{ralign 9:13may2020}{ralign 11:28sep2020}{ralign 11:01may2021}{ralign 11:25nov2021}{ralign 11:27mar2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(346 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(847 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(835 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(869 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(831 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(897 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(849 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(452 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(848 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(610 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(567 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(481 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(867 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(736 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220315
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220315.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220315.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220315.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-03-15_v9.csv.zip" 
+{txt}
+rm: 2022-03-15_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-05-30 20220530
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://mrcdata.dide.ic.ac.uk/global-lmic-reports/2022-05-30_v9.csv.zip 2022-05-30_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-05-30_v9.csv.zip, replace
+{res}{text:    inflating: 2022-05-30_v9.csv}
+
+{text:successfully unzipped 2022-05-30_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-05-30_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-05-30_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,577,665 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Maintain Status Quo"
+{txt}(7,981,448 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,451,135 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22061{txt},{res}22884{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}26may2020{txt},{res}27aug2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}824{col 51}{txt}Missing .: {res}0{txt}/{res}145,082
+
+{txt}{col 19}Mean: {res}{ralign 7:22483.4}{txt} = {res}22jul2021{txt}(+ 10 hours)
+{col 14}Std. dev.: {res}{ralign 7:236.628}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22151}{ralign 11:   22281}{ralign 11:   22487}{ralign 11:   22689}{ralign 11:   22807}
+{col 25}{ralign 9:24aug2020}{ralign 11:01jan2021}{ralign 11:26jul2021}{ralign 11:13feb2022}{ralign 11:11jun2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(419 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(159 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(527 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(697 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(631 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(562 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(824 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(812 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220530
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220530.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220530.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220530.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-05-30_v9.csv.zip" 
+{txt}
+rm: 2022-05-30_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-06-20 20220620
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-06-20_v9.csv.zip 2022-06-20_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-06-20_v9.csv.zip, replace
+{res}{text:    inflating: 2022-06-20_v9.csv}
+
+{text:successfully unzipped 2022-06-20_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-06-20_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-06-20_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,803,904 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+{txt}(8,169,920 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,485,440 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22033{txt},{res}22905{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}28apr2020{txt},{res}17sep2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}873{col 51}{txt}Missing .: {res}0{txt}/{res}148,544
+
+{txt}{col 19}Mean: {res}{ralign 7:22496.7}{txt} = {res}04aug2021{txt}(+ 16 hours)
+{col 14}Std. dev.: {res}{ralign 7:241.332}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22160}{ralign 11:   22292}{ralign 11:   22502}{ralign 11:   22705}{ralign 11:   22826}
+{col 25}{ralign 9:02sep2020}{ralign 11:12jan2021}{ralign 11:10aug2021}{ralign 11:01mar2022}{ralign 11:30jun2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(845 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(775 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(873 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(873 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(873 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(845 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(845 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(873 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(838 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(719 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(495 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(873 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(817 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(873 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220620
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220620.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220620.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220620.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-06-20_v9.csv.zip" 
+{txt}
+rm: 2022-06-20_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. 
+. *
+. 
+. * update 2022-07-03 20220703
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-07-03_v9.csv.zip 2022-07-03_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-07-03_v9.csv.zip, replace
+{res}{text:    inflating: 2022-07-03_v9.csv}
+
+{text:successfully unzipped 2022-07-03_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-07-03_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-07-03_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-2)
+{res}{text}(14 vars, 9,658,302 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+{txt}(8,048,585 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,463,393 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}22918{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}30sep2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}786{col 51}{txt}Missing .: {res}0{txt}/{res}146,324
+
+{txt}{col 19}Mean: {res}{ralign 7:22531.2}{txt} = {res}08sep2021{txt}(+ 4 hours)
+{col 14}Std. dev.: {res}{ralign 7:226.534}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22215}{ralign 11:   22336}{ralign 11:   22533}{ralign 11:   22728}{ralign 11:   22843}
+{col 25}{ralign 9:27oct2020}{ralign 11:25feb2021}{ralign 11:10sep2021}{ralign 11:24mar2022}{ralign 11:17jul2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(658 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(786 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(786 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220703
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220703.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220703.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220703.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-07-03_v9.csv.zip" 
+{txt}
+rm: 2022-07-03_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-07-12 20220712
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-07-12_v9.csv.zip 2022-07-12_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-07-12_v9.csv.zip, replace
+{res}{text:    inflating: 2022-07-12_v9.csv}
+
+{text:successfully unzipped 2022-07-12_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-07-12_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-07-12_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,717,372 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+{txt}(8,097,810 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,472,343 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}22927{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}09oct2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}795{col 51}{txt}Missing .: {res}0{txt}/{res}147,219
+
+{txt}{col 19}Mean: {res}{ralign 7:22535.7}{txt} = {res}12sep2021{txt}(+ 16 hours)
+{col 14}Std. dev.: {res}{ralign 7:229.068}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22216}{ralign 11:   22339}{ralign 11:   22538}{ralign 11:   22735}{ralign 11:   22851}
+{col 25}{ralign 9:28oct2020}{ralign 11:28feb2021}{ralign 11:15sep2021}{ralign 11:31mar2022}{ralign 11:25jul2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(658 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(795 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(795 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220712
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220712.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220712.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220712.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-07-12_v9.csv.zip" 
+{txt}
+rm: 2022-07-12_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. *
+. 
+. * update 2022-07-28 20220728
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-07-28_v9.csv.zip 2022-07-28_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-07-28_v9.csv.zip, replace
+{res}{text:    inflating: 2022-07-28_v9.csv}
+
+{text:successfully unzipped 2022-07-28_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-07-28_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-07-28_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 9,940,452 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+{txt}(8,283,710 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,506,143 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}22943{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}25oct2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}811{col 51}{txt}Missing .: {res}0{txt}/{res}150,599
+
+{txt}{col 19}Mean: {res}{ralign 7:22543.9}{txt} = {res}20sep2021{txt}(+ 22 hours)
+{col 14}Std. dev.: {res}{ralign 7:233.518}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22218}{ralign 11:   22343}{ralign 11:   22546}{ralign 11:   22747}{ralign 11:   22865}
+{col 25}{ralign 9:30oct2020}{ralign 11:04mar2021}{ralign 11:23sep2021}{ralign 11:12apr2022}{ralign 11:08aug2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(683 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(811 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(811 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220728
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220728.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220728.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220728.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-07-28_v9.csv.zip" 
+{txt}
+rm: 2022-07-28_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. 
+. *
+. 
+. * update 2022-08-08 20220808
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-08-08_v9.csv.zip 2022-08-08_v9.csv.zip
+{txt}
+{com}. unzipfile 2022-08-08_v9.csv.zip, replace
+{res}{text:    inflating: 2022-08-08_v9.csv}
+
+{text:successfully unzipped 2022-08-08_v9.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-08-08_v9.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-08-08_v9.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 10,071,780 obs)
+
+{com}. 
+. 
+. 
+. keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+{txt}(8,393,150 observations deleted)
+
+{com}. 
+. drop scenario
+{txt}
+{com}. 
+. keep if compartment == "deaths"
+{txt}(1,526,042 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}22954{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}05nov2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}822{col 51}{txt}Missing .: {res}0{txt}/{res}152,588
+
+{txt}{col 19}Mean: {res}{ralign 7:22549.5}{txt} = {res}26sep2021{txt}(+ 12 hours)
+{col 14}Std. dev.: {res}{ralign 7:236.498}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22219}{ralign 11:   22346}{ralign 11:   22552}{ralign 11:   22755}{ralign 11:   22875}
+{col 25}{ralign 9:31oct2020}{ralign 11:07mar2021}{ralign 11:29sep2021}{ralign 11:20apr2022}{ralign 11:18aug2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(757 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(694 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(822 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(822 real changes made)
+
+{com}. 
+. 
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220808
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220808.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220808.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220808.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-08-08_v9.csv.zip" 
+{txt}
+rm: 2022-08-08_v9.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-09-01 20220901
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-09-01_v10.csv.zip 2022-09-01_v10.csv.zip
+{txt}
+{com}. unzipfile 2022-09-01_v10.csv.zip, replace
+{res}{text:    inflating: 2022-09-01_v10.csv}
+
+{text:successfully unzipped 2022-09-01_v10.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-09-01_v10.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-09-01_v10.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 3,424,253 obs)
+
+{com}. 
+. 
+. 
+. // keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+. 
+. * The variable scenario is not available. 
+. 
+. * Variable fit_type is available with values Excess Mortality and Reported Deaths
+. 
+. 
+. keep if fit_type == "Reported Deaths"
+{txt}(1,724,104 observations deleted)
+
+{com}. 
+. 
+. keep if compartment == "deaths"
+{txt}(1,545,608 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}22978{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}29nov2022{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}846{col 51}{txt}Missing .: {res}0{txt}/{res}154,541
+
+{txt}{col 19}Mean: {res}{ralign 7:22563.1}{txt} = {res}10oct2021{txt}(+ 2 hours)
+{col 14}Std. dev.: {res}{ralign 7:243.632}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22223}{ralign 11:   22354}{ralign 11:   22566}{ralign 11:   22775}{ralign 11:   22898}
+{col 25}{ralign 9:04nov2020}{ralign 11:15mar2021}{ralign 11:13oct2021}{ralign 11:10may2022}{ralign 11:10sep2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(89 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(600 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(780 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(714 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(633 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(846 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(846 real changes made)
+
+{com}. 
+.  
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20220901
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20220901.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220901.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220901.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-09-01_v10.csv.zip" 
+{txt}
+rm: 2022-09-01_v10.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+{txt}end of do-file
+
+{com}. do "/var/folders/tt/rr76v7b13d3g_qqsllcdr0rc0000gn/T//SD16821.000000"
+{txt}
+{com}. 
+. 
+. *
+. 
+. * update 2022-12-25 20221225
+. 
+. ******************************
+. 
+. * get csv file
+. 
+. clear all
+{res}{txt}
+{com}. 
+. copy https://raw.githubusercontent.com/mrc-ide/global-lmic-reports/master/data/2022-12-25_v10.csv.zip 2022-12-25_v10.csv.zip
+{txt}
+{com}. unzipfile 2022-12-25_v10.csv.zip, replace
+{res}{text:    inflating: 2022-12-25_v10.csv}
+
+{text:successfully unzipped 2022-12-25_v10.csv.zip to current directory}
+{text:total processed:  1}
+{text:        skipped:  0}
+{text:      extracted:  1}
+{txt}
+{com}. erase 2022-12-25_v10.csv.zip
+{txt}
+{com}. 
+. 
+.  
+. ******************************
+. 
+. * import csv file
+. 
+. import delimited "2022-12-25_v10.csv", clear varnames(1) 
+{res}{txt}(encoding automatically selected: ISO-8859-1)
+{res}{text}(14 vars, 3,885,506 obs)
+
+{com}. 
+. 
+. 
+. // keep if scenario == "Central" // "Maintain Status Quo" has been renamd to "Central"
+. 
+. * The variable scenario is not available. 
+. 
+. * Variable fit_type is available with values Excess Mortality and Reported Deaths
+. 
+. 
+. keep if fit_type == "Reported Deaths"
+{txt}(1,960,084 observations deleted)
+
+{com}. 
+. 
+. keep if compartment == "deaths"
+{txt}(1,750,400 observations deleted)
+
+{com}. 
+. drop compartment
+{txt}
+{com}. 
+. drop y_025 y_25 y_median y_75 y_975 // keeps y_mean
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen date 
+. 
+. rename date date_original
+{res}{txt}
+{com}. gen year = substr(date_original,1,4) 
+{txt}
+{com}. gen month = substr(date_original,6,2) 
+{txt}
+{com}. gen day = substr(date_original,9,2) 
+{txt}
+{com}. egen date2 = concat(day month year)
+{txt}
+{com}. gen date = date(date2, "DMY", 2050)
+{txt}
+{com}. format date %tdDDMonCCYY
+{txt}
+{com}. codebook date
+
+{txt}{hline}
+{res}date{right:(unlabeled)}
+{txt}{hline}
+
+{col 19}Type: Numeric daily date ({res}float{txt})
+
+{col 18}Range: [{res}22133{txt},{res}23093{txt}]{col 55}Units: {res}1
+{col 8}{txt}Or equivalently: [{res}06aug2020{txt},{res}24mar2023{txt}]{col 55}Units: {res}days
+{col 10}{txt}Unique values: {res}961{col 51}{txt}Missing .: {res}0{txt}/{res}175,022
+
+{txt}{col 19}Mean: {res}{ralign 6:22621}{txt} = {res}06dec2021{txt}(+ 23 hours)
+{col 14}Std. dev.: {res}{ralign 6:276.31}
+{txt}{col 12}Percentiles: {col 25}{ralign 9:10%}{ralign 11:25%}{ralign 11:50%}{ralign 11:75%}{ralign 11:90%}
+{res}{col 25}{ralign 9:22235}{ralign 11:   22383}{ralign 11:   22625}{ralign 11:   22860}{ralign 11:   23001}
+{col 25}{ralign 9:16nov2020}{ralign 11:13apr2021}{ralign 11:11dec2021}{ralign 11:03aug2022}{ralign 11:22dec2022}
+{txt}
+{com}. drop year month day date2 date_original
+{txt}
+{com}. 
+. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(715 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(895 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}variable {bf}{res}loc_grand_name{sf}{txt} was {bf}{res}str30{sf}{txt} now {bf}{res}str32{sf}
+{txt}(829 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(748 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(961 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(961 real changes made)
+
+{com}. 
+.  
+. 
+. drop iso3c report_date version
+{txt}
+{com}. 
+. rename y_mean DayDeaMeRaIMPES02
+{res}{txt}
+{com}. 
+. order loc_grand_name date DayDeaMeRaIMPES02
+{txt}
+{com}. 
+. rename DayDeaMeRaIMPES02 DayDeaMeRaIMPE20221225
+{res}{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE 20221225.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE 20221225.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20221225.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. shell rm -r "2022-12-25_v10.csv.zip" 
+{txt}
+rm: 2022-12-25_v10.csv.zip: No such file or directory
+
+{com}. 
+. ******
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. **********************************************
+. **********************************************
+. 
+. **********************************************
+. **********************************************
+. 
+. * gen list of countries and update dates
+. 
+. 
+. local list ///
+> 20200428 ///
+> 20200429 ///
+> 20200430 ///
+> 20200501 ///
+> 20200502 ///
+> 20200503 ///
+> 20200504 ///
+> 20200505 ///
+> 20200506 ///
+> 20200507 ///
+> 20200508 ///
+> 20200509 ///
+> 20200510 ///
+> 20200511 ///
+> 20200512 ///
+> 20200513 ///
+> 20200514 ///
+> 20200515 ///
+> 20200516 ///
+> 20200517 ///
+> 20200519 ///
+> 20200520 ///
+> 20200521 ///
+> 20200522 ///
+> 20200523 ///
+> 20200524 ///
+> 20200525 ///
+> 20200526 ///
+> 20200527 ///
+> 20200528 ///
+> 20200529 ///
+> 20200530 ///
+> 20200531 ///
+> 20200601 ///
+> 20200602 ///
+> 20200603 ///
+> 20200604 ///
+> 20200606 ///
+> 20200609 ///
+> 20200614 ///
+> 20200616 ///
+> 20200619 ///
+> 20200621 ///
+> 20200623 ///
+> 20200626 ///
+> 20200628 ///
+> 20200702 ///
+> 20200703 ///
+> 20200704 ///
+> 20200707 ///
+> 20200711 ///
+> 20200714 ///
+> 20200715 ///
+> 20200718 ///
+> 20200720 ///
+> 20200722 ///
+> 20200725 ///
+> 20200727 ///
+> 20200731 ///
+> 20200808 ///
+> 20200810 ///
+> 20200811 ///
+> 20200813 ///
+> 20200814 ///
+> 20200817 ///
+> 20200823 ///
+> 20200825 ///
+> 20200827 ///
+> 20200831 ///
+> 20200902 ///
+> 20200906 ///
+> 20200908 ///
+> 20200912 ///
+> 20200915 ///
+> 20200919 ///
+> 20200923 ///
+> 20200925 ///
+> 20201003 ///
+> 20201006 ///
+> 20201012 ///
+> 20201019 ///
+> 20201025 ///
+> 20201028 ///
+> 20201101 ///
+> 20201110 ///
+> 20201114 ///
+> 20201118 ///
+> 20201123 ///
+> 20201129 ///
+> 20201204 ///
+> 20201212 ///
+> 20201220 ///
+> 20201226 ///
+> 20210104 ///
+> 20210110 ///
+> 20210112 ///
+> 20210118 ///
+> 20210124 ///
+> 20210130 ///
+> 20210203 ///
+> 20210210 ///
+> 20210217 ///
+> 20210226 ///
+> 20210305 ///
+> 20210312 ///
+> 20210319 ///
+> 20210329 ///
+> 20210406 ///
+> 20210417 ///
+> 20210424 ///
+> 20210510 ///
+> 20210516 ///
+> 20210522 ///
+> 20210527 ///
+> 20210604 ///
+> 20210611 ///
+> 20210618 ///
+> 20210626 ///
+> 20210702 ///
+> 20210709 ///
+> 20210719 ///
+> 20210806 ///
+> 20210819 ///
+> 20210825 ///
+> 20210909 ///
+> 20210924 ///
+> 20211006 ///
+> 20211021 ///
+> 20211027 ///
+> 20211103 ///
+> 20211115 ///
+> 20211121 ///
+> 20211129 ///
+> 20211205 ///
+> 20211213 ///
+> 20211226 ///
+> 20220102 ///
+> 20220120 ///
+> 20220131 ///
+> 20220315 ///
+> 20220530 ///
+> 20220620 ///
+> 20220703 ///
+> 20220712 ///
+> 20220728 ///
+> 20220808 ///
+> 20220901 ///
+> 20221225
+{txt}
+{com}. 
+. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         use "IMPE `update'.dta", clear
+{txt}  3{com}.                 
+.         contract loc_grand_name
+{txt}  4{com}.         
+.         drop _freq
+{txt}  5{com}.                 
+.         rename loc_grand_name loc_grand_name`update'
+{txt}  6{com}.         
+.         gen counter = _n
+{txt}  7{com}.         
+.         save "IMPE `update' countries.dta", replace
+{txt}  8{com}. 
+. {c )-}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200428 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200428 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200429 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200429 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200430 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200430 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200501 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200501 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200502 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200502 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200503 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200503 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200504 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200504 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200505 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200505 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200506 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200506 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200507 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200507 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200508 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200508 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200509 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200509 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200510 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200510 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200511 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200511 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200512 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200512 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200513 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200513 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200514 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200514 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200515 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200515 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200516 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200516 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200517 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200517 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200519 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200519 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200520 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200520 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200521 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200521 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200522 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200522 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200523 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200523 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200524 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200524 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200525 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200525 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200526 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200526 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200527 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200527 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200528 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200528 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200529 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200529 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200530 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200530 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200531 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200531 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200601 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200601 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200602 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200602 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200603 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200603 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200604 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200604 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200606 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200606 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200609 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200609 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200614 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200614 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200616 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200616 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200619 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200619 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200621 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200621 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200623 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200623 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200626 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200626 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200628 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200628 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200702 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200702 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200703 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200703 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200704 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200704 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200707 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200707 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200711 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200711 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200714 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200714 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200715 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200715 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200718 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200718 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200720 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200720 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200722 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200722 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200725 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200725 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200727 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200727 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200731 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200731 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200808 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200808 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200810 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200810 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200811 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200811 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200813 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200813 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200814 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200814 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200817 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200817 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200823 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200823 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200825 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200825 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200827 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200827 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200831 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200831 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200902 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200902 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200906 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200906 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200908 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200908 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200912 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200912 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200915 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200915 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200919 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200919 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200923 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200923 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20200925 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20200925 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201003 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201003 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201006 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201006 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201012 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201012 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201019 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201019 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201025 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201025 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201028 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201028 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201101 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201101 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201110 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201110 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201114 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201114 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201118 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201118 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201123 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201123 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201129 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201129 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201204 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201204 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201212 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201212 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201220 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201220 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20201226 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20201226 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210104 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210104 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210110 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210110 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210112 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210112 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210118 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210118 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210124 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210124 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210130 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210130 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210203 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210203 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210210 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210210 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210217 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210217 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210226 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210226 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210305 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210305 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210312 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210312 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210319 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210319 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210329 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210329 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210406 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210406 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210417 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210417 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210424 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210424 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210510 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210510 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210516 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210516 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210522 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210522 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210527 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210527 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210604 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210604 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210611 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210611 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210618 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210618 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210626 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210626 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210702 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210702 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210709 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210709 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210719 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210719 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210806 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210806 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210819 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210819 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210825 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210825 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210909 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210909 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20210924 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20210924 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211006 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211006 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211021 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211021 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211027 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211027 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211103 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211103 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211115 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211115 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211121 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211121 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211129 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211129 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211205 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211205 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211213 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211213 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20211226 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20211226 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220102 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220102 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220120 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220120 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220131 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220131 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220315 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220315 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220530 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220530 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220620 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220620 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220703 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220703 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220712 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220712 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220728 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220728 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220808 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220808 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20220901 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20220901 countries.dta{rm}
+saved
+{p_end}
+{res}{txt}{p 0 4 2}
+(file {bf}
+IMPE 20221225 countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE 20221225 countries.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. use "IMPE 20200428 countries.dta" 
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         merge m:m counter using "IMPE `update' countries.dta"
+{txt}  3{com}.         
+.         drop _merge
+{txt}  4{com}. 
+. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              95{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              95{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              96{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               3
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               3{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              96{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              99{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}              99{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              99{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             101{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              15
+{txt}{col 9}from master{col 30}{res}              15{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              87{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             102{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             103{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             104{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             104{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             104{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             104{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             104{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             105{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             105{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             106{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             106{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             106{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             106{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             106{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              45
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              45{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              45
+{txt}{col 9}from master{col 30}{res}              45{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             154{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              45
+{txt}{col 9}from master{col 30}{res}              45{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             156{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              46
+{txt}{col 9}from master{col 30}{res}              46{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             156{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             157{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             156{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              46
+{txt}{col 9}from master{col 30}{res}              46{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             157{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              46
+{txt}{col 9}from master{col 30}{res}              46{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              46
+{txt}{col 9}from master{col 30}{res}              46{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             111{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             157{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             158{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             158{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             157{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             158{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               2{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             158{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             160{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              21
+{txt}{col 9}from master{col 30}{res}              21{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             140{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               3
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               3{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             161{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             163{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             163{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             165{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             165{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             164{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             165{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              24
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              24{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             165{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             189{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             188{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               3
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               3{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             189{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               1{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             191{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               3
+{txt}{col 9}from master{col 30}{res}               3{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             190{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             191{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             191{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              30
+{txt}{col 9}from master{col 30}{res}              30{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             163{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              32
+{txt}{col 9}from master{col 30}{res}              32{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             161{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               2
+{txt}{col 9}from master{col 30}{res}               2{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             191{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               5
+{txt}{col 9}from master{col 30}{res}               5{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             188{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               6
+{txt}{col 9}from master{col 30}{res}               6{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             187{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}             193{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               1
+{txt}{col 9}from master{col 30}{res}               1{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             192{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               4
+{txt}{col 9}from master{col 30}{res}               4{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             189{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. *
+. 
+. 
+. order counter
+{txt}
+{com}. 
+. qui compress 
+{txt}
+{com}. 
+. save "IMPE countries.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE countries.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE countries.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. * determine earliest date each country was present (date_present_first) 
+. * dates on which each country was absent (after their first presence)(date_absent_1*)
+. 
+. use "IMPE countries.dta", clear 
+{txt}
+{com}. 
+. rename counter obs_no
+{res}{txt}
+{com}. 
+. rename (loc_grand_name*) (countries*)
+{res}{txt}
+{com}. 
+. * use -fillin- in a long file:
+. 
+. * https://www.statalist.org/forums/forum/general-stata-discussion/general/1687043-how-to-rearrange-the-values-of-string-variables-according-to-a-criterion
+. 
+. reshape long countries, i(obs_no) j(str_date) string
+{txt}(j = 20200428 20200429 20200430 20200501 20200502 20200503 20200504 20200505 20200506 20200507 20200508 20200509 20200510 20200511 20200512 20200513 20200514 20200515 20200516 20200517 20200519 20200520 20200521 20200522 20200523 20200524 20200525 20200526 20200527 20200528 20200529 20200530 20200531 20200601 20200602 20200603 20200604 20200606 20200609 20200614 20200616 20200619 20200621 20200623 20200626 20200628 20200702 20200703 20200704 20200707 20200711 20200714 20200715 20200718 20200720 20200722 20200725 20200727 20200731 20200808 20200810 20200811 20200813 20200814 20200817 20200823 20200825 20200827 20200831 20200902 20200906 20200908 20200912 20200915 20200919 20200923 20200925 20201003 20201006 20201012 20201019 20201025 20201028 20201101 20201110 20201114 20201118 20201123 20201129 20201204 20201212 20201220 20201226 20210104 20210110 20210112 20210118 20210124 20210130 20210203 20210210 20210217 20210226 20210305 20210312 20210319 20210329 20210406 20210417 20210424 20210510 20210516 20210522 20210527 20210604 20210611 20210618 20210626 20210702 20210709 20210719 20210806 20210819 20210825 20210909 20210924 20211006 20211021 20211027 20211103 20211115 20211121 20211129 20211205 20211213 20211226 20220102 20220120 20220131 20220315 20220530 20220620 20220703 20220712 20220728 20220808 20220901 20221225)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}         193   {txt}->   {res}28,564      
+{txt}Number of variables        {res}         149   {txt}->   {res}3           
+{txt}j variable (148 values)                   ->   {res}str_date
+{txt}xij variables:
+{res}countries20200428 countries20200429 ... countries20221225{txt}->{res}countries
+{txt}{hline 77}
+
+{com}. gen int real_date = daily(str_date, "YMD")
+{txt}
+{com}. assert missing(str_date) == missing(real_date)
+{txt}
+{com}. format real_date %td
+{txt}
+{com}. drop str_date
+{txt}
+{com}. 
+. rename countries country
+{res}{txt}
+{com}. drop if missing(country)
+{txt}(4,971 observations deleted)
+
+{com}. fillin country real_date
+{txt}
+{com}. rename _fillin absent
+{res}{txt}
+{com}. drop obs_no
+{txt}
+{com}. 
+. by country (real_date), sort: egen date_present_first = min(cond(!absent, real_date, .))
+{txt}
+{com}. format date_present_first %td
+{txt}
+{com}. 
+. by country (real_date): gen absent_dates = ///
+>     cond(absent, string(real_date, "%tdCCYYNNDD"), "") if _n == 1
+{txt}(28,466 missing values generated)
+
+{com}. by country (real_date): replace absent_dates = ///
+>     absent_dates[_n-1] + cond(absent, " " + string(real_date, "%tdCCYYNNDD"), "") ///
+>     if _n > 1
+{txt}(17,504 real changes made)
+
+{com}. by country (real_date): replace absent_dates = absent_dates[_N]
+{txt}(11,064 real changes made)
+
+{com}. split absent_dates, gen(date_absent)
+{res}variables created as string: 
+{txt}{col 1}date_absent1{col 15}date_abse~16{col 29}date_abse~31{col 43}date_abse~46{col 57}date_abse~61{col 71}date_abse~76
+{col 1}date_absent2{col 15}date_abse~17{col 29}date_abse~32{col 43}date_abse~47{col 57}date_abse~62{col 71}date_abse~77
+{col 1}date_absent3{col 15}date_abse~18{col 29}date_abse~33{col 43}date_abse~48{col 57}date_abse~63{col 71}date_abse~78
+{col 1}date_absent4{col 15}date_abse~19{col 29}date_abse~34{col 43}date_abse~49{col 57}date_abse~64{col 71}date_abse~79
+{col 1}date_absent5{col 15}date_abse~20{col 29}date_abse~35{col 43}date_abse~50{col 57}date_abse~65{col 71}date_abse~80
+{col 1}date_absent6{col 15}date_abse~21{col 29}date_abse~36{col 43}date_abse~51{col 57}date_abse~66{col 71}date_abse~81
+{col 1}date_absent7{col 15}date_abse~22{col 29}date_abse~37{col 43}date_abse~52{col 57}date_abse~67{col 71}date_abse~82
+{col 1}date_absent8{col 15}date_abse~23{col 29}date_abse~38{col 43}date_abse~53{col 57}date_abse~68{col 71}date_abse~83
+{col 1}date_absent9{col 15}date_abse~24{col 29}date_abse~39{col 43}date_abse~54{col 57}date_abse~69{col 71}date_abse~84
+{col 1}date_abse~10{col 15}date_abse~25{col 29}date_abse~40{col 43}date_abse~55{col 57}date_abse~70{col 71}date_abse~85
+{col 1}date_abse~11{col 15}date_abse~26{col 29}date_abse~41{col 43}date_abse~56{col 57}date_abse~71{col 71}date_abse~86
+{col 1}date_abse~12{col 15}date_abse~27{col 29}date_abse~42{col 43}date_abse~57{col 57}date_abse~72{col 71}date_abse~87
+{col 1}date_abse~13{col 15}date_abse~28{col 29}date_abse~43{col 43}date_abse~58{col 57}date_abse~73{col 71}date_abse~88
+{col 1}date_abse~14{col 15}date_abse~29{col 29}date_abse~44{col 43}date_abse~59{col 57}date_abse~74
+{col 1}date_abse~15{col 15}date_abse~30{col 29}date_abse~45{col 43}date_abse~60{col 57}date_abse~75
+
+{com}. drop absent_dates
+{txt}
+{com}. isid country real_date, sort
+{txt}(data already sorted by {bf:country real_date})
+
+{com}. 
+. * 
+. 
+. 
+. gen year = year(real_date)
+{txt}
+{com}. gen month = month(real_date)
+{txt}
+{com}. gen day = day(real_date)
+{txt}
+{com}. tostring year month day, replace
+{txt}year was {res:float} now {res:str4}
+month was {res:float} now {res:str2}
+day was {res:float} now {res:str2}
+
+{com}. replace month = "01" if month == "1"
+{txt}(1,737 real changes made)
+
+{com}. replace month = "02" if month == "2"
+{txt}(772 real changes made)
+
+{com}. replace month = "03" if month == "3"
+{txt}(965 real changes made)
+
+{com}. replace month = "04" if month == "4"
+{txt}(1,158 real changes made)
+
+{com}. replace month = "05" if month == "5"
+{txt}(6,755 real changes made)
+
+{com}. replace month = "06" if month == "6"
+{txt}(3,474 real changes made)
+
+{com}. replace month = "07" if month == "7"
+{txt}(3,667 real changes made)
+
+{com}. replace month = "08" if month == "8"
+{txt}(2,702 real changes made)
+
+{com}. replace month = "09" if month == "9"
+{txt}(2,123 real changes made)
+
+{com}. replace day = "01" if day == "1"
+{txt}(772 real changes made)
+
+{com}. replace day = "02" if day == "2"
+{txt}(1,158 real changes made)
+
+{com}. replace day = "03" if day == "3"
+{txt}(1,351 real changes made)
+
+{com}. replace day = "04" if day == "4"
+{txt}(1,158 real changes made)
+
+{com}. replace day = "05" if day == "5"
+{txt}(579 real changes made)
+
+{com}. replace day = "06" if day == "6"
+{txt}(1,351 real changes made)
+
+{com}. replace day = "07" if day == "7"
+{txt}(386 real changes made)
+
+{com}. replace day = "08" if day == "8"
+{txt}(772 real changes made)
+
+{com}. replace day = "09" if day == "9"
+{txt}(772 real changes made)
+
+{com}. 
+. gen blockdate_string = year + month + day
+{txt}
+{com}. destring blockdate_string, gen(blockdate)
+{txt}blockdate_string: all characters numeric; blockdate {res}generated {txt}as {res}long
+{txt}
+{com}. drop year month day blockdate_string
+{txt}
+{com}. order blockdate, before(real_date)
+{txt}
+{com}. 
+. rename blockdate update_date_block
+{res}{txt}
+{com}. rename real_date update_date_real
+{res}{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. gen year = year(date_present_first)
+{txt}
+{com}. gen month = month(date_present_first)
+{txt}
+{com}. gen day = day(date_present_first)
+{txt}
+{com}. tostring year month day, replace
+{txt}year was {res:float} now {res:str4}
+month was {res:float} now {res:str2}
+day was {res:float} now {res:str2}
+
+{com}. replace month = "01" if month == "1"
+{txt}(0 real changes made)
+
+{com}. replace month = "02" if month == "2"
+{txt}(0 real changes made)
+
+{com}. replace month = "03" if month == "3"
+{txt}(0 real changes made)
+
+{com}. replace month = "04" if month == "4"
+{txt}(14,208 real changes made)
+
+{com}. replace month = "05" if month == "5"
+{txt}(2,220 real changes made)
+
+{com}. replace month = "06" if month == "6"
+{txt}(6,956 real changes made)
+
+{com}. replace month = "07" if month == "7"
+{txt}(592 real changes made)
+
+{com}. replace month = "08" if month == "8"
+{txt}(296 real changes made)
+
+{com}. replace month = "09" if month == "9"
+{txt}(148 real changes made)
+
+{com}. replace day = "01" if day == "1"
+{txt}(7,252 real changes made)
+
+{com}. replace day = "02" if day == "2"
+{txt}(0 real changes made)
+
+{com}. replace day = "03" if day == "3"
+{txt}(0 real changes made)
+
+{com}. replace day = "04" if day == "4"
+{txt}(148 real changes made)
+
+{com}. replace day = "05" if day == "5"
+{txt}(148 real changes made)
+
+{com}. replace day = "06" if day == "6"
+{txt}(148 real changes made)
+
+{com}. replace day = "07" if day == "7"
+{txt}(0 real changes made)
+
+{com}. replace day = "08" if day == "8"
+{txt}(296 real changes made)
+
+{com}. replace day = "09" if day == "9"
+{txt}(0 real changes made)
+
+{com}. 
+. gen date_present_first_block = year + month + day
+{txt}
+{com}. destring date_present_first_block, replace
+{txt}date_present_first_block: all characters numeric; {res}replaced {txt}as {res}long
+{txt}
+{com}. drop year month day 
+{txt}
+{com}. order date_present_first_block, before(date_present_first)
+{txt}
+{com}. rename date_present_first date_present_first_real
+{res}{txt}
+{com}. 
+. rename country loc_grand_name 
+{res}{txt}
+{com}. 
+. *
+. 
+. 
+. **********************************************
+. **********************************************
+. * country names to loc_grand_name
+. 
+. replace loc_grand_name = "Brunei" if loc_grand_name == "Brunei Darussalam"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Congo" if loc_grand_name == "Republic of the Congo"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of Congo"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Korea North" if loc_grand_name == "North Korea"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Korea South" if loc_grand_name == "South Korea"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Kyrgyzstan" if loc_grand_name == "Kyrgyz Republic"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Laos" if loc_grand_name == "Lao PDR"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Palestine" if loc_grand_name == "State of Palestine"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Saint Lucia" if loc_grand_name == "St. Lucia"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Saint Vincent and the Grenadines" if loc_grand_name == "St. Vincent and the Grenadines"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Timor Leste" if loc_grand_name == "Timor-Leste"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+{txt}(0 real changes made)
+
+{com}. replace loc_grand_name = "Viet Nam" if loc_grand_name == "Vietnam"
+{txt}(0 real changes made)
+
+{com}. 
+. 
+.                                                    
+.                                  
+. 
+. 
+. isid loc_grand_name update_date_block, sort
+{txt}(data now sorted by {bf:loc_grand_name update_date_block})
+
+{com}. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "IMPE countries long.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+IMPE countries long.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+IMPE countries long.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. *
+. 
+. view "log CovidLongitudinal IMPE 3.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IMPE/log CovidLongitudinal IMPE 3.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}29 Aug 2023, 07:25:13
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

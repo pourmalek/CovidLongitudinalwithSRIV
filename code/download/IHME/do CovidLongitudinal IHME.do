@@ -162,7 +162,8 @@ IHME updates ("urldate")
 103	  	July 19, 2022
 104	  	September 12, 2022
 105		October 24, 2022
-		
+106 	November 18, 2022
+107		December 16, 2022		
 */
 
 
@@ -285,6 +286,7 @@ drop if location_name == "Georgia" // Georgia state
 // replace location_name = "Côte d'Ivoire" if location_id == 205
 
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -320,6 +322,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -354,12 +357,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -376,6 +381,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -459,20 +465,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -637,6 +651,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -671,12 +686,15 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
+location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -693,6 +711,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -776,20 +795,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -953,6 +980,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -987,12 +1015,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -1009,6 +1039,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -1092,19 +1123,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -1270,6 +1308,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -1304,12 +1343,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -1326,6 +1367,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -1409,19 +1451,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -1591,6 +1640,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -1625,12 +1675,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -1647,6 +1699,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -1730,20 +1783,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -1912,6 +1973,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -1946,12 +2008,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -1968,6 +2032,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -2051,19 +2116,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -2234,6 +2306,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -2268,12 +2341,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -2290,6 +2365,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -2373,19 +2449,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -2555,6 +2638,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -2589,12 +2673,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -2611,6 +2697,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -2694,21 +2781,27 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
-
 
 
 qui compress
@@ -2821,6 +2914,7 @@ use "IHME 20200407.dta", clear
 
 drop if location_name == "Georgia" // Georgia state
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -2856,6 +2950,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -2890,12 +2985,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -2912,6 +3009,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -2995,19 +3093,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -3119,6 +3224,7 @@ use "IHME 20200408.dta", clear
 
 drop if location_name == "Georgia" // Georgia state
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -3154,6 +3260,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -3188,12 +3295,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -3210,6 +3319,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -3293,19 +3403,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -3418,6 +3535,7 @@ use "IHME 20200410.dta", clear
 
 drop if location_name == "Georgia" // Georgia state
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -3453,6 +3571,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -3487,12 +3606,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -3509,6 +3630,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -3592,20 +3714,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -3717,6 +3847,7 @@ use "IHME 20200413.dta", clear
 
 drop if location_name == "Georgia" // Georgia state
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -3752,6 +3883,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -3786,12 +3918,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -3808,6 +3942,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -3891,19 +4026,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -4065,6 +4207,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -4099,12 +4242,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -4121,6 +4266,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -4204,20 +4350,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -4379,6 +4533,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -4413,12 +4568,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -4435,6 +4592,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -4518,19 +4676,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -4694,6 +4859,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -4728,12 +4894,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -4750,6 +4918,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -4833,19 +5002,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -5008,6 +5184,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -5042,12 +5219,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -5064,6 +5243,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -5147,19 +5327,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -5321,6 +5508,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -5355,12 +5543,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -5377,6 +5567,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -5460,19 +5651,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -5634,6 +5832,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -5668,12 +5867,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -5690,6 +5891,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -5773,23 +5975,29 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
-replace DayDeaMeSmIHME20200429 = . if date > td(01Oct2020) // if zero daily deaths at the end
 
 
 qui compress
@@ -5951,6 +6159,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -5985,12 +6194,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -6007,6 +6218,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -6090,23 +6302,30 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
-replace DayDeaMeSmIHME20200504 = . if date > td(01Oct2020) // if zero daily deaths at the end
+
 
 
 qui compress
@@ -6267,6 +6486,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -6301,12 +6521,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -6323,6 +6545,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -6406,24 +6629,30 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
 
-replace DayDeaMeSmIHME20200510 = . if date > td(01Oct2020) // if zero daily deaths at the end
 
 
 
@@ -6584,6 +6813,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -6618,12 +6848,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -6640,6 +6872,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -6723,24 +6956,29 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
-
-replace DayDeaMeSmIHME20200512 = . if date > td(01Oct2020) // if zero daily deaths at the end
 
 
 
@@ -6902,6 +7140,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -6936,12 +7175,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -6958,6 +7199,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -7041,23 +7283,30 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
-replace DayDeaMeSmIHME20200520 = . if date > td(01Oct2020) // if zero daily deaths at the end
+
 
 
 qui compress
@@ -7218,6 +7467,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -7252,12 +7502,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -7274,6 +7526,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -7357,23 +7610,30 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
-replace DayDeaMeSmIHME20200525 = . if date > td(01Oct2020) // if zero daily deaths at the end
+
 
 
 qui compress
@@ -7534,6 +7794,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -7568,12 +7829,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -7590,6 +7853,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -7673,23 +7937,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
-
-replace DayDeaMeSmIHME20200526 = . if date > td(01Oct2020) // if zero daily deaths at the end
 
 
 qui compress
@@ -7861,6 +8130,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -7895,12 +8165,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -7917,6 +8189,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -8000,23 +8273,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
-
-replace DayDeaMeSmIHME20200529 = . if date > td(01Oct2020) // if zero daily deaths at the end
 
 
 qui compress
@@ -8193,6 +8471,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -8227,12 +8506,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -8249,6 +8530,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -8332,23 +8614,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
-
-replace DayDeaMeSmIHME20200605 = . if date > td(01Sep2020) // if zero daily deaths at the end
 
 
 qui compress
@@ -8509,6 +8796,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -8543,12 +8831,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -8565,6 +8855,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -8648,20 +8939,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -8822,6 +9121,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -8856,12 +9156,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -8878,6 +9180,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -8961,20 +9264,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -9141,6 +9452,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -9175,12 +9487,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -9197,6 +9511,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -9280,19 +9595,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -9459,6 +9781,7 @@ use "IHME 20200625.dta", clear
 
 * * Georgia and Cote d'Ivoire accounted for in lines above.
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -9494,6 +9817,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -9528,12 +9852,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -9550,6 +9876,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -9633,20 +9960,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -9816,6 +10151,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -9850,12 +10186,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -9872,6 +10210,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -9955,20 +10294,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -10138,6 +10485,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -10172,12 +10520,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -10194,6 +10544,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -10277,20 +10628,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -10449,6 +10808,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -10483,12 +10843,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -10505,6 +10867,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -10588,20 +10951,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -10763,6 +11134,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -10797,12 +11169,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -10819,6 +11193,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -10902,19 +11277,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -11043,6 +11425,7 @@ use "IHME 20200730.dta", clear
 
 * * Georgia and Cote d'Ivoire accounted for in lines above.
 
+
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -11078,6 +11461,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -11112,12 +11496,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -11134,6 +11520,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -11217,20 +11604,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -11391,6 +11786,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -11425,12 +11821,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -11447,6 +11845,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -11530,20 +11929,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -11705,6 +12112,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -11739,12 +12147,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -11761,6 +12171,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -11844,20 +12255,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -12020,6 +12439,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -12054,12 +12474,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -12076,6 +12498,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -12159,19 +12582,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -12374,6 +12804,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -12408,12 +12839,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -12430,6 +12863,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -12513,19 +12947,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -12695,6 +13136,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -12729,12 +13171,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -12751,6 +13195,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -12834,19 +13279,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -13011,6 +13463,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -13045,12 +13498,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -13067,6 +13522,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -13150,19 +13606,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -13327,6 +13790,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -13361,12 +13825,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -13383,6 +13849,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -13466,19 +13933,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -13658,6 +14132,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -13692,12 +14167,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -13714,6 +14191,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -13797,19 +14275,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -13986,6 +14471,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -14020,12 +14506,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -14042,6 +14530,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -14125,19 +14614,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -14312,6 +14808,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -14346,12 +14843,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -14368,6 +14867,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -14451,20 +14951,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -14638,6 +15146,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -14672,12 +15181,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -14694,6 +15205,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -14777,20 +15289,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -14957,6 +15477,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -14991,12 +15512,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -15013,6 +15536,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -15096,19 +15620,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -15284,6 +15815,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -15318,12 +15850,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -15340,6 +15874,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -15423,20 +15958,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -15610,6 +16153,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -15644,12 +16188,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -15666,6 +16212,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -15749,19 +16296,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -15934,6 +16488,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -15968,12 +16523,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -15990,6 +16547,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -16073,20 +16631,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -16260,6 +16826,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -16294,12 +16861,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -16316,6 +16885,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -16399,19 +16969,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -16586,6 +17163,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -16620,12 +17198,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -16642,6 +17222,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -16725,20 +17306,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -16912,6 +17501,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -16946,12 +17536,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -16968,6 +17560,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -17051,19 +17644,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -17240,6 +17840,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -17274,12 +17875,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -17296,6 +17899,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -17379,20 +17983,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -17570,6 +18182,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -17604,12 +18217,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -17626,6 +18241,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -17709,19 +18325,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -17920,6 +18543,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -17954,12 +18578,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -17976,6 +18602,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -18059,19 +18686,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -18246,6 +18880,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -18280,12 +18915,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -18302,6 +18939,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -18385,19 +19023,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -18584,6 +19229,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -18618,12 +19264,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -18640,6 +19288,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -18723,20 +19372,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -18917,6 +19574,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -18951,12 +19609,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -18973,6 +19633,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -19056,19 +19717,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -19248,6 +19916,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -19282,12 +19951,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -19304,6 +19975,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -19387,19 +20059,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -19578,6 +20257,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -19612,12 +20292,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -19634,6 +20316,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -19717,19 +20400,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -19908,6 +20598,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -19942,12 +20633,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -19964,6 +20657,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -20047,19 +20741,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -20241,6 +20942,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -20275,12 +20977,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -20297,6 +21001,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -20380,19 +21085,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -20568,6 +21280,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -20602,12 +21315,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -20624,6 +21339,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -20707,19 +21423,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -20894,6 +21617,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -20928,12 +21652,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -20950,6 +21676,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -21033,20 +21760,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -21220,6 +21955,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -21254,12 +21990,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -21276,6 +22014,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -21359,19 +22098,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -21544,6 +22290,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -21578,12 +22325,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -21600,6 +22349,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -21683,19 +22433,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -21871,6 +22628,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -21905,12 +22663,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -21927,6 +22687,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -22010,19 +22771,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -22214,6 +22982,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -22248,12 +23017,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -22270,6 +23041,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -22353,19 +23125,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -22533,6 +23312,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -22567,12 +23347,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -22589,6 +23371,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -22672,20 +23455,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -22853,6 +23644,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -22887,12 +23679,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -22909,6 +23703,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -22992,20 +23787,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -23176,6 +23979,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -23210,12 +24014,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -23232,6 +24038,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -23315,19 +24122,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -23499,6 +24313,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -23533,12 +24348,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -23555,6 +24372,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -23638,19 +24456,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -23822,6 +24647,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -23856,12 +24682,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -23878,6 +24706,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -23961,19 +24790,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -24154,6 +24990,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -24188,12 +25025,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -24210,6 +25049,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -24293,19 +25133,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -24475,6 +25322,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -24509,12 +25357,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -24531,6 +25381,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -24614,19 +25465,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -24795,6 +25653,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -24829,12 +25688,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -24851,6 +25712,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -24934,19 +25796,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -25115,6 +25984,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -25149,12 +26019,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -25171,6 +26043,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -25254,19 +26127,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -25438,6 +26318,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -25472,12 +26353,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -25494,6 +26377,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -25577,19 +26461,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -25758,6 +26649,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -25792,12 +26684,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -25814,6 +26708,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -25897,19 +26792,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -26090,6 +26992,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -26124,12 +27027,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -26146,6 +27051,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -26229,19 +27135,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -26414,6 +27327,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -26448,12 +27362,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -26470,6 +27386,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -26553,19 +27470,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -26741,6 +27665,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -26775,12 +27700,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -26797,6 +27724,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -26880,20 +27808,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -27064,6 +28000,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -27098,12 +28035,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -27120,6 +28059,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -27203,20 +28143,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -27388,6 +28336,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -27422,12 +28371,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -27444,6 +28395,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -27527,19 +28479,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -27780,6 +28739,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -27814,12 +28774,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -27836,6 +28798,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -27919,20 +28882,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -28167,6 +29138,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -28201,12 +29173,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -28223,6 +29197,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -28306,19 +29281,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -28570,6 +29552,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -28604,12 +29587,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -28626,6 +29611,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -28709,19 +29695,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -28975,6 +29968,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -29009,12 +30003,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -29031,6 +30027,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -29114,19 +30111,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -29370,6 +30374,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -29404,12 +30409,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -29426,6 +30433,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -29509,19 +30517,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -29764,6 +30779,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -29798,12 +30814,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -29820,6 +30838,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -29903,20 +30922,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -30159,6 +31186,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -30193,12 +31221,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -30215,6 +31245,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -30298,19 +31329,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -30565,6 +31603,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -30599,12 +31638,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -30621,6 +31662,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -30704,19 +31746,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -30961,6 +32010,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -30995,12 +32045,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -31017,6 +32069,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -31100,19 +32153,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -31361,6 +32421,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -31395,12 +32456,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -31417,6 +32480,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -31500,19 +32564,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -31762,6 +32833,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -31796,12 +32868,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -31818,6 +32892,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -31901,19 +32976,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -32199,6 +33281,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -32233,12 +33316,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -32255,6 +33340,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -32338,20 +33424,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 
@@ -32630,6 +33724,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -32664,12 +33759,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -32686,6 +33783,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -32769,19 +33867,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -33025,7 +34130,6 @@ drop if location_id == 533 // the Georgia state in USA
 replace location_name = "Côte d'Ivoire" if location_id == 205
 
 
-
 keep if ///
 location_name == "Afghanistan" | ///
 location_name == "Albania" | ///
@@ -33061,6 +34165,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -33095,12 +34200,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -33117,6 +34224,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -33200,19 +34308,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -33494,6 +34609,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -33528,12 +34644,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -33550,6 +34668,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -33633,20 +34752,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -33926,6 +35053,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -33960,12 +35088,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -33982,6 +35112,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -34065,19 +35196,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -34361,6 +35499,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -34395,12 +35534,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -34417,6 +35558,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -34500,19 +35642,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -34804,6 +35953,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -34838,12 +35988,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -34860,6 +36012,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -34943,20 +36096,28 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
 
 
 qui compress
@@ -35228,6 +36389,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -35262,12 +36424,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -35284,6 +36448,7 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -35367,19 +36532,26 @@ location_name == "Zimbabwe"
 
 
 
+
 * change ihme country names to location_name country names
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
@@ -35642,6 +36814,7 @@ location_name == "Central African Republic" | ///
 location_name == "Chad" | ///
 location_name == "Chile" | ///
 location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
 location_name == "Colombia" | ///
 location_name == "Comoros" | ///
 location_name == "Congo" | ///
@@ -35676,12 +36849,14 @@ location_name == "Guinea-Bissau" | ///
 location_name == "Guyana" | ///
 location_name == "Haiti" | ///
 location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
 location_name == "Hungary" | ///
 location_name == "Iceland" | ///
 location_name == "India" | ///
 location_name == "Indonesia" | ///
 location_name == "Iran (Islamic Republic of)" | ///
 location_name == "Iraq" | ///
+location_name == "Ireland" | ///
 location_name == "Israel" | ///
 location_name == "Italy" | ///
 location_name == "Jamaica" | ///
@@ -35698,6 +36873,466 @@ location_name == "Liberia" | ///
 location_name == "Libya" | ///
 location_name == "Lithuania" | ///
 location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
+location_name == "Madagascar" | ///
+location_name == "Malawi" | ///
+location_name == "Malaysia" | ///
+location_name == "Maldives" | ///
+location_name == "Mali" | ///
+location_name == "Malta" | ///
+location_name == "Mauritania" | ///
+location_name == "Mauritius" | ///
+location_name == "Mexico" | ///
+location_name == "Mongolia" | ///
+location_name == "Montenegro" | ///
+location_name == "Morocco" | ///
+location_name == "Mozambique" | ///
+location_name == "Myanmar" | ///
+location_name == "Namibia" | ///
+location_name == "Nepal" | ///
+location_name == "Netherlands" | ///
+location_name == "New Zealand" | ///
+location_name == "Nicaragua" | ///
+location_name == "Niger" | ///
+location_name == "Nigeria" | ///
+location_name == "North Macedonia" | ///
+location_name == "Norway" | ///
+location_name == "Oman" | ///
+location_name == "Pakistan" | ///
+location_name == "Palestine" | ///
+location_name == "Panama" | ///
+location_name == "Papua New Guinea" | ///
+location_name == "Paraguay" | ///
+location_name == "Peru" | ///
+location_name == "Philippines" | ///
+location_name == "Poland" | ///
+location_name == "Portugal" | ///
+location_name == "Puerto Rico" | ///
+location_name == "Qatar" | ///
+location_name == "Republic of Korea" | ///
+location_name == "Republic of Moldova" | ///
+location_name == "Romania" | ///
+location_name == "Russian Federation" | ///
+location_name == "Rwanda" | ///
+location_name == "San Marino" | ///
+location_name == "Sao Tome and Principe" | ///
+location_name == "Saudi Arabia" | ///
+location_name == "Senegal" | ///
+location_name == "Serbia" | ///
+location_name == "Sierra Leone" | ///
+location_name == "Singapore" | ///
+location_name == "Slovakia" | ///
+location_name == "Slovenia" | ///
+location_name == "Somalia" | ///
+location_name == "South Africa" | ///
+location_name == "South Sudan" | ///
+location_name == "Spain" | ///
+location_name == "Sri Lanka" | ///
+location_name == "Sudan" | ///
+location_name == "Suriname" | ///
+location_name == "Sweden" | ///
+location_name == "Switzerland" | ///
+location_name == "Syrian Arab Republic" | ///
+location_name == "Taiwan (Province of China)" | ///
+location_name == "Tajikistan" | ///
+location_name == "Thailand" | ///
+location_name == "Timor-Leste" | ///
+location_name == "Togo" | ///
+location_name == "Trinidad and Tobago" | ///
+location_name == "Tunisia" | ///
+location_name == "Turkey" | ///
+location_name == "Uganda" | ///
+location_name == "Ukraine" | ///
+location_name == "United Arab Emirates" | ///
+location_name == "United Kingdom" | ///
+location_name == "United States of America" | ///
+location_name == "United States Virgin Islands" | ///
+location_name == "Uruguay" | ///
+location_name == "Uzbekistan" | ///
+location_name == "Venezuela (Bolivarian Republic of)" | ///
+location_name == "Viet Nam" | ///
+location_name == "Yemen" | ///
+location_name == "Zambia" | ///
+location_name == "Zimbabwe"
+
+
+
+
+* change ihme country names to location_name country names
+
+replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
+replace location_name = "Cape Verde" if location_name == "Cabo Verde"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
+replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
+replace location_name = "Moldova" if location_name == "Republic of Moldova"
+replace location_name = "Russia" if location_name == "Russian Federation"
+replace location_name = "Syria" if location_name == "Syrian Arab Republic"
+replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
+replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
+
+qui compress
+
+save "IHME all countries 20221024.dta", replace
+
+
+
+* remove remnant not-needed files
+
+shell rm -r "best_masks_hospitalization_all_locs.csv"
+shell rm -r "data_dictionary.csv"
+shell rm -r "data_download_file_best_masks_2020.csv"
+shell rm -r "data_download_file_best_masks_2021.csv"
+shell rm -r "data_download_file_best_masks_2022.csv"
+shell rm -r "data_download_file_global_antivirals_2020.csv"
+shell rm -r "data_download_file_global_antivirals_2021.csv"
+shell rm -r "data_download_file_global_antivirals_2022.csv"
+shell rm -r "data_download_file_reduce_hesitancy_2020.csv"
+shell rm -r "data_download_file_reduce_hesitancy_2021.csv"
+shell rm -r "data_download_file_reference_2020.csv"
+shell rm -r "data_download_file_reference_2020.dta"
+shell rm -r "data_download_file_reference_2021.csv"
+shell rm -r "data_download_file_reference_2021.dta"
+shell rm -r "data_download_file_reference_2022.csv"
+shell rm -r "data_download_file_reference_2022.dta"
+shell rm -r "data_download_file_severe_omicron_2020.csv"
+shell rm -r "data_download_file_severe_omicron_2021.csv"
+shell rm -r "data_download_file_third_dose_2020.csv"
+shell rm -r "data_download_file_third_dose_2021.csv"
+shell rm -r "data_download_file_third_dose_2022.csv"
+shell rm -r "reference_hospitalization_all_locs.csv"
+shell rm -r "Summary_stats_all_locs.csv"
+shell rm -r "worse_hospitalization_all_locs.csv"
+shell rm -r "IHME_COVID_19_Data_Release_Information_Sheet.pdf"
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************
+**********************************************
+**********************************************
+
+* update 106
+* linkdate = urldate
+* linkdate				download		urldate
+* November 18, 2022		ihme-covid19	2022-11-18
+* filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
+*          and data_download_file_reference_2022.csv
+
+
+clear	
+
+di in red "This is IHME urldate " "2022-11-18" " update 2022-11-18"
+
+*****************************
+
+* get IHME estimates
+
+copy https://ihmecovid19storage.blob.core.windows.net/archive/2022-11-18/ihme-covid19.zip ihme-covid19.zip
+unzipfile ihme-covid19.zip, replace
+erase ihme-covid19.zip
+
+
+******************************
+
+* import csv files
+
+import delimited using data_download_file_reference_2020.csv, clear varnames(1)
+save data_download_file_reference_2020.dta, replace
+
+import delimited using data_download_file_reference_2021.csv, clear varnames(1)
+save data_download_file_reference_2021.dta, replace
+
+import delimited using data_download_file_reference_2022.csv, clear varnames(1)
+save data_download_file_reference_2022.dta, replace
+
+
+******************************
+
+* gen scenario dta files
+
+use "data_download_file_reference_2020.dta", clear 
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2020
+
+save "data_download_file_reference_2020.dta", replace 
+
+
+
+use "data_download_file_reference_2021.dta", clear 
+
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2021
+
+save "data_download_file_reference_2021.dta", replace 
+
+
+
+
+
+use "data_download_file_reference_2022.dta", clear 
+
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2022
+
+save "data_download_file_reference_2022.dta", replace 
+
+
+
+
+append using "data_download_file_reference_2021.dta"
+
+append using "data_download_file_reference_2020.dta"
+
+
+
+
+* gen date
+
+rename date date_original
+gen year = substr(date_original,1,4) 
+gen month = substr(date_original,6,2) 
+gen day = substr(date_original,9,2) 
+egen date2 = concat(day month year)
+gen date = date(date2, "DMY", 2050)
+format date %tdDDMonCCYY
+codebook date
+drop year month day date2
+
+
+
+* rename variables
+
+
+* Daily Reported Deaths smoothed
+rename seir_daily_unscaled_mean  DayDeaMeSmIHME
+label var DayDeaMeSmIHME "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
+		
+		
+		
+		
+
+
+
+*** account for Georgia and Cote d'Ivoire
+
+tab location_id if location_name == "Georgia"
+
+drop if location_id == 533 // state of Georgia
+
+tab location_id if regexm(location_name,"Ivoire") == 1
+
+replace location_name = "Cote d'Ivoire" if location_id == 205
+
+
+
+
+
+
+
+* Check for variable deaths_data_type
+
+capture confirm var deaths_data_type
+		
+if c(rc) == 0 {
+	di "Variable FOUND:  " "deaths_data_type"
+}
+	
+else if c(rc) == 111 {    // VARIABLE NOT FOUND
+	di in red "Variable NOT Found:  " "deaths_data_type"
+}	
+* 		
+		
+		
+
+rename daily_deaths_unscaled DayDeaMeRaIHME
+
+label var DayDeaMeRaIHME "IHME Daily Deaths raw data without excess mortality scalar applied Reference scenario"
+		
+		
+keep date location_name location_id DayDeaMeSmIHME DayDeaMeRaIHME population_*
+
+rename (DayDeaMeSmIHME DayDeaMeRaIHME) (DayDeaMeSmIHME20221118 DayDeaMeRaIHME20221118)
+
+order date location_name DayDeaMeSmIHME20221118
+
+sort location_name date
+
+
+qui compress
+
+save "IHME 20221118.dta", replace
+
+
+
+
+* get all countries
+
+use "IHME 20221118.dta", clear
+
+
+drop if location_id == 533 // the Georgia state in USA
+
+replace location_name = "Côte d'Ivoire" if location_id == 205
+
+
+keep if ///
+location_name == "Afghanistan" | ///
+location_name == "Albania" | ///
+location_name == "Albania" | ///
+location_name == "Algeria" | ///
+location_name == "Andorra" | ///
+location_name == "Angola" | ///
+location_name == "Argentina" | ///
+location_name == "Armenia" | ///
+location_name == "Australia" | ///
+location_name == "Austria" | ///
+location_name == "Azerbaijan" | ///
+location_name == "Bahamas" | ///
+location_name == "Bahrain" | ///
+location_name == "Bangladesh" | ///
+location_name == "Barbados" | ///
+location_name == "Belarus" | ///
+location_name == "Belgium" | ///
+location_name == "Belize" | ///
+location_name == "Benin" | ///
+location_name == "Bolivia (Plurinational State of)" | ///
+location_name == "Bosnia and Herzegovina" | ///
+location_name == "Botswana" | ///
+location_name == "Brazil" | ///
+location_name == "Bulgaria" | ///
+location_name == "Burkina Faso" | ///
+location_name == "Côte d'Ivoire" | /// 
+location_name == "Cabo Verde" | ///
+location_name == "Cambodia" | ///
+location_name == "Cameroon" | ///
+location_name == "Canada" | ///
+location_name == "Central African Republic" | ///
+location_name == "Chad" | ///
+location_name == "Chile" | ///
+location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
+location_name == "Colombia" | ///
+location_name == "Comoros" | ///
+location_name == "Congo" | ///
+location_name == "Costa Rica" | ///
+location_name == "Croatia" | ///
+location_name == "Cuba" | ///
+location_name == "Cyprus" | ///
+location_name == "Czechia" | ///
+location_name == "Democratic Republic of the Congo" | ///
+location_name == "Denmark" | ///
+location_name == "Djibouti" | ///
+location_name == "Dominican Republic" | ///
+location_name == "Ecuador" | ///
+location_name == "Egypt" | ///
+location_name == "El Salvador" | ///
+location_name == "Equatorial Guinea" | ///
+location_name == "Estonia" | ///
+location_name == "Eswatini" | ///
+location_name == "Ethiopia" | ///
+location_name == "Fiji" | ///
+location_name == "Finland" | ///
+location_name == "France" | ///
+location_name == "Gabon" | ///
+location_name == "Gambia" | location_name == "Georgia" | ///
+location_name == "Germany" | ///
+location_name == "Ghana" | ///
+location_name == "Greece" | ///
+location_name == "Guam" | ///
+location_name == "Guatemala" | ///
+location_name == "Guinea" | ///
+location_name == "Guinea-Bissau" | ///
+location_name == "Guyana" | ///
+location_name == "Haiti" | ///
+location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
+location_name == "Hungary" | ///
+location_name == "Iceland" | ///
+location_name == "India" | ///
+location_name == "Indonesia" | ///
+location_name == "Iran (Islamic Republic of)" | ///
+location_name == "Iraq" | ///
+location_name == "Ireland" | ///
+location_name == "Israel" | ///
+location_name == "Italy" | ///
+location_name == "Jamaica" | ///
+location_name == "Japan" | ///
+location_name == "Jordan" | ///
+location_name == "Kazakhstan" | ///
+location_name == "Kenya" | ///
+location_name == "Kuwait" | ///
+location_name == "Kyrgyzstan" | ///
+location_name == "Latvia" | ///
+location_name == "Lebanon" | ///
+location_name == "Lesotho" | ///
+location_name == "Liberia" | ///
+location_name == "Libya" | ///
+location_name == "Lithuania" | ///
+location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
 location_name == "Madagascar" | ///
 location_name == "Malawi" | ///
 location_name == "Malaysia" | ///
@@ -35785,30 +37420,33 @@ location_name == "Zimbabwe"
 
 replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
 replace location_name = "Cape Verde" if location_name == "Cabo Verde"
-replace location_name = "Congo, DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "China" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
 replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
 replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
-replace location_name = "Korea, North" if location_name == "Korea, Democratic People's Republic of"
-replace location_name = "Korea, South" if location_name == "Republic of Korea"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
 replace location_name = "Moldova" if location_name == "Republic of Moldova"
 replace location_name = "Russia" if location_name == "Russian Federation"
 replace location_name = "Syria" if location_name == "Syrian Arab Republic"
 replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
 replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
 
 
 qui compress
 
-save "IHME all countries 20221024.dta", replace
-
-
+save "IHME all countries 20221118.dta", replace
 
 
 
 
 * remove remnant not-needed files
 
-shell rm -r "best_masks_hospitalization_all_locs.csv"
 shell rm -r "data_dictionary.csv"
 shell rm -r "data_download_file_best_masks_2020.csv"
 shell rm -r "data_download_file_best_masks_2021.csv"
@@ -35816,23 +37454,463 @@ shell rm -r "data_download_file_best_masks_2022.csv"
 shell rm -r "data_download_file_global_antivirals_2020.csv"
 shell rm -r "data_download_file_global_antivirals_2021.csv"
 shell rm -r "data_download_file_global_antivirals_2022.csv"
-shell rm -r "data_download_file_reduce_hesitancy_2020.csv"
-shell rm -r "data_download_file_reduce_hesitancy_2021.csv"
 shell rm -r "data_download_file_reference_2020.csv"
 shell rm -r "data_download_file_reference_2020.dta"
 shell rm -r "data_download_file_reference_2021.csv"
 shell rm -r "data_download_file_reference_2021.dta"
 shell rm -r "data_download_file_reference_2022.csv"
 shell rm -r "data_download_file_reference_2022.dta"
-shell rm -r "data_download_file_severe_omicron_2020.csv"
-shell rm -r "data_download_file_severe_omicron_2021.csv"
-shell rm -r "data_download_file_third_dose_2020.csv"
-shell rm -r "data_download_file_third_dose_2021.csv"
-shell rm -r "data_download_file_third_dose_2022.csv"
-shell rm -r "reference_hospitalization_all_locs.csv"
-shell rm -r "Summary_stats_all_locs.csv"
-shell rm -r "worse_hospitalization_all_locs.csv"
+
+
+
+
+
+
+
+
+
+
+**********************************************
+**********************************************
+**********************************************
+
+* update 107
+* linkdate = urldate
+* linkdate				download		urldate
+* December 16, 2022		ihme-covid19	2022-12-16
+* filename data_download_file_reference_2020.csv and data_download_file_reference_2021.csv
+*          and data_download_file_reference_2022.csv
+
+
+clear	
+
+di in red "This is IHME urldate " "2022-12-16" " update 2022-12-16"
+
+*****************************
+
+* get IHME estimates
+
+copy https://ihmecovid19storage.blob.core.windows.net/archive/2022-12-16/ihme-covid19.zip ihme-covid19.zip
+unzipfile ihme-covid19.zip, replace
+erase ihme-covid19.zip
+
+
+******************************
+
+* import csv files
+
+import delimited using data_download_file_reference_2020.csv, clear varnames(1)
+save data_download_file_reference_2020.dta, replace
+
+import delimited using data_download_file_reference_2021.csv, clear varnames(1)
+save data_download_file_reference_2021.dta, replace
+
+import delimited using data_download_file_reference_2022.csv, clear varnames(1)
+save data_download_file_reference_2022.dta, replace
+
+
+******************************
+
+* gen scenario dta files
+
+use "data_download_file_reference_2020.dta", clear 
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2020
+
+save "data_download_file_reference_2020.dta", replace 
+
+
+
+use "data_download_file_reference_2021.dta", clear 
+
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2021
+
+save "data_download_file_reference_2021.dta", replace 
+
+
+
+
+
+use "data_download_file_reference_2022.dta", clear 
+
+
+local varlist reff_mean reff_lower reff_upper infection_fatality infection_detection infection_hospitalization
+
+foreach v of local varlist {
+	capture confirm numeric variable `v'
+    if !_rc {
+		di "`v'" " is numeric"
+    }
+    else {
+		di "`v'" " contains string"
+		replace `v' = "." if `v' == "Inf"
+		destring `v', replace 
+    }
+}
+*
+
+capture rename population population_2022
+
+save "data_download_file_reference_2022.dta", replace 
+
+
+
+
+append using "data_download_file_reference_2021.dta"
+
+append using "data_download_file_reference_2020.dta"
+
+
+
+
+* gen date
+
+rename date date_original
+gen year = substr(date_original,1,4) 
+gen month = substr(date_original,6,2) 
+gen day = substr(date_original,9,2) 
+egen date2 = concat(day month year)
+gen date = date(date2, "DMY", 2050)
+format date %tdDDMonCCYY
+codebook date
+drop year month day date2
+
+
+
+* rename variables
+
+
+* Daily Reported Deaths smoothed
+rename seir_daily_unscaled_mean  DayDeaMeSmIHME
+label var DayDeaMeSmIHME "Daily Reported Deaths Mean smoothed IHME S1" // Daily reported deaths (mean estimate)
+		
+		
+		
+		
+
+
+
+*** account for Georgia and Cote d'Ivoire
+
+tab location_id if location_name == "Georgia"
+
+drop if location_id == 533 // state of Georgia
+
+tab location_id if regexm(location_name,"Ivoire") == 1
+
+replace location_name = "Cote d'Ivoire" if location_id == 205
+
+
+
+
+
+
+
+* Check for variable deaths_data_type
+
+capture confirm var deaths_data_type
+		
+if c(rc) == 0 {
+	di "Variable FOUND:  " "deaths_data_type"
+}
+	
+else if c(rc) == 111 {    // VARIABLE NOT FOUND
+	di in red "Variable NOT Found:  " "deaths_data_type"
+}	
+* 		
+		
+		
+
+rename daily_deaths_unscaled DayDeaMeRaIHME
+
+label var DayDeaMeRaIHME "IHME Daily Deaths raw data without excess mortality scalar applied Reference scenario"
+		
+		
+keep date location_name location_id DayDeaMeSmIHME DayDeaMeRaIHME population_*
+
+rename (DayDeaMeSmIHME DayDeaMeRaIHME) (DayDeaMeSmIHME20221216 DayDeaMeRaIHME20221216)
+
+order date location_name DayDeaMeSmIHME20221216
+
+sort location_name date
+
+
+qui compress
+
+save "IHME 20221216.dta", replace
+
+
+
+
+* get all countries
+
+use "IHME 20221216.dta", clear
+
+
+drop if location_id == 533 // the Georgia state in USA
+
+replace location_name = "Côte d'Ivoire" if location_id == 205
+
+
+keep if ///
+location_name == "Afghanistan" | ///
+location_name == "Albania" | ///
+location_name == "Albania" | ///
+location_name == "Algeria" | ///
+location_name == "Andorra" | ///
+location_name == "Angola" | ///
+location_name == "Argentina" | ///
+location_name == "Armenia" | ///
+location_name == "Australia" | ///
+location_name == "Austria" | ///
+location_name == "Azerbaijan" | ///
+location_name == "Bahamas" | ///
+location_name == "Bahrain" | ///
+location_name == "Bangladesh" | ///
+location_name == "Barbados" | ///
+location_name == "Belarus" | ///
+location_name == "Belgium" | ///
+location_name == "Belize" | ///
+location_name == "Benin" | ///
+location_name == "Bolivia (Plurinational State of)" | ///
+location_name == "Bosnia and Herzegovina" | ///
+location_name == "Botswana" | ///
+location_name == "Brazil" | ///
+location_name == "Bulgaria" | ///
+location_name == "Burkina Faso" | ///
+location_name == "Côte d'Ivoire" | /// 
+location_name == "Cabo Verde" | ///
+location_name == "Cambodia" | ///
+location_name == "Cameroon" | ///
+location_name == "Canada" | ///
+location_name == "Central African Republic" | ///
+location_name == "Chad" | ///
+location_name == "Chile" | ///
+location_name == "China" | ///
+location_name == "China (without Hong Kong and Macao)" | ///
+location_name == "Colombia" | ///
+location_name == "Comoros" | ///
+location_name == "Congo" | ///
+location_name == "Costa Rica" | ///
+location_name == "Croatia" | ///
+location_name == "Cuba" | ///
+location_name == "Cyprus" | ///
+location_name == "Czechia" | ///
+location_name == "Democratic Republic of the Congo" | ///
+location_name == "Denmark" | ///
+location_name == "Djibouti" | ///
+location_name == "Dominican Republic" | ///
+location_name == "Ecuador" | ///
+location_name == "Egypt" | ///
+location_name == "El Salvador" | ///
+location_name == "Equatorial Guinea" | ///
+location_name == "Estonia" | ///
+location_name == "Eswatini" | ///
+location_name == "Ethiopia" | ///
+location_name == "Fiji" | ///
+location_name == "Finland" | ///
+location_name == "France" | ///
+location_name == "Gabon" | ///
+location_name == "Gambia" | location_name == "Georgia" | ///
+location_name == "Germany" | ///
+location_name == "Ghana" | ///
+location_name == "Greece" | ///
+location_name == "Guam" | ///
+location_name == "Guatemala" | ///
+location_name == "Guinea" | ///
+location_name == "Guinea-Bissau" | ///
+location_name == "Guyana" | ///
+location_name == "Haiti" | ///
+location_name == "Honduras" | ///
+location_name == "Hong Kong Special Administrative Region of China" | ///
+location_name == "Hungary" | ///
+location_name == "Iceland" | ///
+location_name == "India" | ///
+location_name == "Indonesia" | ///
+location_name == "Iran (Islamic Republic of)" | ///
+location_name == "Iraq" | ///
+location_name == "Ireland" | ///
+location_name == "Israel" | ///
+location_name == "Italy" | ///
+location_name == "Jamaica" | ///
+location_name == "Japan" | ///
+location_name == "Jordan" | ///
+location_name == "Kazakhstan" | ///
+location_name == "Kenya" | ///
+location_name == "Kuwait" | ///
+location_name == "Kyrgyzstan" | ///
+location_name == "Latvia" | ///
+location_name == "Lebanon" | ///
+location_name == "Lesotho" | ///
+location_name == "Liberia" | ///
+location_name == "Libya" | ///
+location_name == "Lithuania" | ///
+location_name == "Luxembourg" | ///
+location_name == "Macao Special Administrative Region of China" | ///
+location_name == "Madagascar" | ///
+location_name == "Malawi" | ///
+location_name == "Malaysia" | ///
+location_name == "Maldives" | ///
+location_name == "Mali" | ///
+location_name == "Malta" | ///
+location_name == "Mauritania" | ///
+location_name == "Mauritius" | ///
+location_name == "Mexico" | ///
+location_name == "Mongolia" | ///
+location_name == "Montenegro" | ///
+location_name == "Morocco" | ///
+location_name == "Mozambique" | ///
+location_name == "Myanmar" | ///
+location_name == "Namibia" | ///
+location_name == "Nepal" | ///
+location_name == "Netherlands" | ///
+location_name == "New Zealand" | ///
+location_name == "Nicaragua" | ///
+location_name == "Niger" | ///
+location_name == "Nigeria" | ///
+location_name == "North Macedonia" | ///
+location_name == "Norway" | ///
+location_name == "Oman" | ///
+location_name == "Pakistan" | ///
+location_name == "Palestine" | ///
+location_name == "Panama" | ///
+location_name == "Papua New Guinea" | ///
+location_name == "Paraguay" | ///
+location_name == "Peru" | ///
+location_name == "Philippines" | ///
+location_name == "Poland" | ///
+location_name == "Portugal" | ///
+location_name == "Puerto Rico" | ///
+location_name == "Qatar" | ///
+location_name == "Republic of Korea" | ///
+location_name == "Republic of Moldova" | ///
+location_name == "Romania" | ///
+location_name == "Russian Federation" | ///
+location_name == "Rwanda" | ///
+location_name == "San Marino" | ///
+location_name == "Sao Tome and Principe" | ///
+location_name == "Saudi Arabia" | ///
+location_name == "Senegal" | ///
+location_name == "Serbia" | ///
+location_name == "Sierra Leone" | ///
+location_name == "Singapore" | ///
+location_name == "Slovakia" | ///
+location_name == "Slovenia" | ///
+location_name == "Somalia" | ///
+location_name == "South Africa" | ///
+location_name == "South Sudan" | ///
+location_name == "Spain" | ///
+location_name == "Sri Lanka" | ///
+location_name == "Sudan" | ///
+location_name == "Suriname" | ///
+location_name == "Sweden" | ///
+location_name == "Switzerland" | ///
+location_name == "Syrian Arab Republic" | ///
+location_name == "Taiwan (Province of China)" | ///
+location_name == "Tajikistan" | ///
+location_name == "Thailand" | ///
+location_name == "Timor-Leste" | ///
+location_name == "Togo" | ///
+location_name == "Trinidad and Tobago" | ///
+location_name == "Tunisia" | ///
+location_name == "Turkey" | ///
+location_name == "Uganda" | ///
+location_name == "Ukraine" | ///
+location_name == "United Arab Emirates" | ///
+location_name == "United Kingdom" | ///
+location_name == "United States of America" | ///
+location_name == "United States Virgin Islands" | ///
+location_name == "Uruguay" | ///
+location_name == "Uzbekistan" | ///
+location_name == "Venezuela (Bolivarian Republic of)" | ///
+location_name == "Viet Nam" | ///
+location_name == "Yemen" | ///
+location_name == "Zambia" | ///
+location_name == "Zimbabwe"
+
+
+
+* change ihme country names to location_name country names
+
+replace location_name = "Bolivia" if location_name == "Bolivia (Plurinational State of)"
+replace location_name = "Cape Verde" if location_name == "Cabo Verde"
+replace location_name = "China" if location_name == "China"
+replace location_name = "China without Hong Kong and Macao" if location_name == "China (without Hong Kong and Macao)"
+replace location_name = "Congo DR" if location_name == "Democratic Republic of the Congo"
+replace location_name = "Cote d'Ivoire" if location_name == "Côte d'Ivoire"
+replace location_name = "Guinea Bissau" if location_name == "Guinea-Bissau"
+replace location_name = "Hong Kong" if location_name == "Special Administrative Region of China"
+replace location_name = "Iran" if location_name == "Iran (Islamic Republic of)"
+replace location_name = "Korea North" if location_name == "Korea, Democratic People's Republic of"
+replace location_name = "Korea South" if location_name == "Republic of Korea"
+replace location_name = "Macao" if location_name == "Special Administrative Region of China"
+replace location_name = "Moldova" if location_name == "Republic of Moldova"
+replace location_name = "Russia" if location_name == "Russian Federation"
+replace location_name = "Syria" if location_name == "Syrian Arab Republic"
+replace location_name = "Taiwan" if location_name == "Taiwan (Province of China)"
+replace location_name = "United States of America" if location_name == "United States"
+replace location_name = "United States of America" if location_name == "US"
+replace location_name = "Venezuela" if location_name == "Venezuela (Bolivarian Republic of)"
+
+
+qui compress
+
+save "IHME all countries 20221216.dta", replace
+
+
+
+
+* remove remnant not-needed files
+
+shell rm -r "data_dictionary.csv"
+shell rm -r "data_download_file_best_masks_2020.csv"
+shell rm -r "data_download_file_best_masks_2021.csv"
+shell rm -r "data_download_file_best_masks_2022.csv"
+shell rm -r "data_download_file_global_antivirals_2020.csv"
+shell rm -r "data_download_file_global_antivirals_2021.csv"
+shell rm -r "data_download_file_global_antivirals_2022.csv"
+shell rm -r "data_download_file_reference_2020.csv"
+shell rm -r "data_download_file_reference_2020.dta"
+shell rm -r "data_download_file_reference_2021.csv"
+shell rm -r "data_download_file_reference_2021.dta"
+shell rm -r "data_download_file_reference_2022.csv"
+shell rm -r "data_download_file_reference_2022.dta"
+
 shell rm -r "IHME_COVID_19_Data_Release_Information_Sheet.pdf"
+shell rm -r "data_download_file_reference_2023.csv"
+shell rm -r "data_download_file_global_antivirals_2023.csv"
+shell rm -r "data_download_file_best_masks_2023.csv"
 
 
 
@@ -35847,7 +37925,30 @@ shell rm -r "IHME_COVID_19_Data_Release_Information_Sheet.pdf"
 
 
 
-**************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**********************************************
+**********************************************
+
+**********************************************
+**********************************************
 
 * gen list of countries and update dates
 
@@ -35957,7 +38058,10 @@ local list ///
 20220610 ///
 20220719 ///
 20220912 ///
-20221024
+20221024 ///
+20221118 ///
+20221216
+
 
 
 foreach update of local list {
@@ -36121,12 +38225,29 @@ rename country loc_grand_name
 *
 
 
+**********************************************
+**********************************************
 
-* country names to country
+* change ihme country names to location_name country names
 
-replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde" 
-replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau" 
-replace loc_grand_name = "Korea South" if loc_grand_name == "Korea, South" 
+replace loc_grand_name = "Bolivia" if loc_grand_name == "Bolivia (Plurinational State of)"
+replace loc_grand_name = "Cape Verde" if loc_grand_name == "Cabo Verde"
+replace loc_grand_name = "China" if loc_grand_name == "China (without Hong Kong and Macao)"
+replace loc_grand_name = "Congo DR" if loc_grand_name == "Democratic Republic of the Congo"
+replace loc_grand_name = "Cote d'Ivoire" if loc_grand_name == "Côte d'Ivoire"
+replace loc_grand_name = "Guinea Bissau" if loc_grand_name == "Guinea-Bissau"
+replace loc_grand_name = "Hong Kong" if loc_grand_name == "Special Administrative Region of China"
+replace loc_grand_name = "Iran" if loc_grand_name == "Iran (Islamic Republic of)"
+replace loc_grand_name = "Korea North" if loc_grand_name == "Korea, Democratic People's Republic of"
+replace loc_grand_name = "Korea South" if loc_grand_name == "Republic of Korea"
+replace loc_grand_name = "Macao" if loc_grand_name == "Special Administrative Region of China"
+replace loc_grand_name = "Moldova" if loc_grand_name == "Republic of Moldova"
+replace loc_grand_name = "Russia" if loc_grand_name == "Russian Federation"
+replace loc_grand_name = "Syria" if loc_grand_name == "Syrian Arab Republic"
+replace loc_grand_name = "Taiwan" if loc_grand_name == "Taiwan (Province of China)"
+replace loc_grand_name = "United States of America" if loc_grand_name == "United States"
+replace loc_grand_name = "United States of America" if loc_grand_name == "US"
+replace loc_grand_name = "Venezuela" if loc_grand_name == "Venezuela (Bolivarian Republic of)"
 
 
 isid loc_grand_name update_date_block, sort
