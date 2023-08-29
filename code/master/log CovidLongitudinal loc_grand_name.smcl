@@ -1,0 +1,1126 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/master/log CovidLongitudinal loc_grand_name.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}29 Aug 2023, 11:34:07
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal loc_grand_name.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models                                                                         
+. * Person: Farshad Pourmalek 
+. ***************************************************************************
+. 
+. 
+. * create location grand name and id // loc_grand_name and loc_grand_id
+.         
+. * input file(s): loc_grand_name.xlsx
+. * output file(s): loc_grand_name.dta
+. 
+. * output data dictionary file(s): "loc_grand_name data dictionary.csv"
+. 
+. 
+. 
+. 
+. 
+. import excel using "loc_grand_name.xlsx", clear firstrow
+{res}{text}(26 vars, 217 obs)
+
+{com}. 
+. 
+. label define country ///
+> 1 "Afghanistan" ///
+> 2 "Albania" ///
+> 3 "Algeria" ///
+> 4 "Andorra" ///
+> 5 "Angola" ///
+> 6 "Antigua and Barbuda" ///
+> 7 "Argentina" ///
+> 8 "Armenia" ///
+> 9 "Australia" ///
+> 10 "Austria" ///
+> 11 "Azerbaijan" ///
+> 12 "Bahamas" ///
+> 13 "Bahrain" ///
+> 14 "Bangladesh" ///
+> 15 "Barbados" ///
+> 16 "Belarus" ///
+> 17 "Belgium" ///
+> 18 "Belize" ///
+> 19 "Benin" ///
+> 20 "Bhutan" ///
+> 21 "Bolivia" ///
+> 22 "Bosnia and Herzegovina" ///
+> 23 "Botswana" ///
+> 24 "Brazil" ///
+> 25 "Brunei" ///
+> 26 "Bulgaria" ///
+> 27 "Burkina Faso" ///
+> 28 "Burundi" ///
+> 29 "Cambodia" ///
+> 30 "Cameroon" ///
+> 31 "Canada" ///
+> 32 "Cape Verde" ///
+> 33 "Central African Republic" ///
+> 34 "Chad" ///
+> 35 "Chile" ///
+> 36 "China" ///
+> 37 "Colombia" ///
+> 38 "Comoros" ///
+> 39 "Congo" ///
+> 40 "Congo DR" ///
+> 41 "Costa Rica" ///
+> 42 "Cote d'Ivoire" ///
+> 43 "Croatia" ///
+> 44 "Cuba" ///
+> 45 "Cyprus" ///
+> 46 "Czechia" ///
+> 47 "Denmark" ///
+> 48 "Djibouti" ///
+> 49 "Dominica" ///
+> 50 "Dominican Republic" ///
+> 51 "Ecuador" ///
+> 52 "Egypt" ///
+> 53 "El Salvador" ///
+> 54 "Equatorial Guinea" ///
+> 55 "Eritrea" ///
+> 56 "Estonia" ///
+> 57 "Eswatini" ///
+> 58 "Ethiopia" ///
+> 59 "Fiji" ///
+> 60 "Finland" ///
+> 61 "France" ///
+> 62 "Gabon" ///
+> 63 "Gambia" ///
+> 64 "Georgia" ///
+> 65 "Germany" ///
+> 66 "Ghana" ///
+> 67 "Greece" ///
+> 68 "Grenada" ///
+> 69 "Guatemala" ///
+> 70 "Guinea" ///
+> 71 "Guinea Bissau" ///
+> 72 "Guyana" ///
+> 73 "Haiti" ///
+> 74 "Holy See" ///
+> 75 "Honduras" ///
+> 76 "Hungary" ///
+> 77 "Iceland" ///
+> 78 "India" ///
+> 79 "Indonesia" ///
+> 80 "Iran" ///
+> 81 "Iraq" ///
+> 82 "Ireland" ///
+> 83 "Israel" ///
+> 84 "Italy" ///
+> 85 "Jamaica" ///
+> 86 "Japan" ///
+> 87 "Jordan" ///
+> 88 "Kazakhstan" ///
+> 89 "Kenya" ///
+> 90 "Kiribati" ///
+> 91 "Korea North" ///
+> 92 "Korea South" ///
+> 93 "Kosovo" ///
+> 94 "Kuwait" ///
+> 95 "Kyrgyzstan" ///
+> 96 "Laos" ///
+> 97 "Latvia" ///
+> 98 "Lebanon" ///
+> 99 "Lesotho" ///
+> 100 "Liberia" ///
+> 101 "Libya" ///
+> 102 "Liechtenstein" ///
+> 103 "Lithuania" ///
+> 104 "Luxembourg" ///
+> 105 "Madagascar" ///
+> 106 "Malawi" ///
+> 107 "Malaysia" ///
+> 108 "Maldives" ///
+> 109 "Mali" ///
+> 110 "Malta" ///
+> 111 "Mauritania" ///
+> 112 "Mauritius" ///
+> 113 "Mexico" ///
+> 114 "Micronesia" ///
+> 115 "Moldova" ///
+> 116 "Monaco" ///
+> 117 "Mongolia" ///
+> 118 "Montenegro" ///
+> 119 "Morocco" ///
+> 120 "Mozambique" ///
+> 121 "Myanmar" ///
+> 122 "Namibia" ///
+> 123 "Nepal" ///
+> 124 "Netherlands" ///
+> 125 "New Zealand" ///
+> 126 "Nicaragua" ///
+> 127 "Niger" ///
+> 128 "Nigeria" ///
+> 129 "North Macedonia" ///
+> 130 "Norway" ///
+> 131 "Oman" ///
+> 132 "Pakistan" ///
+> 133 "Palestine" ///
+> 134 "Panama" ///
+> 135 "Papua New Guinea" ///
+> 136 "Paraguay" ///
+> 137 "Peru" ///
+> 138 "Philippines" ///
+> 139 "Poland" ///
+> 140 "Portugal" ///
+> 141 "Qatar" ///
+> 142 "Romania" ///
+> 143 "Russia" ///
+> 144 "Rwanda" ///
+> 145 "Saint Kitts and Nevis" ///
+> 146 "Saint Lucia" ///
+> 147 "Saint Vincent and the Grenadines" ///
+> 148 "Samoa" ///
+> 149 "San Marino" ///
+> 150 "Sao Tome and Principe" ///
+> 151 "Saudi Arabia" ///
+> 152 "Senegal" ///
+> 153 "Serbia" ///
+> 154 "Seychelles" ///
+> 155 "Sierra Leone" ///
+> 156 "Singapore" ///
+> 157 "Slovakia" ///
+> 158 "Slovenia" ///
+> 159 "Solomon Islands" ///
+> 160 "Somalia" ///
+> 161 "South Africa" ///
+> 162 "South Sudan" ///
+> 163 "Spain" ///
+> 164 "Sri Lanka" ///
+> 165 "Sudan" ///
+> 166 "Suriname" ///
+> 167 "Sweden" ///
+> 168 "Switzerland" ///
+> 169 "Syria" ///
+> 170 "Tajikistan" ///
+> 171 "Taiwan" ///
+> 172 "Tanzania" ///
+> 173 "Thailand" ///
+> 174 "Timor Leste" ///
+> 175 "Togo" ///
+> 176 "Tonga" ///
+> 177 "Trinidad and Tobago" ///
+> 178 "Tunisia" ///
+> 179 "Turkey" ///
+> 180 "Uganda" ///
+> 181 "Ukraine" ///
+> 182 "United Arab Emirates" ///
+> 183 "United Kingdom" ///
+> 184 "United States of America" ///
+> 185 "Uruguay" ///
+> 186 "Uzbekistan" ///
+> 187 "Vanuatu" ///
+> 188 "Venezuela" ///
+> 189 "Viet Nam" ///
+> 190 "Western Sahara" ///
+> 190 "Yemen" ///
+> 191 "Zambia" ///
+> 192 "Zimbabwe"
+{txt}
+{com}. 
+. 
+. gen loc_grand_name_numlabel = loc_grand_id
+{txt}(25 missing values generated)
+
+{com}. 
+. label values loc_grand_name_numlabel country
+{txt}
+{com}. 
+. tab loc_grand_id
+
+{txt}loc_grand_i {c |}
+          d {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}          1        0.52        0.52
+{txt}          2 {c |}{res}          1        0.52        1.04
+{txt}          3 {c |}{res}          1        0.52        1.56
+{txt}          4 {c |}{res}          1        0.52        2.08
+{txt}          5 {c |}{res}          1        0.52        2.60
+{txt}          6 {c |}{res}          1        0.52        3.13
+{txt}          7 {c |}{res}          1        0.52        3.65
+{txt}          8 {c |}{res}          1        0.52        4.17
+{txt}          9 {c |}{res}          1        0.52        4.69
+{txt}         10 {c |}{res}          1        0.52        5.21
+{txt}         11 {c |}{res}          1        0.52        5.73
+{txt}         12 {c |}{res}          1        0.52        6.25
+{txt}         13 {c |}{res}          1        0.52        6.77
+{txt}         14 {c |}{res}          1        0.52        7.29
+{txt}         15 {c |}{res}          1        0.52        7.81
+{txt}         16 {c |}{res}          1        0.52        8.33
+{txt}         17 {c |}{res}          1        0.52        8.85
+{txt}         18 {c |}{res}          1        0.52        9.38
+{txt}         19 {c |}{res}          1        0.52        9.90
+{txt}         20 {c |}{res}          1        0.52       10.42
+{txt}         21 {c |}{res}          1        0.52       10.94
+{txt}         22 {c |}{res}          1        0.52       11.46
+{txt}         23 {c |}{res}          1        0.52       11.98
+{txt}         24 {c |}{res}          1        0.52       12.50
+{txt}         25 {c |}{res}          1        0.52       13.02
+{txt}         26 {c |}{res}          1        0.52       13.54
+{txt}         27 {c |}{res}          1        0.52       14.06
+{txt}         28 {c |}{res}          1        0.52       14.58
+{txt}         29 {c |}{res}          1        0.52       15.10
+{txt}         30 {c |}{res}          1        0.52       15.63
+{txt}         31 {c |}{res}          1        0.52       16.15
+{txt}         32 {c |}{res}          1        0.52       16.67
+{txt}         33 {c |}{res}          1        0.52       17.19
+{txt}         34 {c |}{res}          1        0.52       17.71
+{txt}         35 {c |}{res}          1        0.52       18.23
+{txt}         36 {c |}{res}          1        0.52       18.75
+{txt}         37 {c |}{res}          1        0.52       19.27
+{txt}         38 {c |}{res}          1        0.52       19.79
+{txt}         39 {c |}{res}          1        0.52       20.31
+{txt}         40 {c |}{res}          1        0.52       20.83
+{txt}         41 {c |}{res}          1        0.52       21.35
+{txt}         42 {c |}{res}          1        0.52       21.87
+{txt}         43 {c |}{res}          1        0.52       22.40
+{txt}         44 {c |}{res}          1        0.52       22.92
+{txt}         45 {c |}{res}          1        0.52       23.44
+{txt}         46 {c |}{res}          1        0.52       23.96
+{txt}         47 {c |}{res}          1        0.52       24.48
+{txt}         48 {c |}{res}          1        0.52       25.00
+{txt}         49 {c |}{res}          1        0.52       25.52
+{txt}         50 {c |}{res}          1        0.52       26.04
+{txt}         51 {c |}{res}          1        0.52       26.56
+{txt}         52 {c |}{res}          1        0.52       27.08
+{txt}         53 {c |}{res}          1        0.52       27.60
+{txt}         54 {c |}{res}          1        0.52       28.12
+{txt}         55 {c |}{res}          1        0.52       28.65
+{txt}         56 {c |}{res}          1        0.52       29.17
+{txt}         57 {c |}{res}          1        0.52       29.69
+{txt}         58 {c |}{res}          1        0.52       30.21
+{txt}         59 {c |}{res}          1        0.52       30.73
+{txt}         60 {c |}{res}          1        0.52       31.25
+{txt}         61 {c |}{res}          1        0.52       31.77
+{txt}         62 {c |}{res}          1        0.52       32.29
+{txt}         63 {c |}{res}          1        0.52       32.81
+{txt}         64 {c |}{res}          1        0.52       33.33
+{txt}         65 {c |}{res}          1        0.52       33.85
+{txt}         66 {c |}{res}          1        0.52       34.37
+{txt}         67 {c |}{res}          1        0.52       34.90
+{txt}         68 {c |}{res}          1        0.52       35.42
+{txt}         69 {c |}{res}          1        0.52       35.94
+{txt}         70 {c |}{res}          1        0.52       36.46
+{txt}         71 {c |}{res}          1        0.52       36.98
+{txt}         72 {c |}{res}          1        0.52       37.50
+{txt}         73 {c |}{res}          1        0.52       38.02
+{txt}         74 {c |}{res}          1        0.52       38.54
+{txt}         75 {c |}{res}          1        0.52       39.06
+{txt}         76 {c |}{res}          1        0.52       39.58
+{txt}         77 {c |}{res}          1        0.52       40.10
+{txt}         78 {c |}{res}          1        0.52       40.63
+{txt}         79 {c |}{res}          1        0.52       41.15
+{txt}         80 {c |}{res}          1        0.52       41.67
+{txt}         81 {c |}{res}          1        0.52       42.19
+{txt}         82 {c |}{res}          1        0.52       42.71
+{txt}         83 {c |}{res}          1        0.52       43.23
+{txt}         84 {c |}{res}          1        0.52       43.75
+{txt}         85 {c |}{res}          1        0.52       44.27
+{txt}         86 {c |}{res}          1        0.52       44.79
+{txt}         87 {c |}{res}          1        0.52       45.31
+{txt}         88 {c |}{res}          1        0.52       45.83
+{txt}         89 {c |}{res}          1        0.52       46.35
+{txt}         90 {c |}{res}          1        0.52       46.88
+{txt}         91 {c |}{res}          1        0.52       47.40
+{txt}         92 {c |}{res}          1        0.52       47.92
+{txt}         93 {c |}{res}          1        0.52       48.44
+{txt}         94 {c |}{res}          1        0.52       48.96
+{txt}         95 {c |}{res}          1        0.52       49.48
+{txt}         96 {c |}{res}          1        0.52       50.00
+{txt}         97 {c |}{res}          1        0.52       50.52
+{txt}         98 {c |}{res}          1        0.52       51.04
+{txt}         99 {c |}{res}          1        0.52       51.56
+{txt}        100 {c |}{res}          1        0.52       52.08
+{txt}        101 {c |}{res}          1        0.52       52.60
+{txt}        102 {c |}{res}          1        0.52       53.13
+{txt}        103 {c |}{res}          1        0.52       53.65
+{txt}        104 {c |}{res}          1        0.52       54.17
+{txt}        105 {c |}{res}          1        0.52       54.69
+{txt}        106 {c |}{res}          1        0.52       55.21
+{txt}        107 {c |}{res}          1        0.52       55.73
+{txt}        108 {c |}{res}          1        0.52       56.25
+{txt}        109 {c |}{res}          1        0.52       56.77
+{txt}        110 {c |}{res}          1        0.52       57.29
+{txt}        111 {c |}{res}          1        0.52       57.81
+{txt}        112 {c |}{res}          1        0.52       58.33
+{txt}        113 {c |}{res}          1        0.52       58.85
+{txt}        114 {c |}{res}          1        0.52       59.38
+{txt}        115 {c |}{res}          1        0.52       59.90
+{txt}        116 {c |}{res}          1        0.52       60.42
+{txt}        117 {c |}{res}          1        0.52       60.94
+{txt}        118 {c |}{res}          1        0.52       61.46
+{txt}        119 {c |}{res}          1        0.52       61.98
+{txt}        120 {c |}{res}          1        0.52       62.50
+{txt}        121 {c |}{res}          1        0.52       63.02
+{txt}        122 {c |}{res}          1        0.52       63.54
+{txt}        123 {c |}{res}          1        0.52       64.06
+{txt}        124 {c |}{res}          1        0.52       64.58
+{txt}        125 {c |}{res}          1        0.52       65.10
+{txt}        126 {c |}{res}          1        0.52       65.63
+{txt}        127 {c |}{res}          1        0.52       66.15
+{txt}        128 {c |}{res}          1        0.52       66.67
+{txt}        129 {c |}{res}          1        0.52       67.19
+{txt}        130 {c |}{res}          1        0.52       67.71
+{txt}        131 {c |}{res}          1        0.52       68.23
+{txt}        132 {c |}{res}          1        0.52       68.75
+{txt}        133 {c |}{res}          1        0.52       69.27
+{txt}        134 {c |}{res}          1        0.52       69.79
+{txt}        135 {c |}{res}          1        0.52       70.31
+{txt}        136 {c |}{res}          1        0.52       70.83
+{txt}        137 {c |}{res}          1        0.52       71.35
+{txt}        138 {c |}{res}          1        0.52       71.88
+{txt}        139 {c |}{res}          1        0.52       72.40
+{txt}        140 {c |}{res}          1        0.52       72.92
+{txt}        141 {c |}{res}          1        0.52       73.44
+{txt}        142 {c |}{res}          1        0.52       73.96
+{txt}        143 {c |}{res}          1        0.52       74.48
+{txt}        144 {c |}{res}          1        0.52       75.00
+{txt}        145 {c |}{res}          1        0.52       75.52
+{txt}        146 {c |}{res}          1        0.52       76.04
+{txt}        147 {c |}{res}          1        0.52       76.56
+{txt}        148 {c |}{res}          1        0.52       77.08
+{txt}        149 {c |}{res}          1        0.52       77.60
+{txt}        150 {c |}{res}          1        0.52       78.12
+{txt}        151 {c |}{res}          1        0.52       78.65
+{txt}        152 {c |}{res}          1        0.52       79.17
+{txt}        153 {c |}{res}          1        0.52       79.69
+{txt}        154 {c |}{res}          1        0.52       80.21
+{txt}        155 {c |}{res}          1        0.52       80.73
+{txt}        156 {c |}{res}          1        0.52       81.25
+{txt}        157 {c |}{res}          1        0.52       81.77
+{txt}        158 {c |}{res}          1        0.52       82.29
+{txt}        159 {c |}{res}          1        0.52       82.81
+{txt}        160 {c |}{res}          1        0.52       83.33
+{txt}        161 {c |}{res}          1        0.52       83.85
+{txt}        162 {c |}{res}          1        0.52       84.37
+{txt}        163 {c |}{res}          1        0.52       84.90
+{txt}        164 {c |}{res}          1        0.52       85.42
+{txt}        165 {c |}{res}          1        0.52       85.94
+{txt}        166 {c |}{res}          1        0.52       86.46
+{txt}        167 {c |}{res}          1        0.52       86.98
+{txt}        168 {c |}{res}          1        0.52       87.50
+{txt}        169 {c |}{res}          1        0.52       88.02
+{txt}        170 {c |}{res}          1        0.52       88.54
+{txt}        171 {c |}{res}          1        0.52       89.06
+{txt}        172 {c |}{res}          1        0.52       89.58
+{txt}        173 {c |}{res}          1        0.52       90.10
+{txt}        174 {c |}{res}          1        0.52       90.62
+{txt}        175 {c |}{res}          1        0.52       91.15
+{txt}        176 {c |}{res}          1        0.52       91.67
+{txt}        177 {c |}{res}          1        0.52       92.19
+{txt}        178 {c |}{res}          1        0.52       92.71
+{txt}        179 {c |}{res}          1        0.52       93.23
+{txt}        180 {c |}{res}          1        0.52       93.75
+{txt}        181 {c |}{res}          1        0.52       94.27
+{txt}        182 {c |}{res}          1        0.52       94.79
+{txt}        183 {c |}{res}          1        0.52       95.31
+{txt}        184 {c |}{res}          1        0.52       95.83
+{txt}        185 {c |}{res}          1        0.52       96.35
+{txt}        186 {c |}{res}          1        0.52       96.87
+{txt}        187 {c |}{res}          1        0.52       97.40
+{txt}        188 {c |}{res}          1        0.52       97.92
+{txt}        189 {c |}{res}          1        0.52       98.44
+{txt}        190 {c |}{res}          1        0.52       98.96
+{txt}        191 {c |}{res}          1        0.52       99.48
+{txt}        192 {c |}{res}          1        0.52      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        192      100.00
+{txt}
+{com}. 
+. 
+. 
+. * gen loc_grand_name_snail and replace all spaces with indeline
+. 
+. gen loc_grand_name_snail = loc_grand_name
+{txt}
+{com}. 
+. replace loc_grand_name_snail = subinstr(loc_grand_name_snail, " ", "_", .)
+{txt}(50 real changes made)
+
+{com}. 
+. 
+. 
+. 
+. label var loc_grand_order "country order"
+{txt}
+{com}. 
+. label var loc_grand_name "country name"
+{txt}
+{com}. 
+. label var loc_grand_id "country id number"
+{txt}
+{com}. 
+. label var loc_grand_iso "country iso3 code"
+{txt}
+{com}. 
+. label var loc_grand_name_numlabel "country name number label"
+{txt}
+{com}. 
+. label var loc_grand_name_snail "country name snail"
+{txt}
+{com}. 
+. 
+. label var DELP "country names used in DELP COVID-19 epidemic model"
+{txt}
+{com}. label var IHME "country names used in IHME COVID-19 epidemic model"
+{txt}
+{com}. label var IMPE "country names used in IMPE COVID-19 epidemic model"
+{txt}
+{com}. label var LANL "country names used in LANL COVID-19 epidemic model"
+{txt}
+{com}. label var SRIV "country names used in SRIV COVID-19 epidemic model"
+{txt}
+{com}. label var UCLA "country names used in UCLA COVID-19 epidemic model"
+{txt}
+{com}. label var YYGU "country names used in YYGU COVID-19 epidemic model"
+{txt}
+{com}. label var JOHN "country names used in JOHNs Hopkins COVID-19 epidemic data"
+{txt}
+{com}. 
+. 
+. label var UNFPA2020 "country names used in UNFPA 2020 population estimates"
+{txt}
+{com}. label var population2020 "UNFPA 2020 population estimates"
+{txt}
+{com}. label var UNFPA2021 "country names used in UNFPA 2021 population estimates"
+{txt}
+{com}. label var population2021 "UNFPA 2021 population estimates"
+{txt}
+{com}. label var UNFPA2022 "country names used in UNFPA 2022 population estimates"
+{txt}
+{com}. label var population2022 "UNFPA 2022 population estimates"
+{txt}
+{com}. label var region "WHO region"
+{txt}
+{com}. 
+. 
+. 
+. 
+. ******
+. 
+. * make lists for transforming country names to loc_grand_name
+. 
+. local list DELP IHME IMPE LANL SRIV UCLA YYGU JOHN
+{txt}
+{com}. 
+. foreach model of local list {c -(}
+{txt}  2{com}. 
+. list loc_grand_name `model' if loc_grand_name != `model' & `model' != "", noo clean
+{txt}  3{com}. 
+. {c )-}
+{txt}
+    {res}          loc_grand_name                  DELP {txt} 
+    {res}              Cape Verde            Cabo Verde {txt} 
+    {res}                   Congo   Congo (Brazzaville) {txt} 
+    {res}                Congo DR      Congo (Kinshasa) {txt} 
+    {res}           Guinea Bissau         Guinea-Bissau {txt} 
+    {res}             Korea South          Korea, South {txt} 
+    {res}United States of America                    US {txt} 
+    {res}                Viet Nam               Vietnam {txt} 
+
+    {res}                   loc_grand_name                                               IHME {txt} 
+    {res}                          Bolivia                   Bolivia (Plurinational State of) {txt} 
+    {res}                       Cape Verde                                         Cabo Verde {txt} 
+    {res}China without Hong Kong and Macao                China (without Hong Kong and Macao) {txt} 
+    {res}                         Congo DR                   Democratic Republic of the Congo {txt} 
+    {res}                    Cote d'Ivoire                                      Côte d'Ivoire {txt} 
+    {res}                    Guinea Bissau                                      Guinea-Bissau {txt} 
+    {res}                        Hong Kong   Hong Kong Special Administrative Region of China {txt} 
+    {res}                             Iran                         Iran (Islamic Republic of) {txt} 
+    {res}                      Korea South                                  Republic of Korea {txt} 
+    {res}                            Macao       Macao Special Administrative Region of China {txt} 
+    {res}                          Moldova                                Republic of Moldova {txt} 
+    {res}                           Russia                                 Russian Federation {txt} 
+    {res}                            Syria                               Syrian Arab Republic {txt} 
+    {res}                           Taiwan                         Taiwan (Province of China) {txt} 
+
+    {res}                  loc_grand_name                             IMPE {txt} 
+    {res}                          Brunei                Brunei Darussalam {txt} 
+    {res}                      Cape Verde                       Cabo Verde {txt} 
+    {res}                           Congo            Republic of the Congo {txt} 
+    {res}                        Congo DR     Democratic Republic of Congo {txt} 
+    {res}                   Guinea Bissau                    Guinea-Bissau {txt} 
+    {res}                     Korea North                      North Korea {txt} 
+    {res}                     Korea South                      South Korea {txt} 
+    {res}                      Kyrgyzstan                  Kyrgyz Republic {txt} 
+    {res}                            Laos                          Lao PDR {txt} 
+    {res}                       Palestine               State of Palestine {txt} 
+    {res}                     Saint Lucia                        St. Lucia {txt} 
+    {res}Saint Vincent and the Grenadines   St. Vincent and the Grenadines {txt} 
+    {res}                     Timor Leste                      Timor-Leste {txt} 
+    {res}        United States of America                    United States {txt} 
+    {res}                        Viet Nam                          Vietnam {txt} 
+
+    {res}          loc_grand_name                               LANL {txt} 
+    {res}              Cape Verde                         Cabo Verde {txt} 
+    {res}                   Congo                  Republic of Congo {txt} 
+    {res}                Congo DR   Democratic Republic of the Congo {txt} 
+    {res}           Guinea Bissau                      Guinea-Bissau {txt} 
+    {res}             Korea South                        South Korea {txt} 
+    {res}                 Myanmar                              Burma {txt} 
+    {res}               Palestine                 West Bank and Gaza {txt} 
+    {res}             Timor Leste                        Timor-Leste {txt} 
+    {res}United States of America                                 US {txt} 
+    {res}                Viet Nam                            Vietnam {txt} 
+
+    {res}          loc_grand_name                               SRIV {txt} 
+    {res}                 Bahamas                        The Bahamas {txt} 
+    {res}                Congo DR   Democratic Republic of the Congo {txt} 
+    {res}                 Czechia                     Czech Republic {txt} 
+    {res}                  Gambia                         The Gambia {txt} 
+    {res}           Guinea Bissau                      Guinea-Bissau {txt} 
+    {res}             Korea South                        South Korea {txt} 
+    {res}         North Macedonia                          Macedonia {txt} 
+    {res}               Palestine                 West Bank and Gaza {txt} 
+    {res}                  Russia                 Russian Federation {txt} 
+    {res}             Timor Leste                        Timor-Leste {txt} 
+    {res}United States of America                      United States {txt} 
+    {res}                Viet Nam                            Vietnam {txt} 
+
+    {res}          loc_grand_name   UCLA {txt} 
+    {res}United States of America     US {txt} 
+
+    {res}loc_grand~e          YYGU {txt} 
+    {res}Korea South   South Korea {txt} 
+
+    {res}                  loc_grand_name                         JOHN {txt} 
+    {res}                      Cape Verde                   Cabo Verde {txt} 
+    {res}                           Congo          Congo (Brazzaville) {txt} 
+    {res}                        Congo DR             Congo (Kinshasa) {txt} 
+    {res}                   Guinea Bissau                Guinea-Bissau {txt} 
+    {res}                     Korea North                 Korea, North {txt} 
+    {res}                     Korea South                 Korea, South {txt} 
+    {res}                         Myanmar                        Burma {txt} 
+    {res}                       Palestine           West Bank and Gaza {txt} 
+    {res}Saint Vincent and the Grenadines   Vincent and the Grenadines {txt} 
+    {res}                          Taiwan                      Taiwan* {txt} 
+    {res}                     Timor Leste                  Timor-Leste {txt} 
+    {res}        United States of America                           US {txt} 
+    {res}                        Viet Nam                      Vietnam {txt} 
+
+{com}. *
+. 
+. 
+. codebook loc_grand_name if loc_grand_id != .
+
+{txt}{hline}
+{res}loc_grand_name{right:country name}
+{txt}{hline}
+
+{col 19}Type: String ({res}str33{txt}), but longest is str32
+
+{col 10}Unique values: {res}192{col 51}{txt}Missing "": {res}0{txt}/{res}192
+
+{txt}{col 15}Examples: {res}"Comoros"
+{col 25}"Hungary"
+{col 25}"Moldova"
+{col 25}"Serbia"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{com}. 
+. tab mapping if loc_grand_id == .
+
+                                {txt}mapping {c |}      Freq.     Percent        Cum.
+{hline 40}{c +}{hline 35}
+ Do nothing because JOHN did not report {c |}{res}         18       72.00       72.00
+{txt}Do nothing because the size is neglig.. {c |}{res}          7       28.00      100.00
+{txt}{hline 40}{c +}{hline 35}
+                                  Total {c |}{res}         25      100.00
+{txt}
+{com}. 
+. list loc_grand_name mapping if loc_grand_id == .
+
+     {txt}{c TLC}{hline 45}{c TRC}
+  6. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                       Antarctica      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 10. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                            Aruba      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 39. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}China without Hong Kong and Macao      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 51. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                 Diamond Princess      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 66. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                    French Guiana      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 67. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                 French Polynesia      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 75. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                       Guadeloupe      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 76. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                             Guam      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 84. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                        Hong Kong      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+114. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                            Macao      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+121. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                 Marshall Islands      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+122. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                       Martinique      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+133. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                       MS Zaandam      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+138. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                    New Caledonia      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+148. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                            Palau      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+156. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                      Puerto Rico      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+158. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                          Reunion      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+174. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                     Sint Maarten      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+184. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}             Summer Olympics 2020      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+199. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                     Turkmenistan      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+200. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}         Turks and Caicos Islands      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+201. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                           Tuvalu      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+207. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}     United States Virgin Islands      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+213. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                   Western Sahara      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+214. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}             Winter Olympics 2022      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+{com}. 
+. 
+. codebook DELP IHME IMPE LANL SRIV UCLA YYGU JOHN
+
+{txt}{hline}
+{res}DELP{right:country names used in DELP COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str24{txt})
+
+{col 10}Unique values: {res}166{col 51}{txt}Missing "": {res}51{txt}/{res}217
+
+{txt}{col 15}Examples: {res}""
+{col 25}"Comoros"
+{col 25}"Kazakhstan"
+{col 25}"Philippines"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}IHME{right:country names used in IHME COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str48{txt})
+
+{col 10}Unique values: {res}173{col 51}{txt}Missing "": {res}44{txt}/{res}217
+
+{txt}{col 15}Examples: {res}""
+{col 25}"Côte d'Ivoire"
+{col 25}"Kyrgyzstan"
+{col 25}"Qatar"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}IMPE{right:country names used in IMPE COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str30{txt})
+
+{col 10}Unique values: {res}191{col 51}{txt}Missing "": {res}26{txt}/{res}217
+
+{txt}{col 15}Examples: {res}"Belgium"
+{col 25}"French Guiana"
+{col 25}"Malawi"
+{col 25}"Senegal"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}LANL{right:country names used in LANL COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str32{txt})
+
+{col 10}Unique values: {res}179{col 51}{txt}Missing "": {res}38{txt}/{res}217
+
+{txt}{col 15}Examples: {res}"Angola"
+{col 25}"Dominican Republic"
+{col 25}"Lesotho"
+{col 25}"Rwanda"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}SRIV{right:country names used in SRIV COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str32{txt})
+
+{col 10}Unique values: {res}184{col 51}{txt}Missing "": {res}33{txt}/{res}217
+
+{txt}{col 15}Examples: {res}"Austria"
+{col 25}"Equatorial Guinea"
+{col 25}"Lithuania"
+{col 25}"Saint Vincent and the Grenadines"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}UCLA{right:country names used in UCLA COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str20{txt})
+
+{col 10}Unique values: {res}26{col 51}{txt}Missing "": {res}191{txt}/{res}217
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}""
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}YYGU{right:country names used in YYGU COVID-19 epidemic model}
+{txt}{hline}
+
+{col 19}Type: String ({res}str24{txt})
+
+{col 10}Unique values: {res}71{col 51}{txt}Missing "": {res}146{txt}/{res}217
+
+{txt}{col 15}Examples: {res}""
+{col 25}""
+{col 25}""
+{col 25}"Greece"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{txt}{hline}
+{res}JOHN{right:country names used in JOHNs Hopkins COVID-19 epidemic data}
+{txt}{hline}
+
+{col 19}Type: String ({res}str26{txt})
+
+{col 10}Unique values: {res}199{col 51}{txt}Missing "": {res}18{txt}/{res}217
+
+{txt}{col 15}Examples: {res}"Brazil"
+{col 25}"Germany"
+{col 25}"Maldives"
+{col 25}"Senegal"
+
+{txt}{col 16}Warning: Variable has embedded blanks.
+
+{com}. 
+. 
+. label var modelmix "Presence 1 or absence 0 of country in models DELP IHME IMPE LANL SRIV UCLA YYGU" 
+{txt}
+{com}. 
+. tab modelmix, sort
+
+ {txt}Presence 1 {c |}
+ or absence {c |}
+       0 of {c |}
+ country in {c |}
+models DELP {c |}
+  IHME IMPE {c |}
+  LANL SRIV {c |}
+  UCLA YYGU {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    1111100 {c |}{res}         84       43.75       43.75
+{txt}    1111101 {c |}{res}         44       22.92       66.67
+{txt}    1111111 {c |}{res}         25       13.02       79.69
+{txt}    0111100 {c |}{res}          7        3.65       83.33
+{txt}    0010000 {c |}{res}          6        3.12       86.46
+{txt}    0011100 {c |}{res}          5        2.60       89.06
+{txt}    1001100 {c |}{res}          4        2.08       91.15
+{txt}    0000100 {c |}{res}          3        1.56       92.71
+{txt}    1111000 {c |}{res}          3        1.56       94.27
+{txt}    0010100 {c |}{res}          2        1.04       95.31
+{txt}    1011100 {c |}{res}          2        1.04       96.35
+{txt}    0001000 {c |}{res}          1        0.52       96.88
+{txt}    0011000 {c |}{res}          1        0.52       97.40
+{txt}    0111101 {c |}{res}          1        0.52       97.92
+{txt}    1010100 {c |}{res}          1        0.52       98.44
+{txt}    1100100 {c |}{res}          1        0.52       98.96
+{txt}    1101100 {c |}{res}          1        0.52       99.48
+{txt}    1110100 {c |}{res}          1        0.52      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        192      100.00
+{txt}
+{com}. 
+. 
+. label var modelsnumber "Number of models country present in"
+{txt}
+{com}. 
+. tab modelsnumber
+
+  {txt}Number of {c |}
+     models {c |}
+    country {c |}
+ present in {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         10        5.21        5.21
+{txt}          2 {c |}{res}          3        1.56        6.77
+{txt}          3 {c |}{res}         11        5.73       12.50
+{txt}          4 {c |}{res}         14        7.29       19.79
+{txt}          5 {c |}{res}         85       44.27       64.06
+{txt}          6 {c |}{res}         44       22.92       86.98
+{txt}          7 {c |}{res}         25       13.02      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        192      100.00
+{txt}
+{com}. 
+. 
+. label var mapping "mapping plan"
+{txt}
+{com}. 
+. tab mapping
+
+                           {txt}mapping plan {c |}      Freq.     Percent        Cum.
+{hline 40}{c +}{hline 35}
+ Do nothing because JOHN did not report {c |}{res}         18       72.00       72.00
+{txt}Do nothing because the size is neglig.. {c |}{res}          7       28.00      100.00
+{txt}{hline 40}{c +}{hline 35}
+                                  Total {c |}{res}         25      100.00
+{txt}
+{com}. 
+. 
+. label var mappingcolor "mapping color code"
+{txt}
+{com}. 
+. tab mappingcolor
+
+    {txt}mapping {c |}
+ color code {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+       gray {c |}{res}          1       50.00       50.00
+{txt}     yellow {c |}{res}          1       50.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}          2      100.00
+{txt}
+{com}. 
+. 
+. label var mappingcolormeaning "mapping plan meaning"
+{txt}
+{com}. 
+. tab mappingcolormeaning
+
+                   {txt}mapping plan meaning {c |}      Freq.     Percent        Cum.
+{hline 40}{c +}{hline 35}
+ Do nothing because JOHN did not report {c |}{res}          1       50.00       50.00
+{txt}Do nothing because the size is neglig.. {c |}{res}          1       50.00      100.00
+{txt}{hline 40}{c +}{hline 35}
+                                  Total {c |}{res}          2      100.00
+{txt}
+{com}. 
+. drop Y Z
+{txt}
+{com}. 
+. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "loc_grand_name.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+loc_grand_name.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+loc_grand_name.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "loc_grand_name data dictionary.csv", replace 
+{res}{txt}{p 0 4 2}
+(file {bf}
+loc_grand_name data dictionary.csv{rm}
+not found)
+{p_end}
+{txt}file {bf:loc_grand_name data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. view "log CovidLongitudinal loc_grand_name.smcl"
+{txt}
+{com}. 
+. exit, clear
+
+{txt}end of do-file
+
+{com}. 
+{txt}end of do-file
+
+{com}. 

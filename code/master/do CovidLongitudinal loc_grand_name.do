@@ -5,9 +5,9 @@ cd "$pathCovidLongitudinal"
 
 cd master
 
-capture log close loc_grand_name
+capture log close 
 
-log using "log CovidLongitudinal loc_grand_name.smcl", replace name(loc_grand_name)
+log using "log CovidLongitudinal loc_grand_name.smcl", replace
 
 ***************************************************************************
 * This is "do CovidLongitudinal loc_grand_name.do"
@@ -40,215 +40,198 @@ label define country ///
 6 "Antigua and Barbuda" ///
 7 "Argentina" ///
 8 "Armenia" ///
-9 "Aruba" ///
-10 "Australia" ///
-11 "Austria" ///
-12 "Azerbaijan" ///
-13 "Bahamas" ///
-14 "Bahrain" ///
-15 "Bangladesh" ///
-16 "Barbados" ///
-17 "Belarus" ///
-18 "Belgium" ///
-19 "Belize" ///
-20 "Benin" ///
-21 "Bhutan" ///
-22 "Bolivia" ///
-23 "Bosnia and Herzegovina" ///
-24 "Botswana" ///
-25 "Brazil" ///
-26 "Brunei" ///
-27 "Bulgaria" ///
-28 "Burkina Faso" ///
-29 "Burundi" ///
-30 "Cambodia" ///
-31 "Cameroon" ///
-32 "Canada" ///
-33 "Cape Verde" ///
-34 "Central African Republic" ///
-35 "Chad" ///
-36 "Chile" ///
-37 "China" ///
-38 "Colombia" ///
-39 "Comoros" ///
-40 "Congo" ///
-41 "Congo, DR" ///
-42 "Costa Rica" ///
-43 "Cote d'Ivoire" ///
-44 "Croatia" ///
-45 "Cuba" ///
-46 "Curacao" ///
-47 "Cyprus" ///
-48 "Czechia" ///
-49 "Denmark" ///
-50 "Djibouti" ///
-51 "Dominica" ///
-52 "Dominican Republic" ///
-53 "Ecuador" ///
-54 "Egypt" ///
-55 "El Salvador" ///
-56 "Equatorial Guinea" ///
-57 "Eritrea" ///
-58 "Estonia" ///
-59 "Eswatini" ///
-60 "Ethiopia" ///
-61 "Fiji" ///
-62 "Finland" ///
-63 "France" ///
-64 "French Guiana" ///
-65 "French Polynesia" ///
-66 "Gabon" ///
-67 "Gambia" ///
-68 "Georgia" ///
-69 "Germany" ///
-70 "Ghana" ///
-71 "Greece" ///
-72 "Grenada" ///
-73 "Guadeloupe" ///
-74 "Guam" ///
-75 "Guatemala" ///
-76 "Guinea" ///
-77 "Guinea-Bissau" ///
-78 "Guyana" ///
-79 "Haiti" ///
-80 "Holy See" ///
-81 "Honduras" ///
-82 "Hong Kong" ///
-83 "Hungary" ///
-84 "Iceland" ///
-85 "India" ///
-86 "Indonesia" ///
-87 "Iran" ///
-88 "Iraq" ///
-89 "Ireland" ///
-90 "Israel" ///
-91 "Italy" ///
-92 "Jamaica" ///
-93 "Japan" ///
-94 "Jordan" ///
-95 "Kazakhstan" ///
-96 "Kenya" ///
-97 "Kiribati" ///
-98 "Korea, North" ///
-99 "Korea, South" ///
-100 "Kosovo" ///
-101 "Kuwait" ///
-102 "Kyrgyzstan" ///
-103 "Laos" ///
-104 "Latvia" ///
-105 "Lebanon" ///
-106 "Lesotho" ///
-107 "Liberia" ///
-108 "Libya" ///
-109 "Liechtenstein" ///
-110 "Lithuania" ///
-111 "Luxembourg" ///
-112 "Macao" ///
-113 "Madagascar" ///
-114 "Malawi" ///
-115 "Malaysia" ///
-116 "Maldives" ///
-117 "Mali" ///
-118 "Malta" ///
-119 "Marshall Islands" ///
-120 "Martinique" ///
-121 "Mauritania" ///
-122 "Mauritius" ///
-123 "Mexico" ///
-124 "Micronesia" ///
-125 "Moldova" ///
-126 "Monaco" ///
-127 "Mongolia" ///
-128 "Montenegro" ///
-129 "Morocco" ///
-130 "Mozambique" ///
-131 "Myanmar" ///
-132 "Namibia" ///
-133 "Nepal" ///
-134 "Netherlands" ///
-135 "New Caledonia" ///
-136 "New Zealand" ///
-137 "Nicaragua" ///
-138 "Niger" ///
-139 "Nigeria" ///
-140 "North Macedonia" ///
-141 "Norway" ///
-142 "Oman" ///
-143 "Pakistan" ///
-144 "Palau" ///
-145 "Palestine" ///
-146 "Panama" ///
-147 "Papua New Guinea" ///
-148 "Paraguay" ///
-149 "Peru" ///
-150 "Philippines" ///
-151 "Poland" ///
-152 "Portugal" ///
-153 "Puerto Rico" ///
-154 "Qatar" ///
-155 "Reunion" ///
-156 "Romania" ///
-157 "Russia" ///
-158 "Rwanda" ///
-159 "Saint Kitts and Nevis" ///
-160 "Saint Lucia" ///
-161 "Saint Vincent and the Grenadines" ///
-162 "Samoa" ///
-163 "San Marino" ///
-164 "Sao Tome and Principe" ///
-165 "Saudi Arabia" ///
-166 "Senegal" ///
-167 "Serbia" ///
-168 "Seychelles" ///
-169 "Sierra Leone" ///
-170 "Singapore" ///
-171 "Sint Maarten" ///
-172 "Slovakia" ///
-173 "Slovenia" ///
-174 "Solomon Islands" ///
-175 "Somalia" ///
-176 "South Africa" ///
-177 "South Sudan" ///
-178 "Spain" ///
-179 "Sri Lanka" ///
-180 "Sudan" ///
-181 "Suriname" ///
-182 "Sweden" ///
-183 "Switzerland" ///
-184 "Syria" ///
-185 "Taiwan" ///
-186 "Tajikistan" ///
-187 "Tanzania" ///
-188 "Thailand" ///
-189 "Timor-Leste" ///
-190 "Togo" ///
-191 "Tonga" ///
-192 "Trinidad and Tobago" ///
-193 "Tunisia" ///
-194 "Turkey" ///
-195 "Turkmenistan" ///
-196 "Turks and Caicos Islands" ///
-197 "Tuvalu" ///
-198 "Uganda" ///
-199 "Ukraine" ///
-200 "United Arab Emirates" ///
-201 "United Kingdom" ///
-202 "United States of America" ///
-203 "United States Virgin Islands" ///
-204 "Uruguay" ///
-205 "Uzbekistan" ///
-206 "Vanuatu" ///
-207 "Venezuela" ///
-208 "Viet Nam" ///
-209 "Western Sahara" ///
-210 "Yemen" ///
-211 "Zambia" ///
-212 "Zimbabwe"
+9 "Australia" ///
+10 "Austria" ///
+11 "Azerbaijan" ///
+12 "Bahamas" ///
+13 "Bahrain" ///
+14 "Bangladesh" ///
+15 "Barbados" ///
+16 "Belarus" ///
+17 "Belgium" ///
+18 "Belize" ///
+19 "Benin" ///
+20 "Bhutan" ///
+21 "Bolivia" ///
+22 "Bosnia and Herzegovina" ///
+23 "Botswana" ///
+24 "Brazil" ///
+25 "Brunei" ///
+26 "Bulgaria" ///
+27 "Burkina Faso" ///
+28 "Burundi" ///
+29 "Cambodia" ///
+30 "Cameroon" ///
+31 "Canada" ///
+32 "Cape Verde" ///
+33 "Central African Republic" ///
+34 "Chad" ///
+35 "Chile" ///
+36 "China" ///
+37 "Colombia" ///
+38 "Comoros" ///
+39 "Congo" ///
+40 "Congo DR" ///
+41 "Costa Rica" ///
+42 "Cote d'Ivoire" ///
+43 "Croatia" ///
+44 "Cuba" ///
+45 "Cyprus" ///
+46 "Czechia" ///
+47 "Denmark" ///
+48 "Djibouti" ///
+49 "Dominica" ///
+50 "Dominican Republic" ///
+51 "Ecuador" ///
+52 "Egypt" ///
+53 "El Salvador" ///
+54 "Equatorial Guinea" ///
+55 "Eritrea" ///
+56 "Estonia" ///
+57 "Eswatini" ///
+58 "Ethiopia" ///
+59 "Fiji" ///
+60 "Finland" ///
+61 "France" ///
+62 "Gabon" ///
+63 "Gambia" ///
+64 "Georgia" ///
+65 "Germany" ///
+66 "Ghana" ///
+67 "Greece" ///
+68 "Grenada" ///
+69 "Guatemala" ///
+70 "Guinea" ///
+71 "Guinea Bissau" ///
+72 "Guyana" ///
+73 "Haiti" ///
+74 "Holy See" ///
+75 "Honduras" ///
+76 "Hungary" ///
+77 "Iceland" ///
+78 "India" ///
+79 "Indonesia" ///
+80 "Iran" ///
+81 "Iraq" ///
+82 "Ireland" ///
+83 "Israel" ///
+84 "Italy" ///
+85 "Jamaica" ///
+86 "Japan" ///
+87 "Jordan" ///
+88 "Kazakhstan" ///
+89 "Kenya" ///
+90 "Kiribati" ///
+91 "Korea North" ///
+92 "Korea South" ///
+93 "Kosovo" ///
+94 "Kuwait" ///
+95 "Kyrgyzstan" ///
+96 "Laos" ///
+97 "Latvia" ///
+98 "Lebanon" ///
+99 "Lesotho" ///
+100 "Liberia" ///
+101 "Libya" ///
+102 "Liechtenstein" ///
+103 "Lithuania" ///
+104 "Luxembourg" ///
+105 "Madagascar" ///
+106 "Malawi" ///
+107 "Malaysia" ///
+108 "Maldives" ///
+109 "Mali" ///
+110 "Malta" ///
+111 "Mauritania" ///
+112 "Mauritius" ///
+113 "Mexico" ///
+114 "Micronesia" ///
+115 "Moldova" ///
+116 "Monaco" ///
+117 "Mongolia" ///
+118 "Montenegro" ///
+119 "Morocco" ///
+120 "Mozambique" ///
+121 "Myanmar" ///
+122 "Namibia" ///
+123 "Nepal" ///
+124 "Netherlands" ///
+125 "New Zealand" ///
+126 "Nicaragua" ///
+127 "Niger" ///
+128 "Nigeria" ///
+129 "North Macedonia" ///
+130 "Norway" ///
+131 "Oman" ///
+132 "Pakistan" ///
+133 "Palestine" ///
+134 "Panama" ///
+135 "Papua New Guinea" ///
+136 "Paraguay" ///
+137 "Peru" ///
+138 "Philippines" ///
+139 "Poland" ///
+140 "Portugal" ///
+141 "Qatar" ///
+142 "Romania" ///
+143 "Russia" ///
+144 "Rwanda" ///
+145 "Saint Kitts and Nevis" ///
+146 "Saint Lucia" ///
+147 "Saint Vincent and the Grenadines" ///
+148 "Samoa" ///
+149 "San Marino" ///
+150 "Sao Tome and Principe" ///
+151 "Saudi Arabia" ///
+152 "Senegal" ///
+153 "Serbia" ///
+154 "Seychelles" ///
+155 "Sierra Leone" ///
+156 "Singapore" ///
+157 "Slovakia" ///
+158 "Slovenia" ///
+159 "Solomon Islands" ///
+160 "Somalia" ///
+161 "South Africa" ///
+162 "South Sudan" ///
+163 "Spain" ///
+164 "Sri Lanka" ///
+165 "Sudan" ///
+166 "Suriname" ///
+167 "Sweden" ///
+168 "Switzerland" ///
+169 "Syria" ///
+170 "Tajikistan" ///
+171 "Taiwan" ///
+172 "Tanzania" ///
+173 "Thailand" ///
+174 "Timor Leste" ///
+175 "Togo" ///
+176 "Tonga" ///
+177 "Trinidad and Tobago" ///
+178 "Tunisia" ///
+179 "Turkey" ///
+180 "Uganda" ///
+181 "Ukraine" ///
+182 "United Arab Emirates" ///
+183 "United Kingdom" ///
+184 "United States of America" ///
+185 "Uruguay" ///
+186 "Uzbekistan" ///
+187 "Vanuatu" ///
+188 "Venezuela" ///
+189 "Viet Nam" ///
+190 "Western Sahara" ///
+190 "Yemen" ///
+191 "Zambia" ///
+192 "Zimbabwe"
 
 
 gen loc_grand_name_numlabel = loc_grand_id
 
 label values loc_grand_name_numlabel country
+
+tab loc_grand_id
 
 
 
@@ -293,23 +276,6 @@ label var population2022 "UNFPA 2022 population estimates"
 label var region "WHO region"
 
 
-qui compress
-
-save "loc_grand_name.dta", replace
-
-
-******
-
-* create data dictionary
-
-preserve
-
-    describe, replace
-	
-    export delimited name varlab using "loc_grand_name data dictionary.csv", replace 
-	
-restore
-
 
 
 ******
@@ -328,8 +294,59 @@ list loc_grand_name `model' if loc_grand_name != `model' & `model' != "", noo cl
 
 codebook loc_grand_name if loc_grand_id != .
 
+tab mapping if loc_grand_id == .
+
+list loc_grand_name mapping if loc_grand_id == .
+
 
 codebook DELP IHME IMPE LANL SRIV UCLA YYGU JOHN
+
+
+label var modelmix "Presence 1 or absence 0 of country in models DELP IHME IMPE LANL SRIV UCLA YYGU" 
+
+tab modelmix, sort
+
+
+label var modelsnumber "Number of models country present in"
+
+tab modelsnumber
+
+
+label var mapping "mapping plan"
+
+tab mapping
+
+
+label var mappingcolor "mapping color code"
+
+tab mappingcolor
+
+
+label var mappingcolormeaning "mapping plan meaning"
+
+tab mappingcolormeaning
+
+drop Y Z
+
+
+
+qui compress
+
+save "loc_grand_name.dta", replace
+
+
+******
+
+* create data dictionary
+
+preserve
+
+    describe, replace
+	
+    export delimited name varlab using "loc_grand_name data dictionary.csv", replace 
+	
+restore
+
 
 
 
