@@ -1,9 +1,9 @@
 {smcl}
-{txt}{sf}{ul off}{.-}
+{com}{sf}{ul off}{txt}{.-}
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/master/log CovidLongitudinal loc_grand_name.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}29 Aug 2023, 11:34:07
+ {txt}opened on:  {res}31 Aug 2023, 10:26:43
 {txt}
 {com}. 
 . ***************************************************************************
@@ -104,131 +104,130 @@
 > 71 "Guinea Bissau" ///
 > 72 "Guyana" ///
 > 73 "Haiti" ///
-> 74 "Holy See" ///
-> 75 "Honduras" ///
-> 76 "Hungary" ///
-> 77 "Iceland" ///
-> 78 "India" ///
-> 79 "Indonesia" ///
-> 80 "Iran" ///
-> 81 "Iraq" ///
-> 82 "Ireland" ///
-> 83 "Israel" ///
-> 84 "Italy" ///
-> 85 "Jamaica" ///
-> 86 "Japan" ///
-> 87 "Jordan" ///
-> 88 "Kazakhstan" ///
-> 89 "Kenya" ///
-> 90 "Kiribati" ///
-> 91 "Korea North" ///
-> 92 "Korea South" ///
-> 93 "Kosovo" ///
-> 94 "Kuwait" ///
-> 95 "Kyrgyzstan" ///
-> 96 "Laos" ///
-> 97 "Latvia" ///
-> 98 "Lebanon" ///
-> 99 "Lesotho" ///
-> 100 "Liberia" ///
-> 101 "Libya" ///
-> 102 "Liechtenstein" ///
-> 103 "Lithuania" ///
-> 104 "Luxembourg" ///
-> 105 "Madagascar" ///
-> 106 "Malawi" ///
-> 107 "Malaysia" ///
-> 108 "Maldives" ///
-> 109 "Mali" ///
-> 110 "Malta" ///
-> 111 "Mauritania" ///
-> 112 "Mauritius" ///
-> 113 "Mexico" ///
-> 114 "Micronesia" ///
-> 115 "Moldova" ///
-> 116 "Monaco" ///
-> 117 "Mongolia" ///
-> 118 "Montenegro" ///
-> 119 "Morocco" ///
-> 120 "Mozambique" ///
-> 121 "Myanmar" ///
-> 122 "Namibia" ///
-> 123 "Nepal" ///
-> 124 "Netherlands" ///
-> 125 "New Zealand" ///
-> 126 "Nicaragua" ///
-> 127 "Niger" ///
-> 128 "Nigeria" ///
-> 129 "North Macedonia" ///
-> 130 "Norway" ///
-> 131 "Oman" ///
-> 132 "Pakistan" ///
-> 133 "Palestine" ///
-> 134 "Panama" ///
-> 135 "Papua New Guinea" ///
-> 136 "Paraguay" ///
-> 137 "Peru" ///
-> 138 "Philippines" ///
-> 139 "Poland" ///
-> 140 "Portugal" ///
-> 141 "Qatar" ///
-> 142 "Romania" ///
-> 143 "Russia" ///
-> 144 "Rwanda" ///
-> 145 "Saint Kitts and Nevis" ///
-> 146 "Saint Lucia" ///
-> 147 "Saint Vincent and the Grenadines" ///
-> 148 "Samoa" ///
-> 149 "San Marino" ///
-> 150 "Sao Tome and Principe" ///
-> 151 "Saudi Arabia" ///
-> 152 "Senegal" ///
-> 153 "Serbia" ///
-> 154 "Seychelles" ///
-> 155 "Sierra Leone" ///
-> 156 "Singapore" ///
-> 157 "Slovakia" ///
-> 158 "Slovenia" ///
-> 159 "Solomon Islands" ///
-> 160 "Somalia" ///
-> 161 "South Africa" ///
-> 162 "South Sudan" ///
-> 163 "Spain" ///
-> 164 "Sri Lanka" ///
-> 165 "Sudan" ///
-> 166 "Suriname" ///
-> 167 "Sweden" ///
-> 168 "Switzerland" ///
-> 169 "Syria" ///
-> 170 "Tajikistan" ///
-> 171 "Taiwan" ///
-> 172 "Tanzania" ///
-> 173 "Thailand" ///
-> 174 "Timor Leste" ///
-> 175 "Togo" ///
-> 176 "Tonga" ///
-> 177 "Trinidad and Tobago" ///
-> 178 "Tunisia" ///
-> 179 "Turkey" ///
-> 180 "Uganda" ///
-> 181 "Ukraine" ///
-> 182 "United Arab Emirates" ///
-> 183 "United Kingdom" ///
-> 184 "United States of America" ///
-> 185 "Uruguay" ///
-> 186 "Uzbekistan" ///
-> 187 "Vanuatu" ///
-> 188 "Venezuela" ///
-> 189 "Viet Nam" ///
-> 190 "Western Sahara" ///
+> 74 "Honduras" ///
+> 75 "Hungary" ///
+> 76 "Iceland" ///
+> 77 "India" ///
+> 78 "Indonesia" ///
+> 79 "Iran" ///
+> 80 "Iraq" ///
+> 81 "Ireland" ///
+> 82 "Israel" ///
+> 83 "Italy" ///
+> 84 "Jamaica" ///
+> 85 "Japan" ///
+> 86 "Jordan" ///
+> 87 "Kazakhstan" ///
+> 88 "Kenya" ///
+> 89 "Kiribati" ///
+> 90 "Korea North" ///
+> 91 "Korea South" ///
+> 92 "Kosovo" ///
+> 93 "Kuwait" ///
+> 94 "Kyrgyzstan" ///
+> 95 "Laos" ///
+> 96 "Latvia" ///
+> 97 "Lebanon" ///
+> 98 "Lesotho" ///
+> 99 "Liberia" ///
+> 100 "Libya" ///
+> 101 "Liechtenstein" ///
+> 102 "Lithuania" ///
+> 103 "Luxembourg" ///
+> 104 "Madagascar" ///
+> 105 "Malawi" ///
+> 106 "Malaysia" ///
+> 107 "Maldives" ///
+> 108 "Mali" ///
+> 109 "Malta" ///
+> 110 "Mauritania" ///
+> 111 "Mauritius" ///
+> 112 "Mexico" ///
+> 113 "Micronesia" ///
+> 114 "Moldova" ///
+> 115 "Monaco" ///
+> 116 "Mongolia" ///
+> 117 "Montenegro" ///
+> 118 "Morocco" ///
+> 119 "Mozambique" ///
+> 120 "Myanmar" ///
+> 121 "Namibia" ///
+> 122 "Nepal" ///
+> 123 "Netherlands" ///
+> 124 "New Zealand" ///
+> 125 "Nicaragua" ///
+> 126 "Niger" ///
+> 127 "Nigeria" ///
+> 128 "North Macedonia" ///
+> 129 "Norway" ///
+> 130 "Oman" ///
+> 131 "Pakistan" ///
+> 132 "Palestine" ///
+> 133 "Panama" ///
+> 134 "Papua New Guinea" ///
+> 135 "Paraguay" ///
+> 136 "Peru" ///
+> 137 "Philippines" ///
+> 138 "Poland" ///
+> 139 "Portugal" ///
+> 140 "Qatar" ///
+> 141 "Romania" ///
+> 142 "Russia" ///
+> 143 "Rwanda" ///
+> 144 "Saint Kitts and Nevis" ///
+> 145 "Saint Lucia" ///
+> 146 "Saint Vincent and the Grenadines" ///
+> 147 "Samoa" ///
+> 148 "San Marino" ///
+> 149 "Sao Tome and Principe" ///
+> 150 "Saudi Arabia" ///
+> 151 "Senegal" ///
+> 152 "Serbia" ///
+> 153 "Seychelles" ///
+> 154 "Sierra Leone" ///
+> 155 "Singapore" ///
+> 156 "Slovakia" ///
+> 157 "Slovenia" ///
+> 158 "Solomon Islands" ///
+> 159 "Somalia" ///
+> 160 "South Africa" ///
+> 161 "South Sudan" ///
+> 162 "Spain" ///
+> 163 "Sri Lanka" ///
+> 164 "Sudan" ///
+> 165 "Suriname" ///
+> 166 "Sweden" ///
+> 167 "Switzerland" ///
+> 168 "Syria" ///
+> 169 "Tajikistan" ///
+> 170 "Taiwan" ///
+> 171 "Tanzania" ///
+> 172 "Thailand" ///
+> 173 "Timor Leste" ///
+> 174 "Togo" ///
+> 175 "Tonga" ///
+> 176 "Trinidad and Tobago" ///
+> 177 "Tunisia" ///
+> 178 "Turkey" ///
+> 179 "Uganda" ///
+> 180 "Ukraine" ///
+> 181 "United Arab Emirates" ///
+> 182 "United Kingdom" ///
+> 183 "United States of America" ///
+> 184 "Uruguay" ///
+> 185 "Uzbekistan" ///
+> 186 "Vanuatu" ///
+> 187 "Venezuela" ///
+> 188 "Viet Nam" ///
+> 189 "Western Sahara" ///
 > 190 "Yemen" ///
-> 191 "Zambia" ///
-> 192 "Zimbabwe"
+> 190 "Zambia" ///
+> 191 "Zimbabwe"
 {txt}
 {com}. 
 . 
 . gen loc_grand_name_numlabel = loc_grand_id
-{txt}(25 missing values generated)
+{txt}(26 missing values generated)
 
 {com}. 
 . label values loc_grand_name_numlabel country
@@ -240,199 +239,198 @@
           d {c |}      Freq.     Percent        Cum.
 {hline 12}{c +}{hline 35}
           1 {c |}{res}          1        0.52        0.52
-{txt}          2 {c |}{res}          1        0.52        1.04
-{txt}          3 {c |}{res}          1        0.52        1.56
-{txt}          4 {c |}{res}          1        0.52        2.08
-{txt}          5 {c |}{res}          1        0.52        2.60
-{txt}          6 {c |}{res}          1        0.52        3.13
-{txt}          7 {c |}{res}          1        0.52        3.65
-{txt}          8 {c |}{res}          1        0.52        4.17
-{txt}          9 {c |}{res}          1        0.52        4.69
-{txt}         10 {c |}{res}          1        0.52        5.21
-{txt}         11 {c |}{res}          1        0.52        5.73
-{txt}         12 {c |}{res}          1        0.52        6.25
-{txt}         13 {c |}{res}          1        0.52        6.77
-{txt}         14 {c |}{res}          1        0.52        7.29
-{txt}         15 {c |}{res}          1        0.52        7.81
-{txt}         16 {c |}{res}          1        0.52        8.33
-{txt}         17 {c |}{res}          1        0.52        8.85
-{txt}         18 {c |}{res}          1        0.52        9.38
-{txt}         19 {c |}{res}          1        0.52        9.90
-{txt}         20 {c |}{res}          1        0.52       10.42
-{txt}         21 {c |}{res}          1        0.52       10.94
-{txt}         22 {c |}{res}          1        0.52       11.46
-{txt}         23 {c |}{res}          1        0.52       11.98
-{txt}         24 {c |}{res}          1        0.52       12.50
-{txt}         25 {c |}{res}          1        0.52       13.02
-{txt}         26 {c |}{res}          1        0.52       13.54
-{txt}         27 {c |}{res}          1        0.52       14.06
-{txt}         28 {c |}{res}          1        0.52       14.58
-{txt}         29 {c |}{res}          1        0.52       15.10
-{txt}         30 {c |}{res}          1        0.52       15.63
-{txt}         31 {c |}{res}          1        0.52       16.15
-{txt}         32 {c |}{res}          1        0.52       16.67
-{txt}         33 {c |}{res}          1        0.52       17.19
-{txt}         34 {c |}{res}          1        0.52       17.71
-{txt}         35 {c |}{res}          1        0.52       18.23
-{txt}         36 {c |}{res}          1        0.52       18.75
-{txt}         37 {c |}{res}          1        0.52       19.27
-{txt}         38 {c |}{res}          1        0.52       19.79
-{txt}         39 {c |}{res}          1        0.52       20.31
-{txt}         40 {c |}{res}          1        0.52       20.83
-{txt}         41 {c |}{res}          1        0.52       21.35
-{txt}         42 {c |}{res}          1        0.52       21.87
-{txt}         43 {c |}{res}          1        0.52       22.40
-{txt}         44 {c |}{res}          1        0.52       22.92
-{txt}         45 {c |}{res}          1        0.52       23.44
-{txt}         46 {c |}{res}          1        0.52       23.96
-{txt}         47 {c |}{res}          1        0.52       24.48
-{txt}         48 {c |}{res}          1        0.52       25.00
-{txt}         49 {c |}{res}          1        0.52       25.52
-{txt}         50 {c |}{res}          1        0.52       26.04
-{txt}         51 {c |}{res}          1        0.52       26.56
-{txt}         52 {c |}{res}          1        0.52       27.08
-{txt}         53 {c |}{res}          1        0.52       27.60
-{txt}         54 {c |}{res}          1        0.52       28.12
-{txt}         55 {c |}{res}          1        0.52       28.65
-{txt}         56 {c |}{res}          1        0.52       29.17
-{txt}         57 {c |}{res}          1        0.52       29.69
-{txt}         58 {c |}{res}          1        0.52       30.21
-{txt}         59 {c |}{res}          1        0.52       30.73
-{txt}         60 {c |}{res}          1        0.52       31.25
-{txt}         61 {c |}{res}          1        0.52       31.77
-{txt}         62 {c |}{res}          1        0.52       32.29
-{txt}         63 {c |}{res}          1        0.52       32.81
-{txt}         64 {c |}{res}          1        0.52       33.33
-{txt}         65 {c |}{res}          1        0.52       33.85
-{txt}         66 {c |}{res}          1        0.52       34.37
-{txt}         67 {c |}{res}          1        0.52       34.90
-{txt}         68 {c |}{res}          1        0.52       35.42
-{txt}         69 {c |}{res}          1        0.52       35.94
-{txt}         70 {c |}{res}          1        0.52       36.46
-{txt}         71 {c |}{res}          1        0.52       36.98
-{txt}         72 {c |}{res}          1        0.52       37.50
-{txt}         73 {c |}{res}          1        0.52       38.02
-{txt}         74 {c |}{res}          1        0.52       38.54
-{txt}         75 {c |}{res}          1        0.52       39.06
-{txt}         76 {c |}{res}          1        0.52       39.58
-{txt}         77 {c |}{res}          1        0.52       40.10
-{txt}         78 {c |}{res}          1        0.52       40.63
-{txt}         79 {c |}{res}          1        0.52       41.15
-{txt}         80 {c |}{res}          1        0.52       41.67
-{txt}         81 {c |}{res}          1        0.52       42.19
-{txt}         82 {c |}{res}          1        0.52       42.71
-{txt}         83 {c |}{res}          1        0.52       43.23
-{txt}         84 {c |}{res}          1        0.52       43.75
-{txt}         85 {c |}{res}          1        0.52       44.27
-{txt}         86 {c |}{res}          1        0.52       44.79
-{txt}         87 {c |}{res}          1        0.52       45.31
-{txt}         88 {c |}{res}          1        0.52       45.83
-{txt}         89 {c |}{res}          1        0.52       46.35
-{txt}         90 {c |}{res}          1        0.52       46.88
-{txt}         91 {c |}{res}          1        0.52       47.40
-{txt}         92 {c |}{res}          1        0.52       47.92
-{txt}         93 {c |}{res}          1        0.52       48.44
-{txt}         94 {c |}{res}          1        0.52       48.96
-{txt}         95 {c |}{res}          1        0.52       49.48
-{txt}         96 {c |}{res}          1        0.52       50.00
-{txt}         97 {c |}{res}          1        0.52       50.52
-{txt}         98 {c |}{res}          1        0.52       51.04
-{txt}         99 {c |}{res}          1        0.52       51.56
-{txt}        100 {c |}{res}          1        0.52       52.08
-{txt}        101 {c |}{res}          1        0.52       52.60
-{txt}        102 {c |}{res}          1        0.52       53.13
-{txt}        103 {c |}{res}          1        0.52       53.65
-{txt}        104 {c |}{res}          1        0.52       54.17
-{txt}        105 {c |}{res}          1        0.52       54.69
-{txt}        106 {c |}{res}          1        0.52       55.21
-{txt}        107 {c |}{res}          1        0.52       55.73
-{txt}        108 {c |}{res}          1        0.52       56.25
-{txt}        109 {c |}{res}          1        0.52       56.77
-{txt}        110 {c |}{res}          1        0.52       57.29
-{txt}        111 {c |}{res}          1        0.52       57.81
-{txt}        112 {c |}{res}          1        0.52       58.33
-{txt}        113 {c |}{res}          1        0.52       58.85
-{txt}        114 {c |}{res}          1        0.52       59.38
-{txt}        115 {c |}{res}          1        0.52       59.90
-{txt}        116 {c |}{res}          1        0.52       60.42
-{txt}        117 {c |}{res}          1        0.52       60.94
-{txt}        118 {c |}{res}          1        0.52       61.46
-{txt}        119 {c |}{res}          1        0.52       61.98
-{txt}        120 {c |}{res}          1        0.52       62.50
-{txt}        121 {c |}{res}          1        0.52       63.02
-{txt}        122 {c |}{res}          1        0.52       63.54
-{txt}        123 {c |}{res}          1        0.52       64.06
-{txt}        124 {c |}{res}          1        0.52       64.58
-{txt}        125 {c |}{res}          1        0.52       65.10
-{txt}        126 {c |}{res}          1        0.52       65.63
-{txt}        127 {c |}{res}          1        0.52       66.15
-{txt}        128 {c |}{res}          1        0.52       66.67
-{txt}        129 {c |}{res}          1        0.52       67.19
-{txt}        130 {c |}{res}          1        0.52       67.71
-{txt}        131 {c |}{res}          1        0.52       68.23
-{txt}        132 {c |}{res}          1        0.52       68.75
-{txt}        133 {c |}{res}          1        0.52       69.27
-{txt}        134 {c |}{res}          1        0.52       69.79
-{txt}        135 {c |}{res}          1        0.52       70.31
-{txt}        136 {c |}{res}          1        0.52       70.83
-{txt}        137 {c |}{res}          1        0.52       71.35
-{txt}        138 {c |}{res}          1        0.52       71.88
-{txt}        139 {c |}{res}          1        0.52       72.40
-{txt}        140 {c |}{res}          1        0.52       72.92
-{txt}        141 {c |}{res}          1        0.52       73.44
-{txt}        142 {c |}{res}          1        0.52       73.96
-{txt}        143 {c |}{res}          1        0.52       74.48
-{txt}        144 {c |}{res}          1        0.52       75.00
-{txt}        145 {c |}{res}          1        0.52       75.52
-{txt}        146 {c |}{res}          1        0.52       76.04
-{txt}        147 {c |}{res}          1        0.52       76.56
-{txt}        148 {c |}{res}          1        0.52       77.08
-{txt}        149 {c |}{res}          1        0.52       77.60
-{txt}        150 {c |}{res}          1        0.52       78.12
-{txt}        151 {c |}{res}          1        0.52       78.65
-{txt}        152 {c |}{res}          1        0.52       79.17
-{txt}        153 {c |}{res}          1        0.52       79.69
-{txt}        154 {c |}{res}          1        0.52       80.21
-{txt}        155 {c |}{res}          1        0.52       80.73
-{txt}        156 {c |}{res}          1        0.52       81.25
-{txt}        157 {c |}{res}          1        0.52       81.77
-{txt}        158 {c |}{res}          1        0.52       82.29
-{txt}        159 {c |}{res}          1        0.52       82.81
-{txt}        160 {c |}{res}          1        0.52       83.33
-{txt}        161 {c |}{res}          1        0.52       83.85
-{txt}        162 {c |}{res}          1        0.52       84.37
-{txt}        163 {c |}{res}          1        0.52       84.90
-{txt}        164 {c |}{res}          1        0.52       85.42
-{txt}        165 {c |}{res}          1        0.52       85.94
-{txt}        166 {c |}{res}          1        0.52       86.46
-{txt}        167 {c |}{res}          1        0.52       86.98
-{txt}        168 {c |}{res}          1        0.52       87.50
-{txt}        169 {c |}{res}          1        0.52       88.02
-{txt}        170 {c |}{res}          1        0.52       88.54
-{txt}        171 {c |}{res}          1        0.52       89.06
-{txt}        172 {c |}{res}          1        0.52       89.58
-{txt}        173 {c |}{res}          1        0.52       90.10
-{txt}        174 {c |}{res}          1        0.52       90.62
-{txt}        175 {c |}{res}          1        0.52       91.15
-{txt}        176 {c |}{res}          1        0.52       91.67
-{txt}        177 {c |}{res}          1        0.52       92.19
-{txt}        178 {c |}{res}          1        0.52       92.71
-{txt}        179 {c |}{res}          1        0.52       93.23
-{txt}        180 {c |}{res}          1        0.52       93.75
-{txt}        181 {c |}{res}          1        0.52       94.27
-{txt}        182 {c |}{res}          1        0.52       94.79
-{txt}        183 {c |}{res}          1        0.52       95.31
-{txt}        184 {c |}{res}          1        0.52       95.83
-{txt}        185 {c |}{res}          1        0.52       96.35
-{txt}        186 {c |}{res}          1        0.52       96.87
-{txt}        187 {c |}{res}          1        0.52       97.40
-{txt}        188 {c |}{res}          1        0.52       97.92
-{txt}        189 {c |}{res}          1        0.52       98.44
-{txt}        190 {c |}{res}          1        0.52       98.96
-{txt}        191 {c |}{res}          1        0.52       99.48
-{txt}        192 {c |}{res}          1        0.52      100.00
+{txt}          2 {c |}{res}          1        0.52        1.05
+{txt}          3 {c |}{res}          1        0.52        1.57
+{txt}          4 {c |}{res}          1        0.52        2.09
+{txt}          5 {c |}{res}          1        0.52        2.62
+{txt}          6 {c |}{res}          1        0.52        3.14
+{txt}          7 {c |}{res}          1        0.52        3.66
+{txt}          8 {c |}{res}          1        0.52        4.19
+{txt}          9 {c |}{res}          1        0.52        4.71
+{txt}         10 {c |}{res}          1        0.52        5.24
+{txt}         11 {c |}{res}          1        0.52        5.76
+{txt}         12 {c |}{res}          1        0.52        6.28
+{txt}         13 {c |}{res}          1        0.52        6.81
+{txt}         14 {c |}{res}          1        0.52        7.33
+{txt}         15 {c |}{res}          1        0.52        7.85
+{txt}         16 {c |}{res}          1        0.52        8.38
+{txt}         17 {c |}{res}          1        0.52        8.90
+{txt}         18 {c |}{res}          1        0.52        9.42
+{txt}         19 {c |}{res}          1        0.52        9.95
+{txt}         20 {c |}{res}          1        0.52       10.47
+{txt}         21 {c |}{res}          1        0.52       10.99
+{txt}         22 {c |}{res}          1        0.52       11.52
+{txt}         23 {c |}{res}          1        0.52       12.04
+{txt}         24 {c |}{res}          1        0.52       12.57
+{txt}         25 {c |}{res}          1        0.52       13.09
+{txt}         26 {c |}{res}          1        0.52       13.61
+{txt}         27 {c |}{res}          1        0.52       14.14
+{txt}         28 {c |}{res}          1        0.52       14.66
+{txt}         29 {c |}{res}          1        0.52       15.18
+{txt}         30 {c |}{res}          1        0.52       15.71
+{txt}         31 {c |}{res}          1        0.52       16.23
+{txt}         32 {c |}{res}          1        0.52       16.75
+{txt}         33 {c |}{res}          1        0.52       17.28
+{txt}         34 {c |}{res}          1        0.52       17.80
+{txt}         35 {c |}{res}          1        0.52       18.32
+{txt}         36 {c |}{res}          1        0.52       18.85
+{txt}         37 {c |}{res}          1        0.52       19.37
+{txt}         38 {c |}{res}          1        0.52       19.90
+{txt}         39 {c |}{res}          1        0.52       20.42
+{txt}         40 {c |}{res}          1        0.52       20.94
+{txt}         41 {c |}{res}          1        0.52       21.47
+{txt}         42 {c |}{res}          1        0.52       21.99
+{txt}         43 {c |}{res}          1        0.52       22.51
+{txt}         44 {c |}{res}          1        0.52       23.04
+{txt}         45 {c |}{res}          1        0.52       23.56
+{txt}         46 {c |}{res}          1        0.52       24.08
+{txt}         47 {c |}{res}          1        0.52       24.61
+{txt}         48 {c |}{res}          1        0.52       25.13
+{txt}         49 {c |}{res}          1        0.52       25.65
+{txt}         50 {c |}{res}          1        0.52       26.18
+{txt}         51 {c |}{res}          1        0.52       26.70
+{txt}         52 {c |}{res}          1        0.52       27.23
+{txt}         53 {c |}{res}          1        0.52       27.75
+{txt}         54 {c |}{res}          1        0.52       28.27
+{txt}         55 {c |}{res}          1        0.52       28.80
+{txt}         56 {c |}{res}          1        0.52       29.32
+{txt}         57 {c |}{res}          1        0.52       29.84
+{txt}         58 {c |}{res}          1        0.52       30.37
+{txt}         59 {c |}{res}          1        0.52       30.89
+{txt}         60 {c |}{res}          1        0.52       31.41
+{txt}         61 {c |}{res}          1        0.52       31.94
+{txt}         62 {c |}{res}          1        0.52       32.46
+{txt}         63 {c |}{res}          1        0.52       32.98
+{txt}         64 {c |}{res}          1        0.52       33.51
+{txt}         65 {c |}{res}          1        0.52       34.03
+{txt}         66 {c |}{res}          1        0.52       34.55
+{txt}         67 {c |}{res}          1        0.52       35.08
+{txt}         68 {c |}{res}          1        0.52       35.60
+{txt}         69 {c |}{res}          1        0.52       36.13
+{txt}         70 {c |}{res}          1        0.52       36.65
+{txt}         71 {c |}{res}          1        0.52       37.17
+{txt}         72 {c |}{res}          1        0.52       37.70
+{txt}         73 {c |}{res}          1        0.52       38.22
+{txt}         74 {c |}{res}          1        0.52       38.74
+{txt}         75 {c |}{res}          1        0.52       39.27
+{txt}         76 {c |}{res}          1        0.52       39.79
+{txt}         77 {c |}{res}          1        0.52       40.31
+{txt}         78 {c |}{res}          1        0.52       40.84
+{txt}         79 {c |}{res}          1        0.52       41.36
+{txt}         80 {c |}{res}          1        0.52       41.88
+{txt}         81 {c |}{res}          1        0.52       42.41
+{txt}         82 {c |}{res}          1        0.52       42.93
+{txt}         83 {c |}{res}          1        0.52       43.46
+{txt}         84 {c |}{res}          1        0.52       43.98
+{txt}         85 {c |}{res}          1        0.52       44.50
+{txt}         86 {c |}{res}          1        0.52       45.03
+{txt}         87 {c |}{res}          1        0.52       45.55
+{txt}         88 {c |}{res}          1        0.52       46.07
+{txt}         89 {c |}{res}          1        0.52       46.60
+{txt}         90 {c |}{res}          1        0.52       47.12
+{txt}         91 {c |}{res}          1        0.52       47.64
+{txt}         92 {c |}{res}          1        0.52       48.17
+{txt}         93 {c |}{res}          1        0.52       48.69
+{txt}         94 {c |}{res}          1        0.52       49.21
+{txt}         95 {c |}{res}          1        0.52       49.74
+{txt}         96 {c |}{res}          1        0.52       50.26
+{txt}         97 {c |}{res}          1        0.52       50.79
+{txt}         98 {c |}{res}          1        0.52       51.31
+{txt}         99 {c |}{res}          1        0.52       51.83
+{txt}        100 {c |}{res}          1        0.52       52.36
+{txt}        101 {c |}{res}          1        0.52       52.88
+{txt}        102 {c |}{res}          1        0.52       53.40
+{txt}        103 {c |}{res}          1        0.52       53.93
+{txt}        104 {c |}{res}          1        0.52       54.45
+{txt}        105 {c |}{res}          1        0.52       54.97
+{txt}        106 {c |}{res}          1        0.52       55.50
+{txt}        107 {c |}{res}          1        0.52       56.02
+{txt}        108 {c |}{res}          1        0.52       56.54
+{txt}        109 {c |}{res}          1        0.52       57.07
+{txt}        110 {c |}{res}          1        0.52       57.59
+{txt}        111 {c |}{res}          1        0.52       58.12
+{txt}        112 {c |}{res}          1        0.52       58.64
+{txt}        113 {c |}{res}          1        0.52       59.16
+{txt}        114 {c |}{res}          1        0.52       59.69
+{txt}        115 {c |}{res}          1        0.52       60.21
+{txt}        116 {c |}{res}          1        0.52       60.73
+{txt}        117 {c |}{res}          1        0.52       61.26
+{txt}        118 {c |}{res}          1        0.52       61.78
+{txt}        119 {c |}{res}          1        0.52       62.30
+{txt}        120 {c |}{res}          1        0.52       62.83
+{txt}        121 {c |}{res}          1        0.52       63.35
+{txt}        122 {c |}{res}          1        0.52       63.87
+{txt}        123 {c |}{res}          1        0.52       64.40
+{txt}        124 {c |}{res}          1        0.52       64.92
+{txt}        125 {c |}{res}          1        0.52       65.45
+{txt}        126 {c |}{res}          1        0.52       65.97
+{txt}        127 {c |}{res}          1        0.52       66.49
+{txt}        128 {c |}{res}          1        0.52       67.02
+{txt}        129 {c |}{res}          1        0.52       67.54
+{txt}        130 {c |}{res}          1        0.52       68.06
+{txt}        131 {c |}{res}          1        0.52       68.59
+{txt}        132 {c |}{res}          1        0.52       69.11
+{txt}        133 {c |}{res}          1        0.52       69.63
+{txt}        134 {c |}{res}          1        0.52       70.16
+{txt}        135 {c |}{res}          1        0.52       70.68
+{txt}        136 {c |}{res}          1        0.52       71.20
+{txt}        137 {c |}{res}          1        0.52       71.73
+{txt}        138 {c |}{res}          1        0.52       72.25
+{txt}        139 {c |}{res}          1        0.52       72.77
+{txt}        140 {c |}{res}          1        0.52       73.30
+{txt}        141 {c |}{res}          1        0.52       73.82
+{txt}        142 {c |}{res}          1        0.52       74.35
+{txt}        143 {c |}{res}          1        0.52       74.87
+{txt}        144 {c |}{res}          1        0.52       75.39
+{txt}        145 {c |}{res}          1        0.52       75.92
+{txt}        146 {c |}{res}          1        0.52       76.44
+{txt}        147 {c |}{res}          1        0.52       76.96
+{txt}        148 {c |}{res}          1        0.52       77.49
+{txt}        149 {c |}{res}          1        0.52       78.01
+{txt}        150 {c |}{res}          1        0.52       78.53
+{txt}        151 {c |}{res}          1        0.52       79.06
+{txt}        152 {c |}{res}          1        0.52       79.58
+{txt}        153 {c |}{res}          1        0.52       80.10
+{txt}        154 {c |}{res}          1        0.52       80.63
+{txt}        155 {c |}{res}          1        0.52       81.15
+{txt}        156 {c |}{res}          1        0.52       81.68
+{txt}        157 {c |}{res}          1        0.52       82.20
+{txt}        158 {c |}{res}          1        0.52       82.72
+{txt}        159 {c |}{res}          1        0.52       83.25
+{txt}        160 {c |}{res}          1        0.52       83.77
+{txt}        161 {c |}{res}          1        0.52       84.29
+{txt}        162 {c |}{res}          1        0.52       84.82
+{txt}        163 {c |}{res}          1        0.52       85.34
+{txt}        164 {c |}{res}          1        0.52       85.86
+{txt}        165 {c |}{res}          1        0.52       86.39
+{txt}        166 {c |}{res}          1        0.52       86.91
+{txt}        167 {c |}{res}          1        0.52       87.43
+{txt}        168 {c |}{res}          1        0.52       87.96
+{txt}        169 {c |}{res}          1        0.52       88.48
+{txt}        170 {c |}{res}          1        0.52       89.01
+{txt}        171 {c |}{res}          1        0.52       89.53
+{txt}        172 {c |}{res}          1        0.52       90.05
+{txt}        173 {c |}{res}          1        0.52       90.58
+{txt}        174 {c |}{res}          1        0.52       91.10
+{txt}        175 {c |}{res}          1        0.52       91.62
+{txt}        176 {c |}{res}          1        0.52       92.15
+{txt}        177 {c |}{res}          1        0.52       92.67
+{txt}        178 {c |}{res}          1        0.52       93.19
+{txt}        179 {c |}{res}          1        0.52       93.72
+{txt}        180 {c |}{res}          1        0.52       94.24
+{txt}        181 {c |}{res}          1        0.52       94.76
+{txt}        182 {c |}{res}          1        0.52       95.29
+{txt}        183 {c |}{res}          1        0.52       95.81
+{txt}        184 {c |}{res}          1        0.52       96.34
+{txt}        185 {c |}{res}          1        0.52       96.86
+{txt}        186 {c |}{res}          1        0.52       97.38
+{txt}        187 {c |}{res}          1        0.52       97.91
+{txt}        188 {c |}{res}          1        0.52       98.43
+{txt}        189 {c |}{res}          1        0.52       98.95
+{txt}        190 {c |}{res}          1        0.52       99.48
+{txt}        191 {c |}{res}          1        0.52      100.00
 {txt}{hline 12}{c +}{hline 35}
-      Total {c |}{res}        192      100.00
+      Total {c |}{res}        191      100.00
 {txt}
 {com}. 
 . 
@@ -617,10 +615,10 @@
 
 {col 19}Type: String ({res}str33{txt}), but longest is str32
 
-{col 10}Unique values: {res}192{col 51}{txt}Missing "": {res}0{txt}/{res}192
+{col 10}Unique values: {res}191{col 51}{txt}Missing "": {res}0{txt}/{res}191
 
 {txt}{col 15}Examples: {res}"Comoros"
-{col 25}"Hungary"
+{col 25}"Iceland"
 {col 25}"Moldova"
 {col 25}"Serbia"
 
@@ -631,10 +629,10 @@
 
                                 {txt}mapping {c |}      Freq.     Percent        Cum.
 {hline 40}{c +}{hline 35}
- Do nothing because JOHN did not report {c |}{res}         18       72.00       72.00
-{txt}Do nothing because the size is neglig.. {c |}{res}          7       28.00      100.00
+ Do nothing because JOHN did not report {c |}{res}         18       69.23       69.23
+{txt}Do nothing because the size is neglig.. {c |}{res}          8       30.77      100.00
 {txt}{hline 40}{c +}{hline 35}
-                                  Total {c |}{res}         25      100.00
+                                  Total {c |}{res}         26      100.00
 {txt}
 {com}. 
 . list loc_grand_name mapping if loc_grand_id == .
@@ -701,6 +699,14 @@
      {c LT}{hline 45}{c RT}
      {c |}                                     mapping {c |}
      {c |} {res}     Do nothing because JOHN did not report {txt}{c |}
+     {c BLC}{hline 45}{c BRC}
+
+     {c TLC}{hline 45}{c TRC}
+ 82. {c |}                         loc_grand_name      {c |}
+     {c |}      {res}                         Holy See      {txt}{c |}
+     {c LT}{hline 45}{c RT}
+     {c |}                                     mapping {c |}
+     {c |} {res}Do nothing because the size is negligible.  {txt}{c |}
      {c BLC}{hline 45}{c BRC}
 
      {c TLC}{hline 45}{c TRC}
@@ -1031,10 +1037,10 @@ models DELP {c |}
 
                            {txt}mapping plan {c |}      Freq.     Percent        Cum.
 {hline 40}{c +}{hline 35}
- Do nothing because JOHN did not report {c |}{res}         18       72.00       72.00
-{txt}Do nothing because the size is neglig.. {c |}{res}          7       28.00      100.00
+ Do nothing because JOHN did not report {c |}{res}         18       69.23       69.23
+{txt}Do nothing because the size is neglig.. {c |}{res}          8       30.77      100.00
 {txt}{hline 40}{c +}{hline 35}
-                                  Total {c |}{res}         25      100.00
+                                  Total {c |}{res}         26      100.00
 {txt}
 {com}. 
 . 
@@ -1076,11 +1082,6 @@ models DELP {c |}
 {com}. 
 . save "loc_grand_name.dta", replace
 {txt}{p 0 4 2}
-(file {bf}
-loc_grand_name.dta{rm}
-not found)
-{p_end}
-{p 0 4 2}
 file {bf}
 loc_grand_name.dta{rm}
 saved
@@ -1099,12 +1100,7 @@ saved
 {res}{txt}
 {com}.         
 .     export delimited name varlab using "loc_grand_name data dictionary.csv", replace 
-{res}{txt}{p 0 4 2}
-(file {bf}
-loc_grand_name data dictionary.csv{rm}
-not found)
-{p_end}
-{txt}file {bf:loc_grand_name data dictionary.csv} saved
+{res}{txt}file {bf:loc_grand_name data dictionary.csv} saved
 
 {com}.         
 . restore
@@ -1120,7 +1116,5 @@ not found)
 
 {txt}end of do-file
 
-{com}. 
-{txt}end of do-file
 
 {com}. 
