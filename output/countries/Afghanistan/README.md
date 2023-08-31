@@ -4,6 +4,7 @@ Afghanistan selected graphs
 
 graph 02 Afghanistan ALL MODELS C19 daily deaths all updates
 
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f60a2789-ebb9-4c59-914f-f5375866dc8a)
 
 *
 
