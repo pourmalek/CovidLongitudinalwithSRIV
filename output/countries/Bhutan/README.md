@@ -8,7 +8,7 @@ Bhutan selected graphs
 
 *
 
-[graph 02 Bhutan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bhutan/graph%2013b%20Bhutan%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Bhutan ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bhutan/graph%2013b%20Bhutan%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/eb093c49-6419-4dc0-82dd-e1be96c681cc)
 
