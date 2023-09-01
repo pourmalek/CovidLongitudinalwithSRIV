@@ -8,7 +8,7 @@ Bosnia and Herzegovina selected graphs
 
 *
 
-[graph 02 Bosnia and Herzegovina ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bosnia%20and%20Herzegovina/graph%2013b%20Bosnia%20and%20Herzegovina%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Bosnia and Herzegovina ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bosnia%20and%20Herzegovina/graph%2013b%20Bosnia%20and%20Herzegovina%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ce18c33c-c861-4cce-bfda-3c7c1cff4b14)
 
