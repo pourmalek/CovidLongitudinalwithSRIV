@@ -5739,7 +5739,7 @@ if date >= td(01jan2020) & date <= td(01jan2023) ///
 , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
 ytitle(Daily deaths) title("C19 daily deaths, Cape Verde, all models, all updates, forecast only", size(medium) color(black)) ///
-legend(position(6) order(1528 "JOHN" 19 "DELP" 106 "IHME" 1 "IMPE" 147 "LANL" 6 "SRIV") ///
+legend(position(6) order(1502 "JOHN" 19 "DELP" 106 "IHME" 1 "IMPE" 147 "LANL" 6 "SRIV") ///
 rows(2) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
 
