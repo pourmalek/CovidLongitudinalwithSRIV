@@ -2,13 +2,13 @@ Congo selected graphs
 
 *
 
-[graph 02 Congo ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Congo/graph%2002%20Congo%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+[graph 02 Congo ALL MODELS C19 daily deaths all updates]()
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/8ef6bef7-abe5-452f-b351-d98b8f1d134e)
 
 *
 
-[graph 13b Congo ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Congo/graph%2013b%20Congo%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Congo ALL MODELS C19 daily deaths, error measures across models]()
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/393e86fe-4786-4a23-9237-4e52774cbf89)
 
