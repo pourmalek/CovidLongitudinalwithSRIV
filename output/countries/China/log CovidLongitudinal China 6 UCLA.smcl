@@ -1,0 +1,120 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/China/log CovidLongitudinal China 6 UCLA.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}20 Mar 2023, 10:32:31
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal China 6 UCLA.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models 
+. 
+. * Objective: Run calculations for error measures
+.         * for each country ---->> China <<----                                                                 
+. ***************************************************************************
+. 
+. 
+. ** model = UCLA ** <<-- modify 1 
+. * lcolor blue
+. 
+. * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+. 
+. * input data files: "UCLA China.dta"
+. * output data files: "UCLA China error.dta" (with error measures saved)
+. 
+. * output data dictionary files: "UCLA China error data dictionary.csv"
+. 
+. 
+. * graph 03 Error
+. * graph 04 Absolute Error
+. * graph 05 Percent Error
+. * graph 06 Absolute Percent Error
+. 
+. * graph 07 mean over updates of median error by calendar months
+. * graph 08 Daily deaths, mean over updates of median absolute error by calendar months
+. * graph 09 Daily deaths, mean over updates of median % error by calendar months
+. * graph 10 Daily deaths, mean over updates of median absolute % error by calendar months
+. 
+. * graph 11 Daily deaths, Average MAPE over updates and calendar months
+. 
+. 
+. 
+. 
+. ** graphs:
+. * "graph 03 China UCLA C19 daily deaths error.pdf"
+. * "graph 04 China UCLA C19 daily deaths absolute error.pdf"
+. * "graph 05 China UCLA C19 daily deaths percent error.pdf"
+. * "graph 06 China UCLA C19 daily deaths absolute percent error.pdf"
+. 
+. * "graph 07 China UCLA C19 daily deaths average median error.pdf"
+. * "graph 08 China UCLA C19 daily deaths average median absolute error.pdf"
+. * "graph 09 China UCLA C19 daily deaths average median percent error.pdf"
+. * "graph 10 China UCLA C19 daily deaths average median absolute percent error.pdf"
+. 
+. * "graph 11 China UCLA C19 daily deaths Average MAPE over updates and calendar months
+. 
+. 
+. *********************
+. 
+. /*
+> 
+> 
+> CALCULATIONS:
+> 
+> Error = minus (Reference minus Model) 
+> 
+> Absolute error = | minus (Reference minus Model) |
+> 
+> Percent error = 100 * (minus (Reference minus Model)) / Reference
+> 
+> Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
+> 
+> 
+> 
+> 
+> Error = - (Reference - Model)
+> 
+> Absolute error = | - (Reference - Model) |
+> 
+> Percent error = 100 * (- (Reference - Model)) / Reference
+> 
+> Absolute percent error = 100 * | - (Reference - Model)| / Reference
+> 
+> */
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. use "UCLA China.dta", clear 
+{err}{p 0 4 2}
+file {bf:{err}UCLA China.dta}
+not found
+{p_end}
+{txt}{search r(601), local:r(601);}
+
+end of do-file
+
+{search r(601), local:r(601);}
+
+{com}. use "/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/China/YYGU 20201002 China.dta"
+
+. line DayDeaMeRaYYGU20201002 DayDeaMeSmYYGU20201002 DayDeaMeFoYYGU20201002 date
+{res}
+{com}. do "/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/China/do CovidLongitudinal China 8 YYGU.do"
+{txt}
+{com}. 
+. clear all
+{res}{txt}
+{com}. 
+. cd "$pathCovidLongitudinal/countries/China"
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/China
+{txt}
+{com}. 
+. capture log close 
+{smcl}
+{com}{sf}{ul off}
