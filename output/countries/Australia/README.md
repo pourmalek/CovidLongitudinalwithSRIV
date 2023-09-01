@@ -8,7 +8,7 @@ Australia selected graphs
 
 *
 
-[graph 02 Australia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Australia/graph%2013b%20Australia%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Australia ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Australia/graph%2013b%20Australia%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/915cb63c-4844-4442-a7bb-089443504bac)
 
