@@ -1285,7 +1285,7 @@ restore
 
 
 
-/* foreach update of local list {
+* foreach update of local list {
 	
 	* graph Canada IHME daily deaths each update 
 	
@@ -1303,7 +1303,7 @@ restore
 	qui graph export "graph 01 Canada IHME daily deaths update `update'.pdf", replace	
 
 }
-*/
+
 
 
 
