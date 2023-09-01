@@ -1,0 +1,1481 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Spain/log CovidLongitudinal Spain 7 UCLA.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}17 Aug 2023, 20:17:22
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal Spain 7 UCLA.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models 
+. 
+. * Objective: Run calculations for error measures
+.         * for each country ---->> Spain <<----                                                                 
+. ***************************************************************************
+. 
+. 
+. ** model = UCLA ** <<-- modify 1 
+. * lcolor blue
+. 
+. * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
+. 
+. * input data files: "UCLA Spain.dta"
+. * output data files: "UCLA Spain error.dta" (with error measures saved)
+. 
+. * output data dictionary files: "UCLA Spain error data dictionary.csv"
+. 
+. 
+. * graph 03 Error
+. * graph 04 Absolute Error
+. * graph 05 Percent Error
+. * graph 06 Absolute Percent Error
+. 
+. * graph 07 mean over updates of median error by calendar months
+. * graph 08 Daily deaths, mean over updates of median absolute error by calendar months
+. * graph 09 Daily deaths, mean over updates of median % error by calendar months
+. * graph 10 Daily deaths, mean over updates of median absolute % error by calendar months
+. 
+. * graph 11 Daily deaths, Average MAPE over updates and calendar months
+. 
+. 
+. 
+. 
+. ** graphs:
+. * "graph 03 Spain UCLA C19 daily deaths error.pdf"
+. * "graph 04 Spain UCLA C19 daily deaths absolute error.pdf"
+. * "graph 05 Spain UCLA C19 daily deaths percent error.pdf"
+. * "graph 06 Spain UCLA C19 daily deaths absolute percent error.pdf"
+. 
+. * "graph 07 Spain UCLA C19 daily deaths average median error.pdf"
+. * "graph 08 Spain UCLA C19 daily deaths average median absolute error.pdf"
+. * "graph 09 Spain UCLA C19 daily deaths average median percent error.pdf"
+. * "graph 10 Spain UCLA C19 daily deaths average median absolute percent error.pdf"
+. 
+. * "graph 11 Spain UCLA C19 daily deaths Average MAPE over updates and calendar months
+. 
+. 
+. *********************
+. 
+. /*
+> 
+> 
+> CALCULATIONS:
+> 
+> Error = minus (Reference minus Model) 
+> 
+> Absolute error = | minus (Reference minus Model) |
+> 
+> Percent error = 100 * (minus (Reference minus Model)) / Reference
+> 
+> Absolute percent error = 100 * | minus (Reference minus Model) | / Reference
+> 
+> 
+> 
+> 
+> Error = - (Reference - Model)
+> 
+> Absolute error = | - (Reference - Model) |
+> 
+> Percent error = 100 * (- (Reference - Model)) / Reference
+> 
+> Absolute percent error = 100 * | - (Reference - Model)| / Reference
+> 
+> */
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. use "UCLA Spain.dta", clear 
+{txt}
+{com}. 
+. 
+. 
+. 
+. * gen months time bin
+. 
+. 
+. gen month = month(date)
+{txt}
+{com}. 
+. gen monthstr = ""
+{txt}(1,143 missing values generated)
+
+{com}. replace monthstr = "01" if month == 1
+{txt}variable {bf}{res}monthstr{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str2{sf}
+{txt}(103 real changes made)
+
+{com}. replace monthstr = "02" if month == 2
+{txt}(113 real changes made)
+
+{com}. replace monthstr = "03" if month == 3
+{txt}(102 real changes made)
+
+{com}. 
+. replace monthstr = "04" if month == 4
+{txt}(90 real changes made)
+
+{com}. replace monthstr = "05" if month == 5
+{txt}(93 real changes made)
+
+{com}. replace monthstr = "06" if month == 6
+{txt}(90 real changes made)
+
+{com}. 
+. replace monthstr = "07" if month == 7
+{txt}(93 real changes made)
+
+{com}. replace monthstr = "08" if month == 8
+{txt}(93 real changes made)
+
+{com}. replace monthstr = "09" if month == 9
+{txt}(90 real changes made)
+
+{com}. 
+. replace monthstr = "10" if month == 10
+{txt}(93 real changes made)
+
+{com}. replace monthstr = "11" if month == 11
+{txt}(90 real changes made)
+
+{com}. replace monthstr = "12" if month == 12
+{txt}(93 real changes made)
+
+{com}. 
+. 
+. 
+. gen year = year(date)
+{txt}
+{com}. 
+. gen yearstr = ""
+{txt}(1,143 missing values generated)
+
+{com}. replace yearstr = "2020" if year == 2020
+{txt}variable {bf}{res}yearstr{sf}{txt} was {bf}{res}str1{sf}{txt} now {bf}{res}str4{sf}
+{txt}(345 real changes made)
+
+{com}. replace yearstr = "2021" if year == 2021
+{txt}(365 real changes made)
+
+{com}. replace yearstr = "2022" if year == 2022
+{txt}(365 real changes made)
+
+{com}. replace yearstr = "2023" if year == 2023
+{txt}(68 real changes made)
+
+{com}. 
+. 
+. egen yearmonth = concat(yearstr monthstr), p(m)
+{txt}
+{com}. 
+. replace yearmonth = "" if yearmonth == "2023m01"
+{txt}(31 real changes made)
+
+{com}. 
+. sort date yearmonth 
+{txt}
+{com}. 
+. isid date
+{txt}
+{com}. 
+. label var month "calendar month"
+{txt}
+{com}. 
+. label var monthstr "calendar month string"
+{txt}
+{com}. 
+. label var year "calendar year"
+{txt}
+{com}. 
+. label var yearstr "calendar year string" 
+{txt}
+{com}. 
+. label var yearmonth "calendar year and month"
+{txt}
+{com}. 
+. *
+. 
+. 
+. // <<-- modify 2
+. 
+. local list ///
+> 20210103 ///
+> 20210110 ///
+> 20210206 ///
+> 20210307 ///
+> 20210315 ///
+> 20210328 ///
+> 20210404 ///
+> 20210712 ///
+> 20210719 ///
+> 20210726 ///
+> 20210802 ///
+> 20210809 ///
+> 20210816 ///
+> 20210823 ///
+> 20210830 ///
+> 20210906 ///
+> 20210913 ///
+> 20210920 ///
+> 20210927 ///
+> 20211004 ///
+> 20211011 ///
+> 20211018 ///
+> 20211025 ///
+> 20211101 ///
+> 20211108 ///
+> 20211122 ///
+> 20211129 ///
+> 20211206 ///
+> 20211213 ///
+> 20211220
+{txt}
+{com}. 
+. 
+. sort date
+{txt}
+{com}. 
+. 
+. * (1) gen error TYPES by calendar months and model updates
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         * Running not quietly displays that the Stata is working and has not frozen. 
+. 
+. capture drop DDErrorUCLA`update'
+{txt}  3{com}. gen DDErrorUCLA`update' = - (DayDeaMeSmJOHN - DayDeaMeFoUCLA`update')
+{txt}  4{com}. label var DDErrorUCLA`update' "DayDeaMeFoUCLA`update' error"
+{txt}  5{com}. qui replace DDErrorUCLA`update' = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}  6{com}. qui replace DDErrorUCLA`update' = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}  7{com}. qui replace DDErrorUCLA`update' = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}  8{com}.                                                             // <<-- modify 3
+. capture drop DDAbsErrUCLA`update'
+{txt}  9{com}. gen DDAbsErrUCLA`update' = abs(- (DayDeaMeSmJOHN - DayDeaMeFoUCLA`update'))
+{txt} 10{com}. label var DDAbsErrUCLA`update' "DayDeaMeFoUCLA`update' absolute error"
+{txt} 11{com}. qui replace DDAbsErrUCLA`update' = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 12{com}. qui replace DDAbsErrUCLA`update' = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 13{com}. qui replace DDAbsErrUCLA`update' = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 14{com}. 
+. capture drop DDPerErrUCLA`update'
+{txt} 15{com}. gen DDPerErrUCLA`update' = (100 * (- (DayDeaMeSmJOHN - DayDeaMeFoUCLA`update'))) / DayDeaMeSmJOHN
+{txt} 16{com}. label var DDPerErrUCLA`update' "DayDeaMeFoUCLA`update' percent error"
+{txt} 17{com}. qui replace DDPerErrUCLA`update' = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 18{com}. qui replace DDPerErrUCLA`update' = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 19{com}. qui replace DDPerErrUCLA`update' = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 20{com}. 
+. capture drop DDAbPeErUCLA`update'
+{txt} 21{com}. gen DDAbPeErUCLA`update' = (100 * abs(- (DayDeaMeSmJOHN - DayDeaMeFoUCLA`update'))) / DayDeaMeSmJOHN
+{txt} 22{com}. label var DDAbPeErUCLA`update' "DayDeaMeFoUCLA`update' absolute percent error" 
+{txt} 23{com}. qui replace DDAbPeErUCLA`update' = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 24{com}. qui replace DDAbPeErUCLA`update' = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 25{com}. qui replace DDAbPeErUCLA`update' = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 26{com}. 
+. {c )-}
+{txt}(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,043 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+
+{com}. *
+. 
+. 
+. 
+. 
+. 
+. * (2) gen MEDIAN of error types by calendar months and updates = _Med1
+. 
+. * Wait note: wait ...
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}.                 
+. capture drop DDErrorUCLA`update'_Med1
+{txt}  3{com}. bysort yearmonth : egen DDErrorUCLA`update'_Med1 = median(DDErrorUCLA`update')
+{txt}  4{com}. label var DDErrorUCLA`update'_Med1 "DayDeaUCLA median error by calendar months and updates"
+{txt}  5{com}. qui replace DDErrorUCLA`update'_Med1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}  6{com}. qui replace DDErrorUCLA`update'_Med1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}  7{com}. qui replace DDErrorUCLA`update'_Med1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}  8{com}. 
+. capture drop DDAbsErrUCLA`update'_Med1
+{txt}  9{com}. bysort yearmonth : egen DDAbsErrUCLA`update'_Med1 = median(DDAbsErrUCLA`update')
+{txt} 10{com}. label var DDAbsErrUCLA`update'_Med1 "DayDeaUCLA median absolute error by calendar months and updates"
+{txt} 11{com}. qui replace DDAbsErrUCLA`update'_Med1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 12{com}. qui replace DDAbsErrUCLA`update'_Med1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 13{com}. qui replace DDAbsErrUCLA`update'_Med1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 14{com}. 
+. capture drop DDPerErrUCLA`update'_Med1
+{txt} 15{com}. bysort yearmonth : egen DDPerErrUCLA`update'_Med1 = median(DDPerErrUCLA`update')
+{txt} 16{com}. label var DDPerErrUCLA`update'_Med1 "DayDeaUCLA median % error by calendar months and updates"
+{txt} 17{com}. qui replace DDPerErrUCLA`update'_Med1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 18{com}. qui replace DDPerErrUCLA`update'_Med1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 19{com}. qui replace DDPerErrUCLA`update'_Med1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 20{com}. 
+. capture drop DDAbPeErUCLA`update'_Med1
+{txt} 21{com}. bysort yearmonth : egen DDAbPeErUCLA`update'_Med1 = median(DDAbPeErUCLA`update')
+{txt} 22{com}. label var DDAbPeErUCLA`update'_Med1 "DayDeaUCLA median absolute % error by calendar months and updates" 
+{txt} 23{com}. qui replace DDAbPeErUCLA`update'_Med1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt} 24{com}. qui replace DDAbPeErUCLA`update'_Med1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt} 25{com}. qui replace DDAbPeErUCLA`update'_Med1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt} 26{com}. 
+. {c )-}
+{txt}(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,023 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(990 missing values generated)
+(990 missing values generated)
+(990 missing values generated)
+(990 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,021 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+(1,143 missing values generated)
+
+{com}. *
+. 
+. 
+. 
+.  
+. * (3) gen AVERAGE over updates of MEDIAN of error types by calendar months = _Mean1
+. 
+. * Wait note: wait ...
+. 
+. 
+. 
+. * gen DDErrorUCLA_Mean1 // gen AVERAGE over updates of MEDIAN of error types by calendar months
+. 
+.  // <<-- modify 4
+.  
+. order DDErrorUCLA20210103_Med1
+{txt}
+{com}. order DDErrorUCLA20210110_Med1
+{txt}
+{com}. order DDErrorUCLA20210206_Med1
+{txt}
+{com}. order DDErrorUCLA20210307_Med1
+{txt}
+{com}. order DDErrorUCLA20210315_Med1
+{txt}
+{com}. order DDErrorUCLA20210328_Med1
+{txt}
+{com}. order DDErrorUCLA20210404_Med1
+{txt}
+{com}. order DDErrorUCLA20210712_Med1
+{txt}
+{com}. order DDErrorUCLA20210719_Med1
+{txt}
+{com}. order DDErrorUCLA20210726_Med1
+{txt}
+{com}. order DDErrorUCLA20210802_Med1
+{txt}
+{com}. order DDErrorUCLA20210809_Med1
+{txt}
+{com}. order DDErrorUCLA20210816_Med1
+{txt}
+{com}. order DDErrorUCLA20210823_Med1
+{txt}
+{com}. order DDErrorUCLA20210830_Med1
+{txt}
+{com}. order DDErrorUCLA20210906_Med1
+{txt}
+{com}. order DDErrorUCLA20210913_Med1
+{txt}
+{com}. order DDErrorUCLA20210920_Med1
+{txt}
+{com}. order DDErrorUCLA20210927_Med1
+{txt}
+{com}. order DDErrorUCLA20211004_Med1
+{txt}
+{com}. order DDErrorUCLA20211011_Med1
+{txt}
+{com}. order DDErrorUCLA20211018_Med1
+{txt}
+{com}. order DDErrorUCLA20211025_Med1
+{txt}
+{com}. order DDErrorUCLA20211101_Med1
+{txt}
+{com}. order DDErrorUCLA20211108_Med1
+{txt}
+{com}. order DDErrorUCLA20211122_Med1
+{txt}
+{com}. order DDErrorUCLA20211129_Med1
+{txt}
+{com}. order DDErrorUCLA20211206_Med1
+{txt}
+{com}. order DDErrorUCLA20211213_Med1
+{txt}
+{com}. order DDErrorUCLA20211220_Med1
+{txt}
+{com}. 
+.                 
+. capture drop DDErrorUCLA_Mean1 // "DDErrorUCLA mean over updates of median error by calendar months"
+{txt}
+{com}. egen DDErrorUCLA_Mean1 = rowmean(DDErrorUCLA20211220_Med1-DDErrorUCLA20210103_Med1) // <<-- modify 5
+{txt}(933 missing values generated)
+
+{com}. label var DDErrorUCLA_Mean1 "DDErrorUCLA mean over updates of median error by calendar months"
+{txt}
+{com}. qui replace DDErrorUCLA_Mean1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}
+{com}. qui replace DDErrorUCLA_Mean1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}
+{com}. qui replace DDErrorUCLA_Mean1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. * gen DDAbsErrUCLA_Mean1 // gen AVERAGE over updates of MEDIAN of error types by calendar months
+. 
+.  // <<-- modify 6
+.  
+. order DDAbsErrUCLA20210103_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210110_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210206_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210307_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210315_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210328_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210404_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210712_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210719_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210726_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210802_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210809_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210816_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210823_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210830_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210906_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210913_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210920_Med1
+{txt}
+{com}. order DDAbsErrUCLA20210927_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211004_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211011_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211018_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211025_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211101_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211108_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211122_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211129_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211206_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211213_Med1
+{txt}
+{com}. order DDAbsErrUCLA20211220_Med1
+{txt}
+{com}. 
+. 
+. capture drop DDAbsErrUCLA_Mean1 // "DDAbsErrUCLA mean over updates of median absolute error by calendar months"
+{txt}
+{com}. egen DDAbsErrUCLA_Mean1 = rowmean(DDAbsErrUCLA20211220_Med1-DDAbsErrUCLA20210103_Med1) // <<-- modify 7
+{txt}(933 missing values generated)
+
+{com}. label var DDAbsErrUCLA_Mean1 "DDAbsErrUCLA mean over updates of median absolute error by calendar months"
+{txt}
+{com}. qui replace DDAbsErrUCLA_Mean1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}
+{com}. qui replace DDAbsErrUCLA_Mean1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}
+{com}. qui replace DDAbsErrUCLA_Mean1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. * gen DDPerErrUCLA_Mean1 // gen AVERAGE over updates of MEDIAN of error types by calendar months
+. 
+. // <<-- modify 8
+. 
+. order DDPerErrUCLA20210103_Med1
+{txt}
+{com}. order DDPerErrUCLA20210110_Med1
+{txt}
+{com}. order DDPerErrUCLA20210206_Med1
+{txt}
+{com}. order DDPerErrUCLA20210307_Med1
+{txt}
+{com}. order DDPerErrUCLA20210315_Med1
+{txt}
+{com}. order DDPerErrUCLA20210328_Med1
+{txt}
+{com}. order DDPerErrUCLA20210404_Med1
+{txt}
+{com}. order DDPerErrUCLA20210712_Med1
+{txt}
+{com}. order DDPerErrUCLA20210719_Med1
+{txt}
+{com}. order DDPerErrUCLA20210726_Med1
+{txt}
+{com}. order DDPerErrUCLA20210802_Med1
+{txt}
+{com}. order DDPerErrUCLA20210809_Med1
+{txt}
+{com}. order DDPerErrUCLA20210816_Med1
+{txt}
+{com}. order DDPerErrUCLA20210823_Med1
+{txt}
+{com}. order DDPerErrUCLA20210830_Med1
+{txt}
+{com}. order DDPerErrUCLA20210906_Med1
+{txt}
+{com}. order DDPerErrUCLA20210913_Med1
+{txt}
+{com}. order DDPerErrUCLA20210920_Med1
+{txt}
+{com}. order DDPerErrUCLA20210927_Med1
+{txt}
+{com}. order DDPerErrUCLA20211004_Med1
+{txt}
+{com}. order DDPerErrUCLA20211011_Med1
+{txt}
+{com}. order DDPerErrUCLA20211018_Med1
+{txt}
+{com}. order DDPerErrUCLA20211025_Med1
+{txt}
+{com}. order DDPerErrUCLA20211101_Med1
+{txt}
+{com}. order DDPerErrUCLA20211108_Med1
+{txt}
+{com}. order DDPerErrUCLA20211122_Med1
+{txt}
+{com}. order DDPerErrUCLA20211129_Med1
+{txt}
+{com}. order DDPerErrUCLA20211206_Med1
+{txt}
+{com}. order DDPerErrUCLA20211213_Med1
+{txt}
+{com}. order DDPerErrUCLA20211220_Med1
+{txt}
+{com}. 
+. 
+. capture drop DDPerErrUCLA_Mean1 // "DDPerErrUCLA mean over updates of median absolute % error by calendar months"
+{txt}
+{com}. egen DDPerErrUCLA_Mean1 = rowmean(DDPerErrUCLA20211220_Med1-DDPerErrUCLA20210103_Med1) // <<-- modify 9
+{txt}(933 missing values generated)
+
+{com}. label var DDPerErrUCLA_Mean1 "DDPerErrUCLA mean over updates of median % error by calendar months"
+{txt}
+{com}. qui replace DDPerErrUCLA_Mean1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}
+{com}. qui replace DDPerErrUCLA_Mean1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}
+{com}. qui replace DDPerErrUCLA_Mean1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}
+{com}. 
+.  
+.  
+.  
+. 
+. * gen DDAbPeErUCLA_Mean1 // gen AVERAGE over updates of MEDIAN of error types by calendar months
+. 
+.  // <<-- modify 10
+.  
+. 
+. order DDAbPeErUCLA20210103_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210110_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210206_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210307_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210315_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210328_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210404_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210712_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210719_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210726_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210802_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210809_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210816_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210823_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210830_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210906_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210913_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210920_Med1
+{txt}
+{com}. order DDAbPeErUCLA20210927_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211004_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211011_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211018_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211025_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211101_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211108_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211122_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211129_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211206_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211213_Med1
+{txt}
+{com}. order DDAbPeErUCLA20211220_Med1
+{txt}
+{com}. 
+. 
+. capture drop DDAbPeErUCLA_Mean1 // "DDAbPeErUCLA mean over updates of median absolute % error by calendar months"
+{txt}
+{com}. egen DDAbPeErUCLA_Mean1 = rowmean(DDAbPeErUCLA20211220_Med1-DDAbPeErUCLA20210103_Med1) // <<-- modify 11
+{txt}(933 missing values generated)
+
+{com}. label var DDAbPeErUCLA_Mean1 "DDAbPeErUCLA mean over updates of median absolute % error by calendar months"
+{txt}
+{com}. qui replace DDAbPeErUCLA_Mean1 = . if DayDeaMeSmJOHN == . // before location was added to the estimates for the country
+{txt}
+{com}. qui replace DDAbPeErUCLA_Mean1 = . if date == td(01jan2023) // 01jan2023 is not included in this study
+{txt}
+{com}. qui replace DDAbPeErUCLA_Mean1 = . if date < td(03jan2021) // 03jan2021 is the earliest date of UCLA forecasts for Spain
+{txt}
+{com}. 
+.  
+.  
+.  
+.  
+.  
+.  
+. 
+. 
+. 
+. 
+. * (4) gen AVERAGE over calendar months of _Mean1  = _Mean2
+. 
+. * Wait note: wait ...
+. 
+.                 
+. egen DDErrorUCLA_Mean2 = mean(DDErrorUCLA_Mean1) // get mean for all calendar months of _Mean1
+{txt}
+{com}. label var DDErrorUCLA_Mean2 "DDErrorUCLA Mean over calendar months of median error over updates"
+{txt}
+{com}. 
+. egen DDAbsErrUCLA_Mean2 = mean(DDAbsErrUCLA_Mean1) // get mean for all calendar months of _Mean1
+{txt}
+{com}. label var DDAbsErrUCLA_Mean2 "DDAbsErrUCLA Mean over calendar months of median absolute error over updates"
+{txt}
+{com}. 
+. egen DDPerErrUCLA_Mean2 = mean(DDPerErrUCLA_Mean1) // get mean for all calendar months of _Mean1
+{txt}
+{com}. label var DDPerErrUCLA_Mean2 "DDPerErrUCLA Mean over calendar months of median % error over updates"
+{txt}
+{com}. 
+. egen DDAbPeErUCLA_Mean2 = mean(DDAbPeErUCLA_Mean1) // get mean for all calendar months of _Mean1
+{txt}
+{com}. label var DDAbPeErUCLA_Mean2 "DDAbPeErUCLA Mean over calendar months of median absolute % error over updates"
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. drop if date < td(01jan2020)
+{txt}(0 observations deleted)
+
+{com}. 
+. drop if date > td(01jan2023)
+{txt}(67 observations deleted)
+
+{com}. 
+. 
+. qui compress
+{txt}
+{com}. 
+. 
+. 
+. 
+. ******
+. * graph 03 Daily deaths, Error // <<-- modify 12
+. 
+. twoway ///
+> (line DDErrorUCLA20210103 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210110 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210307 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210315 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210328 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210404 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210712 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210719 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210726 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210802 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210809 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210816 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210823 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210830 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210906 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210913 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210920 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20210927 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211004 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211011 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211018 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211025 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211101 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211108 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211122 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211129 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211213 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDErrorUCLA20211220 date, sort lcolor(blue) lwidth(thin)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3)) ///
+> subtitle("Spain, UCLA, all updates, forecast only", size(small)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 03 Spain UCLA C19 daily deaths error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 04 Daily deaths, Absolute Error // <<-- modify 13
+. 
+. twoway ///
+> (line DDAbsErrUCLA20210103 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210110 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210307 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210315 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210328 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210404 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210712 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210719 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210726 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210802 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210809 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210816 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210823 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210830 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210906 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210913 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210920 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20210927 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211004 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211011 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211018 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211025 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211101 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211108 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211122 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211129 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211213 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbsErrUCLA20211220 date, sort lcolor(blue) lwidth(thin)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths absolute error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3)) ///
+> subtitle("Spain, UCLA, all updates, forecast only", size(small))
+{res}{txt}
+{com}. 
+. qui graph export "graph 04 Spain UCLA C19 daily deaths absolute error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 05 Daily deaths, Percent Error <<-- modify 14
+. 
+. twoway ///
+> (line DDPerErrUCLA20210103 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210110 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210307 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210315 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210328 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210404 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210712 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210719 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210726 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210802 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210809 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210816 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210823 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210830 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210906 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210913 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210920 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20210927 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211004 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211011 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211018 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211025 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211101 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211108 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211122 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211129 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211213 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDPerErrUCLA20211220 date, sort lcolor(blue) lwidth(thin)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths percent error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3)) ///
+> subtitle("Spain, UCLA, all updates, forecast only", size(small))
+{res}{txt}
+{com}. 
+. qui graph export "graph 05 Spain UCLA C19 daily deaths percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 06 Daily deaths, Absolute Percent Error // <<-- modify 15
+. 
+. * UCLA lcolor blue // <<-- modify 16
+. 
+. twoway ///
+> (line DDAbPeErUCLA20210103 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210110 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210307 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210315 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210328 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210404 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210712 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210719 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210726 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210802 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210809 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210816 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210823 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210830 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210906 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210913 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210920 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20210927 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211004 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211011 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211018 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211025 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211101 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211108 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211122 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211129 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211206 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211213 date, sort lcolor(blue) lwidth(thin)) ///
+> (line DDAbPeErUCLA20211220 date, sort lcolor(blue) lwidth(thin)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths absolute percent error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3)) ///
+> subtitle("Spain, UCLA, all updates, forecast only", size(small))
+{res}{txt}
+{com}. 
+. qui graph export "graph 06 Spain UCLA C19 daily deaths absolute percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 07 Daily deaths, average median error 
+. 
+. twoway ///
+> (line DDErrorUCLA_Mean1 date, sort lcolor(blue) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median error", size(medium) color(black)) /// 
+> subtitle("Spain, UCLA, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3))
+{res}{txt}
+{com}. 
+. qui graph export "graph 07 Spain UCLA C19 daily deaths average median error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. *********************
+. * smooth median error for better viewing 
+. 
+. tsset date, daily   
+{res}
+{p 0 15 2}{txt:Time variable: }{res:date}{txt:, }{res:{bind:22Jan2020}}{txt: to }{res:{bind:01Jan2023}}{p_end}
+{txt}{col 9}Delta: {res}1 day
+{txt}
+{com}. 
+. tssmooth ma DDErrorUCLA_Mean1_window = DDErrorUCLA_Mean1, window(3 1 3)
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DDErrorUCLA_Mean1{p_end}
+{txt}
+{com}. 
+. tssmooth ma DDErrorUCLA_Mean1_sm = DDErrorUCLA_Mean1_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DDErrorUCLA_Mean1_window
+{txt}
+{smcl}
+{com}. 
+. label var DDErrorUCLA_Mean1_sm "Daily deaths UCLA average median error smooth"
+{txt}
+{com}. 
+. drop *_window
+{txt}
+{com}. 
+. // tsset, clear
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 08 Daily deaths, average median absolute error 
+. 
+. twoway ///
+> (line DDAbsErrUCLA_Mean1 date, sort lcolor(blue) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute error", size(medium) color(black)) /// 
+> subtitle("Spain, UCLA, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3))
+{res}{txt}
+{com}. 
+. qui graph export "graph 08 Spain UCLA C19 daily deaths average median absolute error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. *********************
+. * smooth median absolute error for better viewing 
+. 
+. // tsset date, daily   
+. 
+. tssmooth ma DDAbsErrUCLA_Mean1_window = DDAbsErrUCLA_Mean1, window(3 1 3)
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DDAbsErrUCLA_Mean1{p_end}
+{txt}
+{com}. 
+. tssmooth ma DDAbsErrUCLA_Mean1_sm = DDAbsErrUCLA_Mean1_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DDAbsErrUCLA_Mean1_window
+{txt}
+{smcl}
+{com}. 
+. label var DDAbsErrUCLA_Mean1_sm "Daily deaths UCLA average median absolute error smooth"
+{txt}
+{com}. 
+. drop *_window
+{txt}
+{com}. 
+. // tsset, clear
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 09 Daily deaths, average median percent error 
+. 
+. twoway ///
+> (line DDPerErrUCLA_Mean1 date, sort lcolor(blue) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median percent error", size(medium) color(black)) /// 
+> subtitle("Spain, UCLA, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3))
+{res}{txt}
+{com}. 
+. qui graph export "graph 09 Spain UCLA C19 daily deaths average median percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. *********************
+. * smooth median percent error for better viewing 
+. 
+. // tsset date, daily   
+. 
+. tssmooth ma DDPerErrUCLA_Mean1_window = DDPerErrUCLA_Mean1, window(3 1 3)
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DDPerErrUCLA_Mean1{p_end}
+{txt}
+{com}. 
+. tssmooth ma DDPerErrUCLA_Mean1_sm = DDPerErrUCLA_Mean1_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DDPerErrUCLA_Mean1_window
+{txt}
+{smcl}
+{com}. 
+. label var DDPerErrUCLA_Mean1_sm "Daily deaths UCLA average median percent error smooth"
+{txt}
+{com}. 
+. drop *_window
+{txt}
+{com}. 
+. // tsset, clear
+. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 10 Daily deaths, average median absolute percent error
+. 
+. twoway ///
+> (line DDAbPeErUCLA_Mean1 date, sort lcolor(blue) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute percent error", size(medium) color(black)) /// 
+> subtitle("Spain, UCLA, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(off) yscale(titlegap(3))
+{res}{txt}
+{com}. 
+. qui graph export "graph 10 Spain UCLA C19 daily deaths average median absolute percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. *********************
+. * smooth median absolute % error for better viewing 
+. 
+. // tsset date, daily   
+. 
+. tssmooth ma DDAbPeErUCLA_Mean1_window = DDAbPeErUCLA_Mean1, window(3 1 3)
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/7)*[x(t-3) + x(t-2) + x(t-1) + 1*x(t) + x(t+1) + x(t+2) + x(t+3)]; x(t)= DDAbPeErUCLA_Mean1{p_end}
+{txt}
+{com}. 
+. tssmooth ma DDAbPeErUCLA_Mean1_sm = DDAbPeErUCLA_Mean1_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt}The smoother applied was
+{res}{p 5 5 5}(1/16)*[1*x(t-3) + 2*x(t-2) + 3*x(t-1) + 4*x(t) + 3*x(t+1) + 2*x(t+2) + ...; x(t)= DDAbPeErUCLA_Mean1_window
+{txt}
+{smcl}
+{com}. 
+. label var DDAbPeErUCLA_Mean1_sm "Daily deaths UCLA average median absolute percent error smooth"
+{txt}
+{com}. 
+. drop *_window
+{txt}
+{com}. 
+. tsset, clear
+{txt}
+{com}. 
+. *
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. capture drop *2str
+{txt}
+{com}. 
+. summ DDAbPeErUCLA_Mean2, meanonly
+{txt}
+{com}. 
+. local DDAbPeErUCLA_Mean2str = string(r(mean),"%8.1f")
+{txt}
+{com}. 
+. gen DDAbPeErUCLA_Mean2str = `DDAbPeErUCLA_Mean2str'
+{txt}
+{com}.     
+. 
+. * graph 11 Daily deaths, Average MAPE over updates and calendar months
+. 
+. graph bar ///
+> (mean) DDAbPeErUCLA_Mean2str /// 
+> , bar(1, fcolor(blue) lcolor(blue)) ///
+> blabel(bar, format(%30.0fc)) ytitle("Average MAPE") yscale(titlegap(2)) ///
+> title("C19 daily deaths average MAPE over updates and calendar months", size(medium) color(black)) ///
+> subtitle("Spain, UCLA, forecast only. MAPE: Median Absolute Percent Error", size(small)) /// 
+> legend(off) ylabel(, labsize(small) angle(forty_five) format(%30.0fc))
+{res}{txt}
+{com}. 
+. qui graph export "graph 11 Spain UCLA C19 daily deaths Average MAPE over updates and calendar months.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. 
+. qui compress 
+{txt}
+{com}. 
+. save "UCLA Spain error.dta", replace 
+{txt}{p 0 4 2}
+file {bf}
+UCLA Spain error.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "UCLA Spain error data dictionary.csv", replace 
+{res}{txt}file {bf:UCLA Spain error data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. view "log CovidLongitudinal Spain 7 UCLA.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Spain/log CovidLongitudinal Spain 7 UCLA.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}17 Aug 2023, 20:17:38
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
