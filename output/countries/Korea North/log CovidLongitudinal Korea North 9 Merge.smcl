@@ -1,0 +1,1346 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Korea North/log CovidLongitudinal Korea North 9 Merge.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Aug 2023, 09:48:41
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal Korea North 9 Merge.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models 
+. 
+. * Objective: Merge calculations results for error measures by models
+.         * for each country ---->> Korea North <<----                                                                 
+. ***************************************************************************
+. 
+. 
+. * Merge calculations results for error measures by models, create graphs
+. 
+. 
+. 
+. ** input data files: "`model' Korea North error.dta"
+. 
+. ** output data files: "ALL MODELS Korea North error.dta" with all date
+. *                     "ALL MODELS Korea North error - only models across error measures.dta", replace
+. *                     "ALL MODELS Korea North error - only error measures across models.dta", replace
+. 
+. * output data dictionary files: "ALL MODELS Korea North error data dictionary.csv"
+. *                               "ALL MODELS Korea North error - only models across error measures data dictionary.csv"
+. *                               "ALL MODELS Korea North error - only error measures across models data dictionary.csv"
+. 
+. 
+. ** Graphs:
+. * "graph 03 Korea North ALL MODELS C19 daily deaths error.pdf"
+. * "graph 04 Korea North ALL MODELS C19 daily deaths absolute error.pdf"
+. * "graph 05 Korea North ALL MODELS C19 daily deaths percent error.pdf"
+. * "graph 06 Korea North ALL MODELS C19 daily deaths absolute percent error.pdf"
+. 
+. * "graph 07a1 Korea North ALL MODELS C19 daily deaths average median error.pdf"
+. * "graph 07a2 Korea North ALL MODELS C19 daily deaths average median error smoothed.pdf"
+. * "graph 08a1 Korea North ALL MODELS C19 daily deaths average median absolute error.pdf"
+. * "graph 08a2 Korea North ALL MODELS C19 daily deaths average median absolute error smoothed.pdf"
+. * "graph 09a1 Korea North ALL MODELS C19 daily deaths average median percent error.pdf"
+. * "graph 09a2 Korea North ALL MODELS C19 daily deaths average median percent error smoothed.pdf"
+. * "graph 10a1 Korea North ALL MODELS C19 daily deaths average median absolute percent error.pdf"
+. * "graph 10a2 Korea North ALL MODELS C19 daily deaths average median absolute percent error smoothed.pdf"
+. 
+. ****** graph each same error measure across models:
+. * "graph 12a Korea North ALL MODELS C19 daily deaths Average Mean Error.pdf"
+. * "graph 12b Korea North ALL MODELS C19 daily deaths Average Absolute Error.pdf"
+. * "graph 12c Korea North ALL MODELS C19 daily deaths Average Percent Error.pdf"
+. * "graph 12d Korea North ALL MODELS C19 daily deaths Average Absolute Percent Error.pdf"
+. 
+. ****** graph all models across error measures:
+. * "graph 13a Korea North ALL MODELS C19 daily deaths, models across error measures.pdf"
+. 
+. ****** graph all error measures across models:
+. * "graph 13b Korea North ALL MODELS C19 daily deaths, error measures across models.pdf"
+. 
+. 
+. 
+. 
+. grstyle init
+{res}{txt}
+{com}. 
+. grstyle color background white
+{txt}
+{com}. 
+. 
+. 
+. 
+. use "IMPE Korea North error.dta", clear 
+{txt}
+{com}.         
+. qui compress
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 03 Daily deaths, Error // <<-- modify 1
+. 
+. twoway ///
+> (line DDErrorIMPE20201025 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201028 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201101 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201114 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201123 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201204 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201212 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201220 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20201226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210124 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210130 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210203 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210210 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210217 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210305 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210312 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210319 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210417 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210424 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210510 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210516 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210522 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210527 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210604 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210611 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210618 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210626 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210702 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210709 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210819 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210909 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20210924 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211115 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20211226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220102 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220120 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220131 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220315 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220530 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220703 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220712 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220728 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDErrorIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> subtitle("Korea North, all Models, all updates, forecast only", size(small)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 03 Korea North ALL MODELS C19 daily deaths error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 04 Daily deaths, AbsErr // <<-- modify 2
+. 
+. twoway ///
+> (line DDAbsErrIMPE20201025 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201028 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201101 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201114 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201123 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201204 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201212 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201220 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20201226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210124 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210130 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210203 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210210 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210217 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210305 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210312 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210319 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210417 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210424 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210510 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210516 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210522 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210527 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210604 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210611 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210618 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210626 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210702 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210709 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210819 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210909 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20210924 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211115 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20211226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220102 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220120 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220131 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220315 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220530 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220703 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220712 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220728 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbsErrIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths absolute error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> subtitle("Korea North, all Models, all updates, forecast only", size(small)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 04 Korea North ALL MODELS C19 daily deaths absolute error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 05 Daily deaths, Percent Error <<-- modify 3
+. 
+. twoway ///
+> (line DDPerErrIMPE20201025 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201028 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201101 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201114 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201123 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201204 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201212 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201220 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20201226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210124 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210130 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210203 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210210 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210217 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210305 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210312 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210319 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210417 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210424 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210510 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210516 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210522 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210527 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210604 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210611 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210618 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210626 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210702 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210709 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210819 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210909 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20210924 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211115 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20211226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220102 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220120 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220131 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220315 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220530 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220703 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220712 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220728 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDPerErrIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths percent error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> subtitle("Korea North, all Models, all updates, forecast only", size(small)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 05 Korea North ALL MODELS C19 daily deaths percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. * graph 06 Daily deaths, Absolute Percent Error // <<-- modify 4
+. 
+. twoway ///
+> (line DDAbPeErIMPE20201025 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201028 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201101 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201114 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201123 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201204 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201212 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201220 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20201226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210118 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210124 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210130 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210203 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210210 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210217 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210305 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210312 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210319 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210417 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210424 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210510 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210516 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210522 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210527 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210604 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210611 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210618 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210626 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210702 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210709 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210819 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210909 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20210924 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211115 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20211226 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220102 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220120 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220131 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220315 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220530 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220703 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220712 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220728 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DDAbPeErIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths absolute percent error", size(medium) color(black)) /// 
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> subtitle("Korea North, ALL MODELS, all updates, forecast only", size(small)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 06 Korea North ALL MODELS C19 daily deaths absolute percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 07a1 Daily deaths, average median error 
+. 
+. twoway ///
+> (line DDErrorIMPE_Mean1 date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 07a1 Korea North ALL MODELS C19 daily deaths average median error.pdf", replace 
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 07a2 Daily deaths, average median error smoothed for better viewing
+. 
+. twoway ///
+> (line DDErrorIMPE_Mean1_sm date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 07a2 Korea North ALL MODELS C19 daily deaths average median error smoothed.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 08a1 Daily deaths, average median absolute AbsErr 
+. 
+. twoway ///
+> (line DDAbsErrIMPE_Mean1 date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 08a1 Korea North ALL MODELS C19 daily deaths average median absolute error.pdf", replace 
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 08a2 Daily deaths, average median absolute error smoothed for better viewing
+. 
+. twoway ///
+> (line DDAbsErrIMPE_Mean1_sm date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 08a2 Korea North ALL MODELS C19 daily deaths average median absolute error smoothed.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 09a1 Daily deaths, average median percent error 
+. 
+. twoway ///
+> (line DDPerErrIMPE_Mean1 date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median percent error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 09a1 Korea North ALL MODELS C19 daily deaths average median percent error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 09a2 Daily deaths, average median percent error smoothed for better viewing
+. 
+. twoway ///
+> (line DDPerErrIMPE_Mean1_sm date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median percent error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 09a2 Korea North ALL MODELS C19 daily deaths average median percent error smoothed.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 10a1 Daily deaths, average median absolute percent error 
+. 
+. twoway ///
+> (line DDAbPeErIMPE_Mean1 date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute percent error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 10a1 Korea North ALL MODELS C19 daily deaths average median absolute percent error.pdf", replace 
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. ***************************************************************
+. * graph 10a2 Daily deaths, average median absolute percent error smoothed for better viewing
+. 
+. twoway ///
+> (line DDAbPeErIMPE_Mean1_sm date, sort lcolor(magenta) lwidth(medium)) /// 
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths error measure) title("C19 daily deaths, average median absolute percent error", size(medium) color(black)) /// 
+> subtitle("Korea North, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
+> legend(position(6) order(1 "IMPE") ///
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+{res}{txt}
+{com}. 
+. qui graph export "graph 10a2 Korea North ALL MODELS C19 daily deaths average median absolute percent error smoothed.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. ***********************************************
+. 
+. * graph each same error measure across models
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. * gen string "%10.0f" copy of DDError`model'_Mean2 for display
+. 
+. summ DDErrorIMPE_Mean2, meanonly
+{txt}
+{com}. local DDErrorIMPE_Mean2str = string(r(mean),"%10.0f")
+{txt}
+{com}. capture drop DDErrorIMPE_Mean2str
+{txt}
+{com}. gen DDErrorIMPE_Mean2str = `DDErrorIMPE_Mean2str'
+{txt}
+{com}. label var DDErrorIMPE_Mean2str "DDErrorIMPE Mean over calendar months of median error over updates string"
+{txt}
+{com}. 
+. 
+. 
+. * graph 12a Daily deaths, Average of Mean Error over updates and calendar months
+. 
+. graph bar ///
+> (mean) DDErrorIMPE_Mean2str /// 
+> , bar(1, fcolor(magenta) lcolor(magenta)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average Mean Error") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths average of Mean Error", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 12a Korea North ALL MODELS C19 daily deaths Average Mean Error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. * gen string "%10.0f" copy of DDAbsErr`model'_Mean2 for display
+. 
+. summ DDAbsErrIMPE_Mean2, meanonly
+{txt}
+{com}. local DDAbsErrIMPE_Mean2str = string(r(mean),"%10.0f")
+{txt}
+{com}. capture drop DDAbsErrIMPE_Mean2str
+{txt}
+{com}. gen DDAbsErrIMPE_Mean2str = `DDAbsErrIMPE_Mean2str'
+{txt}
+{com}. label var DDAbsErrIMPE_Mean2str "DDAbsErrIMPE Mean over calendar months of median error over updates string"
+{txt}
+{com}. 
+. 
+. 
+. * graph 12b Daily deaths, Average of Absolute Error over updates and calendar months
+. 
+. graph bar ///
+> (mean) DDAbsErrIMPE_Mean2str /// 
+> , bar(1, fcolor(magenta) lcolor(magenta)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average Absolute Error") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths average of Absolute Error", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 12b Korea North ALL MODELS C19 daily deaths Average Absolute Error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. * gen string "%10.0f" copy of DDPerErr`model'_Mean2 for display
+. 
+. summ DDPerErrIMPE_Mean2, meanonly
+{txt}
+{com}. local DDPerErrIMPE_Mean2str = string(r(mean),"%10.0f")
+{txt}
+{com}. capture drop DDPerErrIMPE_Mean2str
+{txt}
+{com}. gen DDPerErrIMPE_Mean2str = `DDPerErrIMPE_Mean2str'
+{txt}
+{com}. label var DDPerErrIMPE_Mean2str "DDPerErrIMPE Mean over calendar months of median error over updates string"
+{txt}
+{com}. 
+. 
+. 
+. * graph 12c Daily deaths, Average of Percent PerErr over updates and calendar months
+. 
+. graph bar ///
+> (mean) DDPerErrIMPE_Mean2str /// 
+> , bar(1, fcolor(magenta) lcolor(magenta)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths average of Percent Error", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 12c Korea North ALL MODELS C19 daily deaths Average Percent Error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. 
+. * gen string "%10.0f" copy of DDAbPeEr`model'_Mean2 for display
+. 
+. summ DDAbPeErIMPE_Mean2, meanonly
+{txt}
+{com}. local DDAbPeErIMPE_Mean2str = string(r(mean),"%10.0f")
+{txt}
+{com}. capture drop DDAbPeErIMPE_Mean2str
+{txt}
+{com}. gen DDAbPeErIMPE_Mean2str = `DDAbPeErIMPE_Mean2str'
+{txt}
+{com}. label var DDAbPeErIMPE_Mean2str "DDAbPeErIMPE Mean over calendar months of median error over updates string"
+{txt}
+{com}. 
+. 
+. 
+. * graph 12d Daily deaths, Average of Absolute Percent Error over updates and calendar months
+. 
+. graph bar ///
+> (mean) DDAbPeErIMPE_Mean2str /// 
+> , bar(1, fcolor(magenta) lcolor(magenta)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths average of Absolute Percent Error", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 12d Korea North ALL MODELS C19 daily deaths Average Absolute Percent Error.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "ALL MODELS Korea North error.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+ALL MODELS Korea North error.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "ALL MODELS Korea North error data dictionary.csv", replace 
+{res}{txt}file {bf:ALL MODELS Korea North error data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. ***********************************************
+. 
+. * graph all models across error measures
+. 
+. 
+. use "ALL MODELS Korea North error.dta", clear
+{txt}
+{com}. 
+. save "ALL MODELS Korea North error - only models across error measures.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+ALL MODELS Korea North error - only models across error measures.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. keep *Mean2 
+{txt}
+{com}. 
+. 
+. foreach var of varlist * {c -(}
+{txt}  2{com}.         
+.         summ `var', meanonly
+{txt}  3{com}.         
+.         qui replace `var' = r(mean)
+{txt}  4{com}. {c )-}
+{txt}
+{com}. 
+. 
+. keep in 1 
+{txt}(1,075 observations deleted)
+
+{com}. 
+. 
+. * get equal-length varnames before reshape // change Error to Errorr so that all Errorr, AbsErr, PerErr, and AbPeEr have same lenght (6 characters)
+. rename ///
+> (DDErrorIMPE_Mean2 ) ///
+> (DDErrorrIMPE_Mean2) 
+{res}{txt}
+{com}. 
+. 
+. 
+. 
+. * get renvars
+. 
+. 
+. 
+. /*
+> 
+> * After 
+> net from  http://www.stata-journal.com/software/sj5-4
+> Stata might return the following:
+> 
+> host not found
+> http://www.stata-journal.com/software/sj5-4/ either
+>   1)  is not a valid URL, or
+>   2)  could not be contacted, or
+>   3)  is not a Stata download site (has no stata.toc file).
+> 
+> current site is still http://fmwww.bc.edu/repec/bocode/g/
+> 
+> * Bad internet connetion is the issue. Try again / later. 
+> 
+> 
+> */
+. 
+. net from  http://www.stata-journal.com/software/sj5-4
+{s6hlp}
+.-
+http://www.stata-journal.com/software/sj5-4/
+^Stata Journal volume 5, issue 4^
+.-
+{smcl}
+
+DIRECTORIES you could -{hilite:net cd}- to:
+{p2colset 5 23 25 2}{...}
+{p2col :{net cd ..:..}}Other Stata Journals{p_end}
+{p2colreset}{...}
+
+PACKAGES you could -{hilite:net describe}-:
+{p2colset 5 23 25 2}{...}
+{p2col :{net describe dm67_3:dm67_3}}Update:  Numbers of present and missing values{p_end}
+{p2col :{net describe dm88_1:dm88_1}}Update:  Renaming variables, multiply and{p_end}
+{p2col :}{space 2}systematically{p_end}
+{p2col :{net describe gr0021:gr0021}}Double, diagonal, and polar smoothing{p_end}
+{p2col :{net describe sg134_1:sg134_1}}Update: Model selection using akaike information{p_end}
+{p2col :}{space 2}criterion{p_end}
+{p2col :{net describe st0030_2:st0030_2}}Update:  Instrumental variables and GMM:  Estimation{p_end}
+{p2col :}{space 2}and testing{p_end}
+{p2col :{net describe st0037_2:st0037_2}}Update:  Adaptive kernel density estimation{p_end}
+{p2col :{net describe st0067_2:st0067_2}}Update:  Multiple imputation of missing values{p_end}
+{p2col :{net describe st0091:st0091}}Estimation and inference in dynamic unbalanced{p_end}
+{p2col :}{space 2}panel data models with a small number of individuals{p_end}
+{p2col :{net describe st0092:st0092}}Extended generalized linear models: Simulataneous{p_end}
+{p2col :}{space 2}estimation of flexible link and variance functions{p_end}
+{p2col :{net describe st0093:st0093}}Buckley-James method for analyzing censored data,{p_end}
+{p2col :}{space 2}with an application to a heart disease study{p_end}
+{p2col :{net describe st0094:st0094}}Confidence intervals for predicted outcomes in{p_end}
+{p2col :}{space 2}regression models for categorical outcomes{p_end}
+{p2colreset}{...}
+{.-}
+
+{com}. 
+. net describe dm88_1
+
+{txt}{.-}
+{s6hlp}
+package ^dm88_1^ from http://www.stata-journal.com/software/sj5-4
+{smcl}
+{.-}
+{s6hlp}
+
+{smcl}
+{hilite:TITLE}{p 6 8}SJ5-4 dm88_1.  Update:  Renaming variables, multiply and...{p_end}
+{s6hlp}
+
+^DESCRIPTION/AUTHOR(S)^
+      Update:  Renaming variables, multiply and systematically
+      by Nicholas J. Cox, Durham University, UK
+         Jeroen Weesie, Utrecht University, Netherlands
+      Support:  n.j.cox@@durham.ac.uk, j.weesie@@fss.uu.nl
+      After installation, type help ^renvars^
+
+^INSTALLATION FILES^                               (type ^net install^ ^dm88_1^)
+      dm88_1/renvars.ado
+      dm88_1/renvars.hlp
+
+^ANCILLARY FILES^                                  (type ^net get^ ^dm88_1^)
+      dm88_1/renvars.do
+{smcl}
+{.-}
+
+{com}. 
+. net install dm88_1
+checking {hilite:dm88_1} consistency and verifying not already installed...
+all files already exist and are up to date.
+{txt}
+{com}. 
+. *
+. 
+. 
+. renvars *, postdrop(6)
+{txt}
+{com}. 
+. save "CovidLongitudinal Korea North merge temp.dta", replace 
+{txt}{p 0 4 2}
+file {bf}
+CovidLongitudinal Korea North merge temp.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. gen i = _n
+{txt}
+{com}. 
+. reshape long DDErrorr DDAbsErr DDPerErr DDAbPeEr, i(i) j(A, string)
+{txt}(j = IMPE)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           1   {txt}->   {res}1           
+{txt}Number of variables        {res}           5   {txt}->   {res}6           
+{txt}j variable (1 values)                     ->   {res}A
+{txt}xij variables:
+                           {res}DDErrorrIMPE   {txt}->   {res}DDErrorr
+                           DDAbsErrIMPE   {txt}->   {res}DDAbsErr
+                           DDPerErrIMPE   {txt}->   {res}DDPerErr
+                           DDAbPeErIMPE   {txt}->   {res}DDAbPeEr
+{txt}{hline 77}
+
+{com}. 
+. rename A model
+{res}{txt}
+{com}. 
+. drop i
+{txt}
+{com}. 
+. 
+. 
+. label var model "epidemic model being studied"
+{txt}
+{com}. label var DDErrorr "Daily deaths Error mean of medians over updates and calendar months"
+{txt}
+{com}. label var DDAbsErr "Daily deaths Absolute Error mean of medians over updates and calendar months"
+{txt}
+{com}. label var DDPerErr "Daily deaths Percent Error mean of medians over updates and calendar months"
+{txt}
+{com}. label var DDAbPeEr "Daily deaths Absolute Percent Error mean of medians over updates and calendar months"
+{txt}note: label truncated to 80 characters
+
+{com}. 
+. 
+. graph bar DDErrorr DDAbsErr DDPerErr DDAbPeEr, over(model) ///
+> bar(1, fcolor(stone) lcolor(stone)) ///
+> bar(2, fcolor(sand) lcolor(sand)) ///
+> bar(3, fcolor(ltblue) lcolor(ltblue)) ///
+> bar(4, fcolor(ebblue) lcolor(ebblue)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths, models across average error measures", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "Error" 2 "Absolute error" 3 "Percent error" 4 "Absolute percent error" ) size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 13a Korea North ALL MODELS C19 daily deaths, models across error measures.pdf", replace
+{txt}
+{com}. 
+. 
+. qui compress
+{txt}
+{com}. 
+. save "ALL MODELS Korea North error - only models across error measures.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+ALL MODELS Korea North error - only models across error measures.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "ALL MODELS Korea North error - only models across error measures data dictionary.csv", replace 
+{res}{txt}file {bf:ALL MODELS Korea North error - only models across error measures data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. ***********************************************
+. ***********************************************
+. 
+. * graph all error measures across models
+. 
+. 
+. use "CovidLongitudinal Korea North merge temp.dta", clear 
+{txt}
+{com}. 
+. 
+. gen i = _n
+{txt}
+{com}. 
+. 
+. * temp rename models from A1 to A7 and Error Measures to E1 to E4 for reshaping:
+. 
+. rename (DDErrorrIMPE) ///
+>        (DDA1E1) 
+{res}{txt}
+{com}. label var DDA1E1 "Daily Deaths Error mean of medians over updates and calendar months IMPE"
+{txt}
+{com}.            
+. rename (DDAbsErrIMPE) ///
+>        (DDA1E2) 
+{res}{txt}
+{com}. label var DDA1E2 "Daily Deaths Absolute Error mean of medians over updates and calendar months IMPE"
+{txt}note: label truncated to 80 characters
+
+{com}.            
+. rename (DDPerErrIMPE) ///
+>        (DDA1E3)            
+{res}{txt}
+{com}. label var DDA1E3 "Daily Deaths Percent Error mean of medians over updates and calendar months IMPE"
+{txt}
+{com}. 
+. rename (DDAbPeErIMPE) ///
+>        (DDA1E4 ) 
+{res}{txt}
+{com}. label var DDA1E4 "Daily Deaths Absolute Percent Error mean of medians over updates and calendar months IMPE"
+{txt}note: label truncated to 80 characters
+
+{com}. 
+.            
+. reshape long DDA1, i(i) j(E, string)
+{txt}(j = E1 E2 E3 E4)
+
+Data{col 36}Wide{col 43}->{col 48}Long
+{hline 77}
+Number of observations     {res}           1   {txt}->   {res}4           
+{txt}Number of variables        {res}           5   {txt}->   {res}3           
+{txt}j variable (4 values)                     ->   {res}E
+{txt}xij variables:
+               {res}DDA1E1 DDA1E2 ... DDA1E4   {txt}->   {res}DDA1
+{txt}{hline 77}
+
+{com}. 
+. gen type = . 
+{txt}(4 missing values generated)
+
+{com}. label var type "Error measure type"
+{txt}
+{com}. replace type = 1 if E == "E1"
+{txt}(1 real change made)
+
+{com}. replace type = 2 if E == "E2"
+{txt}(1 real change made)
+
+{com}. replace type = 3 if E == "E3"
+{txt}(1 real change made)
+
+{com}. replace type = 4 if E == "E4"
+{txt}(1 real change made)
+
+{com}. 
+. 
+. label define type 1 "Error" 2 "Absolute Error" 3 "Percent Error" 4 "Absolute % Error"
+{txt}
+{com}. label values type type
+{txt}
+{com}. 
+. 
+. qui compress
+{txt}
+{com}. 
+. 
+. graph bar DDA1, over(type) ///
+> bar(1, fcolor(magenta) lcolor(magenta)) ///
+> blabel(bar, size(vsmall) color(white) position(inside) orientation(vertical) format(%30.0fc)) ///
+> ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> title("C19 daily deaths, average of error measures across models", size(medium) color(black)) ///
+> subtitle("Over updates and calendar months; forecast only; Korea North", size(small)) /// 
+> legend(region(lcolor(none))) legend(bexpand) ///
+> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+{res}{txt}
+{com}. 
+. qui graph export "graph 13b Korea North ALL MODELS C19 daily deaths, error measures across models.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. * reshape wide
+. 
+. 
+. drop type
+{txt}
+{com}. 
+. reshape wide DDA1, i(i) j(E, string)
+{txt}(j = E1 E2 E3 E4)
+
+Data{col 36}Long{col 43}->{col 48}Wide
+{hline 77}
+Number of observations     {res}           4   {txt}->   {res}1           
+{txt}Number of variables        {res}           3   {txt}->   {res}5           
+{txt}j variable (4 values)                 {res}E   {txt}->   (dropped)
+xij variables:
+                                   {res}DDA1   {txt}->   {res}DDA1E1 DDA1E2 ... DDA1E4
+{txt}{hline 77}
+
+{com}. 
+. 
+. rename (DDA1E1) ///
+>        (DD_IMPE_Errorr)
+{res}{txt}
+{com}. 
+. label var DD_IMPE_Errorr "Daily Deaths IMPE Error mean of medians over updates and calendar months"
+{txt}
+{com}. 
+. 
+. rename (DDA1E2) ///
+>        (DD_IMPE_AbsErr)
+{res}{txt}
+{com}. 
+. label var DD_IMPE_AbsErr "Daily Deaths IMPE Absolute Error mean of medians over updates and calendar months"
+{txt}note: label truncated to 80 characters
+
+{com}. 
+. 
+. rename (DDA1E3) ///
+>        (DD_IMPE_PerErr)
+{res}{txt}
+{com}. 
+. label var DD_IMPE_PerErr "Daily Deaths IMPE Percent Error mean of medians over updates and calendar months"
+{txt}
+{com}. 
+. 
+. rename (DDA1E4) ///
+> (DD_IMPE_AbPeEr)
+{res}{txt}
+{com}. 
+. label var DD_IMPE_AbPeEr "Daily Deaths IMPE Absolute Percent Error mean of medians over updates and calendar months"
+{txt}note: label truncated to 80 characters
+
+{com}. 
+. 
+. 
+. drop i
+{txt}
+{com}. 
+. gen country = "Korea North"
+{txt}
+{com}. 
+. gen iso = "PRK"
+{txt}
+{com}. 
+. order country iso
+{txt}
+{com}. 
+. qui compress
+{txt}
+{com}. 
+. save "ALL MODELS Korea North error - only error measures across models.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+ALL MODELS Korea North error - only error measures across models.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "ALL MODELS Korea North error - only error measures across models data dictionary.csv", replace 
+{res}{txt}file {bf:ALL MODELS Korea North error - only error measures across models data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
+. view "log CovidLongitudinal Korea North 9 Merge.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Korea North/log CovidLongitudinal Korea North 9 Merge.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}15 Aug 2023, 09:49:12
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
