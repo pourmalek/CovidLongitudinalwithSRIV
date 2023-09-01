@@ -1,0 +1,483 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/log CovidLongitudinal countries.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}11 Aug 2023, 16:34:26
+{txt}
+{com}. 
+. ***************************************************************************
+. * This is "do CovidLongitudinal countries.do"
+. 
+. * Project: Longitudinal assessment of COVID-19 models 
+. 
+. * Objective: Process estimates for countries  
+.                                                               
+. ***************************************************************************
+. 
+. 
+. 
+. **** "do CovidLongitudinal countries.do"
+. **** Process estimates for countries
+. 
+. 
+. ** input data files: "ALL MODELS `country' error - only error measures across models.dta"
+. 
+. ** output data files: "ALL MODELS `country' error - only error measures across models.dta"
+. 
+. 
+. 
+. 
+. 
+. 
+. ************************************************************************
+. 
+. * get error for each country 
+. 
+. 
+. local list `" "Afghanistan" "Albania" "Algeria" "Andorra" "Angola" "Antigua and Barbuda" "Argentina" "Armenia" "Australia" "Austria" "Azerbaijan" "Bahamas" "Bahrain" "Bangladesh" "Barbados" "Belarus" "Belgium" "Belize" "Benin" "Bhutan" "Bolivia" "Bosnia and Herzegovina" "Botswana" "Brazil" "Brunei" "Bulgaria" "Burkina Faso" "Burundi" "Cambodia" "Cameroon" "Canada" "Cape Verde" "Central African Republic" "Chad" "Chile" "China" "Colombia" "Comoros" "Congo" "Congo DR" "Costa Rica" "Cote d'Ivoire" "Croatia" "Cuba" "Cyprus" "Czechia" "Denmark" "Djibouti" "Dominica" "Dominican Republic" "Ecuador" "Egypt" "El Salvador" "Equatorial Guinea" "Eritrea" "Estonia" "Eswatini" "Ethiopia" "Fiji" "Finland" "France" "Gabon" "Gambia" "Georgia" "Germany" "Ghana" "Greece" "Grenada" "Guatemala" "Guinea" "Guinea Bissau" "Guyana" "Haiti" "Holy See" "Honduras" "Hungary" "Iceland" "India" "Indonesia" "Iran" "Iraq" "Ireland" "Israel" "Italy" "Jamaica" "Japan" "Jordan" "Kazakhstan" "Kenya" "Kiribati" "Korea North" "Korea South" "Kosovo" "Kuwait" "Kyrgyzstan" "Laos" "Latvia" "Lebanon" "Lesotho" "Liberia" "Libya" "Liechtenstein" "Lithuania" "Luxembourg" "Madagascar" "Malawi" "Malaysia" "Maldives" "Mali" "Malta" "Mauritania" "Mauritius" "Mexico" "Micronesia" "Moldova" "Monaco" "Mongolia" "Montenegro" "Morocco" "Mozambique" "Myanmar" "Namibia" "Nepal" "Netherlands" "New Zealand" "Nicaragua" "Niger" "Nigeria" "North Macedonia" "Norway" "Oman" "Pakistan" "Palestine" "Panama" "Papua New Guinea" "Paraguay" "Peru" "Philippines" "Poland" "Portugal" "Qatar" "Romania" "Russia" "Rwanda" "Saint Kitts and Nevis" "Saint Lucia" "Saint Vincent and the Grenadines" "Samoa" "San Marino" "Sao Tome and Principe" "Saudi Arabia" "Senegal" "Serbia" "Seychelles" "Sierra Leone" "Singapore" "Slovakia" "Slovenia" "Solomon Islands" "Somalia" "South Africa" "South Sudan" "Spain" "Sri Lanka" "Sudan" "Suriname" "Sweden" "Switzerland" "Syria" "Taiwan" "Tajikistan" "Tanzania" "Thailand" "Timor Leste" "Togo" "Tonga" "Trinidad and Tobago" "Tunisia" "Turkey" "Uganda" "Ukraine" "United Arab Emirates" "United Kingdom" "United States of America" "Uruguay" "Uzbekistan" "Vanuatu" "Venezuela" "Viet Nam" "Yemen" "Zambia" "Zimbabwe" "'
+{txt}
+{com}. 
+. foreach country of local list {c -(}
+{txt}  2{com}.         
+.         di "`country'"
+{txt}  3{com}.         
+.         cd "$pathCovidLongitudinal/countries/`country'"
+{txt}  4{com}.                 
+.         append using "ALL MODELS `country' error - only error measures across models.dta"
+{txt}  5{com}.         
+. {c )-}
+Afghanistan
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Afghanistan
+Albania
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Albania
+Algeria
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Algeria
+Andorra
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Andorra
+Angola
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Angola
+Antigua and Barbuda
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Antigua and Barbuda
+{txt}{p 0 7 2}
+(variable
+{bf:country} was {bf:str11}, now {bf:str19} to accommodate using data's values)
+{p_end}
+Argentina
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Argentina
+Armenia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Armenia
+Australia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Australia
+Austria
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Austria
+Azerbaijan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Azerbaijan
+Bahamas
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bahamas
+Bahrain
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bahrain
+Bangladesh
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bangladesh
+Barbados
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Barbados
+Belarus
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Belarus
+Belgium
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Belgium
+Belize
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Belize
+Benin
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Benin
+Bhutan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bhutan
+Bolivia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bolivia
+Bosnia and Herzegovina
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bosnia and Herzegovina
+{txt}{p 0 7 2}
+(variable
+{bf:country} was {bf:str19}, now {bf:str22} to accommodate using data's values)
+{p_end}
+Botswana
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Botswana
+Brazil
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Brazil
+Brunei
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Brunei
+Bulgaria
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Bulgaria
+Burkina Faso
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Burkina Faso
+Burundi
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Burundi
+Cambodia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cambodia
+Cameroon
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cameroon
+Canada
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Canada
+Cape Verde
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cape Verde
+Central African Republic
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Central African Republic
+{txt}{p 0 7 2}
+(variable
+{bf:country} was {bf:str22}, now {bf:str24} to accommodate using data's values)
+{p_end}
+Chad
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Chad
+Chile
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Chile
+China
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/China
+Colombia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Colombia
+Comoros
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Comoros
+Congo
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Congo
+Congo DR
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Congo DR
+Costa Rica
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Costa Rica
+Cote d'Ivoire
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cote d'Ivoire
+Croatia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Croatia
+Cuba
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cuba
+Cyprus
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Cyprus
+Czechia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Czechia
+Denmark
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Denmark
+Djibouti
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Djibouti
+Dominica
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Dominica
+Dominican Republic
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Dominican Republic
+Ecuador
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Ecuador
+Egypt
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Egypt
+El Salvador
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/El Salvador
+Equatorial Guinea
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Equatorial Guinea
+Eritrea
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Eritrea
+Estonia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Estonia
+Eswatini
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Eswatini
+Ethiopia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Ethiopia
+Fiji
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Fiji
+Finland
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Finland
+France
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/France
+Gabon
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Gabon
+Gambia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Gambia
+Georgia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Georgia
+Germany
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Germany
+Ghana
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Ghana
+Greece
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Greece
+Grenada
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Grenada
+Guatemala
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Guatemala
+Guinea
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Guinea
+Guinea Bissau
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Guinea Bissau
+Guyana
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Guyana
+Haiti
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Haiti
+Holy See
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Holy See
+Honduras
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Honduras
+Hungary
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Hungary
+Iceland
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Iceland
+India
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/India
+Indonesia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Indonesia
+Iran
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Iran
+Iraq
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Iraq
+Ireland
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Ireland
+Israel
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Israel
+Italy
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Italy
+Jamaica
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Jamaica
+Japan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Japan
+Jordan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Jordan
+Kazakhstan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kazakhstan
+Kenya
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kenya
+Kiribati
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kiribati
+Korea North
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Korea North
+Korea South
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Korea South
+Kosovo
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kosovo
+Kuwait
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kuwait
+Kyrgyzstan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Kyrgyzstan
+Laos
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Laos
+Latvia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Latvia
+Lebanon
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Lebanon
+Lesotho
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Lesotho
+Liberia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Liberia
+Libya
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Libya
+Liechtenstein
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Liechtenstein
+Lithuania
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Lithuania
+Luxembourg
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Luxembourg
+Madagascar
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Madagascar
+Malawi
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Malawi
+Malaysia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Malaysia
+Maldives
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Maldives
+Mali
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mali
+Malta
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Malta
+Mauritania
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mauritania
+Mauritius
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mauritius
+Mexico
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mexico
+Micronesia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Micronesia
+Moldova
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Moldova
+Monaco
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Monaco
+Mongolia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mongolia
+Montenegro
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Montenegro
+Morocco
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Morocco
+Mozambique
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Mozambique
+Myanmar
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Myanmar
+Namibia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Namibia
+Nepal
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Nepal
+Netherlands
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Netherlands
+New Zealand
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/New Zealand
+Nicaragua
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Nicaragua
+Niger
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Niger
+Nigeria
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Nigeria
+North Macedonia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/North Macedonia
+Norway
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Norway
+Oman
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Oman
+Pakistan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Pakistan
+Palestine
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Palestine
+Panama
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Panama
+Papua New Guinea
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Papua New Guinea
+Paraguay
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Paraguay
+Peru
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Peru
+Philippines
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Philippines
+Poland
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Poland
+Portugal
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Portugal
+Qatar
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+Romania
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Romania
+Russia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Russia
+Rwanda
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Rwanda
+Saint Kitts and Nevis
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Saint Kitts and Nevis
+Saint Lucia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Saint Lucia
+Saint Vincent and the Grenadines
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Saint Vincent and the Grenadines
+{txt}{p 0 7 2}
+(variable
+{bf:country} was {bf:str24}, now {bf:str32} to accommodate using data's values)
+{p_end}
+Samoa
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Samoa
+San Marino
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/San Marino
+Sao Tome and Principe
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Sao Tome and Principe
+Saudi Arabia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Saudi Arabia
+Senegal
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Senegal
+Serbia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Serbia
+Seychelles
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Seychelles
+Sierra Leone
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Sierra Leone
+Singapore
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Singapore
+Slovakia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Slovakia
+Slovenia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Slovenia
+Solomon Islands
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Solomon Islands
+Somalia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Somalia
+South Africa
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/South Africa
+South Sudan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/South Sudan
+Spain
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Spain
+Sri Lanka
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Sri Lanka
+Sudan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Sudan
+Suriname
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Suriname
+Sweden
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Sweden
+Switzerland
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Switzerland
+Syria
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Syria
+Taiwan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+Tajikistan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tajikistan
+Tanzania
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tanzania
+Thailand
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Thailand
+Timor Leste
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Timor Leste
+Togo
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Togo
+Tonga
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tonga
+Trinidad and Tobago
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Trinidad and Tobago
+Tunisia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tunisia
+Turkey
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Turkey
+Uganda
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Uganda
+Ukraine
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Ukraine
+United Arab Emirates
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/United Arab Emirates
+United Kingdom
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/United Kingdom
+United States of America
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/United States of America
+Uruguay
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Uruguay
+Uzbekistan
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Uzbekistan
+Vanuatu
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Vanuatu
+Venezuela
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Venezuela
+Viet Nam
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Viet Nam
+Yemen
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Yemen
+Zambia
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Zambia
+Zimbabwe
+/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Zimbabwe
+{txt}
+{com}. *
+. 
+. 
+. 
+. cd "$pathCovidLongitudinal/countries/"
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries
+{txt}
+{com}. 
+. save "ALL MODELS `country' error - only error measures across models.dta", replace
+{txt}{p 0 4 2}
+(file {bf}
+ALL MODELS  error - only error measures across models.dta{rm}
+not found)
+{p_end}
+{p 0 4 2}
+file {bf}
+ALL MODELS  error - only error measures across models.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. view "log CovidLongitudinal countries.smcl"
+{txt}
+{com}. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/log CovidLongitudinal countries.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}11 Aug 2023, 16:34:26
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
