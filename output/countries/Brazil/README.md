@@ -8,7 +8,7 @@ Brazil selected graphs
 
 *
 
-[graph 02 Brazil ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Brazil/graph%2013b%20Brazil%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Brazil ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Brazil/graph%2013b%20Brazil%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4258f571-cd5c-4c5c-9137-c46f53176455)
 
