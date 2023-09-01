@@ -16,5 +16,7 @@ Argentina selected graphs
 
 [graph 01 Argentina DELP daily deaths update all](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Argentina/graph%2001%20Argentina%20DELP%20daily%20deaths%20update%20all.pdf)
 
+[![Watch the video](![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/2dd75eb2-2b45-4f76-828c-c3d420073f4b)](https://youtu.be/)
+
 
 *
