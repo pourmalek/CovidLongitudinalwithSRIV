@@ -1,4 +1,4 @@
-Algeria selected graphs (all y variables are smoothed) 
+Algeria selected graphs (reported and estimated daily deaths are smoothed) 
 
 *
 
