@@ -1,4 +1,10 @@
-Bhutan selected graphs
+Bhutan selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Bhutan JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bhutan/graph%2002%20Bhutan%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/26f6c53f-98a2-4f2f-a5d9-2e84e85976e5)
 
 *
 
