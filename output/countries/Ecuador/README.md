@@ -1,4 +1,10 @@
-Ecuador selected graphs
+Ecuador selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Ecuador JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Ecuador/graph%2002%20Ecuador%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/71e0fe30-4162-4ffd-9ba1-130661d389fe)
 
 *
 
