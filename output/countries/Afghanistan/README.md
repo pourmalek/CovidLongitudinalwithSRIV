@@ -1,4 +1,4 @@
-Algeria selected graphs (reported and estimated daily deaths are smoothed)  
+Afghanistan selected graphs (reported and estimated daily deaths are smoothed)  
 
 *
 
