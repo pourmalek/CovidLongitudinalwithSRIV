@@ -1,4 +1,4 @@
-Andorra selected graphs (all y variables are smoothed) 
+Andorra selected graphs (reported and estimated daily deaths are smoothed) 
 
 *
 
