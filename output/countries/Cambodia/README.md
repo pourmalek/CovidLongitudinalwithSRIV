@@ -1,4 +1,10 @@
-Cambodia selected graphs
+Cambodia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Cambodia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cambodia/graph%2002%20Cambodia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/94480307-b0c1-4ae9-b6d7-596bb8a4ef52)
 
 *
 
