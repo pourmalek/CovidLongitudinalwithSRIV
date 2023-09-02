@@ -1,4 +1,10 @@
-Canada selected graphs
+Canada selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Canada JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Canada/graph%2002%20Canada%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/6b728036-a08b-437d-9399-2f3d77b5e3af)
 
 *
 
