@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tonga/log CovidLongitudinal Tonga 9 Merge.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}18 Aug 2023, 09:05:16
+ {txt}opened on:  {res} 2 Sep 2023, 07:52:17
 {txt}
 {com}. 
 . ***************************************************************************
@@ -467,7 +467,7 @@
 > subtitle("Tonga, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 07a1 Tonga ALL MODELS C19 daily deaths average median error.pdf", replace 
@@ -494,7 +494,7 @@
 > subtitle("Tonga, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 07a2 Tonga ALL MODELS C19 daily deaths average median error smoothed.pdf", replace
@@ -522,7 +522,7 @@
 > subtitle("Tonga, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 08a1 Tonga ALL MODELS C19 daily deaths average median absolute error.pdf", replace 
@@ -549,7 +549,7 @@
 > subtitle("Tonga, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 08a2 Tonga ALL MODELS C19 daily deaths average median absolute error smoothed.pdf", replace
@@ -577,7 +577,7 @@
 > subtitle("Tonga, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 09a1 Tonga ALL MODELS C19 daily deaths average median percent error.pdf", replace
@@ -604,7 +604,7 @@
 > subtitle("Tonga, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 09a2 Tonga ALL MODELS C19 daily deaths average median percent error smoothed.pdf", replace
@@ -631,7 +631,7 @@
 > subtitle("Tonga, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 10a1 Tonga ALL MODELS C19 daily deaths average median absolute percent error.pdf", replace 
@@ -653,7 +653,7 @@
 > subtitle("Tonga, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 > legend(position(6) order(1 "IMPE") ///
-> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+> rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 10a2 Tonga ALL MODELS C19 daily deaths average median absolute percent error smoothed.pdf", replace
@@ -704,7 +704,7 @@
 > title("C19 daily deaths average of Mean Error", size(medium) color(black)) ///
 > subtitle("Over updates and calendar months; forecast only; Tonga", size(small)) /// 
 > legend(region(lcolor(none))) legend(bexpand) ///
-> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+> legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 12a Tonga ALL MODELS C19 daily deaths Average Mean Error.pdf", replace
@@ -747,7 +747,7 @@
 > title("C19 daily deaths average of Absolute Error", size(medium) color(black)) ///
 > subtitle("Over updates and calendar months; forecast only; Tonga", size(small)) /// 
 > legend(region(lcolor(none))) legend(bexpand) ///
-> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+> legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 12b Tonga ALL MODELS C19 daily deaths Average Absolute Error.pdf", replace
@@ -790,7 +790,7 @@
 > title("C19 daily deaths average of Percent Error", size(medium) color(black)) ///
 > subtitle("Over updates and calendar months; forecast only; Tonga", size(small)) /// 
 > legend(region(lcolor(none))) legend(bexpand) ///
-> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+> legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 12c Tonga ALL MODELS C19 daily deaths Average Percent Error.pdf", replace
@@ -833,7 +833,7 @@
 > title("C19 daily deaths average of Absolute Percent Error", size(medium) color(black)) ///
 > subtitle("Over updates and calendar months; forecast only; Tonga", size(small)) /// 
 > legend(region(lcolor(none))) legend(bexpand) ///
-> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+> legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 12d Tonga ALL MODELS C19 daily deaths Average Absolute Percent Error.pdf", replace
@@ -1230,7 +1230,7 @@ Number of observations     {res}           1   {txt}->   {res}4
 > title("C19 daily deaths, average of error measures across models", size(medium) color(black)) ///
 > subtitle("Over updates and calendar months; forecast only; Tonga", size(small)) /// 
 > legend(region(lcolor(none))) legend(bexpand) ///
-> legend(position(6) order(1 "IMPE") size(small) row(1)) 
+> legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 {res}{txt}
 {com}. 
 . qui graph export "graph 13b Tonga ALL MODELS C19 daily deaths, error measures across models.pdf", replace
@@ -1355,7 +1355,7 @@ saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Tonga/log CovidLongitudinal Tonga 9 Merge.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}18 Aug 2023, 09:05:54
+ {txt}closed on:  {res} 2 Sep 2023, 07:52:27
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

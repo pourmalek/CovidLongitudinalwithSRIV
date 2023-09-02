@@ -456,7 +456,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median error
 subtitle("Solomon Islands, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 07a1 Solomon Islands ALL MODELS C19 daily deaths average median error.pdf", replace 
 
@@ -481,7 +481,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median error
 subtitle("Solomon Islands, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 07a2 Solomon Islands ALL MODELS C19 daily deaths average median error smoothed.pdf", replace
 
@@ -507,7 +507,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median absol
 subtitle("Solomon Islands, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 08a1 Solomon Islands ALL MODELS C19 daily deaths average median absolute error.pdf", replace 
 
@@ -532,7 +532,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median absol
 subtitle("Solomon Islands, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 08a2 Solomon Islands ALL MODELS C19 daily deaths average median absolute error smoothed.pdf", replace
 
@@ -558,7 +558,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median perce
 subtitle("Solomon Islands, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 09a1 Solomon Islands ALL MODELS C19 daily deaths average median percent error.pdf", replace
 
@@ -583,7 +583,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median perce
 subtitle("Solomon Islands, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 09a2 Solomon Islands ALL MODELS C19 daily deaths average median percent error smoothed.pdf", replace
 
@@ -608,7 +608,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median absol
 subtitle("Solomon Islands, all Models, forecast only", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 10a1 Solomon Islands ALL MODELS C19 daily deaths average median absolute percent error.pdf", replace 
 
@@ -628,7 +628,7 @@ ytitle(Daily deaths error measure) title("C19 daily deaths, average median absol
 subtitle("Solomon Islands, all Models, forecast only; smoothed for better viewing", size(small)) xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) yscale(titlegap(3)) ///
 legend(position(6) order(1 "IMPE") ///
-rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand)
+rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) legend(on)
 
 qui graph export "graph 10a2 Solomon Islands ALL MODELS C19 daily deaths average median absolute percent error smoothed.pdf", replace
 
@@ -671,7 +671,7 @@ ytitle("Average Mean Error") yscale(titlegap(2)) ylabel(, labsize(small) angle(f
 title("C19 daily deaths average of Mean Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Solomon Islands", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(position(6) order(1 "IMPE") size(small) row(1)) 
+legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 
 qui graph export "graph 12a Solomon Islands ALL MODELS C19 daily deaths Average Mean Error.pdf", replace
 
@@ -707,7 +707,7 @@ ytitle("Average Absolute Error") yscale(titlegap(2)) ylabel(, labsize(small) ang
 title("C19 daily deaths average of Absolute Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Solomon Islands", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(position(6) order(1 "IMPE") size(small) row(1)) 
+legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 
 qui graph export "graph 12b Solomon Islands ALL MODELS C19 daily deaths Average Absolute Error.pdf", replace
 
@@ -743,7 +743,7 @@ ytitle("Average Percent Error") yscale(titlegap(2)) ylabel(, labsize(small) angl
 title("C19 daily deaths average of Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Solomon Islands", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(position(6) order(1 "IMPE") size(small) row(1)) 
+legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 
 qui graph export "graph 12c Solomon Islands ALL MODELS C19 daily deaths Average Percent Error.pdf", replace
 
@@ -779,7 +779,7 @@ ytitle("Average Absolute Percent Error") yscale(titlegap(2)) ylabel(, labsize(sm
 title("C19 daily deaths average of Absolute Percent Error", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Solomon Islands", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(position(6) order(1 "IMPE") size(small) row(1)) 
+legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 
 qui graph export "graph 12d Solomon Islands ALL MODELS C19 daily deaths Average Absolute Percent Error.pdf", replace
 
@@ -999,7 +999,7 @@ ytitle("Average error measures") yscale(titlegap(2)) ylabel(, labsize(small) ang
 title("C19 daily deaths, average of error measures across models", size(medium) color(black)) ///
 subtitle("Over updates and calendar months; forecast only; Solomon Islands", size(small)) /// 
 legend(region(lcolor(none))) legend(bexpand) ///
-legend(position(6) order(1 "IMPE") size(small) row(1)) 
+legend(position(6) order(1 "IMPE") size(small) row(1)) legend(on)
 
 qui graph export "graph 13b Solomon Islands ALL MODELS C19 daily deaths, error measures across models.pdf", replace
 
