@@ -1,4 +1,10 @@
-Colombia selected graphs
+Colombia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Colombia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Colombia/graph%2002%20Colombia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/eeb7d7e7-014a-4710-8573-8ec5c0dbbbb0)
 
 *
 
