@@ -1,4 +1,10 @@
-Australia selected graphs
+Australia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Australia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Australia/graph%2002%20Australia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/e99ef95e-a5b1-4e71-8e11-5bd99dbf7a34)
 
 *
 
