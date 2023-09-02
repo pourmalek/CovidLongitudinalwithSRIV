@@ -1,4 +1,10 @@
-Belgium selected graphs
+Belgium selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Belgium JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Belgium/graph%2002%20Belgium%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/54c55526-cac0-4fcc-a5db-55aee09b3f52)
 
 *
 
