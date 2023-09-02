@@ -1,4 +1,10 @@
-Algeria selected graphs
+Algeria selected graphs (all y variables are smoothed) 
+
+*
+
+[graph 02 Algeria JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Algeria/graph%2002%20Algeria%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/3b9c1dc1-402f-4a91-9d1a-b0b8d3b3157a)
 
 *
 
