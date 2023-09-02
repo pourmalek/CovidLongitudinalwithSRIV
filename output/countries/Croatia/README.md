@@ -1,4 +1,10 @@
-Croatia selected graphs
+Croatia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Croatia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Croatia/graph%2002%20Croatia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/85fbffcb-6fbf-45f6-bbef-7855ed68a1e9)
 
 *
 
