@@ -1,4 +1,10 @@
-Bahrain selected graphs
+Bahrain selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Bahrain JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bahrain/graph%2002%20Bahrain%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/87321f1d-9a00-4bde-99f4-732d63f5c6cf)
 
 *
 
