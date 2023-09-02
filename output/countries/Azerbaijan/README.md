@@ -4,6 +4,7 @@ Azerbaijan selected graphs (reported and estimated daily deaths are smoothed)
 
 [graph 02 Azerbaijan JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Azerbaijan/graph%2002%20Azerbaijan%20JOHN%20C19%20daily%20deaths%20reported.pdf)
 
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/164ab821-d683-4e70-8a1e-be7926290cea)
 
 *
 
