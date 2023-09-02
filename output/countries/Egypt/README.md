@@ -1,4 +1,10 @@
-Egypt selected graphs
+Egypt selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Egypt JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Egypt/graph%2002%20Egypt%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/aec415f3-947c-465a-92c9-86f126bcd49d)
 
 *
 
