@@ -1,4 +1,10 @@
-Andorra selected graphs
+Andorra selected graphs (all y variables are smoothed) 
+
+*
+
+[graph 02 Andorra JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Andorra/graph%2002%20Andorra%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/b0b7f5c6-a4ec-4651-b6d2-9e978cb892dd)
 
 *
 
