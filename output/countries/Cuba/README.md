@@ -8,7 +8,7 @@ Cuba selected graphs
 
 *
 
-[graph 13b Cuba ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cuba graph%2013b%20 Cuba20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+[graph 13b Cuba ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cuba graph%2013b%20Cuba20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/fc8b0bad-651a-4ab2-bd30-27c1149bc57a)
 
