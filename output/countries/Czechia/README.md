@@ -1,4 +1,10 @@
-Czechia selected graphs
+Czechia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Czechia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Czechia/graph%2002%20Czechia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/763ad77d-d877-40e0-a266-524af66a8935)
 
 *
 
