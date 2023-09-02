@@ -1,4 +1,10 @@
-Congo selected graphs
+Congo selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Congo JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Congo/graph%2002%20Congo%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/c6b9b743-ca79-4265-80b7-235af77e73d9)
 
 *
 
