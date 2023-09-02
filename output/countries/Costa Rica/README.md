@@ -1,4 +1,10 @@
-Costa Rica selected graphs
+Costa Rica selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Costa Rica JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Costa%20Rica/graph%2002%20Costa%20Rica%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/b012d6a2-3532-476e-9d8c-1adc439d5090)
 
 *
 
