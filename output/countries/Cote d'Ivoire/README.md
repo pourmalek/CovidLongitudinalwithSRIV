@@ -8,6 +8,8 @@ Cote d'Ivoire selected graphs
 
 *
 
-[graph 13b Cote d'Ivoire ALL MODELS C19 daily deaths, error measures across models]()
+[graph 13b Cote d'Ivoire ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cote%20d'Ivoire/graph%2013b%20Cote%20d'Ivoire%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4500899b-984f-4495-89dc-7f96184cf1e4)
 
 
