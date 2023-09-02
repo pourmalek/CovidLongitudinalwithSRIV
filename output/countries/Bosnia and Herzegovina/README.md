@@ -1,4 +1,10 @@
-Bosnia and Herzegovina selected graphs
+Bosnia and Herzegovina selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Bosnia and Herzegovina JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bosnia%20and%20Herzegovina/graph%2002%20Bosnia%20and%20Herzegovina%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4456b0b4-c2bc-440b-9fcf-e11e13787fad)
 
 *
 
