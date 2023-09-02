@@ -1,4 +1,10 @@
-Benin selected graphs
+Benin selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Benin JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Benin/graph%2002%20Benin%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/343cb606-d545-408b-89c6-db83645241e3)
 
 *
 
