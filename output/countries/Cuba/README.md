@@ -1,4 +1,10 @@
-Cuba selected graphs
+Cuba selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Cuba JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cuba/graph%2002%20Cuba%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/db3e67d6-db51-4d80-961f-932d4c12a87a)
 
 *
 
