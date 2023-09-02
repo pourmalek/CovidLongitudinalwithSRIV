@@ -2,7 +2,7 @@ Antigua and Barbuda selected graphs (reported and estimated daily deaths are smo
 
 *
 
-[graph 02 Antigua and Barbuda JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Antigua%20and%2Barbuda/graph%2002%20Antigua%20and%20Barbuda%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+[graph 02 Antigua and Barbuda JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Antigua%20and%20Barbuda/graph%2002%20Antigua%20and%20Barbuda%20JOHN%20C19%20daily%20deaths%20reported.pdf)
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f31b4081-f54e-4da6-99e3-59f092aef5ca)
 
