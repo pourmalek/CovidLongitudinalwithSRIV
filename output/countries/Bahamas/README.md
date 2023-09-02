@@ -1,4 +1,10 @@
-Bahamas selected graphs
+Bahamas selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Bahamas JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bahamas/graph%2002%20Bahamas%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/aa70a99d-fdde-40d3-b67d-2fdde77368fd)
 
 *
 
