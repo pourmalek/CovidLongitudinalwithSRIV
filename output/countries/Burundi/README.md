@@ -1,4 +1,10 @@
-Burundi selected graphs
+Burundi selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Burundi JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Burundi/graph%2002%20Burundi%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/b99839f5-0563-400b-be08-967dc3b72fab)
 
 *
 
