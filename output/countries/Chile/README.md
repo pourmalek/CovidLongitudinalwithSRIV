@@ -1,4 +1,10 @@
-Chile selected graphs
+Chile selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Chile JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Chile/graph%2002%20Chile%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/6d7eb9b5-6dcd-4ae4-bf21-038270351613)
 
 *
 
