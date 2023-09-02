@@ -1,4 +1,10 @@
-Burkina Faso selected graphs
+Burkina Faso selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Burkina Faso JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Burkina%20Faso/graph%2002%20Burkina%20Faso%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/a26758d8-4930-47c6-b0c1-5673ea2f80e4)
 
 *
 
