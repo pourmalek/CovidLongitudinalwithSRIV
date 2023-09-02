@@ -1,4 +1,10 @@
-Cape Verde selected graphs
+Cape Verde selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Cape Verde JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cape%20Verde/graph%2002%20Cape%20Verde%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ae2791a5-a87a-415e-ace4-39614f49f357)
 
 *
 
