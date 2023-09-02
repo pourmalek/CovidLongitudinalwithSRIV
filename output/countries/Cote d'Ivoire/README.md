@@ -1,4 +1,10 @@
-Cote d'Ivoire selected graphs
+Cote d'Ivoire selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Cote d'Ivoire JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cote%20d'Ivoire/graph%2002%20Cote%20d'Ivoire%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/eaed1919-d41d-4976-bfff-90ebbc1d5b75)
 
 *
 
