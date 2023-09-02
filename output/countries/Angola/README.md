@@ -1,4 +1,10 @@
-Andorra selected graphs
+Angola selected graphs (all y variables are smoothed) 
+
+*
+
+[graph 02 Angola JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Angola/graph%2002%20Angola%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/8b23f471-6849-4511-ac4d-6bbc0e6035a6)
 
 *
 
