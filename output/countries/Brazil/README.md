@@ -1,4 +1,10 @@
-Brazil selected graphs
+Brazil selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Brazil JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Brazil/graph%2002%20Brazil%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/fa813dc0-eef7-48e2-b7d6-9a46c4fecd8d)
 
 *
 
