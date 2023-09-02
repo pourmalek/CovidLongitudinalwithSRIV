@@ -1,4 +1,10 @@
-Central African Republic selected graphs
+Central African Republic selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Central African Republic JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Central%20African%20Republic/graph%2002%20Central%20African%20Republic%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/59924a74-d98f-4d02-84c7-e3bee62a6504)
 
 *
 
