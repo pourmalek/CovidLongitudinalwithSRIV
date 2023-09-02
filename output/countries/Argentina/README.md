@@ -1,4 +1,8 @@
-Argentina selected graphs
+Argentina selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Argentina JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Argentina/graph%2002%20Argentina%20JOHN%20C19%20daily%20deaths%20reported.pdf)
 
 *
 
