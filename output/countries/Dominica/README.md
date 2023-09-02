@@ -1,4 +1,10 @@
-Dominica selected graphs
+Dominica selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Dominica JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Dominica/graph%2002%20Dominica%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/7b62c007-0c47-43f6-a522-d75d3d7d5da1)
 
 *
 
