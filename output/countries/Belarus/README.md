@@ -1,4 +1,10 @@
-Belarus selected graphs
+Belarus selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Belarus JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Belarus/graph%2002%20Belarus%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f0a93516-42da-4eeb-a404-d80fdf76b5f5)
 
 *
 
