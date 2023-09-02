@@ -1,4 +1,4 @@
-Afghanistan selected graphs
+Algeria selected graphs (all y variables are smoothed) 
 
 *
 
