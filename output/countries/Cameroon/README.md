@@ -1,4 +1,10 @@
-Cameroon selected graphs
+Cameroon selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Cameroon JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Cameroon/graph%2002%20Cameroon%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f611f77e-b465-47db-a607-a56f5a099a5d)
 
 *
 
