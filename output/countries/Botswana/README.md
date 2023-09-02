@@ -1,4 +1,10 @@
-Botswana selected graphs
+Botswana selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Botswana JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Botswana/graph%2002%20Botswana%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/81ec44f6-d7d7-466b-a204-1005e711aa04)
 
 *
 
