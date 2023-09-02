@@ -1,4 +1,4 @@
-Angola selected graphs (all y variables are smoothed) 
+Angola selected graphs (reported and estimated daily deaths are smoothed) 
 
 *
 
