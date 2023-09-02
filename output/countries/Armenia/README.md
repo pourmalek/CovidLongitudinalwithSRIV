@@ -1,4 +1,10 @@
-Armenia selected graphs
+Armenia selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Armenia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Armenia/graph%2002%20Armenia%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/50e4ea82-986d-4408-a6f7-f1220027ccda)
 
 *
 
