@@ -1,4 +1,10 @@
-Bulgaria selected graphs
+Bulgaria selected graphs (reported and estimated daily deaths are smoothed) 
+
+*
+
+[graph 02 Bulgaria JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Bulgaria/graph%2002%20Bulgaria%20JOHN%20C19%20daily%20deaths%20reported.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/abbe633a-3c73-4365-bdb4-2ce0995339e1)
 
 *
 
