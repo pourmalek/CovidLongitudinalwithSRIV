@@ -16,4 +16,3 @@ Peru selected graphs (reported and estimated daily deaths are smoothed)
 
 [graph 13b Peru ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Peru/graph%2013b%20Peru%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
-![Uploading image.png…]()
