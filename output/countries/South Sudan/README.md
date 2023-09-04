@@ -15,4 +15,3 @@ South Sudan selected graphs (reported and estimated daily deaths are smoothed)
 
 [graph 13b South Sudan ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/South%20Sudan/graph%2013b%20South%20Sudan%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/02b24e8f-6faa-4cee-ac6e-f0ead828732a)
