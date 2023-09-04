@@ -4,7 +4,7 @@ North Macedonia selected graphs (reported and estimated daily deaths are smoothe
 
 [graph 02 North Macedonia JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/North%20Macedonia/graph%2002%20North%20Macedonia%20IHME%20C19%20daily%20deaths%20all%20updates.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/dc25d37a-0d04-470d-8884-69bfcb811417)
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/db94f972-4633-4a03-9f10-7e628fd02e3e)
 
 *
 
