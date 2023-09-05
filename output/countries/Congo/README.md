@@ -10,6 +10,7 @@ Congo selected graphs (reported and estimated daily deaths are smoothed)
 
 [graph 02 Congo ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Congo/graph%2002%20Congo%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/df8dccc9-4c95-4495-a9a0-1c8c3150cc7d)
 
 *
 
