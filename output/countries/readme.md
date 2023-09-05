@@ -518,4 +518,3 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/791f3b06-dba1-4475-9098-56007ff2b338)
 
-*
