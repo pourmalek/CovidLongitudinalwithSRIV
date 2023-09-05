@@ -483,3 +483,39 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ee4c10b4-90e2-4acc-a324-fb796bee9be2)
 
 *
+
+[graph 02 Ireland ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Ireland/graph%2002%20Ireland%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4cffb95d-655e-406e-a2f9-78c6dfa29146)
+
+*
+
+[graph 02 Israel ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Israel/graph%2002%20Israel%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/8270ca99-a166-4208-9ec8-5b31a0a006ff)
+
+*
+
+[graph 02 Italy ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Italy/graph%2002%20Italy%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ef7e13ae-17d5-4896-adf9-87402004a6d7)
+
+*
+
+[graph 02 Jamaica ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Jamaica/graph%2002%20Jamaica%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/64637bd2-3d9b-4a4b-afe7-3b9f725ca887)
+
+*
+
+[graph 02 Japan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Japan/graph%2002%20Japan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/9f1b71b6-7d80-4da8-9b60-30d1ca2f40c7)
+
+*
+
+[graph 02 Jordan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Jordan/graph%2002%20Jordan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/791f3b06-dba1-4475-9098-56007ff2b338)
+
+*
