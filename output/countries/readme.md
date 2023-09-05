@@ -784,3 +784,21 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 *
 
+[graph 02 Pakistan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Pakistan/graph%2002%20Pakistan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/2ffa88a4-2ad3-490c-b441-0173d9fba74a)
+
+*
+
+[graph 02 Palestine ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Palestine/graph%2002%20Palestine%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/99510e84-a254-40a3-bdc2-f73aeeabc823)
+
+*
+
+[graph 02 Panama ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Panama/graph%2002%20Panama%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/1ce4c7c5-967f-4dda-b99f-e944c3a81e25)
+
+*
+
