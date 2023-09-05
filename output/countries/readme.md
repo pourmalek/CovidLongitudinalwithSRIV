@@ -646,9 +646,9 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 *
 
-[graph 02 Maldives ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Maldives/graph%2002%20Maldives%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+[graph 02 Mali ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Mali/graph%2002%20Mali%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/70c541c0-4a01-480f-9253-deca6149690b)
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ef42e9fd-0bbd-4acd-954b-1c77f0e996f0)
 
 *
 
