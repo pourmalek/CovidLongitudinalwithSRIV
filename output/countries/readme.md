@@ -730,3 +730,57 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 *
 
+[graph 02 Nepal ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Nepal/graph%2002%20Nepal%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4c5d5cc8-e887-4b63-8bdd-a31d275ba577)
+
+*
+
+[graph 02 Netherlands ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Netherlands/graph%2002%20Netherlands%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/5c2a97cc-d3ff-4a10-baaf-ce354f8ed2e0)
+
+*
+
+[graph 02 New Zealand ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/New%20Zealand/graph%2002%20New%20Zealand%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/46e2eeab-aaab-4f75-8372-0f8617b8a076)
+
+*
+
+[graph 02 Nicaragua ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Nicaragua/graph%2002%20Nicaragua%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4405f508-f749-4864-821d-2b4dae8bab5e)
+
+*
+
+[graph 02 Niger ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Niger/graph%2002%20Niger%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/d47a9576-6240-4795-b988-b8e0e5c89307)
+
+*
+
+[graph 02 Nigeria ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Nigeria/graph%2002%20Nigeria%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/87743e8d-6280-4931-9ccc-80b087df635f)
+
+*
+
+[graph 02 North Macedonia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/North%20Macedonia/graph%2002%20North%20Macedonia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/aa2d427c-8623-4a28-a5a8-776c73bbfdce)
+
+*
+
+[graph 02 Norway ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Norway/graph%2002%20Norway%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/06724f76-f642-41ae-a919-68ccafb83c63)
+
+*
+
+[graph 02 Oman ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Oman/graph%2002%20Oman%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ad590a0e-00ba-4ea9-b5d4-e081cb05ba31)
+
+*
+
