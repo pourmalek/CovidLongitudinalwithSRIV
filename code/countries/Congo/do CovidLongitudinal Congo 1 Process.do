@@ -5789,6 +5789,7 @@ twoway ///
 (line DayDeaMeFoSRIV20221229 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20221230 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20221231 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeSmJOHNCOG date, sort lwidth(thick) lcolor(cyan)) /// 
 if date >= td(01jan2020) & date <= td(01jan2023) ///
 , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///

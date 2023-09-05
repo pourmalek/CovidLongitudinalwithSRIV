@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Congo/log CovidLongitudinal Congo 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}13 Aug 2023, 10:28:10
+ {txt}opened on:  {res} 5 Sep 2023, 06:45:05
 {txt}
 {com}. 
 . ***************************************************************************
@@ -46033,6 +46033,7 @@ saved
 > (line DayDeaMeFoSRIV20221229 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20221230 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20221231 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeSmJOHNCOG date, sort lwidth(thick) lcolor(cyan)) /// 
 > if date >= td(01jan2020) & date <= td(01jan2023) ///
 > , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 > xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
@@ -46064,7 +46065,7 @@ saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Congo/log CovidLongitudinal Congo 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}13 Aug 2023, 10:31:38
+ {txt}closed on:  {res} 5 Sep 2023, 06:46:38
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
