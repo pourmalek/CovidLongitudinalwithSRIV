@@ -312,7 +312,6 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 [graph 02 Egypt JOHN C19 daily deaths reported](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Egypt/graph%2002%20Egypt%20JOHN%20C19%20daily%20deaths%20reported.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/7dfb8e3d-4833-460b-ba53-fbbf6ca93e9f)
 
 *
 
