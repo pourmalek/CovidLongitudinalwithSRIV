@@ -880,3 +880,105 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 
 *
 
+[graph 02 Samoa ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Samoa/graph%2002%20Samoa%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/9f34c5c7-e016-455a-b36c-9a6c6ea41a33)
+
+*
+
+[graph 02 San Marino ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/San%20Marino/graph%2002%20San%20Marino%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/39efe372-4df1-43d3-bfd9-c4927b0179ac)
+
+*
+
+[graph 02 Sao Tome and Principe ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Sao%20Tome%20and%20Principe/graph%2002%20Sao%20Tome%20and%20Principe%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4cc38141-341d-4120-8dbe-2f9b3cf783fa)
+
+*
+
+[graph 02 Saudi Arabia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Saudi%20Arabia/graph%2002%20Saudi%20Arabia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/1ce0fb18-fc08-4d97-b67d-ab3ffe7744e8)
+
+*
+
+[graph 02 Senegal ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Senegal/graph%2002%20Senegal%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/cb6eb128-e655-4edd-a90a-f7d752e2ff40)
+
+*
+
+[graph 02 Serbia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Serbia/graph%2002%20Serbia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/a132e561-a8fc-47f1-a562-fc182836d3e1)
+
+*
+
+[graph 02 Seychelles ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Seychelles/graph%2002%20Seychelles%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f0353998-ecdf-4972-9a3b-865e932343f3)
+
+*
+
+[graph 02 Sierra Leone ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Sierra%20Leone/graph%2002%20Sierra%20Leone%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/276e9882-e711-47cb-b025-47f65c6f2993)
+
+*
+
+[graph 02 Singapore ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Singapore/graph%2002%20Singapore%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/d58d1f58-615d-4058-992a-856e1f7258b6)
+
+*
+
+[graph 02 Slovakia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Slovakia/graph%2002%20Slovakia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/6bcd90fe-f925-487c-a5b8-1c1ed7d6b2bd)
+
+*
+
+[graph 02 Slovenia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Slovenia/graph%2002%20Slovenia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f68dff0d-e229-46f0-8db6-9784e3ef6b03)
+
+*
+
+[graph 02 Solomon Islands ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Solomon%20Islands/graph%2002%20Solomon%20Islands%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/c7a970c6-b02c-41a4-a7cc-ec4472755d2e)
+
+*
+
+[graph 02 Somalia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Somalia/graph%2002%20Somalia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4e40eb64-6b33-42e8-a1c0-53826215558b)
+
+*
+
+[graph 02 South Africa ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/South%20Africa/graph%2002%20South%20Africa%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/96450da6-5f16-4726-b5b4-6508ec8f6ac3)
+
+*
+
+[graph 02 South Sudan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/South%20Sudan/graph%2002%20South%20Sudan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/8d950542-10a2-40d4-a088-e25ec3c5722a)
+
+*
+
+[graph 02 Spain ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Spain/graph%2002%20Spain%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/75509eee-56fe-4524-bd79-3505955ccaa2)
+
+*
+
+[graph 02 Sri Lanka ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Sri%20Lanka/graph%2002%20Sri%20Lanka%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/a9de531a-3727-4458-9866-66b1d7f3ddc5)
+
+*
+
