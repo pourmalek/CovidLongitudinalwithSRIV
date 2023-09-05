@@ -387,3 +387,99 @@ graph 02 _country_ ALL MODELS C19 daily deaths all updates (reported and estimat
 ![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/9be2a67d-2c3c-420c-8fbc-8922ad36cdb8)
 
 *
+
+[graph 02 Germany ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Germany/graph%2002%20Germany%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/3c19678c-989a-4c39-ac10-3bf3c72691bf)
+
+*
+
+[graph 02 Ghana ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Ghana/graph%2002%20Ghana%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/1fcaf5bf-e295-4b40-933b-3e88527ba1f1)
+
+*
+
+[graph 02 Greece ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Greece/graph%2002%20Greece%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/99616923-6f65-4657-b05f-cbc7e3cae900)
+
+*
+
+[graph 02 Grenada ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Grenada/graph%2002%20Grenada%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/e689e303-9b7e-41c3-9de5-2902de7306cb)
+
+*
+
+[graph 02 Guatemala ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Guatemala/graph%2002%20Guatemala%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/684cddb9-088a-411c-9c7a-c8fa0ea8d314)
+
+*
+
+[graph 02 Guinea Bissau ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Guinea%20Bissau/graph%2002%20Guinea%20Bissau%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/9a7d25b8-800a-49fb-831f-52d360dcc2e1)
+
+*
+
+[graph 02 Guinea ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Guinea/graph%2002%20Guinea%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/a5fbad42-77cd-40be-9377-70c9eecf56bc)
+
+*
+
+[graph 02 Guyana ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Guyana/graph%2002%20Guyana%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/b17f5676-b496-4d45-90a9-a1a1e9e2c6fc)
+
+*
+
+[graph 02 Haiti ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Haiti/graph%2002%20Haiti%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/4049f086-015c-4e79-a819-561952a7a60c)
+
+*
+
+[graph 02 Honduras ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Honduras/graph%2002%20Honduras%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/064b6f4d-6d58-482a-921f-77fb9fe8ec31)
+
+*
+
+[graph 02 Hungary ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Hungary/graph%2002%20Hungary%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/24f738a5-b2d7-42ce-8445-d1e7f03d31ab)
+
+*
+
+[graph 02 Iceland ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Iceland/graph%2002%20Iceland%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/8e9dcf98-674e-496f-9670-24469e01589b)
+
+*
+
+[graph 02 India ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/India/graph%2002%20India%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/d58f1f3a-c1d1-4b9f-948b-31ca2c8c2a32)
+
+*
+
+[graph 02 Indonesia ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Indonesia/graph%2002%20Indonesia%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/7e4f6544-2722-4456-82c9-2af62396b7a4)
+
+*
+
+[graph 02 Iran ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Iran/graph%2002%20Iran%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/7606bb25-1180-41fa-a437-2d21213476fa)
+
+*
+
+[graph 02 Iraq ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Iraq/graph%2002%20Iraq%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
+
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ee4c10b4-90e2-4acc-a324-fb796bee9be2)
+
+*
