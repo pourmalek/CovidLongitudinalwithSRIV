@@ -55,10 +55,9 @@ do "do CovidLongitudinal Cuba 7 UCLA.do"
 ** model = UCLA **/ 
 
 
-/* Cuba not included in YYGU
 do "do CovidLongitudinal Cuba 8 YYGU.do"
 * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
-** model = YYGU **/
+** model = YYGU
 
 
 do "do CovidLongitudinal Cuba 9 Merge.do"
