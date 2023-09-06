@@ -1022,7 +1022,7 @@ all graph 02 _ALL COUNTRIES_ ALL MODELS C19 daily deaths all updates in one file
 
 [graph 02 Taiwan ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Taiwan/graph%2002%20Taiwan%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
-
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/66e8c0f2-cd3e-44e1-9a38-8173b1306f9a)
 
 *
 
