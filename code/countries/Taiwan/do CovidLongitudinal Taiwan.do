@@ -31,10 +31,8 @@ do "do CovidLongitudinal Taiwan 2 DELP.do"
 ** model = DELP **/
 
 
-/* Taiwan not included in IHME
 do "do CovidLongitudinal Taiwan 3 IHME.do"
 * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
-** model = IHME **/
 
 
 do "do CovidLongitudinal Taiwan 4 IMPE.do"
