@@ -14,4 +14,3 @@ Taiwan selected graphs (reported and estimated daily deaths are smoothed)
 
 [graph 13b Taiwan ALL MODELS C19 daily deaths, error measures across models](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Taiwan/graph%2013b%20Taiwan%20ALL%20MODELS%20C19%20daily%20deaths%2C%20error%20measures%20across%20models.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/ff0c7fca-8037-418b-954e-1011b54994c3)
