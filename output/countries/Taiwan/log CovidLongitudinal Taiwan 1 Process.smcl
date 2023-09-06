@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan/log CovidLongitudinal Taiwan 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}18 Aug 2023, 06:27:36
+ {txt}opened on:  {res} 5 Sep 2023, 20:02:46
 {txt}
 {com}. 
 . ***************************************************************************
@@ -45,7 +45,7 @@
 . * get update dates on which country available in each model
 . 
 . 
-. local list IMPE LANL
+. local list IHME IMPE LANL
 {txt}
 {com}. 
 . foreach model of local list {c -(}
@@ -54,47 +54,59 @@
 {txt}  3{com}.         
 .         di in red "`model'" " Taiwan absent update_date_block"
 {txt}  4{com}.         
-.         qui keep if loc_grand_name == "Taiwan"
+.         qui keep if strpos(loc_grand_name, "Taiwan")
 {txt}  5{com}.         
-.         keep if absent == 0
+.         capture qui keep if strpos(location_name, "Taiwan")
 {txt}  6{com}.         
-.         gen model = "`model'"
+.         keep if absent == 0
 {txt}  7{com}.         
-.         order model
+.         gen model = "`model'"
 {txt}  8{com}.         
-.         di "`model'"
+.         order model
 {txt}  9{com}.         
-.         di in red `r(N)'
+.         di "`model'"
 {txt} 10{com}.         
-.         keep model loc_grand_name absent update_date_block
+.         di in red `r(N)'
 {txt} 11{com}.         
-.         order model loc_grand_name absent update_date_block
+.         keep model loc_grand_name absent update_date_block
 {txt} 12{com}.         
-.         tostring update_date_block, gen(update_date_block_string)
+.         order model loc_grand_name absent update_date_block
 {txt} 13{com}.         
-.         gen slash = " ///"
+.         tostring update_date_block, gen(update_date_block_string)
 {txt} 14{com}.         
-.         gen update_date_block_slash = update_date_block_string + slash
+.         gen slash = " ///"
 {txt} 15{com}.         
-.         drop slash
+.         gen update_date_block_slash = update_date_block_string + slash
 {txt} 16{com}.         
-.         label var model "epidemic model being studied"
+.         drop slash
 {txt} 17{com}.         
-.         label var loc_grand_name "country"
+.         label var model "epidemic model being studied"
 {txt} 18{com}.         
-.         label var absent "this country is absent in this model update"
+.         label var loc_grand_name "country"
 {txt} 19{com}.         
-.         label var update_date_block "update date block"
+.         label var absent "this country is absent in this model update"
 {txt} 20{com}.         
-.         label var update_date_block_string "update date block string"
+.         label var update_date_block "update date block"
 {txt} 21{com}.         
+.         label var update_date_block_string "update date block string"
+{txt} 22{com}.         
 .         label var update_date_block_slash "update date block slash"
-{txt} 22{com}. 
+{txt} 23{com}. 
 .         qui compress
-{txt} 23{com}.         
+{txt} 24{com}.         
 .         save "Taiwan `model' update dates.dta", replace
-{txt} 24{com}. 
+{txt} 25{com}. 
 . {c )-}
+{err}IHME Taiwan absent update_date_block
+{txt}(38 observations deleted)
+IHME
+
+update_date_block_string generated as {res:str8}
+{p 0 4 2}
+file {bf}
+Taiwan IHME update dates.dta{rm}
+saved
+{p_end}
 {err}IMPE Taiwan absent update_date_block
 {txt}(84 observations deleted)
 IMPE
@@ -123,7 +135,7 @@ saved
 . 
 . 
 . 
-. use "Taiwan IMPE update dates.dta", clear 
+. use "Taiwan IHME update dates.dta", clear 
 {txt}
 {com}. 
 . local list IMPE LANL
@@ -139,7 +151,7 @@ saved
 
 {p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
 
-(64 observations deleted)
+(0 observations are duplicates)
 
 {p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
 
@@ -355,7 +367,1845 @@ saved
 . 
 . * IHME 
 . 
-. * Taiwan not included in IHME
+. local list ///
+> 20200903 ///
+> 20200911 ///
+> 20200918 ///
+> 20200924 ///
+> 20201002 ///
+> 20201009 ///
+> 20201015 ///
+> 20201022 ///
+> 20201029 ///
+> 20201112 ///
+> 20201119 ///
+> 20201203 ///
+> 20201210 ///
+> 20201217 ///
+> 20201223 ///
+> 20210115 ///
+> 20210122 ///
+> 20210128 ///
+> 20210204 ///
+> 20210212 ///
+> 20210220 ///
+> 20210225 ///
+> 20210306 ///
+> 20210311 ///
+> 20210317 ///
+> 20210325 ///
+> 20210401 ///
+> 20210409 ///
+> 20210416 ///
+> 20210423 ///
+> 20210506 ///
+> 20210514 ///
+> 20210521 ///
+> 20210528 ///
+> 20210604 ///
+> 20210610 ///
+> 20210618 ///
+> 20210625 ///
+> 20210702 ///
+> 20210715 ///
+> 20210723 ///
+> 20210730 ///
+> 20210806 ///
+> 20210820 ///
+> 20210826 ///
+> 20210902 ///
+> 20210910 ///
+> 20210916 ///
+> 20210923 ///
+> 20210930 ///
+> 20211015 ///
+> 20211021 ///
+> 20211104 ///
+> 20211119 ///
+> 20211221 ///
+> 20220108 ///
+> 20220114 ///
+> 20220121 ///
+> 20220204 ///
+> 20220218 ///
+> 20220321 ///
+> 20220408 ///
+> 20220506 ///
+> 20220610 ///
+> 20220719 ///
+> 20220912 ///
+> 20221024 ///
+> 20221118 ///
+> 20221216
+{txt}
+{com}. 
+. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         cd "$pathCovidLongitudinal/download/IHME"
+{txt}  3{com}.         
+.         di in red "This is IHME update " `update'
+{txt}  4{com}. 
+.         use "IHME `update'.dta", clear
+{txt}  5{com}.                 
+.         qui keep if strpos(location_name, "Taiwan")
+{txt}  6{com}.         
+.         rename location_name loc_grand_name
+{txt}  7{com}. 
+.         duplicates drop
+{txt}  8{com}.                 
+.         
+.         
+.         
+.         * gen daily deaths // done in /code/downloads/IHME/do CovidLongitudinal IHME.do
+.         
+.         
+.         
+.         
+.         * smooth
+.                 
+.         sort date
+{txt}  9{com}.                         
+.         qui tsset date, daily   
+{txt} 10{com}.                         
+.         qui tssmooth ma DayDeaMeRaIHME`update'_window = DayDeaMeRaIHME`update' if DayDeaMeRaIHME`update' >= 0, window(3 1 3) 
+{txt} 11{com}. 
+.         qui tssmooth ma DayDeaMeSmIHME`update' = DayDeaMeRaIHME`update'_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt} 12{com}. 
+.         drop *_window
+{txt} 13{com}.         
+.         label var DayDeaMeSmIHME`update' "Daily deaths mean smooth IHME" 
+{txt} 14{com}.         
+.         
+.         
+.         
+.         * gen Daily deaths smooth forecast only
+.                         
+.         clonevar DayDeaMeFoIHME`update' = DayDeaMeSmIHME`update' 
+{txt} 15{com}.         
+.         label var DayDeaMeFoIHME`update' "Daily deaths smooth mean forecast only IHME"
+{txt} 16{com}.                 
+.         gen update_date`update' = date("`update'", "YMD")
+{txt} 17{com}.                                 
+.         qui replace DayDeaMeFoIHME`update' = . if date < update_date`update' 
+{txt} 18{com}.         
+.         
+.         
+.         capture drop fit_type death_calibrated v1
+{txt} 19{com}.         
+.         label var loc_grand_name "country"
+{txt} 20{com}.         
+.         label var date "calendar date"
+{txt} 21{com}.         
+.         label var DayDeaMeRaIHME`update' "Daily deaths mean raw IHME"
+{txt} 22{com}.         
+.         label var DayDeaMeSmIHME`update' "Daily deaths mean smooth IHME"
+{txt} 23{com}.         
+.         label var DayDeaMeFoIHME`update' "Daily deaths mean smooth forecast only IHME"
+{txt} 24{com}.         
+.         label var update_date`update' "update date"
+{txt} 25{com}.         
+.         
+.         
+.         
+.         
+.         qui compress    
+{txt} 26{com}.         
+.         cd "$pathCovidLongitudinal/countries/Taiwan"
+{txt} 27{com}.         
+.         save "IHME `update' Taiwan.dta", replace emptyok
+{txt} 28{com}.         
+.         
+.         *
+. 
+.         
+. {c )-}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20200903
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20200903 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20200911
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20200911 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20200918
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(205 observations deleted)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20200918 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20200924
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20200924 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201002
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201002 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201009
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201009 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201015
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201015 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201022
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201022 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201029
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201029 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201112
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201112 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201119
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201119 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201203
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201203 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201210
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201210 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201217
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201217 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20201223
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20201223 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210115
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210115 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210122
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210122 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210128
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210128 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210204
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210204 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210212
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210212 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210220
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210220 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210225
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210225 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210306
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210306 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210311
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210311 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210317
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210317 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210325
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210325 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210401
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210401 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210409
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210409 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210416
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210416 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210423
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210423 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210506
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210506 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210514
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210514 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210521
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210521 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210528
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210528 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210604
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210604 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210610
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210610 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210618
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210618 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210625
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210625 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210702
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210702 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210715
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210715 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210723
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210723 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210730
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210730 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210806
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210806 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210820
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210820 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210826
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210826 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210902
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210902 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210910
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210910 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210916
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(104 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210916 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210923
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(97 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210923 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20210930
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(90 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20210930 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20211015
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(76 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20211015 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20211021
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20211021 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20211104
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(114 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20211104 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20211119
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20211119 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20211221
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(72 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20211221 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220108
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(112 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220108 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220114
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(105 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220114 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220121
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(97 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220121 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220204
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(115 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220204 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220218
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(101 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220218 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220321
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(103 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220321 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220408
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(113 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220408 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220506
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(117 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220506 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220610
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(111 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220610 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220719
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(107 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220719 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20220912
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(118 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20220912 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20221024
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(69 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20221024 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20221118
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(41 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20221118 Taiwan.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/IHME
+{err}This is IHME update 20221216
+{res}
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(13 missing values generated)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}{p 0 4 2}
+file {bf}
+IHME 20221216 Taiwan.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. 
+. * merge updates
+. 
+. cd "$pathCovidLongitudinal/countries/Taiwan"
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan
+{txt}
+{com}. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         merge m:m date using "IHME `update' Taiwan.dta"
+{txt}  3{com}.         
+.         drop _merge
+{txt}  4{com}. 
+. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             729
+{txt}{col 9}from master{col 30}{res}             729{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             333{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             729
+{txt}{col 9}from master{col 30}{res}             729{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             333{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             729
+{txt}{col 9}from master{col 30}{res}             729{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             333{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             729
+{txt}{col 9}from master{col 30}{res}             729{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             333{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             729
+{txt}{col 9}from master{col 30}{res}             729{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             333{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             698
+{txt}{col 9}from master{col 30}{res}             698{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             364{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             698
+{txt}{col 9}from master{col 30}{res}             698{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             364{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             698
+{txt}{col 9}from master{col 30}{res}             698{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             364{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             698
+{txt}{col 9}from master{col 30}{res}             698{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             364{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             670
+{txt}{col 9}from master{col 30}{res}             670{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             392{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             670
+{txt}{col 9}from master{col 30}{res}             670{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             392{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             639
+{txt}{col 9}from master{col 30}{res}             639{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             423{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             639
+{txt}{col 9}from master{col 30}{res}             639{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             423{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             639
+{txt}{col 9}from master{col 30}{res}             639{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             423{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             639
+{txt}{col 9}from master{col 30}{res}             639{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             423{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             609
+{txt}{col 9}from master{col 30}{res}             609{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             453{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             609
+{txt}{col 9}from master{col 30}{res}             609{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             453{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             609
+{txt}{col 9}from master{col 30}{res}             609{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             453{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             578
+{txt}{col 9}from master{col 30}{res}             578{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             484{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             578
+{txt}{col 9}from master{col 30}{res}             578{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             484{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             578
+{txt}{col 9}from master{col 30}{res}             578{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             484{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             578
+{txt}{col 9}from master{col 30}{res}             578{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             484{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             548
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             514{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             548
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             514{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             548
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             514{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             548
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             514{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             548
+{txt}{col 9}from master{col 30}{res}             548{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             514{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             517
+{txt}{col 9}from master{col 30}{res}             517{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             545{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             517
+{txt}{col 9}from master{col 30}{res}             517{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             545{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             517
+{txt}{col 9}from master{col 30}{res}             517{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             545{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             486
+{txt}{col 9}from master{col 30}{res}             486{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             576{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             486
+{txt}{col 9}from master{col 30}{res}             486{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             576{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             486
+{txt}{col 9}from master{col 30}{res}             486{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             576{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             486
+{txt}{col 9}from master{col 30}{res}             486{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             576{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             486
+{txt}{col 9}from master{col 30}{res}             486{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             576{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             456
+{txt}{col 9}from master{col 30}{res}             456{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             606{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             456
+{txt}{col 9}from master{col 30}{res}             456{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             606{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             456
+{txt}{col 9}from master{col 30}{res}             456{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             606{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             456
+{txt}{col 9}from master{col 30}{res}             456{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             606{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             425
+{txt}{col 9}from master{col 30}{res}             425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             637{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             425
+{txt}{col 9}from master{col 30}{res}             425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             637{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             425
+{txt}{col 9}from master{col 30}{res}             425{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             637{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             395
+{txt}{col 9}from master{col 30}{res}             395{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             667{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             395
+{txt}{col 9}from master{col 30}{res}             395{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             667{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             395
+{txt}{col 9}from master{col 30}{res}             395{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             667{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             395
+{txt}{col 9}from master{col 30}{res}             395{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             667{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             395
+{txt}{col 9}from master{col 30}{res}             395{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             667{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             364
+{txt}{col 9}from master{col 30}{res}             364{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             698{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             364
+{txt}{col 9}from master{col 30}{res}             364{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             698{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             364
+{txt}{col 9}from master{col 30}{res}             364{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             698{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             364
+{txt}{col 9}from master{col 30}{res}             364{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             698{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             333
+{txt}{col 9}from master{col 30}{res}             333{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             729{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             305
+{txt}{col 9}from master{col 30}{res}             305{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             757{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             305
+{txt}{col 9}from master{col 30}{res}             305{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             757{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             305
+{txt}{col 9}from master{col 30}{res}             305{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             757{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             244
+{txt}{col 9}from master{col 30}{res}             244{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             818{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             244
+{txt}{col 9}from master{col 30}{res}             244{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             818{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             244
+{txt}{col 9}from master{col 30}{res}             244{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             818{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             213
+{txt}{col 9}from master{col 30}{res}             213{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             849{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             213
+{txt}{col 9}from master{col 30}{res}             213{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             849{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             183
+{txt}{col 9}from master{col 30}{res}             183{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             879{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             152
+{txt}{col 9}from master{col 30}{res}             152{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             910{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             121
+{txt}{col 9}from master{col 30}{res}             121{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             941{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              91
+{txt}{col 9}from master{col 30}{res}              91{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             971{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              60
+{txt}{col 9}from master{col 30}{res}              60{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,002{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}{txt}{p 0 7 2}
+(variable
+{bf:population_2022} was {bf:float}, now {bf:double} to accommodate using data's values)
+{p_end}
+{p 0 7 2}
+(variable
+{bf:population_2021} was {bf:float}, now {bf:double} to accommodate using data's values)
+{p_end}
+{p 0 7 2}
+(variable
+{bf:population_2020} was {bf:float}, now {bf:double} to accommodate using data's values)
+{p_end}
+
+{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}               0
+{txt}{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. *       
+. 
+. replace loc_grand_name = "Taiwan" if loc_grand_name == "Taiwan (Province of China)" //
+{txt}(1,062 real changes made)
+
+{com}. 
+. capture drop fit_type death_calibrated v1 // IHME extra vars 
+{txt}
+{com}. 
+. qui compress
+{txt}
+{com}. 
+. save "IHME Taiwan.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+IHME Taiwan.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. * add JOHN
+. 
+. merge m:1 date using "JOHN Taiwan.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              81
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              81{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+.         drop if date < td(01jan2020)
+{txt}(0 observations deleted)
+
+{com}. 
+.         drop if date > td(01jan2023) 
+{txt}(67 observations deleted)
+
+{com}. 
+. qui compress
+{txt}
+{com}. 
+. save "IHME Taiwan.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+IHME Taiwan.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "IHME Taiwan data dictionary.csv", replace 
+{res}{txt}file {bf:IHME Taiwan data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. 
+. /* foreach update of local list {c -(}
+>         
+>         * graph Taiwan IHME daily deaths each update 
+>         
+>         twoway ///
+>         (line DayDeaMeSmJOHNTWN date, sort lwidth(thick) lcolor(cyan)) ///      
+>         (line DayDeaMeFoIHME`update' date, sort lwidth(thin) lcolor(magenta)) /// 
+>         if date >= td(01Jan2020) & date <= td(01Jan2023) ///
+>         , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+>         xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+>         ytitle(Daily deaths) title("C19 daily deaths, IHME, update `update'", size(medium) color(black)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+>         subtitle("Taiwan, forecast only") legend(position(6) order(1 "JOHN" 2 "IHME forecast ") rows(1) size(small)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) 
+>         
+>         qui graph export "graph 01 Taiwan IHME daily deaths update `update'.pdf", replace       
+> 
+> {c )-}
+> */
+. 
+. 
+. 
+. 
+. * graph Taiwan IHME daily deaths all updates
+. 
+. twoway ///
+> (line DayDeaMeSmJOHNTWN date, sort lwidth(thick) lcolor(cyan)) /// 
+> (line DayDeaMeFoIHME20200903 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200911 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200918 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200924 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201002 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201009 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201015 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201022 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201029 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201112 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201119 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201203 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201210 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201217 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201223 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210115 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210122 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210128 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210204 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210212 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210220 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210225 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210306 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210311 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210317 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210325 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210401 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210409 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210416 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210423 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210506 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210514 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210521 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210528 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210604 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210610 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210618 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210625 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210702 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210715 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210723 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210730 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210806 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210820 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210826 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210902 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210910 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210916 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210923 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210930 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211015 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211021 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211104 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211119 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211221 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220108 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220114 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220121 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220204 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220218 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220321 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220408 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220506 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220610 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220719 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220912 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221024 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221118 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221216 date, sort lwidth(thin) lcolor(black))  ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths) title("C19 daily deaths, Taiwan, IHME, all updates", size(medium) color(black)) ///
+> legend(position(6) order(1 "JOHN" 2 "IHME forecast ") rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
+{res}{txt}
+{com}. 
+. qui graph export "graph 02 Taiwan IHME C19 daily deaths all updates.pdf", replace
+{txt}
+{com}. 
+. 
+. 
+. 
+. 
+. 
+. 
 . 
 . 
 . 
@@ -2882,10 +4732,10 @@ saved
 . 
 . * merge models
 . 
-. local list IMPE LANL
+. local list IHME IMPE LANL 
 {txt}
 {com}. 
-. use "IMPE Taiwan.dta", clear
+. use "IHME Taiwan.dta", clear
 {txt}
 {com}. 
 . foreach model of local list {c -(}
@@ -2901,16 +4751,25 @@ saved
 {txt}{col 5}Result{col 33}Number of obs
 {col 5}{hline 41}
 {col 5}Not matched{col 30}{res}               0
-{txt}{col 5}Matched{col 30}{res}           1,097{txt}  (_merge==3)
+{txt}{col 5}Matched{col 30}{res}           1,076{txt}  (_merge==3)
 {col 5}{hline 41}
 {res}
 {txt}{col 5}Result{col 33}Number of obs
 {col 5}{hline 41}
-{col 5}Not matched{col 30}{res}             916
-{txt}{col 9}from master{col 30}{res}             435{txt}  (_merge==1)
-{col 9}from using{col 30}{res}             481{txt}  (_merge==2)
+{col 5}Not matched{col 30}{res}              49
+{txt}{col 9}from master{col 30}{res}              14{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              35{txt}  (_merge==2)
 
-{col 5}Matched{col 30}{res}             662{txt}  (_merge==3)
+{col 5}Matched{col 30}{res}           1,062{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             928
+{txt}{col 9}from master{col 30}{res}             448{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             480{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             663{txt}  (_merge==3)
 {col 5}{hline 41}
 
 {com}. *
@@ -2953,96 +4812,165 @@ saved
 . * graph Taiwan ALL MODELS daily deaths all updates
 . 
 . twoway ///
-> (line DayDeaMeFoIMPE20201110 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201114 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201118 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201123 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201129 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201204 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201212 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201220 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20201226 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210118 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210124 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210130 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210203 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210210 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210217 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210226 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210305 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210312 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210319 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210417 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210424 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210510 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210516 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20210522 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210523 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210526 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210527 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210602 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210604 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210606 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210611 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210613 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210618 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210620 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210626 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210627 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210702 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210704 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210709 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210711 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210718 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210725 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210801 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210808 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210815 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210819 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210822 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210829 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210905 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210909 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210912 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoLANL20210919 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20210924 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoLANL20210926 date, sort lwidth(thin) lcolor(brown)) ///
-> (line DayDeaMeFoIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211115 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20211226 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220102 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220120 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220131 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220315 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220530 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220620 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220703 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220712 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220728 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
-> (line DayDeaMeFoIMPE20221225 date, sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20200903 date, sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200911 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200918 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20200924 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201002 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201009 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201015 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201022 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20201029 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201110 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201112 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201114 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20201118 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201119 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201123 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20201129 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201203 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201204 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201210 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201212 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201217 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201220 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20201223 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20201226 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20210104 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20210110 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20210112 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210115 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210118 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210122 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210124 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210128 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210130 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20210203 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210204 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210210 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210212 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210217 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210220 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210225 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210226 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20210305 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210306 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210311 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210312 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210317 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210319 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210325 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210329 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210401 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210406 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210409 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20210416 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210417 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210423 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210424 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210506 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210510 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210514 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210516 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210521 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210522 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210523 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoLANL20210526 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210527 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210528 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210602 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210604 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210604 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210606 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210610 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210611 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210613 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210618 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210618 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210620 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210625 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210626 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210627 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210702 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210702 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210704 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210709 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210711 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210715 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210718 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210719 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210723 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210725 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210730 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210801 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210806 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210806 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210808 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoLANL20210815 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210819 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210820 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210822 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210825 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210826 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210829 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210902 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210905 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIMPE20210909 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20210910 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210912 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210916 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoLANL20210919 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210923 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20210924 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoLANL20210926 date,  sort lwidth(thin) lcolor(brown)) ///
+> (line DayDeaMeFoIHME20210930 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20211006 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20211015 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20211021 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20211021 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20211027 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20211103 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20211104 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20211115 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20211119 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20211121 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20211129 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20211205 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20211213 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20211221 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20211226 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20220102 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220108 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220114 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220120 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220121 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220131 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220204 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220218 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220315 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220321 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220408 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20220506 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220530 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220610 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220620 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20220703 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20220712 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220719 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20220728 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20220808 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIMPE20220901 date,  sort lwidth(thin) lcolor(magenta)) ///
+> (line DayDeaMeFoIHME20220912 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221024 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221118 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIHME20221216 date,  sort lwidth(thin) lcolor(black))  ///
+> (line DayDeaMeFoIMPE20221225 date,  sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeSmJOHNTWN date, sort lwidth(thick) lcolor(cyan)) /// 
 > if date >= td(01jan2020) & date <= td(01jan2023) ///
 > , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 > xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
 > ytitle(Daily deaths) title("C19 daily deaths, Taiwan, all models, all updates, forecast only", size(medium) color(black)) ///
-> legend(position(6) order(85 "JOHN" 1 "IMPE" 30 "LANL") ///
+> legend(position(6) order(154 "JOHN" 1 "IHME" 10 "IMPE" 63 "LANL") ///
 > rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
 {res}{txt}
@@ -3069,7 +4997,7 @@ saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Taiwan/log CovidLongitudinal Taiwan 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}18 Aug 2023, 06:27:56
+ {txt}closed on:  {res} 5 Sep 2023, 20:03:02
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}
