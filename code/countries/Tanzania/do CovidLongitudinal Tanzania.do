@@ -36,10 +36,9 @@ do "do CovidLongitudinal Tanzania 3 IHME.do"
 ** model = IHME **/
 
 
-/* Tanzania not included in IMPE
 do "do CovidLongitudinal Tanzania 4 IMPE.do"
 * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
-** model = IMPE **/
+** model = IMPE
 
 
 do "do CovidLongitudinal Tanzania 5 LANL.do"
