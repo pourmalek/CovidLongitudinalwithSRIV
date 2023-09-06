@@ -1034,6 +1034,7 @@ all graph 02 _ALL COUNTRIES_ ALL MODELS C19 daily deaths all updates in one file
 
 [graph 02 Tanzania ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Tanzania/graph%2002%20Tanzania%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/b464b921-dbac-4ef2-bfc6-bda19a8d0796)
 
 *
 
