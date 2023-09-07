@@ -46,7 +46,7 @@ log using "log CovidLongitudinal Qatar 1 Process.smcl", replace
 * get update dates on which country available in each model
 
 
-local list DELP IHME IMPE LANL SRIV
+local list DELP IHME IMPE LANL SRIV UCLA
 
 foreach model of local list {
 
@@ -104,7 +104,7 @@ foreach model of local list {
 
 use "Qatar DELP update dates.dta", clear 
 
-local list DELP IHME IMPE LANL SRIV
+local list DELP IHME IMPE LANL SRIV UCLA
 
 foreach model of local list {
 	
@@ -4133,10 +4133,227 @@ qui graph export "graph 02 Qatar SRIV C19 daily deaths all updates.pdf", replace
 
 
 
+
+
 **************************************************************************
 
 * UCLA
-* Qatar not included in UCLA
+
+
+
+local list ///
+20210103 ///
+20210110 ///
+20210206 ///
+20210307 ///
+20210315 ///
+20210328 ///
+20210404 ///
+20210712 ///
+20210719 ///
+20210726 ///
+20210802 ///
+20210809 ///
+20210816 ///
+20210823 ///
+20210830 ///
+20210906 ///
+20210913 ///
+20210920 ///
+20210927 ///
+20211004 ///
+20211011 ///
+20211018 ///
+20211025 ///
+20211101 ///
+20211108 ///
+20211122 ///
+20211129 ///
+20211206 ///
+20211213 ///
+20211220
+
+
+foreach update of local list {
+
+	cd "$pathCovidLongitudinal/download/UCLA"
+	
+	di in red "This is UCLA update " `update'
+
+	use "CovidLongitudinal UCLA `update'.dta", clear
+		
+	keep if loc_grand_name == "Qatar" 
+
+	duplicates drop
+		
+	
+	
+	
+	* gen daily deaths // avilable form downloaded data
+			
+		
+	
+	
+	* smooth
+		
+	sort loc_grand_name date
+	
+	qui tsset date, daily   
+			        
+	qui tssmooth ma DayDeaMeRaUCLA`update'_window = DayDeaMeRaUCLA`update' if DayDeaMeRaUCLA`update' >= 0, window(3 1 3) 
+
+	qui tssmooth ma DayDeaMeSmUCLA`update' = DayDeaMeRaUCLA`update'_window, weights( 1 2 3 <4> 3 2 1) replace
+
+	drop *_window
+	
+	label var DayDeaMeSmUCLA`update' "Daily deaths mean smooth UCLA" 
+	
+	*
+	
+	
+	
+	
+	* gen Daily deaths smooth forecast only  
+				
+	clonevar DayDeaMeFoUCLA`update' = DayDeaMeSmUCLA`update' 
+	
+	label var DayDeaMeFoUCLA`update' "Daily deaths mean smooth forecast only UCLA"
+	
+	capture gen update_date`update' = date("`update'", "YMD")
+			
+	replace DayDeaMeFoUCLA`update' = . if date < update_date`update' 
+	
+	
+	
+	qui compress	
+	
+	cd "$pathCovidLongitudinal/countries/Qatar"
+	
+	save "UCLA `update' Qatar.dta", replace 
+	
+	/* line DayDeaMeRaUCLA`update' DayDeaMeSmUCLA`update' DayDeaMeFoUCLA`update' date
+
+	qui graph export "UCLA `update' Qatar.pdf", replace */
+	
+}
+*
+
+
+
+
+* merge updates
+
+cd "$pathCovidLongitudinal/countries/Qatar"
+
+foreach update of local list {
+
+	merge m:m date using "UCLA `update' Qatar.dta"
+	
+	drop _merge
+
+}
+*	
+
+qui compress
+
+save "UCLA Qatar.dta", replace
+
+
+
+
+* add JOHN
+
+merge m:1 date using "JOHN Qatar.dta"
+
+drop _merge
+
+qui compress
+
+save "UCLA Qatar.dta", replace
+
+
+
+
+******
+
+* create data dictionary
+
+preserve
+
+    describe, replace
+	
+    export delimited name varlab using "UCLA Qatar data dictionary.csv", replace 
+	
+restore
+
+
+
+/* foreach update of local list {
+	
+	* graph Qatar UCLA daily deaths each update 
+	
+	twoway ///
+	(line DayDeaMeSmJOHNQAT date, sort lwidth(thick) lcolor(cyan)) /// 	
+	(line DayDeaMeFoUCLA`update' date, sort lwidth(thin) lcolor(blue)) /// 
+	if date >= td(01Jan2020) & date <= td(01Jan2023) ///
+	, xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+	xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+	ytitle(Daily deaths) title("C19 daily deaths, UCLA, update `update'", size(medium) color(black)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+	subtitle("Qatar, forecast only") legend(position(6) order(1 "JOHN" 2 "UCLA forecast ") rows(1) size(small)) ///
+	xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) 
+	
+	qui graph export "graph 01 Qatar UCLA daily deaths update `update'.pdf", replace	
+
+}
+*/
+
+
+* graph Qatar UCLA daily deaths all updates
+
+twoway ///
+(line DayDeaMeSmJOHNQAT date, sort lwidth(thick) lcolor(cyan)) /// 
+(line DayDeaMeFoUCLA20210103 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210110 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210206 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210307 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210315 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210328 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210404 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210712 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210719 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210726 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210802 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210809 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210816 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210823 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210830 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210906 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210913 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210920 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20210927 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211004 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211011 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211018 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211025 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211101 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211108 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211122 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211129 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211206 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211213 date, sort lwidth(thin) lcolor(blue)) ///
+(line DayDeaMeFoUCLA20211220 date, sort lwidth(thin) lcolor(blue)) ///
+if date >= td(01jan2020) & date <= td(01jan2023) ///
+, xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+ytitle(Daily deaths) title("C19 daily deaths, Qatar, UCLA, all updates", size(medium) color(black)) ///
+legend(position(6) order(1 "JOHN" 2 "UCLA forecast ") rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
+xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
+
+qui graph export "graph 02 Qatar UCLA C19 daily deaths all updates.pdf", replace
+
+
+
 
 
 
@@ -4156,7 +4373,7 @@ qui graph export "graph 02 Qatar SRIV C19 daily deaths all updates.pdf", replace
 
 * merge models
 
-local list IHME IMPE LANL SRIV
+local list IHME IMPE LANL SRIV UCLA
 
 use "DELP Qatar.dta", clear
 
@@ -4606,6 +4823,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210101 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210103 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210103 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210103 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210104 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210105 date, sort lwidth(thin) lcolor(brown)) ///
@@ -4617,6 +4835,7 @@ twoway ///
 (line DayDeaMeFoIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoLANL20210110 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210110 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210110 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210111 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210112 date, sort lwidth(thin) lcolor(green)) ///
@@ -4662,6 +4881,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210204 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210205 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210206 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210206 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoLANL20210207 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210207 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210208 date, sort lwidth(thin) lcolor(green)) ///
@@ -4710,6 +4930,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210306 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210307 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210307 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210307 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210308 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210309 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210310 date, sort lwidth(thin) lcolor(brown)) ///
@@ -4723,6 +4944,7 @@ twoway ///
 (line DayDeaMeFoLANL20210314 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210314 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210315 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210315 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210316 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIHME20210317 date, sort lwidth(thin) lcolor(black)) ///
 (line DayDeaMeFoSRIV20210317 date, sort lwidth(thin) lcolor(green)) ///
@@ -4743,6 +4965,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210327 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210328 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210328 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210328 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210329 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210330 date, sort lwidth(thin) lcolor(green)) ///
@@ -4754,6 +4977,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210403 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210404 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210404 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210404 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210405 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210406 date, sort lwidth(thin) lcolor(green)) ///
@@ -4904,6 +5128,7 @@ twoway ///
 (line DayDeaMeFoLANL20210711 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210711 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210712 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210712 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210713 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210714 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210715 date, sort lwidth(thin) lcolor(red)) ///
@@ -4915,6 +5140,7 @@ twoway ///
 (line DayDeaMeFoSRIV20210718 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210719 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210719 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210720 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210721 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210722 date, sort lwidth(thin) lcolor(red)) ///
@@ -4925,6 +5151,7 @@ twoway ///
 (line DayDeaMeFoLANL20210725 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210725 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210726 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210726 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210727 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210728 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210729 date, sort lwidth(thin) lcolor(red)) ///
@@ -4934,12 +5161,14 @@ twoway ///
 (line DayDeaMeFoSRIV20210731 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoLANL20210801 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210801 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210802 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoDELP20210805 date, sort lwidth(thin) lcolor(red)) ///
 (line DayDeaMeFoIHME20210806 date, sort lwidth(thin) lcolor(black)) ///
 (line DayDeaMeFoIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoLANL20210808 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210808 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210809 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210809 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210810 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210811 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210812 date, sort lwidth(thin) lcolor(red)) ///
@@ -4948,6 +5177,7 @@ twoway ///
 (line DayDeaMeFoLANL20210815 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210815 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210816 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210816 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210817 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210818 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210819 date, sort lwidth(thin) lcolor(red)) ///
@@ -4959,6 +5189,7 @@ twoway ///
 (line DayDeaMeFoLANL20210822 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210822 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210823 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210823 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210824 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20210825 date, sort lwidth(thin) lcolor(green)) ///
@@ -4970,6 +5201,7 @@ twoway ///
 (line DayDeaMeFoLANL20210829 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210829 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210830 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210830 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210831 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210901 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210902 date, sort lwidth(thin) lcolor(red)) ///
@@ -4980,6 +5212,7 @@ twoway ///
 (line DayDeaMeFoLANL20210905 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210905 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210906 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210906 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210907 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210908 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210909 date, sort lwidth(thin) lcolor(red)) ///
@@ -4991,6 +5224,7 @@ twoway ///
 (line DayDeaMeFoLANL20210912 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210912 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210913 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210913 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210914 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210915 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210916 date, sort lwidth(thin) lcolor(red)) ///
@@ -5001,6 +5235,7 @@ twoway ///
 (line DayDeaMeFoLANL20210919 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210919 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210920 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210920 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210921 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210922 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210923 date, sort lwidth(thin) lcolor(red)) ///
@@ -5012,6 +5247,7 @@ twoway ///
 (line DayDeaMeFoLANL20210926 date, sort lwidth(thin) lcolor(brown)) ///
 (line DayDeaMeFoSRIV20210926 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210927 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20210927 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20210928 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20210929 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20210930 date, sort lwidth(thin) lcolor(red)) ///
@@ -5021,6 +5257,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211002 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211003 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211004 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211004 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211005 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211006 date, sort lwidth(thin) lcolor(green)) ///
@@ -5030,6 +5267,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211009 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211010 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211011 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211011 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211012 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211013 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211014 date, sort lwidth(thin) lcolor(red)) ///
@@ -5038,11 +5276,13 @@ twoway ///
 (line DayDeaMeFoSRIV20211015 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211016 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211017 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211018 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoDELP20211021 date, sort lwidth(thin) lcolor(red)) ///
 (line DayDeaMeFoIHME20211021 date, sort lwidth(thin) lcolor(black)) ///
 (line DayDeaMeFoIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211024 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211025 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211025 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211026 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211027 date, sort lwidth(thin) lcolor(green)) ///
@@ -5052,6 +5292,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211030 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211031 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211101 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211101 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211102 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211103 date, sort lwidth(thin) lcolor(green)) ///
@@ -5062,6 +5303,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211106 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211107 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211108 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211108 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211109 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211110 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211111 date, sort lwidth(thin) lcolor(red)) ///
@@ -5080,6 +5322,7 @@ twoway ///
 (line DayDeaMeFoIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211121 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211122 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211122 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211124 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211125 date, sort lwidth(thin) lcolor(red)) ///
 (line DayDeaMeFoSRIV20211126 date, sort lwidth(thin) lcolor(green)) ///
@@ -5087,6 +5330,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211128 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211129 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211129 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211130 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211201 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211202 date, sort lwidth(thin) lcolor(red)) ///
@@ -5094,6 +5338,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211203 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211205 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211206 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211207 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211208 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211209 date, sort lwidth(thin) lcolor(red)) ///
@@ -5103,6 +5348,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211212 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoSRIV20211213 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211213 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoSRIV20211214 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211215 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211216 date, sort lwidth(thin) lcolor(red)) ///
@@ -5110,6 +5356,7 @@ twoway ///
 (line DayDeaMeFoSRIV20211217 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211218 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoSRIV20211219 date, sort lwidth(thin) lcolor(green)) ///
+(line DayDeaMeFoUCLA20211220 date, sort lwidth(thin) lcolor(blue)) ///
 (line DayDeaMeFoIHME20211221 date, sort lwidth(thin) lcolor(black)) ///
 (line DayDeaMeFoSRIV20211222 date, sort lwidth(thin) lcolor(green)) ///
 (line DayDeaMeFoDELP20211223 date, sort lwidth(thin) lcolor(red)) ///
@@ -5683,7 +5930,7 @@ if date >= td(01jan2020) & date <= td(01jan2023) ///
 , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
 ytitle(Daily deaths) title("C19 daily deaths, Qatar, all models, all updates, forecast only", size(medium) color(black)) ///
-legend(position(6) order(1482 "JOHN" 1 "DELP" 82 "IHME" 41 "IMPE" 29 "LANL" 4 "SRIV") ///
+legend(position(6) order(1512 "JOHN" 1 "DELP" 82 "IHME" 41 "IMPE" 29 "LANL" 4 "SRIV" 410 "UCLA") ///
 rows(2) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
 xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
 

@@ -3,7 +3,7 @@
       name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar/log CovidLongitudinal Qatar 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}opened on:  {res}17 Aug 2023, 07:19:52
+ {txt}opened on:  {res} 7 Sep 2023, 06:48:38
 {txt}
 {com}. 
 . ***************************************************************************
@@ -45,7 +45,7 @@
 . * get update dates on which country available in each model
 . 
 . 
-. local list DELP IHME IMPE LANL SRIV
+. local list DELP IHME IMPE LANL SRIV UCLA
 {txt}
 {com}. 
 . foreach model of local list {c -(}
@@ -145,6 +145,16 @@ file {bf}
 Qatar SRIV update dates.dta{rm}
 saved
 {p_end}
+{err}UCLA Qatar absent update_date_block
+{txt}(8 observations deleted)
+UCLA
+
+update_date_block_string generated as {res:str8}
+{p 0 4 2}
+file {bf}
+Qatar UCLA update dates.dta{rm}
+saved
+{p_end}
 
 {com}. *
 . 
@@ -156,7 +166,7 @@ saved
 . use "Qatar DELP update dates.dta", clear 
 {txt}
 {com}. 
-. local list DELP IHME IMPE LANL SRIV
+. local list DELP IHME IMPE LANL SRIV UCLA
 {txt}
 {com}. 
 . foreach model of local list {c -(}
@@ -170,6 +180,10 @@ saved
 {p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
 
 (314 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
 
 {p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
 
@@ -43549,10 +43563,954 @@ saved
 . 
 . 
 . 
+. 
+. 
 . **************************************************************************
 . 
 . * UCLA
-. * Qatar not included in UCLA
+. 
+. 
+. 
+. local list ///
+> 20210103 ///
+> 20210110 ///
+> 20210206 ///
+> 20210307 ///
+> 20210315 ///
+> 20210328 ///
+> 20210404 ///
+> 20210712 ///
+> 20210719 ///
+> 20210726 ///
+> 20210802 ///
+> 20210809 ///
+> 20210816 ///
+> 20210823 ///
+> 20210830 ///
+> 20210906 ///
+> 20210913 ///
+> 20210920 ///
+> 20210927 ///
+> 20211004 ///
+> 20211011 ///
+> 20211018 ///
+> 20211025 ///
+> 20211101 ///
+> 20211108 ///
+> 20211122 ///
+> 20211129 ///
+> 20211206 ///
+> 20211213 ///
+> 20211220
+{txt}
+{com}. 
+. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         cd "$pathCovidLongitudinal/download/UCLA"
+{txt}  3{com}.         
+.         di in red "This is UCLA update " `update'
+{txt}  4{com}. 
+.         use "CovidLongitudinal UCLA `update'.dta", clear
+{txt}  5{com}.                 
+.         keep if loc_grand_name == "Qatar" 
+{txt}  6{com}. 
+.         duplicates drop
+{txt}  7{com}.                 
+.         
+.         
+.         
+.         * gen daily deaths // avilable form downloaded data
+.                         
+.                 
+.         
+.         
+.         * smooth
+.                 
+.         sort loc_grand_name date
+{txt}  8{com}.         
+.         qui tsset date, daily   
+{txt}  9{com}.                                 
+.         qui tssmooth ma DayDeaMeRaUCLA`update'_window = DayDeaMeRaUCLA`update' if DayDeaMeRaUCLA`update' >= 0, window(3 1 3) 
+{txt} 10{com}. 
+.         qui tssmooth ma DayDeaMeSmUCLA`update' = DayDeaMeRaUCLA`update'_window, weights( 1 2 3 <4> 3 2 1) replace
+{txt} 11{com}. 
+.         drop *_window
+{txt} 12{com}.         
+.         label var DayDeaMeSmUCLA`update' "Daily deaths mean smooth UCLA" 
+{txt} 13{com}.         
+.         *
+.         
+.         
+.         
+.         
+.         * gen Daily deaths smooth forecast only  
+.                                 
+.         clonevar DayDeaMeFoUCLA`update' = DayDeaMeSmUCLA`update' 
+{txt} 14{com}.         
+.         label var DayDeaMeFoUCLA`update' "Daily deaths mean smooth forecast only UCLA"
+{txt} 15{com}.         
+.         capture gen update_date`update' = date("`update'", "YMD")
+{txt} 16{com}.                         
+.         replace DayDeaMeFoUCLA`update' = . if date < update_date`update' 
+{txt} 17{com}.         
+.         
+.         
+.         qui compress    
+{txt} 18{com}.         
+.         cd "$pathCovidLongitudinal/countries/Qatar"
+{txt} 19{com}.         
+.         save "UCLA `update' Qatar.dta", replace 
+{txt} 20{com}.         
+.         /* line DayDeaMeRaUCLA`update' DayDeaMeSmUCLA`update' DayDeaMeFoUCLA`update' date
+> 
+>         qui graph export "UCLA `update' Qatar.pdf", replace */
+.         
+. {c )-}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210103
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210103 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210110
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210110 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210206
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210206 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210307
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210307 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210315
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210315 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210328
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210328 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210404
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(0 real changes made)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210404 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210712
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210712 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210719
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210719 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210726
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210726 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210802
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210802 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210809
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210809 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210816
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210816 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210823
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210823 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210830
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210830 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210906
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210906 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210913
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210913 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210920
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210920 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20210927
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20210927 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211004
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211004 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211011
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211011 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211018
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211018 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211025
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211025 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211101
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211101 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211108
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211108 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211122
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211122 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211129
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211129 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211206
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211206 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211213
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211213 Qatar.dta{rm}
+saved
+{p_end}
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/download/UCLA
+{err}This is UCLA update 20211220
+{txt}(2,500 observations deleted)
+
+{p 0 4}{txt}Duplicates in terms of {txt} all variables{p_end}
+
+(0 observations are duplicates)
+(100 real changes made, 100 to missing)
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}{p 0 4 2}
+file {bf}
+UCLA 20211220 Qatar.dta{rm}
+saved
+{p_end}
+
+{com}. *
+. 
+. 
+. 
+. 
+. * merge updates
+. 
+. cd "$pathCovidLongitudinal/countries/Qatar"
+{res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar
+{txt}
+{com}. 
+. foreach update of local list {c -(}
+{txt}  2{com}. 
+.         merge m:m date using "UCLA `update' Qatar.dta"
+{txt}  3{com}.         
+.         drop _merge
+{txt}  4{com}. 
+. {c )-}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              28
+{txt}{col 9}from master{col 30}{res}              14{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              14{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              86{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              28
+{txt}{col 9}from master{col 30}{res}              21{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              75
+{txt}{col 9}from master{col 30}{res}              48{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              27{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              73{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             106
+{txt}{col 9}from master{col 30}{res}              77{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              29{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              71{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}              93
+{txt}{col 9}from master{col 30}{res}              85{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               8{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              92{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             111
+{txt}{col 9}from master{col 30}{res}              98{txt}  (_merge==1)
+{col 9}from using{col 30}{res}              13{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              87{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             112
+{txt}{col 9}from master{col 30}{res}             105{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             305
+{txt}{col 9}from master{col 30}{res}             205{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             100{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}               0{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             219
+{txt}{col 9}from master{col 30}{res}             212{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             226
+{txt}{col 9}from master{col 30}{res}             219{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             233
+{txt}{col 9}from master{col 30}{res}             226{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             240
+{txt}{col 9}from master{col 30}{res}             233{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             247
+{txt}{col 9}from master{col 30}{res}             240{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             254
+{txt}{col 9}from master{col 30}{res}             247{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             261
+{txt}{col 9}from master{col 30}{res}             254{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             268
+{txt}{col 9}from master{col 30}{res}             261{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               7{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              93{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             271
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               5{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}              95{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             266
+{txt}{col 9}from master{col 30}{res}             266{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             100{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. *       
+. 
+. qui compress
+{txt}
+{com}. 
+. save "UCLA Qatar.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+UCLA Qatar.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. * add JOHN
+. 
+. merge m:1 date using "JOHN Qatar.dta"
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}             777
+{txt}{col 9}from master{col 30}{res}               0{txt}  (_merge==1)
+{col 9}from using{col 30}{res}             777{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}             366{txt}  (_merge==3)
+{col 5}{hline 41}
+
+{com}. 
+. drop _merge
+{txt}
+{com}. 
+. qui compress
+{txt}
+{com}. 
+. save "UCLA Qatar.dta", replace
+{txt}{p 0 4 2}
+file {bf}
+UCLA Qatar.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. ******
+. 
+. * create data dictionary
+. 
+. preserve
+{txt}
+{com}. 
+.     describe, replace
+{res}{txt}
+{com}.         
+.     export delimited name varlab using "UCLA Qatar data dictionary.csv", replace 
+{res}{txt}file {bf:UCLA Qatar data dictionary.csv} saved
+
+{com}.         
+. restore
+{txt}
+{com}. 
+. 
+. 
+. /* foreach update of local list {c -(}
+>         
+>         * graph Qatar UCLA daily deaths each update 
+>         
+>         twoway ///
+>         (line DayDeaMeSmJOHNQAT date, sort lwidth(thick) lcolor(cyan)) ///      
+>         (line DayDeaMeFoUCLA`update' date, sort lwidth(thin) lcolor(blue)) /// 
+>         if date >= td(01Jan2020) & date <= td(01Jan2023) ///
+>         , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+>         xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+>         ytitle(Daily deaths) title("C19 daily deaths, UCLA, update `update'", size(medium) color(black)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) legend(region(lcolor(none))) legend(bexpand) ///
+>         subtitle("Qatar, forecast only") legend(position(6) order(1 "JOHN" 2 "UCLA forecast ") rows(1) size(small)) ///
+>         xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2)) 
+>         
+>         qui graph export "graph 01 Qatar UCLA daily deaths update `update'.pdf", replace        
+> 
+> {c )-}
+> */
+. 
+. 
+. * graph Qatar UCLA daily deaths all updates
+. 
+. twoway ///
+> (line DayDeaMeSmJOHNQAT date, sort lwidth(thick) lcolor(cyan)) /// 
+> (line DayDeaMeFoUCLA20210103 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210110 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210206 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210307 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210315 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210328 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210404 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210712 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210719 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210726 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210802 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210809 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210816 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210823 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210830 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210906 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210913 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210920 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20210927 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211004 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211011 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211018 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211025 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211101 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211108 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211122 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211129 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211206 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211213 date, sort lwidth(thin) lcolor(blue)) ///
+> (line DayDeaMeFoUCLA20211220 date, sort lwidth(thin) lcolor(blue)) ///
+> if date >= td(01jan2020) & date <= td(01jan2023) ///
+> , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
+> xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
+> ytitle(Daily deaths) title("C19 daily deaths, Qatar, UCLA, all updates", size(medium) color(black)) ///
+> legend(position(6) order(1 "JOHN" 2 "UCLA forecast ") rows(1) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
+> xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
+{res}{txt}
+{com}. 
+. qui graph export "graph 02 Qatar UCLA C19 daily deaths all updates.pdf", replace
+{txt}
+{com}. 
+. 
+. 
 . 
 . 
 . 
@@ -43572,7 +44530,7 @@ saved
 . 
 . * merge models
 . 
-. local list IHME IMPE LANL SRIV
+. local list IHME IMPE LANL SRIV UCLA
 {txt}
 {com}. 
 . use "DELP Qatar.dta", clear
@@ -43622,6 +44580,15 @@ saved
 {col 9}from using{col 30}{res}              98{txt}  (_merge==2)
 
 {col 5}Matched{col 30}{res}           1,076{txt}  (_merge==3)
+{col 5}{hline 41}
+{res}
+{txt}{col 5}Result{col 33}Number of obs
+{col 5}{hline 41}
+{col 5}Not matched{col 30}{res}           1,493
+{txt}{col 9}from master{col 30}{res}           1,493{txt}  (_merge==1)
+{col 9}from using{col 30}{res}               0{txt}  (_merge==2)
+
+{col 5}Matched{col 30}{res}           1,143{txt}  (_merge==3)
 {col 5}{hline 41}
 
 {com}. *
@@ -44073,6 +45040,7 @@ saved
 > (line DayDeaMeFoSRIV20210101 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210103 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210103 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210103 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoIMPE20210104 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210104 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210105 date, sort lwidth(thin) lcolor(brown)) ///
@@ -44084,6 +45052,7 @@ saved
 > (line DayDeaMeFoIMPE20210110 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoLANL20210110 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210110 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210110 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210111 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20210112 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210112 date, sort lwidth(thin) lcolor(green)) ///
@@ -44129,6 +45098,7 @@ saved
 > (line DayDeaMeFoSRIV20210204 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210205 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210206 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210206 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoLANL20210207 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210207 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210208 date, sort lwidth(thin) lcolor(green)) ///
@@ -44177,6 +45147,7 @@ saved
 > (line DayDeaMeFoSRIV20210306 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210307 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210307 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210307 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210308 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210309 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210310 date, sort lwidth(thin) lcolor(brown)) ///
@@ -44190,6 +45161,7 @@ saved
 > (line DayDeaMeFoLANL20210314 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210314 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210315 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210315 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210316 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIHME20210317 date, sort lwidth(thin) lcolor(black)) ///
 > (line DayDeaMeFoSRIV20210317 date, sort lwidth(thin) lcolor(green)) ///
@@ -44210,6 +45182,7 @@ saved
 > (line DayDeaMeFoSRIV20210327 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210328 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210328 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210328 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoIMPE20210329 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210329 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210330 date, sort lwidth(thin) lcolor(green)) ///
@@ -44221,6 +45194,7 @@ saved
 > (line DayDeaMeFoSRIV20210403 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210404 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210404 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210404 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210405 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20210406 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210406 date, sort lwidth(thin) lcolor(green)) ///
@@ -44371,6 +45345,7 @@ saved
 > (line DayDeaMeFoLANL20210711 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210711 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210712 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210712 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210713 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210714 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210715 date, sort lwidth(thin) lcolor(red)) ///
@@ -44382,6 +45357,7 @@ saved
 > (line DayDeaMeFoSRIV20210718 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20210719 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210719 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210719 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210720 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210721 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210722 date, sort lwidth(thin) lcolor(red)) ///
@@ -44392,6 +45368,7 @@ saved
 > (line DayDeaMeFoLANL20210725 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210725 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210726 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210726 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210727 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210728 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210729 date, sort lwidth(thin) lcolor(red)) ///
@@ -44401,12 +45378,14 @@ saved
 > (line DayDeaMeFoSRIV20210731 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoLANL20210801 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210801 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210802 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoDELP20210805 date, sort lwidth(thin) lcolor(red)) ///
 > (line DayDeaMeFoIHME20210806 date, sort lwidth(thin) lcolor(black)) ///
 > (line DayDeaMeFoIMPE20210806 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoLANL20210808 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210808 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210809 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210809 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210810 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210811 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210812 date, sort lwidth(thin) lcolor(red)) ///
@@ -44415,6 +45394,7 @@ saved
 > (line DayDeaMeFoLANL20210815 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210815 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210816 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210816 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210817 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210818 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210819 date, sort lwidth(thin) lcolor(red)) ///
@@ -44426,6 +45406,7 @@ saved
 > (line DayDeaMeFoLANL20210822 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210822 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210823 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210823 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210824 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20210825 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20210825 date, sort lwidth(thin) lcolor(green)) ///
@@ -44437,6 +45418,7 @@ saved
 > (line DayDeaMeFoLANL20210829 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210829 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210830 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210830 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210831 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210901 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210902 date, sort lwidth(thin) lcolor(red)) ///
@@ -44447,6 +45429,7 @@ saved
 > (line DayDeaMeFoLANL20210905 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210905 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210906 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210906 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210907 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210908 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210909 date, sort lwidth(thin) lcolor(red)) ///
@@ -44458,6 +45441,7 @@ saved
 > (line DayDeaMeFoLANL20210912 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210912 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210913 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210913 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210914 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210915 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210916 date, sort lwidth(thin) lcolor(red)) ///
@@ -44468,6 +45452,7 @@ saved
 > (line DayDeaMeFoLANL20210919 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210919 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210920 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210920 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210921 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210922 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210923 date, sort lwidth(thin) lcolor(red)) ///
@@ -44479,6 +45464,7 @@ saved
 > (line DayDeaMeFoLANL20210926 date, sort lwidth(thin) lcolor(brown)) ///
 > (line DayDeaMeFoSRIV20210926 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210927 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20210927 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20210928 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20210929 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20210930 date, sort lwidth(thin) lcolor(red)) ///
@@ -44488,6 +45474,7 @@ saved
 > (line DayDeaMeFoSRIV20211002 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211003 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211004 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211004 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211005 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211006 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211006 date, sort lwidth(thin) lcolor(green)) ///
@@ -44497,6 +45484,7 @@ saved
 > (line DayDeaMeFoSRIV20211009 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211010 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211011 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211011 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211012 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211013 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211014 date, sort lwidth(thin) lcolor(red)) ///
@@ -44505,11 +45493,13 @@ saved
 > (line DayDeaMeFoSRIV20211015 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211016 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211017 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211018 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoDELP20211021 date, sort lwidth(thin) lcolor(red)) ///
 > (line DayDeaMeFoIHME20211021 date, sort lwidth(thin) lcolor(black)) ///
 > (line DayDeaMeFoIMPE20211021 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211024 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211025 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211025 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211026 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211027 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211027 date, sort lwidth(thin) lcolor(green)) ///
@@ -44519,6 +45509,7 @@ saved
 > (line DayDeaMeFoSRIV20211030 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211031 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211101 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211101 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211102 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211103 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211103 date, sort lwidth(thin) lcolor(green)) ///
@@ -44529,6 +45520,7 @@ saved
 > (line DayDeaMeFoSRIV20211106 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211107 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211108 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211108 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211109 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211110 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211111 date, sort lwidth(thin) lcolor(red)) ///
@@ -44547,6 +45539,7 @@ saved
 > (line DayDeaMeFoIMPE20211121 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211121 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211122 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211122 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211124 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211125 date, sort lwidth(thin) lcolor(red)) ///
 > (line DayDeaMeFoSRIV20211126 date, sort lwidth(thin) lcolor(green)) ///
@@ -44554,6 +45547,7 @@ saved
 > (line DayDeaMeFoSRIV20211128 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211129 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211129 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211129 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211130 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211201 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211202 date, sort lwidth(thin) lcolor(red)) ///
@@ -44561,6 +45555,7 @@ saved
 > (line DayDeaMeFoSRIV20211203 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211205 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211205 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211206 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211207 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211208 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211209 date, sort lwidth(thin) lcolor(red)) ///
@@ -44570,6 +45565,7 @@ saved
 > (line DayDeaMeFoSRIV20211212 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoIMPE20211213 date, sort lwidth(thin) lcolor(magenta)) ///
 > (line DayDeaMeFoSRIV20211213 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211213 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoSRIV20211214 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211215 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211216 date, sort lwidth(thin) lcolor(red)) ///
@@ -44577,6 +45573,7 @@ saved
 > (line DayDeaMeFoSRIV20211217 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211218 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoSRIV20211219 date, sort lwidth(thin) lcolor(green)) ///
+> (line DayDeaMeFoUCLA20211220 date, sort lwidth(thin) lcolor(blue)) ///
 > (line DayDeaMeFoIHME20211221 date, sort lwidth(thin) lcolor(black)) ///
 > (line DayDeaMeFoSRIV20211222 date, sort lwidth(thin) lcolor(green)) ///
 > (line DayDeaMeFoDELP20211223 date, sort lwidth(thin) lcolor(red)) ///
@@ -45150,7 +46147,7 @@ saved
 > , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 > xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
 > ytitle(Daily deaths) title("C19 daily deaths, Qatar, all models, all updates, forecast only", size(medium) color(black)) ///
-> legend(position(6) order(1482 "JOHN" 1 "DELP" 82 "IHME" 41 "IMPE" 29 "LANL" 4 "SRIV") ///
+> legend(position(6) order(1512 "JOHN" 1 "DELP" 82 "IHME" 41 "IMPE" 29 "LANL" 4 "SRIV" 410 "UCLA") ///
 > rows(2) size(small)) legend(region(lcolor(none))) legend(bexpand) ///
 > xscale(lwidth(vthin) lcolor(gray*.2)) yscale(lwidth(vthin) lcolor(gray*.2))
 {res}{txt}
@@ -45177,7 +46174,7 @@ saved
       {txt}name:  {res}<unnamed>
        {txt}log:  {res}/Users/farshadpourmalek/Downloads/CovidLongitudinal-main/code/countries/Qatar/log CovidLongitudinal Qatar 1 Process.smcl
   {txt}log type:  {res}smcl
- {txt}closed on:  {res}17 Aug 2023, 07:25:50
+ {txt}closed on:  {res} 7 Sep 2023, 06:50:17
 {txt}{.-}
 {smcl}
 {txt}{sf}{ul off}

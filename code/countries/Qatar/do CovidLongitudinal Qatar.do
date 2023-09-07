@@ -49,10 +49,10 @@ do "do CovidLongitudinal Qatar 6 SRIV.do"
 * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
 ** model = SRIV **
 
-/* Qatar not included in UCLA
+
 do "do CovidLongitudinal Qatar 7 UCLA.do"
 * run calculations for error - daily deaths: four error types (graphs 3 to 11), updates together
-** model = UCLA **/ 
+** model = UCLA  
 
 
 /* Qatar not included in YYGU
