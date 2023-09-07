@@ -848,6 +848,7 @@ all graph 02 _ALL COUNTRIES_ ALL MODELS C19 daily deaths all updates in one file
 
 [graph 02 Qatar ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Qatar/graph%2002%20Qatar%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
+![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/f75320b6-8044-406c-a094-4120bcf5d713)
 
 *
 
