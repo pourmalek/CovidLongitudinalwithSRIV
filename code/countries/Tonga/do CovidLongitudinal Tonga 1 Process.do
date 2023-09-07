@@ -655,7 +655,6 @@ restore
 * graph Tonga ALL MODELS daily deaths all updates
 
 twoway ///
-(line DayDeaMeSmJOHNTON date, sort lwidth(thick) lcolor(cyan)) /// 
 (line DayDeaMeFoIMPE20201025 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoIMPE20201028 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoIMPE20201101 date, sort lwidth(thin) lcolor(magenta)) ///
@@ -723,6 +722,7 @@ twoway ///
 (line DayDeaMeFoIMPE20220808 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoIMPE20220901 date, sort lwidth(thin) lcolor(magenta)) ///
 (line DayDeaMeFoIMPE20221225 date, sort lwidth(thin) lcolor(magenta)) ///
+(line DayDeaMeSmJOHNTON date, sort lwidth(thick) lcolor(cyan)) /// 
 if date >= td(01jan2020) & date <= td(01jan2023) ///
 , xtitle(Date) xlabel(#12, format(%tdYY-NN-DD) labsize(small)) xlabel(, grid) xlabel(, grid) ///
 xlabel(, angle(forty_five)) ylabel(, labsize(small) angle(forty_five) format(%30.0fc)) ///
