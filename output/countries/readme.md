@@ -1058,7 +1058,6 @@ all graph 02 _ALL COUNTRIES_ ALL MODELS C19 daily deaths all updates in one file
 
 [graph 02 Tonga ALL MODELS C19 daily deaths all updates](https://github.com/pourmalek/CovidLongitudinal/blob/main/output/countries/Tonga/graph%2002%20Tonga%20ALL%20MODELS%20C19%20daily%20deaths%20all%20updates.pdf)
 
-![image](https://github.com/pourmalek/CovidLongitudinal/assets/30849720/415796ae-f2ed-41ff-b7be-3b9007e507c6)
 
 *
 
